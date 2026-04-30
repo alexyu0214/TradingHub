@@ -71,3 +71,17 @@ Every trade (entry, exit, stop-out) is logged here with full thesis, entry price
 **Blocking Issue (escalate to Alex):**
 - 🔑 `GEMINI_API_KEY` is revoked/leaked (403 PERMISSION_DENIED) — two consecutive research blackouts. Rotate key before next session or research workflow cannot resume.
 
+
+---
+
+### Apr 30 — EOD Snapshot (Day 1, Thursday)
+
+**Portfolio:** $100,000.00 | **Cash:** $100,000.00 (100%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** $0.00 (0.00%) | **Deployed:** 0%
+
+| Ticker | Shares | Entry | Close | Unrealized P&L | Stop | Time |
+|--------|--------|-------|-------|----------------|------|------|
+| — | — | — | — | — | — | — |
+
+**Trades today:** none
+
+**Notes:** Day 1 closes exactly as it opened — flat at $100,000, zero positions, zero P&L movement. The research pipeline remains fully blocked by the revoked Gemini API key (403 PERMISSION_DENIED), now for a second consecutive session. No catalyst was generated, so no trades were placed — this is correct protocol adherence, not a miss. The account is healthy: PDT budget untouched (0/3 daytrades), full weekly trade allowance intact (0/3), and all cash preserved. The sole priority before market open tomorrow is rotating the GEMINI_API_KEY. Without it, the bot cannot screen, cannot thesis-build, and cannot safely enter any position. No circuit breakers triggered. No stops to manage.
