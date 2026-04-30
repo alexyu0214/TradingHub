@@ -1,4 +1,4 @@
-﻿name: Daily Summary
+name: Daily Summary
 
 on:
   schedule:
@@ -40,3 +40,13 @@ jobs:
           ALPACA_ENDPOINT: https://paper-api.alpaca.markets/v2
           ALPACA_DATA_ENDPOINT: https://data.alpaca.markets/v2
         run: python scripts/run_workflow.py daily-summary
+      - name: Fallback - commit and push memory updates
+        if: always()
+        run: |
+          git add memory/ DAILY-SUMMARY.md 2>/dev/null || true
+          if git diff --staged --quiet; then
+            echo "No memory changes to commit."
+          else
+            git commit -m "chore: daily-summary fallback commit" || true
+            git push || true
+          fi

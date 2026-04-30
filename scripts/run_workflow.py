@@ -12,6 +12,7 @@ import os
 import re
 import subprocess
 import sys
+import time
 import urllib.parse
 import urllib.request
 from pathlib import Path
@@ -245,6 +246,13 @@ def run_workflow(workflow: str) -> None:
                 continue
 
             messages.append({"role": "user", "content": tool_results})
+
+            # Throttle the loop: tier-1 limit is 30k input TPM; each turn carries
+            # the full message history, so by mid-conversation a single call
+            # approaches the cap. Sleeping 20s between turns lets the rolling
+            # window drain enough that the next call fits.
+            print(f"    [throttle] sleeping 20s before next turn")
+            time.sleep(20)
 
         else:
             print(f"[{workflow}] Unexpected stop_reason: {response.stop_reason}")
