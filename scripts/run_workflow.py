@@ -169,9 +169,25 @@ def run_workflow(workflow: str) -> None:
     import anthropic  # local import so module loads without SDK installed at top level
 
     prompt = extract_prompt(workflow)
-    client = anthropic.Anthropic()  # reads ANTHROPIC_API_KEY from env
+    # max_retries=10 → SDK auto-retries on 429 with exponential backoff up to ~60s,
+    # which is enough to wait out the rolling-minute rate limit window on tier 1.
+    client = anthropic.Anthropic(max_retries=10)
 
-    messages: list[dict] = [{"role": "user", "content": prompt}]
+    # Mark the initial workflow prompt as a cache breakpoint. The prefix up to here
+    # gets cached, so on every subsequent turn this large prompt costs 10% normal price
+    # AND does not re-count toward the 30k input-tokens-per-minute limit on tier 1.
+    messages: list[dict] = [
+        {
+            "role": "user",
+            "content": [
+                {
+                    "type": "text",
+                    "text": prompt,
+                    "cache_control": {"type": "ephemeral"},
+                }
+            ],
+        }
+    ]
     print(f"\n=== [{workflow}] Starting workflow ===\n")
 
     for turn in range(MAX_TURNS):
