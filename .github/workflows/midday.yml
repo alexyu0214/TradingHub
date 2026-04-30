@@ -37,6 +37,7 @@ jobs:
           ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
           ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           ALPACA_ENDPOINT: https://paper-api.alpaca.markets/v2
           ALPACA_DATA_ENDPOINT: https://data.alpaca.markets/v2
         run: python scripts/run_workflow.py midday

@@ -7,14 +7,11 @@ Valid workflows: portfolio, pre-market, market-open, midday, daily-summary, week
 Requires env vars: ANTHROPIC_API_KEY, ALPACA_API_KEY, ALPACA_SECRET_KEY
 """
 
-import json
 import os
 import re
 import subprocess
 import sys
 import time
-import urllib.parse
-import urllib.request
 from pathlib import Path
 
 ROUTINE_FILE = ".claude/commands/ROUTINE.md"
@@ -87,43 +84,81 @@ def tool_write_file(path: str, content: str, mode: str = "a") -> str:
         return f"ERROR writing {path}: {e}"
 
 
-def tool_web_search(query: str) -> str:
-    print(f"    [web_search] {query[:100]}")
-    try:
-        url = (
-            "https://api.duckduckgo.com/?"
-            + urllib.parse.urlencode(
-                {"q": query, "format": "json", "no_html": "1", "skip_disambig": "1"}
-            )
-        )
-        req = urllib.request.Request(
-            url, headers={"User-Agent": "TradingBot/1.0 (research)"}
-        )
-        with urllib.request.urlopen(req, timeout=15) as r:
-            data = json.loads(r.read())
+# ---------------------------------------------------------------------------
+# Gemini research (pre-computed before Claude's loop)
+# ---------------------------------------------------------------------------
 
-        parts: list[str] = []
-        if data.get("AbstractText"):
-            parts.append(data["AbstractText"])
-        if data.get("Answer"):
-            parts.append(f"Answer: {data['Answer']}")
-        for topic in (data.get("RelatedTopics") or [])[:6]:
-            if isinstance(topic, dict) and topic.get("Text"):
-                parts.append(f"- {topic['Text']}")
-        return "\n".join(parts) if parts else f"No direct results for: {query}"
+# Which workflows need research, and what queries to run.
+# Pre-market is the heavy one. Weekly-review needs the S&P comparison.
+# Other workflows do not need external research.
+WORKFLOW_RESEARCH_QUERIES: dict[str, list[str]] = {
+    "pre-market": [
+        "WTI crude oil price today",
+        "Brent crude oil price today",
+        "S&P 500 futures premarket level today",
+        "VIX level today",
+        "Top stock market catalysts today (earnings, Fed, macro)",
+        "Pre-market earnings reports today",
+        "US economic calendar today (CPI, PPI, FOMC, jobs data)",
+        "S&P 500 sector momentum year-to-date 2026",
+    ],
+    "weekly-review": [
+        "S&P 500 weekly performance for the most recent trading week",
+    ],
+}
+
+
+def gemini_research(queries: list[str]) -> str:
+    """Run all research queries through Gemini with Google Search grounding.
+    Returns a markdown summary, or an empty fallback string if Gemini fails."""
+    print(f"    [gemini] researching {len(queries)} queries...")
+    try:
+        from google import genai
+        from google.genai import types
+
+        api_key = os.environ.get("GEMINI_API_KEY")
+        if not api_key:
+            return "[Gemini research unavailable: GEMINI_API_KEY not set]"
+
+        client = genai.Client(api_key=api_key)
+
+        bullets = "\n".join(f"- {q}" for q in queries)
+        prompt = (
+            "You are a financial research assistant. Research each of the queries "
+            "below using current web data and produce a concise, fact-dense markdown "
+            "summary.\n\n"
+            "Format:\n"
+            "- One subsection per query, with a short ### heading.\n"
+            "- Lead with concrete numbers (prices, percentages, levels) wherever possible.\n"
+            "- Note today's date implicitly via the data freshness.\n"
+            "- No fluff, no disclaimers. Just facts and key context.\n"
+            "- Total length: 400-800 words.\n\n"
+            f"Queries:\n{bullets}\n"
+        )
+
+        response = client.models.generate_content(
+            model="gemini-2.5-flash",
+            contents=prompt,
+            config=types.GenerateContentConfig(
+                tools=[types.Tool(google_search=types.GoogleSearch())],
+            ),
+        )
+        text = (response.text or "").strip()
+        if not text:
+            return "[Gemini returned empty research]"
+        return text
     except Exception as e:
-        return f"Search unavailable ({e}). Proceed without this data."
+        return f"[Gemini research failed: {e}]"
 
 
 # ---------------------------------------------------------------------------
 # Tool definitions for Claude API
 # ---------------------------------------------------------------------------
 
+# Note: web_search is intentionally NOT in this list. Research is pre-computed
+# by Gemini and injected into the prompt, which keeps Claude's per-turn input
+# small enough to stay under tier-1 rate limits.
 TOOLS = [
-    {
-        "type": "web_search_20250305",
-        "name": "web_search",
-    },
     {
         "name": "bash",
         "description": (
@@ -170,6 +205,26 @@ def run_workflow(workflow: str) -> None:
     import anthropic  # local import so module loads without SDK installed at top level
 
     prompt = extract_prompt(workflow)
+
+    # Pre-compute web research with Gemini for workflows that need it.
+    # Result gets prepended to Claude's prompt so Claude does NOT need to
+    # call web_search itself — keeps each Claude turn small and cheap.
+    if workflow in WORKFLOW_RESEARCH_QUERIES:
+        print(f"\n=== [{workflow}] Pre-computing research via Gemini ===")
+        research = gemini_research(WORKFLOW_RESEARCH_QUERIES[workflow])
+        print(f"    [gemini] received {len(research)} chars of research")
+        prompt = (
+            "## Pre-Computed Market Research\n\n"
+            "The following research has already been gathered for you using a "
+            "web-grounded search. Use it as the basis for your analysis below "
+            "instead of trying to run additional web searches.\n\n"
+            f"{research}\n\n"
+            "---\n\n"
+            f"{prompt}\n\n"
+            "**IMPORTANT:** Do not attempt to run web searches. All required market "
+            "context is in the 'Pre-Computed Market Research' section above. Use it directly."
+        )
+
     # max_retries=10 → SDK auto-retries on 429 with exponential backoff up to ~60s,
     # which is enough to wait out the rolling-minute rate limit window on tier 1.
     client = anthropic.Anthropic(max_retries=10)
@@ -226,10 +281,6 @@ def run_workflow(workflow: str) -> None:
                     result = tool_write_file(
                         inp["path"], inp["content"], inp.get("mode", "a")
                     )
-                elif name == "web_search":
-                    # web_search_20250305 is handled server-side by Anthropic.
-                    # If it appears here as a client tool_use, run our fallback.
-                    result = tool_web_search(inp.get("query", ""))
                 else:
                     result = f"Unknown tool '{name}' — skipped."
 
@@ -242,7 +293,7 @@ def run_workflow(workflow: str) -> None:
                 )
 
             if not tool_results:
-                # Only server-managed calls (e.g. web_search via Anthropic) — continue
+                # No client-side tool calls in this response — defensive continue
                 continue
 
             messages.append({"role": "user", "content": tool_results})
