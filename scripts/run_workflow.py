@@ -17,7 +17,7 @@ import urllib.request
 from pathlib import Path
 
 ROUTINE_FILE = ".claude/commands/ROUTINE.md"
-MODEL = "claude-opus-4-7"
+MODEL = "claude-sonnet-4-6"
 MAX_TOKENS = 16000
 MAX_TURNS = 40  # safety cap on agentic loop iterations
 
