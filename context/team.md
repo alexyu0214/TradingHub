@@ -1,14 +1,14 @@
 # Team
 
-**Structure:** Solo practitioner
+**Solo operator.** I run the account, set risk limits, and make the final call.
 
-## AI Collaborators
-| Name | Role |
+## AI Roles
+| Agent | Role |
 |---|---|
-| Claude | Personal assistant — brainstorming, admin delegation, automation |
-| Gemini | Research and market analysis |
-| Atlas | Investment analyst — co-running the 120-Day Sprint |
+| Claude (this assistant) | Bot architect, strategy designer, code author, trade analyst |
+| Gemini | Secondary research / sanity checks when needed |
 
-## Delegation Model
-Claude handles: template creation, product comparisons, content drafts, session summaries, admin workflows.
-Alex handles: client relationships, final decisions, compliance sign-off.
+## Decision Protocol
+1. **Instructions first.** When deciding any trade, Claude must check user-provided instructions/playbook before anything else.
+2. **Technical analysis second.** After instructions, apply the most appropriate TA for the setup.
+3. **Risk rules always.** No trade goes through that violates `projects/trading-bot/risk-rules.md`.

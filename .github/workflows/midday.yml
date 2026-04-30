@@ -1,0 +1,42 @@
+﻿name: Midday Scan
+
+on:
+  schedule:
+    - cron: '0 16 * * 1-5'   # 12:00 PM ET (EDT = UTC-4) Mon-Fri
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Configure git
+        run: |
+          git config user.name "TradingBot [GHA]"
+          git config user.email "bot@tradinghub.local"
+
+      - name: Run midday workflow
+        env:
+          ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
+          ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ALPACA_ENDPOINT: https://paper-api.alpaca.markets/v2
+          ALPACA_DATA_ENDPOINT: https://data.alpaca.markets/v2
+        run: python scripts/run_workflow.py midday

@@ -1,17 +1,26 @@
 # Goals — Q2 2026
 
-## Financial
-- Grow $1,000 → $30,000 in 90 days via the 120-Day Sprint (Alpaca)
+## Phase 1 — Paper Validation ($100k)
+Goal: prove the bot has edge and acceptable risk profile before going live.
 
-## Business Development
-- Generate qualified HNW leads through Casting Capital website
-- Run at least one CPF/Retirement seminar for ages 40–64
+Minimum gate to advance to Phase 2:
+- **Sharpe ratio ≥ 1.5** over the validation window
+- **Max drawdown ≤ 15%**
+- **Win rate × avg win / avg loss ≥ positive expectancy** (no relying on lucky outliers)
+- **At least 30 trading days** of live paper data
+- **At least 30 trades** for statistical signal
 
-## Operations
-- Build automated product comparison templates
-- Centralise all client data, policies, and investment performance
-- Complete Annual Reviews for all active clients
+## Phase 2 — Live Sprint ($1k → $30k in 90 days)
+Stretch target. Realistic sub-targets:
+| Window | Conservative | Aggressive |
+|---|---|---|
+| Day 30 | $1.5k | $2.5k |
+| Day 60 | $2.5k | $7k |
+| Day 90 | $5k | $30k |
 
-## AI & Automation
-- Delegate repeatable admin tasks to Claude workflows
-- Build a product comparison skill/template
+Hitting $30k in 90 days requires near-perfect execution and tailwinds. Hitting $5k+ is realistic and unlocks PDT capacity ($25k threshold) plus margin headroom.
+
+## Operational
+- Build the bot as a 24/7 service running against Alpaca's API
+- Track every trade with rationale + outcome (journal in `projects/trading-bot/journal/`)
+- Append every meaningful decision to `decisions/log.md`

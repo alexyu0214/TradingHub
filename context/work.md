@@ -1,21 +1,9 @@
 # Work
 
-**Firm:** Professional Investment Advisory Services (PIAS)
-**Market:** Singapore — Mass Affluent and HNW clients (Age 40–65)
+**Background only — not the focus of this workspace.**
 
-## Service Lines
-| Pillar | Description |
-|---|---|
-| Protection | Insurance and risk coverage |
-| Accumulation | Unit Trusts, investment portfolios |
-| Preservation | CPF optimisation, tax savings |
-| Distribution | Wills, LPA, Trusts |
+I'm a Wealth Management Consultant at PIAS (Singapore). Day job is human-facing financial advisory — protection, unit trusts, tax/CPF, estate planning — for Mass Affluent and HNW clients.
 
-## Integrations
-- **Alpaca API** — automated trading and portfolio execution
-- **Gemini** — research, market analysis
+Why this matters here: assume baseline financial literacy. You don't need to explain what a P/E ratio, beta, or Sharpe ratio is. Skip the 101 — go straight to specifics.
 
-## Admin Pain Points
-- Product comparisons are manual and time-consuming
-- Client data, policies, and investment performance need centralisation
-- Annual Reviews need a repeatable workflow
+The trading bot in this repo is a separate, personal project. It has nothing to do with my client work and is not regulated advice.

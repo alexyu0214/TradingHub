@@ -1,19 +1,21 @@
 # Me
 
 **Name:** Alex
-**Role:** Wealth Management Consultant
 **Location:** Singapore
-**Firm:** Professional Investment Advisory Services (PIAS)
+**Role here:** Trader / bot operator
 
-## Background
-Solo practitioner serving Mass Affluent and HNW clients (Age 40–65).
-Primary services: Wealth Protection, Accumulation (Unit Trusts), Preservation (Tax Savings), Distribution (Wills, LPA, Trusts).
+## Background (interview context)
+Wealth Management Consultant at PIAS — services include Protection, Accumulation (Unit Trusts), Preservation (Tax Savings), Distribution (Wills, LPA, Trusts) for clients aged 40–65. This is my day job, not the work in this repo. It means: financial literacy is high, I understand markets, risk, and portfolio construction.
 
-## Tools I Use
-- **Alpaca** — brokerage API for automated trading
-- **Gemini** — AI model for research and analysis
-- **Claude** — AI personal assistant for brainstorming and admin delegation
+## What I want from the bot
+A 24/7 automated trading system on Alpaca that goes long or short on US equities. Strategy at Claude's discretion within agreed risk rules. Goal: turn $1k into $30k in 90 days *eventually* — but only after paper validates the system.
 
-## Working Style
-Direct communicator. No patience for fluff or filler.
-Prefers analogies for complex ideas. Wants pushback when ideas have problems.
+## Capital
+- **Paper account:** $100,000 (current — for validation)
+- **Live account:** $1,000 (Phase 2 target capital)
+
+## Risk tolerance
+Aggressive on the live $1k (it's small enough to lose). Disciplined on the bot itself — no martingale, no all-in, no revenge trades. Strategy must have defined edge and survive max drawdown limits.
+
+## Working style
+Direct. Push back if ideas are bad. No fluff. Use analogies. See `.claude/rules/communication-style.md`.

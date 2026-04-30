@@ -2,21 +2,16 @@
 
 As of Q2 2026.
 
-## Priority 1 — 120-Day Investment Sprint
-Grow $1,000 → $30,000 within 90 days using Alpaca.
-Running with analyst Atlas. Tracked in projects/120-day-sprint/.
+## Priority 1 — Paper Trading Validation
+Run the bot on the $100k Alpaca paper account. Goal: prove the strategy has real edge before any live money goes in.
 
-## Priority 2 — Casting Capital Website
-Improve castingcapital.com for HNW lead generation.
-Tracked in projects/casting-capital-website/.
+Tracked in `projects/trading-bot/`.
 
-## Priority 3 — CPF/Retirement Seminar Content
-Create content for CPF and retirement planning seminars targeting ages 40–64.
-Tracked in projects/cpf-seminars/.
+## Priority 2 — Strategy Research & Documentation
+Research and document trading strategies (long/short equities, swing horizon). Capture rules, entries, exits, and risk. Stored in `references/sops/` and `projects/trading-bot/strategy.md`.
 
-## Priority 4 — Client Data Compilation
-Centralise client data, policies, and investment performance.
-Tracked in projects/client-data-compilation/.
+## Priority 3 — Risk Framework
+Lock down risk rules: max position size, max drawdown, stop-loss methodology, exposure limits. Bot does not trade until these are set.
 
-## Priority 5 — Annual Reviews
-Organise Annual Reviews for all clients using repeatable workflows.
+## Priority 4 — Live Cutover (after paper proves out)
+Move to the live $1k account. Begin the 90-day sprint toward $30k under realistic sub-targets.
