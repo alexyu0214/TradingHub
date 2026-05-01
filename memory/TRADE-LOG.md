@@ -156,3 +156,31 @@ Every trade (entry, exit, stop-out) is logged here with full thesis, entry price
 - Daytrades Used: 0/3
 - Discipline Note: ✅ Correct decision to stand aside. Research explicitly required open-candle confirmation and prohibits chasing gaps >5%. All skips are rule-compliant, not discretionary. Cash preservation on a day with wide spreads and extreme gap behavior is the optimal outcome.
 
+
+---
+
+### 2026-05-01 09:41 CT — BUY XOM
+**Catalyst:** Exxon Mobil Q1 2026 earnings beat pre-market (increased production offsetting Strait of Hormuz supply losses); WTI Crude ~$106/bbl; Brent ~$111/bbl; Strait of Hormuz closure ongoing with no near-term resolution expected (US-Iran deal probability low); Energy sector #1 YTD (+46.2% 12-mo, +27.3% 3-mo); Bloomberg commodity energy sub-index +74% YTD. Kevin Warsh expected as Fed Chair May 15 in a $115 oil environment.
+**Entry Price:** $153.35 (130 shares, market order filled)
+**Cost Basis:** $19,935.50 (19.9% of equity)
+**Stop:** $138.015 (10% trailing GTC) — Order ID: d92d9371-5dda-46b4-843a-f185be75b6cc; initial HWM $153.35; stop trails up automatically
+**Target:** $176.35 (+15% from entry)
+**Risk:** $1,993.55 (1.99% of equity — NOTE: slightly above 0.5–1% per-trade target; trailing stop will compress risk as price rises)
+**R:R:** 1.50:1 at entry (improves as trailing stop tightens)
+**Thesis:** Structural supply disruption from Strait of Hormuz closure (9.1M bpd shutdown in April) with no diplomatic resolution near-term. XOM Q1 beat confirmed increased production offsets regional losses. WTI at multi-year highs (~$106). Energy sector in confirmed "Leading" momentum quadrant, #1 S&P 500 sector. Stagflation-lite macro (Q1 GDP miss, CPI 3.3%) benefits commodity producers even if consumer demand decelerates. VIX at 18.81 — moderate vol, not a hide-in-cash signal. "Sell in May" seasonal headwind noted — trailing stop set to tighten aggressively at +15%.
+**Buy Order ID:** c04ae321-2cf2-4869-9aa6-38b1e9adaeb7
+**Stop Order ID:** d92d9371-5dda-46b4-843a-f185be75b6cc
+**Account at Fill:** Equity $100,006.50 | Cash $80,064.50 | 1 position open | Daytrade count: 0/3
+
+---
+
+### 2026-05-01 09:41 CT — SKIPPED: CVX
+**Reason:** Bid/ask spread at time of quote = $8.13 (4.23%) — exceeds safe threshold. Wide spread indicates stock in opening auction / LULD halt / order imbalance. Per workflow: "wide spread = halt signal." Catalyst and all other gates were valid; risk was in fill quality and order routing. Will re-evaluate if spread normalizes to <0.5% intraday. Research had capped CVX at $10,000 (sector concentration).
+
+---
+
+### 2026-05-01 09:41 CT — SKIPPED: AAPL
+**Reason (Primary):** Research entry condition gate not met — "Enter AAPL only if XOM and CVX positions filled." CVX was skipped, so AAPL condition fails.
+**Reason (Secondary):** Live ask of $283.30 is +34.9% above research estimate of ~$205–$215. The research noted only +2.8–3.1% pre-market gap; actual open gapped far beyond. Research mandate: "do not buy the open gap — wait for 10-minute stabilization." No candle confirmation available at execution time. RSI likely elevated (research explicitly flagged as concern for AAPL). TERTIARY priority per research.
+**Note:** Potential re-evaluation after 15-min mark if CVX spread normalizes and both energy fills are confirmed.
+

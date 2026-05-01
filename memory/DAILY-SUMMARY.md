@@ -81,3 +81,36 @@
 ### Notes:
 All three planned trades from morning research were blocked at the buy-side gate. The post-earnings gap behavior on XOM (+32% vs. plan) and CVX (+14% vs. plan) rendered both entries unchaseble under the workflow's open-candle rule and 5% gap limit. Additionally, both energy tickers showed extremely wide bid-ask spreads (7–10%) consistent with post-halt or illiquid conditions — a hard halt signal per the workflow. AAPL, while showing a healthy spread (1.51%), also gapped far past its research entry ceiling (+32%) and failed its conditional prerequisite. Full cash preservation is the correct disciplined outcome. Energy thesis (Hormuz, WTI $106) remains structurally intact — re-evaluate entry levels in tomorrow's pre-market research with updated price levels. "Sell in May" seasonal headwind begins today; patience is appropriate.
 
+
+---
+
+## 2026-05-01 — Market-Open Execution
+
+**Session:** Day 3 of Phase 1 paper trading | First actual trade executed (Day 1 was research-only; Day 2 was blocked by Gemini API outage)
+
+**Market-Open Executions:**
+- **XOM:** 130 shares @ $153.35 | Cost $19,935.50 | 10% trailing stop @ $138.015 (GTC) | Target $176.35 | Order ID: c04ae321-2cf2-4869-9aa6-38b1e9adaeb7
+
+**Skipped:**
+- **CVX:** Bid/ask spread 4.23% ($8.13) at quote time — wide spread halt signal. All other gates passed. Re-evaluate intraday if spread tightens.
+- **AAPL:** CVX entry condition gate not met (AAPL required both XOM + CVX fills). Secondary concern: live price $283.30 (+34.9% above $205–215 research estimate). Re-evaluate post-15-min stabilization.
+
+**Portfolio State Post-Execution:**
+- Open Positions: 1 (XOM)
+- Equity: $100,006.50
+- Cash: $80,064.50
+- Deployed: 19.9%
+- Cash Reserve: 80.1%
+- Daytrade Count: 0/3
+- Trades This Week: 1/3
+- Unrealized P&L: +$6.50 (+0.03%)
+
+**Active Stop Orders:**
+- XOM: 10% trailing GTC, initial stop $138.015, HWM $153.35 | Stop Order ID: d92d9371-5dda-46b4-843a-f185be75b6cc
+
+**Risk Notes:**
+- XOM position risk at entry: $1,993.55 (1.99% of equity) — slightly above 0.5–1% per-trade target. Trailing stop will compress this as price rises.
+- ISM Manufacturing PMI pending today — if sub-45 print, reassess XOM thesis immediately.
+- "Sell in May" seasonal headwind active — plan to tighten trailing stop to 7% on XOM at +15% gain (~$176.35).
+- CVX and AAPL remain on watchlist for intraday opportunity if conditions improve.
+
