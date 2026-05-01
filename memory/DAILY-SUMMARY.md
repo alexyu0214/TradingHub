@@ -114,3 +114,19 @@ All three planned trades from morning research were blocked at the buy-side gate
 - "Sell in May" seasonal headwind active — plan to tighten trailing stop to 7% on XOM at +15% gain (~$176.35).
 - CVX and AAPL remain on watchlist for intraday opportunity if conditions improve.
 
+
+## 2026-05-01 — EOD
+
+**Portfolio:** $99,870.00 (-0.13% day, -0.13% phase)
+**Cash:** $80,064.50 (80.17%)
+**Deployed:** 19.83%
+**Daytrade count:** 1/3
+
+**Trades today:** BUY XOM 130 shares @ $153.35 (cost basis $19,935.50; trailing stop GTC placed @ $138.78)
+**Open positions:** XOM -0.65% ($152.35 close vs $153.35 entry)
+**Stops tightened:** none (position < 1 day old; trailing stop live at 10% from HWM $154.20)
+**Losers cut:** none
+
+**Notes:** First live trade executed — XOM entered cleanly; CVX and AAPL correctly skipped per gate logic. Position slightly red EOD; no circuit breakers triggered.
+
+---

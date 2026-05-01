@@ -184,3 +184,17 @@ Every trade (entry, exit, stop-out) is logged here with full thesis, entry price
 **Reason (Secondary):** Live ask of $283.30 is +34.9% above research estimate of ~$205–$215. The research noted only +2.8–3.1% pre-market gap; actual open gapped far beyond. Research mandate: "do not buy the open gap — wait for 10-minute stabilization." No candle confirmation available at execution time. RSI likely elevated (research explicitly flagged as concern for AAPL). TERTIARY priority per research.
 **Note:** Potential re-evaluation after 15-min mark if CVX spread normalizes and both energy fills are confirmed.
 
+
+### May 01 — EOD Snapshot (Day 2, Friday)
+
+**Portfolio:** $99,870.00 | **Cash:** $80,064.50 (80.17%) | **Day P&L:** -$130.00 (-0.13%) | **Phase P&L:** -$130.00 (-0.13%) | **Deployed:** 19.83%
+
+| Ticker | Shares | Entry | Close | Unrealized P&L | Stop | Time |
+|--------|--------|-------|-------|----------------|------|------|
+| XOM | 130 | $153.35 | $152.35 | -$130.00 (-0.65%) | $138.78 (trail 10%, HWM $154.20) | 0 days |
+
+**Trades today:** BUY XOM — 130 shares @ $153.35 (filled ~09:41 CT; cost basis $19,935.50; 19.9% of equity)
+
+**Notes:** Day 2 marks the first live position — XOM entered at $153.35 as the energy thesis fired (CVX and AAPL were appropriately skipped per conditional gates). The position closed its first partial session slightly underwater at $152.35 (-$130 unrealized), well within normal intraday noise for a 130-share energy position. The trailing stop GTC order is live at $138.78 (10% trail from HWM $154.20), satisfying the hard-stop constraint. Cash remains high at 80.17% — below the 75–85% minimum-deployed target — but this reflects the bot's deliberate restraint given only one qualifying ticker cleared all gates today. CVX failed the spread/momentum check; AAPL failed its conditional entry gate. No circuit breakers triggered: day loss -0.13% (limit 2%), phase loss -0.13% (limit 5%), drawdown -0.13% (limit 15%). PDT daytrade count used: 1/3. Weekly trade count: 1/3. Heading into next week with one open energy position and full room to add 2 more trades.
+
+---
