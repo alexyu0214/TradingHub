@@ -110,45 +110,70 @@ WORKFLOW_RESEARCH_QUERIES: dict[str, list[str]] = {
 
 def gemini_research(queries: list[str]) -> str:
     """Run all research queries through Gemini with Google Search grounding.
-    Returns a markdown summary, or an empty fallback string if Gemini fails."""
+    Retries on transient failures, falls back across models. Returns a markdown
+    summary, or a clearly-marked failure string if all attempts fail."""
     print(f"    [gemini] researching {len(queries)} queries...")
     try:
         from google import genai
         from google.genai import types
+    except ImportError as e:
+        return f"[Gemini research failed: SDK not installed ({e})]"
 
-        api_key = os.environ.get("GEMINI_API_KEY")
-        if not api_key:
-            return "[Gemini research unavailable: GEMINI_API_KEY not set]"
+    api_key = os.environ.get("GEMINI_API_KEY")
+    if not api_key:
+        return "[Gemini research unavailable: GEMINI_API_KEY not set]"
 
-        client = genai.Client(api_key=api_key)
+    client = genai.Client(api_key=api_key)
 
-        bullets = "\n".join(f"- {q}" for q in queries)
-        prompt = (
-            "You are a financial research assistant. Research each of the queries "
-            "below using current web data and produce a concise, fact-dense markdown "
-            "summary.\n\n"
-            "Format:\n"
-            "- One subsection per query, with a short ### heading.\n"
-            "- Lead with concrete numbers (prices, percentages, levels) wherever possible.\n"
-            "- Note today's date implicitly via the data freshness.\n"
-            "- No fluff, no disclaimers. Just facts and key context.\n"
-            "- Total length: 400-800 words.\n\n"
-            f"Queries:\n{bullets}\n"
-        )
+    bullets = "\n".join(f"- {q}" for q in queries)
+    prompt = (
+        "You are a financial research assistant. Research each of the queries "
+        "below using current web data and produce a concise, fact-dense markdown "
+        "summary.\n\n"
+        "Format:\n"
+        "- One subsection per query, with a short ### heading.\n"
+        "- Lead with concrete numbers (prices, percentages, levels) wherever possible.\n"
+        "- Note today's date implicitly via the data freshness.\n"
+        "- No fluff, no disclaimers. Just facts and key context.\n"
+        "- Total length: 400-800 words.\n\n"
+        f"Queries:\n{bullets}\n"
+    )
 
-        response = client.models.generate_content(
-            model="gemini-2.5-flash",
-            contents=prompt,
-            config=types.GenerateContentConfig(
-                tools=[types.Tool(google_search=types.GoogleSearch())],
-            ),
-        )
-        text = (response.text or "").strip()
-        if not text:
-            return "[Gemini returned empty research]"
-        return text
-    except Exception as e:
-        return f"[Gemini research failed: {e}]"
+    # Try multiple models in order. If one is overloaded (503), fall back to the next.
+    models_to_try = ["gemini-2.5-flash", "gemini-2.5-pro", "gemini-1.5-flash"]
+    last_error: Exception | None = None
+
+    for model_name in models_to_try:
+        # Retry transient failures (5xx, timeouts) up to 3 times per model
+        for attempt in range(3):
+            try:
+                response = client.models.generate_content(
+                    model=model_name,
+                    contents=prompt,
+                    config=types.GenerateContentConfig(
+                        tools=[types.Tool(google_search=types.GoogleSearch())],
+                    ),
+                )
+                text = (response.text or "").strip()
+                if text:
+                    print(f"    [gemini] success with {model_name} on attempt {attempt + 1}")
+                    return text
+                # Empty response → try again
+                last_error = RuntimeError("empty response")
+            except Exception as e:
+                last_error = e
+                msg = str(e).lower()
+                # Don't retry permanent errors (auth, bad request, etc.)
+                if any(p in msg for p in ["api key", "invalid", "permission", "unauthorized", "400"]):
+                    return f"[Gemini research failed: {e}]"
+                # Transient — wait and retry
+                wait = 5 * (attempt + 1)
+                print(f"    [gemini] {model_name} attempt {attempt + 1} failed ({e}); retrying in {wait}s")
+                time.sleep(wait)
+
+        print(f"    [gemini] {model_name} exhausted retries; trying next model")
+
+    return f"[Gemini research failed after all retries: {last_error}]"
 
 
 # ---------------------------------------------------------------------------
