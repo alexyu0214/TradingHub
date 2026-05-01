@@ -73,3 +73,65 @@ Grading scale:
 - **Grade** keeps you honest about execution quality
 
 Every Friday, take 15 minutes to fill this out. Use it to calibrate next week.
+
+## Week ending 2026-05-01
+
+### Stats
+| Metric | Value |
+|--------|-------|
+| Starting portfolio | $100,000.00 |
+| Ending portfolio | $99,889.50 |
+| Week return | −$110.50 (−0.11%) |
+| S&P 500 week | +0.91% |
+| Bot vs S&P 500 | −1.02% |
+| Trades executed | 1 |
+| Wins | 0 (no closed trades) |
+| Losses | 0 (no closed trades) |
+| Open positions | 1 (XOM) |
+| Win rate | N/A (0 closed trades) |
+| Best trade | N/A |
+| Worst trade | N/A |
+| Profit factor | N/A |
+| Max intraweek drawdown | −0.14% (peak $100,006.50 → trough $99,870.00) |
+
+### Closed Trades (This Week)
+| Date | Ticker | Entry | Exit | P&L | Hold (days) | Notes |
+|------|--------|-------|------|-----|-------------|-------|
+| — | — | — | — | — | — | No closed trades this week |
+
+### Open Positions at Week End
+| Ticker | Entry | Close | Unrealized | Stop |
+|--------|-------|-------|------------|------|
+| XOM | $153.35 | $152.50 | −$110.50 (−0.55%) | $138.78 (10% trailing GTC, HWM $154.20) |
+
+### What Worked (3–5 bullets)
+- **Gate discipline held on day-1 chaos:** When XOM/CVX/AAPL all gapped 14–32% past research ceilings at the first execution window (13:38 UTC), the spread-check and gap-chase rules correctly blocked all three entries — avoiding buying into post-earnings volatility at deeply unfavorable prices.
+- **Second-session re-entry on XOM was clean:** After monitoring for spread normalization, XOM was entered at $153.35 with a healthy spread, a valid catalyst, and a GTC trailing stop placed immediately — textbook procedure execution.
+- **Research-blackout protocol worked:** Two consecutive sessions of Gemini API failure (Day 1: 503 outage; Day 2: 403 key revoked) correctly produced HOLD decisions rather than uninformed trades. Cash was preserved 100% through both blackout days.
+- **Trailing stop placed immediately at fill:** GTC trailing stop (10%) was live within seconds of the XOM fill. Stop auto-adjusted intraday from $138.015 (initial) to $138.78 as price briefly ticked up to HWM $154.20 — exactly the intended behavior.
+- **Max drawdown contained:** The worst point of the week was −0.14% of equity. With only one position at ~20% deployment, the portfolio has a large cash buffer absorbing volatility cleanly.
+
+### What Didn't Work (3–5 bullets)
+- **Research pipeline failure burned two full trading days:** The Gemini API blackout on Apr 30 (Day 1: 503; Day 2: 403 key leak) meant the bot could not screen or generate catalysts for the first two sessions of Phase 1. Two of five tradeable sessions were effectively lost. API key rotation must happen before any research-dependent session.
+- **Energy thesis entry levels were badly miscalibrated:** Research estimated XOM at $118–122 and CVX at $165–170; both opened 30%+ above those levels on earnings day. The gap between research price estimates and actual open prices exposed a gap in the research process — earnings-day entry levels should always be treated as "estimate only, confirm live" with explicit re-anchoring logic.
+- **Zero diversification achieved:** Only one position (XOM, ~20% deployed) was opened against a target of 75–85% deployed. The remaining 80% of capital sat idle in cash for the full week. While justifiable given gate failures, it means the portfolio had almost no market participation during a strong +0.91% S&P week.
+- **AAPL conditional gate chain created fragility:** Making AAPL contingent on both XOM AND CVX fills meant that when the primary energy pair failed, AAPL — which had a clean spread (1.51%) — was automatically blocked even though its individual catalyst (Q2 earnings beat) remained valid. The conditional-chain approach needs reconsideration for cases where secondary/tertiary ideas have independent catalysts.
+- **CVX skipped both sessions despite recovering spread:** On the first execution attempt CVX spread was 6.93% (correctly skipped); on the second it was 4.23% (still wide, correctly skipped). However, the bot never circled back intraday to check if CVX tightened further. An intraday re-evaluation loop would have allowed CVX entry if spread dropped to <2%.
+
+### Key Lessons (2–3 bullets)
+- **Re-anchor entry levels same-morning:** Pre-market research estimates for gapping stocks are starting points, not hard targets. A same-morning check (even 30 minutes before open) against live pre-market quotes would catch gaps early and allow revised entry/spread thresholds — preventing the execution-window surprise that blocked three trades simultaneously.
+- **Decouple tertiary ideas from failed entry chains:** Independent catalysts should be evaluated independently. If XOM/CVX fail their gate for structural reasons (spread, gap), AAPL should re-run its own gate check from scratch rather than being auto-blocked by the parent chain's failure.
+- **API key rotation is a hard pre-condition, not a nice-to-have:** Two full trading days were lost to a revoked API key. This must be treated as a launch-blocking issue — same severity as the trading-blocked flag. Add a key health-check to the startup routine.
+
+### Adjustments for Next Week
+- **Add same-morning pre-open quote check (T−30 min):** Before the execution window opens, pull live pre-market quotes for all planned ideas. If any has gapped >5% past the research estimate, auto-flag for entry-ceiling revision or defer to first-candle confirmation entry logic.
+- **Decouple conditional gates for independent catalysts:** AAPL-style tertiary ideas that have their own valid catalyst should run independent gate checks. Remove the hard "energy fills first" prerequisite; replace with cash-headroom check only (e.g., "cash after this fill ≥ 30% of equity").
+- **Add intraday re-evaluation step (T+60 min):** At ~10:30–11:00 CT, re-check spreads and price levels for any skipped ticker. If spread has normalized and price is within 5% of revised ceiling, re-enter decision tree.
+- **Target 3 open positions by mid-next-week:** With the S&P 500 hitting all-time highs (+13.52% over five weeks, 12th ATH close YTD) and the bot only 20% deployed, add 1–2 more positions in leading sectors (Energy, Industrials, Materials) to improve market participation. Do not force entries — use intraday setups if morning research finds no clean open.
+- **Re-evaluate XOM stop level if price consolidates above $155:** At +1% from entry the trailing stop still sits at $138.78 (−10% from HWM). If XOM holds above $155 next week, consider monitoring for the tightening trigger at +15% ($176.35). Sector tail risk (Hormuz binary) justifies keeping the stop wide for now.
+
+### Overall Grade: C
+**Justification:** The bot underperformed the S&P 500 by −1.02% in a week the index gained +0.91% (its 5th consecutive up week and a new ATH). However, this was a launch week with extraordinary operational obstacles: two full research blackouts (API failures), three trades simultaneously blocked by post-earnings gap conditions, and only 20% of capital deployed. The core discipline held perfectly — no rules violations, no bad entries chased, no stops broken. The grade reflects strong *process* (C+ on process) but weak *outcome* (C− on market participation and return). The operational issues (API key, entry-ceiling recalibration) are fixable and should not recur.
+
+---
+

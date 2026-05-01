@@ -130,3 +130,17 @@ All three planned trades from morning research were blocked at the buy-side gate
 **Notes:** First live trade executed — XOM entered cleanly; CVX and AAPL correctly skipped per gate logic. Position slightly red EOD; no circuit breakers triggered.
 
 ---
+
+## WEEK ENDING 2026-05-01 — WEEKLY RECAP
+
+**Portfolio:** $99,889.50 (−0.11% week, −0.11% phase)
+vs S&P 500: −1.02% (S&P +0.91% | 5th consecutive up week | 12th ATH close YTD)
+
+**Trades:** 1 executed (W:0 / L:0 / open:1 XOM)
+**Win rate:** N/A (0 closed trades) | **Best:** N/A | **Worst:** N/A
+
+**Key win:** Gate discipline prevented three bad entries — XOM/CVX/AAPL all gapped 14–32% past research ceilings at the first execution window; wide spreads (7–10%) on energy names correctly triggered halt signals, avoiding adverse-selection fills.
+**Lesson learned:** Re-anchor entry ceilings same-morning using live pre-market quotes (T−30 min); decouple independent catalyst ideas from failed entry chains so clean setups (AAPL spread 1.51% ✅) aren't auto-blocked.
+**Grade:** C
+
+---
