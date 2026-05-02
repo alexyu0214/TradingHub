@@ -262,3 +262,21 @@ Every trade (entry, exit, stop-out) is logged here with full thesis, entry price
 **Circuit breakers:** ✅ All clear — Day 0.00% (lim -2%) | Phase -0.078% (lim -5%) | Drawdown -0.078% (lim -15%)
 
 ---
+
+### May 05 — EOD Snapshot (Day 5, Monday)
+
+**Portfolio:** $99,922.00 | **Cash:** $80,064.50 (80.13%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** -$78.00 (-0.078%) | **Deployed:** 19.87%
+
+| Ticker | Shares | Entry | Close | Unrealized P&L | Stop | Time |
+|--------|--------|-------|-------|----------------|------|------|
+| XOM | 130 | $153.35 | $152.75 | -$78.00 (-0.39%) | $138.78 (GTC trail 10%, HWM $154.20) | 2 trading days |
+
+**Trades today:** none
+
+**Notes:** Day 5 is Monday, the first trading day of the new week. Despite the market being open, no price movement registered for XOM — last_equity and current equity are both $99,922.00 per the API, yielding a flat Day P&L of $0.00. The position remains unchanged: 130 shares of XOM entered May 1 at $153.35, currently marked at $152.75 (−$78.00, −0.39% unrealized). The structural energy thesis (Hormuz supply-risk premium, WTI elevated, XOM post-earnings momentum) stays intact and no thesis-break signals have appeared. The GTC trailing stop at $138.78 (10% trail from HWM $154.20) is live, unmodified, and correctly placed — no tightening warranted as the position has not yet hit +15% to trigger the first trailing escalation rule. Cash at 80.13% is above the 75% minimum deployment floor, leaving room for up to 2 additional positions. This is a fresh week: weekly trade count resets to 0/3 (XOM was entered the prior week, May 1). No trades placed today. PDT daytrade count: 0/3. All circuit breakers clear. No sector concentration pressure. Bot is in a patient hold posture: watch XOM for continuation or stop trigger, scan for new setups within the weekly 3-trade limit.
+
+- Daytrade count: 0/3 | PDT flag: false
+
+**Circuit breakers:** ✅ All clear — Day 0.00% (lim -2%) | Phase -0.078% (lim -5%) | Drawdown -0.078% (lim -15%)
+
+---

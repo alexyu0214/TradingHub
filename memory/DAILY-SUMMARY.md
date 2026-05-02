@@ -210,3 +210,19 @@ vs S&P 500: −1.02% (S&P +0.91% | 5th consecutive up week | 12th ATH close YTD)
 **Notes:** Non-trading Sunday; equity flat at $99,922.00. XOM thesis intact entering Monday. Weekly trade allowance resets to 3/3.
 
 ---
+
+## 2026-05-05 — EOD
+
+**Portfolio:** $99,922.00 (+0.00% day, -0.078% phase)
+**Cash:** $80,064.50 (80.13%)
+**Deployed:** 19.87%
+**Daytrade count:** 0/3
+
+**Trades today:** none
+**Open positions:** XOM −0.39% (130 sh @ $153.35 entry, close $152.75, unrealized −$78.00)
+**Stops tightened:** none (XOM not yet at +15% threshold for first trailing escalation)
+**Losers cut:** none
+
+**Notes:** Flat Monday — XOM held, no new trades; fresh weekly allowance of 3/3 available; all circuit breakers clear; bot in patient hold/scan posture.
+
+---
