@@ -24,6 +24,9 @@ jobs:
         with:
           python-version: '3.12'
 
+      - name: Install system dependencies for PDF rendering
+        run: sudo apt-get update && sudo apt-get install -y libpango-1.0-0 libpangoft2-1.0-0
+
       - name: Install dependencies
         run: pip install -r scripts/requirements.txt
 
@@ -51,3 +54,10 @@ jobs:
             git commit -m "chore: daily-summary fallback commit" || true
             git push || true
           fi
+
+      - name: Send PDF report to Telegram
+        if: always()
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python scripts/send_report.py daily
