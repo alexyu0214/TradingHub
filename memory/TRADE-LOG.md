@@ -226,3 +226,21 @@ Every trade (entry, exit, stop-out) is logged here with full thesis, entry price
 **Circuit breakers:** ✅ All clear — Day -0.078% (lim -2%) | Phase -0.078% (lim -5%) | Drawdown -0.078% (lim -15%)
 
 ---
+
+### May 02 — EOD Snapshot (Day 3, Saturday — Second Run ~06:18 UTC)
+
+**Portfolio:** $99,922.00 | **Cash:** $80,064.50 (80.13%) | **Day P&L:** $0.00 (0.00%) | **Phase P&L:** -$78.00 (-0.078%) | **Deployed:** 19.87%
+
+| Ticker | Shares | Entry | Close | Unrealized P&L | Stop | Time |
+|--------|--------|-------|-------|----------------|------|------|
+| XOM | 130 | $153.35 | $152.75 | -$78.00 (-0.39%) | $138.78 (GTC trail 10%, HWM $154.20) | 1 day |
+
+**Trades today:** none (market closed — weekend, Saturday)
+
+**Notes:** Second EOD workflow execution on Saturday May 2. All API values are identical to the first run (~06:01 UTC): equity $99,922.00, cash $80,064.50, XOM 130 shares at $152.75. No price movement during the weekend session as expected. Day P&L is $0.00 since the prior logged EOD was already at today's price; Phase P&L holds at -$78.00 (-0.078%) vs the $100,000 starting baseline. XOM's trailing stop GTC order remains live at $138.78 (10% trail, HWM $154.20, expires 2026-07-30). The position is 1 trading day old. Cash at 80.13% is above the 75–85% minimum deployment lower bound — the bot has dry powder for up to 2 additional positions when Monday trading resumes. Weekly trade count stands at 1/3 (XOM entry on May 1). No circuit breakers triggered. PDT daytrade count: 0/3. All constraints satisfied heading into the week.
+
+- Daytrade count: 0/3 | PDT flag: false
+
+**Circuit breakers:** ✅ All clear — Day 0.00% (lim -2%) | Phase -0.078% (lim -5%) | Drawdown -0.078% (lim -15%)
+
+---
