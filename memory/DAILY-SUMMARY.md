@@ -144,3 +144,18 @@ vs S&P 500: −1.02% (S&P +0.91% | 5th consecutive up week | 12th ATH close YTD)
 **Grade:** C
 
 ---
+## 2026-05-02 — EOD
+
+**Portfolio:** $99,922.00 (-0.078% day, -0.078% phase)
+**Cash:** $80,064.50 (80.13%)
+**Deployed:** 19.87%
+**Daytrade count:** 0/3
+
+**Trades today:** none (weekend — market closed)
+**Open positions:** XOM -0.39% (130 shares @ $153.35, close $152.75, MV $19,857.50)
+**Stops tightened:** none (XOM trailing stop unchanged at $138.78, HWM $154.20)
+**Losers cut:** none
+
+**Notes:** Non-trading Saturday; XOM holds as sole open position, -$78 unrealized, all circuit breakers clear, 2 trade slots available for next week.
+
+---

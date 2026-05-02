@@ -198,3 +198,17 @@ Every trade (entry, exit, stop-out) is logged here with full thesis, entry price
 **Notes:** Day 2 marks the first live position — XOM entered at $153.35 as the energy thesis fired (CVX and AAPL were appropriately skipped per conditional gates). The position closed its first partial session slightly underwater at $152.35 (-$130 unrealized), well within normal intraday noise for a 130-share energy position. The trailing stop GTC order is live at $138.78 (10% trail from HWM $154.20), satisfying the hard-stop constraint. Cash remains high at 80.17% — below the 75–85% minimum-deployed target — but this reflects the bot's deliberate restraint given only one qualifying ticker cleared all gates today. CVX failed the spread/momentum check; AAPL failed its conditional entry gate. No circuit breakers triggered: day loss -0.13% (limit 2%), phase loss -0.13% (limit 5%), drawdown -0.13% (limit 15%). PDT daytrade count used: 1/3. Weekly trade count: 1/3. Heading into next week with one open energy position and full room to add 2 more trades.
 
 ---
+
+### May 02 — EOD Snapshot (Day 3, Saturday)
+
+**Portfolio:** $99,922.00 | **Cash:** $80,064.50 (80.13%) | **Day P&L:** -$78.00 (-0.078%) | **Phase P&L:** -$78.00 (-0.078%) | **Deployed:** 19.87%
+
+| Ticker | Shares | Entry | Close | Unrealized P&L | Stop | Time |
+|--------|--------|-------|-------|----------------|------|------|
+| XOM | 130 | $153.35 | $152.75 | -$78.00 (-0.39%) | $138.78 (GTC trail 10%, HWM $154.20) | 1 day |
+
+**Trades today:** none (market closed — weekend)
+
+**Notes:** Day 3 is a non-trading Saturday; no market activity. Portfolio holds steady with one open position in XOM (Energy). The day-over-day P&L of -$78.00 (-0.078%) reflects XOM's closing price of $152.75 vs. the $100,000 last_equity baseline — a trivially small move and well within normal noise. The trailing stop GTC order remains live at $138.78 (10% trail from HWM $154.20), protecting the downside. Cash stands at 80.13%, slightly above the 75–85% deployment band's lower bound, meaning the bot has dry powder for up to 2 more positions (subject to the 3-trades/week cap, of which 2 remain). No circuit breakers active: day loss -0.078% (limit 2%), phase loss -0.078% (limit 5%), drawdown -0.078% (limit 15%). PDT daytrade count reset per API: 0/3. Heading into next week with XOM as the sole open position, full weekly trade allowance (2 of 3 remaining), and no sector concentration pressure.
+
+---
