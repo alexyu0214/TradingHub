@@ -194,3 +194,19 @@ vs S&P 500: −1.02% (S&P +0.91% | 5th consecutive up week | 12th ATH close YTD)
 **Notes:** Weekend recheck — no market activity, all figures unchanged from earlier Day 3 run. XOM trailing stop GTC live at $138.78. Ready for Monday open with 2 of 3 weekly trades remaining.
 
 ---
+
+## 2026-05-04 — EOD (Day 4, Sunday)
+
+**Portfolio:** $99,922.00 (+0.00% day, -0.078% phase)
+**Cash:** $80,064.50 (80.13%)
+**Deployed:** 19.87%
+**Daytrade count:** 0/3
+
+**Trades today:** none (market closed — Sunday)
+**Open positions:** XOM -0.39% (130 sh @ $153.35 entry, close $152.75, unrealized -$78.00)
+**Stops tightened:** none (no intraday movement; trailing stop GTC at $138.78 / HWM $154.20 unchanged)
+**Losers cut:** none
+
+**Notes:** Non-trading Sunday; equity flat at $99,922.00. XOM thesis intact entering Monday. Weekly trade allowance resets to 3/3.
+
+---
