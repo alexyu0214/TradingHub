@@ -212,3 +212,17 @@ Every trade (entry, exit, stop-out) is logged here with full thesis, entry price
 **Notes:** Day 3 is a non-trading Saturday; no market activity. Portfolio holds steady with one open position in XOM (Energy). The day-over-day P&L of -$78.00 (-0.078%) reflects XOM's closing price of $152.75 vs. the $100,000 last_equity baseline — a trivially small move and well within normal noise. The trailing stop GTC order remains live at $138.78 (10% trail from HWM $154.20), protecting the downside. Cash stands at 80.13%, slightly above the 75–85% deployment band's lower bound, meaning the bot has dry powder for up to 2 more positions (subject to the 3-trades/week cap, of which 2 remain). No circuit breakers active: day loss -0.078% (limit 2%), phase loss -0.078% (limit 5%), drawdown -0.078% (limit 15%). PDT daytrade count reset per API: 0/3. Heading into next week with XOM as the sole open position, full weekly trade allowance (2 of 3 remaining), and no sector concentration pressure.
 
 ---
+
+### May 02 — EOD Workflow Verification Run (Day 3, Saturday — Confirmed)
+
+> **Automated EOD workflow executed Sat May 02 ~06:01 UTC.** API pulled; all figures reconciled against the earlier Day 3 snapshot. No drift detected — equity $99,922.00 matches log exactly. No new writes required; this note confirms the workflow ran cleanly.
+
+**API snapshot at verification time:**
+- Equity: $99,922.00 | Cash: $80,064.50 (80.13%) | Long MV: $19,857.50
+- XOM: 130 sh @ $153.35 entry → $152.75 close | Unrealized: -$78.00 (-0.39%)
+- Trailing stop GTC: $138.78 (10% trail, HWM $154.20) | Status: `new` (live)
+- Daytrade count: 0/3 | PDT flag: false
+
+**Circuit breakers:** ✅ All clear — Day -0.078% (lim -2%) | Phase -0.078% (lim -5%) | Drawdown -0.078% (lim -15%)
+
+---

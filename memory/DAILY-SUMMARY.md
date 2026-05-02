@@ -159,3 +159,22 @@ vs S&P 500: −1.02% (S&P +0.91% | 5th consecutive up week | 12th ATH close YTD)
 **Notes:** Non-trading Saturday; XOM holds as sole open position, -$78 unrealized, all circuit breakers clear, 2 trade slots available for next week.
 
 ---
+
+## 2026-05-02 — EOD Workflow Verification (Day 3 Re-confirmed)
+
+> EOD workflow re-run Sat May 02 ~06:01 UTC. Live API reconciled against Day 3 snapshot — zero drift. No new entries needed; this run confirms data integrity.
+
+**Portfolio:** $99,922.00 (−0.078% day, −0.078% phase) ← confirmed match
+**Cash:** $80,064.50 (80.13%)
+**Deployed:** 19.87%
+**Daytrade count:** 0/3
+
+**Trades today:** none (weekend)
+**Open positions:** XOM −0.39% (unchanged from Day 3 snapshot)
+**Stops tightened:** none
+**Losers cut:** none
+**Circuit breakers:** ✅ all clear
+
+**Notes:** Workflow verification pass — Day 3 EOD data confirmed accurate and consistent with live Alpaca API. No corrections needed. Bot heads into the week with 1 open position (XOM), 2 trade slots, full PDT allowance reset.
+
+---
