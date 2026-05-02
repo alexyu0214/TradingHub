@@ -170,12 +170,28 @@ def parse_decision_notes(daily_md: str) -> str:
 
 
 def parse_market_context(research_md: str) -> str:
-    """Pull a compact market context line from RESEARCH-LOG."""
+    """Pull a compact market context line from RESEARCH-LOG.
+    Strips backward-looking carryover sections (yesterday's outcome, prior-day
+    notes) so the PDF only shows fresh data, not historical context the bot
+    keeps for its own decision-making."""
     last = extract_last_entry(research_md)
     m = re.search(r"###\s*Market Context\s*\n(.+?)(?=\n###|\Z)", last, re.DOTALL)
     if not m:
         return ""
-    return m.group(1).strip()
+    text = m.group(1).strip()
+
+    # Drop any retrospective subsections (e.g., **Yesterday's Research Outcome:**,
+    # **Prior Day Notes:**, **Carryover from yesterday:**). Truncate at the first
+    # such heading and keep only forward-looking content above it.
+    cutoff_pattern = re.compile(
+        r"\n\s*\*\*\s*(?:yesterday|prior\s*day|previous|carryover)[^*]*\*\*",
+        re.IGNORECASE,
+    )
+    cutoff = cutoff_pattern.search(text)
+    if cutoff:
+        text = text[: cutoff.start()].rstrip()
+
+    return text
 
 
 def _grab(text: str, pattern: str, default: str = "") -> str:
