@@ -200,11 +200,92 @@ def _grab(text: str, pattern: str, default: str = "") -> str:
 
 
 # ---------------------------------------------------------------------------
+# Weekly review parsers (read from memory/WEEKLY-REVIEW.md)
+# ---------------------------------------------------------------------------
+
+def parse_weekly_stats(weekly_md: str) -> dict[str, str]:
+    """Extract the Stats table key/value pairs from latest weekly entry."""
+    last = extract_last_entry(weekly_md)
+    section = re.search(r"###\s*Stats\s*\n(.+?)(?=\n###|\Z)", last, re.DOTALL)
+    if not section:
+        return {}
+    out: dict[str, str] = {}
+    for line in section.group(1).splitlines():
+        if not line.startswith("|"):
+            continue
+        cells = [c.strip() for c in line.strip().strip("|").split("|")]
+        if len(cells) != 2:
+            continue
+        key, value = cells
+        if key.lower() in ("metric", "") or key.startswith("-"):
+            continue
+        slug = re.sub(r"[^a-z0-9]+", "_", key.lower()).strip("_")
+        out[slug] = value
+    return out
+
+
+def parse_weekly_closed_trades(weekly_md: str) -> list[dict[str, str]]:
+    """Pull the Closed Trades table from latest weekly entry."""
+    last = extract_last_entry(weekly_md)
+    section = re.search(
+        r"###\s*Closed Trades.*?\n(.+?)(?=\n###|\Z)", last, re.DOTALL
+    )
+    if not section:
+        return []
+    trades: list[dict[str, str]] = []
+    for line in section.group(1).splitlines():
+        if not line.startswith("|"):
+            continue
+        cells = [c.strip() for c in line.strip().strip("|").split("|")]
+        # Skip header and separator rows
+        if len(cells) < 7 or cells[0].lower() == "date" or cells[0].startswith("-"):
+            continue
+        trades.append({
+            "date": cells[0], "ticker": cells[1], "entry": cells[2],
+            "exit": cells[3], "pnl": cells[4], "hold": cells[5], "notes": cells[6],
+        })
+    return trades
+
+
+def parse_weekly_bullets(weekly_md: str, section_name: str) -> list[str]:
+    """Extract bullet list from a named ### section (e.g., 'What Worked')."""
+    last = extract_last_entry(weekly_md)
+    pattern = rf"###\s*{re.escape(section_name)}.*?\n(.+?)(?=\n###|\n---|\Z)"
+    m = re.search(pattern, last, re.DOTALL | re.IGNORECASE)
+    if not m:
+        return []
+    bullets: list[str] = []
+    for line in m.group(1).splitlines():
+        line = line.strip()
+        if line.startswith("- ") or line.startswith("* "):
+            text = line[2:].strip()
+            # Strip example brackets like [e.g., "..."] that ROUTINE.md uses as placeholders
+            if text.startswith("[") and text.endswith("]"):
+                continue
+            bullets.append(text)
+    return bullets
+
+
+def parse_weekly_grade(weekly_md: str) -> tuple[str, str]:
+    """Pull the letter grade and justification."""
+    last = extract_last_entry(weekly_md)
+    m = re.search(
+        r"###\s*Overall Grade:\s*([A-F])(?:\s*\([^)]*\))?\s*\n(.*?)(?=\n###|\n---|\Z)",
+        last,
+        re.DOTALL | re.IGNORECASE,
+    )
+    if not m:
+        return ("—", "")
+    return (m.group(1).strip().upper(), m.group(2).strip())
+
+
+# ---------------------------------------------------------------------------
 # Gemini: tomorrow's watchlist
 # ---------------------------------------------------------------------------
 
-def gemini_tomorrow_watchlist() -> list[dict[str, str]]:
-    """Use Gemini with Google Search grounding to identify 5 watchlist candidates."""
+def gemini_watchlist(window: str = "tomorrow") -> list[dict[str, str]]:
+    """Use Gemini with Google Search grounding to identify 5 watchlist candidates.
+    window='tomorrow' for daily report; 'next_week' for weekly report."""
     try:
         from google import genai
         from google.genai import types
@@ -216,15 +297,26 @@ def gemini_tomorrow_watchlist() -> list[dict[str, str]]:
         return []
 
     client = genai.Client(api_key=api_key)
-    tomorrow = (date.today() + timedelta(days=1)).strftime("%A %B %d, %Y")
+
+    if window == "next_week":
+        next_mon = date.today() + timedelta(days=(7 - date.today().weekday()) % 7 or 7)
+        next_fri = next_mon + timedelta(days=4)
+        timeframe = (
+            f"the upcoming trading week ({next_mon.strftime('%a %b %d')} - "
+            f"{next_fri.strftime('%a %b %d')})"
+        )
+        catalyst_hint = "earnings, Fed events, macro releases, or sector rotations expected during that week"
+    else:
+        tomorrow = (date.today() + timedelta(days=1)).strftime("%A %B %d, %Y")
+        timeframe = f"the trading session on {tomorrow}"
+        catalyst_hint = "earnings (pre/post-market), Fed/macro events, or technical setups (RSI<30 in uptrend, oversold bounce, breakout)"
+
     prompt = (
-        f"Identify exactly 5 US large-cap stocks worth watching for the trading "
-        f"session on {tomorrow}. Focus on names with concrete catalysts: earnings "
-        f"(pre/post-market), Fed/macro events, or technical setups (RSI<30 in "
-        f"uptrend, oversold bounce, breakout from base).\n\n"
+        f"Identify exactly 5 US large-cap stocks worth watching for {timeframe}. "
+        f"Focus on names with concrete catalysts: {catalyst_hint}.\n\n"
         f"Return ONLY a JSON array, no prose. Each entry must have these exact keys:\n"
         f'  "ticker"   — string, e.g. "NVDA"\n'
-        f'  "catalyst" — string, the specific event/news driving the setup tomorrow\n'
+        f'  "catalyst" — string, the specific event/news driving the setup\n'
         f'  "setup"    — string, the technical or fundamental pattern\n'
         f'  "why"      — string, one sentence on why it\'s high-probability\n\n'
         f"Skip: OTC names, penny stocks, micro-caps, illiquid tickers."
@@ -433,46 +525,134 @@ def render_daily_html(ctx: dict[str, Any]) -> str:
 
 
 def render_weekly_html(ctx: dict[str, Any]) -> str:
-    kpis = ctx["kpis"]
     today = ctx["today"]
     day_n = ctx["day_n"]
     watchlist = ctx["watchlist"]
-    notes = ctx["notes"]
+    stats = ctx["weekly_stats"]
+    closed_trades = ctx["closed_trades"]
+    worked = ctx["what_worked"]
+    didnt = ctx["what_didnt"]
+    lessons = ctx["lessons"]
+    adjustments = ctx["adjustments"]
+    grade_letter, grade_justification = ctx["grade"]
 
+    # KPI row from weekly stats (with sensible fallbacks)
+    starting = stats.get("starting_portfolio", fmt_money(STARTING_EQUITY))
+    ending = stats.get("ending_portfolio", "—")
+    week_return = stats.get("week_return", "—")
+    vs_sp = stats.get("bot_vs_s_p_500", stats.get("bot_vs_s&p_500", "—"))
+
+    # Trajectory bar (% complete vs +30% paper target)
     pct_to_target = 0.0
-    if kpis.get("equity"):
-        pct_to_target = (
-            (kpis["equity"] - STARTING_EQUITY) / (PAPER_TARGET_EQUITY - STARTING_EQUITY) * 100
-        )
+    ending_clean = re.sub(r"[^\d.]", "", ending)
+    if ending_clean:
+        try:
+            equity = float(ending_clean)
+            pct_to_target = (
+                (equity - STARTING_EQUITY)
+                / (PAPER_TARGET_EQUITY - STARTING_EQUITY)
+                * 100
+            )
+        except ValueError:
+            pass
     pct_to_target = max(0.0, min(100.0, pct_to_target))
 
-    weekly_section = f"""
+    kpi_section = f"""
     <div class="kpi-row">
-      <div class="kpi-card">
-        <div class="kpi-value" style="color:{THEME['teal']}">{fmt_money(kpis.get('phase_pl_dollar'), sign=True)}</div>
-        <div class="kpi-label">Phase P&L</div>
-      </div>
-      <div class="kpi-card">
-        <div class="kpi-value" style="color:{THEME['teal']}">{fmt_money(STARTING_EQUITY)}</div>
-        <div class="kpi-label">Starting Capital</div>
-      </div>
-      <div class="kpi-card">
-        <div class="kpi-value" style="color:{THEME['teal']}">{fmt_money(kpis.get('equity'))}</div>
-        <div class="kpi-label">Current Equity</div>
-      </div>
-      <div class="kpi-card">
-        <div class="kpi-value" style="color:{THEME['teal']}">{fmt_money((PAPER_TARGET_EQUITY - STARTING_EQUITY) / SPRINT_DAYS)}</div>
-        <div class="kpi-label">Daily Gain Target</div>
-      </div>
+      <div class="kpi-card"><div class="kpi-value" style="color:{THEME['teal']}">{week_return}</div><div class="kpi-label">Week Return</div></div>
+      <div class="kpi-card"><div class="kpi-value" style="color:{THEME['teal']}">{starting}</div><div class="kpi-label">Starting Equity</div></div>
+      <div class="kpi-card"><div class="kpi-value" style="color:{THEME['teal']}">{ending}</div><div class="kpi-label">Ending Equity</div></div>
+      <div class="kpi-card"><div class="kpi-value" style="color:{THEME['teal']}">{vs_sp}</div><div class="kpi-label">vs S&P 500</div></div>
     </div>
 
     <h2>Trajectory to ${PAPER_TARGET_EQUITY:,.0f} <span style="color:{THEME['muted']};font-weight:400">(paper validation +30%)</span></h2>
-    <div class="progress-track">
-      <div class="progress-fill" style="width:{pct_to_target:.1f}%"></div>
-    </div>
-    <div class="progress-label">{pct_to_target:.1f}% of paper target achieved · Day {day_n} of {SPRINT_DAYS}</div>
+    <div class="progress-track"><div class="progress-fill" style="width:{pct_to_target:.1f}%"></div></div>
+    <div class="progress-label">{pct_to_target:.1f}% of paper target · Day {day_n} of {SPRINT_DAYS}</div>
     """
 
+    # Performance stats grid (the rest of the metrics from the Stats table)
+    stat_pairs = [
+        ("Trades Executed", stats.get("trades_executed", "—")),
+        ("Win Rate", stats.get("win_rate", "—")),
+        ("Best Trade", stats.get("best_trade", "—")),
+        ("Worst Trade", stats.get("worst_trade", "—")),
+        ("Profit Factor", stats.get("profit_factor", "—")),
+        ("Max Drawdown", stats.get("max_intraweek_drawdown", "—")),
+    ]
+    stat_cards = ""
+    for label, value in stat_pairs:
+        stat_cards += f"""
+          <div class="stat-card">
+            <div class="stat-value">{value}</div>
+            <div class="stat-label">{label}</div>
+          </div>"""
+    stats_section = f"""
+    <h2>Performance Stats</h2>
+    <div class="stat-grid">{stat_cards}</div>"""
+
+    # Closed trades table
+    if closed_trades:
+        rows = ""
+        for t in closed_trades:
+            pnl_color = (
+                THEME["success"] if "+" in t["pnl"]
+                else THEME["danger"] if "-" in t["pnl"]
+                else THEME["text"]
+            )
+            rows += f"""
+            <tr>
+              <td>{t['date']}</td>
+              <td class="mono"><strong>{t['ticker']}</strong></td>
+              <td>{t['entry']}</td>
+              <td>{t['exit']}</td>
+              <td style="color:{pnl_color}"><strong>{t['pnl']}</strong></td>
+              <td>{t['hold']}</td>
+              <td>{t['notes']}</td>
+            </tr>"""
+        closed_section = f"""
+        <h2>Closed Trades This Week</h2>
+        <table>
+          <thead><tr>
+            <th>Date</th><th>Ticker</th><th>Entry</th><th>Exit</th>
+            <th>P&L</th><th>Hold</th><th>Notes</th>
+          </tr></thead>
+          <tbody>{rows}</tbody>
+        </table>"""
+    else:
+        closed_section = """
+        <h2>Closed Trades This Week</h2>
+        <div class="empty">No trades closed this week.</div>"""
+
+    # What worked / didn't (side by side)
+    def _bullet_list(items: list[str], color: str) -> str:
+        if not items:
+            return f'<li style="color:{THEME["muted"]};font-style:italic;list-style:none;padding-left:0">— no entries —</li>'
+        return "".join(
+            f'<li style="border-left:2px solid {color};padding-left:10px;margin-bottom:6px;list-style:none">{b}</li>'
+            for b in items
+        )
+    worked_section = f"""
+    <div class="two-col">
+      <div class="col">
+        <h3>What Worked</h3>
+        <ul>{_bullet_list(worked, THEME["success"])}</ul>
+      </div>
+      <div class="col">
+        <h3>What Didn't Work</h3>
+        <ul>{_bullet_list(didnt, THEME["danger"])}</ul>
+      </div>
+    </div>"""
+
+    # Lessons + adjustments (stacked)
+    lessons_section = f"""
+    <h2>Key Lessons</h2>
+    <ul class="bullet-list">{_bullet_list(lessons, THEME["teal"])}</ul>""" if lessons else ""
+
+    adjustments_section = f"""
+    <h2>Strategy Adjustments for Next Week</h2>
+    <ul class="bullet-list">{_bullet_list(adjustments, THEME["teal"])}</ul>""" if adjustments else ""
+
+    # Watchlist
     wl_section = ""
     if watchlist:
         wl_html = ""
@@ -490,14 +670,25 @@ def render_weekly_html(ctx: dict[str, Any]) -> str:
         <h2>Next Week Priority Watchlist <span class="research-tag">Gemini-grounded</span></h2>
         <div class="watchlist">{wl_html}</div>"""
 
-    notes_section = f"""
-    <h2>Strategic Retrospective</h2>
-    <div class="notes">{notes}</div>""" if notes else ""
+    # Grade callout
+    grade_color = {
+        "A": THEME["success"], "B": THEME["teal"], "C": THEME["warning"],
+        "D": THEME["danger"], "F": THEME["danger"],
+    }.get(grade_letter, THEME["muted"])
+    grade_section = f"""
+    <h2>Overall Grade</h2>
+    <div class="grade-callout">
+      <div class="grade-letter" style="color:{grade_color}">{grade_letter}</div>
+      <div class="grade-body">{grade_justification or "No justification provided."}</div>
+    </div>"""
 
     return _wrap_html(
         title=f"TradingHub Weekly Review · {today}",
-        subtitle=f"120-Day Sprint · Week ending {today}",
-        body=weekly_section + wl_section + notes_section,
+        subtitle=f"120-Day Sprint · Week ending {today} · Day {day_n} of {SPRINT_DAYS}",
+        body=(
+            kpi_section + stats_section + closed_section + worked_section
+            + lessons_section + adjustments_section + wl_section + grade_section
+        ),
     )
 
 
@@ -563,6 +754,18 @@ td {{ padding: 7px 10px; border-top: 1px solid {t['border']}; }}
 .progress-track {{ background: {t['card']}; height: 18px; border-radius: 9px; overflow: hidden; border: 1px solid {t['border']}; }}
 .progress-fill {{ background: linear-gradient(90deg, {t['teal_dim']}, {t['teal']}); height: 100%; transition: width 0.3s; }}
 .progress-label {{ color: {t['muted']}; font-size: 9pt; margin-top: 6px; text-align: right; }}
+.stat-grid {{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }}
+.stat-card {{ background: {t['card']}; border: 1px solid {t['border']}; border-radius: 4px; padding: 10px 14px; text-align: left; }}
+.stat-value {{ font-size: 12pt; font-weight: 700; color: {t['teal']}; line-height: 1.2; }}
+.stat-label {{ font-size: 8pt; color: {t['muted']}; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 3px; }}
+.two-col {{ display: flex; gap: 14px; margin-top: 12px; }}
+.col {{ flex: 1; background: {t['card']}; border-radius: 4px; padding: 12px 14px; }}
+.col h3 {{ color: {t['teal']}; font-size: 10.5pt; margin: 0 0 10px 0; text-transform: uppercase; letter-spacing: 0.6px; }}
+.col ul, .bullet-list {{ list-style: none; padding-left: 0; margin: 0; font-size: 9.5pt; }}
+.bullet-list {{ background: {t['card']}; padding: 14px 16px; border-radius: 4px; }}
+.grade-callout {{ display: flex; gap: 18px; align-items: center; background: {t['card']}; padding: 16px 20px; border-radius: 6px; border-left: 4px solid {t['teal']}; }}
+.grade-letter {{ font-size: 38pt; font-weight: 800; line-height: 1; flex-shrink: 0; }}
+.grade-body {{ font-size: 10pt; line-height: 1.5; }}
 .footer {{ margin-top: 20px; padding-top: 10px; border-top: 1px solid {t['border']}; color: {t['muted']}; font-size: 8.5pt; text-align: center; letter-spacing: 0.5px; }}
 </style></head><body>
 <div class="header">
@@ -608,46 +811,76 @@ def main(report_type: str) -> None:
     today_str = today.strftime("%Y-%m-%d")
     day_n = (today - SPRINT_START).days + 1
 
-    daily_md = read_safe("memory/DAILY-SUMMARY.md")
-    trade_md = read_safe("memory/TRADE-LOG.md")
-    research_md = read_safe("memory/RESEARCH-LOG.md")
-
-    if not daily_md and not trade_md:
-        print("No memory files to report from. Exiting.")
-        sys.exit(0)
-
-    print("Parsing memory files...")
-    kpis = parse_daily_kpis(daily_md)
-    trades = parse_trades_today(trade_md, today)
-    positions = parse_open_positions(trade_md)
-    market_ctx = parse_market_context(research_md)
-    notes = parse_decision_notes(daily_md)
-
-    print("Calling Gemini for tomorrow's watchlist...")
-    watchlist = gemini_tomorrow_watchlist()
-
-    ctx = {
-        "today": today_str, "day_n": day_n,
-        "kpis": kpis, "trades": trades, "positions": positions,
-        "watchlist": watchlist, "market_context": market_ctx, "notes": notes,
-    }
-
     if report_type == "daily":
+        daily_md = read_safe("memory/DAILY-SUMMARY.md")
+        trade_md = read_safe("memory/TRADE-LOG.md")
+        research_md = read_safe("memory/RESEARCH-LOG.md")
+
+        if not daily_md and not trade_md:
+            print("No memory files to report from. Exiting.")
+            sys.exit(0)
+
+        print("Parsing daily memory files...")
+        kpis = parse_daily_kpis(daily_md)
+        trades = parse_trades_today(trade_md, today)
+        positions = parse_open_positions(trade_md)
+        market_ctx = parse_market_context(research_md)
+        notes = parse_decision_notes(daily_md)
+
+        print("Calling Gemini for tomorrow's watchlist...")
+        watchlist = gemini_watchlist(window="tomorrow")
+
+        ctx = {
+            "today": today_str, "day_n": day_n,
+            "kpis": kpis, "trades": trades, "positions": positions,
+            "watchlist": watchlist, "market_context": market_ctx, "notes": notes,
+        }
         html = render_daily_html(ctx)
         pdf_path = f"tradinghub-daily-{today_str}.pdf"
         subject = f"TradingHub Daily Log · {today_str}"
-    else:
+        caption = (
+            f"*{subject}*\n"
+            f"Day {day_n} of {SPRINT_DAYS} · "
+            f"Equity {fmt_money(kpis.get('equity'))} "
+            f"({fmt_pct(kpis.get('phase_pl_pct'))})"
+        )
+
+    else:  # weekly
+        weekly_md = read_safe("memory/WEEKLY-REVIEW.md")
+        if not weekly_md:
+            print("memory/WEEKLY-REVIEW.md missing. Exiting.")
+            sys.exit(0)
+
+        print("Parsing weekly review file...")
+        weekly_stats = parse_weekly_stats(weekly_md)
+        closed_trades = parse_weekly_closed_trades(weekly_md)
+        what_worked = parse_weekly_bullets(weekly_md, "What Worked")
+        what_didnt = parse_weekly_bullets(weekly_md, "What Didn't Work")
+        lessons = parse_weekly_bullets(weekly_md, "Key Lessons")
+        adjustments = parse_weekly_bullets(weekly_md, "Adjustments for Next Week")
+        grade = parse_weekly_grade(weekly_md)
+
+        print("Calling Gemini for next week's watchlist...")
+        watchlist = gemini_watchlist(window="next_week")
+
+        ctx = {
+            "today": today_str, "day_n": day_n,
+            "weekly_stats": weekly_stats, "closed_trades": closed_trades,
+            "what_worked": what_worked, "what_didnt": what_didnt,
+            "lessons": lessons, "adjustments": adjustments, "grade": grade,
+            "watchlist": watchlist,
+        }
         html = render_weekly_html(ctx)
         pdf_path = f"tradinghub-weekly-{today_str}.pdf"
         subject = f"TradingHub Weekly Review · {today_str}"
+        caption = (
+            f"*{subject}*\n"
+            f"Day {day_n} of {SPRINT_DAYS} · "
+            f"Grade {grade[0]} · "
+            f"Win Rate {weekly_stats.get('win_rate', '—')}"
+        )
 
     html_to_pdf(html, pdf_path)
-    caption = (
-        f"*{subject}*\n"
-        f"Day {day_n} of {SPRINT_DAYS} · "
-        f"Equity {fmt_money(kpis.get('equity'))} "
-        f"({fmt_pct(kpis.get('phase_pl_pct'))})"
-    )
     send_telegram(pdf_path, caption)
 
 
