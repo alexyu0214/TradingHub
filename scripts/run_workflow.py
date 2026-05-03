@@ -25,6 +25,7 @@ WORKFLOW_SECTIONS = {
     "market-open":     "3. MARKET-OPEN EXECUTION",
     "trade":           "4. MANUAL TRADE",
     "midday":          "5. MIDDAY SCAN",
+    "midday-rescan":   "5b. MIDDAY-RESCAN",
     "daily-summary":   "6. DAILY SUMMARY",
     "weekly-review":   "7. WEEKLY REVIEW",
 }

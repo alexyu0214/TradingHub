@@ -100,26 +100,55 @@ Run Claude WebSearch (built-in tool) for each query:
 - S&P 500 sector momentum year-to-date
 - Any news on current held tickers (if positions open)
 
-STEP 4 — Generate Trade Ideas
-Using research + TRADING-STRATEGY.md signals, identify 2–3 actionable trade ideas (or 0 if no edge).
+STEP 4 — Classify VIX Regime (NEW — Quant Layer)
+Pull current VIX level (from research in STEP 3). Classify per TRADING-STRATEGY.md:
+- VIX < 14 → Calm trending  (sizing 1.00×)
+- VIX 14–22 → Normal       (sizing 1.00×)
+- VIX 22–30 → Elevated     (sizing 0.75×, mean-reversion preferred)
+- VIX > 30 → Crisis        (sizing 0.50× OR PAUSE — bot's choice)
 
-For each idea, document:
-- TICKER
+Record this regime classification — it gates entry sizing for all ideas today.
+
+STEP 5 — Universe Scan & Idea Generation (UPDATED)
+Scan beyond mega-caps: Russell 1000 mid-caps with catalysts, US-listed sector ETFs > $1B AUM, ADR mega-caps. All filters retained (mkt cap > $2B, ADV > 1M shares, price > $5).
+
+Identify 2–4 candidates with documented catalyst. For EACH candidate, run BOTH layers:
+
+**Layer A — Catalyst checklist:**
+- TICKER, sector, 50/200 SMA direction
 - Catalyst (specific reason for trade today)
-- Sector momentum check (is this sector healthy?)
-- Entry price/level (where to buy or short)
-- Stop level (7–10% below entry, or technical support/resistance)
-- Target price (minimum 2:1 risk/reward)
+- Sector momentum (is this sector healthy?)
+- RSI(14) in zone (< 30 long, > 70 short)
+- Volume confirm (entry day > 20-day avg)
+- Stop level (7–10% below entry)
+- Target (≥ 2:1 R:R)
 
-Entry signal checklist:
-- 50/200 SMA trend direction confirmed?
-- RSI(14) in the right zone (< 30 for long uptrend, > 70 for downtrend)?
-- Volume confirmation (entry day > 20-day avg)?
-- Catalyst documented?
+**Layer B — Quant checklist (NEW):**
+For each candidate, run:
+```
+bash scripts/alpaca.sh bars TICKER 25
+```
+From the returned closes, compute:
+- mean_20 = average of last 20 closes
+- stddev_20 = standard deviation of last 20 closes
+- z_score = (current_price − mean_20) / stddev_20
 
-Skip if: No edge. Default to HOLD.
+Then identify the sector PAIR (e.g., XOM↔CVX, NVDA↔AVGO, JPM↔GS — see TRADING-STRATEGY.md "Quant Layer" §5 for the canonical pairs list, or pick best correlated peer if not listed). Run `bash scripts/alpaca.sh bars PAIR 25` and compute its z_score too.
 
-STEP 5 — Write Research Log Entry
+For the candidate to qualify:
+- Z-Score ≤ −2.0 (longs) or ≥ +2.0 (shorts) — REQUIRED
+- Pair Z-Score divergence ≤ 1.5σ — REQUIRED  
+- VIX regime allows new entries — REQUIRED
+
+If ANY layer fails → SKIP that candidate. Log which check failed. Patience rule still applies — zero trades today is correct if nothing clears both layers.
+
+STEP 6 — Compute Position Sizing (Kelly + Regime)
+For each surviving candidate (cleared both layers), compute size per CONSTRAINTS.md "Quant Sizing":
+- Until ≥ 30 closed trades exist: default to 10% per position
+- Apply VIX multiplier (1.00 / 0.75 / 0.50)
+- Hard cap 20%, floor 5%
+
+STEP 7 — Write Research Log Entry
 Append a new dated entry to memory/RESEARCH-LOG.md:
 
 ## YYYY-MM-DD — Pre-market Research
@@ -133,8 +162,20 @@ Append a new dated entry to memory/RESEARCH-LOG.md:
 ### Market Context
 [paste research from Step 3, bulleted]
 
-### Trade Ideas
-[list each idea with catalyst, entry, stop, target, R:R]
+### VIX Regime
+- Current VIX: X.X
+- Regime: [Calm/Normal/Elevated/Crisis]
+- Sizing multiplier: 1.00× / 0.75× / 0.50×
+
+### Trade Ideas (Cleared Both Layers)
+For each qualifying idea:
+- TICKER | Catalyst | Entry | Stop | Target | R:R
+- Z-Score: X.XX (vs 20-day mean $X)
+- Pair: PAIR_TICKER | Pair Z-Score: X.XX | Divergence: X.Xσ
+- Sized position: X% of equity ($X)
+
+### Skipped Candidates
+List candidates that failed Layer A or Layer B with the specific failed check.
 
 ### Risk Factors
 [any major risks today?]
@@ -142,11 +183,11 @@ Append a new dated entry to memory/RESEARCH-LOG.md:
 ### Decision
 TRADE or HOLD
 
-STEP 6 — Print Summary to User
+STEP 8 — Print Summary to User
 Print the research log entry to stdout. Highlight any action items.
 
-STEP 7 — Verify Files Updated
-Confirm memory/RESEARCH-LOG.md has been appended. No git commits (local testing).
+STEP 9 — Verify Files Updated
+Confirm memory/RESEARCH-LOG.md has been appended. Git commit/push handled by workflow.
 ```
 
 ---
@@ -456,6 +497,88 @@ Deployed: X%
 
 STEP 10 — Verify Files Updated
 Confirm memory/TRADE-LOG.md and memory/DAILY-SUMMARY.md appended (if actions taken). No git commits.
+```
+
+---
+
+## 5b. MIDDAY-RESCAN (Spread-Normalization Check)
+
+```
+You are running the midday-rescan workflow for Alex's Alpaca trading bot.
+
+**PURPOSE:** ~1 hour after market open, re-evaluate any candidates that were skipped at market-open due to wide spreads, gap-chase risk, or pre-open price stale. Spreads typically normalize within 30–60 minutes of the open.
+
+**CRITICAL REMINDERS:**
+1. REMOTE SETUP: git pull origin main at start
+2. READ FIRST: memory/RESEARCH-LOG.md (today's entry — Trade Ideas + Skipped Candidates), memory/CONSTRAINTS.md, memory/TRADING-STRATEGY.md
+3. API credentials: ALPACA_API_KEY, ALPACA_SECRET_KEY from environment variables ONLY
+4. WRITE AT END: append to memory/RESEARCH-LOG.md (rescan addendum) and, if a trade fires, memory/TRADE-LOG.md
+5. REMOTE CLEANUP: git add memory/ && git commit -m "chore: midday-rescan" && git push origin main
+
+**WORKFLOW:**
+
+STEP 1 — Pull Today's Research
+grep -A 200 "## $(date +%Y-%m-%d)" memory/RESEARCH-LOG.md
+
+Extract:
+- The "Skipped Candidates" list from this morning
+- Why each was skipped (wide spread, gap-chase, stale price)
+- VIX regime classification for today
+
+STEP 2 — Pull Live Quotes for Each Skipped Candidate
+For each skipped ticker:
+bash scripts/alpaca.sh quote SYMBOL
+
+Compute current bid/ask spread %.
+
+STEP 3 — Re-check Quant Layer
+For each ticker that now has acceptable spread (< 1% for liquids):
+bash scripts/alpaca.sh bars SYMBOL 25
+
+Recompute Z-Score with the latest current_price. Same gates:
+- Z-Score |≥ 2.0|
+- Pair Z-Score divergence ≤ 1.5σ
+- VIX regime allows entry
+
+STEP 4 — Re-check Catalyst (Quick)
+- Catalyst from this morning still valid? (no offsetting news in last hour?)
+- Sector still in momentum?
+- Position count + weekly trade count still allow this trade?
+
+STEP 5 — Execute If All Layers Re-Clear
+If ALL of Layer A + Layer B re-clear:
+1. Compute Kelly + VIX-adjusted size (CONSTRAINTS.md)
+2. Place market buy order:
+   bash scripts/alpaca.sh order '{"symbol":"SYM","qty":"N","side":"buy","type":"market","time_in_force":"day"}'
+3. Wait for fill, capture fill price + order ID
+4. Place 10% trailing stop GTC
+5. Log to memory/TRADE-LOG.md with full thesis from morning research
+
+STEP 6 — Append Rescan Addendum to memory/RESEARCH-LOG.md
+
+### YYYY-MM-DD — Midday Rescan Addendum (HH:MM)
+
+**Skipped at open, re-evaluated:**
+- TICKER1: now spread X%, Z-Score Y.Y → [QUALIFIED / STILL SKIPPED + reason]
+- TICKER2: ...
+
+**Trades fired this rescan:**
+- TICKER: bought N @ $X, stop $Y (or "none")
+
+**Patience rule:** If nothing re-clears, this is correct. Do NOT lower entry gates to force a trade.
+
+STEP 7 — Print Summary
+Midday Rescan — YYYY-MM-DD HH:MM
+
+Re-evaluated: N candidates from morning skip list
+Qualified after re-check: N
+Executed: N
+Still skipped: N (reasons: ...)
+
+Portfolio now: N positions, X% deployed
+
+STEP 8 — Verify Files Updated
+Confirm memory/RESEARCH-LOG.md addendum and (if trade fired) memory/TRADE-LOG.md updated.
 ```
 
 ---

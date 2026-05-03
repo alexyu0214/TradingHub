@@ -133,11 +133,95 @@ Must pass all to advance to Phase 2 (live $1k account):
 
 ---
 
+## Quant Layer (Simons-Inspired Statistical Edge)
+
+**Purpose:** Sit ON TOP of the catalyst checklist to widen the universe of qualifying setups WITHOUT lowering the bar. Both layers must clear for a trade to fire.
+
+### 1. Universe Expansion
+
+Daily scan covers (in priority order):
+- S&P 500 + Nasdaq-100 (current default)
+- Russell 1000 mid-caps with catalysts
+- US-listed ETFs > $1B AUM in trending sectors
+- ADR mega-caps (TSM, ASML, NVO, BABA, etc.)
+
+All other filters retained: market cap > $2B, ADV > 1M shares, price > $5.
+
+### 2. Z-Score Entry Confirmation (REQUIRED)
+
+In addition to RSI(14), entry price must have Z-Score |≥ 2.0| vs its 20-day mean:
+
+```
+Z = (current_price − mean(close, 20)) / stddev(close, 20)
+```
+
+- Long entry requires Z ≤ −2.0 (statistically oversold)
+- Short entry requires Z ≥ +2.0 (statistically overbought)
+- Pure RSI signal without Z-Score confirmation → REJECT
+
+This catches mean-reversion opportunities pure RSI misses AND rejects RSI signals firing in trending regimes (where RSI<30 means "still going down").
+
+Bot pulls historical bars via: `bash scripts/alpaca.sh bars SYMBOL 25`
+
+### 3. Regime Filter (VIX-Based)
+
+Pre-market workflow records VIX regime. Bot behavior:
+
+| VIX | Regime | Sizing Multiplier | Strategy Bias |
+|---|---|---|---|
+| < 14 | Calm trending | 1.00× | Catalyst + momentum |
+| 14–22 | Normal | 1.00× | All entry types OK |
+| 22–30 | Elevated | 0.75× | Mean-reversion preferred, tighter stops |
+| > 30 | Crisis | 0.50× OR PAUSE | Mean-reversion only |
+
+If VIX > 30 → no new entries unless user override in `decisions/log.md`.
+
+### 4. Kelly Criterion Position Sizing
+
+Replace flat 20% sizing with dynamic Kelly:
+
+```
+kelly_pct = (win_rate × avg_win − loss_rate × avg_loss) / avg_win
+position_pct = max(5%, min(20%, kelly_pct × 0.25))   # quarter-Kelly for safety
+```
+
+Apply VIX regime multiplier last.
+
+**Cold start:** Until ≥ 30 closed trades exist for stats, default to 10% per position.
+
+### 5. Pairs Awareness (Confirmation Only — NOT Hedged Trading)
+
+For every long candidate, identify a sector pair (highly-correlated industry peer):
+- XOM ↔ CVX, COP (integrated oil)
+- NVDA ↔ AVGO, AMD (semis)
+- JPM ↔ GS, BAC (large banks)
+- AAPL ↔ MSFT (mega-cap tech)
+- GLD ↔ NEM, GOLD (gold complex)
+
+**Decision rules:**
+- Pair moving same direction, similar Z-Score → CONFIRMS sector thesis. Trade qualifies.
+- Pair diverging hard (Z-Score divergence > 1.5σ) → SKIP trade. Single-name risk too high.
+- Pair confirmation does NOT replace catalyst — both still required.
+
+**Note:** Long+short pair execution is deferred to Phase 3 (requires shorting workflow).
+
+### 6. Composed Entry Decision
+
+Every entry must clear ALL of:
+
+**Layer A — Catalyst (existing):** documented catalyst, sector momentum, RSI trigger, volume, R:R ≥ 2:1, all checklist items.
+
+**Layer B — Quant (new):** Z-Score |≥ 2.0|, VIX regime allows entry, pair confirms (or doesn't diverge >1.5σ).
+
+If either layer fails → SKIP. Log which layer failed and why. Patience rule still applies: zero trades is still better than a forced trade.
+
+---
+
 ## Strategy Backlog (Research, Don't Adopt Yet)
 
-- Pairs trading / stat arb on correlated equities
+- Phase 3: Pairs trading with shorts (long X, short Y in same sector)
 - Earnings drift / post-earnings momentum
-- Sector rotation based on macro regime
 - News-driven NLP sentiment overlay
+- Hidden Markov regime detection (requires ML infra)
 
 Each gets tested, graded, kept or killed based on performance.

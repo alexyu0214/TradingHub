@@ -64,16 +64,55 @@
 
 ## Order Requirements
 
-**Before placing any buy order:**
+**Layer A — Catalyst (existing):**
 1. Total positions after fill ≤ 6
 2. Trades this week (including this) ≤ 3
-3. Position cost ≤ 20% equity
+3. Position cost ≤ Kelly-sized limit (see Quant Sizing below)
 4. Position cost ≤ available cash
 5. Catalyst documented in today's research log
 6. Stock only (verified ticker)
 7. PDT rules allow (daytrade_count < 3 if same-day close intended)
+8. RSI(14) < 30 (long) or > 70 (short)
+9. Sector in momentum (not rolling over per recent TRADE-LOG)
+10. Risk/reward ≥ 2:1 with stop placed
 
-**If ANY fail:** Skip trade, log reason, move on.
+**Layer B — Quant (new — see TRADING-STRATEGY.md "Quant Layer"):**
+11. Z-Score |≥ 2.0| vs 20-day mean (long: ≤−2.0, short: ≥+2.0)
+12. VIX regime allows new entries (must be ≤ 30 unless override)
+13. Sector pair identified and either confirms direction OR diverges < 1.5σ
+
+**If ANY (1–13) fail:** Skip trade, log which layer + which check failed. Move on.
+
+---
+
+## Quant Sizing (Kelly + Regime Multiplier)
+
+```
+kelly_pct  = (win_rate × avg_win − loss_rate × avg_loss) / avg_win
+sized_pct  = max(5%, min(20%, kelly_pct × 0.25))   # quarter-Kelly, hard-bounded
+final_pct  = sized_pct × vix_regime_multiplier
+```
+
+**VIX regime multiplier:**
+- VIX < 22 → 1.00×
+- VIX 22–30 → 0.75×
+- VIX > 30 → 0.50× (or PAUSE all new entries — bot's choice based on conviction)
+
+**Cold-start (< 30 closed trades):** Use flat 10% per position with VIX multiplier still applied.
+
+---
+
+## Z-Score Computation
+
+Use Alpaca historical bars: `bash scripts/alpaca.sh bars SYMBOL 25` returns last 25 daily closes.
+
+```
+mean    = sum(closes[-20:]) / 20
+stddev  = sqrt(sum((c − mean)² for c in closes[-20:]) / 20)
+z_score = (current_price − mean) / stddev
+```
+
+If stddev < 0.01 → reject (illiquid or stale data).
 
 ---
 
