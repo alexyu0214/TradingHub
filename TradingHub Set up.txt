@@ -115,47 +115,53 @@ Before filling in the context files, rules, and CLAUDE.md, interview me. Ask the
 
 
 ### Section 1: About You
-- What's your name?
-- What's your role/title? (e.g., CEO, freelancer, content creator, developer)
-- What's your timezone?
-- In one sentence, what do you do?
-- What's your #1 priority -- the thing everything else should support?
+- My name is Alex
+- I'm a Wealth Management Consultant
+- I am living in Singapore
+- I help my client's invest and i do trading myself
+- My proiority is to grow to $30,000 with $1,000 in 90 days.
 
 
 ### Section 2: Your Business / Work
-- What's your company or business called? (or describe your work if you're not a business owner)
-- What are your products, services, or revenue streams? (List each with a one-liner)
-- Roughly how much revenue does each generate? (optional, but helps me prioritize)
-- What tools do you use day-to-day? (ClickUp, Notion, Slack, Google Workspace, etc.)
-- Do you have any MCP servers already connected to Claude Code? (If you don't know what this means, just say no)
+- I work in Professional Investment Advisory Services, a Financial Advisory Firm
+- I provide Wealth Protection  through Insurances
+- I provide Wealth Accumulation through Unit Trusts
+- I provide Wealth Preservation through Tax Savings
+-I provide Wealth Distribution solutions Will Writing, Lasting Power of Attorney and setting up of trusts for my clients
+- My clients are Mass Affluent and High Net Worth (Above $1 million assets) between the age of 40 to 65.
+- I use Gemini for brain-thinking and Alpaca for trading
+
 
 
 ### Section 3: Your Team
-- Do you have a team? If yes, how many people?
-- Who are the 2-3 key people I should know about? (name, role, when to loop them in)
-- Where does your team communicate? (ClickUp, Slack, etc.)
-- What's your biggest pain point with managing your team?
+- I do not have a team now but will work towards that direction in 3 years time
+- I want an AI personal assistant to help me with all the brainstorming and delegate admin matters to the AI
 
 
 ### Section 4: Priorities, Goals & Projects
-- What are the 3-5 things you're most focused on right now?
-- Are there any deadlines or time-sensitive items I should know about?
-- Do you have quarterly goals or milestones you're tracking? (If yes, list them. If you don't do formal goals, that's fine -- your priorities above will work.)
-- What active projects or workstreams are you managing right now? (These are specific initiatives, not ongoing responsibilities. E.g., "launching a new course", "hiring a VA", "redesigning the website")
+- My current priorities (update this as they change):
+- Improving on my website, Casting Capital, so that it is able to generate leads for Mass Affluent and High Net Worths to engage my services.
+- Create contents to attract people who are Age 40-64 to attend my CPF seminars, which i clarify on how CPF and CPF Life works, as well as creating a passive income for them during their retirement.
+- Compile all my client's date and policies, the plans which they have bought from me, and their investment gain/loss 
+- Arrange meet-up with all my clients for an Annual Review and the updates of the investment and insurance market.
+- On a personal level, I want to keep track of my existing investment. I am working with an analyst named Atlas on a 120-day sprint to $30,000.
+-When giving me advice or suggestions, filter everything through these priorities. If something doesn't move one of these forward, I probably don't need to hear about it.
 
 
 ### Section 5: Communication Preferences
-- How do you like information presented? (bullet points, detailed paragraphs, etc.)
-- Any writing pet peeves? (e.g., "never use emojis", "no em dashes", "keep it under 3 sentences")
-- What tone do you want internally (casual, professional, etc.)?
-- What tone do you want for external/public-facing content?
+- Be direct. No fluff. No filler. Get to the point.
+- Keep it conversational. I'm not writing a white paper
+- If my idea has a problem, tell me, i'd rather have useful pushback than polite agreement
+- Don't start responses with "Great questions!" or "Absolutely!" or "Of course!" Just answer.
+-Don't sugarcoat things. I'd rather hear the truth even if it's uncomfortable.
+-Keep responses concise unless i specifically ask for something detailed.
+Use analogies when explaining complex idea. Make things tangible.
 
 
 ### Section 6: What Do You Want Help With?
-- What are the recurring tasks that eat up your time? (List as many as you want)
-- What would you hand off to an assistant first if you could?
-- Are there any specific workflows you want to automate or templatize?
-
+- Admin work and comparing products with different companies eat up a lot of my time
+- I would want to hand off Admin work and comparison to my AI personal assistant
+- I would want to automate the admin work and comparison, which should be done up with the template I upload to my AI personal assistant.
 
 ## Phase 3: Build out the files
 
