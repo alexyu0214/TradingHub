@@ -281,10 +281,10 @@ def parse_weekly_bullets(weekly_md: str, section_name: str) -> list[str]:
 
 
 def parse_weekly_grade(weekly_md: str) -> tuple[str, str]:
-    """Pull the letter grade and justification."""
+    """Pull the letter grade (with optional + or - modifier) and justification."""
     last = extract_last_entry(weekly_md)
     m = re.search(
-        r"###\s*Overall Grade:\s*([A-F])(?:\s*\([^)]*\))?\s*\n(.*?)(?=\n###|\n---|\Z)",
+        r"#{2,4}\s*Overall Grade:\s*([A-F][+-]?)(?:\s*\([^)]*\))?\s*\n(.*?)(?=\n#{2,4}|\n---|\Z)",
         last,
         re.DOTALL | re.IGNORECASE,
     )
@@ -697,11 +697,12 @@ def render_weekly_html(ctx: dict[str, Any]) -> str:
         <h2>Next Week Priority Watchlist <span class="research-tag">Gemini-grounded</span></h2>
         <div class="watchlist">{wl_html}</div>"""
 
-    # Grade callout
+    # Grade callout — normalize to base letter for color lookup (A+, B-, etc.)
+    base_letter = grade_letter[0] if grade_letter and grade_letter[0] in "ABCDEF" else "?"
     grade_color = {
         "A": THEME["success"], "B": THEME["teal"], "C": THEME["warning"],
         "D": THEME["danger"], "F": THEME["danger"],
-    }.get(grade_letter, THEME["muted"])
+    }.get(base_letter, THEME["muted"])
     grade_section = f"""
     <h2>Overall Grade</h2>
     <div class="grade-callout">
