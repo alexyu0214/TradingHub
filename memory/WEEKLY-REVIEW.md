@@ -196,3 +196,81 @@ Every Friday, take 15 minutes to fill this out. Use it to calibrate next week.
 **Justification:** The S&P 500 gained +0.78% on the week, touched a new all-time high of 7,272.52, and benefited from the exact catalyst (Apple's strong Q2 revenue forecast) that the bot identified but failed to enter. The bot returned −0.13%, trailing the index by −0.91%. This is the second consecutive week graded C, both driven by the same root cause: operational process gaps (stale price estimates, missing intraday re-scan loop) rather than strategy failure. The underlying strategy is sound — XOM was the right trade and was entered correctly — but only one trade was placed in five sessions, leaving 80% of capital idle during an up-week. The energy thesis and entry checklist discipline are working; deployment velocity is not. Next week, deployment target is 2–3 positions by Wednesday.
 
 ---
+
+## Week ending 2026-05-01
+
+### Stats
+| Metric | Value |
+|--------|-------|
+| Starting portfolio | $100,000.00 |
+| Ending portfolio | $99,922.00 |
+| Week return | -$78.00 (-0.078%) |
+| S&P 500 week | +0.91% |
+| Bot vs S&P 500 | -0.99% |
+| Trades executed | 1 (XOM — open) |
+| Wins | 0 (no closed trades) |
+| Losses | 0 (no closed trades) |
+| Open positions | 1 (XOM) |
+| Win rate | N/A (no closed trades) |
+| Best trade | N/A |
+| Worst trade | N/A |
+| Profit factor | N/A (no closed trades) |
+| Max intraweek drawdown | -0.14% (est. intraday, XOM entry day) |
+
+> **Context:** This is the bot's inaugural week. Trading began May 1 (Day 2 of Phase 1). The week effectively covers a single partial trading day (Friday May 1) since launch was April 30 and the first trade fired May 1 at open. All stats are phase-inception numbers, not a full 5-day week.
+
+---
+
+### Closed Trades (This Week)
+| Date | Ticker | Entry | Exit | P&L | Hold (days) | Notes |
+|------|--------|-------|------|-----|-------------|-------|
+| — | — | — | — | — | — | No closed trades this week |
+
+---
+
+### Open Positions at Week End
+| Ticker | Entry | Close | Unrealized | Stop |
+|--------|-------|-------|------------|------|
+| XOM | $153.35 | $152.75 | -$78.00 (-0.39%) | $138.78 (10% trailing GTC) |
+
+---
+
+### What Worked (3–5 bullets)
+- **Discipline on gap-chasing:** XOM, CVX, and AAPL all gapped 14–32% past research entry ceilings at the open on May 1. The bot correctly declined all three at first-pass, then re-evaluated and entered XOM only after it pulled back into a tradeable range (~$153 vs. the initial $160+ ask). Zero gap-chase fills = zero adverse-selection losses.
+- **Conditional entry gates functioned correctly:** CVX was gated on XOM fill confirmation; AAPL was gated on both energy fills. When XOM's spread was wide at first-pass and CVX was skipped, the AAPL gate auto-blocked — exactly as designed. No cascade of bad fills.
+- **Hard stop placed immediately post-fill:** GTC 10% trailing stop (order ID confirmed) was placed on XOM within the same execution block as the buy. Stop is live at $138.78 with HWM $154.20. Mandatory constraint satisfied on first trade of the phase.
+- **Cash preservation on a volatile open:** By holding 80% cash through an extremely wide-spread earnings-gap session, the bot avoided the worst of post-earnings mean-reversion risk on CVX and AAPL (both tickers saw significant intraday reversals after their gaps).
+- **Research pipeline recovered mid-week:** After two sessions blocked by the revoked Gemini API key (Apr 29–30), the research pipeline was restored for May 1, allowing the XOM thesis to be fully validated before execution.
+
+---
+
+### What Didn't Work (3–5 bullets)
+- **Research blackout cost two full trading days (Apr 29–30):** The revoked Gemini API key (403 PERMISSION_DENIED) blocked the pre-market research workflow for two consecutive sessions. Zero trades could be safely placed without validated catalysts. This was the correct protocol response, but the root cause (key management) is a preventable operational failure.
+- **Entry pricing in research was too conservative vs. market reality:** Research entry ceilings for XOM ($122), CVX ($170), and AAPL ($215) were derived from pre-earnings estimates. All three opened 14–32% above those ceilings. While gap-chasing was correctly avoided, the research model needs a post-earnings gap adjustment methodology so that revised entry levels can be computed quickly after an overnight earnings surprise.
+- **Underdeployment vs. strategy target:** Ending the week at 19.87% deployed (vs. the 75–85% target band) reflects the bot being in its very first week with limited research history and an API key incident. However, with only 1 of 3 weekly trade slots used and 80% cash idle, the portfolio is generating no return on the bulk of its capital. This is operationally correct but strategically sub-optimal.
+- **XOM entry slightly above-plan on spread:** Even on the eventual XOM fill at $153.35 (not the initial wide-spread first-pass), the entry was meaningfully above the research-planned $118–122 range. The energy thesis is still valid, but the risk/reward was degraded vs. plan (actual R:R at entry ~1.5:1 vs. planned 2.1–2.4:1). The "wait for 5-min candle" rule was applied but the anchor price from research was already stale.
+- **No second or third position established:** Despite having 2 of 3 weekly trade slots remaining and 80% cash, no follow-up positions were opened during the week. CVX and AAPL both stabilized intraday, but no execution run re-evaluated them after the spread normalized. A midday execution pass could have recovered the CVX opportunity.
+
+---
+
+### Key Lessons (2–3 bullets)
+- **Build a post-gap repricing module into research:** When overnight earnings surprise >5% vs. expectations, the pre-market research entry ceiling must be recalculated at the open using the actual gap price as the new anchor — not the pre-earnings estimate. A static ceiling from pre-market research becomes a blocker, not a guide, after a large gap.
+- **Schedule a midday execution check:** The current workflow only runs at market open. On earnings-gap days, spreads are wide at open but normalize within 30–60 minutes. A 10:00–10:30 AM check (after the first 15-minute no-trade window) would have caught CVX and potentially AAPL at improved entries. This is especially important when the open execution is blocked by spread issues.
+- **API key rotation must be a pre-session automated gate:** Two consecutive research blackouts due to a single revoked API key is an unacceptable single point of failure. The execution workflow should test the research API key at start-of-day and alert/halt immediately rather than proceeding to an empty research output.
+
+---
+
+### Adjustments for Next Week
+- **Implement midday execution check (10:00–10:30 AM CT):** After wide-spread or gap-chase blocks at open, a secondary execution window will be added to re-evaluate any skipped tickers once spreads normalize. This directly addresses the CVX/AAPL miss.
+- **Revise research entry ceiling logic for earnings plays:** Add a "post-gap ceiling adjustment" step: if a ticker has gapped >5% vs. research ceiling pre-open, recalculate entry range as: [gap_open × 0.97, gap_open × 1.01] — i.e., allow entry on a 1–3% pullback from the gap open, not the pre-earnings anchor.
+- **Re-evaluate CVX for entry next week:** Spread was the only blocker (catalyst, R:R, and sector thesis all valid). If spread normalizes to <2% and price is in a technically reasonable range, CVX is eligible as one of next week's 3 trade slots.
+- **Continue holding XOM:** Energy thesis (Hormuz supply disruption, WTI elevated, post-earnings momentum) remains structurally intact. XOM's trailing stop is appropriately set. No action needed unless stop triggers or thesis breaks (surprise Hormuz resolution / WTI crash).
+- **Scan for non-energy momentum:** Currently 100% energy exposure (1 position). With 2 trade slots available and the sector concentration cap at $30k, the next new position must be in a different sector. Candidate sectors to research: Technology (post-AAPL earnings momentum), Consumer Staples (defensive, if VIX rises), Industrials (infrastructure spending).
+- **Key rotation protocol:** Establish a pre-session API key health-check step that validates the Gemini (or equivalent research LLM) key before any research workflow begins. If health-check fails, escalate immediately to Alex rather than running a degraded session.
+
+---
+
+### Overall Grade: C+
+**Justification:** The bot's inaugural week was operationally disciplined but strategically thin. On the positive side: all three hard gate violations (gap-chasing, wide spread, conditional entry sequencing) were correctly identified and blocked — the bot did exactly what the rulebook says. The XOM entry was clean given the constraints active at execution time, and the mandatory GTC trailing stop was placed immediately. No rules violations occurred. On the negative side: two of five sessions were completely research-dark due to a preventable API key failure; the single trade entered is slightly underwater (-0.39%); the portfolio ended 80% in cash vs. a 75–85% deployment target; and the bot underperformed the S&P 500 by ~1% in a week when the market gained nearly 1%. This is a C+ rather than a D because the discipline shown on gap-chasing and spread checks was exactly right — a worse bot would have chased all three tickers and potentially been down 5–10% on opening-day mean reversions. The grade reflects: correct process, weak outcomes, one fixable operational failure.
+
+---

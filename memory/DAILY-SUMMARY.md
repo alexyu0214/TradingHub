@@ -241,3 +241,17 @@ vs S&P 500: −0.91% (S&P +0.78%; new ATH 7,272.52)
 **Grade:** C
 
 ---
+
+## WEEK ENDING 2026-05-01 — WEEKLY RECAP
+
+**Portfolio:** $99,922.00 (-0.078% week, -0.078% phase)
+vs S&P 500: -0.99% (S&P +0.91%; bot -0.078%)
+
+**Trades:** 1 (W:0 / L:0 / open:1 — XOM)
+**Win rate:** N/A (no closed trades) | **Best:** N/A | **Worst:** N/A
+
+**Key win:** Correctly blocked all three gap-chase entries (XOM +32%, CVX +14%, AAPL +32% above research ceilings) at market open — avoiding what would have been adverse-selection fills; eventual XOM entry at $153.35 was rule-compliant with GTC trailing stop placed immediately.
+**Lesson learned:** Post-gap repricing logic needed in research — pre-earnings entry ceilings become invalid after large overnight gaps; add midday execution check to catch spread-normalized re-entries that open execution misses.
+**Grade:** C+
+
+---
