@@ -199,6 +199,20 @@ def _grab(text: str, pattern: str, default: str = "") -> str:
     return m.group(1).strip() if m else default
 
 
+def render_inline_md(text: str) -> str:
+    """Convert basic markdown inline marks to HTML so bullets/notes render properly.
+    Handles **bold**, *italic*, and `code`. Leaves raw HTML untouched."""
+    if not text:
+        return text
+    # **bold** → <strong>
+    text = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", text)
+    # *italic* → <em>  (but only single asterisks not adjacent to word chars on both sides)
+    text = re.sub(r"(?<!\w)\*([^\*\n]+?)\*(?!\w)", r"<em>\1</em>", text)
+    # `code` → <code>
+    text = re.sub(r"`([^`\n]+?)`", r"<code>\1</code>", text)
+    return text
+
+
 # ---------------------------------------------------------------------------
 # Weekly review parsers (read from memory/WEEKLY-REVIEW.md)
 # ---------------------------------------------------------------------------
@@ -477,10 +491,8 @@ def render_daily_html(ctx: dict[str, Any]) -> str:
         for w in watchlist:
             wl_html += f"""
             <div class="watch-item">
-              <div class="watch-header">
-                <span class="ticker mono">{w.get('ticker', '?')}</span>
-                <span class="watch-setup">{w.get('setup', '')}</span>
-              </div>
+              <div class="ticker mono">{w.get('ticker', '?')}</div>
+              <div class="watch-setup">{w.get('setup', '')}</div>
               <div class="watch-catalyst"><strong>Catalyst:</strong> {w.get('catalyst', '')}</div>
               <div class="watch-why">{w.get('why', '')}</div>
             </div>"""
@@ -495,7 +507,7 @@ def render_daily_html(ctx: dict[str, Any]) -> str:
     # Market context
     market_section = f"""
     <h2>Market Context (EOD)</h2>
-    <div class="market-context">{market or 'No market context captured.'}</div>""" if market else ""
+    <div class="market-context">{render_inline_md(market)}</div>""" if market else ""
 
     # Circuit breakers
     daily_status = status_color(kpis.get("day_pl_pct"), DAILY_LOSS_LIMIT_PCT)
@@ -514,7 +526,7 @@ def render_daily_html(ctx: dict[str, Any]) -> str:
 
     notes_section = f"""
     <h2>Decision Notes</h2>
-    <div class="notes">{notes}</div>""" if notes else ""
+    <div class="notes">{render_inline_md(notes)}</div>""" if notes else ""
 
     return _wrap_html(
         title=f"TradingHub Daily Log · {today}",
@@ -557,6 +569,9 @@ def render_weekly_html(ctx: dict[str, Any]) -> str:
             pass
     pct_to_target = max(0.0, min(100.0, pct_to_target))
 
+    days_pct = (day_n / SPRINT_DAYS) * 100
+    # Ensure equity bar is at least 1px visible if there's any positive progress
+    equity_display_pct = max(0.5, pct_to_target) if pct_to_target > 0 else 0
     kpi_section = f"""
     <div class="kpi-row">
       <div class="kpi-card"><div class="kpi-value" style="color:{THEME['teal']}">{week_return}</div><div class="kpi-label">Week Return</div></div>
@@ -566,8 +581,22 @@ def render_weekly_html(ctx: dict[str, Any]) -> str:
     </div>
 
     <h2>Trajectory to ${PAPER_TARGET_EQUITY:,.0f} <span style="color:{THEME['muted']};font-weight:400">(paper validation +30%)</span></h2>
-    <div class="progress-track"><div class="progress-fill" style="width:{pct_to_target:.1f}%"></div></div>
-    <div class="progress-label">{pct_to_target:.1f}% of paper target · Day {day_n} of {SPRINT_DAYS}</div>
+    <div class="progress-block">
+      <div class="progress-row">
+        <div class="progress-row-label">Equity progress</div>
+        <div class="progress-track">
+          <div class="progress-fill" style="width:{equity_display_pct:.1f}%"></div>
+        </div>
+        <div class="progress-row-value">{pct_to_target:.1f}%</div>
+      </div>
+      <div class="progress-row">
+        <div class="progress-row-label">Time elapsed</div>
+        <div class="progress-track">
+          <div class="progress-fill progress-fill-muted" style="width:{days_pct:.1f}%"></div>
+        </div>
+        <div class="progress-row-value">{days_pct:.1f}% (Day {day_n}/{SPRINT_DAYS})</div>
+      </div>
+    </div>
     """
 
     # Performance stats grid (the rest of the metrics from the Stats table)
@@ -628,7 +657,7 @@ def render_weekly_html(ctx: dict[str, Any]) -> str:
         if not items:
             return f'<li style="color:{THEME["muted"]};font-style:italic;list-style:none;padding-left:0">— no entries —</li>'
         return "".join(
-            f'<li style="border-left:2px solid {color};padding-left:10px;margin-bottom:6px;list-style:none">{b}</li>'
+            f'<li style="border-left:2px solid {color};padding-left:10px;margin-bottom:6px;list-style:none">{render_inline_md(b)}</li>'
             for b in items
         )
     worked_section = f"""
@@ -659,10 +688,8 @@ def render_weekly_html(ctx: dict[str, Any]) -> str:
         for w in watchlist:
             wl_html += f"""
             <div class="watch-item">
-              <div class="watch-header">
-                <span class="ticker mono">{w.get('ticker', '?')}</span>
-                <span class="watch-setup">{w.get('setup', '')}</span>
-              </div>
+              <div class="ticker mono">{w.get('ticker', '?')}</div>
+              <div class="watch-setup">{w.get('setup', '')}</div>
               <div class="watch-catalyst"><strong>Catalyst:</strong> {w.get('catalyst', '')}</div>
               <div class="watch-why">{w.get('why', '')}</div>
             </div>"""
@@ -679,7 +706,7 @@ def render_weekly_html(ctx: dict[str, Any]) -> str:
     <h2>Overall Grade</h2>
     <div class="grade-callout">
       <div class="grade-letter" style="color:{grade_color}">{grade_letter}</div>
-      <div class="grade-body">{grade_justification or "No justification provided."}</div>
+      <div class="grade-body">{render_inline_md(grade_justification) if grade_justification else "No justification provided."}</div>
     </div>"""
 
     return _wrap_html(
@@ -738,9 +765,8 @@ td {{ padding: 7px 10px; border-top: 1px solid {t['border']}; }}
 .empty {{ background: {t['card']}; padding: 16px; border-radius: 6px; color: {t['muted']}; font-style: italic; text-align: center; }}
 .watchlist {{ display: flex; flex-direction: column; gap: 8px; }}
 .watch-item {{ background: {t['card']}; border: 1px solid {t['border']}; border-left: 3px solid {t['teal']}; border-radius: 4px; padding: 10px 14px; }}
-.watch-header {{ display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px; }}
-.ticker {{ font-size: 12pt; color: {t['teal']}; font-weight: 700; }}
-.watch-setup {{ color: {t['muted']}; font-size: 8.5pt; text-transform: uppercase; letter-spacing: 0.5px; }}
+.ticker {{ font-size: 13pt; color: {t['teal']}; font-weight: 700; display: block; margin-bottom: 2px; }}
+.watch-setup {{ color: {t['muted']}; font-size: 8.5pt; text-transform: uppercase; letter-spacing: 0.6px; display: block; margin-bottom: 6px; }}
 .watch-catalyst {{ font-size: 9.5pt; margin-bottom: 3px; }}
 .watch-why {{ color: {t['muted']}; font-size: 9pt; font-style: italic; }}
 .research-tag {{ font-size: 8pt; background: rgba(45,212,191,0.15); color: {t['teal']}; padding: 2px 8px; border-radius: 3px; margin-left: 8px; font-weight: 500; letter-spacing: 0.5px; text-transform: uppercase; vertical-align: middle; }}
@@ -751,8 +777,13 @@ td {{ padding: 7px 10px; border-top: 1px solid {t['border']}; }}
 .breaker > span:nth-child(2) {{ flex: 1; }}
 .breaker .mono {{ color: {t['muted']}; font-size: 9pt; }}
 .notes {{ background: {t['card']}; border-radius: 4px; padding: 12px 16px; font-size: 9.5pt; line-height: 1.55; }}
-.progress-track {{ background: {t['card']}; height: 18px; border-radius: 9px; overflow: hidden; border: 1px solid {t['border']}; }}
-.progress-fill {{ background: linear-gradient(90deg, {t['teal_dim']}, {t['teal']}); height: 100%; transition: width 0.3s; }}
+.progress-block {{ display: flex; flex-direction: column; gap: 8px; }}
+.progress-row {{ display: flex; align-items: center; gap: 12px; }}
+.progress-row-label {{ width: 110px; color: {t['muted']}; font-size: 9pt; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; flex-shrink: 0; }}
+.progress-row-value {{ width: 140px; color: {t['text']}; font-size: 9pt; font-family: "SF Mono", Consolas, monospace; flex-shrink: 0; text-align: right; }}
+.progress-track {{ flex: 1; background: {t['card']}; height: 14px; border-radius: 7px; overflow: hidden; border: 1px solid {t['border']}; }}
+.progress-fill {{ background: linear-gradient(90deg, {t['teal_dim']}, {t['teal']}); height: 100%; min-width: 2px; }}
+.progress-fill-muted {{ background: linear-gradient(90deg, #475569, {t['muted']}); }}
 .progress-label {{ color: {t['muted']}; font-size: 9pt; margin-top: 6px; text-align: right; }}
 .stat-grid {{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }}
 .stat-card {{ background: {t['card']}; border: 1px solid {t['border']}; border-radius: 4px; padding: 10px 14px; text-align: left; }}
