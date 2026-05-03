@@ -226,3 +226,18 @@ vs S&P 500: −1.02% (S&P +0.91% | 5th consecutive up week | 12th ATH close YTD)
 **Notes:** Flat Monday — XOM held, no new trades; fresh weekly allowance of 3/3 available; all circuit breakers clear; bot in patient hold/scan posture.
 
 ---
+
+## WEEK ENDING 2026-05-01 — WEEKLY RECAP
+
+**Portfolio:** $99,870.00 (−0.13% week, −0.13% phase)
+vs S&P 500: −0.91% (S&P +0.78%; new ATH 7,272.52)
+
+**Trades:** 1 (W:0 / L:0 / open:1 — XOM)
+**Win rate:** N/A (0 closed trades) | **Best:** N/A | **Worst:** N/A
+**Profit factor:** N/A | **Max drawdown this week:** −0.24%
+
+**Key win:** Entry gate discipline held perfectly — XOM entered cleanly at $153.35 on a valid earnings catalyst with a GTC trailing stop placed immediately; CVX and AAPL correctly skipped on spread/gate grounds.
+**Lesson learned:** Pre-open live-quote anchoring and decoupled cash-headroom gates (not chain dependencies) are the two process changes that will unlock deployment velocity next week.
+**Grade:** C
+
+---

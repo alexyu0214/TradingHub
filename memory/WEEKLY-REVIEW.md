@@ -135,3 +135,64 @@ Every Friday, take 15 minutes to fill this out. Use it to calibrate next week.
 
 ---
 
+
+## Week ending 2026-05-01
+
+### Stats
+| Metric | Value |
+|--------|-------|
+| Starting portfolio | $100,000.00 |
+| Ending portfolio | $99,870.00 |
+| Week return | −$130.00 (−0.13%) |
+| S&P 500 week | +0.78% (7,173.91 → 7,230.12; new ATH 7,272.52) |
+| Bot vs S&P 500 | −0.91% |
+| Trades executed | 1 (XOM buy, May 1) |
+| Wins | 0 (no closed trades) |
+| Losses | 0 (no closed trades) |
+| Open positions | 1 (XOM) |
+| Win rate | N/A (0 closed trades) |
+| Best trade | N/A |
+| Worst trade | N/A |
+| Profit factor | N/A |
+| Max intraweek drawdown | −0.24% (intraday peak ~$100,110 → Fri close $99,870) |
+
+### Closed Trades (This Week)
+| Date | Ticker | Entry | Exit | P&L | Hold (days) | Notes |
+|------|--------|-------|------|-----|-------------|-------|
+| — | — | — | — | — | — | No closed trades this week |
+
+### Open Positions at Week End
+| Ticker | Entry | Close (Fri) | Unrealized | Stop |
+|--------|-------|-------------|------------|------|
+| XOM | $153.35 | $152.35 | −$130.00 (−0.65%) | $138.78 (10% trailing GTC, HWM $154.20) |
+
+### What Worked (3–5 bullets)
+- **Entry gate discipline on first live session:** The bot correctly refused to chase XOM, CVX, and AAPL during the 13:38 UTC execution window when all three had gapped 14–34% above research price estimates. A second, calmer execution window later in the session produced a clean XOM fill at $153.35 — within spread tolerance and supported by a valid catalyst (XOM Q1 earnings beat, elevated WTI, Hormuz supply-risk premium).
+- **GTC trailing stop placed immediately at fill:** The 10% trailing stop was live within seconds of the XOM fill. The stop auto-ratcheted from $138.015 → $138.78 as price briefly touched HWM $154.20 intraday — exactly the intended mechanical behavior, no manual intervention required.
+- **Market context correctly absorbed:** The S&P 500 posted a volatile week (+0.78% net), touching a new ATH of 7,272.52 on Thursday while experiencing a −0.49% dip on Tuesday (AI stock selloff + rising oil). The bot's energy thesis via XOM was directionally aligned with the market-moving oil catalyst, even if the position ended slightly underwater at week close.
+- **CVX and AAPL skip decisions were correct:** CVX's spread remained too wide on both execution attempts; AAPL correctly failed the conditional gate (XOM/CVX fills prerequisite not met). Both skips protected capital from chasing volatile post-earnings setups with elevated spread risk.
+- **No circuit breakers triggered, no rules violations:** Day loss max was −0.13% (limit: −2%), phase loss −0.13% (limit: −5%), drawdown −0.24% (limit: −15%). PDT daytrade count used: 1/3. Weekly trade count: 1/3. Clean operational week from a compliance standpoint.
+
+### What Didn't Work (3–5 bullets)
+- **Portfolio remained severely underdeployed all week:** Only ~20% of capital was deployed (XOM, entered on the final day of the week). The 75–85% minimum deployment target was never approached. In a week when the S&P 500 rose +0.78% and hit an all-time high, the bot's cash-heavy posture meant near-zero market participation — translating directly into the −0.91% lag vs the index.
+- **First execution window wasted by pricing miscalibration:** Research entry estimates for XOM ($118–122) and CVX ($165–170) were already stale before the week began. Both stocks opened 30%+ above those levels on earnings day. Pre-computed research levels must be treated as provisional — a pre-open live-quote check would have caught this gap and reset the entry ceiling before execution began.
+- **AAPL's independent catalyst blocked by chain dependency:** AAPL reported a strong Q2 earnings beat and forecasted stronger-than-expected Q2 revenue (confirmed by Apple's contribution to the Friday +0.29% S&P gain). Its individual checklist was largely clean, yet it was auto-blocked because CVX did not fill. Making AAPL contingent on energy chain completion — rather than on cash headroom alone — was an over-engineered gate that cost a potentially positive trade.
+- **No intraday re-evaluation of CVX spread:** The bot checked CVX's spread twice (6.93%, then 4.23%) and correctly skipped both times. However, no logic existed to re-check CVX at 10:30–11:00 CT when spreads typically normalize post-open. By late morning CVX likely tightened into tradeable range; the opportunity was missed due to the absence of a midday re-scan loop.
+- **Week 1 produced zero statistical data for strategy refinement:** With no closed trades, win rate, profit factor, and expectancy remain undefined. The Phase 1 gate (≥30 closed trades) has no entries on the board. The longer trades stay unclosed, the longer the bot operates without feedback data.
+
+### Key Lessons (2–3 bullets)
+- **Pre-open live-quote anchoring is mandatory, not optional:** Any research-generated price estimate must be re-validated against a live pre-market quote at T−30 minutes. If the current price is >5% above the research estimate, the entry ceiling must be revised or the idea deferred to first-candle confirmation logic. This single change would have unlocked all three May 1 entries faster.
+- **Cash headroom is the right gate — not chain dependencies:** Conditional entry gates should ask "do I have the cash?" not "did the prior trade fill?" When independent catalysts exist (like AAPL's Q2 earnings beat), they should clear their own checklist independently. Replace chain dependencies with a simple cash-headroom check (e.g., cash after fill ≥ 30% of equity).
+- **Add a midday re-scan trigger (10:30–11:00 CT):** A structured 60-minute post-open re-check of skipped tickers — specifically spread normalization and price stability — would capture entries that miss the opening window but become clean setups by mid-morning. This is especially important in the first hour after earnings gaps.
+
+### Adjustments for Next Week
+- **[PROCESS] Add T−30 min pre-open live-quote check:** Before the execution window opens each morning, pull live pre-market quotes for all planned ideas. If any ticker has gapped >5% from the research estimate, auto-flag for entry-ceiling revision. Log revised entry ceilings in that day's research entry.
+- **[PROCESS] Decouple conditional gates — use cash-headroom only:** Remove "XOM and CVX must fill first" prerequisite from AAPL (and all future tertiary ideas). Replace with: "cash after this fill ≥ 30% of equity AND total positions ≤ 6." Each ticker evaluates its own entry checklist independently.
+- **[PROCESS] Add intraday re-scan at 10:30–11:00 CT:** If any ticker was skipped at open due to spread >2% or gap-chase risk, re-evaluate at 10:30 CT. If spread has normalized and price is within 5% of revised ceiling, re-enter decision tree from the catalyst-check step.
+- **[POSITIONS] Target 2–3 open positions by mid-week:** With cash at 80% and the market in a confirmed uptrend (S&P 500 ATH week), the bot must add positions. Leading sectors to scan: Energy (XOM carry-forward), Industrials, and Large-Cap Tech (post-earnings dip setups). Apply all entry checklist gates — but actively search for qualifying setups rather than defaulting to hold-cash.
+- **[RISK] Review XOM trailing stop as price evolves:** Current stop at $138.78 (10% trail from $154.20 HWM). If XOM recovers above $155 and approaches $160, monitor for the +15% trigger ($176.35 from entry) when trailing tightens to 7%. Given "Sell in May" seasonal headwinds noted in prior research, be willing to take profits faster than usual if the Hormuz risk premium fades.
+
+### Overall Grade: C
+**Justification:** The S&P 500 gained +0.78% on the week, touched a new all-time high of 7,272.52, and benefited from the exact catalyst (Apple's strong Q2 revenue forecast) that the bot identified but failed to enter. The bot returned −0.13%, trailing the index by −0.91%. This is the second consecutive week graded C, both driven by the same root cause: operational process gaps (stale price estimates, missing intraday re-scan loop) rather than strategy failure. The underlying strategy is sound — XOM was the right trade and was entered correctly — but only one trade was placed in five sessions, leaving 80% of capital idle during an up-week. The energy thesis and entry checklist discipline are working; deployment velocity is not. Next week, deployment target is 2–3 positions by Wednesday.
+
+---
