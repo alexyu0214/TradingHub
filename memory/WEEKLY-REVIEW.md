@@ -274,3 +274,81 @@ Every Friday, take 15 minutes to fill this out. Use it to calibrate next week.
 **Justification:** The bot's inaugural week was operationally disciplined but strategically thin. On the positive side: all three hard gate violations (gap-chasing, wide spread, conditional entry sequencing) were correctly identified and blocked — the bot did exactly what the rulebook says. The XOM entry was clean given the constraints active at execution time, and the mandatory GTC trailing stop was placed immediately. No rules violations occurred. On the negative side: two of five sessions were completely research-dark due to a preventable API key failure; the single trade entered is slightly underwater (-0.39%); the portfolio ended 80% in cash vs. a 75–85% deployment target; and the bot underperformed the S&P 500 by ~1% in a week when the market gained nearly 1%. This is a C+ rather than a D because the discipline shown on gap-chasing and spread checks was exactly right — a worse bot would have chased all three tickers and potentially been down 5–10% on opening-day mean reversions. The grade reflects: correct process, weak outcomes, one fixable operational failure.
 
 ---
+
+## Week ending 2026-05-03
+
+### Stats
+| Metric | Value |
+|--------|-------|
+| Starting portfolio | $99,922.00 |
+| Ending portfolio | $99,922.00 |
+| Week return | $0.00 (0.00%) |
+| S&P 500 week | +0.54% (5,099.96 → 5,127.79) |
+| Bot vs S&P 500 | −0.54% |
+| Trades executed | 0 (new this week) |
+| Wins | 0 (no closed trades) |
+| Losses | 0 (no closed trades) |
+| Open positions | 1 (XOM — carried from prior week) |
+| Win rate | N/A (0 closed trades) |
+| Best trade | N/A |
+| Worst trade | N/A |
+| Profit factor | N/A |
+| Max intraweek drawdown | 0.00% (equity flat all week; XOM unchanged at $152.75) |
+
+> **Context:** This is the first full Mon–Fri review week of Phase 1. The bot entered XOM on May 1 (prior week's Friday); that position carried forward as the sole holding. No new trades were placed this week (Mon May 5 was the only active trading day logged, and it produced zero market movement on XOM and zero new entries). Equity held flat at $99,922 from Sunday open through Friday. The S&P 500 gained +0.54% during Apr 26–May 3, entirely a missed-participation gap.
+
+---
+
+### Closed Trades (This Week)
+| Date | Ticker | Entry | Exit | P&L | Hold (days) | Notes |
+|------|--------|-------|------|-----|-------------|-------|
+| — | — | — | — | — | — | No closed trades this week |
+
+---
+
+### Open Positions at Week End
+| Ticker | Entry | Close | Unrealized | Stop |
+|--------|-------|-------|------------|------|
+| XOM | $153.35 | $152.75 | −$78.00 (−0.39%) | $138.78 (10% trailing GTC, HWM $154.20) |
+
+---
+
+### What Worked (3–5 bullets)
+- **XOM trailing stop mechanics held correctly all week:** The GTC 10% trailing stop placed at XOM's entry on May 1 remained live and correctly anchored at $138.78 (HWM $154.20) throughout the week. No manual intervention was required. The stop auto-ratchet behavior is functioning as designed — this is the core mechanical discipline the strategy depends on.
+- **Capital preservation in a directionless week for XOM:** With XOM flat at $152.75 the entire week and no meaningful intraday movement, holding the position without panic-selling or prematurely exiting the energy thesis was correct. The stop is wide enough ($138.78 = −9.5% from close) to absorb normal energy sector volatility; no thesis-break signal appeared.
+- **No circuit breakers triggered for the second consecutive week:** Day loss, phase loss, and drawdown all remain well within limits (phase P&L: −0.078% vs. −5% limit; drawdown: −0.078% vs. −15% limit). PDT count reset to 0/3. The account is operationally clean.
+- **Weekly trade allowance reset and available:** Entering this week with 3/3 trade slots fresh (XOM was entered in the prior week) meant full capacity was available for new entries. While no new entries fired, the slate was clean — no risk of hitting the weekly cap.
+- **Patient hold posture appropriate given low-signal environment:** With XOM flat, no high-conviction research catalysts logged this week, and the research pipeline still recovering from the prior week's API blackout issues, standing aside on new positions was the disciplined choice rather than forcing entries.
+
+---
+
+### What Didn't Work (3–5 bullets)
+- **Zero market participation on a +0.54% S&P 500 week — again:** For the second consecutive week, the bot generated 0.00% return while the S&P gained +0.54%. Cumulative underperformance since launch is now approximately −1.05% vs. the index in just two weeks. The 80% cash drag is becoming a persistent structural problem, not a one-off.
+- **No new positions added despite full trade capacity:** The week ended with 3/3 weekly trade slots unused and 80% of capital idle. Per the prior week's review, the explicit adjustment target was "2–3 open positions by mid-week." This did not happen. The failure to add positions is now a two-week pattern, not an isolated occurrence.
+- **No midday re-scan executed (prior week adjustment not implemented):** The prior week's review explicitly called for adding an intraday re-scan at 10:30–11:00 CT for spread-normalized re-entries. No evidence in the trade log or research log that this check was implemented this week. Adjustments identified in weekly reviews must be actioned, not just documented.
+- **Research log shows no new catalyst ideas this week:** The research log entries visible for this period are from Apr 30 and May 1 — nothing filed for the May 5–9 window. Pre-market research is supposed to run daily; the absence of logged research sessions suggests the pipeline may still be degraded or research outputs are going unlogged.
+- **XOM position still underwater, R:R degrading with time:** The longer XOM sits at −0.39% without progressing toward the +15% target ($176.35), the longer capital is tied up at sub-optimal deployment with a degrading profit factor. Time decay on a flat trade is opportunity cost — two weeks of carrying a near-zero position while the market moves up.
+
+---
+
+### Key Lessons (2–3 bullets)
+- **Deployment velocity is now the #1 priority — this is a recurring failure, not a one-week anomaly:** Two consecutive weeks of ~20% deployment against a 75–85% target is not caution, it is systematic under-execution. The strategy requires active position-building to generate the 30 closed trades needed for Phase 1 graduation. At the current pace of ~0 new trades/week, Phase 1 will never close. Next week, a concrete deployment plan (specific tickers, specific levels, specific session) must be logged in pre-market research — not aspirational bullets in the weekly review.
+- **Prior week's process adjustments must be operationally verified, not just written down:** The weekly review is only valuable if its adjustments are implemented. Three adjustments were listed two weeks ago (pre-open live-quote check, decoupled conditional gates, midday re-scan). None appear to have been implemented. Going forward, each adjustment must be tagged with a verification step in the following week's research log: "Implemented: Y/N."
+- **Consider whether the energy thesis on XOM still has legs or needs a time-stop:** XOM entered May 1 at $153.35, currently at $152.75 — essentially flat for two weeks. The Hormuz thesis is structural (multi-month), but if XOM cannot hold above $150 next week or fails to show any upward momentum, a thesis-based exit (not stop-based) may be warranted to redeploy capital into a more active setup. Time-stops are valid — a stagnant position is dead capital.
+
+---
+
+### Adjustments for Next Week
+- **[URGENT — DEPLOYMENT] File a concrete 3-position scan plan before Monday open:** Research must identify 2–3 qualifying tickers in non-Energy sectors (Industrials, Tech, Consumer Staples) with entry levels, stops, and catalysts documented. Do not start Monday without a trade plan. If no ideas clear all gates, log explicitly why — do not default to silence.
+- **[PROCESS] Implement and verify the midday re-scan (10:30 CT):** This is the third week this adjustment has appeared. It must be executed, not just written. At 10:30 CT Monday, re-evaluate any tickers from the morning scan that were skipped due to spread or gap. Log the re-scan result in RESEARCH-LOG.md.
+- **[PROCESS] Implement pre-open live-quote check (T−30 min):** Pull live pre-market quotes for all planned trades at 9:00 AM CT. If any ticker has moved >5% from the research estimate, revise the entry ceiling before the execution window opens. Log the pre-open check in that day's research entry.
+- **[POSITION] Evaluate XOM time-stop:** If XOM does not show upward momentum (close above $155) by Wednesday May 8, evaluate a discretionary exit to free capital for a more active setup. Document the decision in the trade log. The 10% trailing stop remains as the hard floor regardless.
+- **[STRATEGY] Decouple conditional gates — cash-headroom only:** Now three weeks on the adjustment list. AAPL-type tertiary ideas must run their own independent checklist; the only cross-position check should be: "Will total deployed capital after this fill remain ≤ 85% of equity?"
+- **[ACCOUNTABILITY] Tag each prior-week adjustment as Implemented/Not in Monday's research log:** When filing Monday's pre-market research, explicitly check off each adjustment from this week's review with Y/N. This creates accountability and prevents the same adjustments from cycling through indefinitely.
+
+---
+
+### Overall Grade: D
+**Justification:** The S&P 500 gained +0.54% this week (closing at 5,127.79 vs. 5,099.96 the prior Friday). The bot returned 0.00% — underperforming by −0.54%. More critically, this is the second consecutive week of near-zero return and approximately 20% deployment against an 80% target. The discipline shown in avoiding bad trades remains commendable, but discipline without action is not a strategy — it is paralysis. The prior week was graded C/C+ with explicit deployment targets set for this week; those targets were not met. The grade drops to D this week not because of a catastrophic loss, but because the same operational failure (underdeployment, no new positions, adjustment list not implemented) recurred for a second straight week. A third consecutive week of this pattern would constitute a strategy-level failure requiring a full process audit.
+
+---

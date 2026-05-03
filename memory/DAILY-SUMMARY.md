@@ -255,3 +255,18 @@ vs S&P 500: -0.99% (S&P +0.91%; bot -0.078%)
 **Grade:** C+
 
 ---
+
+## WEEK ENDING 2026-05-03 — WEEKLY RECAP
+
+**Portfolio:** $99,922.00 (0.00% week, −0.078% phase)
+vs S&P 500: −0.54% (S&P +0.54%; 5,099.96 → 5,127.79)
+
+**Trades:** 0 new (W:0 / L:0 / open:1 — XOM carry-forward)
+**Win rate:** N/A | **Best:** N/A | **Worst:** N/A
+**Profit factor:** N/A | **Max drawdown this week:** 0.00%
+
+**Key win:** Capital fully preserved — no bad entries forced; XOM trailing stop (GTC, $138.78) remained mechanically correct all week with no manual intervention required.
+**Lesson learned:** Deployment velocity is now the #1 recurring failure (two consecutive weeks at ~20% vs. 75–85% target); prior-week adjustments must be operationally verified next Monday, not just re-listed.
+**Grade:** D
+
+---
