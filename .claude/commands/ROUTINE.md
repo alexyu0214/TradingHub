@@ -205,77 +205,98 @@ You are running the market-open execution workflow for Alex's Alpaca trading bot
 5. REMOTE CLEANUP: git add memory/ && git commit -m "chore: market-open execution" && git push origin main
 
 **WORKFLOW:**
-Execute any planned trades from this morning's research. Validate with fresh quotes, set trailing stops.
+Place bracket LIMIT BUY orders at the bot's intended entry prices for each pre-market trade idea. Bracket includes attached stop-loss and take-profit. NEVER use market orders for entries. If price never reaches the limit, the order expires unfilled at session close — that's correct behavior.
 
 STEP 1 — Read Today's Research
-grep -A 50 "## $(date +%Y-%m-%d)" memory/RESEARCH-LOG.md
+grep -A 200 "## $(date +%Y-%m-%d)" memory/RESEARCH-LOG.md
 
 Pull today's trade ideas (if any) and confirm DECISION was TRADE (not HOLD).
+Extract for each idea: TICKER, intended limit price (research entry), stop_price, take_profit, sized_qty.
 
 STEP 2 — Re-Validate with Live Quotes
 For each planned trade from research:
 bash scripts/alpaca.sh quote SYMBOL
-bash scripts/alpaca.sh account  # Check current positions count, daytrade count
+bash scripts/alpaca.sh account  # Check current positions count, cash, daytrade count
 
-- Check bid/ask spread (wide spread = halt signal)
-- Verify SYMBOL hasn't been halted, delisted, or gapped past entry level
-- Re-confirm daytrade count allows same-day sell (if needed)
+- Verify SYMBOL hasn't been halted or delisted (quote returns valid)
+- Note current price vs research limit (just informational — we're NOT chasing if it's gapped past)
 
 STEP 3 — Run Buy-Side Gate on Each Planned Trade
-Use memory/CONSTRAINTS.md checklist:
+Use memory/CONSTRAINTS.md checklist (Layer A 1-10 + Layer B 11-13):
 - Total positions after fill ≤ 6
 - Trades this week (including this) ≤ 3
-- Position cost ≤ 20% equity
+- Position cost (qty × limit_price) ≤ Kelly-sized limit
 - Position cost ≤ available cash
 - PDT rules allow
 - Catalyst still valid (re-read news if big news hit overnight)
+- Z-Score still qualifies (re-pull bars if needed)
+- VIX regime allows entry
 
-If any trade fails: Skip it. Log the reason and move on.
+If any check fails: Skip that trade. Log the reason and move on.
 
-STEP 4 — Execute Approved Trades
-For each approved trade:
-bash scripts/alpaca.sh order '{"symbol":"SYMBOL","qty":"SHARES","side":"buy","type":"market","time_in_force":"day"}'
+STEP 4 — Place Bracket Limit Orders (NOT MARKET ORDERS)
+For each approved trade, construct bracket limit order with:
+- limit_price = research-derived intended entry
+- stop_loss.stop_price = 7-10% below limit (per CONSTRAINTS.md), or technical level
+- take_profit.limit_price = research-derived target (must give R:R ≥ 2:1)
 
-Wait for fill. Capture: SYMBOL, fill price, fill quantity, order ID.
+bash scripts/alpaca.sh order '{
+  "symbol":"SYMBOL",
+  "qty":"SHARES",
+  "side":"buy",
+  "type":"limit",
+  "time_in_force":"day",
+  "limit_price":"X.XX",
+  "order_class":"bracket",
+  "take_profit":{"limit_price":"Y.YY"},
+  "stop_loss":{"stop_price":"Z.ZZ"}
+}'
 
-STEP 5 — Immediately Place 10% Trailing Stop (GTC)
-For each filled buy order:
-bash scripts/alpaca.sh order '{"symbol":"SYMBOL","qty":"SHARES","side":"sell","type":"trailing_stop","trail_percent":"10","time_in_force":"gtc"}'
+Capture: order ID, status (should be "new" or "accepted"). The order is now sitting in Alpaca; it fills if/when price reaches limit. If rejected: log reason, do NOT fall back to a market order.
 
-If rejected (PDT error):
-1. Try fixed stop 10% below fill:
-   bash scripts/alpaca.sh order '{"symbol":"SYMBOL","qty":"SHARES","side":"sell","type":"stop","stop_price":"X.XX","time_in_force":"gtc"}'
-2. If also rejected: Note "PDT-blocked, set tomorrow morning" in TRADE-LOG
+STEP 5 — DO NOT Place Trailing Stop Yet
+The bracket already has a fixed stop attached. Trailing-stop upgrade happens in midday/afternoon-scan workflows AFTER fill is confirmed. Don't try to place a separate trailing stop here — Alpaca will reject it as a duplicate.
 
-STEP 6 — Log Each Trade to memory/TRADE-LOG.md
-Append entry with full thesis from research, entry price, stop, target, R:R:
+STEP 6 — Log Each Order to memory/TRADE-LOG.md
 
-### YYYY-MM-DD HH:MM — BUY SYMBOL
+### YYYY-MM-DD HH:MM — LIMIT BUY ORDER PLACED: SYMBOL
 **Catalyst:** [from research]
-**Entry Price:** $X.XX (SHARES shares, filled at market)
-**Stop:** $X.XX (-10% trailing) [or fixed stop if trailing rejected]
-**Target:** $X.XX
-**Risk:** $X (% of equity)
+**Limit Price:** $X.XX (SHARES shares, day order)
+**Stop (bracket child):** $Z.ZZ
+**Take-Profit (bracket child):** $Y.YY
+**Risk if filled:** $X (% of equity)
+**R:R:** X.X:1
 **Thesis:** [copied from research log]
-**Trade ID:** [timestamp]
+**Order ID:** [from Alpaca response]
+**Status:** Placed (awaiting fill)
+
+When the bracket fills (caught by midday or afternoon-scan workflow), append a separate entry:
+
+### YYYY-MM-DD HH:MM — BRACKET FILLED: SYMBOL
+**Fill Price:** $X.XX (SHARES shares)
+**Stop now active:** $Z.ZZ
+**Target now active:** $Y.YY
+**Order ID:** [matches placement]
 
 STEP 7 — Append to memory/DAILY-SUMMARY.md
-Market-open executions:
-- SYMBOL1: SHARES @ $X.XX, stop $X.XX
-- SYMBOL2: SHARES @ $X.XX, stop $X.XX
-(or "No trades executed")
+Market-open orders placed:
+- SYMBOL1: limit $X.XX (SHARES shares), stop $Z.ZZ, target $Y.YY
+- SYMBOL2: limit $X.XX (SHARES shares), stop $Z.ZZ, target $Y.YY
+(or "No orders placed")
 
 STEP 8 — Print Summary
-List all executed trades:
 Market-Open Execution — YYYY-MM-DD
 
-Executed:
-  SYMBOL1: SHARES @ $X.XX, 10% trail stop placed
-  SYMBOL2: SHARES @ $X.XX, 10% trail stop placed
+Bracket limit orders placed:
+  SYMBOL1: $X.XX limit (qty N), stop $Z.ZZ, target $Y.YY
+  SYMBOL2: $X.XX limit (qty N), stop $Z.ZZ, target $Y.YY
 
 Skipped:
-  SYMBOL3: Daytrade limit reached
+  SYMBOL3: Z-Score no longer qualifies after re-check
   SYMBOL4: Insufficient cash
+  SYMBOL5: Catalyst invalidated overnight
+
+These orders fill IF price reaches limit during today's session. Unfilled orders expire at close.
 
 Portfolio now: N positions, X% deployed
 
@@ -583,6 +604,91 @@ Confirm memory/RESEARCH-LOG.md addendum and (if trade fired) memory/TRADE-LOG.md
 
 ---
 
+## 5c. AFTERNOON-SCAN (Last-2-Hours Opportunity Check)
+
+```
+You are running the afternoon-scan workflow for Alex's Alpaca trading bot.
+
+**PURPOSE:** ~2 hours before market close. Three jobs: (1) check if morning bracket limits filled, (2) upgrade fixed stops to trailing on profitable filled positions, (3) scan for last-2-hours setups (post-lunch momentum, late-day catalysts).
+
+**CRITICAL REMINDERS:**
+1. REMOTE SETUP: git pull origin main at start
+2. READ FIRST: memory/RESEARCH-LOG.md (today's entry), memory/TRADE-LOG.md (today's orders), memory/CONSTRAINTS.md, memory/TRADING-STRATEGY.md
+3. API credentials: ALPACA_API_KEY, ALPACA_SECRET_KEY from environment variables ONLY
+4. WRITE AT END: append to memory/RESEARCH-LOG.md (afternoon addendum), memory/TRADE-LOG.md (any fills/upgrades)
+5. REMOTE CLEANUP: git add memory/ && git commit -m "chore: afternoon-scan" && git push origin main
+
+**WORKFLOW:**
+
+STEP 1 — Pull Order & Position State
+bash scripts/alpaca.sh orders all  # all orders today
+bash scripts/alpaca.sh positions
+bash scripts/alpaca.sh account
+
+Compare against today's TRADE-LOG entries: which limit orders filled? Which still open?
+
+STEP 2 — Trailing Stop Upgrades on Profitable Fills
+For each filled position where unrealized_plpc > 0:
+  - If position has a fixed stop_loss from the bracket: cancel it, replace with 10% trailing GTC
+  - Use the existing midday tightening rules: at +15% tighten to 7%, at +20% tighten to 5%
+  - Constraints from TRADING-STRATEGY.md still apply (never within 3% of current price, never move down)
+
+For each filled position where unrealized_plpc ≤ 0: leave the bracket stop in place.
+
+STEP 3 — Cancel Stale Unfilled Limits (Optional)
+If a morning limit order has been sitting unfilled and the underlying catalyst has weakened (check via quick news scan):
+  - Cancel: bash scripts/alpaca.sh cancel ORDER_ID
+  - Log reason
+
+If catalyst still valid → leave order alone, it expires at close anyway.
+
+STEP 4 — Afternoon Opportunity Scan (Quant + Catalyst)
+Look for late-day setups that emerged AFTER pre-market research:
+  - Surprise news / earnings announcements during today's session
+  - Sector rotation visible in afternoon tape
+  - Tickers near key technical levels approaching close
+
+For ANY candidate, run BOTH layers (catalyst + quant), same gates as pre-market:
+  - bash scripts/alpaca.sh quote SYMBOL
+  - bash scripts/alpaca.sh bars SYMBOL 25 (compute Z-Score)
+  - identify pair, compute pair Z-Score
+  - VIX still in allowed regime?
+
+If a candidate clears Layer A + Layer B AND weekly trade count + position count allow:
+  - Place bracket limit order (same structure as market-open STEP 4)
+  - Limit price = current market or slightly below (afternoon entries typically don't get the same pullback room as morning)
+  - Time-in-force = day (will fill before close or expire)
+
+STEP 5 — Append to memory/RESEARCH-LOG.md
+
+### YYYY-MM-DD — Afternoon Scan Addendum (HH:MM)
+
+**Bracket fills today:** [list any limits that filled, with fill price]
+**Stops upgraded:** [list trailing-stop replacements]
+**Stale limits cancelled:** [list, with reasons]
+**New afternoon entries:** [list new bracket orders placed, or "none"]
+**Afternoon market context:** [1-2 lines on what shifted since morning]
+
+STEP 6 — Append to memory/TRADE-LOG.md
+For each new entry, fill, or stop upgrade, log per existing format (BRACKET FILLED, STOP UPGRADED, etc.).
+
+STEP 7 — Print Summary
+Afternoon Scan — YYYY-MM-DD HH:MM
+
+Bracket fills since open: N
+Trailing stops upgraded: N
+Stale limits cancelled: N
+New afternoon entries: N
+
+Portfolio now: X positions, Y% deployed
+Open bracket limits remaining: N
+
+STEP 8 — Verify Files Updated
+Confirm memory/RESEARCH-LOG.md addendum and memory/TRADE-LOG.md updates committed.
+```
+
+---
+
 ## 6. DAILY SUMMARY
 
 ```
@@ -798,6 +904,28 @@ If a rule has worked consistently for 2+ weeks OR failed badly (significant losi
 - Update memory/TRADING-STRATEGY.md to reflect change
 - Document the change in the weekly review ("Updated: RSI threshold from 30 to 35 based on 2-week trial")
 - Log decision to decisions/log.md (if using git): [YYYY-MM-DD] DECISION: update RSI threshold | REASONING: improved win rate | CONTEXT: 2-week backtest
+
+STEP 5b — Phase Review Check (Every 3 Weeks)
+Read decisions/log.md and find the most recent "PHASE REVIEW" entry. If today's date is ≥ 21 days after that date (or no prior PHASE REVIEW exists and today is ≥ 21 days after Phase 1 launch on 2026-05-01), append a Phase Audit subsection to this week's review:
+
+### Phase Audit (3-Week Review)
+
+**Phase status:** Phase [N] active since [date]. Today is Day [N] of phase.
+
+**1. Strategy efficacy:** Is the current quant + catalyst combo producing edge? (Win rate, profit factor, Sharpe vs S&P 500 over the 3-week window.)
+
+**2. Backlog promotions:** What items in the strategy backlog should move to active development?
+
+**3. Stale adjustments:** Which adjustments have appeared on weekly review lists 3+ times unimplemented? Promote each to a concrete coding task.
+
+**4. Cost vs alpha:** Estimated API spend last 3 weeks vs realized P&L. Justified?
+
+**5. Phase gate progress:** Distance to ≥30 closed trades · Sharpe ≥ 1.5 · max drawdown ≤ 15%.
+
+**6. Recommended next-phase focus (1-2 items):** What one or two changes should we prioritize in the next 3-week window?
+
+After writing the phase audit, append to decisions/log.md:
+[YYYY-MM-DD] PHASE REVIEW: completed 3-week audit | KEY FINDING: <one-sentence summary> | NEXT REVIEW DUE: [today + 21 days]
 
 STEP 6 — Send Weekly Recap
 Append to memory/DAILY-SUMMARY.md:

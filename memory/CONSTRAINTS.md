@@ -116,11 +116,51 @@ If stddev < 0.01 → reject (illiquid or stale data).
 
 ---
 
-## Stop Placement Fallback
+## Order Type Mandate
 
-1. Try 10% trailing stop (GTC)
-2. If rejected (PDT): Use fixed stop 10% below entry (GTC)
-3. If also rejected: Queue for next trading day morning
+**All entry orders MUST be bracket limit orders (not market orders).**
+
+Required structure:
+```json
+{
+  "symbol": "SYM",
+  "qty": "N",
+  "side": "buy",
+  "type": "limit",
+  "time_in_force": "day",
+  "limit_price": "X.XX",
+  "order_class": "bracket",
+  "take_profit": {"limit_price": "Y.YY"},
+  "stop_loss":   {"stop_price": "Z.ZZ"}
+}
+```
+
+**Limit price rules:**
+- Must equal the bot's research-derived intended entry (NOT current market)
+- Must produce R:R ≥ 2:1 vs the stop_loss and take_profit
+- If current market is already past the limit (gapped up), DO NOT chase — let order sit unfilled
+
+**Time-in-force rules:**
+- Default: `day` (cancels at session close, re-evaluate tomorrow)
+- GTC only by explicit override in research log entry
+
+**Market orders are ONLY allowed for:**
+- Closing stopped-out positions
+- Thesis-break exits
+- Cancellations / position closes
+- NEVER for fresh entries
+
+## Stop Placement Fallback (Post-Fill)
+
+After a bracket fill, the fixed stop_loss is active. If the position becomes profitable, the bot should upgrade the fixed stop to a trailing stop on the next monitoring run:
+
+1. Cancel the bracket's child stop_loss order
+2. Place 10% trailing stop GTC
+3. If trailing rejected (PDT): keep the bracket's fixed stop in place
+
+If the bracket itself is rejected by Alpaca (e.g., insufficient buying power, invalid prices):
+1. Log the rejection reason
+2. Skip the trade — do NOT fall back to a market order
 
 ---
 

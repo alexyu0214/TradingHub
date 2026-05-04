@@ -133,6 +133,71 @@ Must pass all to advance to Phase 2 (live $1k account):
 
 ---
 
+## Order Execution Strategy (Bracket Limit Orders)
+
+**Default for all entries: bracket limit orders. NOT market orders.**
+
+The bot does NOT chase the market. The bot identifies an intended entry price, places a LIMIT BUY at that price with attached stop-loss and take-profit (one bracket order), and lets Alpaca handle execution if/when the price reaches the limit.
+
+**Why this matters:**
+- Eliminates gap-chasing (limit just sits there if price gaps past it)
+- Removes need for "did this fire yet" intraday polling
+- Discipline: if price doesn't come to the limit, no trade. That's correct behavior.
+- Stop-loss + take-profit are placed atomically with the entry, so risk is bounded the moment the order fills
+
+**Order construction:**
+```
+Order class: bracket
+Type: limit (buy)
+Limit price: research-derived intended entry
+Time in force: day (re-evaluate tomorrow if unfilled)
+Take-profit (child): research-derived target (≥ 2:1 R:R)
+Stop-loss (child): typically 7-10% below limit (or technical level)
+```
+
+**Lifecycle:**
+1. Market-open workflow places bracket limit orders at intended entries
+2. If price hits limit during the session → order fills, bracket activates (stop + target both live)
+3. If price never hits limit → order expires at session close, no fill
+4. Next morning's pre-market re-evaluates. If thesis still valid AND Z-Score still qualifies, re-place. Otherwise skip.
+
+**When to use market orders instead:**
+- Closing a stopped-out position (immediate exit)
+- Closing on thesis-break (no time for limit)
+- NEVER for fresh entries
+
+**Trailing stop upgrade (post-fill):**
+The bracket places a fixed stop. Once filled, on the next bot run (midday or afternoon-scan), if position is profitable, replace the fixed stop with a 10% trailing stop GTC per existing rules.
+
+---
+
+## Phase Review Cycle (Every 3 Weeks)
+
+**Purpose:** Force structured improvement. Strategy must evolve based on actual performance, not stay frozen.
+
+**Schedule:**
+- **Phase 1 review:** 3 weeks after Phase 1 launch
+- **Every 3 weeks thereafter:** structured retro of strategy, prompts, deployment, win rate
+
+**What gets reviewed each cycle:**
+1. Strategy efficacy — is the current approach producing edge?
+2. Backlog items — what's queued for next phase?
+3. Failed adjustments — what's been on the weekly list 3+ weeks unimplemented? Promote to a coding task.
+4. Cost vs return — is API spend justified by alpha generated?
+5. Phase gate progress — distance to ≥30 closed trades, Sharpe target, drawdown ceiling
+
+**Where the schedule lives:**
+- `decisions/log.md` — each phase review logs its outcome
+- Friday's weekly review prompt checks: "Is today's date ≥ 3 weeks since last phase review? If so, append a Phase Audit subsection."
+
+**Phase milestones:**
+- Phase 1 (current): Quant layer + bracket limits + 5 daily workflows. Review 2026-05-24.
+- Phase 2 backlog: Live $1k account migration (after Phase 1 gate criteria met)
+- Phase 3 backlog: Pairs trading with shorts (long+short same sector)
+- Phase 4 backlog: Conditional hourly monitor (cheap pre-filter triggers full agent only on signals)
+
+---
+
 ## Quant Layer (Simons-Inspired Statistical Edge)
 
 **Purpose:** Sit ON TOP of the catalyst checklist to widen the universe of qualifying setups WITHOUT lowering the bar. Both layers must clear for a trade to fire.

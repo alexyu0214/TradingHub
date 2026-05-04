@@ -26,6 +26,7 @@ WORKFLOW_SECTIONS = {
     "trade":           "4. MANUAL TRADE",
     "midday":          "5. MIDDAY SCAN",
     "midday-rescan":   "5b. MIDDAY-RESCAN",
+    "afternoon-scan":  "5c. AFTERNOON-SCAN",
     "daily-summary":   "6. DAILY SUMMARY",
     "weekly-review":   "7. WEEKLY REVIEW",
 }
