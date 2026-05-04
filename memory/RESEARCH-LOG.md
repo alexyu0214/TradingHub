@@ -675,3 +675,153 @@ For the second consecutive day, no entry signals can be confirmed against the ch
 **Reason:** Quant layer (Z-Score) rejected all 5 new candidates. No name reached the ±2.0σ statistical threshold required by strategy. Market broadly mid-range, no mean-reversion setups available. Cash preserved at 80% — correct posture.
 **Key watch:** PLTR post-earnings tomorrow; XLB approaching RSI 39 — needs further weakness to trigger; NFP Friday as macro pivot.
 
+
+---
+
+## 2026-05-04 — Pre-Market Research (Day 6)
+
+### Market Snapshot
+| Metric | Value | Note |
+|---|---|---|
+| WTI Crude | $105.21 (+3.27%) | Intraday range $99.21–$107.43 |
+| Brent Crude | $109.68–$112.28 (+1.40–3.80%) | Iranian port blockade tightening supply |
+| S&P 500 Futures | ~7,267.50 | New all-time highs vicinity |
+| VIX | 17.57 | Opened 17.38 |
+| Market Mood | Extreme Greed | CNN Fear & Greed |
+
+### VIX Regime Classification
+**NORMAL (14–22) → Sizing Multiplier: 1.00×**
+VIX at 17.57 sits firmly in the Normal band. All entry types permitted. No regime-based restrictions. Full 10% Kelly cold-start sizing applies.
+
+### Key Catalysts Today
+1. **Earnings bonanza**: PLTR, VRTX, WMB, FANG (Diamondback Energy), ON Semi among 100+ reporters
+2. **S&P 500 Q1 EPS growth**: 27.1% blended YoY (vs 13.1% expected) — strongest since late 2021; 84% beat rate
+3. **Energy supply shock**: Naval blockade of Iranian ports keeping WTI/Brent elevated; Energy Q2 estimates revised +45.1%
+4. **AI tailwind**: Comm Services +53.2%, IT +50.0% EPS growth YoY; AI capex >$725B
+5. **Fed**: Rates held at 3.50–3.75%; dovish lean if weakness persists; divided committee
+6. **Economic data today**: Factory Orders (MoM, 10:00 AM ET); no CPI/PPI/FOMC today
+7. **Upcoming macro**: NFP May 8, CPI May 12, PPI May 13
+
+### Sector Momentum (YTD 2026)
+- **Leading**: Communication Services (+53.2% EPS), IT (+50.0%), Energy (+45.1% Q2 revision) — all at or near ATH
+- **Lagging**: Industrials (−2.9% revision), selective rotation out of earlier leaders
+- **Broad**: S&P 500 Momentum Value Sector Rotation index +8.42% YTD
+
+---
+
+### Open Position Review: XOM
+- **Current**: $152.46 | Entry: $153.35 | Unrealized: −$115.70 (−0.58%)
+- **GTC Trailing Stop**: $138.78 (10% from HWM $154.20) — live and unmodified
+- **Z-Score**: +0.036 (mid-range, no statistical signal in either direction)
+- **Thesis**: INTACT — WTI +3.27% today, Brent $109–$112, Iranian blockade persistent, XLE in uptrend above 20d mean
+- **Action**: **HOLD** — stop is correctly placed, no tightening warranted (position not at +15% trigger). XOM showing minor relative weakness vs WTI today (+3.27% WTI vs −0.58% XOM premarket) which is worth monitoring but does not constitute thesis break. Integrated majors sometimes lag spot price same day.
+
+---
+
+### Candidate Scan — Universe Screened Today
+
+#### Candidate 1: FANG (Diamondback Energy) — SHORT candidate
+
+**Layer A — Catalyst Checklist:**
+| Item | Status |
+|---|---|
+| Ticker / Sector | FANG / Energy (E&P) |
+| 50/200 SMA direction | 20d trend ABOVE mean — uptrend |
+| **Catalyst** | Earnings report today; stock statistically extended vs peers |
+| Sector momentum | Energy sector STRONG (+45.1% Q2 revision) — **headwind for shorts** |
+| RSI(14) estimate | ~73.6 — **above 70, short trigger met ✅** |
+| Volume confirm | ADV ~2.9M, earnings day expected 2–3× normal — confirm at open |
+| Stop level | $228.63 (8% above $211.69 entry) |
+| Target 2:1 R:R | $177.82 (−$33.87 from entry) |
+| R:R | **≥ 2:1 ✅** |
+
+**Layer B — Quant Checklist:**
+| Item | Status |
+|---|---|
+| Z-Score | **+2.547 ✅ QUALIFIES (SHORT)** — statistically overbought vs 20d mean |
+| VIX regime | NORMAL — entries permitted ✅ |
+| Pair check (OXY) | Z = +0.544 | Divergence vs FANG = **2.003σ → EXCEEDS 1.5σ threshold** |
+| Pair check (XOM) | Z = +0.036 | Divergence vs FANG = **2.511σ → EXCEEDS 1.5σ threshold** |
+| Pair ruling | ❌ **BOTH pairs diverge >1.5σ — single-name risk elevated** |
+
+**Composed Decision: SKIP / HOLD-WATCH**
+
+Layer B FAILS on pair divergence rule. Both OXY (+0.54σ) and XOM (+0.04σ) are mid-range while FANG is at +2.55σ — a 2.0–2.5σ divergence, well above the 1.5σ skip threshold. Per strategy rules, this is single-name idiosyncratic risk, NOT a broad sector short signal.
+
+**Additional disqualifiers:**
+1. **Earnings event risk**: FANG reports today. Shorting into earnings = binary gap risk. A strong beat could cause +15–20% gap up overnight, potentially blowing through the stop before it can execute. Strategy is not an earnings fade strategy.
+2. **Sector headwind for shorts**: Energy is the strongest sector YTD with +45.1% Q2 upward estimate revisions. Oil at $105 WTI with geopolitical supply shock. Shorting energy into rising oil = swimming against the current.
+3. **Shorting infrastructure note**: Strategy is currently long-only in Phase 1. Shorting requires verification that Alpaca short-sell infrastructure is correctly configured. Phase 3 backlog item.
+
+**Bottom line**: FANG passes Layer A's RSI and Z-Score thresholds individually, but fails the composite Layer B pair-divergence gate, has unacceptable earnings binary risk, and faces a strong sector tailwind. **SKIP.**
+
+---
+
+#### Candidate 2: PLTR (Palantir Technologies) — Earnings Momentum Watch
+
+**Layer A:**
+| Item | Status |
+|---|---|
+| Catalyst | Earnings report today — AI government/commercial momentum |
+| Sector | Information Technology / AI |
+| RSI | Trending mid-range, stock above 20d mean |
+| Z-Score | **+0.784 — fails ≥ 2.0 threshold ❌** |
+
+**Layer B Decision: REJECT** — Z-Score +0.78σ, nowhere near the ±2.0σ required. Stock is fairly valued vs its recent range. No statistical edge. Pure earnings momentum play without quant confirmation.
+
+**Verdict: SKIP.** Monitor post-earnings reaction for possible mean-reversion setup if stock gaps up violently (creating Z ≥ +2.0) or if it gaps down into oversold (Z ≤ −2.0) on a miss.
+
+---
+
+#### Candidate 3: XLE (Energy ETF) — Sector Trend Play
+
+**Layer A:**
+| Item | Status |
+|---|---|
+| Catalyst | Oil +3.27% today (WTI $105.21), Brent $109–$112, blockade ongoing |
+| Sector | Energy — leading sector YTD |
+| Z-Score | **+1.173 — fails ≥ 2.0 threshold ❌** |
+| RSI | Mid-range, no trigger |
+
+**Layer B Decision: REJECT** — Z-Score +1.17σ. XLE has already moved toward fair value; no statistical edge available today.
+
+**Verdict: SKIP.** XLE is directionally correct but not statistically extended enough for entry. WTI surge today may push XLE higher intraday — watch for either a pullback to Z ≤ −2.0 (buy the dip) or continuation to Z ≥ +2.0 (potential overextension).
+
+---
+
+#### Other Candidates Screened
+
+| Ticker | Z-Score | Verdict |
+|---|---|---|
+| OXY | +0.544 | No signal — mid-range |
+| CVX | +0.233 | No signal — mid-range, XOM pair already held |
+
+---
+
+### Trade Ideas for Today
+
+| # | Idea | Type | Z-Score | Layer A | Layer B | Decision |
+|---|---|---|---|---|---|---|
+| 1 | **FANG short** | Mean-reversion short | +2.547 ✅ | RSI 73.6 ✅, R:R ✅ | Pair divergence ❌, earnings binary risk ❌ | **SKIP** |
+| 2 | **PLTR earnings** | Momentum long | +0.784 ❌ | Z-Score fails | — | **SKIP** |
+| 3 | **XLE long** | Sector ETF momentum | +1.173 ❌ | Z-Score fails | — | **SKIP** |
+
+### Final Decision: **HOLD — No New Positions Today**
+
+All 3 candidates screened today fail the composite Layer A + Layer B entry gates:
+- FANG: Z-Score qualifies but fails pair-divergence rule + earnings binary risk + sector headwind for shorts
+- PLTR: Z-Score too low (+0.78σ)
+- XLE: Z-Score too low (+1.17σ)
+
+**XOM**: Continue holding. Thesis fully intact with WTI surging +3.27% today. Stop correctly placed at $138.78 GTC trail. No adjustments warranted.
+
+**Cash preserved at ~80%.** Patience rule applies — zero new trades is correct when no edge is present. With S&P at all-time highs, VIX at 17.57 (elevated from recent lows), and market in "Extreme Greed," waiting for statistical mean-reversion setups is disciplined.
+
+### Watch List for Tomorrow
+1. **FANG post-earnings**: If stock sells off on earnings (despite beat = "buy the rumor, sell the news"), may create Z ≤ −2.0 long entry OR if gap down is sharp, Z ≤ −2.0 oversold bounce in an uptrending energy sector
+2. **PLTR post-earnings**: Gap up → watch Z-Score for potential short. Gap down → oversold long if Z ≤ −2.0 with energy/AI thesis
+3. **XLE pullback**: If WTI spike reverses (short squeeze unwind), XLE could pull back to Z ≤ −2.0 — potential sector ETF long
+4. **Factory Orders (10:00 AM)**: Weak print = negative for industrials, potentially positive for defensive sectors and bonds
+5. **NFP May 8**: Binary macro event — size down or avoid new longs Friday/pre-weekend
+
+**Regime:** NORMAL (VIX 17.57) | **Sizing:** 1.00× | **Open positions:** 1 (XOM) | **New trades today:** 0 | **Weekly trades used:** 0/3
