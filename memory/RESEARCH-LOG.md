@@ -455,3 +455,223 @@ For the second consecutive day, no entry signals can be confirmed against the ch
 7. 🔑 Confirm Gemini API key is rotated/valid before execution session begins
 
 ---
+
+---
+
+## 2026-05-04 — Pre-Market Research (Day 6, Monday)
+
+**Researcher:** Claude (pre-market workflow)
+**Time:** Pre-market, ~23:00–01:00 BST
+**Sources:** Pre-computed market research + Alpaca live API
+
+---
+
+### Market Snapshot
+
+| Metric | Level | Notes |
+|--------|-------|-------|
+| WTI Crude | $99.97/bbl | -1.93% on day; +64% YoY; US Hormuz escort plan supporting floor |
+| Brent Crude | $108.10–$109.88/bbl | +82% YoY; June futures $109.81 |
+| S&P 500 Futures | 7,270.75 | +0.07%; ESW00 settlement $7,258 |
+| VIX | 17.47 (live) | Previous close 16.89; opened 17.01 |
+| **VIX Regime** | **NORMAL (14–22)** | **Sizing multiplier: 1.00×** |
+
+---
+
+### VIX Regime Classification — STEP 4
+
+- **VIX: 17.47** → **NORMAL regime** (14–22 band)
+- Sizing multiplier: **1.00×** (no haircut)
+- Strategy bias: All entry types OK (trend + mean-reversion both valid)
+- YoY VIX: -30.93% — market has de-risked meaningfully from 12 months ago
+- No elevated volatility restriction on new entries today
+
+---
+
+### Live Account State — STEP 2
+
+| Field | Value |
+|-------|-------|
+| Equity | $100,052 |
+| Cash | $80,064.50 (80.0%) |
+| Buying Power | $180,116.50 (margined 2×) |
+| Deployed | $19,987.50 (20.0%) |
+| Day P&L | +$130.00 (+0.13% intraday) |
+| Phase P&L | +$52.00 (+0.052%) vs prior EOD -$78 |
+| PDT Daytrade Count | 0/3 |
+| Open Positions | 1 (XOM) |
+| Week Trade Count | 0/3 (fresh week — resets Monday) |
+| Circuit Breakers | ✅ All clear |
+
+**XOM position detail:**
+- 130 shares @ avg entry $153.35 | Current $153.75
+- Unrealized P&L: +$52.00 (+0.26%)
+- GTC trailing stop: 10% trail, HWM $154.20, stop currently at $138.78
+- Thesis intact: Hormuz supply-risk, elevated WTI, post-earnings momentum
+- +15% tighten trigger: $176.35 | +20% tighten trigger: $184.02
+- **No stop adjustment needed today** (price below prior HWM $154.20)
+
+---
+
+### Key Catalysts for Today — STEP 3
+
+1. **US Hormuz Escort Plan** — Direct tailwind for integrated oil. WTI holding near $100, Brent near $109. Directly supports XOM thesis. ✅
+2. **Fed Speakers: Daly, Goolsbee, Waller at 11:30 PM ET** — Could move rates expectations. Fed held at 3.5–3.75% at April 28–29 FOMC with dissent. Watch for hawkish/dovish tone.
+3. **March Factory Orders @ 10:00 AM ET** — Macro read on industrial demand; relevant for XLI/XLB thesis.
+4. **Q1 2026 Earnings Season** — 84% EPS beat rate, 81% revenue beat rate, blended EPS growth +15.1%. Broadly constructive.
+5. **PLTR Reports Tonight (After Close)** — Pre-earnings setup possible but Z-Score not confirming (see below).
+6. **NFP Friday (April, May 8)** — Consensus: 49,000 jobs, 4.3% unemployment. Weak print would pressure Fed toward cuts. Market positioning ahead of this will matter.
+7. **ISM Services PMI Tuesday (May 5)** — Services health check after manufacturing data today.
+8. **JOLTS + ADP also this week** — Labour market data cascade before NFP.
+
+---
+
+### Sector Momentum Context
+
+| Sector | YTD 2026 | Trend | Notes |
+|--------|----------|-------|-------|
+| Energy (XLE) | Leading | ✅ Up | All-time highs; Hormuz risk premium active |
+| Consumer Staples (XLP) | Leading | ✅ Up | Defensive, ATH |
+| Industrials (XLI) | Leading | ✅ Up | YTD leader |
+| Materials (XLB) | Leading | ✅ Up | YTD leader |
+| Info Technology (XLK) | Lagging | ⚠️ | +22% YTD but currently lagging vs defensive |
+| Healthcare (XLV) | Weakening | ❌ | Rolling over |
+| Financials (XLF) | Lagging | ⚠️ | Behind pace |
+| Communications (XLC) | Lagging | ⚠️ | Behind pace |
+
+---
+
+### Universe Scan & Quant Results — STEP 5
+
+#### Candidate 1: XOM (HELD — Monitor, not new entry)
+- **Current:** $153.75 | Entry: $153.35 | Unrealized: +$52
+- **Z-Score(20d):** +0.317 → NEUTRAL (no statistical extreme)
+- **RSI(14):** 50.2 → NEUTRAL
+- **CVX pair Z:** +0.287 → divergence vs XOM = 0.030σ ✅ (pair tracking together, no divergence)
+- **Verdict:** Thesis intact. Energy sector strong. Hormuz catalyst live. Hold with existing 10% GTC trail. No action needed.
+
+---
+
+#### Candidate 2: XLE — Energy Select Sector ETF
+- **Sector:** Energy | **AUM:** >$40B ✅ | **ADV:** ~44M shares ✅ | **Price:** $58.85 ✅
+- **Catalyst:** WTI near $100, Brent near $109. US Hormuz escort plan = direct supply-risk premium embedded in energy prices. Energy sector at YTD leadership. Q1 earnings season strong (15.1% blended growth).
+- **Sector momentum:** ✅ Leading YTD
+- **50/200 SMA:** 50-day trend from March lows recovering — structure improving; sector recently at ATH in YTD terms
+- **Layer A Checklist:**
+  - Catalyst: ✅ Hormuz/WTI supply premium active
+  - Sector momentum: ✅ XLE is YTD leader
+  - RSI(14): 59.1 → **NOT oversold (<30 required for long)** ❌
+  - Volume: Last 35.8M vs 20d avg 44.3M → **below average** ❌
+  - R:R: N/A (entry gate failed)
+- **Layer B Checklist:**
+  - Z-Score: +1.051 → **Not at -2.0 extreme** ❌ (mildly above mean, not oversold)
+  - VIX regime: ✅ Normal, sizing OK
+- **VERDICT: REJECT** — Layer A fails (RSI not oversold, volume below avg). Layer B fails (Z not ≤ -2.0). XLE is already extended above its 20d mean. We already own XOM as the energy proxy. Avoid duplicate sector crowding.
+
+---
+
+#### Candidate 3: XLI — Industrials Select Sector ETF
+- **Sector:** Industrials | **AUM:** >$25B ✅ | **ADV:** ~8.9M shares ✅ | **Price:** $172.96 ✅
+- **Catalyst:** Factory Orders today at 10:00 AM could be a positive catalyst for industrials. XLI is YTD sector leader. NFP this week could confirm labour-driven industrial demand.
+- **Sector momentum:** ✅ Leading YTD
+- **50/200 SMA:** Price $172.96 recovering from April weakness; YTD leader
+- **Layer A Checklist:**
+  - Catalyst: ⚠️ Factory Orders data — potential, not confirmed
+  - Sector momentum: ✅ XLI is YTD leader
+  - RSI(14): 50.5 → **NOT oversold** ❌
+  - Volume: Last 6.8M vs 20d avg 8.9M → **below average** ❌
+  - R:R: N/A (entry gate failed)
+- **Layer B Checklist:**
+  - Z-Score: +0.589 → **Not at -2.0 extreme** ❌ (above mean)
+  - VIX regime: ✅ Normal
+- **VERDICT: REJECT** — RSI neutral, volume below average, Z-Score not confirming oversold. Catalyst is speculative (data-dependent). No statistical edge today.
+
+---
+
+#### Candidate 4: XLB — Materials Select Sector ETF
+- **Sector:** Materials | **AUM:** >$10B ✅ | **ADV:** ~10.3M shares ✅ | **Price:** $51.35 ✅
+- **Catalyst:** Materials is a YTD sector leader. Elevated oil/commodities support input pricing. Factory Orders today could show upstream demand.
+- **Layer A Checklist:**
+  - Catalyst: ⚠️ Moderate (commodity tailwinds, no stock-specific catalyst)
+  - Sector momentum: ✅ YTD leader
+  - RSI(14): 39.2 → Approaching oversold but NOT below 30 ❌
+  - Volume: Last 9.36M vs 20d avg 10.33M → slightly below average ❌
+  - R:R: N/A (entry gate failed)
+- **Layer B Checklist:**
+  - Z-Score: -0.396 → **Not at -2.0 extreme** ❌ (barely below mean)
+  - VIX regime: ✅ Normal
+- **VERDICT: REJECT** — RSI approaching interesting territory (39.2) but has NOT triggered the <30 entry requirement. Z-Score -0.396 is nowhere near the -2.0 threshold. Monitor for future qualification if XLB sells off further toward Z ≤ -2.0 and RSI < 30.
+
+---
+
+#### Candidate 5: PLTR — Palantir (Earnings Tonight)
+- **Sector:** IT/Defense Tech | **Mkt Cap:** >$300B ✅ | **ADV:** ~48M shares ✅ | **Price:** $144.07 ✅
+- **Catalyst:** Reports earnings after close today. Q1 2026 earnings season 84% beat rate. PLTR has been a momentum name.
+- **Layer A Checklist:**
+  - Catalyst: ✅ Earnings tonight
+  - Sector momentum: ⚠️ Tech is lagging vs defensives/energy YTD
+  - RSI(14): 63.0 → **NOT triggering** (need >70 for short, <30 for long) ❌
+  - Volume: Last 33.3M vs 20d avg 48.2M → **below average** ❌
+  - Earnings gap risk: Holding through earnings = binary bet (violates swing thesis discipline)
+- **Layer B Checklist:**
+  - Z-Score: +0.409 → **Not at any extreme** ❌
+  - Earnings pre-announcement risk: Cannot set rational stop around binary event
+- **VERDICT: REJECT (MONITOR POST-EARNINGS)** — No statistical entry signal. RSI neutral, Z neutral, volume below avg. Earnings tonight make pre-earnings entry a binary bet, not a systematic edge trade. Strategy rule: catalyst must be documentable, not "maybe they beat." **WATCH TOMORROW** — if PLTR beats and gaps up/down significantly, assess post-earnings Z-Score and RSI on the opening bar before considering any entry.
+
+---
+
+#### Candidate 6: COP — ConocoPhillips (E&P Energy)
+- **Sector:** Energy E&P | **Mkt Cap:** >$140B ✅ | **ADV:** ~8.8M shares ✅ | **Price:** $123.19 ✅
+- **Catalyst:** WTI near $100, Brent $109. Hormuz. Pure E&P name (higher beta to crude than XOM).
+- **Layer A + B:**
+  - RSI(14): 49.4 → Neutral ❌
+  - Z-Score: +0.019 → Flat neutral ❌
+  - Volume: 7.79M vs 20d avg 8.78M → below avg ❌
+- **VERDICT: REJECT** — Interesting sector but no statistical entry signal. COP also functions as XOM's extended energy peer; already have energy exposure.
+
+---
+
+### Trade Ideas for Today
+
+**IDEA 1: HOLD XOM** ✅
+- All thesis elements intact. Hormuz supply-risk premium active. WTI $100, Brent $109. CVX pair tracking (0.030σ divergence — perfectly correlated). Trailing stop live at $138.78 (10% trail from HWM $154.20). No action needed. Let the position breathe.
+- **Action:** HOLD. No order changes.
+
+**IDEA 2: NO NEW ENTRIES TODAY** — All candidates REJECTED by Layer B (Z-Score)
+- 6 candidates scanned: XLE, XLI, XLB, COP, PLTR, XOM (held)
+- Zero candidates reached Z ≤ -2.0 (long) or Z ≥ +2.0 (short)
+- This is the quant layer working correctly — the market is NOT at any statistical extreme in these names
+- Cash: $80,064 (80%) — preserved for when genuine signals appear
+- **Action:** STAND PAT. Cash preservation is correct. Patience rule applies.
+
+**WATCHLIST FOR REST OF WEEK:**
+- **PLTR** — Watch post-earnings (tonight). If meaningful reaction, assess fresh Z/RSI on Tuesday morning.
+- **XLB** — RSI 39.2, trending toward <30. If sells off to RSI <30 AND Z ≤ -2.0, becomes a genuine entry.
+- **AMD, Pfizer, Rivian, Shopify, SMCI (report Tuesday May 5)** — Flag for tomorrow's pre-market scan.
+- **Disney, Uber (report Wednesday May 6)** — Flag for Wednesday scan.
+- **NFP Friday (May 8)** — If 49k consensus badly missed (either side), will move energy, financials, defensives. Have scenario plan ready Thursday night.
+
+---
+
+### Risk & Circuit Breaker Review
+
+| Check | Status |
+|-------|--------|
+| Day P&L | +$130 (0.13%) ✅ (limit: -2%) |
+| Phase P&L | +$52 / -$78 base = -0.026% net ✅ (limit: -5%) |
+| Max drawdown | Well within -15% ✅ |
+| Positions | 1/6 ✅ |
+| Week trades | 0/3 ✅ |
+| PDT daytraders | 0/3 ✅ |
+| XOM + CVX combined | $19,988 (19.9%) ✅ (limit: 30%) |
+| Cash floor | $80,064 (80%) ✅ (min: 15–25% target) |
+
+---
+
+### Summary Decision
+
+**Regime:** NORMAL (VIX 17.47) | **Sizing:** 1.00×
+**Open positions:** XOM (HOLD) | **New trades today:** 0
+**Reason:** Quant layer (Z-Score) rejected all 5 new candidates. No name reached the ±2.0σ statistical threshold required by strategy. Market broadly mid-range, no mean-reversion setups available. Cash preserved at 80% — correct posture.
+**Key watch:** PLTR post-earnings tomorrow; XLB approaching RSI 39 — needs further weakness to trigger; NFP Friday as macro pivot.
+
