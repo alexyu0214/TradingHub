@@ -290,3 +290,19 @@ All candidates reviewed and rejected via Layer A + Layer B composite gate:
 - Circuit breakers: ✅ All clear
 
 **No orders placed — correct behavior per research HOLD decision. Cash preserved for statistical edge setups.**
+
+## 2026-05-05 — EOD
+
+**Portfolio:** $100,049.40 (+0.127% day, +0.049% phase)
+**Cash:** $80,064.50 (80.02%)
+**Deployed:** 19.98%
+**Daytrade count:** 0/3
+
+**Trades today:** none
+**Open positions:** XOM +0.248% ($49.40 unrealized — 130 shares @ $153.35, close $153.73)
+**Stops tightened:** none (XOM at +0.248%, below +15% trigger for trailing escalation)
+**Losers cut:** none
+
+**Notes:** First green phase close since inception (+$49.40); XOM carried the portfolio as energy thesis holds on elevated WTI; no new setups cleared statistical gates — patient hold posture maintained, weekly trade allowance 0/3 fully intact heading into Tuesday.
+
+---

@@ -345,3 +345,19 @@ Every trade (entry, exit, stop-out) is logged here with full thesis, entry price
 - Target: +15% (~$58.13), R:R: ~2.1:1
 - Size: 10% of equity × 1.00× VIX = ~$10,000 / $50.55 ≈ 197 shares
 
+
+---
+
+### May 05 — EOD Snapshot (Day 6, Monday)
+
+**Portfolio:** $100,049.40 | **Cash:** $80,064.50 (80.02%) | **Day P&L:** +$127.40 (+0.127%) | **Phase P&L:** +$49.40 (+0.049%) | **Deployed:** 19.98%
+
+| Ticker | Shares | Entry | Close | Unrealized P&L | Stop | Time |
+|--------|--------|-------|-------|----------------|------|------|
+| XOM | 130 | $153.35 | $153.73 | +$49.40 (+0.248%) | $139.014 (10% trail, HWM $154.46) | 3 trading days |
+
+**Trades today:** none
+
+**Notes:** Day 6 marks the first green close since inception — equity crossed $100,049.40, flipping phase P&L positive for the first time (+$49.40, +0.049%) after spending Days 2–5 in shallow red territory. The gain is driven entirely by XOM: the stock closed at $153.73 (+$0.38 from yesterday's $152.75 last-price) as the energy thesis continues to hold — WTI elevated, structural supply-risk premium intact from the Hormuz disruption narrative. The XOM trailing stop (GTC, 10%, HWM $154.46, stop $139.014) was not modified; at +0.248% unrealized, the position has not yet reached the +15% threshold to trigger the first trailing escalation. No new positions were opened today: FANG, PLTR, and XLE all failed composite Layer A + Layer B gates at the morning scan (earnings binary risk, Z-scores below ±2.0 thresholds), and the afternoon scan confirmed XLB remains 0.064σ shy of the long trigger while RSI holds above 30. Cash remains parked at 80.02% — above the minimum-deployed floor — reflecting deliberate patience; the strategy requires statistical edge, not forced deployment. Weekly trade allowance fully intact at 0/3 used heading into Tuesday. PDT count: 0/3. All circuit breakers clear.
+
+**Circuit breakers:** ✅ All clear — Day +0.127% (lim -2%) | Phase +0.049% (lim -5%) | Drawdown +0.046% from peak (lim -15%)
