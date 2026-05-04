@@ -311,3 +311,37 @@ Every trade (entry, exit, stop-out) is logged here with full thesis, entry price
 - PLTR post-earnings reaction (gap magnitude for mean-reversion setup)
 - AMD, Pfizer, Rivian, Shopify, SMCI (report Tue May 5 / tomorrow scan)
 - XLB — RSI 39.2 approaching <30; monitor for Z ≤ −2.0 qualification
+
+---
+
+### May 04 — Afternoon Scan (Day 6 / ~15:35 ET)
+
+**Portfolio:** $99,995.45 | **Cash:** $80,064.50 (80.1%) | **Day P&L:** +$73.45 intraday (+0.07%) | **Phase P&L:** -$4.55 (-0.005%) | **Deployed:** 19.9%
+
+| Ticker | Shares | Entry | Current | Unrealized P&L | Stop | Hold |
+|--------|--------|-------|---------|----------------|------|------|
+| XOM | 130 | $153.35 | $153.315 | -$4.55 (-0.023%) | $139.014 (trail 10%, HWM $154.46) | 3 trading days |
+
+**Afternoon scan trades:** none
+
+**Stop action:** NONE — XOM unrealized P&L = -0.023% (slightly underwater). Rule: leave stop in place when unrealized_plpc ≤ 0. XOM stop is already a 10% trailing GTC (d92d9371), HWM $154.46, stop $139.014. No cancellation, no replacement, no tightening.
+
+**Afternoon candidates evaluated (all rejected):**
+
+| Candidate | Fail Reason |
+|-----------|-------------|
+| XLB long | Z=-1.936 (need ≤-2.0, gap 0.064σ) AND RSI=34.19 (need <30) — both gates fail simultaneously |
+| FANG short | Layer B: pair divergence OXY 1.79σ > 1.5σ threshold; earnings binary risk (reported today); Energy sector headwind for short; Phase 1 long-only |
+| PLTR | Z=+0.982 — no statistical extreme in either direction |
+| XLE | Z=+1.366 — mid-range |
+
+**PDT count:** 0/3 | **Week trades:** 0/3 | **Positions:** 1/6 | **Circuit breakers:** ✅ all clear
+
+**Watchlist — XLB:**
+- Z=-1.936 (0.064σ from long trigger), RSI=34.19, pair LIN divergence=0.552σ ✅ (confirms)
+- Trigger price: ~$50.55 with RSI crossing <30
+- If both gate simultaneously at Tuesday open → bracket long candidate
+- Stop: ~7% below entry (~$47.01 if entry $50.55)
+- Target: +15% (~$58.13), R:R: ~2.1:1
+- Size: 10% of equity × 1.00× VIX = ~$10,000 / $50.55 ≈ 197 shares
+

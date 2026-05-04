@@ -935,3 +935,99 @@ No gates were lowered. No trade was forced. Four candidates re-evaluated; zero r
 3. **XLE** — Trend continuation, no entry. If WTI reverses materially, XLE could pull back to Z ≤ −2.0 — flag for Tuesday.
 4. **PLTR** — Post-earnings: Z flat. Continue monitoring daily.
 
+
+---
+
+## 2026-05-04 — Afternoon Scan Addendum (19:35 UTC / ~15:35 ET)
+
+**Scan time:** ~2 hrs before close (market closes 20:00 UTC / 4:00 PM ET)
+**VIX regime at scan:** NORMAL (~17.6 via VIXY proxy $27.76) | Sizing multiplier: 1.00×
+
+---
+
+### STEP 1 — Order & Position State Reconciled vs TRADE-LOG
+
+| Order ID | Symbol | Type | Status | Notes |
+|----------|--------|------|--------|-------|
+| c04ae321 | XOM | Market Buy (130 sh) | FILLED @ $153.35 | Entry May 1, logged ✅ |
+| d92d9371 | XOM | Trailing Stop 10% GTC | LIVE (status: new) | HWM $154.46, stop $139.014 |
+
+- **No morning bracket limits were placed today** (pre-market research decision was HOLD — no new candidates cleared gates). Nothing to check for fills.
+- **No stale limit orders exist** — only the trailing GTC stop on XOM is live.
+- **XOM bracket fills today:** 0 (position was entered May 1, not today)
+- XOM trailing stop already upgraded from bracket fixed-stop to GTC trailing on May 1; confirmed live and active today with updated HWM of $154.46.
+
+---
+
+### STEP 2 — Trailing Stop Assessment: XOM
+
+| Metric | Value |
+|--------|-------|
+| Entry | $153.35 |
+| Current price | $153.315 (bid $153.30 / ask $153.34) |
+| Unrealized P&L | -$4.55 (-0.023%) |
+| Stop type | Trailing 10% GTC (already upgraded from bracket) |
+| Current HWM | $154.46 |
+| Current stop | $139.014 |
+| +15% trigger (→ 7% trail) | $176.35 |
+| +20% trigger (→ 5% trail) | $184.02 |
+
+**Decision: NO STOP CHANGE**
+- `unrealized_plpc = -0.00023` → position is slightly underwater (−0.023%)
+- Workflow rule: *"For each filled position where unrealized_plpc ≤ 0: leave the bracket stop in place."*
+- Stop is already a 10% trailing GTC (previously upgraded) — this is the correct instrument
+- HWM of $154.46 is higher than current $153.31 → stop is correctly trailing from that high
+- Neither the +15% nor +20% tighten triggers have been reached
+- **No adjustment required**
+
+---
+
+### STEP 3 — Stale Limit Cancellations
+
+**None applicable.** No morning limit orders were placed today (HOLD decision at pre-market). Only the XOM trailing stop GTC exists, and it is correctly active. Nothing to cancel.
+
+---
+
+### STEP 4 — Afternoon Opportunity Scan
+
+**Candidates evaluated:**
+
+| Ticker | Z-Score | RSI(14) | Spread | Layer A | Layer B | Verdict |
+|--------|---------|---------|--------|---------|---------|---------|
+| XOM (hold) | +0.396 | 58.43 | 0.026% | — | — | HOLD, no new entry |
+| XLE | +1.366 | 68.71 | 0.017% | ❌ RSI mid-range | ❌ Z fails | REJECT |
+| XLB | **-1.936** | 34.19 | 0.020% | ❌ RSI=34.19 (need <30) | ❌ Z=-1.936 (need ≤-2.0) | REJECT — 0.064σ short |
+| FANG | **+2.332** | 81.58 | 0.70% | ✅ RSI>70, ✅ Z | ❌ Pair div (OXY) 1.79σ>1.5σ; ❌ earnings binary; ❌ sector headwind; ❌ Phase 1 long-only | REJECT |
+| PLTR | +0.982 | 63.17 | 0.020% | ❌ Z fails | — | REJECT |
+| CVX (pair) | +0.697 | — | 3.6% spread AH | ❌ after-hours | — | No signal |
+
+**XLB — Closest Candidate (Watch Carefully):**
+- Z-Score: -1.936 (threshold: ≤ -2.0; gap: only 0.064σ ≈ $0.03 further decline needed)
+- RSI: 34.19 (threshold: < 30; approaching but not triggered)
+- Sector pair LIN (Linde): Z = -1.384; XLB-LIN pair divergence = 0.552σ → **pair CONFIRMS** (< 1.5σ threshold ✅)
+- Catalyst: Materials is YTD sector leader; elevated commodity prices from Hormuz-driven energy complex; Factory Orders data released today could be contributing to weakness
+- With ~25 minutes remaining before close: XLB would need to fall ~$0.03–$0.04 to trigger the Z ≤ -2.0 gate. RSI < 30 would require a sharper accelerated sell-off.
+- **VERDICT: NOT entering today.** Strict gate adherence — both Z and RSI must simultaneously clear. If XLB opens tomorrow at or below ~$50.55 with RSI confirming <30, this becomes a legitimate pre-market research idea.
+
+**FANG — Post-Earnings Analysis:**
+- Z: +2.332 ✅ | RSI: 81.58 ✅ | Spread: 0.70% ✅
+- REJECTS on: (1) Pair divergence OXY Z=+0.54 vs FANG Z=+2.33 → 1.79σ gap > 1.5σ rule; (2) Earnings reported today — "sell the news" short is binary speculation, not systematic edge; (3) Energy sector is YTD leader, WTI near $100, Hormuz active — strong sector headwind for any short; (4) Phase 1 is long-only (Phase 3 backlog)
+- **VERDICT: REJECT on composite Layer B failures**
+
+**PLTR — Post-Earnings (Reported May 4 after close):**
+- Z: +0.982 — mid-range, no statistical extreme. Market has absorbed earnings news without creating a ±2σ opportunity. **REJECT.**
+
+---
+
+### Afternoon Market Context
+
+Energy continued its constructive session: XLE closed +0.68% at $59.25, tracking WTI's elevated levels ($99-106 range persisting). XOM intraday showed mild positive action (+0.37% intraday, closing the trailing stop gap slightly) despite near-flat session close vs entry. The XLB (Materials) selloff of −1.5% on the day moved it to within striking distance of the Z ≤ −2.0 long trigger — this is the #1 watchlist item for Tuesday's pre-market. FANG's post-earnings gapped up further but failed the pair-divergence gate vs OXY — idiosyncratic earnings premium, not a sector-wide move. No late-day catalysts emerged that would justify a same-session bracket entry. VIX remained firmly in Normal regime (~17.6). "Sell in May" seasonal pressure may be contributing to XLB weakness — worth monitoring into tomorrow.
+
+---
+
+**Bracket fills today:** 0 (no morning limits were placed; XOM entry was May 1)
+**Stops upgraded:** 0 (XOM stop already trailing; position slightly underwater → no change per rules)
+**Stale limits cancelled:** 0 (none existed)
+**New afternoon entries:** none — all candidates failed Layer A + Layer B composite gates
+**Key watchlist for Tuesday pre-market:** XLB (Z=-1.936, RSI=34.2, pair confirms; needs ~$0.03 further decline + RSI<30)
+
