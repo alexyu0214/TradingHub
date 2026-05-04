@@ -825,3 +825,113 @@ All 3 candidates screened today fail the composite Layer A + Layer B entry gates
 5. **NFP May 8**: Binary macro event — size down or avoid new longs Friday/pre-weekend
 
 **Regime:** NORMAL (VIX 17.57) | **Sizing:** 1.00× | **Open positions:** 1 (XOM) | **New trades today:** 0 | **Weekly trades used:** 0/3
+
+---
+
+## 2026-05-04 — Midday Rescan Addendum (16:19 UTC / ~12:19 ET)
+
+**VIX Regime at rescan:** NORMAL (17.47 from morning) — Sizing multiplier: 1.00×
+**Account at rescan:** Equity $100,013 | Cash $80,064.50 (80.1%) | XOM: 130 sh @ $153.35 | Unrealized: +$15.60 (+0.08%)
+**Position count:** 1/6 | Week trades: 0/3 | PDT daytrades: 0/3
+
+---
+
+### Skipped at Open — Re-evaluated at Midday
+
+#### FANG (Diamondback Energy)
+| Metric | Morning | Midday |
+|--------|---------|--------|
+| Skip reason | Z=+2.547✅ BUT pair-divergence OXY/XOM >1.5σ, earnings binary risk, sector headwind for shorts | Same + spread catastrophic |
+| Bid/Ask | Pre-open (stale) | $200.26 / $214.71 |
+| **Spread %** | — | **6.96% → STILL TOO WIDE** |
+| Z-Score | +2.547 | N/A (not recalculated — spread gate failed first) |
+
+**VERDICT: ❌ STILL SKIPPED**
+Spread of 6.96% is grossly unacceptable (threshold: <1%). This reflects post-earnings thin after-hours market — it is now after 4 PM ET and FANG is trading in after-hours. The original qualitative disqualifiers (pair divergence >1.5σ on BOTH OXY and XOM, earnings binary gap risk, Energy sector headwind for shorts) remain fully in force. FANG does not re-qualify on any dimension.
+
+---
+
+#### PLTR (Palantir Technologies)
+| Metric | Morning | Midday |
+|--------|---------|--------|
+| Skip reason | Z-Score +0.784 — below ±2.0 threshold | Same — no change |
+| Bid/Ask | — | $146.22 / $146.28 |
+| **Spread %** | — | **0.041% ✅ NORMALIZED** |
+| Z-Score | +0.784 | **+0.786** |
+| RSI(14) | Not assessed (Z gate failed first) | Not assessed (Z gate still fails) |
+
+**VERDICT: ❌ STILL SKIPPED**
+Spread has fully normalized (0.04% — excellent liquidity). However, Z-Score is essentially unchanged at +0.786, barely moved from morning's +0.784. The market is treating PLTR as fairly valued relative to its 20-day mean — the earnings event (reported after May 1 close) was absorbed without creating any statistical extreme in either direction. Z-Score must reach |≥2.0| per Layer B. At +0.79σ, PLTR is 1.21σ away from a short signal and 2.79σ away from a long signal. No edge. Layer B gate fails.
+
+---
+
+#### XLE (Energy Select Sector ETF)
+| Metric | Morning | Midday |
+|--------|---------|--------|
+| Skip reason | Z=+1.173 (below ±2.0), RSI ~mid-range, volume below 20d avg | Z moved FURTHER AWAY from long entry |
+| Bid/Ask | — | $59.41 / $59.42 |
+| **Spread %** | — | **0.017% ✅ NORMALIZED** |
+| Z-Score | +1.173 | **+1.469** |
+| Direction vs entry | Above mean (wrong direction for long) | MORE above mean — long entry even less justified |
+
+**VERDICT: ❌ STILL SKIPPED**
+Spread normalized to 0.017% (excellent for an ETF of this size). But Z-Score has moved from +1.17 to +1.47 — XLE has continued to rally intraday, pushing further above its 20-day mean. This is the **opposite** direction from what would be needed for a long entry (Z ≤ −2.0). XLE is becoming more overbought relative to its mean, not less. A long entry here would be chasing momentum without statistical support. Layer B fails. We also already hold XOM as the energy proxy — adding XLE would double sector crowding without the Z-Score justification.
+
+---
+
+#### XLB (Materials Select Sector ETF) — **Most Active Candidate**
+| Metric | Morning | Midday |
+|--------|---------|--------|
+| Skip reason | Z=−0.396 (far from −2.0), RSI=39.2 (not <30) | Z has moved significantly but not yet through threshold |
+| Bid/Ask | — | $50.71 / $50.72 |
+| **Spread %** | — | **0.020% ✅ NORMALIZED** |
+| Z-Score | −0.396 | **−1.753** |
+| Z gap to threshold | −1.604σ remaining | **−0.247σ remaining** |
+| RSI(14) est. | 39.2 | ~34–36 est. (approaching <30 but not there) |
+| Price move | $51.35 | $50.715 (−$0.635, −1.2% intraday) |
+
+**VERDICT: ❌ STILL SKIPPED — but THIS is the watchlist name of the day**
+Spread normalized perfectly. XLB has sold off materially intraday (−1.2%), driving Z-Score from −0.396 to −1.753. This is the largest intraday movement of any candidate. **Only 0.247σ separates XLB from triggering the −2.0 long entry threshold** — approximately a further decline of ~$0.12–$0.15 to ~$50.55–$50.60. RSI is estimated around 34–36 after today's selloff, likely approaching the <30 trigger but not yet there. Both gates must clear simultaneously. At this moment, XLB is tantalizingly close but BOTH Z and RSI remain just outside the entry box. Do NOT lower the gates — the strategy is working correctly by holding back.
+
+**Catalyst check for XLB if it triggers:**
+- Materials sector is a YTD leader ✅
+- Commodity tailwinds from elevated oil still intact ✅
+- No offsetting news found this morning that would invalidate thesis
+- Factory Orders data from 10:00 AM ET — if weak, may have contributed to today's XLB decline (verifiable)
+- Sector still in momentum ✅
+- Position count (1/6) + week trades (0/3) allow this trade ✅
+
+**If XLB falls to ~$50.55–$50.60 before market close:**
+- Z-Score would approach −2.0 ✅
+- RSI may cross <30 ✅
+- A bracket limit order LONG would be warranted for next morning's pre-market review or an afternoon-scan
+- Stop: ~7% below entry (~$47.05 if entry ~$50.60)
+- Target: ~$58.19 (2:1 R:R minimum, targeting recovery toward mean ~$51.60 and beyond)
+- Size: cold-start 10% of equity × 1.00× VIX = ~$10,000 / ~$50.60 ≈ 197 shares
+
+---
+
+### Trades Fired This Rescan
+**None.**
+
+Zero candidates re-cleared the composite Layer A + Layer B gates upon midday re-evaluation.
+
+---
+
+### XOM Position Status (Existing Hold)
+- Current: $153.47 | Entry: $153.35 | Unrealized: +$15.60 (+0.08%)
+- GTC trailing stop: $138.78 (10% from HWM $154.20) — live, no adjustment needed
+- Thesis: INTACT. WTI elevated, Hormuz supply disruption ongoing.
+- No stop adjustment today (price below prior HWM trigger level).
+
+---
+
+### Patience Rule Applied
+No gates were lowered. No trade was forced. Four candidates re-evaluated; zero re-qualified. This is correct disciplined behavior when statistical edge is absent. XLB is the single name approaching qualification — it is being tracked precisely, not anticipated early.
+
+**Key watch for afternoon / tomorrow morning:**
+1. **XLB** — If Z crosses −2.0 AND RSI crosses <30 simultaneously before close → potential bracket limit placement for tomorrow's open. Re-evaluate in afternoon scan.
+2. **FANG** — Earnings results now known. Review post-earnings Z-Score and RSI at tomorrow's pre-market. If stock sold off on earnings: possible oversold long. If gapped up: Z ≥ +2.0 short candidate (pending pair check).
+3. **XLE** — Trend continuation, no entry. If WTI reverses materially, XLE could pull back to Z ≤ −2.0 — flag for Tuesday.
+4. **PLTR** — Post-earnings: Z flat. Continue monitoring daily.
+
