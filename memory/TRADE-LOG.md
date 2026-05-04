@@ -280,3 +280,34 @@ Every trade (entry, exit, stop-out) is logged here with full thesis, entry price
 **Circuit breakers:** ✅ All clear — Day 0.00% (lim -2%) | Phase -0.078% (lim -5%) | Drawdown -0.078% (lim -15%)
 
 ---
+
+---
+
+### 2026-05-05 09:30 — MARKET-OPEN EXECUTION: NO ORDERS PLACED
+
+**Workflow:** Market-open bracket limit order placement
+**Research Decision:** HOLD — No new positions today (both research entries for 2026-05-04 conclude HOLD)
+**Candidates reviewed:** FANG (short), PLTR (long), XLE (long), XOM (hold existing)
+
+**Gate results — all candidates failed composite Layer A + Layer B:**
+
+| Candidate | Fail Reason |
+|-----------|-------------|
+| FANG short | Layer B: pair divergence OXY/XOM both >1.5σ (2.0–2.5σ); earnings binary risk (reports today); sector headwind (Energy YTD leader, WTI +3.27%) |
+| PLTR | Layer B: Z-Score +0.784σ (need ≥+2.0 for short or ≤−2.0 for long); Layer A: RSI mid-range; earnings binary risk (reports today) |
+| XLE | Layer B: Z-Score +1.173σ (need ≥+2.0 for short); Layer A: RSI mid-range, no trigger |
+| XOM | Existing hold — no new entry warranted; Z-Score +0.036σ, RSI 50.2, position already open |
+
+**Live account state at execution time:**
+- Equity: $100,003.25 | Cash: $80,064.50 (80.1%) | Positions: 1 (XOM) | Daytrade count: 0/3
+- Weekly trades used: 0/3
+- XOM quote: bid $153.36 / ask $153.43 — valid, not halted ✅
+- Circuit breakers: ✅ All clear
+
+**No bracket limit orders placed. No order IDs. Cash preserved at $80,064.50.**
+
+**Watchlist flagged for tomorrow:**
+- FANG post-earnings reaction (could create Z ≤ −2.0 long or confirm Z ≥ +2.0 short)
+- PLTR post-earnings reaction (gap magnitude for mean-reversion setup)
+- AMD, Pfizer, Rivian, Shopify, SMCI (report Tue May 5 / tomorrow scan)
+- XLB — RSI 39.2 approaching <30; monitor for Z ≤ −2.0 qualification

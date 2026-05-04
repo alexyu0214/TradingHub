@@ -270,3 +270,23 @@ vs S&P 500: −0.54% (S&P +0.54%; 5,099.96 → 5,127.79)
 **Grade:** D
 
 ---
+
+---
+
+### 2026-05-05 — Market-Open Execution (Day 6, Monday)
+
+**Market-open orders placed:** None
+
+All candidates reviewed and rejected via Layer A + Layer B composite gate:
+- FANG short: SKIP — pair divergence >1.5σ (OXY 2.0σ, XOM 2.5σ), earnings binary risk, sector headwind
+- PLTR: SKIP — Z-Score +0.784σ (below ±2.0 threshold), earnings binary risk, RSI neutral
+- XLE: SKIP — Z-Score +1.173σ (below ±2.0 threshold), RSI mid-range
+
+**XOM (existing):** HOLD — bid $153.36 / ask $153.43, thesis intact (WTI +3.27% to $105.21, Brent $109–$112, Iranian naval blockade), GTC trailing stop live at $138.78 (10% trail, HWM $154.20). No adjustment warranted.
+
+**Account state:**
+- Equity: $100,003.25 | Cash: $80,064.50 (80.1%) | Positions: 1/6 | Weekly trades: 0/3 | Daytrade count: 0/3
+- VIX: 17.57 — NORMAL regime (1.00× sizing multiplier)
+- Circuit breakers: ✅ All clear
+
+**No orders placed — correct behavior per research HOLD decision. Cash preserved for statistical edge setups.**
