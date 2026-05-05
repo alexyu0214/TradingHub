@@ -361,3 +361,55 @@ Every trade (entry, exit, stop-out) is logged here with full thesis, entry price
 **Notes:** Day 6 marks the first green close since inception — equity crossed $100,049.40, flipping phase P&L positive for the first time (+$49.40, +0.049%) after spending Days 2–5 in shallow red territory. The gain is driven entirely by XOM: the stock closed at $153.73 (+$0.38 from yesterday's $152.75 last-price) as the energy thesis continues to hold — WTI elevated, structural supply-risk premium intact from the Hormuz disruption narrative. The XOM trailing stop (GTC, 10%, HWM $154.46, stop $139.014) was not modified; at +0.248% unrealized, the position has not yet reached the +15% threshold to trigger the first trailing escalation. No new positions were opened today: FANG, PLTR, and XLE all failed composite Layer A + Layer B gates at the morning scan (earnings binary risk, Z-scores below ±2.0 thresholds), and the afternoon scan confirmed XLB remains 0.064σ shy of the long trigger while RSI holds above 30. Cash remains parked at 80.02% — above the minimum-deployed floor — reflecting deliberate patience; the strategy requires statistical edge, not forced deployment. Weekly trade allowance fully intact at 0/3 used heading into Tuesday. PDT count: 0/3. All circuit breakers clear.
 
 **Circuit breakers:** ✅ All clear — Day +0.127% (lim -2%) | Phase +0.049% (lim -5%) | Drawdown +0.046% from peak (lim -15%)
+
+---
+
+### 2026-05-05 17:19 — MIDDAY SCAN (No Actions Taken)
+
+**Scan time:** 17:19 UTC (~13:19 ET, midday)
+**Account:** Equity $100,184.60 | Cash $80,064.50 (79.9%) | Deployed $20,120.10 (20.1%)
+
+**Positions reviewed:**
+
+| Symbol | Shares | Entry | Current | Unrealized P&L | Stop | Action |
+|--------|--------|-------|---------|----------------|------|--------|
+| XOM | 130 | $153.35 | $154.77 | +$184.60 (+0.93%) | $139.698 (10% trail, HWM $155.22) | HOLD — no action |
+
+**Stop orders active:**
+
+| Order ID | Symbol | Type | HWM | Stop | Status |
+|----------|--------|------|-----|------|--------|
+| d92d9371 | XOM | Trailing 10% GTC | $155.22 | $139.698 | LIVE ✅ |
+
+**Step 3 — Cut Losers at -7%:**
+- XOM at +0.93% — no cut action required ✅
+
+**Step 4 — Tighten Stops on Winners:**
+- XOM +0.93% unrealized — below +15% trigger ($176.35) and +20% trigger ($184.02)
+- Stop remains 10% GTC at $139.698 (HWM auto-updated from $154.46 → $155.22 by Alpaca)
+- No tightening warranted ✅
+- Note: 3% proximity constraint not triggered; current stop is 9.74% below price — well outside the never-tighten-within-3% guard
+
+**Step 5 — Thesis Check: XOM**
+- Z-Score (20d): +1.2212 — mid-range, no statistical extreme in either direction
+- Price ($154.77) above 20-day mean ($151.35) ✅ — trending, not extended to overbought
+- 5-day avg ($154.04) ≈ current price — price is stable, not rolling over
+- Energy thesis: Hormuz supply disruption intact (running catalyst for 5+ trading days), WTI structurally elevated, XOM +0.70% intraday today confirming positive momentum
+- Trailing stop HWM actively updating (154.46 → 155.22) — confirms stop tracking correctly
+- **Thesis: INTACT. No exit warranted.**
+
+**Watchlist — XLB update:**
+- Yesterday afternoon: Z=-1.936 (0.064σ from long trigger), RSI=34.19
+- Today: XLB bounced +1.85% from $50.65 close → $51.585 intraday
+- Z-Score has RISEN to -0.2190 — completely reset, 1.78σ away from the -2.0 trigger
+- RSI has likely recovered toward 40+ range given +1.85% bounce
+- XLB long thesis has NOT triggered; the watchlist setup has reset for now
+- Re-qualify requires another selloff to Z ≤ -2.0 AND RSI < 30 simultaneously
+
+**Step 6 — Optional Research:**
+- No sharp unexplained intraday moves requiring web research
+- XOM +0.70% intraday is consistent with energy sector continuation (WTI elevated, Hormuz narrative)
+- XLB +1.85% bounce is consistent with mean-reversion off yesterday's oversold low — no anomaly
+
+**PDT count:** 0/3 | **Week trades:** 0/3 | **Positions:** 1/6
+**Circuit breakers:** ✅ All clear — Day P&L: +$262.60 (+0.26%) | Phase P&L: +$184.60 (+0.18%) | Drawdown: none (new equity high $100,184.60)
