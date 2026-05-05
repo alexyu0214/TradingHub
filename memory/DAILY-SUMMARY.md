@@ -306,3 +306,19 @@ All candidates reviewed and rejected via Layer A + Layer B composite gate:
 **Notes:** First green phase close since inception (+$49.40); XOM carried the portfolio as energy thesis holds on elevated WTI; no new setups cleared statistical gates — patient hold posture maintained, weekly trade allowance 0/3 fully intact heading into Tuesday.
 
 ---
+
+## 2026-05-05 — EOD (Day 8)
+
+**Portfolio:** $100,206.70 (+0.001% day, +0.207% phase)
+**Cash:** $80,064.50 (79.90%)
+**Deployed:** 20.10%
+**Daytrade count:** 0/3
+
+**Trades today:** none
+**Open positions:** XOM +1.037% (130 sh @ $153.35 entry, close $154.94)
+**Stops tightened:** XOM trailing stop auto-tightened: $139.698 → $139.761 (HWM $155.22 → $155.29)
+**Losers cut:** none
+
+**Notes:** Flat session (+$0.65); XOM holds its gain, trailing stop HWM nudged to new high $155.29; energy thesis intact; no new entries; all circuit breakers clear; weekly trade count 0/3.
+
+---

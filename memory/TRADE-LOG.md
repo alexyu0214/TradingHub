@@ -467,3 +467,19 @@ Every trade (entry, exit, stop-out) is logged here with full thesis, entry price
 - Daytrade count: 0/3 | PDT flag: false
 
 **Circuit breakers:** ✅ All clear — Day +0.284% (lim -2%) | Phase +0.206% (lim -5%) | Drawdown: none (new portfolio high $100,206.05)
+
+### May 05 — EOD Snapshot (Day 8, Tuesday)
+
+**Portfolio:** $100,206.70 | **Cash:** $80,064.50 (79.90%) | **Day P&L:** +$0.65 (+0.001%) | **Phase P&L:** +$206.70 (+0.207%) | **Deployed:** 20.10%
+
+| Ticker | Shares | Entry | Close | Unrealized P&L | Stop | Time |
+|--------|--------|-------|-------|----------------|------|------|
+| XOM | 130 | $153.35 | $154.94 | +$206.70 (+1.037%) | $139.761 (trail 10%, HWM $155.29) | 5 calendar days |
+
+**Trades today:** none
+
+**Notes:** Day 8 is a near-flat session (+$0.65 day P&L) — essentially noise. XOM closed at $154.94, up slightly from yesterday's $153.69 last-day price, while the portfolio equity barely moved (+$0.65) as the unrealized gain on the position ticked marginally higher. The trailing stop's HWM nudged up from $155.22 to $155.29, tightening the stop by $0.063 to $139.761 — still automatic and working as designed. Phase P&L reaches a new high of +$206.70 (+0.207%), confirming a third consecutive day at the portfolio high watermark. No new positions were opened: zero of 13 gates were formally tested today, as no afternoon scan entries have been logged for Day 8. The energy thesis (WTI elevated, XOM earnings beat, Strait of Hormuz supply disruption) remains fully intact. PLTR continues to be the #1 watchlist candidate pending a further move toward Z ≤ −2.0 from the prior Z=−0.8636. Weekly trade allowance remains at 0/3 used. All circuit breakers clear.
+
+- Daytrade count: 0/3 | PDT flag: false
+
+**Circuit breakers:** ✅ All clear — Day +0.001% (lim -2%) | Phase +0.207% (lim -5%) | Drawdown: none (new portfolio high $100,206.70)
