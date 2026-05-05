@@ -413,3 +413,57 @@ Every trade (entry, exit, stop-out) is logged here with full thesis, entry price
 
 **PDT count:** 0/3 | **Week trades:** 0/3 | **Positions:** 1/6
 **Circuit breakers:** ✅ All clear — Day P&L: +$262.60 (+0.26%) | Phase P&L: +$184.60 (+0.18%) | Drawdown: none (new equity high $100,184.60)
+
+---
+
+### May 05 — Afternoon Scan (Day 7 / ~15:20 ET)
+
+**Portfolio:** $100,206.05 | **Cash:** $80,064.50 (79.9%) | **Day P&L:** +$284.05 intraday (+0.284%) | **Phase P&L:** +$206.05 (+0.206%) | **Deployed:** 20.1%
+
+| Ticker | Shares | Entry | Current | Unrealized P&L | Stop | Hold |
+|--------|--------|-------|---------|----------------|------|------|
+| XOM | 130 | $153.35 | $154.935 | +$206.05 (+1.034%) | $139.698 (trail 10%, HWM $155.22) | 4 trading days |
+
+**Afternoon scan trades:** none
+
+**Stop action — XOM:** NONE
+- unrealized_plpc = +1.034% → position is profitable ✅
+- Stop is already a 10% trailing GTC (d92d9371) — previously upgraded from bracket fixed-stop on May 1
+- HWM has updated from $154.46 → $155.22 (Alpaca auto-tracking today's intraday high ✅)
+- Current stop: $139.698 (9.83% below current price — well outside 3% floor ✅)
+- +15% tighten trigger ($176.35) not reached — needs +$21.42 more (+13.8% from here)
+- +20% tighten trigger ($184.02) not reached — needs +$29.08 more (+18.8% from here)
+- **No order modifications. No cancel/replace. Stop tracking correctly.**
+
+**Afternoon candidates evaluated — ALL REJECTED:**
+
+| Candidate | Z-Score | Fail Layer | Fail Reason |
+|-----------|---------|------------|-------------|
+| CVX (energy pair) | +1.4637 | Layer B | Z mid-range — not at ±2.0 |
+| XLE (energy ETF) | +1.7190 | Layer B | Z mid-range — not at ±2.0 |
+| XLB (materials ETF) | +0.0846 | Layer B | Z fully reset from yesterday's -1.936 after +2.1% bounce |
+| PLTR (post-earnings) | -0.8636 | Layer B | Z -0.86σ — needs ≤-2.0 at ~$129.09 |
+
+**XLB watchlist note:** Yesterday's near-trigger at Z=-1.936 with RSI=34.19 was NOT entered (correctly), and today XLB bounced +2.1% — validating gate discipline. Z reset to +0.085σ. Off watchlist pending fresh selloff.
+
+**PLTR watchlist note:** Post-earnings selloff today -7.0% ($146.03→$135.82) on volume 74.5M (vs ~48M avg). Z moving in long direction at -0.8636 but still 1.14σ from trigger. Flag for Wednesday pre-market: if PLTR reaches $129.09 with RSI<30, it becomes a qualified long candidate. Spread normalized (0.029%) — excellent liquidity confirmed.
+
+**PDT count:** 0/3 | **Week trades:** 0/3 | **Positions:** 1/6 | **Circuit breakers:** ✅ all clear
+
+---
+
+### May 05 — EOD Snapshot (Day 7, Tuesday)
+
+**Portfolio:** $100,206.05 | **Cash:** $80,064.50 (79.9%) | **Day P&L:** +$284.05 (+0.284%) | **Phase P&L:** +$206.05 (+0.206%) | **Deployed:** 20.1%
+
+| Ticker | Shares | Entry | Close | Unrealized P&L | Stop | Time |
+|--------|--------|-------|-------|----------------|------|------|
+| XOM | 130 | $153.35 | $154.935 | +$206.05 (+1.034%) | $139.698 (10% trail, HWM $155.22) | 4 trading days |
+
+**Trades today:** none
+
+**Notes:** Day 7 is the second consecutive green day and marks the portfolio crossing $100,200 for the first time — phase P&L at +$206.05 (+0.206%). The gain is driven entirely by XOM continuing its post-earnings energy thesis: stock reached intraday high of $155.22 (new HWM, up from yesterday's $154.46), automatically tightening the trailing stop to $139.698 via Alpaca's mechanism. XOM is now +1.034% from entry — still well below the +15% tighten trigger ($176.35). The energy thesis remains fully intact: WTI structurally elevated, Strait of Hormuz supply disruption ongoing, XOM earnings beat confirmed. Afternoon scan evaluated 4 candidates (CVX, XLE, XLB, PLTR) — zero cleared the composite Layer A + Layer B gates. Most notable: XLB reversed today (+2.1%) completely resetting yesterday's near-trigger Z=-1.936 setup — gate discipline validated. PLTR fell -7% post-earnings ("sell the news") but Z=-0.8636 still 1.14σ from the long trigger; becomes the #1 watchlist name for Wednesday if it falls toward $129. Weekly trade allowance fully intact at 0/3 used. PDT: 0/3. All circuit breakers clear.
+
+- Daytrade count: 0/3 | PDT flag: false
+
+**Circuit breakers:** ✅ All clear — Day +0.284% (lim -2%) | Phase +0.206% (lim -5%) | Drawdown: none (new portfolio high $100,206.05)

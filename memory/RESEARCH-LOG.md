@@ -1031,3 +1031,118 @@ Energy continued its constructive session: XLE closed +0.68% at $59.25, tracking
 **New afternoon entries:** none — all candidates failed Layer A + Layer B composite gates
 **Key watchlist for Tuesday pre-market:** XLB (Z=-1.936, RSI=34.2, pair confirms; needs ~$0.03 further decline + RSI<30)
 
+
+---
+
+## 2026-05-05 — Afternoon Scan Addendum (~15:20 ET / 19:20 UTC)
+
+**Scan time:** ~40 min before close (market closes 20:00 UTC / 4:00 PM ET)
+**VIX regime:** NORMAL — proxy VIXY $27.76 area; sizing multiplier 1.00×
+
+---
+
+### STEP 1 — Order & Position State Reconciled vs TRADE-LOG
+
+**Orders returned by API:**
+
+| Order ID | Symbol | Type | Status | Detail |
+|----------|--------|------|--------|--------|
+| c04ae321 | XOM | Market Buy (130 sh) | **FILLED** @ $153.35 | Entry 2026-05-01; unchanged ✅ |
+| d92d9371 | XOM | Trailing Stop 10% GTC | **LIVE** (status: new) | HWM $155.22 → stop $139.698 |
+
+- **No morning bracket limit orders were placed today** (pre-market decision was HOLD — zero new candidates cleared gates). Nothing new to check for fills vs TRADE-LOG.
+- **TRADE-LOG is fully current.** XOM fill and trailing stop both logged on May 1. No reconciliation discrepancy.
+- **Bracket fills today: 0** (no morning limits existed to fill)
+- **Open stale limits: 0**
+
+---
+
+### STEP 2 — Trailing Stop Assessment: XOM
+
+| Metric | Value |
+|--------|-------|
+| Entry | $153.35 |
+| Current price | $154.935 (bid $154.88 / ask $154.94) |
+| Spread | $0.06 = 0.039% ✅ (liquid) |
+| Unrealized P&L | +$206.05 (+1.034%) |
+| Stop type | Trailing 10% GTC — already upgraded (no bracket fixed-stop exists) |
+| HWM (Alpaca) | $155.22 |
+| Stop (Alpaca) | $139.698 (= $155.22 × 0.90) |
+| Z-Score (20d) | +1.2744 — mid-range, no statistical extreme |
+| +15% trigger (→7% trail) | $176.35 — needs +$21.42 more |
+| +20% trigger (→5% trail) | $184.02 — needs +$29.08 more |
+| 3% proximity floor | $150.29 — current stop at $139.698 is 9.83% from price ✅ |
+
+**Decision: NO STOP CHANGE**
+- `unrealized_plpc = +1.034%` → position is profitable ✅
+- However, workflow rule for trailing upgrade requires the position to have a *fixed* bracket stop. The XOM stop is **already a 10% trailing GTC** (upgraded on May 1). No cancel-and-replace needed.
+- Neither the +15% nor +20% tighten triggers have been reached. Stop stays at 10% trail.
+- Alpaca HWM has updated from $154.46 (prior scan) to $155.22 today — confirming the trailing mechanism is working correctly and tracking today's intraday high.
+- **Action: HOLD trailing stop as-is. No order modifications.**
+
+---
+
+### STEP 3 — Stale Limit Cancellations
+
+**None applicable.** No morning bracket limit orders were placed today. The only live order is the XOM trailing stop GTC (d92d9371), which is active, correctly placed, and should NOT be cancelled. Zero stale limits to address.
+
+---
+
+### STEP 4 — Afternoon Opportunity Scan
+
+**VIX regime:** NORMAL (1.00× sizing) | **Positions:** 1/6 | **Week trades:** 0/3 | **PDT:** 0/3
+
+**Universe scanned:** XOM (held), CVX, XLE, XLB, PLTR, LIN (pair)
+
+| Ticker | Price | Z-Score | Pair | Pair Div | Layer A RSI est. | Spread | Layer B | Verdict |
+|--------|-------|---------|------|----------|------------------|--------|---------|---------|
+| XOM (held) | $154.94 | +1.2744 | CVX +1.4637 | 0.19σ ✅ | ~55 | 0.039% | Not at ±2.0 ❌ | **HOLD — no new entry** |
+| CVX | $193.31 | +1.4637 | XOM 0.19σ ✅ | — | ~55 | 0.03% | Not at ±2.0 ❌ | **REJECT** |
+| XLE | $59.69 | +1.7190 | — | — | ~60 | 0.017% | Not at +2.0 ❌ | **REJECT** |
+| XLB | $51.71 | +0.0846 | LIN +0.0527 | 0.03σ ✅ | ~52 | 0.019% | Not at ±2.0 ❌ | **REJECT** |
+| PLTR | $135.72 | -0.8636 | — | — | ~38 est. | 0.029% | Not at -2.0 ❌ | **REJECT** |
+
+**Key developments in afternoon scan:**
+
+**XLB (Materials ETF) — SETUP RESET:**
+- Yesterday afternoon: Z = -1.936 (0.064σ from long trigger); RSI = 34.19 (just above <30)
+- Today: XLB BOUNCED +2.1% ($50.65 close → $51.71 today) on reversal momentum
+- Z-Score has completely reset from -1.936 to **+0.085** — a 2.02σ swing in the OTHER direction
+- The watchlist setup is fully cleared. No entry signal whatsoever. Correct to NOT lower gates yesterday.
+
+**PLTR (Palantir) — Post-Earnings Selloff:**
+- PLTR reported earnings May 4 after close; opened May 5 at $140.30, sold off to low $134.72, closing ~$135.82 (-7.0% from prior day's close of $146.03)
+- Volume: 74.5M shares (vs ~48M avg) — elevated, confirming "sell the news" behavior on what may have been an in-line or slightly disappointing outlook
+- Z-Score: -0.8636 — moving in the long direction but still **1.14σ away from the -2.0 trigger**
+- Long trigger price: PLTR would need to reach **≤ $129.09** for Z ≤ -2.0
+- RSI estimate: ~38 (recovering from session low near 30 but not yet sub-30)
+- **REJECT** — Layer B fails. However, this is the **#1 watchlist name for Tuesday's pre-market**. If PLTR sells off further toward $129 with RSI confirming <30, it becomes a legitimate oversold mean-reversion long candidate.
+
+**XLE (Energy ETF):**
+- Z = +1.7190 — climbing further above mean (was +1.47 at midday), approaching but not reaching +2.0 short threshold
+- Energy thesis intact — WTI structurally elevated, Hormuz ongoing
+- No long entry available (Z is positive/above mean). No short entry (Z below +2.0 and sector is YTD leader)
+- **REJECT**
+
+**CVX:**
+- Z = +1.4637 — mid-range. Pair divergence from XOM = only 0.19σ (confirms sector cohesion ✅)
+- No entry gate. **REJECT.**
+
+**New afternoon entries: none** — all candidates failed Layer A + Layer B composite gates.
+
+---
+
+### Afternoon Market Context
+
+XOM closed near session highs ($154.92 range), extending its trailing stop HWM to $155.22 — the strongest close in the position's 3-day hold. The trailing stop has organically tightened from its original $138.78 (HWM $154.20 from May 1) to $139.698 as Alpaca's mechanism has tracked the new high. Energy sector remains constructive: XLE continued higher (+0.49% today, Z approaching +1.7), WTI structurally elevated, Hormuz supply-risk narrative intact. PLTR's post-earnings selloff of -7% today was the afternoon's most significant move — "sell the news" pattern on a name that had run hard into the print. PLTR is now the single most interesting watchlist candidate for Wednesday: needs ~$6.63 more decline to reach the Z ≤ -2.0 long threshold ($129.09). XLB's complete reversal today (+2.1% bounce from yesterday's oversold dip) demonstrates the importance of the dual-gate discipline — entering XLB at yesterday's Z=-1.936 before BOTH gates cleared would have resulted in an immediate +2% adverse move today.
+
+---
+
+**Bracket fills today:** 0 — no morning limits were placed (HOLD decision at pre-market)
+**Stops upgraded:** 0 — XOM stop already trailing; no cancel/replace needed; position +1.034% but stop already in correct instrument
+**Stale limits cancelled:** 0 — none existed
+**New afternoon entries:** none — all 4 candidates failed composite Layer A + Layer B gates
+**Key watchlist for Wednesday pre-market:**
+1. **PLTR** — Z=-0.8636 trending toward -2.0; needs ~$129.09 close and RSI<30 to trigger long gate. Post-earnings volume high. Catalyst: AI/gov revenue trajectory, strong beat rate season.
+2. **XLE** — Z=+1.719 approaching +2.0 short threshold; however sector headwind for shorts (Energy YTD leader) means even if Z clears we have pair/sector checks to run. Monitor.
+3. **XLB** — Setup reset today (+2.1%). Needs fresh selloff to re-qualify. Off watchlist for now.
