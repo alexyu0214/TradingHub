@@ -509,3 +509,44 @@ Every trade (entry, exit, stop-out) is logged here with full thesis, entry price
 - Daily P&L: ~−0.95% (within −2% circuit breaker ✅)
 
 **No orders placed. No orders cancelled. Monitoring mode only.**
+
+---
+
+### May 06 — Afternoon Scan (Day 9 / ~15:55 ET)
+
+**Portfolio:** $99,346.10 | **Cash:** $80,064.50 (80.6%) | **Day P&L:** −$852.80 (−0.851%) | **Phase P&L:** −$653.90 (−0.654%) | **Deployed:** 19.4%
+
+| Ticker | Shares | Entry | Current | Unrealized P&L | Stop | Hold |
+|--------|--------|-------|---------|----------------|------|------|
+| XOM | 130 | $153.35 | $148.22 | −$653.90 (−3.28%) | $139.761 (trail 10%, HWM $155.29) | 5 trading days |
+
+**Afternoon scan trades:** none
+
+**Stop action — XOM:** NONE
+- unrealized_plpc = −3.28% → position is **underwater**
+- Rule: *"For each filled position where unrealized_plpc ≤ 0: leave the bracket stop in place."*
+- Stop is already a 10% trailing GTC (d92d9371), HWM $155.29, stop $139.761 — correct instrument, live, unchanged
+- Neither +15% nor +20% tighten triggers reached (position negative, not profitable)
+- 3% proximity guard not triggered: stop $139.761 is 5.7% below current price ✅
+- **No cancel/replace. No new orders. Stop unchanged.**
+
+**Afternoon candidates evaluated — ALL REJECTED:**
+
+| Candidate | Z-Score | Fail Layer | Fail Reason |
+|-----------|---------|------------|-------------|
+| CVX (energy pair) | −0.9616 | Layer B | Z −0.96σ — not at ±2.0 |
+| XLE (energy ETF) | −0.1225 | Layer B | Z −0.12σ — not at ±2.0 (despite above-avg volume) |
+| XLB (materials) | +1.8383 | Layer B | Z +1.84σ — approaching +2.0 short threshold but Phase 1 long-only; RSI ~62 not >70 |
+| PLTR (post-earnings) | −1.1543 | Layer B | Z −1.15σ — needs ≤ −2.0 at ~$128.31 (−3.8% more decline) |
+
+**XOM thesis check:**
+- Pair divergence XOM−CVX: 0.076σ (well within 1.5σ threshold) → confirms sector-wide rotation, NOT XOM-specific event ✅
+- Volume today 13.1M vs 19.9M 20d avg = 0.66× below average → no institutional panic ✅
+- Today's low $147.09 held $0.65 above April structural support $146.44 ✅
+- VIXY declined today ($27.76 → $26.98) → VIX actually decreasing; energy selloff ≠ broad market fear ✅
+- Energy thesis pillars (Hormuz closure, WTI elevated, XOM earnings beat) structurally intact ✅
+- **Decision: HOLD. Do not exit above hard stop unless thesis break confirmed.**
+
+**Circuit breakers:** ✅ All clear — Day −0.851% (lim −2%) | Phase −0.654% (lim −5%) | Drawdown −0.859% from $100,206.70 peak (lim −15%)
+**PDT count:** 0/3 | **Week trades:** 0/3 | **Positions:** 1/6
+

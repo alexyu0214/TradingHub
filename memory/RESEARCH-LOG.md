@@ -1394,3 +1394,128 @@ Rationale:
 - XOM **$142.62** = hard stop → breach = mandatory exit
 - Trailing GTC $139.761 handles automatic protection if position gaps through hard stop
 
+
+---
+
+## 2026-05-06 — Afternoon Scan Addendum (~19:55 UTC / ~15:55 ET)
+
+**Scan time:** ~5 minutes before close (market closes 20:00 UTC / 4:00 PM ET)
+**VIX regime at scan:** NORMAL — VIXY proxy $26.98 (↓ from yesterday $27.76) → estimated VIX ~18–20 | Sizing multiplier: 1.00×
+
+---
+
+### STEP 1 — Order & Position State Reconciled vs TRADE-LOG
+
+| Order ID | Symbol | Type | Status | Detail |
+|----------|--------|------|--------|--------|
+| c04ae321 | XOM | Market Buy (130 sh) | **FILLED** @ $153.35 | Entry 2026-05-01; unchanged ✅ |
+| d92d9371 | XOM | Trailing Stop 10% GTC | **LIVE** (status: new) | HWM $155.29 → stop $139.761 |
+
+- **No morning bracket limit orders were placed today** — pre-market decision was explicit: "NO NEW ENTRIES TODAY" (research API dead, XOM thesis under stress, VIX unconfirmed elevated). Nothing to check for fills vs TRADE-LOG.
+- **TRADE-LOG is fully current.** Both XOM orders logged accurately on prior dates.
+- **Bracket fills today: 0** (no morning limits were placed)
+- **Open stale limits: 0** — only the trailing GTC stop on XOM exists, correctly live.
+
+---
+
+### STEP 2 — Trailing Stop Assessment: XOM
+
+| Metric | Value |
+|--------|-------|
+| Entry | $153.35 |
+| Current price | $148.22 (bid $148.18 / ask $148.25) |
+| Spread | $0.07 = 0.047% ✅ (liquid) |
+| Unrealized P&L | −$653.90 (−3.28%) |
+| Stop type | Trailing 10% GTC — already upgraded (no bracket fixed-stop exists) |
+| HWM (Alpaca) | $155.29 |
+| Stop (Alpaca) | $139.761 (= $155.29 × 0.90) |
+| Z-Score (20d) | −1.0376 — moving toward oversold, not yet at −2.0 |
+| +15% trigger (→7% trail) | $176.35 — needs +$28.13 more from current |
+| +20% trigger (→5% trail) | $184.02 — needs +$35.80 more from current |
+| 3% proximity floor | $143.77 — current stop at $139.761 is 5.7% from price ✅ |
+
+**Decision: NO STOP CHANGE**
+- `unrealized_plpc = −3.28%` → **position is underwater**
+- Workflow rule: *"For each filled position where unrealized_plpc ≤ 0: leave the bracket stop in place."*
+- The XOM stop is already a 10% trailing GTC (previously upgraded on May 1) — the correct instrument is already in place.
+- Neither the +15% nor +20% tighten triggers have been reached (position is negative, not profitable).
+- HWM $155.29 is correctly set from the intraday high on 2026-05-05; the trail is functioning as designed.
+- **No order modifications. No cancel/replace. Stop remains live at $139.761.**
+
+---
+
+### STEP 3 — Stale Limit Cancellations
+
+**None applicable.** No morning bracket limit orders were placed today. The only live order is the XOM trailing stop GTC (d92d9371), which is active, correctly placed, and must NOT be cancelled. Zero stale limits to address.
+
+---
+
+### STEP 4 — Afternoon Opportunity Scan
+
+**VIX regime:** NORMAL (1.00× sizing) | **Positions:** 1/6 | **Week trades:** 0/3 | **PDT:** 0/3
+
+**Universe scanned:** XOM (held), CVX (pair), XLE (sector), XLB, PLTR
+
+| Ticker | Price | Z-Score | Layer B Gate (±2.0) | Spread | RSI est. | Volume vs Avg | Verdict |
+|--------|-------|---------|---------------------|--------|----------|---------------|---------|
+| XOM (held) | $148.22 | −1.0376 | ❌ Not at ±2.0 | 0.047% ✅ | ~44 | 0.66× below avg | **HOLD — no new entry** |
+| CVX | $185.12 | −0.9616 | ❌ Not at ±2.0 | 0.054% ✅ | ~45 | 0.73× below avg | **REJECT** |
+| XLE | $57.03 | −0.1225 | ❌ Not at ±2.0 | 0.018% ✅ | ~40 | 1.13× ABOVE avg | **REJECT** |
+| XLB | $52.47 | **+1.8383** | ❌ +1.84σ, not +2.0 | 0.019% ✅ | ~62 | 0.77× below avg | **REJECT** |
+| PLTR | $133.42 | −1.1543 | ❌ Not at ±2.0 | 0.045% ✅ | ~39 | 0.99× at avg | **REJECT** |
+
+**Key developments in afternoon scan:**
+
+**XOM (existing position):**
+- Z-Score: −1.0376 — deepening toward oversold zone (was −0.88 at this morning's pre-market). Moving in the right direction for a potential mean-reversion bounce but not yet at −2.0 statistical extreme.
+- Volume today: 13.1M shares vs 19.9M 20-day avg = 0.66× → **below average** — confirms no institutional panic selling / no thesis-break news catalyst. Orderly drift lower, not a flush.
+- Today's low: $147.09 — just $0.65 above April 17 structural support at $146.44. This is the nearest critical level.
+- Hard stop ($142.62) not triggered — $5.60 buffer (3.8%) remains.
+- Trailing stop ($139.761) not triggered — $8.46 buffer (5.7%) remains.
+- Pair check XOM–CVX: XOM Z = −1.038 vs CVX Z = −0.962 → divergence only **0.076σ** — both selling off together, confirming this is sector-wide, not XOM-specific (✅ thesis still consistent with energy sector movement).
+- **THESIS: INTACT. HOLD.**
+
+**CVX (energy pair):**
+- Z: −0.9616 — essentially identical to XOM's −1.038. Confirms both integrated oil majors are moving together in lockstep (pair divergence 0.076σ — well within 1.5σ threshold).
+- No independent entry signal. Layer B fails.
+- **REJECT.**
+
+**XLE (Energy Select Sector ETF):**
+- Z: −0.1225 — essentially at its 20-day mean despite a notable selloff today. Volume 50.1M vs 44M avg = +13% above average → elevated selling volume.
+- This is notable: XLE is not yet statistically oversold (Z near zero), yet volume is elevated. Suggests the energy sector selloff today is real but hasn't yet created a statistical extreme.
+- **REJECT.** No long entry available (Z not ≤ −2.0). No short entry available (not ≥ +2.0 and sector headwind for shorts).
+- Watch: if XLE continues lower toward Z ≤ −2.0 (approximately $54.41) with RSI < 30, this becomes a qualified sector ETF long.
+
+**XLB (Materials Select Sector ETF):**
+- Z: **+1.8383** — XLB has REVERSED sharply from yesterday's near-oversold condition (Z was −1.936 at yesterday's afternoon scan). Today it is approaching overbought territory.
+- Yesterday's patience at Z = −1.936 (gate required ≤ −2.0) and RSI = 34.19 (gate required < 30) has been validated: XLB has rallied further today (+1.7%), completely resetting that setup.
+- Current Z = +1.8383 → approaching +2.0 SHORT threshold, but: (1) Materials is a YTD sector leader, not in a downtrend; (2) RSI estimation ~62, not > 70 required for short trigger; (3) Strategy is long-only (Phase 1 — shorting deferred to Phase 3).
+- **REJECT on all fronts.** Monitor if XLB continues higher and Z crosses +2.0 (for future Phase 3 short setup reference only).
+
+**PLTR (Palantir):**
+- Z: −1.1543 — continuing to trend toward oversold. Now down from Z = −0.864 (yesterday afternoon) to −1.154 today. Declining further.
+- Long trigger: Z ≤ −2.0 → requires price ~$128.31 (needs additional ~−$5.11 decline, or −3.8% from current).
+- Volume today: 47.8M vs ~48M avg — essentially at average. No panic, no capitulation volume surge. Consistent with steady post-earnings drift.
+- RSI estimate: ~39 — approaching but not at < 30 trigger.
+- **REJECT — Layer B fails (Z −1.15σ, needs ≤ −2.0).** #1 watchlist name heading into tomorrow.
+
+**New afternoon entries: NONE** — all 4 candidates failed Layer A + Layer B composite gates. No bracket limit orders placed.
+
+---
+
+### STEP 5 — Afternoon Market Context
+
+Energy sold off broadly today in what appears to be sector-wide profit-taking or macro risk-off rotation: XLE −3.3% on above-average volume (50.1M vs 44M avg), XOM −4.2% intraday from yesterday's close (though on below-average volume 13.1M vs 19.9M avg), CVX similarly off. Both XOM and CVX are moving in near-perfect lockstep (Z-score divergence only 0.076σ), confirming this is sector rotation rather than an XOM-specific event. The energy thesis structural pillars (Strait of Hormuz closure, WTI elevated, XOM earnings beat) remain in place absent any news of a US-Iran diplomatic breakthrough. Importantly, VIXY declined today ($26.98 vs yesterday's $27.76), suggesting the broader market is NOT experiencing fear-driven selling — the VIX is actually ticking lower as energy sells off, arguing for rotation out of energy into other sectors rather than a general risk-off event. XOM's intraday low of $147.09 held just $0.65 above the April 17 structural support at $146.44 — this is the critical level to watch for tomorrow. PLTR continues its post-earnings drift lower (Z = −1.154) and is now only $5.11 away from the long trigger price of $128.31, making it the #1 watchlist candidate for Wednesday's pre-market research.
+
+---
+
+**Bracket fills today:** 0 (no morning limits were placed — HOLD decision at pre-market)
+**Stops upgraded:** 0 — XOM trailing stop already in place; position underwater → no change per rules
+**Stale limits cancelled:** 0 — none existed
+**New afternoon entries:** none — all candidates failed composite Layer A + Layer B gates
+**Key watchlist for Thursday pre-market:**
+1. **PLTR** — Z = −1.1543, trending toward long trigger at Z ≤ −2.0 (~$128.31); RSI ~39, approaching <30. Volume at average. #1 candidate.
+2. **XLE** — Z = −0.1225 today; if sector selloff continues toward Z ≤ −2.0 (~$54.41) with RSI <30, becomes qualified sector ETF long entry.
+3. **XOM** — Thesis intact but under stress. Watch $146.44 (Apr structural low) — breach with volume would trigger thesis-break review. Hard stop $142.62.
+4. **XLB** — Now overbought (Z = +1.84); Phase 3 short candidate if Z crosses +2.0, but currently off watchlist for longs.
+
