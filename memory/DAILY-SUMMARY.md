@@ -322,3 +322,36 @@ All candidates reviewed and rejected via Layer A + Layer B composite gate:
 **Notes:** Flat session (+$0.65); XOM holds its gain, trailing stop HWM nudged to new high $155.29; energy thesis intact; no new entries; all circuit breakers clear; weekly trade count 0/3.
 
 ---
+
+---
+
+## 2026-05-06 — Market-Open Execution Summary
+
+**Market-open orders placed:** None
+
+**Reason:** Research log issued NO NEW ENTRIES verdict for today.
+- PLTR: Layer B failed (Z=−0.91, RSI=41.76 — both gates miss by a wide margin)
+- New ideas: Research API (Gemini) down — no live catalyst data; patience rule applied
+- VIX: Unconfirmed, estimated Elevated — conservative stance maintained
+
+**Skipped:**
+- PLTR: Z-Score −0.91 (needs ≤ −2.0) + RSI 41.76 (needs < 30) → Layer B fails. Watch for dip to ~$128.23 (Z trigger) with RSI < 30.
+- ALL NEW IDEAS: Gemini research feed dead → insufficient information edge → no entry.
+
+**Existing position — XOM (held, no change):**
+- 130 shares | Entry $153.35 | Live price $147.63 (−3.73%)
+- Trailing stop GTC active: $139.761 | Hard stop: $142.62
+- ⚠️ Price below $148 — energy thesis under stress; evaluate thesis-break at today's close
+- Order ID (trailing stop): d92d9371-5dda-46b4-843a-f185be75b6cc ✅
+
+**Account at open:**
+- Equity: $99,256.40 | Cash: $80,064.50 (80.7%) | Deployed: $19,191.90 (19.3%)
+- Daytrade count: 0/3 | PDT: false | Weekly trades: 0/3 remaining
+- Daily P&L: ~−0.95% (within −2% circuit breaker ✅)
+- Phase P&L: −0.75% from $100k watermark (within −5% circuit breaker ✅)
+
+**Operator action required:**
+1. Fix Gemini API key / model name before tomorrow's research run
+2. Monitor XOM intraday — close immediately at market if price breaks $142.62 (−7% hard stop)
+3. Watch XOM close price — if close < $148 AND energy sector shows consecutive weakness → evaluate thesis-break exit
+4. Monitor PLTR for dip toward $128.23 (Z ≤ −2.0 trigger) + RSI < 30 for future entry signal
