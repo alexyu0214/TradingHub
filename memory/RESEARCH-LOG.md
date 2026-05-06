@@ -1146,3 +1146,147 @@ XOM closed near session highs ($154.92 range), extending its trailing stop HWM t
 1. **PLTR** — Z=-0.8636 trending toward -2.0; needs ~$129.09 close and RSI<30 to trigger long gate. Post-earnings volume high. Catalyst: AI/gov revenue trajectory, strong beat rate season.
 2. **XLE** — Z=+1.719 approaching +2.0 short threshold; however sector headwind for shorts (Energy YTD leader) means even if Z clears we have pair/sector checks to run. Monitor.
 3. **XLB** — Setup reset today (+2.1%). Needs fresh selloff to re-qualify. Off watchlist for now.
+
+---
+
+## 2026-05-06 — Pre-Market Research (Day 9, Wednesday)
+
+### ⚠️ DATA QUALITY FLAG
+**Gemini research API FAILED (404 NOT_FOUND — model deprecated).** No fresh web data available for today's session. All market context below is derived from:
+1. Live Alpaca account + position data (real-time ✅)
+2. Alpaca historical bars (real-time ✅)
+3. Previous day's memory files (TRADE-LOG, RESEARCH-LOG)
+4. Structural market knowledge (no live VIX, no live futures, no news feeds)
+
+**Action item for operator:** Update GEMINI_API_KEY / model name in research script before tomorrow's run.
+
+---
+
+### Account State (Live Pull)
+| Metric | Value |
+|--------|-------|
+| Equity | $99,375.35 |
+| Cash | $80,064.50 (80.6%) |
+| Deployed | $19,310.85 (19.4%) |
+| Day P&L | −$823.55 (−0.83%) vs yesterday close |
+| Phase P&L | −$624.65 vs entry (portfolio below $100k watermark) |
+| Daytrade count | 0/3 |
+| PDT flag | false |
+| Weekly trades | 0/3 used |
+
+**Circuit breaker check:**
+- Day P&L: −0.83% → ✅ within −2% limit
+- Phase P&L: −0.624% → ✅ within −5% limit
+- Drawdown from all-time high ($100,206.70): −$831.35 / −0.83% → ✅ well under 15%
+
+---
+
+### Open Position: XOM
+| Field | Value |
+|-------|-------|
+| Shares | 130 |
+| Entry | $153.35 |
+| Current | $148.58 (−3.11%) |
+| Market Value | $19,310.85 |
+| Unrealised P&L | −$624.65 (−3.13%) |
+| Hard stop (−7%) | $142.62 — current is $5.96 above; NOT triggered |
+| Trailing stop | $139.761 (10% from HWM $155.29) |
+| Distance to trail | 5.94% below current price |
+
+**Quant Layer B — XOM:**
+- 20-day mean: $150.97 | std: $2.70
+- **Z-Score: −0.89** → FAR from −2.0 threshold; no re-entry signal
+- RSI(14): 44.10 → Neutral (no oversold signal)
+- 25-bar SMA proxy: $152.98 (current below short-term average — bearish lean)
+- **Thesis status:** XOM is down −3.1% from entry. Today's pre-market shows continued weakness ($148.58 from yesterday's $154.88 close = −4.1% intraday). The energy thesis (WTI elevated, Hormuz supply, earnings beat) must be reassessed. Energy sector appears to be rolling over with XOM well below its recent highs.
+
+**Position decision:**
+- XOM is at −3.11% from entry — past the halfway point to the −7% hard stop.
+- Trailing stop ($139.761) not triggered; hard stop ($142.62) not triggered.
+- **No exit signal yet per strategy rules.** Hold and monitor.
+- If XOM breaks $142.62 intraday → execute manual close (hard stop rule).
+- **THESIS WARNING:** If XOM continues declining and closes below $148 today, the energy thesis may be invalidating (sector momentum breaking). Watch for consecutive sector failures.
+
+---
+
+### VIX Regime Classification
+**⚠️ VIX data unavailable** — Gemini research feed failed. Cannot classify regime with certainty.
+
+**Estimated regime from context:** Given the sharp XOM selloff (−4.1% on large cap energy today), PLTR also down further, and the broad move lower, VIX is likely in the **22–30 Elevated** range or possibly higher. Conservative assumption:
+
+> **Assumed regime: ELEVATED (VIX 22–30)**
+> - Sizing multiplier: **0.75×**
+> - Strategy bias: **Mean-reversion preferred, tighter stops**
+> - Cold-start Kelly 10% × 0.75× = **7.5% per new position** (~$7,453)
+
+**Operator note:** Confirm VIX at market open before placing any new orders.
+
+---
+
+### Watchlist Quant Scan
+
+#### PLTR (Palantir) — Long candidate, watching
+| Metric | Value |
+|--------|-------|
+| Current price | $134.89 |
+| 20-day mean | $140.47 |
+| 20-day std | $6.12 |
+| **Z-Score** | **−0.91** |
+| RSI(14) | 41.76 |
+| Z-trigger (−2.0) | $128.23 (needs −4.9% more decline) |
+| RSI trigger (<30) | ~$128–$130 range estimated |
+
+**Layer A:** Catalyst present (AI/government revenue, strong earnings beat May 5). Sector (tech/AI) has been strong YTD.
+**Layer B:** Z = −0.91. **FAILS Z ≤ −2.0 requirement.** RSI = 41.76, **FAILS RSI < 30 requirement.**
+**Decision: SKIP — Layer B fails.** Continue watching. Entry trigger price ~$128.23 (Z) + RSI < 30 confirmation needed.
+
+---
+
+### New Ideas Scan (Limited — No Live Research Feed)
+
+Given the research API failure, I cannot run a full universe scan with fresh catalysts today. Based on structural knowledge and prior research context:
+
+#### Idea A: HOLD CASH / DEFENSIVE
+Given:
+- Research feed down (no edge information)
+- XOM thesis under stress (−3.1%)
+- Estimated elevated VIX regime
+- No confirmed catalysts for new entries
+
+**Recommendation: No new entries today.** Patience rule applies. A day with zero new trades is the correct call when information quality is degraded.
+
+#### Idea B: XOM — Monitor for hard-stop exit
+- If XOM trades below **$142.62** intraday → close position immediately at market (hard stop rule, −7% from entry).
+- If XOM trades below **$148.00** at close AND energy sector shows consecutive weakness → consider early thesis-break exit even above hard stop.
+- Trailing stop at $139.761 remains live via GTC order.
+
+#### Idea C: PLTR — Add to watchlist, no trade yet
+- Continue monitoring PLTR for Z ≤ −2.0 (price ~$128.23) + RSI < 30 + volume confirmation.
+- Post-earnings momentum (strong beat) means a dip toward oversold territory would be a genuine mean-reversion opportunity.
+- **Do not chase.** Only enter if all gates clear.
+
+---
+
+### Trade Ideas Summary
+
+| Rank | Ticker | Direction | Thesis | Layer A | Layer B | Decision |
+|------|--------|-----------|--------|---------|---------|----------|
+| — | XOM | HOLD existing | Energy thesis, trailing stop live | ✅ (but weakening) | Z=−0.89 ❌ (no add) | HOLD, watch $142.62 hard stop |
+| — | PLTR | Watch / No entry | AI/gov catalyst, post-earnings dip | ✅ catalyst present | Z=−0.91 ❌ RSI=41.76 ❌ | SKIP — wait for Z≤−2.0 |
+| — | NEW | N/A | Research feed failed | ❌ no catalyst data | ❌ no quant data | **NO NEW ENTRIES** |
+
+**Verdict: HOLD existing XOM position. Place NO new orders today. Monitor XOM hard stop ($142.62) and thesis health closely at open.**
+
+---
+
+### Risk Flags for Today
+1. **Research API dead** — operator must fix Gemini model name/key before tomorrow.
+2. **XOM −4.1% pre-market** — approaching stress zone; one more leg down hits −7% hard stop.
+3. **Unknown VIX** — cannot confirm regime; assume Elevated, use 0.75× sizing if forced to enter.
+4. **Energy sector roll-over risk** — if XOM closes below $148, evaluate thesis-break exit.
+5. **Portfolio below $100k** — no crisis, but note the phase watermark is breached temporarily.
+
+---
+
+### Open Orders
+- XOM trailing stop GTC: sell 130 shares at 10% trail from HWM $155.29 → current stop $139.761. ✅ Still valid, no change needed.
