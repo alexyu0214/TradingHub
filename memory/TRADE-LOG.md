@@ -550,3 +550,20 @@ Every trade (entry, exit, stop-out) is logged here with full thesis, entry price
 **Circuit breakers:** ✅ All clear — Day −0.851% (lim −2%) | Phase −0.654% (lim −5%) | Drawdown −0.859% from $100,206.70 peak (lim −15%)
 **PDT count:** 0/3 | **Week trades:** 0/3 | **Positions:** 1/6
 
+
+---
+
+### May 06 — EOD Snapshot (Day 9, Wednesday)
+
+**Portfolio:** $99,352.60 | **Cash:** $80,064.50 (80.59%) | **Day P&L:** +$6.50 (+0.007%) | **Phase P&L:** −$647.40 (−0.647%) | **Deployed:** 19.41%
+
+| Ticker | Shares | Entry | Close | Unrealized P&L | Stop | Time |
+|--------|--------|-------|-------|----------------|------|------|
+| XOM | 130 | $153.35 | $148.37 | −$647.40 (−3.247%) | $139.761 (trail 10%, HWM $155.29) | 6 trading days |
+
+**Trades today:** none
+
+**Notes:** Day 9 was effectively a flat session after yesterday's sharp −0.851% loss. After-hours recovered a nominal +$6.50 (+0.007%), leaving portfolio at $99,352.60 — fractionally better than the afternoon scan close of $99,346.10. XOM ticked marginally higher from $148.22 to $148.37 after hours, continuing to trade below entry ($153.35) with unrealized loss of −$647.40 (−3.247%). No new entries were possible: the afternoon scan rejected all four candidates (CVX, XLE, XLB, PLTR) on Z-score grounds. The trailing stop (10%, HWM $155.29, stop $139.761) is correctly placed 5.80% below close — adequate cushion maintained. Energy thesis remains intact per XOM−CVX pair divergence (0.076σ), lack of institutional selling volume, and structural support held at $147.09. All circuit breakers clear. PDT count 0/3, week trades 0/3. No action required overnight.
+
+**Circuit breakers:** ✅ All clear — Day +0.007% (lim −2%) | Phase −0.647% (lim −5%) | Drawdown −0.852% from $100,206.70 peak (lim −15%)
+**PDT count:** 0/3 | **Week trades:** 0/3 | **Positions:** 1/6

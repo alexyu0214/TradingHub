@@ -355,3 +355,19 @@ All candidates reviewed and rejected via Layer A + Layer B composite gate:
 2. Monitor XOM intraday — close immediately at market if price breaks $142.62 (−7% hard stop)
 3. Watch XOM close price — if close < $148 AND energy sector shows consecutive weakness → evaluate thesis-break exit
 4. Monitor PLTR for dip toward $128.23 (Z ≤ −2.0 trigger) + RSI < 30 for future entry signal
+
+## 2026-05-06 — EOD
+
+**Portfolio:** $99,352.60 (+0.007% day, −0.647% phase)
+**Cash:** $80,064.50 (80.59%)
+**Deployed:** 19.41%
+**Daytrade count:** 0/3
+
+**Trades today:** none
+**Open positions:** XOM −3.247% (130 shares @ $153.35, close $148.37)
+**Stops tightened:** none (position underwater, no tighten trigger)
+**Losers cut:** none (XOM stop intact at $139.761; thesis confirmed — HOLD)
+
+**Notes:** Nominal after-hours recovery of +$6.50; XOM stabilized near $148.37 after intraday low of $147.09; all circuit breakers clear; no new entries — all candidates rejected on Z-score (Layer B); week fully intact at 0/3 trades.
+
+---
