@@ -1290,3 +1290,107 @@ Given:
 
 ### Open Orders
 - XOM trailing stop GTC: sell 130 shares at 10% trail from HWM $155.29 → current stop $139.761. ✅ Still valid, no change needed.
+
+---
+
+## 2026-05-06 — Midday Scan Addendum (~17:25 UTC / ~13:25 ET)
+
+**Scan type:** Midday workflow — position thesis check & stop evaluation
+**VIX:** Not confirmed (research API still down — Gemini 404 deprecated model). Estimated ELEVATED (22–30) given today's broad selloff.
+
+---
+
+### Account State at Midday
+| Metric | Value |
+|--------|-------|
+| Equity | $99,350.00 |
+| Cash | $80,064.50 (80.6%) |
+| Deployed | $19,285.50 (19.4%) |
+| Day P&L | −$848.90 (−0.85%) vs last equity |
+| Phase P&L | −$650.00 vs cost basis |
+| PDT daytrade count | 0/3 |
+| Weekly trades used | 0/3 |
+
+---
+
+### XOM — Full Midday Thesis Validation
+
+| Metric | Value | Assessment |
+|--------|-------|------------|
+| Entry | $153.35 (May 1) | — |
+| Current price | $148.35 | — |
+| Unrealized P&L | −$650.00 (−3.26%) | Below entry; approaching stress zone |
+| Intraday change | −$848.90 (−4.22% today) | Gapped down −3.75% at open |
+| Today open | $149.07 | Gap down from $154.88 yesterday |
+| Today low | $147.21 | Near Apr 17 structural low $146.44 |
+| Today high | $150.33 | Failed to reclaim $149 support |
+| Volume today | 9.4M shares | **BELOW** 20-day avg ~19M — no panic volume |
+| Z-Score (20d) | −0.9879 | Trending toward oversold but not at −2.0 |
+| RSI(14) | 43.75 | Neutral — not oversold |
+| SMA-10 | $151.69 | Price BELOW — bearish lean |
+| SMA-20 | $150.96 | Price BELOW — bearish lean |
+
+**Hard Stop check:** −3.26% vs −7% threshold → **NOT triggered** ($142.62 line, $5.73 buffer)
+**Trailing stop GTC:** $139.761 live (HWM $155.29, order d92d9371) → **NOT triggered** ($8.59 buffer)
+**Stop tighten check:** Position underwater → **Not applicable**
+
+---
+
+### Thesis Component-by-Component Review
+
+| Component | Status | Notes |
+|-----------|--------|-------|
+| Q1 2026 earnings beat | ✅ INTACT | Historical event, confirmed at entry |
+| WTI ~$100+ / Brent ~$109+ | ✅ ASSUMED INTACT | No Hormuz peace deal in news (would be major event) |
+| Hormuz supply disruption | ✅ ASSUMED INTACT | Structural multi-week supply shock; no resolution reported |
+| Energy sector YTD momentum | ⚠️ WATCH | XOM −4.22% today; sector leader status intact YTD but short-term weakness evident |
+| Technical trend (50>200 SMA) | ⚠️ WEAKENING | Price now below SMA-10 AND SMA-20 |
+| Support at $149.01 (Apr lows) | ❌ BROKEN | Current $148.35 = below Apr 14–15 support zone |
+| Volume confirmation of selloff | ✅ BELOW AVG | 9.4M vs ~19M avg — no institutional panic exodus |
+
+---
+
+### Thesis Break Decision
+
+**VERDICT: THESIS NOT BROKEN — HOLD**
+
+Rationale:
+1. **Original catalyst** (earnings + Hormuz supply shock + WTI elevated) remains structurally intact. No thesis-invalidating event found.
+2. **−7% hard stop**: $142.62. Not triggered. $5.73 buffer (3.86%) remains.
+3. **Volume below average**: The decline today (−4.22%) is occurring on 9.4M shares vs a 19M+ average. If a major sector thesis-break were happening (US-Iran peace deal, WTI collapse), volume would be sharply above average. Below-average volume argues for drift/rotation, not fundamental exit.
+4. **April structural support** at $146.44 (Apr 17 close): XOM tested down to $147.21 intraday today — only $0.77 above that floor. This is a critical level to watch. If XOM closes below $146.44, that would constitute a structural support break warranting re-evaluation.
+5. **Consecutive sector failure rule**: Only 1 energy position has been traded. Rule requires 2 consecutive failures. Not triggered.
+6. **Research API offline**: Cannot confirm live WTI price or news catalysts. This is a known operational risk (flagged yesterday). Operating under information constraint — conservative lean (HOLD vs force-exit).
+
+**Monitoring thresholds going forward:**
+- **Mandatory exit if:** Price breaks below $142.62 (−7% hard stop rule) OR trailing stop $139.761 triggers automatically
+- **Thesis-break exit consider if:** XOM closes below $146.44 (Apr 17 structural low) with above-average volume — would signal a genuine breakdown through all support
+- **Thesis confirmation if:** Price recovers above $149 on above-average volume (reclaims support)
+
+---
+
+### Stop / Order Status
+
+| Order ID | Type | Status | Details |
+|----------|------|--------|---------|
+| d92d9371 | Trailing stop 10% GTC | ✅ LIVE | Sell 130 XOM, HWM $155.29, stop $139.761 — no change needed |
+
+**No orders placed. No orders cancelled. Monitoring mode only.**
+
+---
+
+### Research API Status
+- Gemini API: ❌ STILL DOWN (404 — deprecated model). Could not run live news check on XOM.
+- Inability to confirm live WTI price / Hormuz news is an operational risk. Operator action required: update Gemini model endpoint.
+- Best available signal (below-average volume on decline) suggests no major news catalyst driving today's XOM weakness.
+
+---
+
+### Actions Taken This Scan
+**None.** No positions cut, no stops adjusted, no thesis exits, no new orders. Portfolio state unchanged from open.
+
+**Key watchlevel for rest of session:**
+- XOM **$146.44** = April structural low → breach = thesis-break candidate
+- XOM **$142.62** = hard stop → breach = mandatory exit
+- Trailing GTC $139.761 handles automatic protection if position gaps through hard stop
+
