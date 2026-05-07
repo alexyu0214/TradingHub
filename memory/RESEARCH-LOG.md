@@ -1697,3 +1697,76 @@ All 5 candidates scanned (CVX, XLE, PLTR, FTNT, MCD) rejected:
 3. **PLTR** — Z = −0.51; far from trigger ($128.37 = −6.5% away). Long drift continues but not imminent.
 4. **MCD** — Z = −1.49; trigger at $280.54 (−1.6% away). If today's +4.5% pre-market doesn't hold and price reverses below $281, re-evaluate Friday.
 5. **NFP tomorrow (May 8):** Nonfarm Payrolls + Unemployment Rate release. Strong NFP may boost broad market and stabilize energy; weak NFP could trigger risk-off. Prepare both scenarios.
+
+---
+
+### 2026-05-07 — Midday Rescan Addendum (16:22 UTC / 12:22 PM EDT)
+
+**VIX Regime:** Normal (17.38) — 1.00× multiplier, all entry types allowed.
+**Account:** Equity $99,008.10 | Cash $80,064.50 | Deployed 19.1% (XOM only) | PDT 0/3 | Week trades 0/3
+
+---
+
+**Skipped at open, re-evaluated:**
+
+| Ticker | Spread (now) | Z-Score Morning | Z-Score Now | Verdict |
+|--------|-------------|-----------------|-------------|---------|
+| CVX    | 5.16% ❌ (post-close stale) | −2.50 | −1.713 ❌ | STILL SKIPPED |
+| XLE    | 0.018% ✅ | −1.33 | −0.935 ❌ | STILL SKIPPED |
+| PLTR   | 0.029% ✅ | −0.51 | −0.454 ❌ | STILL SKIPPED |
+| MCD    | 2.05% ❌ (post-close stale) | −1.49 | −1.436 ❌ | STILL SKIPPED |
+
+---
+
+**Detailed Re-Check:**
+
+**CVX — STILL SKIPPED**
+- Spread: 5.16% post-close (bid $181.85 / ask $191.48) — stale/crossed, unenterable. During session close: $181.97.
+- Z-Score: Morning −2.50 → Now **−1.713** ❌ (regressed toward mean during session; needs ≤ −2.0 for long trigger)
+- Layer A: (a) Catalyst STILL negative — Iran ceasefire narrative intact, no bullish oil offset; (b) Volume 5.28M vs 20d avg ~10.4M = 0.51× ❌ no capitulation/bottom signal; (c) Sector energy still broadly soft today.
+- Layer B: Z = −1.713 — fails the ≤ −2.0 threshold. Note the irony: morning's Z of −2.50 QUALIFIED on Layer B but failed Layer A; now Layer B has also failed as price partially recovered.
+- **Conclusion:** Both layers fail. Morning skip was correct — price partially mean-reverted intraday already (CVX +$1.62 from open-quote basis) without a trade being placed.
+
+**XLE — STILL SKIPPED**
+- Spread: 0.018% ✅ (bid $55.78 / ask $55.79) — excellent, fully liquid.
+- Z-Score: Morning −1.33 → Now **−0.935** ❌ — moved AWAY from trigger. Price recovered from $55.36 to $55.795.
+- Layer A: (a) No positive catalyst — Iran ceasefire overhang unchanged; (b) R:R at trigger ($54.43): target $57.12 (20d mean), stop $50.62 (−7%) → R:R = 0.74:1 ❌ still fails 2:1 minimum; (c) Volume 28.4M vs 20d avg 42.8M = 0.66× ❌
+- Layer B: Z = −0.94 — nowhere near trigger; would need ~$2.55 further decline to ~$53.24 for Z = −2.0.
+- **Conclusion:** Both layers fail. Price moved away from trigger all day; R:R math was structurally broken at any reasonable trigger level.
+
+**PLTR — STILL SKIPPED**
+- Spread: 0.029% ✅ (bid $138.10 / ask $138.14) — excellent.
+- Z-Score: Morning −0.51 → Now **−0.454** ❌ — moved sharply AWAY from trigger. Price rallied +3.3% today ($133.79 → $138.26 close).
+- Layer A: Price moved strongly upward today — opposite direction needed for mean-reversion long. RSI nowhere near <30. Post-earnings drift upward, not the washout needed for an entry.
+- Layer B: Z = −0.45 — would need ~$31 decline (−22%) from here to reach Z = −2.0 trigger at ~$129.60. Not a near-term candidate.
+- **Conclusion:** PLTR is definitively off the watchlist for this week. A strong +3.3% day with Z moving from −0.51 → −0.45 removes it as a mean-reversion candidate. Monitor for trend momentum entry qualification instead (RSI + breakout), not mean-reversion.
+
+**MCD — STILL SKIPPED**
+- Spread: 2.05% post-close (bid $281.10 / ask $286.93) — stale. During-session close: $284.10.
+- Z-Score: Morning −1.49 → Now **−1.436** ❌ — essentially unchanged (close = prior close $284.10).
+- Layer A: Morning's +4.5% pre-market gap DID NOT HOLD — stock traded down to close flat. Volume 3.70M vs 20d avg 3.32M = 1.11× ✅ (but directionally neutral). Sector (Consumer Discretionary) not in momentum. No sustained catalyst follow-through.
+- Layer B: Z = −1.44 — needs ~$13 further decline to ~$278 for Z = −2.0. Not imminent.
+- **Conclusion:** The earnings gap failed to hold, which is actually a mild bearish signal intraday. MCD is drifting sideways/down and may become a candidate in 1–2 sessions if the −2.0 Z trigger is approached, but no entry today.
+
+---
+
+**XOM Position Update (midday):**
+- Current: $145.76 | Unrealized: −$986.70 (−4.95%) | Entry: $153.35 (130 shares)
+- Trailing stop: $139.761 GTC (HWM $155.29) | Distance to stop: 4.12%
+- Z-Score updated: **−1.985** (approaching oversold; nearly at −2.0 again)
+- Thesis intact: WTI still ~$91 (not collapsed), no confirmed Iran deal implemented, XOM earnings pillar unchanged
+- **Action: HOLD.** Stop manages downside. Z approaching −2.0 again after intraday recovery. No manual intervention warranted.
+
+---
+
+**Trades fired this rescan: NONE**
+
+**Patience rule invoked** — all 4 candidates fail composite Layer A + Layer B gates. No gates were lowered to force a trade. Zero trades this rescan is the correct outcome.
+
+**Updated watchlist for Friday pre-market (May 8 — NFP Day):**
+1. **CVX** — Z = −1.71 today; Layer B fails but approaching again. Needs: (a) oil stability/bounce, (b) volume ≥ 1.0×, (c) Z ≤ −2.0. If NFP is strong and oil stabilizes, CVX becomes #1 candidate Friday.
+2. **XLE** — Z = −0.94, moved away from trigger today. R:R math structurally problematic at current 20d-mean/ATR setup. Low priority.
+3. **MCD** — Z = −1.44, flat action today. If continues to drift lower to ~$278, re-evaluate Friday.
+4. **PLTR** — Removed from near-term watchlist. +3.3% today killed the mean-reversion setup. Now a momentum-continuation candidate if trend resumes.
+5. **NFP tomorrow (May 8):** Strong print = broad market + energy positive → CVX most likely beneficiary. Weak print = risk-off, hold cash discipline.
+
