@@ -1519,3 +1519,181 @@ Energy sold off broadly today in what appears to be sector-wide profit-taking or
 3. **XOM** — Thesis intact but under stress. Watch $146.44 (Apr structural low) — breach with volume would trigger thesis-break review. Hard stop $142.62.
 4. **XLB** — Now overbought (Z = +1.84); Phase 3 short candidate if Z crosses +2.0, but currently off watchlist for longs.
 
+
+---
+
+### May 07 — Pre-Market Research (Day 10, Thursday)
+
+**Portfolio:** $98,910.60 | **Cash:** $80,064.50 (80.9%) | **Deployed:** 19.1% (XOM only) | **Phase P&L:** −$1,089.40 (−1.10%)
+
+---
+
+#### STEP 1 — Memory Context
+- XOM entered May 1 @ $153.35 (130 shares). Now at $144.97. Unrealized: −$1,089.40 (−5.47%).
+- Trailing stop GTC active: $139.761 (10%, HWM $155.29). Distance to stop: $5.21 (3.59%).
+- Prior watchlist: PLTR #1 (Z trending toward −2.0), XLE (Z near trigger), XOM (thesis under stress).
+- No new entries placed yesterday afternoon — all 4 candidates (CVX, XLE, XLB, PLTR) failed composite gates.
+
+---
+
+#### STEP 2 — Live Account State
+| Field | Value |
+|---|---|
+| Equity | $98,910.60 |
+| Cash | $80,064.50 |
+| Long market value | $18,846.10 |
+| PDT count | 0/3 |
+| Week trades | 0/3 |
+| Open positions | 1/6 (XOM) |
+| Daytrade buying power | $0 (non-PDT account) |
+
+**Open position:**
+- XOM: 130 shares @ $153.35 avg | Current $144.97 | Unrealized −$1,089.40 (−5.47%) | Trailing stop $139.761 (GTC, HWM $155.29)
+
+**Open orders:**
+- XOM trailing stop GTC (order ID d92d9371) — active, stop price $139.761, trail 10%
+
+---
+
+#### STEP 3 — Market Context
+
+**Oil:** WTI ~$91.59 (+1.03% today but −4.04% from prior day); Brent ~$96.79–$98.47. Both fell sharply (WTI −6.3% yesterday to $96.21, Brent briefly below $100) on reports of a potential **US-Iran ceasefire / peace deal**. WTI is −3.36% over 1 month but +52.30% YoY. Oil is structurally elevated but the geopolitical premium is deflating.
+
+**Equities:** S&P 500 futures +0.05–0.10% pre-market at ~7,393 after Wednesday's S&P 500 all-time high close at 7,365.12 (+1.46%). Market broadly bullish driven by AI/chipmaker earnings. Broader market NOT in fear mode.
+
+**VIX:** 17.38 (down from 18.29, −4.98%). VIX1D = 11.66 (+8.47%), VIX9D = 14.76 (+0.82%). Historically suppressed. Near-term event pricing slightly elevated (jobs data tomorrow).
+
+**Economic calendar today (May 7):** Challenger job cuts, jobless claims, productivity/costs (7:30 AM ET); Manheim used vehicle index, construction spending (9–10 AM); EIA natural gas storage (10:30 AM); NY Fed consumer expectations, NFIB jobs report, consumer credit (late morning/afternoon). Fed speakers: Kashkari, Hammack, Williams. **No CPI/PPI/FOMC today.** Nonfarm Payrolls scheduled for May 8.
+
+**Pre-market movers:**
+- FTNT +15% (Q1 beat) — Z = +7.43 (extreme overbought) — Phase 3 short candidate only
+- DASH +10% (better-than-expected quarterly results) — not in scan universe
+- MCD +4.5% (Q1 sales beat) — Z = −1.49, price moving AWAY from long trigger
+- ARM −8% (weak Q4 royalty revenue) — not in scan universe
+- ZTS −7.8% (quarterly miss)
+- ALB +6%, CELH +4%, FSLY −25%
+
+**Sector momentum (YTD 2026):** Energy #1 (+25%+) but thesis under stress as oil retreats below $100. Tech/Momentum/AI-infra dominating April. Low-vol and Dividend Aristocrats lagging.
+
+---
+
+#### STEP 4 — VIX Regime Classification
+
+| VIX | Regime | Sizing Multiplier | Strategy Bias |
+|---|---|---|---|
+| **17.38** | **Normal (14–22)** | **1.00×** | **All entry types OK** |
+
+→ No regime-based restrictions today. Full 10% cold-start position sizing applies.
+
+---
+
+#### STEP 5 — Universe Scan & Idea Generation
+
+**Z-Score calculations (20-day window, partial-day current price):**
+
+| Ticker | Current | 20d Mean | 20d Std | Z-Score | Signal | Vol (today vs 20d avg) |
+|---|---|---|---|---|---|---|
+| XOM | $144.97 | $150.98 | $2.63 | **−2.29** | ✅ LONG (≤−2.0) | 0.17× ⚠️ (partial day) |
+| CVX | $180.33 | $188.12 | $3.12 | **−2.50** | ✅ LONG (≤−2.0) | 0.21× ⚠️ (partial day) |
+| XLE | $55.36 | $57.19 | $1.38 | −1.33 | ❌ No trigger | 0.31× ⚠️ |
+| PLTR | $137.34 | $140.41 | $6.02 | −0.51 | ❌ No trigger | 0.30× ⚠️ |
+| FTNT | $111.41 | $83.90 | $3.70 | **+7.43** | ✅ SHORT (≥+2.0) | 1.09× ✅ |
+| MCD | $285.05 | $298.23 | $8.84 | −1.49 | ❌ No trigger | 0.68× ⚠️ |
+
+**XOM–CVX pair divergence:** |−2.29 − (−2.50)| = 0.21σ → ✅ CONFIRMS (< 1.5σ limit)
+
+---
+
+**IDEA 1 — CVX LONG (Mean Reversion)**
+
+**Layer A — Catalyst Checklist:**
+- Ticker: CVX | Sector: Energy (integrated oil) | Mkt cap: >$300B ✅ ADV: >10M ✅ Price: $180 ✅
+- SMA direction: 50-day > 200-day (energy uptrend YTD) ✅
+- Catalyst: **NEGATIVE** ⚠️ — Iran ceasefire narrative is the reason CVX is oversold; same catalyst is a structural headwind for new long entries
+- Sector momentum: Energy +25% YTD but currently under stress as oil retreats ⚠️
+- RSI: Estimated near 30 given multi-day selloff — approaching trigger but unconfirmed
+- Volume confirm: 0.21× today — partial session, not confirming capitulation ❌
+- Stop level: Technical support at $178.50 (below today's intraday low $180.16) — only −1.01% from entry; ultra-tight and high whipsaw risk ⚠️
+- R:R: 3.3:1 to 20d mean ($188.12) with tight stop ✅ — but only if stop holds
+
+**Layer B — Quant Checklist:**
+- Z-Score: −2.50 ✅ (≤−2.0 LONG TRIGGER confirmed)
+- VIX regime: Normal (1.00×) ✅
+- Pair confirmation: XOM Z = −2.29, divergence 0.21σ ✅ (confirms sector thesis)
+
+**DECISION: REJECT — Layer A fails on 3 counts:**
+1. Catalyst is *negative* for oil (Iran deal = oil headwind); can't frame as a positive catalyst
+2. Volume 0.21× — no volume confirmation of capitulation/bottoming
+3. Tight technical stop (~1%) creates extreme whipsaw risk on oil news day; PDT protection insufficient
+4. Sector thesis partially broken (energy "still high" but geopolitical premium deflating)
+
+**Patience rule applies: No edge = no trade.**
+
+---
+
+**IDEA 2 — XLE BRACKET LIMIT (Watchlist)**
+
+**Layer A:**
+- Ticker: XLE (S&P 500 Energy Select Sector ETF, >$1B AUM ✅)
+- Catalyst: None positive today; negative (Iran ceasefire) ❌
+- R:R at trigger price $54.43: Target 20d mean $57.19, stop −7% = $50.61. R:R = 0.72:1 ❌ **FAILS 2:1 minimum**
+
+**Layer B:**
+- Z = −1.33 → **NOT AT TRIGGER** ❌ (needs ≤ −2.0, requires ~$0.93 further decline to $54.43)
+
+**DECISION: REJECT — both R:R and Z-Score fail. Even if price hits $54.43, R:R is sub-minimum.**
+
+---
+
+**IDEA 3 — FTNT (Phase 3 Flag)**
+
+- Z = +7.43 — most extreme overbought signal in today's scan (+7.4σ)
+- Catalyst: Q1 earnings beat, +24% gap-up
+- Volume: 1.09× ✅ confirms the move
+- **REJECT for Phase 1: Long-only. Shorting deferred to Phase 3.**
+- **Log as Phase 3 short reference:** If Z remains ≥ +2.0 over next 2–3 sessions post-earnings gap (mean reversion short), flag for Phase 3 activation.
+
+---
+
+#### STEP 6 — XOM Thesis Integrity Review
+
+Original pillars: (1) WTI elevated (+52% YoY), (2) XOM Q1 earnings beat, (3) Energy sector momentum #1 YTD.
+
+**Today's threat:** US-Iran ceasefire narrative → WTI fell to ~$91.59. Brent ~$96–98. Both below $100.
+
+**Assessment:** Thesis NOT broken. WTI at $91 still reflects a massive premium vs. 2025 levels ($60 range). XOM's earnings were built on ~$85–95 WTI range. A $91 print doesn't invalidate the earnings thesis. What WOULD break the thesis: (a) confirmed, finalized Iran deal with significant Iranian supply return to market (months away from implementation even if announced), (b) WTI sustained below $80 (would require Iran + OPEC+ response), (c) XOM-specific bad news.
+
+**Current cushion:** $144.97 current vs. $139.761 stop = 3.59% buffer. Trailing stop is automatic (GTC). No manual action needed.
+
+**Decision: HOLD XOM.** Let the stop manage downside. Z = −2.29 argues statistical oversold — supports eventual mean reversion toward $150+ zone.
+
+---
+
+#### FINAL DECISION: **HOLD — 0 NEW TRADES TODAY**
+
+All 5 candidates scanned (CVX, XLE, PLTR, FTNT, MCD) rejected:
+
+| Ticker | Layer A | Layer B | Decision |
+|---|---|---|---|
+| CVX | ❌ Fails (negative catalyst, low volume, tight stop) | ✅ Z=−2.50 | REJECT |
+| XLE | ❌ Fails (R:R < 2:1 at trigger) | ❌ Z=−1.33 | REJECT |
+| PLTR | ⚠️ Approaching | ❌ Z=−0.51 (far from trigger) | REJECT |
+| FTNT | ✅ (short-only) | ✅ Z=+7.43 (short) | REJECT (Phase 3 only) |
+| MCD | ❌ Price moving wrong direction | ❌ Z=−1.49 | REJECT |
+
+**VIX Regime:** Normal (17.38) — no regime-based restrictions, but no qualifying trades exist.
+**PDT:** 0/3. **Week trades:** 0/3. **Patience rule invoked.**
+
+---
+
+**Circuit breakers:** ✅ All clear — Phase P&L −1.10% (lim −5%) | Drawdown −1.31% from $100,206.70 peak (lim −15%)
+**PDT count:** 0/3 | **Week trades:** 0/3 | **Positions:** 1/6
+
+---
+
+**Watchlist for Friday pre-market (May 8 — NFP Day):**
+1. **CVX** — Z = −2.50 ✅ Layer B already passes; needs: (a) oil stabilization catalyst, (b) volume ≥ 1.0× on entry day, (c) stop structure that achieves 2:1 R:R without ultra-tight whipsaw risk. If oil bounces on NFP day, CVX becomes #1 candidate.
+2. **XLE** — Z = −1.33, only $0.93 from Z=−2.0 trigger ($54.43). Monitor for continued energy washout. R:R at trigger still sub-2:1 — needs either deeper price OR narrower technical stop.
+3. **PLTR** — Z = −0.51; far from trigger ($128.37 = −6.5% away). Long drift continues but not imminent.
+4. **MCD** — Z = −1.49; trigger at $280.54 (−1.6% away). If today's +4.5% pre-market doesn't hold and price reverses below $281, re-evaluate Friday.
+5. **NFP tomorrow (May 8):** Nonfarm Payrolls + Unemployment Rate release. Strong NFP may boost broad market and stabilize energy; weak NFP could trigger risk-off. Prepare both scenarios.
