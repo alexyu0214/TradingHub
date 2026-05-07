@@ -1770,3 +1770,36 @@ All 5 candidates scanned (CVX, XLE, PLTR, FTNT, MCD) rejected:
 4. **PLTR** — Removed from near-term watchlist. +3.3% today killed the mean-reversion setup. Now a momentum-continuation candidate if trend resumes.
 5. **NFP tomorrow (May 8):** Strong print = broad market + energy positive → CVX most likely beneficiary. Weak print = risk-off, hold cash discipline.
 
+
+---
+
+## 2026-05-07 — Midday Scan Addendum (17:55 UTC / ~12:55 PM ET)
+
+**Event:** XOM thesis-break exit executed
+
+**Exit triggered by convergence of 3 signals:**
+1. WTI crude at ~$91.59 (−13.6% from $106 entry-thesis price). Oil sub-$100 for the first time since the Hormuz trade was entered.
+2. US-Iran ceasefire/peace deal narrative is the active market driver — the specific geopolitical catalyst (Hormuz supply premium) that justified the entry is deflating in real-time. Iran deal tail risk (flagged at entry as the key downside scenario) is now the base case.
+3. XOM broke April 17 structural closing support at $146.44 (XOM at $146.09 at exit). This was pre-flagged in May 6 midday AND afternoon scans as the explicit thesis-break trigger.
+
+**Supporting technicals at exit:**
+- Z-Score: −1.58 (NOT at −2.0 oversold → no statistical mean-reversion support)
+- RSI(14): ~49.5 (neutral → no oversold bounce anchor)
+- Price below SMA-10 ($151.29) and SMA-20 ($150.54): short-term trend flipped bearish
+- Volume: below average today but yesterday (May 6) above-average selling volume on large down day
+
+**Decision logic:** The Z-Score NOT being at −2.0 is important — it means there is no statistical oversold extreme to expect a bounce from. Combined with the thesis-break signals, holding for a mean-reversion bounce would be waiting for a bounce that isn't supported by the quant layer.
+
+**Energy sector — post-exit watchlist status:**
+- XOM: CLOSED. Monitor from the sidelines. Not a re-entry candidate until oil stabilizes and a fresh, clean signal (Z ≤ −2.0 + RSI < 30 + positive catalyst) qualifies.
+- CVX: Z was −2.50 this morning (Layer B qualifies) but Layer A still fails — negative catalyst (Iran deal), volume 0.21×, tight technical stop with poor R:R structure. Not an entry.
+- XLE: Z = −1.33 this morning; R:R sub-2:1 at any reasonable trigger price. Not an entry.
+- Energy sector has now had ONE trade failure (XOM −4.73%). Strategy rule: exit entire sector if 2 consecutive failures. One failure — caution heightened, not a blanket sector ban yet.
+
+**Post-exit portfolio state:** 100% cash ($99,056.49). Fully flat. No open positions. No open orders. NFP tomorrow (May 8) — correct posture to hold cash into binary macro event.
+
+**Next watchlist (non-energy, fresh ideas for next pre-market scan):**
+- Need fresh non-energy catalysts. Energy thesis broken on Iran deal risk.
+- PLTR: Z = −0.45 today (moved away from trigger after +3.3% session May 7 midday). Off watchlist.
+- Need to scan: Industrials, Materials, Technology, Consumer names for Z ≤ −2.0 + RSI < 30 setups with clean catalysts AFTER NFP print clears macro uncertainty.
+- NFP (May 8): If strong (consensus 49k+), risk-on bounce likely. If weak, risk-off may create oversold signals across multiple sectors — potentially productive for mean-reversion entries.

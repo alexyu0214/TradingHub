@@ -403,3 +403,28 @@ All candidates reviewed and rejected via Layer A + Layer B composite gate:
 **Circuit breakers:** All clear. Phase P&L −1.10% (limit −5%). Drawdown −1.31% from $100,206.70 peak (limit −15%).
 
 **Next workflow:** Midday scan — check XOM fill/stop status, re-evaluate watchlist intraday.
+
+---
+
+## 2026-05-07 — Midday Scan
+
+**Midday scan:**
+- **Thesis exit XOM** @ $146.092 (−4.73% / −$943.51) — catalyst invalidated, sector rolling over, structural support broken
+
+**Actions taken:**
+1. Cancelled GTC trailing stop order `d92d9371` (XOM, 10% trail, HWM $155.29, stop $139.761) — HTTP 204 confirmed
+2. Closed XOM position: 130 shares @ $146.092 market fill — order `8f97ef7d`, filled 2026-05-07T17:55:10Z
+
+**Thesis break — 3 simultaneous signals:**
+- WTI ~$91.59 vs $106 entry-day price (−13.6% on primary catalyst)
+- Iran ceasefire narrative deflating Hormuz geopolitical premium (entry catalyst partially invalidated)
+- XOM trading through April 17 structural support ($146.44 → $146.09 at exit) — explicitly pre-flagged threshold
+
+**Portfolio after scan:**
+- Equity: $99,056.49
+- Cash: $99,056.49 (100% — fully flat)
+- Open positions: 0
+- Phase P&L: −$943.51 (−0.94% vs $100k start)
+- PDT count: 0/3 | Week trades: 1/3
+
+**Context:** This was the only position in the portfolio. No new entries placed — no candidates clear the composite Layer A + Layer B (Z-Score ≤ −2.0 + RSI < 30) gates at this time. Energy sector being avoided given thesis failure on XOM. Cash preserved for fresh, clean setups. NFP tomorrow (May 8) is a binary macro event; holding cash into that print is the correct posture.

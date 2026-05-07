@@ -596,3 +596,34 @@ Every trade (entry, exit, stop-out) is logged here with full thesis, entry price
 - Daytrade buying power: $0 (non-margin PDT protection)
 
 **No bracket limit orders placed. No orders to track.**
+
+---
+
+### 2026-05-07 17:55 — EXIT XOM (THESIS BREAK)
+**Exit Price:** $146.092 (market fill, paper)
+**Shares:** 130
+**Realized P&L:** −$943.51 (−4.73%)
+**Reason:** Thesis break — multiple pillars simultaneously invalidated
+**Hold time:** 5 trading days (2026-05-01 entry → 2026-05-07 exit)
+**Trade ID:** Entry order c04ae321 (filled 2026-05-01 @ $153.35)
+**Close order ID:** 8f97ef7d-da51-44ec-b370-2048208d81fc (filled 2026-05-07T17:55:10Z)
+**Trailing stop cancelled:** d92d9371 (204 confirmed 2026-05-07T17:55 UTC before close)
+
+**Thesis Break Factors (3 simultaneous signals):**
+1. **WTI oil degraded:** Entry thesis anchored on WTI ~$106/bbl (Hormuz closure). WTI dropped to ~$91.59 at time of exit = −13.6% on the PRIMARY catalyst. Oil below $100 for first time since thesis was established.
+2. **Geopolitical catalyst partially invalidated:** The Hormuz closure / Iran supply-shock premium (the specific entry catalyst) was actively deflating due to US-Iran ceasefire/peace deal narrative. This was flagged as tail risk at entry — it became the base case.
+3. **Technical support broken:** XOM traded through April 17 closing structural support at $146.44. This level was explicitly flagged in the May 6 midday scan AND May 6 afternoon scan as the thesis-break trigger: *"Thesis-break exit consider if: XOM closes below $146.44 (Apr 17 structural low) with above-average volume."* Price at exit $146.09 = breach confirmed. Additionally price below SMA-10 ($151.29) and SMA-20 ($150.54) — short-term trend flipped bearish.
+
+**Supporting data at exit:**
+- Z-Score: −1.58 (approaching oversold but NOT at −2.0 bounce threshold)
+- RSI(14): ~49.5 (neutral — no oversold signal to anchor a bounce call)
+- Volume: 8.45M vs 19.9M avg (0.46× — not capitulation volume, but yesterday May 6 was 20.5M above avg on big down day)
+- Hard stop (−7% = $142.62) was NOT triggered; exit was discretionary thesis call at −4.73%
+
+**Decision rationale:** Strategy rule unambiguous: *"Thesis break: if catalyst invalidates or sector rolls over, cut immediately even if not at −7%."* Three concurrent thesis-break signals (WTI degraded, entry catalyst deflating, structural support broken) overrode the argument to wait for the trailing stop at $139.76. Exited at −4.73% rather than risking the full −7% or a gap through stop. Capital preserved for redeployment when a fresh, clean signal qualifies.
+
+**Post-exit account state:**
+- Equity: $99,056.49
+- Cash: $99,056.49 (100.0%)
+- Open positions: 0/6
+- Phase P&L: −$943.51 vs $100,000 start = −0.94%
