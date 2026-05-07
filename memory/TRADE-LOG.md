@@ -627,3 +627,46 @@ Every trade (entry, exit, stop-out) is logged here with full thesis, entry price
 - Cash: $99,056.49 (100.0%)
 - Open positions: 0/6
 - Phase P&L: −$943.51 vs $100,000 start = −0.94%
+
+---
+
+### May 07 — Afternoon Scan (Day 10 / ~15:50 ET)
+
+**Portfolio:** $99,056.49 | **Cash:** $99,056.49 (100%) | **Day P&L:** see midday log | **Phase P&L:** −$943.51 (−0.944%) | **Deployed:** 0%
+
+| Ticker | Shares | Entry | Current | Unrealized P&L | Stop | Hold |
+|--------|--------|-------|---------|----------------|------|------|
+| — | — | — | — | — | — | — (0 positions) |
+
+**Afternoon scan trades:** none
+
+**Stop action:** NONE — no positions held. XOM trailing stop (d92d9371) was cancelled at 17:54 UTC as part of the thesis-break exit executed at 17:55 UTC (logged in midday addendum). Confirmed cancelled via API: `"canceled_at":"2026-05-07T17:54:45.60195Z"`.
+
+**Open orders confirmed via API: 0** — clean slate.
+
+**Afternoon candidates evaluated — ALL REJECTED:**
+
+| Candidate | Z-Score (corrected) | Spread | Layer A Fail | Layer B Fail | Verdict |
+|-----------|---------------------|--------|--------------|--------------|---------|
+| CVX | −1.5418 (stub bid corrected; not −2.70) | 0.027% (close basis) | ❌ Neg catalyst (Iran/oil), RSI unconfirmed, sector broken after XOM, R:R <2:1 | ❌ Z=−1.54 fails ≤−2.0 | REJECT |
+| XLE | −0.8100 | 0.018% ✅ | ❌ No catalyst, sector broken | ❌ Z=−0.81 | REJECT |
+| PLTR | −0.6091 | 0.022% ✅ | ❌ Far from trigger | ❌ Z=−0.61 | REJECT |
+| MCD | −1.5184 | 1.07% ⚠️ | ❌ Z fails, spread marginal | ❌ Z=−1.52 | REJECT |
+| XLB | −0.4878 | 0.019% ✅ | ❌ Far from trigger | ❌ Z=−0.49 | REJECT |
+
+**Z-Score correction note — CVX:** Initial quote showed bid $175.00 / ask $182.71 → a 4.22% apparent spread. The $175.00 bid is a stub/AH illiquidity quote not representative of fair value. Last session close was $182.66; ask was $182.71 (Δ$0.05 = 0.027% effective spread). Z-Score recomputed using $182.66 = **−1.5418** (NOT −2.70 as initially computed from the stub-bid midpoint). CVX therefore also fails Layer B, not just Layer A.
+
+**NFP constraint:** Current time (~15:45–15:50 ET) falls within the no-new-entries window (last 15 min of session). Nonfarm Payrolls release tomorrow pre-market — binary macro event. Both rules independently prohibit new entries at this scan.
+
+**Energy sector status:** XOM thesis-break = energy sector failure #1. Next energy trade carries elevated risk of triggering the "2 consecutive sector failures → exit entire sector" rule. CVX correctly rejected as potential failure #2 in energy; same catalyst (Iran ceasefire / WTI decline) drives both names.
+
+**PDT count:** 0/3 | **Week trades:** 0/3 | **Positions:** 0/6
+
+**Circuit breakers:** ✅ All clear — Phase P&L −0.944% (lim −5%) | Drawdown −1.15% from $100,206.70 peak (lim −15%) | Weekly P&L loss: −0.944% (lim −5%)
+
+**Key watchlist for Friday pre-market (NFP Day — May 8):**
+1. CVX — Z = −1.54; needs oil stabilization + RSI < 30 + Z ≤ −2.0; watch NFP reaction
+2. MCD — Z = −1.52; consumer spending data in NFP could move this; trigger at ~$280
+3. Post-NFP new ideas — scan full universe for fresh setups after binary event clears
+4. Energy sector: flagged — approach with heightened caution; no new energy trades until positive catalyst confirmed AND WTI stabilizes
+

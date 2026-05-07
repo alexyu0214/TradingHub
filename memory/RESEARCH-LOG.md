@@ -1803,3 +1803,120 @@ All 5 candidates scanned (CVX, XLE, PLTR, FTNT, MCD) rejected:
 - PLTR: Z = −0.45 today (moved away from trigger after +3.3% session May 7 midday). Off watchlist.
 - Need to scan: Industrials, Materials, Technology, Consumer names for Z ≤ −2.0 + RSI < 30 setups with clean catalysts AFTER NFP print clears macro uncertainty.
 - NFP (May 8): If strong (consensus 49k+), risk-on bounce likely. If weak, risk-off may create oversold signals across multiple sectors — potentially productive for mean-reversion entries.
+
+---
+
+## 2026-05-07 — Afternoon Scan Addendum (~19:50 UTC / ~15:50 ET)
+
+**Scan time:** ~10 min before close (market closes 20:00 UTC / 4:00 PM ET)
+**VIX regime at scan:** NORMAL (estimated ~18–20, from prior session VIXY $26.98; no fresh VIX data — Gemini API still down) | Sizing multiplier: 1.00×
+
+---
+
+### STEP 1 — Order & Position State Reconciled vs TRADE-LOG
+
+**Orders returned by API (3 total — all historical):**
+
+| Order ID | Symbol | Type | Status | Detail |
+|----------|--------|------|--------|--------|
+| c04ae321 | XOM | Market Buy (130 sh) | **FILLED** @ $153.35 | Entry 2026-05-01 ✅ logged |
+| d92d9371 | XOM | Trailing Stop 10% GTC | **CANCELLED** 2026-05-07T17:54 | Cancelled prior to thesis-break exit ✅ logged |
+| 8f97ef7d | XOM | Market Sell (130 sh) | **FILLED** @ $146.092 | Thesis-break exit 2026-05-07T17:55 ✅ logged |
+
+- **No morning bracket limit orders were placed today** — pre-market research (May 7) verdict was explicit HOLD: "0 NEW TRADES TODAY" due to negative catalyst environment (Iran ceasefire deflating oil premium) and all 5 candidates failing composite gates.
+- **Positions API returned: EMPTY `[]`** — confirms full exit of XOM at 17:55 UTC. Portfolio is 100% cash.
+- **TRADE-LOG reconciliation:** Post-exit equity $99,056.49 matches API exactly ✅. No discrepancy.
+- **Bracket fills today: 0** (no morning limits were placed — nothing to check for fills)
+- **Open orders: 0** — no GTC stops, no bracket limits, no stale limits. Clean slate.
+
+---
+
+### STEP 2 — Trailing Stop Upgrades: N/A
+
+**No positions held.** Portfolio is 100% cash ($99,056.49). The XOM trailing stop (d92d9371) was already cancelled at 17:54 UTC as part of the thesis-break exit workflow logged in the midday scan addendum. No trailing stop upgrades applicable.
+
+---
+
+### STEP 3 — Stale Limit Cancellations: None
+
+No morning bracket limit orders were placed today. No stale limits exist. No cancellations needed.
+
+---
+
+### STEP 4 — Afternoon Opportunity Scan
+
+**VIX regime:** NORMAL (1.00×) | **Positions:** 0/6 | **Week trades:** 0/3 | **PDT:** 0/3
+
+**Note on timing:** Quotes pulled at ~19:45–19:50 UTC (~15:45–15:50 ET). This is within the **"no new entries — last 15 minutes"** window per TRADING-STRATEGY.md rules. Additionally, **NFP (Nonfarm Payrolls) releases tomorrow pre-market** — entering positions in the final minutes before a binary macro event violates the risk framework. Both rules independently prohibit new entries at this scan time even if a signal were to qualify.
+
+**CVX — Z-Score Correction Note:**
+The initial midpoint calculation used a stub AH bid ($175.00) which produced an artificially wide spread (4.22%) and an inflated Z-Score of −2.70. The correct calculation uses the last session close ($182.66) as proxy for fair value (ask $182.71 = only $0.05 above close):
+
+| Metric | Value |
+|--------|-------|
+| Last close | $182.66 |
+| Ask (AH) | $182.71 (Δ $0.05 vs close) |
+| Bid (AH) | $175.00 (stub quote — not actionable) |
+| Corrected Z-Score (vs last close) | **−1.5418** |
+| Layer B gate (≤ −2.0) | ❌ **FAILS** |
+
+The stub bid is a known after-hours illiquidity artifact. Fair value is the ask price, which is nearly identical to the close. CVX does NOT qualify on Layer B.
+
+**Universe Scanned (5 candidates):**
+
+| Ticker | Last Close | Z-Score (20d) | Spread | Layer A | Layer B | Verdict |
+|--------|------------|---------------|--------|---------|---------|---------|
+| CVX | $182.66 | **−1.5418** | 0.027% (close basis) | ❌ Neg catalyst, RSI unconfirmed, sector broken, R:R <2:1 | ❌ Z=−1.54 fails ≤−2.0 | **REJECT** |
+| XLE | $55.955 | **−0.8100** | 0.018% ✅ | ❌ No catalyst, R:R fails at trigger | ❌ Z=−0.81 fails | **REJECT** |
+| PLTR | $137.20 | **−0.6091** | 0.022% ✅ | ❌ Z gate fails (not close to trigger) | ❌ Z=−0.61 fails | **REJECT** |
+| MCD | $285.11 | **−1.5184** | 1.07% ⚠️ | ❌ Z gate fails; spread marginal | ❌ Z=−1.52 fails | **REJECT** |
+| XLB | $51.49 | **−0.4878** | 0.019% ✅ | ❌ Z gate fails (far from −2.0) | ❌ Z=−0.49 fails | **REJECT** |
+
+**Pair Z-Scores calculated:**
+- XOM (reference, last close $146.09): Z = −1.859 | CVX−XOM divergence = 0.318σ ✅ (confirms sector cohesion, both moving together in energy selloff)
+- LIN (XLB pair, last close $494.00): Z = −1.260 | XLB−LIN divergence = 0.772σ ✅ (neither at trigger)
+
+---
+
+**Detailed Candidate Notes:**
+
+**CVX — DUAL REJECT (Both Layers):**
+- Z = −1.54 (was incorrectly calculated as −2.70 using stub bid; corrected to −1.54 using last close/ask). Fails Layer B.
+- Layer A failures: (1) Negative catalyst — the Iran ceasefire narrative that broke XOM is directly applicable to CVX as an integrated oil major; WTI ~$91 (was $106 at XOM entry). Entering CVX long immediately after XOM thesis-break exit = the identical trade that just lost −4.73%. (2) RSI unconfirmed — 4 consecutive red days for energy suggests RSI is approaching but likely not sub-30. (3) Sector momentum broken — XOM thesis-break constitutes energy sector failure #1. CVX would be trade #2 in energy; if it also fails = 2 consecutive sector failures triggering the blanket exit rule. (4) R:R to realistic target (20d mean $187.74) = only 0.40:1; fails the 2:1 minimum. The 1-hour cooldown rule (CONSTRAINTS.md: "NO revenge trades") also applies given the XOM exit ~2 hours prior.
+- **VERDICT: REJECT on both Layer A (4 separate failures) and Layer B (Z=−1.54, needs ≤−2.0)**
+
+**XLE — REJECT:**
+- Z = −0.81. Needs to fall ~$1.51 more to ~$54.47 for Z = −2.0. Energy sector is the broken thesis sector. Even if Z triggered, same negative catalyst issue as CVX applies.
+
+**PLTR — REJECT:**
+- Z = −0.61. Moved in the wrong direction today (+$3.41, +2.55% from yesterday's close) — mean-reverting upward, not deepening toward oversold. Long trigger at ~$129.60 (Z=−2.0) requires ~−5.6% additional decline from current. Post-earnings drift suggests the stock has found interim support.
+
+**MCD — REJECT:**
+- Z = −1.52. Spread 1.07% is marginally above the 1% threshold (AH-related). Would need additional ~$13 decline to ~$280 for Z = −2.0. NFP tomorrow could be a catalyst if consumer spending data is embedded in the print.
+
+**XLB — REJECT:**
+- Z = −0.49. Far from −2.0 trigger. Setup has completely reset from the near-trigger conditions of May 4 (Z=−1.936). XLB has been bouncing this week.
+
+**New afternoon entries: NONE** — all 5 candidates rejected on composite Layer A + Layer B gates. Zero bracket orders placed.
+
+---
+
+### Afternoon Market Context
+
+Today (May 7) represents a clean portfolio reset: the XOM position that had been held since May 1 was exited at 17:55 UTC via thesis-break (−4.73% realized loss), leaving the portfolio at 100% cash ($99,056.49). The energy sector thesis (Strait of Hormuz supply premium, WTI elevated) was invalidated by the emerging US-Iran ceasefire narrative, which drove WTI from ~$106 (entry thesis) to ~$91.59 — a −13.6% oil move that directly undermined the entry catalyst. The broader equity market (S&P futures near ATHs, VIX ~17.38) continues its constructive posture, with the energy selloff appearing sector-specific rather than a broad risk-off event. This is consistent with the VIXY trend (declining $27.76 → $26.98) observed during the energy drawdown. 
+
+The afternoon scan produced zero qualifying candidates — the quant filter (Z ≤ −2.0) is working as designed, keeping the bot out of marginal setups. The most important development for tomorrow is **NFP at 8:30 AM ET**: consensus 49,000 new jobs, 4.3% unemployment. A strong print could catalyze a broad equity bounce and potentially re-price some oversold candidates (CVX Z=−1.54, MCD Z=−1.52) toward their triggers. A weak print could accelerate risk-off but may also produce oversold readings in quality names. The research API (Gemini) remains offline — operator must resolve before tomorrow's pre-market workflow.
+
+---
+
+**Bracket fills today:** 0 (no morning limits placed — HOLD decision at pre-market)
+**Stops upgraded:** 0 (no positions held; trailing stop was already cancelled as part of the 17:55 UTC thesis-break exit)
+**Stale limits cancelled:** 0 (none existed)
+**New afternoon entries:** none — all 5 candidates failed composite Layer A + Layer B gates; additionally within no-entry window (last 15 min) and NFP binary event tomorrow
+**Key watchlist for Friday pre-market (May 8 — NFP Day):**
+1. **CVX** — Z = −1.54 (corrected from earlier −2.70 error); needs further weakness OR NFP-driven oil bounce re-establishing a positive catalyst; also needs RSI < 30 confirmation
+2. **MCD** — Z = −1.52; if consumer confidence data in NFP is weak and MCD sells toward $280, Z ≤ −2.0 may trigger; watch spread normalization during session
+3. **XLE** — Z = −0.81; sector ETF proxy; same energy thesis issues as CVX apply
+4. **POST-NFP NEW IDEAS** — Strong NFP may generate fresh momentum setups in tech/cyclicals. Weak NFP may trigger rate-sensitive names (utilities, REITs). Scan full universe post-print.
+5. **Energy sector protocol:** After XOM thesis-break (failure #1 in energy), next energy trade is flagged as potential failure #2. Per sector rules, if a second energy trade fails, exit entire sector. Approach energy names with heightened caution until WTI stabilizes and a clean, confirmed positive catalyst (not just a statistical level) re-emerges.
+
