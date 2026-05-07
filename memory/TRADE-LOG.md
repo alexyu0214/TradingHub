@@ -567,3 +567,32 @@ Every trade (entry, exit, stop-out) is logged here with full thesis, entry price
 
 **Circuit breakers:** ✅ All clear — Day +0.007% (lim −2%) | Phase −0.647% (lim −5%) | Drawdown −0.852% from $100,206.70 peak (lim −15%)
 **PDT count:** 0/3 | **Week trades:** 0/3 | **Positions:** 1/6
+
+---
+
+### 2026-05-07 15:44 — MARKET-OPEN EXECUTION: NO ORDERS PLACED
+
+**Research Decision:** HOLD — 0 new trades today (per RESEARCH-LOG.md 2026-05-07)
+
+**Candidates Reviewed:**
+
+| Ticker | Gate Failed | Reason |
+|--------|-------------|--------|
+| CVX | Layer A (checks 5, 6, 10) | Negative catalyst (Iran ceasefire = oil headwind); volume 0.21× (no capitulation confirm); technical stop only ~1% below entry → R:R structure too fragile |
+| XLE | Layer A (check 10) + Layer B (check 11) | R:R < 2:1 at trigger price ($54.43 → 0.72:1); Z-Score −1.33 (needs ≤ −2.0) |
+| PLTR | Layer B (check 11) | Z-Score −0.51 — far from −2.0 trigger |
+| FTNT | Phase 3 only | Z = +7.43 SHORT signal, but bot is Phase 1 long-only; deferred to Phase 3 |
+| MCD | Layer A (check 8) + Layer B (check 11) | Price moving wrong direction; Z = −1.49 (needs ≤ −2.0) |
+
+**Existing Position:** XOM — 1 position open, trailing stop active at $139.761. Thesis intact per research review (WTI $91 not a thesis break). HOLD.
+
+**Account snapshot:**
+- Portfolio value: $98,899.55
+- Cash: $80,064.50
+- Long market value: $18,835.05 (XOM)
+- Positions: 1/6
+- PDT count: 0/3
+- Week trades: 0/3
+- Daytrade buying power: $0 (non-margin PDT protection)
+
+**No bracket limit orders placed. No orders to track.**

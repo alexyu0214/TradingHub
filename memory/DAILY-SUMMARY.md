@@ -371,3 +371,35 @@ All candidates reviewed and rejected via Layer A + Layer B composite gate:
 **Notes:** Nominal after-hours recovery of +$6.50; XOM stabilized near $148.37 after intraday low of $147.09; all circuit breakers clear; no new entries — all candidates rejected on Z-score (Layer B); week fully intact at 0/3 trades.
 
 ---
+
+---
+
+## 2026-05-07 — Market-Open Execution Summary
+
+**Market-open orders placed:** No orders placed.
+
+**Research outcome:** HOLD — all 5 candidates (CVX, XLE, PLTR, FTNT, MCD) rejected via Layer A/B gate checks.
+
+**Key rejections:**
+- CVX: Negative catalyst (Iran ceasefire/oil headwind) + low volume (0.21×) + ultra-tight stop (~1%) → Layer A fail
+- XLE: R:R 0.72:1 at trigger (< 2:1 minimum) + Z = −1.33 (not at ≤ −2.0 trigger) → Layer A + B fail
+- PLTR: Z = −0.51, far from −2.0 trigger → Layer B fail
+- FTNT: Z = +7.43 SHORT only; bot Phase 1 long-only → deferred Phase 3
+- MCD: Z = −1.49, wrong price direction → Layer A + B fail
+
+**Existing position:** XOM held (1 open). Current price ~$144.90. Trailing stop $139.761. Thesis intact.
+
+**Portfolio:**
+- Value: $98,899.55 | Cash: $80,064.50
+- Positions: 1/6 | Week trades: 0/3 | PDT: 0/3
+- Deployed: ~19% (XOM long market value $18,835)
+
+**Watchlist for 2026-05-08 (NFP Day):**
+1. CVX — Z=−2.50 Layer B ✅; needs oil catalyst + volume ≥ 1.0× + workable stop for R:R ≥ 2:1
+2. XLE — Z=−1.33, ~$0.93 from Z=−2.0 trigger; R:R still sub-2:1 at trigger
+3. MCD — Z=−1.49, trigger at ~$280.54 (−1.6% away from research price)
+4. PLTR — Z=−0.51, far from trigger; monitor drift
+
+**Circuit breakers:** All clear. Phase P&L −1.10% (limit −5%). Drawdown −1.31% from $100,206.70 peak (limit −15%).
+
+**Next workflow:** Midday scan — check XOM fill/stop status, re-evaluate watchlist intraday.
