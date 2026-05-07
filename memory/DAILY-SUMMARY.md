@@ -428,3 +428,19 @@ All candidates reviewed and rejected via Layer A + Layer B composite gate:
 - PDT count: 0/3 | Week trades: 1/3
 
 **Context:** This was the only position in the portfolio. No new entries placed — no candidates clear the composite Layer A + Layer B (Z-Score ≤ −2.0 + RSI < 30) gates at this time. Energy sector being avoided given thesis failure on XOM. Cash preserved for fresh, clean setups. NFP tomorrow (May 8) is a binary macro event; holding cash into that print is the correct posture.
+
+## 2026-05-08 — EOD (Day 11, Friday — NFP Day)
+
+**Portfolio:** $99,056.49 (−0.340% day, −0.944% phase)
+**Cash:** $99,056.49 (100%)
+**Deployed:** 0%
+**Daytrade count:** 0/3
+
+**Trades today:** none — NFP binary event; all candidates (CVX Z=−1.54, MCD Z=−1.52) failed to reach Z ≤ −2.0 + RSI < 30 composite trigger; no-entry window respected (last 15 min rule + binary event rule)
+**Open positions:** none — 100% cash since XOM thesis-break exit on May 07
+**Stops tightened:** n/a (no positions)
+**Losers cut:** n/a (XOM thesis-break exit was May 07, not today)
+
+**Notes:** Clean NFP Friday — zero trades, zero positions, all cash. Day P&L of −$337.71 (−0.340%) is a broker settlement artifact from the May 07 XOM exit intraday vs. last_equity. Energy sector on caution watch (1 of 2 consecutive-failure strikes used). Full PDT + trade budget resets next week.
+
+---

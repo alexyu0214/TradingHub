@@ -670,3 +670,20 @@ Every trade (entry, exit, stop-out) is logged here with full thesis, entry price
 3. Post-NFP new ideas — scan full universe for fresh setups after binary event clears
 4. Energy sector: flagged — approach with heightened caution; no new energy trades until positive catalyst confirmed AND WTI stabilizes
 
+
+---
+
+### May 08 — EOD Snapshot (Day 11, Friday — NFP Day)
+
+**Portfolio:** $99,056.49 | **Cash:** $99,056.49 (100%) | **Day P&L:** −$337.71 (−0.340%) | **Phase P&L:** −$943.51 (−0.944%) | **Deployed:** 0%
+
+| Ticker | Shares | Entry | Close | Unrealized P&L | Stop | Time |
+|--------|--------|-------|-------|----------------|------|------|
+| — | — | — | — | — | — | — |
+
+**Trades today:** none (NFP binary event — research hold; no candidates cleared Layer A + Layer B)
+
+**Notes:** Day 11 closes flat and clean — 100% cash, zero positions, zero open orders. The day P&L of −$337.71 (−0.340%) reflects the broker's mark-to-close differential: `last_equity` was $99,394.20 (May 06 EOD, the last full settlement before the May 07 XOM thesis-break exit intraday), while today's equity settles at $99,056.49 post-exit. No new trades were executed today as expected — today was NFP (Nonfarm Payrolls) Friday, an explicit binary macro event. The watchlist candidates from yesterday's afternoon scan (CVX at Z=−1.54, MCD at Z=−1.52) both remained below their entry thresholds (need Z ≤ −2.0 AND RSI < 30 AND stable spread simultaneously). Energy sector carries an elevated caution flag after the XOM thesis-break exit: one energy sector failure logged (XOM); a second consecutive energy fail would trigger the sector-exit rule. The bot is in a patient, cash-preserving posture heading into next week — full PDT budget (0/3 daytrades), full weekly trade allowance (0/3 new entries), and $99,056.49 cash available for deployment the moment a clean Z-score + RSI + catalyst setup qualifies. Phase P&L stands at −0.944%, well within circuit breaker limits. No stops to manage. No orders outstanding.
+
+**Circuit breakers:** ✅ All clear — Day −0.340% (lim −2%) | Phase −0.944% (lim −5%) | Drawdown −1.148% from $100,206.70 peak (lim −15%)
+**PDT count:** 0/3 | **Week trades:** 0/3 | **Positions:** 0/6
