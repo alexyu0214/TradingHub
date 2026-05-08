@@ -72,8 +72,17 @@ def read_safe(path: str) -> str:
 # Data extraction from markdown
 # ---------------------------------------------------------------------------
 
+# Unicode minus (−, U+2212), en-dash (–), em-dash (—) all map to ASCII hyphen for parsing
+SIGN_CLASS = r"[+\-−–]"  # +, -, −, –
+
+
+def _norm_sign(s: str) -> str:
+    """Convert Unicode minus / en-dash / em-dash to ASCII hyphen for float parsing."""
+    return s.replace("−", "-").replace("–", "-").replace("—", "-").strip()
+
+
 def parse_daily_kpis(daily_md: str) -> dict[str, Any]:
-    """Pull KPIs from latest DAILY-SUMMARY.md entry."""
+    """Pull KPIs from latest DAILY-SUMMARY.md entry. Tolerant of Unicode minus signs."""
     last = extract_last_entry(daily_md)
     out: dict[str, Any] = {
         "equity": None, "cash": None, "deployed_pct": None,
@@ -84,16 +93,42 @@ def parse_daily_kpis(daily_md: str) -> dict[str, Any]:
 
     # **Portfolio:** $99,889.50 (-0.11% day, -0.11% phase)
     m = re.search(
-        r"\*\*Portfolio:\*\*\s*\$([0-9,]+(?:\.\d+)?)\s*\(([+\-]?\d+\.\d+)%\s*day,\s*([+\-]?\d+\.\d+)%\s*phase\)",
+        rf"\*\*Portfolio:\*\*\s*\$([0-9,]+(?:\.\d+)?)\s*\(({SIGN_CLASS}?\d+(?:\.\d+)?)%\s*day,\s*({SIGN_CLASS}?\d+(?:\.\d+)?)%\s*phase\)",
         last,
     )
     if m:
         out["equity"] = float(m.group(1).replace(",", ""))
-        out["day_pl_pct"] = float(m.group(2))
-        out["phase_pl_pct"] = float(m.group(3))
+        out["day_pl_pct"] = float(_norm_sign(m.group(2)))
+        out["phase_pl_pct"] = float(_norm_sign(m.group(3)))
         if out["equity"] is not None:
             out["day_pl_dollar"] = out["equity"] * out["day_pl_pct"] / 100
             out["phase_pl_dollar"] = out["equity"] - STARTING_EQUITY
+
+    # Fallback: explicit **Day P&L:** −$337.71 (−0.340%)
+    if out["day_pl_dollar"] is None:
+        m = re.search(
+            rf"\*\*Day P&L:\*\*\s*({SIGN_CLASS}?)\$([0-9,]+(?:\.\d+)?)\s*\(({SIGN_CLASS}?\d+(?:\.\d+)?)%\)",
+            last,
+        )
+        if m:
+            sign = _norm_sign(m.group(1))
+            amt = float(m.group(2).replace(",", ""))
+            out["day_pl_dollar"] = -amt if sign == "-" else amt
+            if out["day_pl_pct"] is None:
+                out["day_pl_pct"] = float(_norm_sign(m.group(3)))
+
+    # Fallback: explicit **Phase P&L:** −$943.51 (−0.944%)
+    if out["phase_pl_dollar"] is None:
+        m = re.search(
+            rf"\*\*Phase P&L:\*\*\s*({SIGN_CLASS}?)\$([0-9,]+(?:\.\d+)?)\s*\(({SIGN_CLASS}?\d+(?:\.\d+)?)%\)",
+            last,
+        )
+        if m:
+            sign = _norm_sign(m.group(1))
+            amt = float(m.group(2).replace(",", ""))
+            out["phase_pl_dollar"] = -amt if sign == "-" else amt
+            if out["phase_pl_pct"] is None:
+                out["phase_pl_pct"] = float(_norm_sign(m.group(3)))
 
     m = re.search(r"\*\*Cash:\*\*\s*\$([0-9,]+(?:\.\d+)?)\s*\((\d+(?:\.\d+)?)%\)", last)
     if m:
@@ -141,25 +176,50 @@ def parse_trades_today(trade_log_md: str, today: date) -> list[dict[str, Any]]:
     return trades
 
 
-def parse_open_positions(daily_md: str) -> list[dict[str, Any]]:
-    """Extract positions table from latest TRADE-LOG EOD entry if present."""
-    # The EOD snapshot in TRADE-LOG.md has a table like:
-    # | Ticker | Shares | Entry | Close | Unrealized P&L | Stop | Time |
-    last = extract_last_entry(daily_md)
+def parse_open_positions(trade_md: str) -> list[dict[str, Any]]:
+    """Extract positions from the MOST RECENT EOD Snapshot block in TRADE-LOG.md.
+
+    Earlier versions of this function scanned the entire file and grabbed every
+    pipe-prefixed row, which polluted the PDF with historical EOD rows from prior
+    days plus rejected-candidate tables. This version locates the last block
+    matching `### MMM DD — EOD Snapshot ...` and parses only its positions table.
+    Empty/dash-only placeholder rows (when bot has no positions) are skipped.
+    """
+    # Find every EOD Snapshot section header. Each block ends at the next ### heading.
+    matches = list(re.finditer(
+        r"###\s+\w{3}\s+\d{1,2}\s*—\s*EOD Snapshot.*?(?=\n###|\Z)",
+        trade_md,
+        re.DOTALL | re.IGNORECASE,
+    ))
+    if not matches:
+        return []
+
+    last_block = matches[-1].group(0)
+
     positions: list[dict[str, Any]] = []
-    for line in last.splitlines():
+    for line in last_block.splitlines():
         if not line.startswith("|"):
             continue
         cells = [c.strip() for c in line.strip().strip("|").split("|")]
-        if len(cells) >= 6 and re.match(r"^[A-Z]{1,5}$", cells[0]):
-            positions.append({
-                "ticker": cells[0],
-                "qty": cells[1],
-                "entry": cells[2],
-                "close": cells[3],
-                "unrealized": cells[4],
-                "stop": cells[5],
-            })
+        if len(cells) < 6:
+            continue
+        # Skip header row
+        if cells[0].lower() == "ticker":
+            continue
+        # Skip separator (---|---|---)
+        if all(c.startswith("-") or c == "" for c in cells):
+            continue
+        # Real data row: must start with a 1-5 letter uppercase ticker
+        if not re.match(r"^[A-Z]{1,5}$", cells[0]):
+            continue
+        positions.append({
+            "ticker": cells[0],
+            "qty": cells[1],
+            "entry": cells[2],
+            "close": cells[3],
+            "unrealized": cells[4],
+            "stop": cells[5],
+        })
     return positions
 
 

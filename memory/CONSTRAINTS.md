@@ -77,7 +77,9 @@
 10. Risk/reward ≥ 2:1 with stop placed
 
 **Layer B — Quant (new — see TRADING-STRATEGY.md "Quant Layer"):**
-11. Z-Score |≥ 2.0| vs 20-day mean (long: ≤−2.0, short: ≥+2.0)
+11. Quant entry lane qualifies — EITHER (a) OR (b):
+    (a) **Mean-reversion:** Z-Score |≥ 2.0| (≤−2.0 long, ≥+2.0 short) + RSI extreme (<30 long, >70 short) + volume ≥ 1.0× 20d avg
+    (b) **Momentum:** Z-Score ≥ +1.0 + close > prior 20-day high (breakout) + RSI 50-70 + volume ≥ 1.5× 20d avg + 50d SMA > 200d SMA
 12. VIX regime allows new entries (must be ≤ 30 unless override)
 13. Sector pair identified and either confirms direction OR diverges < 1.5σ
 

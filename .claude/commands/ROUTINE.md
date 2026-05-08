@@ -123,7 +123,7 @@ Identify 2–4 candidates with documented catalyst. For EACH candidate, run BOTH
 - Stop level (7–10% below entry)
 - Target (≥ 2:1 R:R)
 
-**Layer B — Quant checklist (NEW):**
+**Layer B — Quant checklist (TWO LANES — either qualifies):**
 For each candidate, run:
 ```
 bash scripts/alpaca.sh bars TICKER 25
@@ -131,16 +131,36 @@ bash scripts/alpaca.sh bars TICKER 25
 From the returned closes, compute:
 - mean_20 = average of last 20 closes
 - stddev_20 = standard deviation of last 20 closes
+- max_20 = max of last 20 closes (for breakout test)
 - z_score = (current_price − mean_20) / stddev_20
+- 50-day SMA and 200-day SMA (use additional bars call if needed: `bars TICKER 210`)
 
-Then identify the sector PAIR (e.g., XOM↔CVX, NVDA↔AVGO, JPM↔GS — see TRADING-STRATEGY.md "Quant Layer" §5 for the canonical pairs list, or pick best correlated peer if not listed). Run `bash scripts/alpaca.sh bars PAIR 25` and compute its z_score too.
+**Decide which lane to evaluate per candidate based on catalyst type:**
+- "Panic selloff," "post-earnings overreaction," "deeply oversold" → **Mean-Reversion Lane**
+- "Earnings beat + uptrend continuation," "breakout from base," "sector momentum" → **Momentum Lane**
 
-For the candidate to qualify:
-- Z-Score ≤ −2.0 (longs) or ≥ +2.0 (shorts) — REQUIRED
-- Pair Z-Score divergence ≤ 1.5σ — REQUIRED  
+**Lane 2a — Mean-Reversion (long):**
+- Z-Score ≤ −2.0 ✓
+- RSI(14) < 30 ✓
+- Volume ≥ 1.0× 20-day avg ✓
+- All three required.
+
+**Lane 2b — Momentum (long, NEW):**
+- Z-Score ≥ +1.0 ✓
+- Current close > prior 20-day high (clean breakout) ✓
+- RSI(14) between 50-70 ✓
+- Volume ≥ 1.5× 20-day avg ✓
+- 50-day SMA > 200-day SMA ✓
+- All five required.
+
+**Then identify the sector PAIR** (e.g., XOM↔CVX, NVDA↔AVGO, JPM↔GS — see TRADING-STRATEGY.md "Quant Layer" §5 for the canonical pairs list, or pick best correlated peer if not listed). Run `bash scripts/alpaca.sh bars PAIR 25` and compute its z_score too.
+
+**For the candidate to qualify Layer B:**
+- One of Lane 2a OR Lane 2b passes — REQUIRED (record which one)
+- Pair Z-Score divergence ≤ 1.5σ — REQUIRED
 - VIX regime allows new entries — REQUIRED
 
-If ANY layer fails → SKIP that candidate. Log which check failed. Patience rule still applies — zero trades today is correct if nothing clears both layers.
+If neither lane passes → SKIP that candidate. Log which lane was attempted and which check failed. Patience rule still applies — zero trades today is correct if nothing clears both layers.
 
 STEP 6 — Compute Position Sizing (Kelly + Regime)
 For each surviving candidate (cleared both layers), compute size per CONSTRAINTS.md "Quant Sizing":

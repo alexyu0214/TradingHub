@@ -212,21 +212,48 @@ Daily scan covers (in priority order):
 
 All other filters retained: market cap > $2B, ADV > 1M shares, price > $5.
 
-### 2. Z-Score Entry Confirmation (REQUIRED)
+### 2. Z-Score Entry Confirmation (REQUIRED — Either Lane)
 
-In addition to RSI(14), entry price must have Z-Score |≥ 2.0| vs its 20-day mean:
+The bot evaluates **two distinct entry styles**. EITHER lane qualifies a candidate (Layer A still must pass separately).
 
 ```
 Z = (current_price − mean(close, 20)) / stddev(close, 20)
 ```
 
-- Long entry requires Z ≤ −2.0 (statistically oversold)
-- Short entry requires Z ≥ +2.0 (statistically overbought)
-- Pure RSI signal without Z-Score confirmation → REJECT
-
-This catches mean-reversion opportunities pure RSI misses AND rejects RSI signals firing in trending regimes (where RSI<30 means "still going down").
-
 Bot pulls historical bars via: `bash scripts/alpaca.sh bars SYMBOL 25`
+
+#### 2a. Mean-Reversion Lane (oversold bounce — original Simons-style gate)
+
+For LONG entries, ALL must hold:
+- Z-Score ≤ −2.0 (statistically oversold, top 5% deviation)
+- RSI(14) < 30
+- Volume on entry day ≥ 1.0× 20-day average
+
+For SHORT entries (Phase 3+ only):
+- Z-Score ≥ +2.0
+- RSI(14) > 70
+- Volume ≥ 1.0× avg
+
+This lane catches "stretched too far, expect snap-back."
+
+#### 2b. Momentum Lane (trend continuation — NEW, Druckenmiller-style)
+
+For LONG entries, ALL must hold:
+- Z-Score ≥ +1.0 (price stretching upward, not yet at extreme)
+- AND current close > prior 20-day high (clean breakout from base)
+- AND RSI(14) between 50 and 70 (uptrending, not yet overbought — leaves room to run)
+- AND volume on breakout day ≥ 1.5× 20-day average (institutional participation)
+- AND 50-day SMA > 200-day SMA (long-term trend regime aligned)
+
+This lane catches "strong trend + clean breakout + volume confirmation" — fundamentally different from mean-reversion. Trend-followers ride this; pure mean-reversion gates miss it entirely.
+
+#### Mutually exclusive — pick the right lane per candidate
+
+A single candidate either fits the mean-reversion profile (deeply oversold) OR the momentum profile (breaking out of a base). Never both. The bot determines which lane to evaluate based on the catalyst type and price posture:
+- Catalyst is "post-earnings selloff overdone" / "panic selloff" → Mean-Reversion Lane
+- Catalyst is "earnings beat + uptrend continuation" / "sector rotation into name" → Momentum Lane
+
+Reject if neither lane qualifies.
 
 ### 3. Regime Filter (VIX-Based)
 
