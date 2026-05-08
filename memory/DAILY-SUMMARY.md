@@ -460,3 +460,29 @@ All candidates reviewed and rejected via Layer A + Layer B composite gate:
 **Notes:** Full cash, zero positions, zero orders. Weekly trade and PDT counters reset Monday. Watchlist: CVX and MCD approaching but not yet at Z ≤ −2.0 trigger. Energy sector on caution (1 of 2 consecutive-fail strikes used). All circuit breakers clear.
 
 ---
+
+---
+
+## 2026-05-08 — Market-Open Execution Summary
+
+**Session:** NFP Friday
+**Equity:** $99,056.46 | **Cash:** $99,056.46 | **Positions:** 0/6 | **Daytrades used:** 0/3 | **Week trades:** 0/3
+
+**Market-open orders placed:** None
+
+**Candidates reviewed:**
+- CVX: Z = −1.857 (needs ≤ −2.0) — SKIPPED (no research entry + Z gate fail)
+- MCD: Z = −1.836 (needs ≤ −2.0) — SKIPPED (no research entry + Z gate fail)
+- XLE: Z ≈ −0.81 (far from trigger) — SKIPPED
+
+**Reason for no orders:** No `## 2026-05-08` pre-market research entry with DECISION: TRADE exists in RESEARCH-LOG.md. Additionally, all watchlist candidates remain above the Layer B −2.0 Z-score mean-reversion trigger. Both gates (Layer A #5 catalyst/DECISION and Layer B #11a Z-score) must pass independently before a bracket order is placed.
+
+**VIX regime:** NORMAL (~17–18 via VIXY proxy) — 1.00× size multiplier would apply when entries resume
+**Circuit breakers:** ✅ All clear — Day flat (no trades) | Phase −0.944% (lim −5%) | Drawdown −1.148% from $100,206.70 peak (lim −15%)
+
+**Forward watchlist (approaching triggers):**
+- CVX: Z = −1.857 → needs ~$5.60 more downside to ~$181.08 (Z = −2.0). Energy sector caution (1 of 2 consecutive failures).
+- MCD: Z = −1.836 → needs ~$1.50 more downside to ~$278.97 (Z = −2.0). Cleaner setup if NFP-related consumer spending narrative develops.
+- Action required before next order: Pre-market research entry for next session with documented catalyst and DECISION: TRADE.
+
+**Daytrade count:** 0/3 | **Week trades:** 0/3 (weekly allowance resets next Monday)

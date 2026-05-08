@@ -704,3 +704,39 @@ Every trade (entry, exit, stop-out) is logged here with full thesis, entry price
 
 **Circuit breakers:** ✅ All clear — Day −0.340% (lim −2%) | Phase −0.944% (lim −5%) | Drawdown −1.148% from $100,206.70 peak (lim −15%)
 **PDT count:** 0/3 | **Week trades:** 0/3 (resets Monday) | **Positions:** 0/6
+
+---
+
+### 2026-05-08 15:12 — MARKET-OPEN EXECUTION: NO ORDERS PLACED
+
+**Session:** Friday 2026-05-08 (NFP Day)
+**Account state:** Equity $99,056.46 | Cash $99,056.46 | Positions 0/6 | Daytrades 0/3 | Week trades 0/3
+
+**Candidates evaluated (from May 7 afternoon watchlist):**
+
+| Ticker | Z-Score | Gate Failure(s) | Action |
+|--------|---------|-----------------|--------|
+| CVX | −1.8571 | (1) No `## 2026-05-08` research entry / no DECISION: TRADE in research log; (2) Layer B #11a Z = −1.857 > −2.0 threshold | SKIPPED |
+| MCD | −1.8356 | (1) No `## 2026-05-08` research entry / no DECISION: TRADE in research log; (2) Layer B #11a Z = −1.836 > −2.0 threshold | SKIPPED |
+| XLE | ~−0.81 | (1) No `## 2026-05-08` research entry / no DECISION: TRADE; (2) Layer B Z far from any trigger | SKIPPED |
+
+**Gate detail — CVX:**
+- Layer A #5: FAIL — No today's research entry with documented catalyst and DECISION: TRADE
+- Layer B #11a: FAIL — Z = −1.8571 (needs ≤ −2.0 for mean-reversion long)
+- Approaching trigger: needs ~$5.60 more downside to ~$181.08 for Z = −2.0
+
+**Gate detail — MCD:**
+- Layer A #5: FAIL — No today's research entry with documented catalyst and DECISION: TRADE
+- Layer B #11a: FAIL — Z = −1.8356 (needs ≤ −2.0 for mean-reversion long)
+- Approaching trigger: needs ~$1.50 more downside to ~$278.97 for Z = −2.0
+
+**Gate detail — XLE:**
+- Layer A #5: FAIL — No today's research entry; Z too far from trigger (~−0.81)
+
+**Additional context:**
+- NFP print today (May 8) was the primary macro event flagged in May 7 afternoon research; no pre-market research was written documenting its outcome or any resulting catalyst for a DECISION: TRADE
+- Energy sector carries one consecutive-failure flag (XOM thesis-break, May 7); entering CVX or XLE without a clean catalyst would risk triggering the two-consecutive-failure sector-exit rule
+- All circuit breakers clear; cash fully preserved at $99,056.46
+
+**Bracket orders placed:** NONE
+**Status:** Awaiting pre-market research entry for next eligible session before any orders can be placed
