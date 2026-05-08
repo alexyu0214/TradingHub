@@ -444,3 +444,19 @@ All candidates reviewed and rejected via Layer A + Layer B composite gate:
 **Notes:** Clean NFP Friday — zero trades, zero positions, all cash. Day P&L of −$337.71 (−0.340%) is a broker settlement artifact from the May 07 XOM exit intraday vs. last_equity. Energy sector on caution watch (1 of 2 consecutive-failure strikes used). Full PDT + trade budget resets next week.
 
 ---
+
+## 2026-05-09 — EOD (Day 12, Saturday — Post-NFP Settlement)
+
+**Portfolio:** $99,056.49 (−0.340% day, −0.944% phase)
+**Cash:** $99,056.49 (100.0%)
+**Deployed:** 0%
+**Daytrade count:** 0/3
+
+**Trades today:** none (market closed — weekend; NFP Friday settled clean)
+**Open positions:** none
+**Stops tightened:** n/a — no positions
+**Losers cut:** n/a — no positions (XOM thesis-break exit already logged May 7)
+
+**Notes:** Full cash, zero positions, zero orders. Weekly trade and PDT counters reset Monday. Watchlist: CVX and MCD approaching but not yet at Z ≤ −2.0 trigger. Energy sector on caution (1 of 2 consecutive-fail strikes used). All circuit breakers clear.
+
+---

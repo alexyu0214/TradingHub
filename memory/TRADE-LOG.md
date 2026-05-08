@@ -687,3 +687,20 @@ Every trade (entry, exit, stop-out) is logged here with full thesis, entry price
 
 **Circuit breakers:** ✅ All clear — Day −0.340% (lim −2%) | Phase −0.944% (lim −5%) | Drawdown −1.148% from $100,206.70 peak (lim −15%)
 **PDT count:** 0/3 | **Week trades:** 0/3 | **Positions:** 0/6
+
+---
+
+### May 09 — EOD Snapshot (Day 12, Saturday — Weekend)
+
+**Portfolio:** $99,056.49 | **Cash:** $99,056.49 (100%) | **Day P&L:** −$337.71 (−0.340%) | **Phase P&L:** −$943.51 (−0.944%) | **Deployed:** 0%
+
+| Ticker | Shares | Entry | Close | Unrealized P&L | Stop | Time |
+|--------|--------|-------|-------|----------------|------|------|
+| — | — | — | — | — | — | — |
+
+**Trades today:** none (weekend — market closed; EOD summary captures post-NFP Friday settlement state)
+
+**Notes:** Day 12 EOD summary runs Saturday to capture the settled state after NFP Friday (May 8). Equity holds at $99,056.49 — unchanged from yesterday's close, as expected with zero positions and zero orders outstanding. The Day P&L of −$337.71 (−0.340%) is a broker accounting artifact: Alpaca's `last_equity` field reflects $99,394.20 (the May 6 BOD / prior settlement reference carried forward), while true account equity has been $99,056.49 since the XOM thesis-break exit on May 7. No candidates cleared the dual-layer gate this week: XOM was the only position held (entries: May 1), exited May 7 on thesis-break at −4.73%. The full weekly trade allowance resets Monday (0/3 new entries, 0/3 PDT daytrades). Energy sector carries one consecutive failure flag (XOM) — a second consecutive energy loss triggers full sector exit. Watchlist heading into next week: CVX (needs Z ≤ −2.0, currently −1.54), MCD (needs Z ≤ −2.0, currently −1.52), and post-NFP macro recalibration for fresh sector ideas. Patient cash-preserve posture intact; no forced entries. Phase P&L −0.944% is well within all circuit breaker thresholds.
+
+**Circuit breakers:** ✅ All clear — Day −0.340% (lim −2%) | Phase −0.944% (lim −5%) | Drawdown −1.148% from $100,206.70 peak (lim −15%)
+**PDT count:** 0/3 | **Week trades:** 0/3 (resets Monday) | **Positions:** 0/6
