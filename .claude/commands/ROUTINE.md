@@ -109,19 +109,30 @@ Pull current VIX level (from research in STEP 3). Classify per TRADING-STRATEGY.
 
 Record this regime classification — it gates entry sizing for all ideas today.
 
-STEP 5 — Universe Scan & Idea Generation (UPDATED)
-Scan beyond mega-caps: Russell 1000 mid-caps with catalysts, US-listed sector ETFs > $1B AUM, ADR mega-caps. All filters retained (mkt cap > $2B, ADV > 1M shares, price > $5).
+STEP 5 — Universe Scan & Idea Generation (LONG + SHORT)
+Scan both sides of the market:
+- **Long candidates:** trending leaders with positive catalysts (Russell 1000 mid-caps, sector ETFs > $1B AUM, ADR mega-caps)
+- **Short candidates** (Phase 1 enabled, conservative caps): mega-caps (mkt cap > $20B) and sector/index ETFs ONLY — failed leadership, broken support, negative catalyst. NO mid-caps, NO high-momentum names, NO recent IPOs.
 
-Identify 2–4 candidates with documented catalyst. For EACH candidate, run BOTH layers:
+All universe filters retained: mkt cap > $2B (longs) / $20B (shorts), ADV > 1M shares, price > $5.
 
-**Layer A — Catalyst checklist:**
-- TICKER, sector, 50/200 SMA direction
+Identify up to **3 long candidates** and up to **2 short candidates** with documented catalysts. For EACH candidate, run BOTH layers:
+
+**Layer A — Catalyst + Trend Template checklist:**
+- TICKER, intended direction (LONG or SHORT), sector
 - Catalyst (specific reason for trade today)
-- Sector momentum (is this sector healthy?)
-- RSI(14) in zone (< 30 long, > 70 short)
-- Volume confirm (entry day > 20-day avg)
-- Stop level (7–10% below entry)
-- Target (≥ 2:1 R:R)
+- Sector posture matches direction (long: in momentum; short: rolling over)
+- RSI(14) in zone (matches selected lane)
+- Volume confirm (entry day vs 20-day avg)
+- Stop level (7–10% from entry; long stop below, short stop above)
+- Target (≥ 2:1 R:R) and computed **R_dollars / R_pct / target_R** per CONSTRAINTS.md
+- **Minervini Trend Template passes** for the candidate's direction:
+  - Pull extended bars: `bash scripts/alpaca.sh bars TICKER 210` (need 200-SMA + 1-month buffer)
+  - Compute 50-day, 150-day, 200-day SMAs
+  - Verify ALL trend template conditions (long or short version per TRADING-STRATEGY.md "Minervini Trend Template")
+  - Compute distance from 52-week high and 52-week low
+  - Compute 6-month return percentile (vs ~500 universe sample)
+  - REJECT if any trend template condition fails
 
 **Layer B — Quant checklist (TWO LANES — either qualifies):**
 For each candidate, run:
@@ -139,19 +150,19 @@ From the returned closes, compute:
 - "Panic selloff," "post-earnings overreaction," "deeply oversold" → **Mean-Reversion Lane**
 - "Earnings beat + uptrend continuation," "breakout from base," "sector momentum" → **Momentum Lane**
 
-**Lane 2a — Mean-Reversion (long):**
-- Z-Score ≤ −2.0 ✓
-- RSI(14) < 30 ✓
-- Volume ≥ 1.0× 20-day avg ✓
-- All three required.
+**Lane 2a-LONG — Mean-Reversion Long:**
+- Z ≤ −2.0 ✓ + RSI < 30 ✓ + volume ≥ 1.0× 20d avg ✓
 
-**Lane 2b — Momentum (long, NEW):**
-- Z-Score ≥ +1.0 ✓
-- Current close > prior 20-day high (clean breakout) ✓
-- RSI(14) between 50-70 ✓
-- Volume ≥ 1.5× 20-day avg ✓
-- 50-day SMA > 200-day SMA ✓
-- All five required.
+**Lane 2a-SHORT — Mean-Reversion Short:**
+- Z ≥ +2.0 ✓ + RSI > 70 ✓ + volume ≥ 1.0× 20d avg ✓
+
+**Lane 2b-LONG — Momentum Long:**
+- Z ≥ +1.0 ✓ + close > prior 20d high ✓ + RSI 50-70 ✓ + volume ≥ 1.5× 20d avg ✓ + 50d SMA > 200d SMA ✓
+- **Pivot extension check:** intended limit ≤ pivot (20d high) × 1.05. Reject if chasing > 5% above pivot.
+
+**Lane 2b-SHORT — Momentum Short:**
+- Z ≤ −1.0 ✓ + close < prior 20d low ✓ + RSI 30-50 ✓ + volume ≥ 1.5× 20d avg ✓ + 50d SMA < 200d SMA ✓
+- **Pivot extension check:** intended limit ≥ pivot (20d low) × 0.95. Reject if chasing > 5% below pivot.
 
 **Then identify the sector PAIR** (e.g., XOM↔CVX, NVDA↔AVGO, JPM↔GS — see TRADING-STRATEGY.md "Quant Layer" §5 for the canonical pairs list, or pick best correlated peer if not listed). Run `bash scripts/alpaca.sh bars PAIR 25` and compute its z_score too.
 
@@ -189,10 +200,13 @@ Append a new dated entry to memory/RESEARCH-LOG.md:
 
 ### Trade Ideas (Cleared Both Layers)
 For each qualifying idea:
-- TICKER | Catalyst | Entry | Stop | Target | R:R
+- TICKER | **DIRECTION (LONG/SHORT)** | Lane (2a-Long / 2a-Short / 2b-Long / 2b-Short) | Catalyst | Entry | Stop | Target | R:R
 - Z-Score: X.XX (vs 20-day mean $X)
+- Trend Template: PASS (list specific values: 50/150/200 SMAs, distance from 52w high/low, 6mo percentile)
 - Pair: PAIR_TICKER | Pair Z-Score: X.XX | Divergence: X.Xσ
-- Sized position: X% of equity ($X)
+- Sized position: X% of equity ($X) — **shorts capped at 10% per position, 30% total short exposure**
+- **R-Multiple:** R_dollars $XX (X.X% of equity) | Target R = X.XR | R:R verified ≥ 2:1
+- Pivot extension (momentum lanes only): pivot $X.XX, limit $X.XX, extension X.X% (≤5% required)
 
 ### Skipped Candidates
 List candidates that failed Layer A or Layer B with the specific failed check.
@@ -255,10 +269,13 @@ Use memory/CONSTRAINTS.md checklist (Layer A 1-10 + Layer B 11-13):
 If any check fails: Skip that trade. Log the reason and move on.
 
 STEP 4 — Place Bracket Limit Orders (NOT MARKET ORDERS)
-For each approved trade, construct bracket limit order with:
+For each approved trade, construct bracket limit order matching the direction (long or short).
+
+**LONG ENTRY** — buy-to-open with bracket:
 - limit_price = research-derived intended entry
-- stop_loss.stop_price = 7-10% below limit (per CONSTRAINTS.md), or technical level
-- take_profit.limit_price = research-derived target (must give R:R ≥ 2:1)
+- stop_loss.stop_price = 7-10% BELOW limit (or technical support)
+- take_profit.limit_price = research-derived target ABOVE limit
+- side = "buy"
 
 bash scripts/alpaca.sh order '{
   "symbol":"SYMBOL",
@@ -272,20 +289,48 @@ bash scripts/alpaca.sh order '{
   "stop_loss":{"stop_price":"Z.ZZ"}
 }'
 
-Capture: order ID, status (should be "new" or "accepted"). The order is now sitting in Alpaca; it fills if/when price reaches limit. If rejected: log reason, do NOT fall back to a market order.
+**SHORT ENTRY** — sell-to-open with bracket (Phase 1 enabled, capped at 10% position size):
+- limit_price = research-derived intended entry (sell short here)
+- stop_loss.stop_price = 7-10% ABOVE limit (covers the short if price rises)
+- take_profit.limit_price = research-derived target BELOW limit (buy-to-close at profit)
+- side = "sell"
+
+bash scripts/alpaca.sh order '{
+  "symbol":"SYMBOL",
+  "qty":"SHARES",
+  "side":"sell",
+  "type":"limit",
+  "time_in_force":"day",
+  "limit_price":"X.XX",
+  "order_class":"bracket",
+  "take_profit":{"limit_price":"Y.YY (BELOW limit_price)"},
+  "stop_loss":{"stop_price":"Z.ZZ (ABOVE limit_price)"}
+}'
+
+**Pre-flight check before placing any short:**
+1. Confirm symbol is shortable: check `bash scripts/alpaca.sh quote SYMBOL` returns valid; if Alpaca rejects with `htb` (hard-to-borrow) → SKIP and log
+2. Verify total short exposure after this fill ≤ 30% of equity
+3. Verify this short ≤ 10% of equity (per-short cap)
+4. Confirm no earnings within next 7 trading days (skip shorts through earnings)
+5. Confirm candidate did NOT have a >5% gap-down in last 24h (squeeze risk)
+
+Capture: order ID, status (should be "new" or "accepted"). If rejected: log reason, do NOT fall back to a market order.
 
 STEP 5 — DO NOT Place Trailing Stop Yet
 The bracket already has a fixed stop attached. Trailing-stop upgrade happens in midday/afternoon-scan workflows AFTER fill is confirmed. Don't try to place a separate trailing stop here — Alpaca will reject it as a duplicate.
 
 STEP 6 — Log Each Order to memory/TRADE-LOG.md
 
-### YYYY-MM-DD HH:MM — LIMIT BUY ORDER PLACED: SYMBOL
+### YYYY-MM-DD HH:MM — LIMIT [BUY/SELL-SHORT] ORDER PLACED: SYMBOL
+**Direction:** LONG or SHORT
+**Lane:** 2a-Long / 2a-Short / 2b-Long / 2b-Short
 **Catalyst:** [from research]
 **Limit Price:** $X.XX (SHARES shares, day order)
-**Stop (bracket child):** $Z.ZZ
-**Take-Profit (bracket child):** $Y.YY
-**Risk if filled:** $X (% of equity)
-**R:R:** X.X:1
+**Stop (bracket child):** $Z.ZZ ([below for long, above for short])
+**Take-Profit (bracket child):** $Y.YY ([above for long, below for short])
+**R-Multiple:** R_dollars $XX (X.X% equity) | Target R = X.XR
+**R:R:** X.X:1 (must be ≥ 2.0)
+**Trend Template:** PASS (50/150/200 SMA: $X/$Y/$Z aligned; 52w high $X distance Y%; 6mo pct Z)
 **Thesis:** [copied from research log]
 **Order ID:** [from Alpaca response]
 **Status:** Placed (awaiting fill)

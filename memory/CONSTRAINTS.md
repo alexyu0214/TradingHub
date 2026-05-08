@@ -6,11 +6,31 @@
 
 ## Position Sizing
 
+**Long positions:**
 - **Max per position:** 20% of account equity
 - **Max sector concentration:** No sector > 25% equity
-- **Max open positions:** 5–6 at once
+- **Max open positions:** 5–6 at once (counting longs + shorts combined)
 - **Min deployed:** 75–85% of equity (stay active, but not forced)
-- **Per-trade risk:** 0.5–1% of equity (position size × stop distance / equity)
+- **Per-trade risk (R):** 0.5–1.0% of equity (1.5% only on A+ high-conviction setups)
+
+**Short positions (Phase 1 conservative — see TRADING-STRATEGY.md "Short Position Caps"):**
+- **Max per short position:** 10% of account equity (half of long max)
+- **Max total short exposure:** 30% of equity (preserves net-long bias)
+- **Universe restricted:** mega-caps (mkt cap > $20B) and sector/index ETFs only
+- **No shorting through earnings**
+- **No shorting after >5% gap-down day on the candidate** (capitulation/squeeze risk)
+- **Hard borrow check:** if Alpaca rejects with `htb`/borrow flag → skip + log
+
+## R-Multiple Required (Every Trade)
+
+Every entry log must record:
+```
+R_dollars  = abs(entry_price − stop_price) × shares
+R_pct      = R_dollars / equity   (must be 0.5–1.5%)
+target_R   = abs(target_price − entry_price) / abs(entry_price − stop_price)   (must be ≥ 2.0)
+```
+
+**If R_pct > 1.5% or target_R < 2.0:** REJECT trade. Reduce shares, widen target, or tighten stop. No exceptions.
 
 ---
 
@@ -64,26 +84,36 @@
 
 ## Order Requirements
 
-**Layer A — Catalyst (existing):**
-1. Total positions after fill ≤ 6
+**Layer A — Catalyst + Trend Template:**
+1. Total positions after fill ≤ 6 (longs + shorts combined)
 2. Trades this week (including this) ≤ 3
 3. Position cost ≤ Kelly-sized limit (see Quant Sizing below)
-4. Position cost ≤ available cash
+4. Position cost ≤ available cash (longs) / margin available (shorts)
 5. Catalyst documented in today's research log
 6. Stock only (verified ticker)
 7. PDT rules allow (daytrade_count < 3 if same-day close intended)
-8. RSI(14) < 30 (long) or > 70 (short)
-9. Sector in momentum (not rolling over per recent TRADE-LOG)
-10. Risk/reward ≥ 2:1 with stop placed
+8. RSI(14) condition matches lane (see Layer B)
+9. Sector posture matches direction (long: in momentum; short: rolling over)
+10. Risk/reward ≥ 2:1 with stop placed (R-multiple framework — see below)
+10b. **Minervini Trend Template** passes for the candidate's intended direction:
+   - **Long:** price > 50/150/200 SMAs aligned, 50>150>200, 200-SMA up ≥1mo, > 30% above 52w low, within 25% of 52w high, 6mo return ≥ 70th percentile
+   - **Short:** inverse — price < 50/150/200 SMAs aligned, 50<150<200, 200-SMA down ≥1mo, > 30% below 52w high, within 25% of 52w low, 6mo return ≤ 30th percentile
 
-**Layer B — Quant (new — see TRADING-STRATEGY.md "Quant Layer"):**
-11. Quant entry lane qualifies — EITHER (a) OR (b):
-    (a) **Mean-reversion:** Z-Score |≥ 2.0| (≤−2.0 long, ≥+2.0 short) + RSI extreme (<30 long, >70 short) + volume ≥ 1.0× 20d avg
-    (b) **Momentum:** Z-Score ≥ +1.0 + close > prior 20-day high (breakout) + RSI 50-70 + volume ≥ 1.5× 20d avg + 50d SMA > 200d SMA
+**Layer B — Quant (4 lanes; ANY ONE qualifies):**
+11. Quant entry lane qualifies — EXACTLY ONE of:
+    (a) **Mean-Reversion Long:** Z ≤ −2.0 + RSI < 30 + volume ≥ 1.0× 20d avg
+    (b) **Mean-Reversion Short:** Z ≥ +2.0 + RSI > 70 + volume ≥ 1.0× 20d avg
+    (c) **Momentum Long:** Z ≥ +1.0 + close > prior 20d high + RSI 50–70 + volume ≥ 1.5× 20d avg + 50d SMA > 200d SMA
+    (d) **Momentum Short:** Z ≤ −1.0 + close < prior 20d low + RSI 30–50 + volume ≥ 1.5× 20d avg + 50d SMA < 200d SMA
 12. VIX regime allows new entries (must be ≤ 30 unless override)
 13. Sector pair identified and either confirms direction OR diverges < 1.5σ
+13b. **Pivot Extension Check** (Momentum lanes only — c and d):
+   - Long momentum: limit_price ≤ pivot × 1.05 (no chasing > 5% above breakout)
+   - Short momentum: limit_price ≥ pivot × 0.95 (no chasing > 5% below breakdown)
+   - Pivot = the prior 20d high (long) or 20d low (short) that was just broken
+   - Mean-reversion lanes are exempt from this rule.
 
-**If ANY (1–13) fail:** Skip trade, log which layer + which check failed. Move on.
+**If ANY (1–13b) fail:** Skip trade, log which check failed. Move on.
 
 ---
 

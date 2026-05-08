@@ -191,9 +191,9 @@ The bracket places a fixed stop. Once filled, on the next bot run (midday or aft
 - Friday's weekly review prompt checks: "Is today's date ≥ 3 weeks since last phase review? If so, append a Phase Audit subsection."
 
 **Phase milestones:**
-- Phase 1 (current): Quant layer + bracket limits + 5 daily workflows. Review 2026-05-24.
-- Phase 2 backlog: Live $1k account migration (after Phase 1 gate criteria met)
-- Phase 3 backlog: Pairs trading with shorts (long+short same sector)
+- Phase 1 (current): Quant layer (4 lanes) + bracket limits + Minervini Trend Template + R-multiples + ≤5% pivot extension + shorts (with conservative caps) + 6 daily workflows. Review 2026-05-24.
+- Phase 2 backlog: VCP pattern detection (proper Minervini base recognition) + regime-aware sell-into-strength + live $1k account migration (after Phase 1 gate criteria met)
+- Phase 3 backlog: Pairs trading (coordinated long+short same sector for hedged exposure)
 - Phase 4 backlog: Conditional hourly monitor (cheap pre-filter triggers full agent only on signals)
 
 ---
@@ -212,9 +212,9 @@ Daily scan covers (in priority order):
 
 All other filters retained: market cap > $2B, ADV > 1M shares, price > $5.
 
-### 2. Z-Score Entry Confirmation (REQUIRED — Either Lane)
+### 2. Z-Score Entry Confirmation (REQUIRED — Either Lane, Either Direction)
 
-The bot evaluates **two distinct entry styles**. EITHER lane qualifies a candidate (Layer A still must pass separately).
+The bot evaluates **four distinct entry styles** — two lanes × two directions. ANY ONE lane must pass for the candidate to qualify (Layer A still must pass separately).
 
 ```
 Z = (current_price − mean(close, 20)) / stddev(close, 20)
@@ -222,38 +222,137 @@ Z = (current_price − mean(close, 20)) / stddev(close, 20)
 
 Bot pulls historical bars via: `bash scripts/alpaca.sh bars SYMBOL 25`
 
-#### 2a. Mean-Reversion Lane (oversold bounce — original Simons-style gate)
-
-For LONG entries, ALL must hold:
+#### 2a-LONG. Mean-Reversion Long (oversold bounce)
+ALL must hold:
 - Z-Score ≤ −2.0 (statistically oversold, top 5% deviation)
 - RSI(14) < 30
 - Volume on entry day ≥ 1.0× 20-day average
 
-For SHORT entries (Phase 3+ only):
+#### 2a-SHORT. Mean-Reversion Short (overbought reversal — Phase 1 enabled)
+ALL must hold:
 - Z-Score ≥ +2.0
 - RSI(14) > 70
-- Volume ≥ 1.0× avg
+- Volume ≥ 1.0× 20-day average
 
-This lane catches "stretched too far, expect snap-back."
+Catches "stretched too far in either direction, expect snap-back."
 
-#### 2b. Momentum Lane (trend continuation — NEW, Druckenmiller-style)
+#### 2b-LONG. Momentum Long (trend continuation breakout)
+ALL must hold:
+- Z-Score ≥ +1.0 (price stretching upward, not at extreme)
+- Current close > prior 20-day high (clean breakout from base)
+- RSI(14) between 50 and 70
+- Volume on breakout day ≥ 1.5× 20-day average
+- 50-day SMA > 200-day SMA (uptrend regime confirmed)
 
-For LONG entries, ALL must hold:
-- Z-Score ≥ +1.0 (price stretching upward, not yet at extreme)
-- AND current close > prior 20-day high (clean breakout from base)
-- AND RSI(14) between 50 and 70 (uptrending, not yet overbought — leaves room to run)
-- AND volume on breakout day ≥ 1.5× 20-day average (institutional participation)
-- AND 50-day SMA > 200-day SMA (long-term trend regime aligned)
+#### 2b-SHORT. Momentum Short (downtrend breakdown — Phase 1 enabled)
+ALL must hold:
+- Z-Score ≤ −1.0 (price stretching downward, not at extreme)
+- Current close < prior 20-day low (clean breakdown from base)
+- RSI(14) between 30 and 50
+- Volume on breakdown day ≥ 1.5× 20-day average
+- 50-day SMA < 200-day SMA (downtrend regime confirmed)
 
-This lane catches "strong trend + clean breakout + volume confirmation" — fundamentally different from mean-reversion. Trend-followers ride this; pure mean-reversion gates miss it entirely.
+Catches "broken-down weak stock with confirmed institutional distribution." Inverse of momentum long.
 
-#### Mutually exclusive — pick the right lane per candidate
+#### Lane selection logic
 
-A single candidate either fits the mean-reversion profile (deeply oversold) OR the momentum profile (breaking out of a base). Never both. The bot determines which lane to evaluate based on the catalyst type and price posture:
-- Catalyst is "post-earnings selloff overdone" / "panic selloff" → Mean-Reversion Lane
-- Catalyst is "earnings beat + uptrend continuation" / "sector rotation into name" → Momentum Lane
+The bot picks the right lane based on catalyst type and price posture:
+- "Panic selloff" / "post-earnings overreaction" + oversold → Mean-Reversion Long
+- "Earnings beat + uptrend" / "breakout from base" → Momentum Long
+- "Failed rally" / "post-earnings overheating" + overbought → Mean-Reversion Short
+- "Failed support" / "broken leadership" + breakdown → Momentum Short
 
-Reject if neither lane qualifies.
+Reject if no lane qualifies.
+
+---
+
+## Minervini Trend Template (Layer A Enhancement — NEW)
+
+In addition to the catalyst checklist, every candidate must pass the **Trend Template** for its intended direction. Filters universe to true leaders (longs) or true laggards (shorts) and rejects sideways/messy stocks.
+
+### Long Trend Template (every long entry)
+
+ALL must hold:
+- Price > 50-day SMA, 150-day SMA, AND 200-day SMA (all three)
+- 150-day SMA > 200-day SMA
+- 200-day SMA trending up for ≥ 1 month (compare 200-SMA today vs 1 month ago)
+- 50-day SMA > 150-day SMA AND > 200-day SMA
+- Price > 30% above 52-week low
+- Price within 25% of 52-week high
+- 6-month return percentile ≥ 70th (top 30% of universe)
+
+Bot pulls extended bars: `bash scripts/alpaca.sh bars SYMBOL 210` (covers 200-SMA + 1-month buffer for trend check).
+
+### Short Trend Template (every short entry — Phase 1 enabled)
+
+ALL must hold (inverse of long template):
+- Price < 50-day SMA, 150-day SMA, AND 200-day SMA
+- 150-day SMA < 200-day SMA
+- 200-day SMA trending down for ≥ 1 month
+- 50-day SMA < 150-day SMA AND < 200-day SMA
+- Price > 30% below 52-week high
+- Price within 25% of 52-week low
+- 6-month return percentile ≤ 30th (bottom 30% — true laggards)
+
+If a candidate fails its Trend Template → REJECT regardless of catalyst. No exceptions.
+
+---
+
+## Pivot Extension Rule (NEW — Minervini Discipline)
+
+For Momentum Lane entries (long or short), the limit price must be **≤ 5% above the breakout pivot** (longs) or **≤ 5% below the breakdown pivot** (shorts).
+
+**Pivot definition:**
+- Long pivot = the 20-day high that was just broken
+- Short pivot = the 20-day low that was just broken
+
+**Rule:**
+- If `(intended_limit / pivot − 1) > 0.05` for longs → REJECT (chasing extended breakout)
+- If `(pivot / intended_limit − 1) > 0.05` for shorts → REJECT (chasing extended breakdown)
+
+**Why:** Late-stage breakouts and breakdowns are where trend-followers blow up. Half of failed momentum trades are "chased" entries 8-15% extended from pivot. Forcing ≤5% extension means the bot waits for pullbacks to the pivot or skips the trade entirely.
+
+For Mean-Reversion Lane entries: this rule does not apply (those are by definition stretched far from pivot — that's the entire point of the trade).
+
+---
+
+## R-Multiple Framework (Risk Sizing — NEW)
+
+Every entry must be planned in terms of **R**, where 1R = the dollar amount of capital risked if the stop fires.
+
+```
+R_dollars = abs(entry_price − stop_price) × shares
+R_pct     = R_dollars / equity   (as fraction of total account)
+```
+
+**Constraints:**
+- R per trade target: 0.5% to 1.0% of equity (max 1.5% in high-conviction A+ setups)
+- Take-profit must be ≥ 2R away from entry (target ≥ 2× the risk)
+- Ideal target: 3R (gives margin even with 50% win rate)
+
+**Trade log requires R-value** for every entry:
+```
+R_dollars: $XXX (Y.Y% of equity)
+Target R-multiple: 2.5R (target $X.XX from entry)
+```
+
+**Why:** Standardizes risk regardless of share price. A 7% stop on a $10 stock vs $300 stock means nothing without R-context. Phase 1 → Phase 2 graduation requires positive expectancy in R-terms, not just dollar P&L.
+
+---
+
+## Short Position Caps (Phase 1 Conservative)
+
+Shorts have asymmetric risk — a stock can rise infinitely. Phase 1 caps:
+
+- **Max per short position:** 10% of equity (vs 20% for longs)
+- **Max total short exposure:** 30% of equity (preserves net-long bias)
+- **Universe:** liquid mega-caps (mkt cap > $20B) and sector/index ETFs ONLY — no mid-caps, no high-momentum names, no recent IPOs (< 6 months public)
+- **No shorting through earnings** (any held short must be closed before its company's earnings date)
+- **No shorting after a >5% gap-down day** on the candidate (capitulation often marks bottom; squeeze risk)
+- **Hard borrow check:** if Alpaca returns `htb` flag or borrow rejection, skip and log
+- **No averaging up shorts** (don't add to losing shorts — same as long discipline)
+
+Caps relax in Phase 2 once Phase 1 data validates short execution.
 
 ### 3. Regime Filter (VIX-Based)
 
@@ -311,7 +410,9 @@ If either layer fails → SKIP. Log which layer failed and why. Patience rule st
 
 ## Strategy Backlog (Research, Don't Adopt Yet)
 
-- Phase 3: Pairs trading with shorts (long X, short Y in same sector)
+- Phase 2: VCP (Volatility Contraction Pattern) detection — proper Minervini base recognition (multi-contraction tightening + volume dry-up)
+- Phase 2: Regime-aware sell-into-strength (partial exit at +20% in choppy regimes, hold-and-trail in confirmed uptrends)
+- Phase 3: Pairs trading (coordinated long X, short Y same sector for hedged net-zero market exposure)
 - Earnings drift / post-earnings momentum
 - News-driven NLP sentiment overlay
 - Hidden Markov regime detection (requires ML infra)
