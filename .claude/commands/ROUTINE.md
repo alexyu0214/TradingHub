@@ -77,10 +77,36 @@ Research the day ahead. Document catalysts, generate 2–3 trade ideas (or HOLD 
 
 STEP 1 — Read Memory for Context
 cat memory/TRADING-STRATEGY.md
-tail -20 memory/TRADE-LOG.md    # Last EOD snapshot
-tail -5 memory/RESEARCH-LOG.md  # Previous day's research
+tail -30 memory/TRADE-LOG.md    # Last EOD snapshot + recent trades
+tail -50 memory/RESEARCH-LOG.md # Previous day's research + addendums
 
 Parse strategy rules, review any open positions and their thesis, note any sector momentum from yesterday.
+
+STEP 1b — Prior-Week Adjustment Audit (MONDAY ONLY — skip on Tue–Fri)
+If today is Monday, also pull last weekly review's adjustments and check off implementation status. This is the operational accountability loop:
+
+```
+grep -A 100 "^### Adjustments for Next Week" memory/WEEKLY-REVIEW.md | tail -100
+```
+
+For each adjustment listed in that block, verify whether it's built into code:
+- Workflows / cron schedules → check `ls .github/workflows/`
+- Prompt-level changes → grep keywords in `.claude/commands/ROUTINE.md`
+- Constraint changes → grep keywords in `memory/CONSTRAINTS.md` and `memory/TRADING-STRATEGY.md`
+- Script changes → grep keywords in `scripts/run_workflow.py` and `scripts/send_report.py`
+
+Add to today's research log entry an **"Adjustment Audit"** subsection:
+
+```
+### Adjustment Audit (from week-N weekly review)
+- [adjustment text]: ✅ IMPLEMENTED — evidence: [file/line/grep result]
+- [adjustment text]: ❌ NOT IMPLEMENTED — needs build
+- [adjustment text]: 🟡 IMPLEMENTED IN CODE BUT NOT TRIGGERED — calibration issue, not missing feature
+```
+
+If any item is ❌, escalate by adding a "URGENT: build [adjustment]" line at top of today's research output so it surfaces in the daily PDF.
+
+This forces the bot to confront reality once a week and prevents the loop where weekly reviews keep complaining about adjustments that already exist.
 
 STEP 2 — Pull Live Account State
 bash scripts/alpaca.sh account
@@ -242,7 +268,7 @@ You are running the market-open execution workflow for Alex's Alpaca trading bot
 Place bracket LIMIT BUY orders at the bot's intended entry prices for each pre-market trade idea. Bracket includes attached stop-loss and take-profit. NEVER use market orders for entries. If price never reaches the limit, the order expires unfilled at session close — that's correct behavior.
 
 STEP 1 — Read Today's Research
-grep -A 200 "## $(date +%Y-%m-%d)" memory/RESEARCH-LOG.md
+grep -A 200 "^## $(date +%Y-%m-%d)" memory/RESEARCH-LOG.md
 
 Pull today's trade ideas (if any) and confirm DECISION was TRADE (not HOLD).
 Extract for each idea: TICKER, intended limit price (research entry), stop_price, take_profit, sized_qty.
@@ -604,7 +630,7 @@ You are running the midday-rescan workflow for Alex's Alpaca trading bot.
 **WORKFLOW:**
 
 STEP 1 — Pull Today's Research
-grep -A 200 "## $(date +%Y-%m-%d)" memory/RESEARCH-LOG.md
+grep -A 200 "^## $(date +%Y-%m-%d)" memory/RESEARCH-LOG.md
 
 Extract:
 - The "Skipped Candidates" list from this morning
@@ -813,7 +839,12 @@ STEP 4 — Append EOD Snapshot to memory/TRADE-LOG.md
 
 **Notes:** [one-paragraph summary of day — what worked, what didn't, any learnings]
 
-STEP 5 — Append to memory/DAILY-SUMMARY.md
+STEP 5 — Append EOD entry to memory/DAILY-SUMMARY.md (MANDATORY — DO NOT SKIP)
+
+**THIS IS NOT OPTIONAL.** Append the entry below EVEN IF: no trades happened today, no positions are open, the market was closed, the workflow re-ran and an entry already exists, OR nothing notable occurred. The PDF report parser depends on this entry existing. If it's missing for today, tomorrow's daily PDF will show empty KPIs.
+
+Format (use **exactly** this structure — the parser regex relies on it):
+
 ## YYYY-MM-DD — EOD
 
 **Portfolio:** $X (±X% day, ±X% phase)
@@ -826,7 +857,13 @@ STEP 5 — Append to memory/DAILY-SUMMARY.md
 **Stops tightened:** [if any]
 **Losers cut:** [if any]
 
-**Notes:** [one-liner summary]
+**Notes:** [one-liner summary — required, even if just "Flat day, no activity, all rules clear."]
+
+---
+
+**Append-not-replace rule:** Use `>>` redirection or write_file with mode='a'. NEVER overwrite the entire file. Always append to the end so historical entries remain intact.
+
+**Verify after writing:** Run `tail -5 memory/DAILY-SUMMARY.md` to confirm today's entry exists at the end of the file. If you see yesterday's date at the tail, something failed — retry the write.
 
 ---
 
@@ -875,14 +912,21 @@ You are running the weekly review workflow for Alex's Alpaca trading bot.
 **WORKFLOW:**
 Run Friday after market close. Compute week stats, grade performance, review strategy adjustments.
 
-STEP 1 — Read Memory
+STEP 1 — Read Memory (anchored greps so headings only, not text containing "##")
 cat memory/TRADING-STRATEGY.md
 cat memory/CONSTRAINTS.md
-grep -A 500 "## Week ending" memory/WEEKLY-REVIEW.md | head -50  # Last week's review
-grep "## [0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]" memory/TRADE-LOG.md | tail -20  # This week's entries
-grep "## [0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]" memory/RESEARCH-LOG.md | tail -10  # This week's research
+grep -A 500 "^## Week ending" memory/WEEKLY-REVIEW.md | head -120  # Last weekly review (full section)
+grep -E "^### [0-9]{4}-[0-9]{2}-[0-9]{2}" memory/TRADE-LOG.md | tail -30  # This week's TRADE entries (### prefix)
+grep -E "^### [A-Z][a-z]{2} [0-9]{1,2}" memory/TRADE-LOG.md | tail -10  # This week's EOD snapshots (### MMM DD prefix)
+grep -E "^## 20[0-9]{2}-[0-9]{2}-[0-9]{2}" memory/RESEARCH-LOG.md | tail -20  # This week's research entries (## prefix)
 
-Understand the week's trades, research, and context.
+Also pull the actual content of the latest TRADE-LOG entries (not just headers) so you can see fills, exits, P&L:
+tail -200 memory/TRADE-LOG.md
+
+And the latest research narrative:
+tail -200 memory/RESEARCH-LOG.md
+
+Understand the week's trades, research, and context. **Do not invent data — if a trade exit (e.g., XOM thesis-break) is in TRADE-LOG, it MUST appear in this weekly review.**
 
 STEP 2 — Pull Week-End Account State
 bash scripts/alpaca.sh account
@@ -969,6 +1013,39 @@ If a rule has worked consistently for 2+ weeks OR failed badly (significant losi
 - Update memory/TRADING-STRATEGY.md to reflect change
 - Document the change in the weekly review ("Updated: RSI threshold from 30 to 35 based on 2-week trial")
 - Log decision to decisions/log.md (if using git): [YYYY-MM-DD] DECISION: update RSI threshold | REASONING: improved win rate | CONTEXT: 2-week backtest
+
+STEP 5a — Implementation Audit (every weekly review)
+**Critical: before claiming an adjustment was "not implemented," VERIFY by reading actual code/config files.** The bot has historically generated false alarms (e.g., "midday re-scan was never built") when the workflow file objectively existed. To prevent this:
+
+1. Read each prior-week adjustment from the previous weekly review section.
+2. For each adjustment, perform a verification check by inspecting the codebase:
+   - "Implement midday re-scan" → verify `.github/workflows/midday-rescan.yml` exists AND there's a "5b. MIDDAY-RESCAN" section in `.claude/commands/ROUTINE.md`. Use:
+     `ls .github/workflows/ && grep -c "5b. MIDDAY-RESCAN" .claude/commands/ROUTINE.md`
+   - "Pre-open live-quote check" → grep for "Re-Validate with Live Quotes" in market-open prompt
+   - "Decoupled conditional gates" → grep "cash-headroom" in CONSTRAINTS.md
+   - "Z-Score / Trend Template / R-multiple" → grep these terms in CONSTRAINTS.md and TRADING-STRATEGY.md
+   - "Bracket limit orders" → grep "order_class.*bracket" in ROUTINE.md
+   - "Shorts framework" → grep "Mean-Reversion Short" in TRADING-STRATEGY.md
+   - For any other adjustment: grep relevant keywords in `.claude/commands/ROUTINE.md`, `memory/CONSTRAINTS.md`, `memory/TRADING-STRATEGY.md`, `.github/workflows/`, and `scripts/`
+
+3. Append an **Implementation Audit** subsection BEFORE the "What Worked" section:
+
+```
+### Implementation Audit (auto-verified against codebase)
+
+| Prior Adjustment | Built into code? | Evidence |
+|------------------|------------------|----------|
+| Midday re-scan | ✅ YES | .github/workflows/midday-rescan.yml exists; ROUTINE.md has section 5b |
+| Pre-open quote check | ✅ YES | market-open prompt STEP 2 |
+| Decoupled gates | ✅ YES | CONSTRAINTS.md gate 11 (4 lanes, no chain dependencies) |
+| ... | | |
+
+**False alarms this week:** [list any "What Didn't Work" / "Adjustments" items that referenced missing features that ACTUALLY exist in code. Be specific so the bot stops complaining about already-built features.]
+```
+
+4. **Important behavioral rule:** If an adjustment IS built into code but the BOT's behavior didn't reflect it (e.g., midday-rescan workflow exists but bot rejected all candidates inside it), classify the gap as a **decision/calibration issue**, not an "unimplemented" issue. Different problem class, different remedy.
+
+5. After audit completes, the "What Didn't Work" and "Adjustments for Next Week" sections must reflect ONLY genuine unimplemented items or genuine new ideas — not falsely claim things are missing.
 
 STEP 5b — Phase Review Check (Every 3 Weeks)
 Read decisions/log.md and find the most recent "PHASE REVIEW" entry. If today's date is ≥ 21 days after that date (or no prior PHASE REVIEW exists and today is ≥ 21 days after Phase 1 launch on 2026-05-01), append a Phase Audit subsection to this week's review:

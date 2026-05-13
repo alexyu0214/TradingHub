@@ -81,34 +81,91 @@ def _norm_sign(s: str) -> str:
     return s.replace("−", "-").replace("–", "-").replace("—", "-").strip()
 
 
-def parse_daily_kpis(daily_md: str) -> dict[str, Any]:
-    """Pull KPIs from latest DAILY-SUMMARY.md entry. Tolerant of Unicode minus signs."""
-    last = extract_last_entry(daily_md)
+def find_latest_eod_block(daily_md: str, trade_md: str) -> tuple[str, str]:
+    """Search both DAILY-SUMMARY.md (`## YYYY-MM-DD — EOD`) and TRADE-LOG.md
+    (`### MMM DD — EOD Snapshot`) for EOD entries. Return (block_text, iso_date)
+    of the most recent entry by date, NOT by file position.
+
+    This avoids a bug where `extract_last_entry` returned the literally-last
+    pipe-section in the file (e.g., a Market-Open Execution Summary appended
+    out of order) instead of the actual most-recent EOD snapshot.
+    """
+    candidates: list[tuple[str, str]] = []  # (iso_date, block_text)
+
+    # DAILY-SUMMARY.md: `## YYYY-MM-DD — EOD ...` until next `## ` or end
+    for m in re.finditer(
+        r"(?ms)^## (\d{4}-\d{2}-\d{2})\s*—\s*EOD.*?(?=^## |\Z)",
+        daily_md,
+    ):
+        candidates.append((m.group(1), m.group(0)))
+
+    # TRADE-LOG.md: `### MMM DD — EOD Snapshot ...` until next `### ` or end
+    month_map = {
+        "Jan": "01", "Feb": "02", "Mar": "03", "Apr": "04",
+        "May": "05", "Jun": "06", "Jul": "07", "Aug": "08",
+        "Sep": "09", "Oct": "10", "Nov": "11", "Dec": "12",
+    }
+    current_year = date.today().year
+    for m in re.finditer(
+        r"(?ms)^### (\w{3})\s+(\d{1,2})\s*—\s*EOD Snapshot.*?(?=^### |\Z)",
+        trade_md,
+    ):
+        month = month_map.get(m.group(1), "01")
+        day = m.group(2).zfill(2)
+        candidates.append((f"{current_year}-{month}-{day}", m.group(0)))
+
+    if not candidates:
+        return ("", "")
+
+    # Sort by date ascending; pick the last (most recent)
+    candidates.sort(key=lambda x: x[0])
+    return (candidates[-1][1], candidates[-1][0])
+
+
+def parse_daily_kpis(daily_md: str, trade_md: str = "") -> dict[str, Any]:
+    """Pull KPIs from the MOST RECENT EOD block across DAILY-SUMMARY.md and
+    TRADE-LOG.md. Handles both formats:
+      A. DAILY-SUMMARY: `**Portfolio:** $X (Y% day, Z% phase)` on multiple lines
+      B. TRADE-LOG:    `**Portfolio:** $X | **Cash:** ... | **Day P&L:** ±$X (±X%) | ...` pipe-separated
+
+    Also exposes `_data_date` so the PDF can show a staleness indicator if the
+    latest EOD is older than today.
+    """
+    block, data_date = find_latest_eod_block(daily_md, trade_md)
     out: dict[str, Any] = {
         "equity": None, "cash": None, "deployed_pct": None,
         "day_pl_dollar": None, "day_pl_pct": None,
         "phase_pl_dollar": None, "phase_pl_pct": None,
         "daytrade_count": None,
+        "_data_date": data_date,  # ISO date string of the EOD entry we parsed
     }
+    if not block:
+        # Last-ditch fallback: try parsing the last `## ` entry as before
+        block = extract_last_entry(daily_md)
 
-    # **Portfolio:** $99,889.50 (-0.11% day, -0.11% phase)
+    # Format A: **Portfolio:** $X (Y% day, Z% phase)  [DAILY-SUMMARY.md style]
     m = re.search(
         rf"\*\*Portfolio:\*\*\s*\$([0-9,]+(?:\.\d+)?)\s*\(({SIGN_CLASS}?\d+(?:\.\d+)?)%\s*day,\s*({SIGN_CLASS}?\d+(?:\.\d+)?)%\s*phase\)",
-        last,
+        block,
     )
     if m:
         out["equity"] = float(m.group(1).replace(",", ""))
         out["day_pl_pct"] = float(_norm_sign(m.group(2)))
         out["phase_pl_pct"] = float(_norm_sign(m.group(3)))
-        if out["equity"] is not None:
-            out["day_pl_dollar"] = out["equity"] * out["day_pl_pct"] / 100
-            out["phase_pl_dollar"] = out["equity"] - STARTING_EQUITY
+        out["day_pl_dollar"] = out["equity"] * out["day_pl_pct"] / 100
+        out["phase_pl_dollar"] = out["equity"] - STARTING_EQUITY
 
-    # Fallback: explicit **Day P&L:** −$337.71 (−0.340%)
+    # Format B: **Portfolio:** $X  [TRADE-LOG.md pipe-separated style]
+    if out["equity"] is None:
+        m = re.search(r"\*\*Portfolio:\*\*\s*\$([0-9,]+(?:\.\d+)?)", block)
+        if m:
+            out["equity"] = float(m.group(1).replace(",", ""))
+
+    # Explicit **Day P&L:** ±$X (±X%) — works for both file formats
     if out["day_pl_dollar"] is None:
         m = re.search(
             rf"\*\*Day P&L:\*\*\s*({SIGN_CLASS}?)\$([0-9,]+(?:\.\d+)?)\s*\(({SIGN_CLASS}?\d+(?:\.\d+)?)%\)",
-            last,
+            block,
         )
         if m:
             sign = _norm_sign(m.group(1))
@@ -117,11 +174,11 @@ def parse_daily_kpis(daily_md: str) -> dict[str, Any]:
             if out["day_pl_pct"] is None:
                 out["day_pl_pct"] = float(_norm_sign(m.group(3)))
 
-    # Fallback: explicit **Phase P&L:** −$943.51 (−0.944%)
+    # Explicit **Phase P&L:** ±$X (±X%)
     if out["phase_pl_dollar"] is None:
         m = re.search(
             rf"\*\*Phase P&L:\*\*\s*({SIGN_CLASS}?)\$([0-9,]+(?:\.\d+)?)\s*\(({SIGN_CLASS}?\d+(?:\.\d+)?)%\)",
-            last,
+            block,
         )
         if m:
             sign = _norm_sign(m.group(1))
@@ -130,17 +187,22 @@ def parse_daily_kpis(daily_md: str) -> dict[str, Any]:
             if out["phase_pl_pct"] is None:
                 out["phase_pl_pct"] = float(_norm_sign(m.group(3)))
 
-    m = re.search(r"\*\*Cash:\*\*\s*\$([0-9,]+(?:\.\d+)?)\s*\((\d+(?:\.\d+)?)%\)", last)
+    m = re.search(r"\*\*Cash:\*\*\s*\$([0-9,]+(?:\.\d+)?)\s*\((\d+(?:\.\d+)?)%\)", block)
     if m:
         out["cash"] = float(m.group(1).replace(",", ""))
 
-    m = re.search(r"\*\*Deployed:\*\*\s*(\d+(?:\.\d+)?)%", last)
+    m = re.search(r"\*\*Deployed:\*\*\s*(\d+(?:\.\d+)?)%", block)
     if m:
         out["deployed_pct"] = float(m.group(1))
 
-    m = re.search(r"\*\*Daytrade count:\*\*\s*(\d+)\s*/\s*(\d+)", last)
+    m = re.search(r"\*\*Daytrade count:\*\*\s*(\d+)\s*/\s*(\d+)", block)
     if m:
         out["daytrade_count"] = int(m.group(1))
+    else:
+        # Alternate format: "Daytrades used: 0/3" from Market-Open Execution Summary
+        m = re.search(r"\*\*Daytrades used:\*\*\s*(\d+)\s*/\s*(\d+)", block)
+        if m:
+            out["daytrade_count"] = int(m.group(1))
 
     return out
 
@@ -223,9 +285,13 @@ def parse_open_positions(trade_md: str) -> list[dict[str, Any]]:
     return positions
 
 
-def parse_decision_notes(daily_md: str) -> str:
-    last = extract_last_entry(daily_md)
-    m = re.search(r"\*\*Notes:\*\*\s*(.+?)(?:\n---|\n\*\*|\Z)", last, re.DOTALL)
+def parse_decision_notes(daily_md: str, trade_md: str = "") -> str:
+    """Pull decision notes from the latest EOD block (not the literally-last
+    `## ` section, which may be out of order)."""
+    block, _ = find_latest_eod_block(daily_md, trade_md)
+    if not block:
+        block = extract_last_entry(daily_md)
+    m = re.search(r"\*\*Notes:\*\*\s*(.+?)(?:\n---|\n\*\*|\Z)", block, re.DOTALL)
     return m.group(1).strip() if m else ""
 
 
@@ -913,11 +979,20 @@ def main(report_type: str) -> None:
             sys.exit(0)
 
         print("Parsing daily memory files...")
-        kpis = parse_daily_kpis(daily_md)
+        kpis = parse_daily_kpis(daily_md, trade_md)
         trades = parse_trades_today(trade_md, today)
         positions = parse_open_positions(trade_md)
         market_ctx = parse_market_context(research_md)
-        notes = parse_decision_notes(daily_md)
+        notes = parse_decision_notes(daily_md, trade_md)
+        data_date = kpis.get("_data_date", "")
+        if data_date and data_date != today_str:
+            print(f"  WARNING: latest EOD data is from {data_date}, not today ({today_str})")
+            notes = (
+                f"⚠️ **Data staleness:** This PDF shows numbers from the most recent EOD entry "
+                f"({data_date}), not today ({today_str}). The bot did not write a fresh EOD "
+                f"snapshot for today. Check that the daily-summary workflow is appending to "
+                f"`memory/DAILY-SUMMARY.md`.\n\n" + (notes or "")
+            )
 
         print("Calling Gemini for tomorrow's watchlist...")
         watchlist = gemini_watchlist(window="tomorrow")
@@ -928,7 +1003,12 @@ def main(report_type: str) -> None:
             "watchlist": watchlist, "market_context": market_ctx, "notes": notes,
         }
         html = render_daily_html(ctx)
-        pdf_path = f"tradinghub-daily-{today_str}.pdf"
+        # Persist PDF inside the repo so it syncs to the user's local TradingHub
+        # folder via git pull. Folder name kept as "Weekly Review" to match the
+        # existing local folder Alex created when manually saving Telegram PDFs.
+        reports_dir = Path("Weekly Review")
+        reports_dir.mkdir(exist_ok=True)
+        pdf_path = str(reports_dir / f"tradinghub-daily-{today_str}.pdf")
         subject = f"TradingHub Daily Log · {today_str}"
         caption = (
             f"*{subject}*\n"
@@ -963,7 +1043,10 @@ def main(report_type: str) -> None:
             "watchlist": watchlist,
         }
         html = render_weekly_html(ctx)
-        pdf_path = f"tradinghub-weekly-{today_str}.pdf"
+        # Persist PDF inside the repo (see note in daily branch above)
+        reports_dir = Path("Weekly Review")
+        reports_dir.mkdir(exist_ok=True)
+        pdf_path = str(reports_dir / f"tradinghub-weekly-{today_str}.pdf")
         subject = f"TradingHub Weekly Review · {today_str}"
         caption = (
             f"*{subject}*\n"
