@@ -37,15 +37,50 @@ WORKFLOW_SECTIONS = {
 # ---------------------------------------------------------------------------
 
 def extract_prompt(workflow: str) -> str:
+    """Extract a workflow's prompt from ROUTINE.md.
+
+    The prompt for each workflow lives in a fenced code block under its
+    `## <n>. SECTION NAME` heading. The block body itself may contain NESTED
+    triple-backtick fences (used to show example commands / output formats).
+
+    A naive non-greedy regex stops at the first nested fence and silently
+    truncates the prompt — this caused pre-market and weekly-review to receive
+    only the first ~20 lines of their workflows since 2026-05-08, breaking them.
+
+    This implementation instead:
+      1. Locates the section heading.
+      2. Bounds the section at the next real section heading (`## <digit>...`).
+      3. Captures everything between the FIRST and LAST ``` within that section,
+         so nested fences inside the prompt body are preserved, not truncated.
+    """
     section = WORKFLOW_SECTIONS[workflow]
     text = Path(ROUTINE_FILE).read_text(encoding="utf-8")
-    pattern = rf"## {re.escape(section)}.*?```\n(.*?)```"
-    m = re.search(pattern, text, re.DOTALL)
-    if not m:
+
+    sec_match = re.search(rf"(?m)^## {re.escape(section)}", text)
+    if not sec_match:
+        raise ValueError(f"Section '## {section}' not found in {ROUTINE_FILE}")
+
+    # Section body runs until the next real section header: "## <num>[letter]. "
+    rest = text[sec_match.end():]
+    next_match = re.search(r"(?m)^## \d+[a-z]?\. ", rest)
+    section_body = rest[: next_match.start()] if next_match else rest
+
+    first = section_body.find("```")
+    last = section_body.rfind("```")
+    if first == -1 or last == first:
         raise ValueError(
-            f"Prompt for '{workflow}' not found under '## {section}' in {ROUTINE_FILE}"
+            f"No code-fenced prompt block found for '{workflow}' in {ROUTINE_FILE}"
         )
-    return m.group(1).strip()
+
+    prompt = section_body[first + 3 : last].strip("\n").strip()
+    if len(prompt) < 200:
+        # Sanity check: a real workflow prompt is always long. A short result
+        # means extraction is still broken — fail loudly rather than run a stub.
+        raise ValueError(
+            f"Extracted prompt for '{workflow}' is suspiciously short "
+            f"({len(prompt)} chars) — extraction likely broken."
+        )
+    return prompt
 
 
 # ---------------------------------------------------------------------------

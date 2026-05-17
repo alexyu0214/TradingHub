@@ -44,14 +44,14 @@ jobs:
           ALPACA_ENDPOINT: https://paper-api.alpaca.markets/v2
           ALPACA_DATA_ENDPOINT: https://data.alpaca.markets/v2
         run: python scripts/run_workflow.py weekly-review
-      - name: Fallback - commit and push memory updates
+      - name: Fallback - commit and push memory + report PDF
         if: always()
         run: |
-          git add memory/ DAILY-SUMMARY.md 2>/dev/null || true
+          git add memory/ DAILY-SUMMARY.md "Weekly Review/" 2>/dev/null || true
           if git diff --staged --quiet; then
-            echo "No memory changes to commit."
+            echo "No memory or report changes to commit."
           else
-            git commit -m "chore: weekly-review fallback commit" || true
+            git commit -m "chore: weekly-review + PDF report" || true
             git push || true
           fi
 
