@@ -82,6 +82,25 @@ target_R   = abs(target_price − entry_price) / abs(entry_price − stop_price)
 
 ---
 
+## Conditional Gate Independence (NO Chain Dependencies)
+
+**Every candidate is evaluated independently on its own merits.** A candidate is NEVER gated on whether another candidate's order filled.
+
+FORBIDDEN (this is what narrowed the bot to XOM-only — a secondary idea kept dying because its "primary" never filled):
+- ❌ "Enter AAPL only if XOM and CVX fill"
+- ❌ "TICKER B is secondary — execute only after TICKER A confirmed"
+- ❌ Any "primary / secondary / tertiary" ordering where later names depend on earlier fills
+
+REQUIRED — each candidate stands or falls on:
+1. Its own Layer A (catalyst + Trend Template) result
+2. Its own Layer B (quant lane) result
+3. ONE shared cross-position check, applied at execution time only:
+   **Cash-headroom check:** after this fill, `total_deployed ≤ 85% of equity` AND `total_positions ≤ 6` AND (for shorts) `total_short_exposure ≤ 30%`.
+
+If two independently-qualified candidates would both breach cash headroom, fill them in descending order of conviction (R-multiple quality / lane strength) until headroom is exhausted — do NOT make one contingent on the other's fill.
+
+---
+
 ## Order Requirements
 
 **Layer A — Catalyst + Trend Template:**

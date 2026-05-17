@@ -199,6 +199,8 @@ From the returned closes, compute:
 
 If neither lane passes → SKIP that candidate. Log which lane was attempted and which check failed. Patience rule still applies — zero trades today is correct if nothing clears both layers.
 
+**EVALUATE EACH CANDIDATE INDEPENDENTLY.** Do NOT write chain dependencies like "enter B only if A fills" or label ideas primary/secondary/tertiary. Every candidate stands on its own Layer A + Layer B result. The ONLY cross-position check is cash-headroom at execution time (see CONSTRAINTS.md "Conditional Gate Independence"). Historically, gating secondary names on XOM's fill is exactly why no non-XOM trade ever executed — each idea must be free to qualify on its own.
+
 STEP 6 — Compute Position Sizing (Kelly + Regime)
 For each surviving candidate (cleared both layers), compute size per CONSTRAINTS.md "Quant Sizing":
 - Until ≥ 30 closed trades exist: default to 10% per position
