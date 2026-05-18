@@ -2430,3 +2430,118 @@ Both Financials and Health Care are lagging sectors YTD but neither is in a stat
 - XLV RSI dropped from ~neutral to 55.82 and Z turned slightly positive — potential *long* rotation setup developing, not short. Flag for Tuesday pre-market scan.
 - NVDA earnings (Wed after close) and FOMC minutes (Wed) make Tuesday the last clean entry window this week before binary risk stacks.
 
+
+---
+
+## 2026-05-18 — Midday Scan Addendum (17:56 UTC / ~12:56 PM ET)
+
+**Scan type:** Midday workflow — position thesis check & stop evaluation
+**VIX Regime (estimated from prior close):** Normal (18.43) — 1.00× sizing multiplier
+
+---
+
+### STEP 1 — Account & Order State
+
+| Field | Value |
+|-------|-------|
+| Equity | $99,056.46 |
+| Cash | $99,056.46 (100%) |
+| Long market value | $0 (no filled positions) |
+| Deployed | 0% |
+| Open positions | 0 |
+| Open orders | 1 (XOM bracket limit — UNFILLED) |
+| PDT daytrade count | 1/3 |
+| Week trades used | 0/3 |
+
+**Open order detail:**
+| Order ID | Symbol | Type | Status | Key Detail |
+|----------|--------|------|--------|------------|
+| 1d69c496 | XOM | Bracket limit buy, 61 sh @ $159.78 | **new / UNFILLED** | Stop $147.80 | TP $183.74 | TIF: day — expires 20:00 UTC |
+
+---
+
+### STEP 2 — Live Quote: XOM
+
+| Metric | Value |
+|--------|-------|
+| Bid | $158.34 |
+| Ask | $160.60 |
+| Mid | $159.47 |
+| Spread | $2.26 = 1.42% (wide — reflect thin midday quote book; will normalize) |
+| Quote timestamp | 2026-05-18T17:54:44Z (~12:54 PM ET) |
+| Our limit | $159.78 |
+| Ask vs limit | Ask $160.60 = $0.82 above limit — **ORDER NOT FILLED** |
+| 20-day Z-Score (mid) | +2.72 (above mean $150.82, σ $3.18) |
+
+**Fill status:** Limit $159.78 sits $0.82 below current ask. XOM is trading above our limit — a $0.82 (0.51%) intraday pullback would fill the order. With ~3h remaining in the session (market closes 20:00 UTC), a brief pullback to the limit remains plausible. **No action required — order correctly working.**
+
+---
+
+### STEP 3 — CUT LOSERS AT -7%
+
+**No open positions.** Step skipped — nothing to cut.
+
+---
+
+### STEP 4 — TIGHTEN STOPS ON WINNERS
+
+**No open positions.** Step skipped — no stops to manage.
+
+---
+
+### STEP 5 — THESIS CHECK (Pending Order Validation)
+
+One bracket limit order working for XOM. Validating thesis is still intact:
+
+| Thesis Pillar | Status | Evidence |
+|---------------|--------|---------|
+| WTI crude ~$106 | ✅ INTACT | Morning research confirmed WTI $106.34 (+0.87%); Brent $109–$110 |
+| Strait of Hormuz supply disruption | ✅ INTACT | US-Iran tensions ongoing; no ceasefire/diplomacy reversal news |
+| Energy sector YTD momentum #1 (+27.87%) | ✅ INTACT | Sector leadership confirmed in morning research |
+| XOM breakout on 1.70× volume (May 15) | ✅ INTACT | Breakout bar confirmed ($157.92 → $158 close on 27.89M vs 16.41M avg) |
+| Minervini Trend Template | ✅ INTACT | All 10 conditions passed in morning research; no price deterioration |
+| Z-Score | +2.72 — ✅ within 2b-LONG range (≥+1.0, confirms momentum not extreme reversion) |
+| Pivot extension | 1.18% at limit ($159.78 / pivot $157.92) — ✅ well within ≤5% cap |
+| CVX pair divergence | 0.876σ (morning) — ✅ ≤1.5σ (both energy majors moving together) |
+| Sector-consecutive-failure risk | Energy failure #1 was XOM May 7 exit. This is a re-entry on legitimately reset thesis (WTI recovered +15.4% from the $91 ceasefire-scare low). Risk flagged but not a gate violation. |
+
+**VERDICT: Thesis FULLY INTACT.** Order correctly working. No cancellation. No modification. Let the bracket limit sit until market close.
+
+---
+
+### STEP 6 — OPTIONAL RESEARCH
+
+**No anomalous intraday moves.** XOM is trading calmly between $158.34–$160.60, behaving exactly as expected post-Friday breakout (modest consolidation, not gapping away). No WebSearch warranted.
+
+---
+
+### STEP 7 — ACTIONS TAKEN
+
+**None.** No positions cut (none exist). No stops tightened (none exist). No thesis exits (pending order thesis intact). No new orders placed.
+
+---
+
+### Midday Portfolio Snapshot — 2026-05-18 12:56 ET
+
+```
+Midday Portfolio — 2026-05-18 12:56 ET
+
+Positions: 0 open
+Cash: $99,056.46 (100%)
+Deployed: 0%
+
+| SYM | Entry | Now   | Unrealized | Stop    | Notes                      |
+|-----|-------|-------|------------|---------|----------------------------|
+| XOM | —     | ~$159.47 | N/A     | $147.80 | Bracket limit UNFILLED     |
+|     |       |       |            |         | Ask $160.60 / Limit $159.78|
+|     |       |       |            |         | ~$0.82 from fill; ~3h left |
+```
+
+**Order status:** XOM bracket limit (1d69c496) working — 61 shares @ $159.78, stop $147.80, TP $183.74, expires 20:00 UTC. Thesis intact. No action.
+
+**Key watch for rest of session:**
+- If XOM ask pulls back to ≤$159.78 → order fills; bracket stop and TP activate automatically
+- If XOM continues trading above limit into close → order expires unfilled; re-evaluate Tuesday pre-market
+- No stop adjustments, no cuts, no thesis exits warranted at this time
+- NVDA earnings Wednesday (binary event) and FOMC minutes Wednesday — no new entries beyond XOM this week unless a clean setup appears Tuesday
+
