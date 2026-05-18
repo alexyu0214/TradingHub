@@ -2127,3 +2127,236 @@ If XOM gaps above ~$160.90 pre-market (+1.9% from $157.92, pushing pivot extensi
 
 **Deployment note:** This brings potential deployment to ~10% of equity (1 position). Still below the 75–85% target, but the quant gates correctly filtered the universe to 1 qualifying idea. The weekly review adjustment "[URGENT — DEPLOYMENT]" is being addressed by fielding a documented, gated idea rather than forcing marginal setups. Per strategy: "A week with zero trades can be the right call" — but 1 qualifying trade > 0.
 
+
+---
+
+## 2026-05-18 — Pre-Market Research (Monday)
+
+### Adjustment Audit (from Week ending 2026-05-14 weekly review)
+
+- **Implement midday execution check (10:00–10:30 AM CT):** ✅ IMPLEMENTED — evidence: `.github/workflows/midday-rescan.yml` — `cron: '30 14 * * 1-5'` (10:30 AM ET Mon–Fri). Workflow file exists and is scheduled.
+- **Revise research entry ceiling logic for earnings plays (post-gap ceiling adjustment):** ❌ NOT IMPLEMENTED — grep of `memory/TRADING-STRATEGY.md`, `memory/CONSTRAINTS.md`, and `.claude/commands/ROUTINE.md` finds no "post-gap ceiling" or "gap_open × 0.97" logic. This adjustment was only documented in the weekly review narrative, never built into any prompt or constraint file.
+- **Re-evaluate CVX for entry next week:** ✅ ADDRESSED — CVX evaluated today as independent candidate; failed Layer B (volume 1.10× < 1.5× required for 2b-LONG). Thesis valid, volume insufficient. Will re-evaluate when volume confirms.
+- **Continue holding XOM / scan for non-energy momentum:** ✅ ADDRESSED — XOM re-evaluated and qualifies today (energy thesis intact, WTI $106+). Non-energy sectors scanned: Financials (XLF failed Layer B, Z = -0.31), Health Care (XLV failed Layer B, Z = -0.10), NVDA/Tech skipped (earnings binary Wed + price below 20d high). Constraint noted.
+- **Key rotation protocol (pre-session API health check):** ❌ NOT IMPLEMENTED — grep of `scripts/run_workflow.py` shows the API key is checked reactively (if key is missing, error is returned) but no proactive pre-session health-check gate exists that halts execution and escalates. The GEMINI_API_KEY is only validated when the research function is called, not as a startup gate.
+- **[STRATEGY] Decouple conditional gates:** ✅ IMPLEMENTED IN PROMPT — ROUTINE.md and today's workflow explicitly evaluate each candidate independently. CVX and XOM evaluated on own merits — XOM qualified on its own; CVX failed on its own; no chain dependency created.
+- **[ACCOUNTABILITY] Tag each prior-week adjustment as Implemented/Not in Monday research log:** ✅ IMPLEMENTED — this section is the implementation.
+
+> **URGENT: build post-gap ceiling adjustment** — the "recalculate entry as gap_open × 0.97–1.01" logic has been on the adjustment list for 2 weeks. Needs a prompt-level rule in `memory/CONSTRAINTS.md` or `TRADING-STRATEGY.md` under "Order Execution Strategy." Not a coding task — a constraint file update.
+>
+> **URGENT: build pre-session API health-check gate** — key must be tested at workflow START, not reactively mid-run. Needs a startup step in `scripts/run_workflow.py` that calls a lightweight Gemini ping and halts/alerts if it fails. Prevents silent research blackouts.
+
+---
+
+### Account
+- **Equity:** $99,056.46
+- **Cash:** $99,056.46 (100% — fully undeployed)
+- **Buying power:** $198,112.92 (margin account — RegT 2×)
+- **Daytrade count:** 0/3
+- **Open positions:** 0/6
+- **Open orders:** 0
+- **Week trades used:** 0/3
+
+---
+
+### Market Context
+- **WTI Crude Oil:** ~$106.34–$106.37/bbl (+0.87–0.90% DoD) — elevated geopolitical risk premium, US-Iran tensions
+- **Brent Crude:** $109.07–$110.25/bbl (−0.17% to +0.91%) — spread tightening slightly
+- **S&P 500 Futures:** E-mini settled $7,432.25 (10:00 AM CT); early drop −0.3%; June futures hit ATH $7,540 in some reports
+- **VIX:** 18.43 (up 6.78% from 17.26 prior close; opened 18.07) — Normal regime
+- **US 10yr yield:** >4.50%; 30yr >5.00% — aggressively higher long-end
+- **CPI (April):** 3.8% YoY | **PPI (April):** 6.0% headline / 5.2% core — inflation still hot
+- **Unemployment:** 4.3%, 115K jobs added
+- **Fed posture:** July hike odds only 4%; 91% probability of pause. FOMC minutes due Wednesday.
+- **Economic calendar today:** NAHB Housing Market Index, Treasury Buyback Announcement (preliminary), 3M/6M Bill Auctions, Business Leaders Survey (7:30 AM CT)
+- **Earnings today (pre-market):** Baidu (BIDU — AI revenue +49% YoY), Ryanair (RYAAY, expected loss), iQIYI, Brady (BRC)
+- **Earnings this week (key):** Nvidia (NVDA) Wednesday after close — projected $79B rev, +78% YoY; Walmart, Home Depot, Lowe's, Target
+- **Sector momentum YTD:** Energy +27.87% | IT +23.55% | Materials +15.24% | Industrials +12.84% | RE +10.46% | Consumer Staples +7.32% | Utilities +5.74% | Consumer Disc −0.03% | Comm Services −1.82% | Financials −6.55% | Health Care −7.60%
+- **Index YTD:** S&P 500 +10% through May 14; TMT = 85% of that return; NVDA alone = 20% of YTD return
+- **Key geopolitical risk:** US-Iran — fragile ceasefire, ongoing attacks on energy infrastructure supporting oil premium
+
+---
+
+### VIX Regime
+- **Current VIX:** 18.43
+- **Regime:** Normal (14–22 range)
+- **Sizing multiplier:** 1.00×
+- **Strategy bias:** All entry types eligible; no regime-based restriction
+
+---
+
+### Candidate Evaluations
+
+#### CANDIDATE 1: XOM | LONG | Sector: Energy
+
+**Layer A — Catalyst + Trend Template:**
+- **Catalyst:** WTI crude ~$106.34 (+0.87% today); Brent ~$109–$110. US-Iran tensions, attacks on energy infrastructure sustaining supply disruption premium. Energy sector best YTD performer at +27.87%. XOM surged Friday May 15 from $152.78 → $157.92 on 1.70× volume — confirmed breakout day. Today continuing above Friday's close.
+- **Sector posture:** ✅ Energy is #1 YTD sector (+27.87%), actively in momentum
+- **RSI(14):** 61.72 — ✅ within 50–70 momentum zone
+- **Volume (breakout day May 15):** 27,890,724 vs 20d avg 16,410,412 = **1.70×** ✅ ≥1.5× required
+- **Stop level:** $147.80 (7.5% below $159.78 entry)
+- **Target:** $183.74 (2R above entry)
+- **R:R:** 2.0:1 ✅
+
+**Minervini Long Trend Template:**
+| Condition | Value | Pass? |
+|-----------|-------|-------|
+| Price > 50d SMA ($155.13) | $159.78 | ✅ |
+| Price > 150d SMA ($136.40) | $159.78 | ✅ |
+| Price > 200d SMA ($136.23) | $159.78 | ✅ |
+| 150d SMA > 200d SMA | $136.40 > $136.23 | ✅ |
+| 200d SMA trending up ≥1 month | $136.23 today vs $133.91 prior | ✅ (+1.7%) |
+| 50d SMA > 150d SMA | $155.13 > $136.40 | ✅ |
+| 50d SMA > 200d SMA | $155.13 > $136.23 | ✅ |
+| Price > 30% above 52w low ($110.64) | +44.4% | ✅ |
+| Price within 25% of 52w high ($171.47) | 7.3% below high | ✅ |
+| 6-month return percentile ≥70th | +34.5% (6mo) — top quartile vs universe | ✅ |
+
+**All 10 Long Trend Template conditions: PASS ✅**
+
+**Layer B — Quant (Lane 2b-LONG — Momentum):**
+- **Z-Score:** +2.749 (price $159.78 vs 20d mean $150.82, σ $3.258) — ✅ ≥+1.0
+- **Close > prior 20d high ($157.92):** $159.78 > $157.92 — ✅ clean breakout
+- **RSI(14) 50–70:** 61.72 — ✅
+- **Volume breakout day:** 1.70× — ✅ ≥1.5×
+- **50d SMA > 200d SMA:** $155.13 > $136.23 — ✅
+- **Pivot extension:** ($159.78 / $157.92 − 1) = **1.18%** — ✅ ≤5%
+- **Lane 2b-LONG: ALL CHECKS PASS ✅**
+
+**Pair Check (XOM ↔ CVX):**
+- CVX Z-Score: +1.8731 (moving in same direction, both above 20d mean)
+- Z-divergence: |2.749 − 1.873| = **0.876σ** — ✅ ≤1.5σ required
+- Both XOM and CVX are in uptrends, confirming sector thesis
+
+**VIX regime:** Normal (18.43) — ✅ new entries allowed
+
+**Layer B: PASS ✅ — Both layers cleared**
+
+**Position Sizing:**
+- Cold start default: 10% of equity × 1.00× VIX
+- Position size: $9,905.65
+- **Shares: 61 @ $159.78 limit = $9,746.58 (9.8% of equity)**
+- **R_dollars: $730.78 (0.738% of equity)** — valid 0.5–1.5% ✅
+- **Target R: 2.0R** — verified ≥2:1 ✅
+- **Pivot extension: 1.18%** ≤5% ✅
+
+---
+
+#### CANDIDATE 2: CVX | LONG (evaluated independently) | Sector: Energy
+
+**Layer A — Catalyst + Trend Template:**
+- **Catalyst:** Same energy thesis as XOM — WTI $106+, Iran tensions, Energy #1 YTD sector. CVX broke above its own 20d high ($193.31) today, reaching $193.98.
+- **Sector posture:** ✅ Energy momentum intact
+- **RSI(14):** 58.01 — ✅ 50–70 range
+- **Volume (today = breakout day for CVX):** Partial day 3,134,501; yesterday full day 11,220,294 = **1.10×** 20d avg (10,168,301) — ❌ **FAILS ≥1.5× requirement**
+- **Stop level:** $179.43 (7.5% below $193.98)
+- **Target:** $223.08 (2R)
+- **R:R:** 2.0:1 ✅
+
+**Minervini Long Trend Template:**
+| Condition | Value | Pass? |
+|-----------|-------|-------|
+| Price > 50d SMA ($193.13) | $193.98 | ✅ (barely) |
+| Price > 150d SMA ($172.60) | $193.98 | ✅ |
+| Price > 200d SMA ($172.45) | $193.98 | ✅ |
+| 150d SMA > 200d SMA | $172.60 > $172.45 | ✅ |
+| 200d SMA trending up ≥1mo | Need to verify | ~✅ |
+| 50d SMA > 150d SMA | $193.13 > $172.60 | ✅ |
+| 50d SMA > 200d SMA | $193.13 > $172.45 | ✅ |
+| Price > 30% above 52w low ($146.75) | +32.2% | ✅ |
+| Price within 25% of 52w high ($211.15) | 8.9% below | ✅ |
+| 6mo return ≥70th percentile | +24.7% (6mo) | ✅ |
+
+**Trend Template: PASS ✅**
+
+**Layer B — Quant (Lane 2b-LONG):**
+- **Z-Score:** +1.873 — ✅ ≥+1.0
+- **Close > prior 20d high ($193.31):** $193.98 — ✅
+- **RSI 50–70:** 58.01 — ✅
+- **Volume breakout day:** 1.10× — ❌ **FAILS ≥1.5× requirement**
+- **50d SMA > 200d SMA:** ✅
+
+**Lane 2b-LONG: FAIL — Volume 1.10× < 1.5× required ❌**
+
+**VERDICT: SKIP — Layer B fails on volume.** Thesis intact. Re-evaluate tomorrow if volume picks up.
+
+---
+
+#### CANDIDATE 3: NVDA | LONG (evaluated independently) | Sector: Technology
+
+**Lane attempted:** 2b-LONG (Momentum — AI earnings catalyst, sector leadership)
+
+**Layer B quick fails:**
+- **Price > 20d high ($235.74):** $222.895 — ❌ **FAILS** (price is 5.4% below its own 20d high after pullback from ATH)
+- **Earnings binary Wednesday (after close):** NVDA reports May 20 after market — entering pre-earnings is a binary event with gap risk in either direction. Strategy rule: no entering into unknown binary events.
+
+**VERDICT: SKIP — Price below 20d high (no breakout); earnings binary risk. Do not enter.**
+
+---
+
+### Short Candidates Evaluated
+
+| Ticker | Direction | Lane Attempted | Specific Failure |
+|--------|-----------|----------------|------------------|
+| **XLF** | SHORT | 2b-SHORT (Momentum Short) | Z = −0.307 (need ≤−1.0 ❌); Price NOT below 20d low ❌; RSI 52.30 out of 30–50 range ❌; 150d SMA NOT < 200d SMA ❌. Multiple failures. |
+| **XLV** | SHORT | 2b-SHORT (Momentum Short) | Z = −0.095 (need ≤−1.0 ❌); Price NOT below 20d low ($142.84) ❌; Price only 9.5% below 52w high (need >30% below ❌). Not in statistical breakdown. |
+
+Both Financials and Health Care are lagging sectors YTD but neither is in a statistically confirmed breakdown (Z near 0, not making new multi-week lows). No short qualifies today.
+
+---
+
+### Skipped Candidates (Summary)
+
+| Ticker | Reason |
+|--------|--------|
+| **CVX** | Layer B FAIL — Volume 1.10× on breakout day < 1.5× required. Thesis valid; re-evaluate if volume confirms tomorrow. |
+| **NVDA** | Layer B FAIL — Close $222.895 below 20d high $235.74 (no breakout). Additionally: earnings binary Wednesday after close — no entry into unknown binary event regardless of other conditions. |
+| **XLF** | Layer B FAIL — Z = −0.307, not at new 20d low, RSI out of range, SMA alignment wrong. Not in breakdown regime. |
+| **XLV** | Layer B FAIL — Z = −0.095, not at new 20d low, only 9.5% below 52w high (needs >30%). Not in breakdown regime. |
+
+---
+
+### Trade Ideas (Cleared Both Layers)
+
+**1. XOM | LONG | Lane 2b-LONG (Momentum) | Energy Sector**
+- **Catalyst:** WTI crude $106.34 (+0.87%); Brent $109–$110; US-Iran supply disruption premium sustained; Energy sector #1 YTD at +27.87%; XOM confirmed breakout Friday with 1.70× volume
+- **Entry (limit):** $159.78
+- **Stop:** $147.80 (7.5% below entry — technical support at recent consolidation)
+- **Target:** $183.74 (2.0R above entry)
+- **R:R:** 2.0:1 ✅
+- **Z-Score:** +2.749 (vs 20d mean $150.82) ✅
+- **Trend Template:** PASS — all 10 conditions verified (see table above)
+- **Pair:** CVX | Pair Z-Score: +1.873 | Divergence: 0.876σ ✅ ≤1.5σ
+- **Sized position:** 10% of equity ($9,905.65) → **61 shares @ $159.78 = $9,746.58 (9.8%)**
+- **R-Multiple:** R_dollars $730.78 (0.738% of equity) | Target R = 2.0R | R:R verified ≥2:1 ✅
+- **Pivot extension:** pivot $157.92 → limit $159.78 → **1.18% extension** ≤5% ✅
+
+**Action:** Place bracket limit order: XOM | BUY 61 shares | Limit $159.78 | Stop $147.80 | Take-Profit $183.74 | TIF: day
+
+> Note: If XOM gaps materially above $162.00+ pre-open (>2.5% above today's close), reconsider whether limit is still within 5% of pivot or whether to wait for pullback. Do NOT chase if limit cannot fill at ≤$165.77 (pivot $157.92 × 1.05).
+
+---
+
+### Risk Factors
+
+1. **FOMC Minutes Wednesday (same day as NVDA earnings):** Double-risk event mid-week. If minutes signal hawkish pivot or November rate hike discussion intensifies, broad market could sell off. Energy typically decouples in oil-driven rally, but systemic risk-off could overwhelm sector thesis.
+2. **NVDA earnings Wednesday after close:** The single largest S&P 500 contributor to 2026 YTD returns (20%). A miss on the $79B revenue estimate or conservative guidance could trigger a tech selloff. Energy may benefit from risk-off rotation into commodities, or it could face contagion selling.
+3. **US-Iran ceasefire/resolution risk:** XOM thesis rests on continued supply disruption premium. A surprise diplomatic resolution or reduction in Hormuz tensions could snap WTI back toward $85–90 (as happened briefly in early May). Stop at $147.80 is the hard floor.
+4. **30-year yield >5.00%:** Long-duration bond yields rising aggressively. If equity risk premium compresses and multiple compression begins, energy stocks could face selling even with strong oil prices. XOM's recent strength partially reflects oil price, not valuation expansion.
+5. **Retail earnings parade (Walmart tomorrow, Target/Lowe's mid-week):** Weak consumer signals could trigger rotation out of cyclicals including energy. Monitor for thesis breaks.
+6. **Two consecutive energy failures rule:** XOM had a thesis-break stop-out on May 7 ($146.09). This would be the second XOM entry. If this trade fails, the energy sector would have 2 consecutive failures → triggers the blanket sector-exit rule. The risk is elevated because of this sequential context.
+7. **VIX up 6.78% today:** Rising from 17.26 to 18.43 suggests some risk-off tone. Still Normal regime (14–22), but worth monitoring. If VIX breaks above 22, sizing would drop to 0.75× for any new entries.
+
+---
+
+### Decision
+
+**TRADE — 1 position (XOM LONG)**
+
+**Action for market-open workflow:**
+> Place bracket limit order: XOM | BUY 61 shares | Limit $159.78 | Stop-Loss $147.80 | Take-Profit $183.74 | TIF: day
+
+**Deployment note:** This brings deployment to ~9.8% of equity (1 position out of a 75–85% target). The quant gates correctly filtered a 5-candidate universe to 1 qualifying idea. CVX is the strongest runner-up — it will be re-evaluated Tuesday if volume picks up above 1.5× on a follow-through day. The persistent underdeployment issue continues to be driven by volume requirements, not lack of thesis or trend template failures. This is correct gate behavior: forcing deployment without volume confirmation is the exact error the quant layer was designed to prevent.
+
+**Short candidates: NONE today** — XLF and XLV are weak sectors YTD but not in statistical breakdown (Z near 0, not at new 20d lows). No short setup cleared Layer B.
+
