@@ -740,3 +740,25 @@ Every trade (entry, exit, stop-out) is logged here with full thesis, entry price
 
 **Bracket orders placed:** NONE
 **Status:** Awaiting pre-market research entry for next eligible session before any orders can be placed
+
+### 2026-05-18 16:41 — LIMIT BUY ORDER PLACED: XOM
+**Direction:** LONG
+**Lane:** 2b-Long (Momentum)
+**Catalyst:** WTI crude ~$106.34 (+0.87%); Brent ~$109–$110; US-Iran geopolitical tensions sustaining supply disruption premium; Energy sector #1 YTD at +27.87%; XOM confirmed breakout day Friday May 15 at $157.92→$159.78 on 1.70× volume
+**Limit Price:** $159.78 (61 shares, day order)
+**Stop (bracket child):** $147.80 (7.5% below limit — technical support at recent consolidation; order ID: 94606e38-9ac2-4065-b840-ae3cbe491ce8)
+**Take-Profit (bracket child):** $183.74 (above limit; order ID: 336d922a-df53-428d-9745-2bd3e4346586)
+**R-Multiple:** R_dollars $730.78 (0.738% of equity) | Target R = 2.0R
+**R:R:** 2.0:1 (≥ 2.0 ✅)
+**Trend Template:** PASS (50d SMA $155.13 / 150d SMA $136.40 / 200d SMA $136.23 — all aligned bull; 52w high $171.47, price 7.3% below; 6mo return +34.5% — top quartile; >30% above 52w low at +44.4%)
+**Thesis:** Energy momentum trade — WTI crude sustained above $106 on US-Iran tensions and attacks on energy infrastructure. Energy is the #1 YTD sector (+27.87%). XOM broke above its prior 20d high ($157.92) on Friday May 15 with 1.70× volume confirmation. Z-Score +2.749 confirms statistical breakout. All 10 Minervini Trend Template conditions pass. CVX pair confirms direction (Z = +1.873, divergence 0.876σ within 1.5σ threshold). Pivot extension 1.18% — not chasing. Limit set at research entry; if price does not pull back to $159.78 today, order expires unfilled at close.
+**Order ID:** 1d69c496-b40b-4974-9299-cac1a65bd5b9
+**Status:** Placed — pending_new (awaiting fill; expires at session close if not filled)
+
+**Live quote at order time:** Ask $161.24 / Bid $161.00 — market ~$1.46 above limit. Limit set at research price per strategy (no chasing). Fill requires intraday pullback to $159.78.
+
+**Skipped candidates:**
+- CVX: Layer B FAIL — Volume 1.10× on breakout day < 1.5× required. Thesis intact; re-evaluate if volume confirms.
+- NVDA: Layer B FAIL — Price $222.895 below 20d high $235.74 (no breakout); additionally earnings binary Wednesday after close.
+- XLF: Layer B FAIL — Z = −0.307 (need ≤ −1.0); not at 20d low; RSI 52.30 out of range.
+- XLV: Layer B FAIL — Z = −0.095 (need ≤ −1.0); not at 20d low; only 9.5% below 52w high.

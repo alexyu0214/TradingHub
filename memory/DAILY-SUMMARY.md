@@ -486,3 +486,29 @@ All candidates reviewed and rejected via Layer A + Layer B composite gate:
 - Action required before next order: Pre-market research entry for next session with documented catalyst and DECISION: TRADE.
 
 **Daytrade count:** 0/3 | **Week trades:** 0/3 (weekly allowance resets next Monday)
+
+## 2026-05-18 — Market-Open Execution
+
+**Market-open orders placed:**
+- XOM: limit $159.78 (61 shares, day order), stop $147.80, target $183.74
+
+**Skipped:**
+- CVX: Layer B FAIL — breakout-day volume 1.10× < 1.5× required; thesis valid, re-evaluate tomorrow
+- NVDA: Layer B FAIL — price below 20d high (no breakout); earnings binary Wednesday after close
+- XLF: Layer B FAIL — Z = −0.307, not in breakdown regime
+- XLV: Layer B FAIL — Z = −0.095, not in breakdown regime
+
+**Account state at execution:**
+- Equity: $99,056.46 | Cash: $99,056.46
+- Positions open: 0 (1 pending if XOM fills: $9,746.58 = 9.8% deployed)
+- Week trades used: 1/3 | Daytrade count: 0/3
+- VIX: 18.43 (Normal regime — no restriction)
+
+**Order details:**
+- XOM bracket: Order ID 1d69c496-b40b-4974-9299-cac1a65bd5b9 | Status: pending_new
+  - Take-profit leg: $183.74 (ID: 336d922a-df53-428d-9745-2bd3e4346586)
+  - Stop-loss leg: $147.80 (ID: 94606e38-9ac2-4065-b840-ae3cbe491ce8)
+- Live ask at submission: $161.24 — limit at $159.78 requires intraday pullback; expires at session close if unfilled
+
+**R-Multiple summary:**
+- XOM: R_$ = $730.78 (0.738% eq.) | R:R = 2.0:1 | Lane 2b-Long Momentum ✅
