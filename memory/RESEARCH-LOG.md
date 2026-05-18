@@ -2360,3 +2360,73 @@ Both Financials and Health Care are lagging sectors YTD but neither is in a stat
 
 **Short candidates: NONE today** — XLF and XLV are weak sectors YTD but not in statistical breakdown (Z near 0, not at new 20d lows). No short setup cleared Layer B.
 
+
+---
+
+### 2026-05-18 — Midday Rescan Addendum (17:21 UTC / ~12:21 PM ET)
+
+**VIX Regime at rescan:** Normal (18.43 — unchanged from morning; all entry types eligible, 1.00× sizing)
+
+**XOM Pending Order Status:**
+- Order ID: `1d69c496-b40b-4974-9299-cac1a65bd5b9`
+- BUY 61 @ $159.78 limit (bracket: stop $147.80, take-profit $183.74) | TIF: day
+- **Status: UNFILLED** — current mid $161.28 (bid $160.56 / ask $162.00), market trading ~$1.50 above limit
+- Action: None. Do NOT cancel or chase. Let order sit — if XOM pulls back to $159.78 it fills; if not, expires at session close. Thesis intact.
+
+---
+
+**Skipped at open — re-evaluated midday:**
+
+**CVX** (skipped at open: Volume 1.10× on breakout day < 1.5× required)
+- Current mid: $195.84 | Spread: **1.18% — WIDE** (bid $194.68 / ask $197.00)
+- Z-Score: **+2.46** (morning: +1.87) | RSI: 59.37 | vs 20d high ($193.31): ABOVE ✓
+- Volume (last full bar May 15): 11,220,294 = **1.16×** avg (10,168,301)
+- **Layer B re-check (2b-LONG):**
+  - Z ≥ +1.0: 2.46 ✓
+  - Close > 20d high: $195.84 > $193.31 ✓
+  - RSI 50–70: 59.37 ✓
+  - Volume ≥ 1.5×: **1.16× ❌ FAIL** — breakout day (May 15) never confirmed with institutional volume
+  - Spread < 1%: **1.18% ❌ FAIL** — quote book thin midday; best-ask $197.00 on only 300 shares
+- **VERDICT: STILL SKIPPED** — both volume and spread gates fail. The 2b-LONG momentum lane requires the *breakout day* to print ≥1.5× volume; May 15 was only 1.16×. A breakout that lacked institutional participation is not a confirmed setup. Spread anomaly is a secondary signal confirming thin interest at current prices. Z has extended further (+2.46) meaning any entry here is more extended above mean, not less. Re-evaluate Tuesday if a new breakout day prints with ≥1.5× volume.
+
+**NVDA** (skipped at open: close below 20d high + earnings binary Wednesday)
+- Current mid: $221.19 | Spread: **0.02% ✓**
+- Z-Score: **+1.01** | RSI: 56.24 | vs 20d high ($235.74): **BELOW by 6.2% ❌**
+- **Layer B re-check (2b-LONG):**
+  - Z ≥ +1.0: 1.01 ✓ (barely)
+  - Close > 20d high: $221.19 < $235.74 ❌ FAIL (still 6.2% below 20d peak)
+  - RSI 50–70: 56.24 ✓
+  - **EARNINGS BINARY: HARD RULE BLOCK** — NVDA reports Wednesday May 20 after close. No entry into unknown binary events regardless of all other conditions. This gate is permanent for the remainder of this week.
+- **VERDICT: STILL SKIPPED** — two independent hard stops: (1) price is not above its 20d high, and (2) earnings binary block is absolute. **Revisit Thursday May 22 post-earnings** once the binary event is resolved.
+
+**XLF** (skipped at open: Z = −0.307, not at 20d low, RSI out of range, SMA misalignment)
+- Current mid: $51.68 | Spread: **0.04% ✓**
+- Z-Score: **−0.04** (moved *toward* zero vs −0.307 this morning) | RSI: 39.14 | vs 20d low ($50.99): ABOVE
+- **Layer B re-check (2b-SHORT):**
+  - Z ≤ −1.0: −0.04 ❌ FAIL (essentially at statistical mean)
+  - Close < 20d low: $51.68 > $50.99 ❌ FAIL
+  - RSI 30–50: 39.14 ✓ (only passing gate)
+- **VERDICT: STILL SKIPPED** — structural failure, not a timing issue. Z has moved *closer* to zero since morning, meaning XLF actually strengthened intraday. No short or long signal exists. XLF is range-chopping ($50.99–$52.63) with no statistical direction. Skip indefinitely until a directional Z-Score develops.
+
+**XLV** (skipped at open: Z = −0.095, not at 20d low, only 9.5% below 52w high)
+- Current mid: $145.60 | Spread: **0.007% ✓**
+- Z-Score: **+0.37** (moved *positive* vs −0.10 this morning) | RSI: 55.82 | vs 20d low ($142.84): ABOVE
+- **Layer B re-check (2b-SHORT):**
+  - Z ≤ −1.0: +0.37 ❌ FAIL (Z is positive — price is *above* 20d mean)
+  - Close < 20d low: $145.60 > $142.84 ❌ FAIL
+  - RSI 30–50: 55.82 ❌ FAIL
+  - Short Trend Template: 9.5% below 52w high (need >30%) ❌ FAIL
+- **VERDICT: STILL SKIPPED** — XLV structure has moved *further away* from a short setup since morning. Z turned positive intraday. Healthcare is showing early rotation / recovery from its April lows. No short setup exists and may not develop. **Observation:** If XLV Z-Score approaches −2.0 (mean-reversion long) in a future session with RSI < 30, could qualify as 2a-LONG if trend template passes. Track for potential long setup, not short.
+
+---
+
+**Trades fired this rescan:** None
+
+**Patience rule applied:** All four skipped candidates remain below their respective entry thresholds. Zero entries. This is correct behavior — the gate failures are structural (volume, earnings binary, Z near zero), not spread-normalization timing issues. None of these candidates were spread-skipped at open; all failed on substantive quant conditions that remain unresolved.
+
+**Notable intraday observations:**
+- XOM trading $161.28 midday, ~$1.50 above the $159.78 bracket limit. Energy thesis intact (WTI ~$106+). Order remains working — no action required.
+- CVX Z-Score has extended to +2.46 without volume confirmation — the further it extends without a volume-confirmed day, the more extended and risky any entry becomes. This is the *opposite* of improving setup quality.
+- XLV RSI dropped from ~neutral to 55.82 and Z turned slightly positive — potential *long* rotation setup developing, not short. Flag for Tuesday pre-market scan.
+- NVDA earnings (Wed after close) and FOMC minutes (Wed) make Tuesday the last clean entry window this week before binary risk stacks.
+
