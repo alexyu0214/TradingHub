@@ -2545,3 +2545,115 @@ Deployed: 0%
 - No stop adjustments, no cuts, no thesis exits warranted at this time
 - NVDA earnings Wednesday (binary event) and FOMC minutes Wednesday — no new entries beyond XOM this week unless a clean setup appears Tuesday
 
+
+---
+
+## 2026-05-18 — Afternoon Scan Addendum (~15:44 ET / 19:44 UTC)
+
+**Scan time:** ~16 min before close (market closes 20:00 UTC / 4:00 PM ET)
+**VIX regime at scan:** NORMAL (estimated ~18.43, from morning research) | Sizing multiplier: 1.00×
+
+---
+
+### STEP 1 — Order & Position State Reconciled vs TRADE-LOG
+
+**API State:**
+
+| Order ID | Symbol | Type | Status | Detail |
+|----------|--------|------|--------|--------|
+| 1d69c496 | XOM | Bracket limit buy, 61 sh @ $159.78 | **new / UNFILLED** | Stop $147.80 (94606e38) | TP $183.74 (336d922a) | TIF: day — expires 20:00 UTC |
+| 94606e38 | XOM | Stop $147.80 (bracket child) | **held** | Awaiting parent fill |
+| 336d922a | XOM | Take-profit $183.74 (bracket child) | **held** | Awaiting parent fill |
+
+- **Positions: NONE** — `[]` returned by API. No filled positions as of scan time.
+- **Bracket fills today: 0** — XOM bracket limit (1d69c496) placed at $159.78; XOM ask at scan time is $160.42 — still $0.64 above the limit. Order has been working all day but has NOT filled.
+- **TRADE-LOG reconciliation:** Fully current. The limit order was placed at 16:41 UTC (logged in TRADE-LOG.md). No fills, no reconciliation discrepancy.
+- **Open stale limits: 0** — The only open order is the XOM bracket limit, which is a *today's* morning order (not stale), and the thesis remains intact. No cancellation warranted.
+
+**XOM Bracket Order — Fill Probability at 15:44 ET:**
+- Limit: $159.78 | Ask: $160.42 | Gap: $0.64 (0.40%)
+- 16 minutes remain in the session. A pullback of $0.64 (~0.40%) would fill the order. Possible, but no guarantees. Do NOT cancel — let it work or expire at 20:00 UTC. If unfilled, re-evaluate Tuesday pre-market.
+
+---
+
+### STEP 2 — Trailing Stop Upgrades on Profitable Fills
+
+**No filled positions exist.** No trailing stop upgrades applicable. The XOM bracket limit has NOT filled, so no bracket stop → trailing stop upgrade workflow is triggered. The bracket's child stop ($147.80) and take-profit ($183.74) remain in "held" status, dormant until parent fills.
+
+---
+
+### STEP 3 — Stale Limit Cancellations
+
+**None applicable.** The XOM bracket limit (1d69c496) was placed this morning (2026-05-18T16:41 UTC) with a valid, research-backed thesis — not a stale carry-over. Thesis status:
+- WTI crude ~$106 | Brent ~$109–$110 | US-Iran tensions active | Energy sector #1 YTD ✅
+- Z-Score has extended further to +3.001 (was +2.749 at research time) — price is running higher, confirming directional momentum ✅
+- Limit at $159.78 sits below market ($160.35 mid) — if anything, the thesis has strengthened intraday
+- **Action: HOLD order. No cancellation.**
+
+---
+
+### STEP 4 — Afternoon Opportunity Scan
+
+**⏰ TIMING CONSTRAINT: 15:44 ET = last 16 minutes of session.** CONSTRAINTS.md explicitly prohibits new entry orders in the final 15 minutes ("No last 15 mins" for entries). All candidate analysis below is for **informational purposes and Tuesday pre-market context only** — no new bracket orders will be placed at this time.
+
+**VIX regime:** NORMAL (1.00×) | **Positions:** 0/6 | **Week trades:** 0/3 | **PDT:** 1/3
+
+**Z-Scores and key metrics computed from 25-bar API data:**
+
+| Ticker | Mid Price | Z-Score | RSI(14) | Vol (last bar vs 20d avg) | 20d High | Spread | Layer B Verdict |
+|--------|-----------|---------|---------|---------------------------|----------|--------|-----------------|
+| XOM (pending) | $160.35 | +3.001 | 64.23 | 1.63× ✅ | ABOVE $157.92 ✅ | 0.08% ✅ | 2b-LONG: QUALIFIES — but already has pending bracket |
+| CVX | $196.01 | +2.509 | 59.37 | 1.10× ❌ | ABOVE $193.31 ✅ | 0.42% ✅ | 2b-LONG: **FAILS volume** (1.10× < 1.5×) |
+| XLE | $60.44 | +2.133 | 61.34 | 0.80× ❌ | ABOVE $59.65 ✅ | 0.02% ✅ | No valid lane: Z overbought but RSI not >70 for 2a-SHORT; vol fails; Phase 1 long-only |
+| NVDA | $221.72 | +1.058 | 56.24 | 1.20× | BELOW $235.74 ❌ | 0.02% ✅ | 2b-LONG: FAILS (no breakout); +earnings binary HARD BLOCK Wed |
+| XLV | $145.63 | +0.402 | 55.82 | N/A | BELOW $147.42 ❌ | 0.01% ✅ | No lane qualifies |
+
+**Pair Divergences:**
+- XOM ↔ CVX: |+3.001 − +2.509| = 0.493σ ✅ (≤1.5σ — energy sector cohesion confirmed)
+- XOM ↔ XLE: |+3.001 − +2.133| = 0.869σ ✅ (confirmed sector-wide energy rally)
+
+**Candidate Detail:**
+
+**CVX — REJECT (same failure as all prior scans today):**
+- Z = +2.509 ✅ | Price above 20d high ✅ | RSI 59.37 ✅ | Spread 0.42% ✅ | Pair divergence 0.493σ ✅ | Trend Template ✅
+- **Fails: Volume 1.10× < 1.5× required for 2b-LONG.** This has been the same disqualifier in every evaluation since pre-market. The May 15 breakout bar did not produce the institutional volume confirmation the strategy requires. Without it, the breakout is unconfirmed. A breakout on weak volume has higher failure rates — the gate is working correctly.
+- Additionally: even if volume passed, the 15-minute window prohibition would prevent placing a new entry at 15:44. This is a Tuesday evaluation item.
+- **Re-evaluate Tuesday pre-market:** If Tuesday's open produces a follow-through day with ≥1.5× volume AND CVX remains above its 20d high ($193.31), CVX becomes a legitimate bracketed long candidate. Per CONSTRAINTS.md, it qualifies independently (not contingent on XOM filling).
+
+**XLE — REJECT:**
+- Z = +2.133 (overbought) | RSI 61.34 (not >70 for 2a-SHORT) | Vol 0.80× ❌ | Phase 1 long-only eliminates 2a-SHORT lane regardless
+- For 2b-LONG: Z is above mean (bullish momentum exists) but the 2b-LONG lane needs Z ≥ +1.0 AND breakout — XLE is above its 20d high ($59.65) ✅, but volume is below average at 0.80×. Fails same volume gate as CVX but is less compelling (ETF vs single-name leader).
+- **REJECT.**
+
+**NVDA — REJECT:**
+- Price $221.72 is 5.9% below its 20d high ($235.74) — no breakout. This disqualifies the 2b-LONG lane regardless of other metrics.
+- NVDA earnings Wednesday May 20 after close = **HARD BLOCK** on any new entry for the remainder of this week.
+- Z = +1.058 is not at a mean-reversion extreme in either direction.
+- **REJECT — dual gate failure (no breakout + earnings binary).**
+
+**XLV — REJECT:**
+- Z = +0.402 — sitting near the 20d mean, no statistical extreme in any direction. No lane qualifies.
+- **REJECT.**
+
+**New afternoon entries: NONE** — no new bracket orders placed (time constraint + no qualifying candidates). Zero orders submitted.
+
+---
+
+### Afternoon Market Context
+
+The session's dominant story is the energy sector's continued rally: XOM traded as high as $161.35 intraday before settling around $160.35 at the close, extending well above our $159.78 bracket limit. The Z-score expanded from +2.749 at pre-market to +3.001 at the close, with RSI at 64.23 — still firmly in the 2b-LONG momentum zone (50–70), not yet overbought. CVX mirrored the move (Z = +2.509), and XLE also broke above its 20d high (Z = +2.133) — the energy sector is running cleanly on all three names, exactly as the thesis predicted. The XOM bracket limit at $159.78 has been working all day without filling — the market never pulled back to it. This is correct behavior: do not chase. The momentum extension is real but the bot doesn't modify limits upward to chase. If XOM closes today without filling, the bracket expires, and tomorrow's pre-market re-evaluates the setup fresh. NVDA is the week's pending binary event (reports Wednesday May 20 after close) — all tech names adjacent to NVDA are appropriately held at arm's length. The VIX remains in the Normal regime; the energy rally looks technically sound. "Sell in May" seasonal headwind continues to be overridden by the structural supply disruption premium in WTI.
+
+---
+
+**Bracket fills today:** 0 — XOM bracket limit (1d69c496) placed at $159.78 remains UNFILLED (ask $160.42 at scan close; order expires 20:00 UTC)
+**Stops upgraded:** 0 — no filled positions; no trailing stop upgrades applicable
+**Stale limits cancelled:** 0 — no stale limits; today's XOM bracket is thesis-valid and expires naturally at close
+**New afternoon entries:** none — all 4 candidates failed composite gates (CVX: vol 1.10× < 1.5×; XLE: vol + no valid lane; NVDA: no breakout + earnings binary; XLV: Z near zero); additionally within final 15-minute no-entry window
+**Afternoon market context:** Energy sector rallied strongly — XOM at $160.35 (Z = +3.001), CVX at $196.01 (Z = +2.509), XLE at $60.44 (Z = +2.133). Energy thesis intact and accelerating. XOM bracket at $159.78 never filled as price ran above it all session. NVDA earnings Wed = sector-wide binary overhang for tech names. No catalyst shifts that alter tomorrow's setup.
+
+**Key watchlist for Tuesday pre-market (2026-05-19):**
+1. **XOM** — Re-place bracket limit if today's order expires unfilled; re-calculate entry price at tomorrow's open vs 20d high $157.92 (pivot extension rule: ≤5%). If XOM gaps above ~$165.81 (pivot × 1.05), do NOT enter — wait for pullback.
+2. **CVX** — Z = +2.509, all other gates pass; needs volume ≥ 1.5× on a breakout/follow-through day to qualify independently per CONSTRAINTS.md. If Tuesday opens strong on energy and volume confirms, CVX becomes a second independent bracket candidate.
+3. **NVDA** — Hard block until post-earnings (Thursday May 22 pre-market evaluation). No entry of any kind this week.
+4. **XLE** — Monitor for vol confirmation ≥ 1.5× before entering. RSI 61.34 and Z +2.133 are both in correct ranges for 2b-LONG if volume shows up Tuesday.
+

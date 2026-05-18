@@ -762,3 +762,48 @@ Every trade (entry, exit, stop-out) is logged here with full thesis, entry price
 - NVDA: Layer B FAIL — Price $222.895 below 20d high $235.74 (no breakout); additionally earnings binary Wednesday after close.
 - XLF: Layer B FAIL — Z = −0.307 (need ≤ −1.0); not at 20d low; RSI 52.30 out of range.
 - XLV: Layer B FAIL — Z = −0.095 (need ≤ −1.0); not at 20d low; only 9.5% below 52w high.
+
+---
+
+### May 18 — Afternoon Scan (Day N / ~15:44 ET)
+
+**Portfolio:** $99,056.46 | **Cash:** $99,056.46 (100%) | **Deployed:** 0% (bracket limit unfilled) | **Phase P&L:** −$943.54 (−0.944%)
+
+| Ticker | Shares | Entry | Current | Unrealized P&L | Stop | Hold |
+|--------|--------|-------|---------|----------------|------|------|
+| — | — | — | — | — | — | — (0 positions) |
+
+**Open orders:**
+| Order ID | Symbol | Type | Status | Detail |
+|----------|--------|------|--------|--------|
+| 1d69c496 | XOM | Bracket limit buy, 61 sh @ $159.78 | **new / UNFILLED** | Stop $147.80 | TP $183.74 | Expires 20:00 UTC |
+| 94606e38 | XOM | Stop $147.80 (bracket child) | held | Awaiting parent fill |
+| 336d922a | XOM | TP $183.74 (bracket child) | held | Awaiting parent fill |
+
+**Afternoon scan summary:**
+- **Bracket fills today:** 0 — XOM bracket (1d69c496) placed at $159.78 at 16:41 UTC; XOM ask = $160.42 at scan time; never pulled back to limit all session. Order expires at 20:00 UTC (4:00 PM ET). If unfilled, re-evaluate Tuesday pre-market.
+- **Trailing stops upgraded:** 0 — no filled positions; upgrade workflow not triggered.
+- **Stale limits cancelled:** 0 — only open order is today's XOM bracket; thesis valid; no cancellation.
+- **New afternoon entries placed:** 0 — 4 candidates evaluated (CVX, XLE, NVDA, XLV); all rejected:
+
+| Candidate | Z-Score | Key Fail | Verdict |
+|-----------|---------|----------|---------|
+| CVX | +2.509 | Vol 1.10× < 1.5× required (2b-LONG) | REJECT — same as morning/midday |
+| XLE | +2.133 | Vol 0.80× ❌; no valid lane (Phase 1 long-only blocks 2a-SHORT) | REJECT |
+| NVDA | +1.058 | No breakout (price $221.72 < 20d high $235.74); earnings Wed HARD BLOCK | REJECT |
+| XLV | +0.402 | Z mid-range — no lane triggers | REJECT |
+
+- **Timing constraint applied:** Scan at 15:44 ET = within final 16 minutes. CONSTRAINTS.md: "No last 15 mins" for new entries. Even if a candidate qualified, no new bracket could be placed. This is a secondary blocker beyond the quant gate failures.
+- **VIX regime:** NORMAL (1.00×) | **Positions:** 0/6 | **Week trades:** 0/3 | **PDT:** 1/3
+
+**Key pair data:**
+- XOM Z = +3.001 | CVX Z = +2.509 | Divergence = 0.493σ ✅ (energy sector moving together — thesis confirmed directionally)
+- XLE Z = +2.133 | XOM–XLE divergence = 0.869σ ✅ (broad sector breadth)
+
+**Circuit breakers:** ✅ All clear — Phase P&L −0.944% (lim −5%) | Drawdown −1.15% from $100,206.70 peak (lim −15%)
+
+**Tomorrow (Tuesday 2026-05-19) action plan:**
+1. If XOM bracket expired unfilled tonight → re-place with fresh entry calculation at Tuesday's open (pivot still $157.92, max chase $165.81). Do not assume yesterday's limit is still optimal.
+2. CVX: Re-evaluate independently. Needs breakout-day volume ≥ 1.5× to clear Layer B. If Tuesday opens strong and volume surges, CVX qualifies for its own bracket order (independent of XOM — per CONSTRAINTS.md conditional gate independence rule).
+3. NVDA: Hard block until Thursday May 22 (post-earnings evaluation only).
+
