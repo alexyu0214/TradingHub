@@ -807,3 +807,15 @@ Every trade (entry, exit, stop-out) is logged here with full thesis, entry price
 2. CVX: Re-evaluate independently. Needs breakout-day volume ≥ 1.5× to clear Layer B. If Tuesday opens strong and volume surges, CVX qualifies for its own bracket order (independent of XOM — per CONSTRAINTS.md conditional gate independence rule).
 3. NVDA: Hard block until Thursday May 22 (post-earnings evaluation only).
 
+
+### May 18 — EOD Snapshot (Day 20, Monday)
+
+**Portfolio:** $99,056.46 | **Cash:** $99,056.46 (100%) | **Day P&L:** $0.00 (0.000%) | **Phase P&L:** −$943.54 (−0.944%) | **Deployed:** 0%
+
+| Ticker | Shares | Entry | Close | Unrealized P&L | Stop | Time |
+|--------|--------|-------|-------|----------------|------|------|
+| — | — | — | — | — | — | — |
+
+**Trades today:** none (XOM bracket limit order at $159.78 placed at market open, expired unfilled at session close — day TIF; live ask $161.24 at submission required intraday pullback that never materialized)
+
+**Notes:** Flat session with no fills. XOM was the sole actionable candidate — bracket submitted at $159.78 (61 shares, stop $147.80, target $183.74, R:R 2.0:1, R_$ $730.78 / 0.738% eq.) but the ask never pulled back to the limit. CVX was blocked by Layer B volume gate (1.10× vs 1.5× required), NVDA hard-blocked until post-earnings Thursday, XLF/XLV both failed Z-score thresholds. Portfolio holds 100% cash entering Tuesday. Per the action plan, XOM should be re-priced at Tuesday's open with a fresh limit (pivot still $157.92, max-chase cap $165.81); CVX remains a live watch with its own independent gate. No circuit breakers triggered. All rules clear.

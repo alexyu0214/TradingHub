@@ -512,3 +512,19 @@ All candidates reviewed and rejected via Layer A + Layer B composite gate:
 
 **R-Multiple summary:**
 - XOM: R_$ = $730.78 (0.738% eq.) | R:R = 2.0:1 | Lane 2b-Long Momentum ✅
+
+## 2026-05-18 — EOD
+
+**Portfolio:** $99,056.46 (0.000% day, −0.944% phase)
+**Cash:** $99,056.46 (100%)
+**Deployed:** 0%
+**Daytrade count:** 0/3
+
+**Trades today:** none — XOM bracket limit $159.78 placed at open, expired unfilled (day TIF; ask never pulled back from $161.24)
+**Open positions:** none
+**Stops tightened:** none
+**Losers cut:** none
+
+**Notes:** No fills today. XOM limit below market at open, never triggered; all other candidates failed Layer B gates (CVX volume, NVDA earnings block, XLF/XLV Z-scores). Fully cash. Re-price XOM bracket at Tuesday open; CVX independent re-eval if volume surges.
+
+---
