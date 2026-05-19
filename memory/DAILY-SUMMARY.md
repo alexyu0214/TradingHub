@@ -528,3 +528,28 @@ All candidates reviewed and rejected via Layer A + Layer B composite gate:
 **Notes:** No fills today. XOM limit below market at open, never triggered; all other candidates failed Layer B gates (CVX volume, NVDA earnings block, XLF/XLV Z-scores). Fully cash. Re-price XOM bracket at Tuesday open; CVX independent re-eval if volume surges.
 
 ---
+
+## 2026-05-19 (Tuesday) — Market-Open Execution
+
+**Decision:** HOLD — No orders placed
+
+**Market-open orders placed:** None
+
+**Candidates evaluated and rejected:**
+- XOM: Layer A contra-catalyst (oil −1.10%, Trump called off Iran strike) + Layer B volume gate fail (projected far below 1.5× 20d avg on distribution day)
+- CVX: Layer B breakout gate fail (close $194.29 < 20d pivot $196.12)
+- XLE: Layer B breakout gate fail (close $60.565 vs pivot $60.58 — at but not above)
+- HD: Binary earnings event today; sector fails momentum posture; skip
+- NVDA: HARD BLOCK — earnings Wednesday May 20
+- FCX/NEM/CAT/GE: Deferred — pre-binary session noise (NVDA + FOMC minutes Wed)
+
+**Account at market-open:**
+- Equity: $99,056.46 | Cash: $99,056.46 (100%) | Deployed: 0%
+- Positions: 0/6 | Week trades: 0/3 | PDT: 0/3
+
+**Live quotes (12:41 ET):**
+- XOM ask $162.01 / CVX ask $196.19 / XLE ask $61.12 — all valid, no halts
+
+**Notes:** Patience Rule applied correctly. Primary energy thesis (XOM/CVX/XLE) remains intact structurally but was actively contra-catalyzed today by geopolitical de-escalation (Iran strike called off → oil risk premium fading). Wednesday is the next clean entry window: post-NVDA binary, post-FOMC minutes. Materials sector (FCX, NEM) queued for Wednesday scan. No circuit breakers triggered. Phase P&L −$943.54 (−0.944%).
+
+---
