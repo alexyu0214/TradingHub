@@ -896,3 +896,16 @@ Every trade (entry, exit, stop-out) is logged here with full thesis, entry price
 3. **NVDA** — Hard block Wed (earnings tonight); evaluate Thu May 22 post-earnings
 4. **CVX** — Needs clean spread + volume ≥1.5× + close above $196.12
 5. **HD** — Post-earnings bar available Wed; sector headwind for long; assess independently
+
+### May 19 — EOD Snapshot (Day 21, Tuesday)
+
+**Portfolio:** $99,056.46 | **Cash:** $99,056.46 (100%) | **Day P&L:** $0.00 (0.000%) | **Phase P&L:** −$943.54 (−0.944%) | **Deployed:** 0%
+
+| Ticker | Shares | Entry | Close | Unrealized P&L | Stop | Time |
+|--------|--------|-------|-------|----------------|------|------|
+| — | — | — | — | — | — | — |
+
+**Trades today:** none
+
+**Notes:** Flat day — no positions held, no orders active. Account remains fully in cash at $99,056.46. The day's research log carried forward watchlist notes on XOM (volume confirmation gate ≥25.2M), XLE (volume gate ≥54.97M with TT caveat), NVDA (hard block today due to earnings tonight; Thu May 22 is the earliest evaluation window), CVX (needs clean spread + volume ≥1.5× + close above $196.12), and HD (post-earnings bar available; sector headwind for longs). None of the candidates triggered their entry conditions today. Phase P&L remains at −$943.54 (−0.944%), well within all circuit-breaker thresholds. Tomorrow's priority: NVDA post-earnings assessment at open (not first 15 min), re-run volume checks on XOM and XLE against updated bars.
+
