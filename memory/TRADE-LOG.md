@@ -848,3 +848,51 @@ Every trade (entry, exit, stop-out) is logged here with full thesis, entry price
 **Next action:** Re-evaluate Wednesday post-NVDA-binary + post-FOMC-minutes. XOM/CVX/XLE remain on watchlist; Materials sector (FCX, NEM) to be added to scan. NVDA hard-blocked until Thursday May 22.
 
 **Status:** No orders placed — no order IDs to record.
+
+---
+
+### May 19 — Afternoon Scan (Day 21 / ~15:54 ET)
+
+**Portfolio:** $99,056.46 | **Cash:** $99,056.46 (100%) | **Deployed:** 0% | **Phase P&L:** −$943.54 (−0.944%)
+
+| Ticker | Shares | Entry | Current | Unrealized P&L | Stop | Hold |
+|--------|--------|-------|---------|----------------|------|------|
+| — | — | — | — | — | — | — (0 positions) |
+
+**Open orders at scan time:** NONE (Monday's bracket expired; no new orders placed today)
+
+**Afternoon scan trades:** none
+
+**Stop action:** N/A — no positions held
+
+**Afternoon candidates evaluated — ALL REJECTED:**
+
+| Candidate | Z-Score | Vol Ratio | Spread | Key Fail | Verdict |
+|-----------|---------|-----------|--------|----------|---------|
+| XOM | +3.117 | 1.20× | 0.043% ✅ | Vol 1.20× < 1.5× required (2b-LONG) | REJECT |
+| CVX | +2.131† | 1.02× | 5.02% ❌ | Spread wide (R-flag) + Vol 1.02× + price AT (not above) 20d high | REJECT |
+| XLE | +2.585 | 1.13× | 0.016% ✅ | Vol 1.13× < 1.5× required (2b-LONG) | REJECT |
+| NVDA | N/A | N/A | 0.018% ✅ | HARD BLOCK — earnings tonight after close | REJECT |
+| HD | N/A | N/A | 0.086% ✅ | Sector (Cons. Disc. YTD −0.03%) fails Layer A momentum gate | REJECT |
+
+†CVX Z computed vs last close $196.12 (stub AH bid unreliable)
+
+**Energy sector observations:**
+- XOM: +1.60% today ($163.06 vs prior close $160.49) — bullish relative strength continues
+- XLE: +1.36% today ($61.41 vs prior close $60.58) — sector ETF confirming XOM direction
+- Pair divergence XOM–CVX: 0.986σ ✅ | XOM–XLE: 0.532σ ✅ — all energy names cohesive
+- Volume confirmation (1.5× threshold) remains the sole gate blocking a momentum entry
+- May 19 session volume (not yet final at scan time) is the key data point for Wednesday
+
+**Timing constraint:** Scan at 15:54 ET = within final 6 minutes. CONSTRAINTS.md no-entry window applies independently of quant gate failures.
+
+**NVDA binary tonight:** Q1 FY2027 earnings report after close. Market-wide binary overhang. Post-earnings direction will shape Wednesday's session.
+
+**PDT count:** 0/3 | **Week trades:** 0/3 | **Positions:** 0/6 | **Circuit breakers:** ✅ All clear
+
+**Watchlist for Wednesday pre-market (May 20):**
+1. **XOM** — If May 19 final volume ≥25.2M, new breakout day → re-place bracket; max entry ≤$168.51 (pivot $160.49 × 1.05)
+2. **XLE** — If May 19 final volume ≥54.97M, new breakout day → re-evaluate with TT issue noted
+3. **NVDA** — Hard block Wed (earnings tonight); evaluate Thu May 22 post-earnings
+4. **CVX** — Needs clean spread + volume ≥1.5× + close above $196.12
+5. **HD** — Post-earnings bar available Wed; sector headwind for long; assess independently

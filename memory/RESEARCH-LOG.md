@@ -3075,3 +3075,114 @@ XOM's +0.95% intraday performance against a −1.10% WTI backdrop constitutes no
 4. **NVDA** — **HARD BLOCK Wednesday May 20** (earnings after close). Evaluate Thursday May 22 pre-market only.
 5. **FOMC Minutes Wednesday 2:00 PM ET** — No new entries placed in the 30-minute window before this release.
 6. **Materials names (FCX, NEM)** — Deferred from last week. Eligible for Wednesday scan if energy names don't qualify (sector diversification purpose).
+
+---
+
+## 2026-05-19 — Afternoon Scan Addendum (15:54 ET / 19:54 UTC)
+
+**Scan time:** ~6 min before close (market closes 20:00 UTC / 4:00 PM ET)
+**VIX regime at scan:** NORMAL — VIXY proxy $26.57 (bid $26.57 / ask $26.58) → estimated VIX ~18.5 | Sizing multiplier: 1.00×
+
+---
+
+### STEP 1 — Order & Position State Reconciled vs TRADE-LOG
+
+**Orders returned by API (6 total — all historical):**
+
+| Order ID | Symbol | Type | Status | Detail |
+|----------|--------|------|--------|--------|
+| 1d69c496 | XOM | Bracket limit BUY 61 sh @ $159.78 | **EXPIRED** 2026-05-18T20:02 | TIF: day — never filled, as expected and logged ✅ |
+| 94606e38 | XOM | Stop child $147.80 | **CANCELED** 2026-05-18T20:02 | Auto-cancelled with parent bracket expiry ✅ |
+| 336d922a | XOM | TP child $183.74 | **CANCELED** 2026-05-18T20:02 | Auto-cancelled with parent bracket expiry ✅ |
+| 8f97ef7d | XOM | Market Sell 130 sh | **FILLED** $146.09, 2026-05-07T17:55 | Thesis-break exit — logged ✅ |
+| d92d9371 | XOM | Trailing Stop 10% GTC | **CANCELED** 2026-05-07T17:54 | Cancelled before thesis-break exit — logged ✅ |
+| c04ae321 | XOM | Market Buy 130 sh | **FILLED** $153.35, 2026-05-01T14:41 | Original entry — logged ✅ |
+
+- **Positions API: `[]` — EMPTY.** Portfolio is 100% cash. No filled positions.
+- **Bracket fills today (May 19): 0** — No morning bracket limits were placed today (pre-market verdict was HOLD: all energy candidates failed Layer B on contra-catalyst WTI −1.10% day; volume gates). Monday's bracket (1d69c496) expired unfilled last night as documented.
+- **TRADE-LOG reconciliation: FULLY CURRENT.** No discrepancies. All 6 orders in API match TRADE-LOG entries exactly.
+- **Open stale limits: 0** — No open orders of any kind.
+
+---
+
+### STEP 2 — Trailing Stop Upgrades: N/A
+
+No positions held. No stops to upgrade. Portfolio is 100% cash.
+
+---
+
+### STEP 3 — Stale Limit Cancellations: N/A
+
+No open orders exist (Monday's bracket expired at session close per its TIF: day). Nothing to cancel.
+
+---
+
+### STEP 4 — Afternoon Opportunity Scan
+
+**VIX regime:** NORMAL (1.00×) | **Positions:** 0/6 | **Week trades:** 0/3 | **PDT:** 0/3
+
+**Quant metrics computed from live quotes + 25-bar API data:**
+
+| Ticker | Live Mid | Z-Score | RSI(14) | 20d High | Spread | Vol (May 18) vs Avg | Pair / Div | Layer B Gate | Verdict |
+|--------|----------|---------|---------|----------|--------|---------------------|-----------|--------------|---------|
+| XOM | $163.06 | +3.117 | 64.44 | $160.49 ✅ | 0.043% ✅ | 1.20× ❌ | CVX +2.131σ / 0.986σ div ✅ | 2b-LONG: **vol FAIL** | **REJECT** |
+| CVX | $196.12† | +2.131 | 61.04 | $196.12 — AT ❌ | 5.02% ❌ | 1.02× ❌ | XOM 0.986σ div ✅ | 2b-LONG: **spread + vol + no breakout** | **REJECT** |
+| XLE | $61.41 | +2.585 | 61.99 | $60.58 ✅ | 0.016% ✅ | 1.13× ❌ | XOM 0.532σ div ✅ | 2b-LONG: **vol FAIL** | **REJECT** |
+| NVDA | $220.88 | N/A | N/A | N/A | 0.018% ✅ | N/A | N/A | **EARNINGS HARD BLOCK** (tonight) | **REJECT** |
+| HD | $301.93 | N/A | N/A | N/A | 0.086% ✅ | N/A | N/A | Sector fail (Cons. Disc. −0.03% YTD) | **REJECT** |
+
+†CVX quote is R-flagged with wide spread ($188.69/$198.41 = 5.02%); fair value proxy = last close $196.12.
+
+**⏰ Timing note:** Scan at 15:54 ET = within final 6 minutes of session. CONSTRAINTS.md prohibits new entries in the last 15 minutes. This is a secondary independent blocker in addition to the volume gate failures.
+
+---
+
+**Candidate detail:**
+
+**XOM — REJECT (volume gate — single disqualifier):**
+- Z = +3.117 ✅ | RSI = 64.44 ✅ | Spread 0.043% ✅ | Price above 20d high ($163.06 > $160.49) ✅ | Pivot extension 3.26% ≤5% ✅ | 50d > 200d SMA ✅ | Pair CVX divergence 0.986σ ✅
+- **ONLY FAILURE: Volume.** May 18 (the breakout day) = 20,075,013 / 16,797,568 avg = **1.20× — below 1.5× required** for 2b-LONG momentum lane.
+- XOM is continuing to rally today (+1.60% from yesterday's close), which is bullish, but the volume confirmation for the momentum entry is measured on the *breakout day bar* (May 18), and that bar is settled at 1.20×. Cannot retroactively upgrade it.
+- Today's (May 19) session bars are not yet available (market still open at scan time). If today's session volume closes at ≥25.2M shares (1.5× × 16.8M avg), May 19 becomes a new valid breakout day → re-evaluate at Wednesday pre-market.
+- Thesis pillars: WTI oil structurally elevated (contra-catalyst today of Trump calling off Iran strike may be reversing; XOM +1.60% suggests market disagreed with morning's negative read), Energy sector #1 YTD (+27.87%), XOM Minervini Trend Template passes all 10 conditions.
+
+**CVX — REJECT (spread + volume + no breakout, 3 independent failures):**
+- Live quote unreliable (5.02% spread; stub AH bid $188.69 vs ask $198.41). Fair value = last close $196.12 = AT its 20d high (not above). No breakout.
+- Volume May 18 = 1.02× — nowhere near 1.5×.
+- Thesis same as XOM; re-evaluate Wednesday with clean quotes.
+
+**XLE — REJECT (volume gate):**
+- Otherwise clean: Z = +2.585 ✅, RSI = 61.99 ✅, spread 0.016% ✅, above 20d high ($61.41 > $60.58) ✅.
+- Volume May 18 = 41,519,997 / 36,645,154 avg = **1.13× — below 1.5×**.
+- If today's XLE volume closes ≥54.97M shares, today becomes a new breakout bar. Watch for Wednesday.
+- Note: Trend Template for XLE remains incomplete due to Dec 2025 2:1 split disrupting pre-split SMA history. This secondary gate also blocks a momentum entry until resolved.
+
+**NVDA — REJECT (earnings hard block):**
+- Q1 FY2027 earnings report tonight after close. Absolute hard block on all entry types for remainder of this week. Evaluate Thursday May 22 pre-market post-earnings.
+- Live mid $220.88 — still 5.2% below 20d high $235.74 (no breakout even absent the hard block).
+
+**HD — REJECT (sector momentum):**
+- Consumer Discretionary YTD = −0.03% — not in momentum. Fails Layer A sector posture gate for long entries.
+- Post-earnings bar data available tomorrow. Full evaluation (Z, RSI, TT) deferred to Wednesday pre-market.
+
+---
+
+### Afternoon Market Context
+
+Energy sector is closing strongly despite today's morning contra-catalyst (WTI −1.10% on Trump's Iran stance). XOM +1.60% from yesterday's close ($163.06 vs $160.49), XLE +1.36% ($61.41 vs $60.58). This is a second consecutive day of energy outperformance that confirms the sector's structural bid — institutional buyers appear to be treating the Iran deal risk as "priced in" or temporary. XOM's Z-score has now extended to +3.117 (vs +2.749 at last research entry), a significant statistical extension above the 20-day mean. However, the volume confirmation gate persists: the breakout on May 15 (1.66×) was valid, May 18 follow-through was 1.20×, and today's bar (May 19) is the key one to watch. NVDA earnings tonight create a market-wide binary overhang — the outcome will set the tone for the broader market Wednesday morning. FOMC minutes also release Wednesday at 2:00 PM ET. The combination of these two events makes Wednesday a high-information day; having no open positions entering it is actually an advantageous position — maximum flexibility to act on whichever setup emerges post-binary clarity.
+
+---
+
+**Bracket fills today:** 0 (no morning limits were placed — HOLD decision at pre-market; Monday's bracket expired as expected)
+**Stops upgraded:** 0 (no positions held; no upgrade workflow applicable)
+**Stale limits cancelled:** 0 (no open orders existed at scan time)
+**New afternoon entries:** none — all 5 candidates failed composite Layer A + Layer B gates; additionally within final 6-minute no-entry window
+**Afternoon market context:** Energy continued strong (+1.60% XOM, +1.36% XLE) despite contra-catalyst morning (WTI −1.10%). Volume confirmation still the single outstanding disqualifier for XOM/XLE entries. NVDA earnings tonight = primary market-moving event; FOMC minutes Wednesday. No positions entering this binary, which is the correct posture.
+
+**Key watchlist for Wednesday pre-market (2026-05-20):**
+1. **XOM** — If today's (May 19) session volume prints ≥25.2M shares, May 19 is a new valid breakout day. Re-place bracket limit at Wednesday open. Pivot: $160.49 (May 18 close). Max entry ≤ $168.51 (pivot × 1.05). VIX/FOMC check at open.
+2. **XLE** — Same analysis. Needs May 19 volume ≥54.97M for new breakout bar. Trend Template SMA incomplete (secondary block).
+3. **CVX** — Needs clean spread (<1%), fresh volume ≥1.5×, and close above $196.12. Same energy thesis.
+4. **NVDA** — **HARD BLOCK Wednesday** (earnings tonight). Evaluate Thursday May 22 only: if gap-up reclaims $235.74 with volume ≥1.5× → 2b-LONG candidate; if gap-down to Z ≤ −2.0 (~$189) + RSI <30 → 2a-LONG candidate.
+5. **HD** — Post-earnings bar available Wednesday. Pull bars, assess Z/RSI/TT. Sector (Cons. Disc. YTD −0.03%) is a Layer A headwind for long entries.
+6. **FOMC Minutes (Wednesday 2:00 PM ET)** — No new bracket orders placed in the 30 min before this release.
