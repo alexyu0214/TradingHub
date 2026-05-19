@@ -2977,3 +2977,101 @@ No gates were lowered. No trade was forced. Zero trades this rescan is the corre
 4. **HD** — Post-earnings: pull bars Wednesday, check if spread normalized, assess Z/RSI/TT.
 5. **FOMC Minutes (Wednesday 2:00 PM ET)** — Major macro event. Could move rates expectations materially. Avoid placing new entries just before the 2 PM ET release. Any open bracket limits should be evaluated for thesis continuity post-release.
 
+
+---
+
+## 2026-05-19 — Midday Scan Addendum (~14:00 ET / 18:00 UTC)
+
+**Scan type:** Midday workflow — position thesis check & stop evaluation
+**VIX Regime:** Normal (18.43 from morning research) — 1.00× sizing multiplier
+**Scan time:** 2026-05-19T18:00 UTC (~14:00 ET)
+
+---
+
+### STEP 1 — Account & Order State (Live API)
+
+| Field | Value |
+|-------|-------|
+| Equity | $99,056.46 |
+| Cash | $99,056.46 (100%) |
+| Deployed | $0 (0%) |
+| Open Positions | 0 |
+| Open Orders | 0 |
+| PDT daytrade count | 0/3 |
+| Week trades used | 0/3 |
+| Phase P&L | −$943.54 (−0.944%) |
+
+- Positions API: `[]` (empty — confirmed fully flat)
+- Orders API: `[]` (empty — morning pre-market research decided HOLD; no brackets placed at open)
+- Morning's conclusion (contra-catalyst WTI −1.10%, volume gate failures on all energy names) was fully consistent with today's order state
+
+---
+
+### STEP 2 — CUT LOSERS: N/A | STEP 3 — TIGHTEN STOPS: N/A
+
+No open positions. Both steps skipped.
+
+---
+
+### STEP 4 — THESIS CHECK (Watchlist Validation)
+
+Live quotes pulled at ~14:00 ET:
+
+| Ticker | Prior Close | Live Mid | Intraday Chg | Spread | Live Z-Score | Notes |
+|--------|-------------|----------|--------------|--------|--------------|-------|
+| XOM | $160.49 | $162.02 | +0.95% | 0.025% ✅ | +2.84 | Relative strength vs oil |
+| CVX | $196.12 | $196.77 | +0.33% | 0.030% ✅ | +2.30 | Pair divergence XOM: 0.54σ ✅ |
+| XLE | $60.58 | $61.09 | +0.83% | 0.016% ✅ | +2.36 | ETF tracking sector rally |
+| NVDA | — | $223.25 | — | 0.013% ✅ | — | HARD BLOCK (earnings Wed) |
+
+**Energy thesis direction:**
+- Morning pre-market flagged today as a "contra-catalyst day" (WTI −1.10% on Trump calling off Iran military strike)
+- At 14:00 ET: XOM +0.95%, CVX +0.33%, XLE +0.83% — all positive despite oil softness
+- **INTERPRETATION:** Energy equities are showing bullish relative strength vs. spot oil. XOM outperforming spot WTI by ~+2.05%. CVX pair divergence from XOM is only 0.54σ (well within 1.5σ limit) — both integrated oil majors moving in tandem. This is sector-wide institutional behavior, not single-name idiosyncrasy.
+- Likely explanations: (a) Iran deal risk already priced in (fear fading = news "already known"); (b) Lower feedstock costs = margin tailwind for integrated refining; (c) Institutional accumulation ahead of mid-week clarity (NVDA + FOMC minutes)
+- **Energy thesis: INTACT. No thesis break. Structural pillars (Hormuz supply disruption, XOM Q1 earnings beat) remain.**
+
+**NVDA:** HARD BLOCK. Reports earnings Wednesday May 20 after close. Spread normalized (0.013%), but binary event is absolute. NVDA is at $223.25, 5.2% below its 20d high of $235.74 — not a breakout candidate even absent the earnings block.
+
+---
+
+### STEP 5 — VOLUME GATE STATUS (Watchlist)
+
+The critical unresolved gate for all three energy candidates is **today's (May 19) closing volume**. All three need ≥1.5× average volume on the *entry day* bar to qualify for the 2b-LONG momentum lane:
+
+| Ticker | Vol Avg (20d) | 1.5× Threshold | Prior Session (May 18) | Today Min Needed |
+|--------|---------------|----------------|------------------------|------------------|
+| XOM | 16,797,568 | 25,196,352 | 20,075,013 (1.20×) ❌ | ~25.2M |
+| CVX | 9,674,642 | 14,511,963 | 9,881,486 (1.02×) ❌ | ~14.5M |
+| XLE | 36,645,154 | 54,967,731 | 41,519,997 (1.13×) ❌ | ~55.0M |
+
+If today's session closes with volume at or above these thresholds, today (May 19) becomes a new valid breakout confirmation bar, enabling a bracket entry evaluation at Wednesday's pre-market open.
+
+Note: Today is running +0.95% on XOM, +0.83% on XLE — the price direction is constructive. Volume pickup is the remaining unknown.
+
+---
+
+### STEP 6 — OPTIONAL RESEARCH NOTE
+
+XOM's +0.95% intraday performance against a −1.10% WTI backdrop constitutes notable relative strength warranting documentation. CVX (+0.33%) and XLE (+0.83%) confirm this is sector-wide, not XOM-specific. The energy complex is behaving as if the Iran deal geopolitical fear was "sell the rumor, buy the reality" — fear of a deal was the selling pressure last week; the actual news (strike called off) is being absorbed without further downside. No news-based WebSearch result obtained (news endpoint returned no output); analysis is inference from price action + pair divergence.
+
+---
+
+### ACTIONS TAKEN: NONE
+
+- No positions cut (none existed)
+- No stops tightened (none existed)
+- No thesis exits triggered
+- No new orders placed
+- No DAILY-SUMMARY.md entry (no action taken per workflow rules)
+
+---
+
+### Watchlist for Wednesday Pre-Market (2026-05-20)
+
+1. **XOM** — Thesis intact, energy relative strength confirmed. Re-evaluate if today's final volume prints ≥25.2M (1.5×). Pivot: $160.49. Live mid $162.02 = +0.95% extension above pivot (within 5% cap). New bracket limit ~$162.00 area if volume confirms.
+2. **CVX** — Same energy thesis. Needs ≥14.5M volume today. Still tracking XOM closely (pair divergence 0.54σ). Evaluate independently.
+3. **XLE** — Trend Template SMA data incomplete (Dec 2025 split disruption). Volume needs ≥55.0M. Double-gated. Lower priority than XOM/CVX single names.
+4. **NVDA** — **HARD BLOCK Wednesday May 20** (earnings after close). Evaluate Thursday May 22 pre-market only.
+5. **FOMC Minutes Wednesday 2:00 PM ET** — No new entries placed in the 30-minute window before this release.
+6. **Materials names (FCX, NEM)** — Deferred from last week. Eligible for Wednesday scan if energy names don't qualify (sector diversification purpose).
