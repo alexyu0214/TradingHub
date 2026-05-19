@@ -2657,3 +2657,175 @@ The session's dominant story is the energy sector's continued rally: XOM traded 
 3. **NVDA** — Hard block until post-earnings (Thursday May 22 pre-market evaluation). No entry of any kind this week.
 4. **XLE** — Monitor for vol confirmation ≥ 1.5× before entering. RSI 61.34 and Z +2.133 are both in correct ranges for 2b-LONG if volume shows up Tuesday.
 
+
+---
+
+## 2026-05-19 — Pre-Market Research
+
+### Account
+- **Equity:** $99,056.46
+- **Cash:** $99,056.46 (100% — fully deployed in cash)
+- **Buying power:** $198,112.92 (2× margin)
+- **Open positions:** 0
+- **Open orders:** 0 (Monday's XOM bracket expired unfilled as expected)
+- **Daytrade count:** 0/3
+- **Phase P&L:** −$943.54 (−0.944%)
+
+---
+
+### Market Context
+- **WTI Crude Oil:** ~$107.47/bbl, −1.10% today. Trump called off planned military strike on Iran → risk premium fading. Other data points: $103.33 (−1.82%) and $108.03 June delivery (−0.60%). YTD WTI: +76.30%.
+- **Brent Crude:** ~$109.69–$110.37/bbl, −1.50% to −2.41%. July futures −$1.73 (−1.5%) to $110.37.
+- **S&P 500 Futures (E-mini):** 7,390.75, −35 pts (−0.47%). Tech sector selling off; rising bond yield concerns; 50/50 Fed rate hike odds.
+- **VIX:** 17.82 (opened 18.07, prior close 18.43, −3.31%). 52-week range 13.38–35.30.
+- **10-year yield:** ~4.60% | **30-year yield:** ~5.138% — both elevated.
+- **Earnings today:** Home Depot (HD) reported Q1 pre-market — EPS $3.43 (beat $3.41 est.), Revenue $41.77B (beat $41.59B est.), but EPS down from $3.45 YoY; comps +0.6%. Modest beat, weak underlying trend. Other reporters: RDCM, CRNT, THR, EXP, AS, ANTA.
+- **Key event tomorrow (Wed May 20):** NVDA earnings after close (HARD BLOCK on any NVDA entry) + FOMC Meeting Minutes release.
+- **Economic calendar today:** April Pending Home Sales (prior MoM +1.5%, exp +1.0%). Philadelphia Fed President Paulson speech 7:00 PM ET.
+- **Sector momentum YTD (as of May 12):** Energy +27.87% 🥇 | IT +23.55% | Materials +15.24% | Industrials +12.84% | Real Estate +10.46% | Consumer Staples +7.32% | Utilities +5.74% | Consumer Discretionary −0.03% | Comm Services −1.82% | Financials −6.55% | Health Care −7.60%
+- **News on held tickers:** None (no open positions).
+
+---
+
+### VIX Regime
+- **Current VIX:** 17.82
+- **Regime:** Normal (14–22)
+- **Sizing multiplier:** 1.00×
+- **Cold-start default:** 10% per position (< 30 closed trades)
+- **Entry status:** All entry types permitted; normal sizing applies.
+
+---
+
+### Trade Ideas (Cleared Both Layers)
+
+**NONE — all candidates rejected. See Skipped Candidates below.**
+
+---
+
+### Skipped Candidates
+
+**1. XOM | LONG | Lane 2b-LONG | Energy**
+
+*Layer A checklist:*
+- Catalyst today: ❌ **CONTRA-CATALYST** — Oil −1.10% on Trump calling off Iran strike. Supply-fear premium deflating. The thesis (Iran risk premium → elevated WTI → XOM earnings tailwind) is partially undermined today. Not a positive catalyst day.
+- Sector posture: ✅ Energy still #1 sector YTD (+27.87%), but intraday sector is selling off
+- RSI(14): 59.91 ✅ (50–70 range for 2b-LONG)
+- Volume: ❌ Early session 5,258,308 vs 20d avg 16,956,669. On an oil-down day, energy volume is expected to trend toward distribution, not accumulation. Projection: highly unlikely to reach 1.5× (~25.4M) today.
+
+*Layer B — 2b-LONG:*
+- Z-Score: +2.42 ✅ (≥ +1.0)
+- Close > prior 20d high: ✅ $160.72 > $160.49 (barely, +0.14%)
+- RSI 50–70: ✅ (59.91)
+- Volume ≥ 1.5× 20d avg: ❌ **EXPECTED FAIL** — oil-down day contra-catalyst; entry-day volume projection well below threshold
+- 50d SMA > 200d SMA: ✅ $155.15 > $136.41 (200d SMA proxied from 150-bar history; bullish structure confirmed)
+
+*Minervini Long Trend Template:*
+- Price ($160.72) > 50d SMA ($155.15): ✅
+- Price > 150d SMA ($136.41): ✅
+- Price > 200d SMA (proxy $136.41): ✅
+- 150d SMA ≥ 200d SMA: ✅ (both equal due to data window; structurally bullish)
+- 200d SMA trending up (vs 1 month ago $133.98): ✅ ($136.41 > $133.98)
+- 50d SMA > 150d SMA: ✅ ($155.15 > $136.41)
+- 50d SMA > 200d SMA: ✅
+- Price > 30% above 52-week low ($110.64): ✅ (+45.3%)
+- Price within 25% of 52-week high ($171.47): ✅ (6.3% below)
+- Trend Template: **PASS**
+
+*Pair: CVX | Pair Z-Score: +1.61 | Divergence: |2.42 − 1.61| = 0.81σ ✅ (≤ 1.5σ)*
+
+*Summary: Layer A fails (contra-catalyst); Layer B fails (volume gate). REJECT.*
+
+---
+
+**2. CVX | LONG | Lane 2b-LONG | Energy**
+
+*Layer B — 2b-LONG:*
+- Z-Score: +1.61 ✅ (≥ +1.0)
+- Close > prior 20d high: ❌ **FAIL** — $194.29 < $196.12 (20d pivot). CVX has pulled back from its high. Not a breakout day.
+- RSI(14): 53.12 ✅
+- Volume: May 18 was 0.97× avg — below average, no accumulation signal
+- Catalyst today: ❌ Oil −1.10%
+
+*Summary: Layer B fails on breakout test. REJECT.*
+
+---
+
+**3. XLE | LONG | Lane 2b-LONG | Energy ETF**
+
+*Layer B — 2b-LONG:*
+- Z-Score: +1.93 ✅ (≥ +1.0)
+- Close > prior 20d high: ❌ **FAIL** — $60.565 vs 20d pivot $60.58 (−0.02% below). Effectively at pivot but not a confirmed breakout.
+- RSI(14): 57.20 ✅
+- Volume: May 18 was 1.00× avg; May 15 breakout bar was 0.81× avg (never had institutional-volume breakout day)
+- Catalyst today: ❌ Oil −1.10%
+
+*Trend Template (XLE post-split, 113 post-split bars):*
+- Price ($60.565) > 50d SMA ($58.16): ✅
+- Price > 150d proxy ($53.42): ✅
+- >30% above 52-week low ($43.81): ✅ (+38.2%)
+- Within 25% of 52-week high ($62.56): ✅ (3.2% below)
+- 50d SMA ($58.16) > 150d proxy ($53.42): ✅
+- Note: XLE had a structural rebalance in Dec 2025 (~$92→$45); post-split series used.
+- Trend Template: **PASS** (conditionally — rebalance event noted)
+
+*Summary: Layer B fails on breakout test (not above 20d high). REJECT.*
+
+---
+
+**4. HD | LONG or SHORT | Consumer Discretionary** — NOT evaluated with bars
+- Earnings beat: EPS $3.43 vs $3.41 est. BUT EPS down YoY ($3.45 → $3.43). Comparable sales +0.6% is muted.
+- Sector (Consumer Discretionary) = −0.03% YTD — not in momentum; fails sector posture for long.
+- A short would require Minervini short template + Z ≥ +2.0 + RSI > 70 — no bar data pulled.
+- Pre-market earnings reaction unclear; insufficient data for quant gates.
+- **SKIP** — no bars pulled, sector not in momentum for long; insufficient quant data for short.
+
+---
+
+**5. NVDA — HARD BLOCK (earnings Wednesday May 20)**
+- Any entry this week is prohibited. Re-evaluate Thursday May 21 post-earnings.
+
+---
+
+**6. Materials / Industrials (FCX, NEM, CAT, GE) — NOT PULLED**
+- YTD momentum: Materials +15.24%, Industrials +12.84% — both valid momentum sectors.
+- Rationale for skip today: NVDA binary + FOMC minutes tomorrow create broad market noise. Adding speculative new-sector names on a pre-binary day reduces edge certainty.
+- **Deferred to Wednesday post-NVDA** when market direction is clearer.
+
+---
+
+### Quant Snapshot (All Evaluated Names)
+
+| Ticker | Z-Score | RSI(14) | 20d High | Current | Trend Template | Pair | Pair Z | Div | Lane Tried | Gate Failed |
+|--------|---------|---------|----------|---------|----------------|------|--------|-----|------------|-------------|
+| XOM | +2.42 | 59.91 | $160.49 | $160.72 | PASS | CVX | +1.61 | 0.81σ ✅ | 2b-LONG | Volume (contra-catalyst) |
+| CVX | +1.61 | 53.12 | $196.12 | $194.29 | PASS | XOM | +2.42 | 0.81σ ✅ | 2b-LONG | Close < 20d high ❌ |
+| XLE | +1.93 | 57.20 | $60.58 | $60.565 | PASS | XOM | +2.42 | 0.49σ ✅ | 2b-LONG | Close < 20d high ❌ |
+
+---
+
+### Risk Factors
+1. **Iran peace talks** — Trump calling off military strike deflates energy's primary catalyst. WTI −1.1%. This is the session's dominant macro force. If Iran negotiations progress, oil could fall further toward $100, compressing energy margins.
+2. **NVDA earnings Wednesday** — Creates a market-wide binary event. Analysts view it as a critical AI buildout test. A miss would hit IT sector hard (IT = +23.55% YTD, significant gains at risk). Broad caution expected through tomorrow's close.
+3. **FOMC minutes Wednesday** — Markets 50/50 on a rate hike before year-end. Minutes could shift that pricing significantly. Rising yields (10yr 4.60%, 30yr 5.138%) are already compressing equity multiples.
+4. **Tech sector selloff ongoing** — S&P 500 futures −0.47% pre-market. Tech leadership being questioned despite strong YTD gains.
+5. **Elevated yields** — 30-year at 5.138% creates headwinds for real estate, utilities, and consumer discretionary sectors.
+6. **Energy thesis durability** — Even with oil at $107, the geopolitical fear premium was a key driver. If Iran risk normalizes, energy could consolidate or pull back, keeping XOM/CVX below breakout pivots.
+
+---
+
+### Decision
+**HOLD — 0 new entries today**
+
+*Reasoning:* The primary setup from yesterday's watchlist (XOM/CVX/XLE) has been negatively catalyzed by today's oil decline (Iran peace news). All three energy candidates fail Layer B: XOM on expected volume failure (contra-catalyst day); CVX on breakout test (price below 20d pivot); XLE on breakout test (price at/below pivot). The Patience Rule applies — zero trades today is the correct outcome. Wednesday brings NVDA earnings and FOMC minutes, both major market catalysts that will clarify direction. The energy thesis may reassert itself once Iran news settles; oil at $107 is still structurally elevated. Preserve powder for cleaner setups post-binary events.
+
+**Wednesday Action Plan:**
+1. **XOM** — Re-evaluate at open. If oil stabilizes/bounces AND XOM is above $160.49 on volume ≥ 1.5× avg, the 2b-LONG thesis is still valid. New limit bracket near $160–$162.
+2. **CVX** — Re-evaluate independently. Need CVX to reclaim $196.12 pivot with ≥ 1.5× volume.
+3. **XLE** — Re-evaluate. Need confirmed close above $60.58 with ≥ 1.5× volume.
+4. **Materials scan** — Pull FCX, NEM bars Wednesday morning as next momentum sector.
+5. **NVDA** — Hard block Wednesday. Evaluate Thursday post-earnings only.
+6. No stale brackets to re-place (Monday's XOM bracket expired per plan; no orders queued).
+
+---
+
+*Circuit breakers: ✅ All clear — Phase P&L −0.944% (limit −5%) | Drawdown −0.944% from $100,000 start (limit −15%) | PDT: 0/3 | Positions: 0/6 | Week trades: 0/3*
