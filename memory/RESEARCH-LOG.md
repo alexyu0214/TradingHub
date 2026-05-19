@@ -2829,3 +2829,151 @@ The session's dominant story is the energy sector's continued rally: XOM traded 
 ---
 
 *Circuit breakers: ✅ All clear — Phase P&L −0.944% (limit −5%) | Drawdown −0.944% from $100,000 start (limit −15%) | PDT: 0/3 | Positions: 0/6 | Week trades: 0/3*
+
+---
+
+## 2026-05-19 — Midday Rescan Addendum (17:25 UTC / ~13:25 ET)
+
+**VIX Regime at rescan:** Normal (~18.43–18.86 from morning research) — Sizing multiplier: 1.00×
+**Account at rescan:** Equity $99,056.46 | Cash $99,056.46 (100%) | Deployed: 0% | Positions: 0/6 | Week trades: 0/3 | PDT: 0/3
+**Orders at rescan:** NONE (Monday's XOM bracket limit $157.92 expired unfilled at session close; no carry-over orders exist)
+
+---
+
+### Skipped at Open — Re-evaluated at Midday
+
+#### XOM — STILL SKIPPED
+
+| Metric | At Open | Midday |
+|--------|---------|--------|
+| Skip reason | Bracket limit $157.92 unfilled; XOM gapped/ran above limit on open; order expired EOD May 18 | Same + spread R-flagged/unreliable + follow-through day volume below threshold |
+| Bid / Ask | — | $153.05 / $161.87 (**"R" condition flag** — stale/indicative NBBO) |
+| **Spread %** | — | **5.60% → FAILS <1% gate** |
+| Z-Score (20d) | +2.749 (morning research) | **+2.425** (vs 20d mean $151.46, σ $3.72) |
+| RSI(14) | ~64.2 | **64.44** |
+| Prior 20d high | $157.92 (May 15 pivot) | $160.49 (yesterday's close = new 20d high) |
+| Current vs pivot | — | $160.49 = AT 20d high (not above it intraday) |
+| May 18 vol | — | 20,075,013 = **1.20× avg** ❌ (follow-through day, below 1.5× required) |
+| May 15 breakout vol | 1.66× ✅ | 1.66× ✅ (original breakout bar, unchanged) |
+| Pivot extension | 1.96% ✅ | ($160.49/$157.92 − 1) = **1.63%** ✅ (≤5%) |
+| Pair (CVX) Z | +1.21σ | **+2.131σ** | Divergence: 0.294σ ✅ |
+| Catalyst | WTI $105+ / Hormuz ✅ | WTI ~$107 (prior session), Hormuz active ✅ |
+
+**Layer B gate failures:**
+1. **Spread FAIL: 5.60% (R-flagged)** — The live Alpaca quote carries condition code "R" (restricted/indicative NBBO, likely a crossed/locked market or late SIP data artifact during active session). A 5.60% bid-ask spread is not a reliable market for a bracket limit entry. Cannot responsibly place a new bracket order into this quote.
+2. **Volume FAIL: May 18 follow-through day 1.20×** — While the May 15 breakout bar printed a strong 1.66× confirming the original setup, the follow-through day (May 18) only reached 1.20×. For the 2b-LONG momentum lane, the breakout must be confirmed with institutional participation; a below-1.5× follow-through day reduces conviction on sustained accumulation.
+
+**Thesis status: FULLY INTACT.** WTI elevated, Hormuz supply disruption active, energy sector YTD leader. The structural entry thesis is unbroken. This is a data/quote-quality gate failure, not a thesis failure. **Re-evaluate at Wednesday pre-market** with fresh NBBO quotes and a clean daily bar for today's volume to assess whether today's session generates the ≥1.5× confirmation needed.
+
+**VERDICT: ❌ STILL SKIPPED — Spread R-flagged (5.60%, not actionable) + follow-through vol 1.20× < 1.5×**
+
+---
+
+#### NVDA — STILL SKIPPED
+
+| Metric | At Open | Midday |
+|--------|---------|--------|
+| Skip reason | Close $225.32 < 20d high $235.74 (no breakout); Vol 1.19×; EARNINGS BINARY WEDNESDAY (hard block) | WORSENED on price; hard block unchanged |
+| Bid / Ask | — | $223.56 / $223.59 |
+| **Spread %** | — | **0.013% ✅ (normalized)** |
+| Z-Score (20d) | +1.56 (morning research) | **+1.122** (20d mean $211.31, σ $10.92) |
+| Close vs 20d high ($235.74) | $225.32 (-4.4% below) | **$223.57 (-5.2% below)** ❌ — WORSENED |
+| RSI(14) | — | **56.59** ✅ |
+| May 18 vol | — | 0.95× ❌ (below average) |
+
+**Gate failures (structural — not timing):**
+1. **Close < 20d high: FAIL** — NVDA trading at $223.57, which is 5.2% below its 20d pivot of $235.74. Price has moved **further away** from the breakout trigger since this morning ($225.32 → $223.57 = −$1.75 intraday). The breakout condition has gotten harder to satisfy, not easier.
+2. **Earnings BINARY HARD BLOCK** — NVDA reports Q1 FY2027 results **tomorrow night (Wednesday May 20 after close)**. This is an absolute, permanent block for the remainder of this week. No entry is permissible under any quant/spread conditions while an earnings binary is this close.
+3. **Volume 0.95×** — Below average; no institutional accumulation signal.
+
+**VERDICT: ❌ STILL SKIPPED — Price below 20d high (worsened) + earnings binary block Wednesday (permanent for this week)**
+
+**Post-earnings watch:** Re-evaluate Thursday May 22 pre-market. If NVDA beats and gaps up to reclaim $235.74+ with volume ≥1.5×, the 2b-LONG setup could qualify. If it disappoints and drops toward Z ≤ −2.0 (~$189), evaluate for 2a-LONG mean-reversion (requires RSI <30 confirmation).
+
+---
+
+#### XLE — STILL SKIPPED
+
+| Metric | At Open | Midday |
+|--------|---------|--------|
+| Skip reason | Vol 0.86× < 1.5×; Trend Template incomplete (Dec 2025 split disrupts SMA data) | Same structural failures; spread normalized |
+| Bid / Ask | — | $61.11 / $61.12 |
+| **Spread %** | — | **0.016% ✅ (excellent)** |
+| Z-Score (20d) | +2.133 (Monday close) | **+2.377** (20d mean $57.81, σ $1.39) |
+| Close vs 20d high ($60.58) | $60.565 (≈ at pivot, Mon close) | **$61.115 > $60.58** ✅ (intraday new 20d high) |
+| RSI(14) | ~57.2 | **61.99** ✅ |
+| Breakout day volume (May 18) | 1.13× (was the skip reason at open) | **1.13×** — UNCHANGED (daily bar is fixed) |
+| Trend Template | INCOMPLETE (split-adjusted SMA gap) | **STILL INCOMPLETE** |
+
+**Gate failures (structural — spread normalized but core gates remain):**
+1. **Volume FAIL (structural): Breakout day May 18 = 1.13×** — The 2b-LONG lane requires the breakout **confirmation day** to print ≥1.5× volume. Yesterday (May 18) was the day XLE closed above its prior 20d high at 1.13× average volume. This is a **settled, permanent daily bar** — it does not improve intraday or midday. The institutional conviction required for the momentum lane was absent on the critical day.
+2. **Trend Template INCOMPLETE** — The Dec 2025 2:1 split in XLE disrupts pre-split price/SMA data. Cannot verify the full Minervini Long Trend Template (specifically 50d/150d/200d SMA alignment, 200d SMA trend direction, 52-week high/low anchors from the pre-split series). This was the same disqualifier at market-open and has not changed.
+
+**Notable:** XLE's Z-Score has extended from +2.133 (Monday close) to +2.377 intraday — the ETF continues to run higher without institutional volume confirmation. This is the exact risk the volume gate is designed to prevent: chasing a momentum move that lacks professional accumulation. As the Z extends further above +2.0, entering now would be more extended than the already-extended Monday level.
+
+**VERDICT: ❌ STILL SKIPPED — Breakout day vol 1.13× (daily bar, immutable) + Trend Template incomplete**
+
+**Forward watch:** If XLE opens tomorrow with a strong gap-up continuation AND today's full session volume prints ≥1.5× average (~54.97M shares), that becomes a new breakout day. Separately, if the SMA data gap for XLE can be resolved (operator action: obtain adjusted historical data), the Trend Template can be fully assessed. Until then, XLE remains blocked on two structural grounds.
+
+---
+
+#### HD — STILL SKIPPED
+
+| Metric | At Open | Midday |
+|--------|---------|--------|
+| Skip reason | Earnings pre-market TODAY (binary event) | Same |
+| Bid / Ask | — | $297.00 / $303.00 |
+| **Spread %** | — | **2.00% → FAILS <1% gate** |
+| Catalyst status | Earnings reported pre-market (EPS $3.43 beat $3.41; Rev beat but comps +0.6% muted) | Post-earnings reaction: spread still wide, in price discovery |
+
+**Both gates fail simultaneously:** (1) Spread 2.00% >> 1% threshold — still in post-earnings price discovery. (2) The earnings event itself was the skip reason at open; post-earnings direction is now establishing but spread has not yet normalized to confirm reliable NBBO.
+
+**VERDICT: ❌ STILL SKIPPED — Spread 2.00% wide + post-earnings price discovery ongoing**
+
+**Forward watch:** Re-evaluate Wednesday pre-market. If HD's spread normalizes (<1%), pull bars, compute Z-Score and RSI, check Minervini Trend Template (Consumer Discretionary sector = −0.03% YTD, weak posture for long entries). A post-earnings mean-reversion long requires Z ≤ −2.0 + RSI <30 (2a-LONG); a momentum continuation requires breakout above post-earnings high with ≥1.5× volume (2b-LONG). Neither is assessable today.
+
+---
+
+### Trades Fired This Rescan
+
+**NONE.**
+
+Zero candidates re-cleared the composite Layer A + Layer B gates upon midday re-evaluation.
+
+---
+
+### Portfolio State at Rescan
+
+| Field | Value |
+|-------|-------|
+| Equity | $99,056.46 |
+| Cash | $99,056.46 (100%) |
+| Open positions | 0/6 |
+| Week trades used | 0/3 |
+| PDT daytrade count | 0/3 |
+| Phase P&L | −$943.54 (−0.944%) vs $100,000 start |
+| Circuit breakers | ✅ All clear (day 0.00%, phase −0.94%, drawdown −0.94%) |
+
+---
+
+### Patience Rule Applied
+
+All four skipped candidates remain below their respective entry thresholds. Gate failures are structural — not spread-normalization timing issues:
+
+- **XOM:** Quote flagged R (unreliable NBBO, 5.60% apparent spread); follow-through day volume 1.20× < 1.5×. Thesis intact.
+- **NVDA:** Price moved further from 20d high (−5.2%); earnings binary block permanent for this week.
+- **XLE:** Breakout day volume 1.13× (immutable daily bar) + Trend Template incomplete.
+- **HD:** Spread 2.00% (post-earnings price discovery); sector posture weak for new longs.
+
+No gates were lowered. No trade was forced. Zero trades this rescan is the correct disciplined outcome.
+
+---
+
+### Key Watchlist for Wednesday Pre-Market (May 20)
+
+1. **XOM** — Thesis intact. Re-evaluate with fresh NBBO quotes (not R-flagged). Need: (a) clean spread < 1%, (b) verify whether today's session volume closed ≥1.5× (new pivot day), (c) new limit at or near today's close. Note: If XOM has moved significantly above $160.49, recompute pivot extension.
+2. **XLE** — Verify today's full session volume vs 36.6M avg. If ≥ 1.5×, today becomes a new valid breakout bar; re-evaluate with clean Thursday entry. Trend Template SMA issue remains unresolved.
+3. **NVDA** — HARD BLOCK Wednesday (earnings tonight after close). Evaluate Thursday May 22 pre-market only.
+4. **HD** — Post-earnings: pull bars Wednesday, check if spread normalized, assess Z/RSI/TT.
+5. **FOMC Minutes (Wednesday 2:00 PM ET)** — Major macro event. Could move rates expectations materially. Avoid placing new entries just before the 2 PM ET release. Any open bracket limits should be evaluated for thesis continuity post-release.
+
