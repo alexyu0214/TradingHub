@@ -3429,3 +3429,93 @@ Zero trades is the correct call. Patience rule applies.
 
 **Trades today:** None — HOLD decision confirmed by Layer A + Layer B failures on all candidates.
 
+
+---
+
+### 2026-05-20 — Midday Rescan Addendum (13:39 ET)
+
+**VIX Regime at rescan:** 17.83 — Normal (1.00× multiplier). No change from morning.
+
+**Account at rescan:** $99,056.46 equity | $99,056.46 cash (100%) | 0 positions | 0% deployed | 0/3 week trades | 0/3 day trades
+
+**Spread check — all three candidates now have narrow, normalized spreads:**
+- XOM: bid $158.14 / ask $158.28 → spread **0.09%** ✅ (was wide pre-open)
+- NVDA: bid $224.76 / ask $224.79 → spread **0.01%** ✅
+- HD: bid $308.80 / ask $311.00 → spread **0.71%** ✅ (technically < 1%, but $2.20 wide — atypical for HD; stale quote flagged)
+
+---
+
+**Skipped at open, re-evaluated:**
+
+| Ticker | Direction | Spread | Z-Score | Verdict |
+|--------|-----------|--------|---------|---------|
+| XOM | 2b-LONG | 0.09% ✅ | +1.384 ✅ | **STILL SKIPPED** |
+| NVDA | 2b-LONG | 0.01% ✅ | +1.154 ✅ | **STILL SKIPPED** |
+| HD | 2b-SHORT | 0.71% ✅ | −0.670 ❌ | **STILL SKIPPED** |
+
+---
+
+**Detailed re-evaluation:**
+
+**XOM (2b-LONG lane):**
+- Live mid: $158.21 (vs May19 settle $162.55 = −2.67%)
+- Z-Score vs 20d: +1.384 ✅ (≥+1.0)
+- **❌ FATAL: Price $158.21 is BELOW breakout pivot $160.49** — the May18 20d high the strategy requires a confirmed close above. XOM has retreated back underneath the pivot intraday. The momentum lane requires the close (or current price) to be above the 20d high for the breakout signal to remain active.
+- ❌ 200-SMA unverifiable (152 settled bars; need 200) — Trend Template cannot clear. Structural limitation (~7 weeks to resolve).
+- ❌ Volume gate (≥1.5× avg = 25.4M shares): Cannot confirm with intraday bar only; no settled bar for today yet.
+- ✅ RSI estimated ~58–63 (50–70 range) — would pass.
+- ✅ XOM/CVX pair divergence 0.34σ (morning reference) — well within 1.5σ.
+- **Context:** WTI crude continuing to decline today (−3.52% session). Energy sector pullback is real. Structural multi-week thesis (Hormuz/geopolitical bid) remains intact, but TODAY is not an entry day. XOM needs to reclaim $160.49 and build a fresh bar with ≥1.5× volume. Wait for Thursday's settled bar.
+
+**NVDA (2b-LONG lane):**
+- Live mid: $224.77 (vs May19 settle $220.61 = +1.9% — but vs premarket high ~$225.28, the pop has FADED)
+- Z-Score vs 20d: +1.154 ✅ (≥+1.0)
+- **❌ FATAL: No breakout** — $224.77 is 4.65% BELOW pivot $235.74 (May14 20d high). Momentum lane requires close above pivot. NVDA has never come close today.
+- **❌ AVGO pair divergence: 2.171σ** — significantly exceeds 1.5σ threshold. AVGO and broader semis are not confirming. This is an isolated post-earnings event, not a sector rotation.
+- ❌ 200-SMA unverifiable (structural).
+- ❌ Volume intraday: Cannot confirm ≥1.5× (235.8M) settled bar. Morning projection was barely 1.01× — far below requirement.
+- **Earnings pop assessment:** The +$4.67 premarket post-earnings pop has essentially reversed. NVDA is now only +1.9% from May19 settle at 13:39 ET — a modest move that reflects the market's already-elevated pre-earnings expectations. No fresh momentum catalyst materializing today.
+- **2a-LONG (mean-reversion) check:** Z = +1.154 — need ≤ −2.0. Not applicable. NVDA is not oversold.
+- **Watchlist update:** Thursday thesis weakens. If NVDA closes today below $220.61 (yesterday's settle), the momentum thesis is fully invalidated. Only re-qualify as 2b-LONG if price breaks and closes above $235.74 on ≥1.5× volume.
+
+**HD (2b-SHORT lane):**
+- Live mid: $309.90 (vs May19 settle $302.44 = **+2.47%** — stock is RISING)
+- Z-Score vs 20d: **−0.670** ❌ — has WEAKENED from this morning's −1.213 as price bounced. Now fails the Z ≤ −1.0 gate.
+- **❌ FATAL: Price $309.90 is 4.16% ABOVE breakdown pivot $297.51.** Short momentum lane requires price to close BELOW the 20d low. HD is moving the wrong direction.
+- ❌ Trend Template (SHORT): Only 20.9% below 52wk high ($391.90) — need ≥30%. Gap is structural (need HD to fall to ~$274.33 to qualify). No near-term path.
+- ❌ 200-SMA unverifiable (structural).
+- ✅ Volume May19: 1.78× avg — would have passed. Irrelevant given other failures.
+- ✅ RSI ~35–42 (30–50 range) — still in window.
+- **Sector note:** LOW reported EPS beat +3.8% this morning, raising annual outlook. This directly contradicts the "consumer discretionary rolling over" thesis for HD. Sector signal is now MIXED, not aligned for short.
+- **⚠️ WATCHLIST REMOVAL:** HD is removed from active watchlist. The >30% below 52wk high Trend Template condition is structural — HD would need to fall to $274.33 before this gate could even potentially clear. Not a realistic near-term setup.
+
+---
+
+**FOMC Minutes Warning (2:00 PM ET):**
+- No new orders within 30 min of 2:00 PM ET per CONSTRAINTS.
+- Current time at rescan completion: ~13:45 ET.
+- No trades fired → constraint has no operational impact today.
+- Held positions: none → no management actions required around 2 PM either.
+
+---
+
+**Trades fired this rescan:** None
+
+**Patience rule applied:** Correct. No gates were lowered. Zero trades is the right outcome when no candidate re-clears all required layers. The spread normalization was confirmed for all three names, but the fundamental gate failures (price level, Z-score, Trend Template, pair divergence) that caused morning skips have either persisted unchanged or worsened in two of three cases (NVDA earnings pop faded; HD Z weakened further as price bounced).
+
+---
+
+**Updated Watchlist for Thursday Pre-Market (May 21):**
+
+1. **XOM** — Re-evaluate if today's settled bar (post-close) shows:
+   - Close ≥ $160.49 (reclaims breakout pivot) AND
+   - Volume ≥ 25.4M (1.5× avg). If both: re-enter as 2b-LONG Thursday.
+   - If close < $160.49: breakout invalidated, build new base, wait.
+
+2. **NVDA** — Thesis significantly weakened. Only re-qualify if:
+   - Close today > $235.74 on ≥235.8M volume (original 2b-LONG conditions).
+   - If today closes below $220.61: momentum thesis fully invalidated. Watch for 2a-LONG opportunity only if Z reaches ≤ −2.0 (would require ~$191 or below based on current 20d distribution — unlikely near-term).
+
+3. **HD** — **Removed from watchlist.** Structural TT gap (needs −30% below 52wk high). Not a viable short under current Trend Template rules. Log closure of this thesis.
+
+4. **FOMC Minutes Fallout (today 2 PM):** Post-minutes, note tone in tomorrow's pre-market research. Hawkish = rate-sensitive sector opportunities (Financials short, Utilities movement). Dovish = possible continuation of risk-on. Update market context section Thursday.
