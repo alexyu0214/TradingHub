@@ -596,3 +596,19 @@ All three skipped — see TRADE-LOG.md for per-ticker gate failures.
 
 **Thursday watchlist priorities:** XOM (volume + pivot hold), NVDA (breakout above $235.74 + AVGO convergence)
 
+
+## 2026-05-20 — EOD
+
+**Portfolio:** $99,056.46 (+0.000% day, −0.944% phase)
+**Cash:** $99,056.46 (100%)
+**Deployed:** 0%
+**Daytrade count:** 0/3
+
+**Trades today:** none
+**Open positions:** none
+**Stops tightened:** none
+**Losers cut:** none
+
+**Notes:** Flat day, no activity, all rules clear. FOMC Minutes interpreted hawkishly — energy AH quotes (XOM −8%, CVX −7.8%) confirm sector weakness but no positions held. NVDA beat fully priced in; three consecutive gate failures. Week trades 0/3 fully intact. Thursday pre-market: confirm May 20 settled bars before new entries.
+
+---

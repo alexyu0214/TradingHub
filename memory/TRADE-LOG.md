@@ -994,3 +994,20 @@ Every trade (entry, exit, stop-out) is logged here with full thesis, entry price
 **Circuit breakers:** ✅ All clear — Day 0.00% (lim −2%) | Phase −0.944% (lim −5%) | Drawdown −1.15% from $100,206.70 peak (lim −15%)
 **PDT count:** 0/3 | **Week trades:** 0/3 | **Positions:** 0/6
 
+
+### May 20 — EOD Snapshot (Day 23, Wednesday)
+
+**Portfolio:** $99,056.46 | **Cash:** $99,056.46 (100%) | **Day P&L:** $0.00 (0.000%) | **Phase P&L:** −$943.54 (−0.944%) | **Deployed:** 0%
+
+| Ticker | Shares | Entry | Close | Unrealized P&L | Stop | Time |
+|--------|--------|-------|-------|----------------|------|------|
+| — | — | — | — | — | — | — |
+
+*No open positions.*
+
+**Trades today:** none
+
+**Notes:** Day 23 closes flat with portfolio at 100% cash. Today's EOD confirms what the afternoon scan already flagged: the FOMC Minutes (2:00 PM ET) appear to have been interpreted hawkishly, with energy sector AH quotes (XOM −8%, CVX −7.8%, XLE −4.8%) signaling a material sector selloff during the session. No energy exposure was held, so the portfolio was fully insulated. NVDA's AH price ($220.27) essentially matched its settle ($220.61), confirming the earnings beat was fully priced in — this marks three consecutive evaluation sessions (May 18–20) where NVDA failed the momentum lane gates. No new orders were placed today; the XOM bracket limit placed May 18 expired unfilled (day order). Week trades remain 0/3 with the weekly allowance fully intact heading into Thursday. Thursday's pre-market priority: confirm May 20 final bar prices via the bars API before assessing any re-entry in energy or new sector ideas — AH bid-only quotes are indicative only. HD short remains gated by Trend Template (−22.8% vs −30% required). All circuit breakers clear.
+
+**Circuit breakers:** ✅ All clear — Day 0.000% (lim −2%) | Phase −0.944% (lim −5%) | Drawdown −1.15% from $100,206.70 peak (lim −15%)
+**PDT count:** 0/3 | **Week trades:** 0/3 | **Positions:** 0/6
