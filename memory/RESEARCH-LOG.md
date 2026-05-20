@@ -3519,3 +3519,118 @@ Zero trades is the correct call. Patience rule applies.
 3. **HD** — **Removed from watchlist.** Structural TT gap (needs −30% below 52wk high). Not a viable short under current Trend Template rules. Log closure of this thesis.
 
 4. **FOMC Minutes Fallout (today 2 PM):** Post-minutes, note tone in tomorrow's pre-market research. Hawkish = rate-sensitive sector opportunities (Financials short, Utilities movement). Dovish = possible continuation of risk-on. Update market context section Thursday.
+
+---
+
+## 2026-05-20 — Afternoon Scan Addendum (~20:10 UTC / ~4:10 PM ET)
+
+**Scan time:** Post-session (market closed 20:00 UTC / 4:00 PM ET); scan ran at ~20:10 UTC
+**VIX regime at scan:** NORMAL (17.83 from morning research) | Sizing multiplier: 1.00×
+
+---
+
+### STEP 1 — Order & Position State Reconciled vs TRADE-LOG
+
+**Orders returned by API (3 relevant, all historical):**
+
+| Order ID | Symbol | Type | Status | Detail |
+|----------|--------|------|--------|--------|
+| 1d69c496 | XOM | Bracket limit BUY 61 sh @ $159.78 | **EXPIRED** 2026-05-18T20:02 | TIF: day — never filled ✅ logged |
+| 94606e38 | XOM | Stop child $147.80 | **CANCELED** 2026-05-18T20:02 | Auto-cancelled with parent ✅ |
+| 336d922a | XOM | TP child $183.74 | **CANCELED** 2026-05-18T20:02 | Auto-cancelled with parent ✅ |
+
+- **Positions API: `[]`** — 100% cash confirmed. No filled positions.
+- **Morning bracket orders placed today (May 20): NONE** — pre-market research decision was explicit HOLD (XOM: vol 1.23× < 1.5× + Trend Template fail; NVDA: no breakout + pair divergence 2.19σ; HD: short TT structural fail). Nothing to reconcile for fills.
+- **Bracket fills today: 0**
+- **Stale limits: 0** — no open orders of any kind at scan time.
+- **TRADE-LOG reconciliation: FULLY CURRENT.** No discrepancies. All 6 historical orders match log entries exactly.
+
+---
+
+### STEP 2 — Trailing Stop Upgrades: N/A
+
+No positions held. Portfolio is 100% cash ($99,056.46). No trailing stop workflow applicable.
+
+---
+
+### STEP 3 — Stale Limit Cancellations: N/A
+
+No open orders exist. Monday's XOM bracket (1d69c496) expired naturally at session close on May 18 per its TIF: day. Nothing to cancel.
+
+---
+
+### STEP 4 — Afternoon Opportunity Scan
+
+**VIX regime:** NORMAL (1.00×) | **Positions:** 0/6 | **Week trades:** 0/3 | **PDT:** 0/3
+
+**Quant metrics computed from 25-bar settled data (through May 19) + post-session quotes:**
+
+| Ticker | May19 Settle | AH Bid | AH Implied Δ | Z-Score (vs May19) | RSI(14) | 20d High/Low | Vol May19 vs Avg | Key Gate Failure | Verdict |
+|--------|-------------|--------|--------------|---------------------|---------|--------------|-----------------|-----------------|---------|
+| XOM | $162.55 | $149.56 | **−$13.0 (−8.0%)** | +2.380 | 62.2 | 20d H: $162.55 | 1.22× ❌ (<1.5×) | Vol + 200-SMA unavail. + AH collapse implies session-day thesis break | **REJECT** |
+| CVX | $197.25 | $181.88 | **−$15.4 (−7.8%)** | +2.031 | 57.8 | 20d H: $197.25 | 1.21× ❌ | Vol + AH collapse + sector shock | **REJECT** |
+| XLE | $61.29 | $58.36 | **−$2.93 (−4.8%)** | +2.127 | 59.9 | 20d H: $61.29 | 0.86× ❌ | Vol far below 1.5× + AH decline | **REJECT** |
+| NVDA | $220.61 | mid $220.27 | ~flat | +0.767 | 58.5 | 20d H: $235.74 (no breakout) | 0.90× ❌ | Z < +1.0 for any lane; no breakout; vol below avg | **REJECT** |
+| HD | $302.44 | $291.30 | −$11.1 (−3.7%) | −1.244 | 34.8 | 20d L: $297.51 | 1.78× ✅ | Short TT −22.8% below 52wk high (need ≥−30%); 200-SMA unavail.; May19 settle above 20d low | **REJECT** |
+
+**Pair Z-Scores (from May 19 settled data):**
+- XOM (+2.380) ↔ CVX (+2.031): divergence = **0.349σ ✅** (≤1.5σ — energy sector cohesion confirmed)
+- XOM (+2.380) ↔ XLE (+2.127): divergence = **0.253σ ✅** (broad sector alignment)
+
+---
+
+**Candidate Detail Notes:**
+
+**⚠️ ENERGY SECTOR — CRITICAL DEVELOPMENT (May 20 session):**
+All three energy names (XOM, CVX, XLE) show after-hours bids that are 5–8% below their May 19 settled closes. These are bid-only R-flagged quotes (ap=0 — no ask published), which are typical of after-hours thin markets. However, the consistency across all three names (XOM −8%, CVX −7.8%, XLE −4.8%) strongly suggests a significant sector-level event occurred during today's (May 20) session. Most plausible explanations: (1) WTI crude price decline on Iran deal progress, (2) FOMC minutes (2:00 PM ET today) signaling hawkish tone that pressured energy/cyclicals, or (3) broad risk-off from NVDA post-earnings reaction. Whatever the cause, the energy thesis that has been the central focus of this account's watchlist has been materially stressed during today's session. **XOM at $149.56 AH would put it below its April structural support at $146.44 (or near it) — approaching thesis-break territory again.** This mirrors the May 6–7 pattern that triggered the original thesis-break exit.
+
+**Action required:** Do NOT re-place any energy bracket order at Thursday's pre-market open without first confirming: (1) May 20 settled closing prices via bars API, (2) WTI crude level and Iran/Hormuz news catalyst validity, (3) energy sector trend template re-assessment.
+
+**XOM — REJECT (3 independent failures):**
+1. Volume gate: May 19 vol 1.22× < 1.5× (same structural disqualifier in place since May 15 breakout day)
+2. 200-SMA unverifiable: only 152 settled bars; need 200 for full Trend Template (~6.5 more weeks)
+3. After-hours signal: AH bid $149.56 implies a ~$13 decline during today's session — if settled price reflects this, XOM would be back below its May 18 breakout pivot ($157.92–$160.49), completely resetting the momentum setup and potentially breaching April structural support
+
+**CVX — REJECT (same failure family as XOM):**
+- Z = +2.031 on May 19 data (qualifies on Layer B Z-score alone), but: (1) AH bid implies similar session decline; (2) vol 1.21× < 1.5×; (3) sector shock makes Layer A catalyst negative today.
+- The prior 20d high IS May 19's settle ($197.25) — meaning CVX would need to close tomorrow ABOVE $197.25 to qualify as a fresh breakout bar. If today's session priced CVX near $182, that is far from the breakout level.
+
+**XLE — REJECT:**
+- Volume 0.86× — the most extreme below-average reading of any energy name. The sector ETF is underperforming even the individual stocks on volume. No institutional accumulation signal.
+- AH bid $58.36 would represent a 4.8% session decline. Z-score built on May 19 data (+2.127) will reset sharply lower once May 20's close is incorporated into the 20-day window.
+
+**NVDA — REJECT:**
+- The post-earnings reaction is flat/neutral: AH mid $220.27 vs May 19 settle $220.61 (−0.15%). The earnings beat did NOT produce a sustained breakout above the $235.74 20-day high.
+- Z = +0.767 — below the +1.0 minimum for any momentum lane.
+- Vol May 19: 0.90× — below average on a key post-earnings day.
+- AVGO pair divergence (2.187σ > 1.5σ) from this morning's research remains in force — no sector confirmation.
+- **Status: NVDA has failed the momentum setup for 3 consecutive evaluation sessions (May 18, 19, 20). The earnings catalyst is now spent. Reset to pure quant watch — only re-qualify if: (a) Z returns to ≥+1.0 AND close >$235.74 on ≥1.5× vol for a new breakout, or (b) a pullback to Z ≤−2.0 + RSI <30 creates a mean-reversion long.**
+
+**HD — REJECT (structural Trend Template failure):**
+- Z = −1.244 ✅ (passes ≤−1.0 threshold for 2b-SHORT lane)
+- RSI = 34.8 ✅ (in 30–50 range for momentum short)
+- Volume May 19: 1.78× ✅ (elevated — post-earnings activity)
+- BUT Minervini Short Trend Template requires price to be **>30% below 52-week high** ($391.90). Current distance: only **−22.8%** ($302.44). Needs to reach $274.33 for the gate to clear. This is a **structural, not timing, failure** — HD has not fallen far enough from its highs to qualify as a "true laggard" by Minervini criteria. Additionally, 200-SMA is unverifiable (152 bars), and May 19's settled close ($302.44) is above the 20-day low ($297.51) — no confirmed breakdown on the last bar.
+- AH bid $291.30 would be below $297.51 if it reflects today's settled price, potentially indicating the breakdown occurred on May 20. **Re-evaluate Thursday with May 20 settled bar** — if HD closes below $297.51 today AND Z ≤ −1.0 AND volume ≥ 1.5×, the 2b-SHORT lane's price and volume gates would clear. The TT structural requirement (−30% below 52wk high) would still fail unless HD settles below $274.33.
+
+---
+
+### Afternoon Market Context
+
+Today's dominant event was the **FOMC Minutes release (2:00 PM ET)**. Based on the energy sector's severe after-hours decline (XOM −8%, CVX −7.8%, XLE −4.8%), it appears the FOMC minutes were interpreted as hawkish — language about inflation persistence (partly energy-driven) and reduced appetite for near-term rate cuts likely pushed the market to re-price risk. Energy, which had been the YTD leader (+26%), is particularly vulnerable to hawkish Fed signals because: (1) higher rates raise the discount rate on future commodity revenue; (2) a stronger dollar (hawkish Fed) suppresses oil prices; and (3) any market that associates inflation with energy prices may see energy sold alongside rate-sensitive sectors. NVDA's post-earnings reaction was essentially flat (AH mid $220.27 ≈ yesterday's $220.61 close) — a non-event that suggests the earnings beat was fully priced in. HD continued its post-earnings drift lower (AH bid $291.30, potentially approaching or breaching the $297.51 20-day low breakdown level for the first time on an intraday basis). The portfolio's 100% cash position entering today's session was, in hindsight, correct — the energy names that were the primary candidates would have been underwater during today's session regardless of any entry.
+
+---
+
+**Bracket fills today:** 0 (no morning limits were placed — HOLD decision at pre-market; all candidates failed gates)
+**Stops upgraded:** 0 (no positions held; no upgrade workflow applicable)
+**Stale limits cancelled:** 0 (no open orders existed)
+**New afternoon entries:** none — all 5 candidates failed composite Layer A + Layer B gates
+**Afternoon market context:** Energy sector declined sharply during today's session (XOM AH −8%, CVX −7.8%, XLE −4.8%) — most likely driven by FOMC minutes hawkish signal and/or WTI declines. NVDA post-earnings flat (no sustained pop). HD drifting toward potential 2b-SHORT setup but Trend Template TT structural gate (−22.8% vs −30% required below 52wk high) remains a hard blocker.
+
+**Key watchlist for Thursday pre-market (2026-05-21):**
+1. **ENERGY SECTOR (XOM/CVX/XLE)** — ⚠️ CRISIS WATCH: Confirm May 20 settled prices via bars API. If XOM settles below $157.92 (prior breakout pivot), the momentum setup is fully reset. If below $154.88 (prior pre-breakout high), a new base must form. If approaching $146.44 (April structural support), full thesis re-evaluation required. Do NOT place any energy bracket until thesis is confirmed with catalyst + settled data.
+2. **HD** — Pull May 20 settled bar Thursday morning. If close < $297.51 on vol ≥ 1.5×, the 2b-SHORT breakdown is confirmed on price/volume — but TT structural gate (−30% below 52wk high) still fails at any price above $274.33. Not a tradeable setup under current TT rules.
+3. **NVDA** — Z = +0.767; well below any entry lane. Off active watchlist until either a new all-time high breakout above $235.74 or a mean-reversion dip to Z ≤ −2.0 (~$191).
+4. **200-SMA DATA GAP** — All candidates blocked on TT's 200-SMA condition (152/200 bars available). Resolves in ~48 more trading sessions (~10 calendar weeks). Log and accept as operational constraint.
+5. **NEW SECTOR SCAN NEEDED** — With energy thesis under stress (AH collapse suggests second consecutive near-failure), need to identify non-energy setups for Thursday. Materials (FCX, NEM, with XLB Z context), Industrials (CAT, GE), or Consumer names should be scanned. Per sector rules: energy sector has 1 confirmed failure (XOM May 7 thesis-break). If today's session represents a second energy stress event on a new attempted entry, caution is heightened but no confirmed second failure (no new energy position was entered). The energy sector clock resets only on a *completed trade*.
+

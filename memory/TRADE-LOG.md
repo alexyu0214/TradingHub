@@ -944,3 +944,53 @@ Every trade (entry, exit, stop-out) is logged here with full thesis, entry price
 
 **Status:** No open positions. All capital preserved. PDT headroom fully intact.
 
+
+---
+
+### May 20 — Afternoon Scan (Day 22 / Post-Session ~20:10 UTC)
+
+**Portfolio:** $99,056.46 | **Cash:** $99,056.46 (100%) | **Deployed:** 0% | **Phase P&L:** −$943.54 (−0.944%)
+
+| Ticker | Shares | Entry | AH Bid | Unrealized P&L | Stop | Hold |
+|--------|--------|-------|--------|----------------|------|------|
+| — | — | — | — | — | — | — (0 positions) |
+
+**Open orders at scan time:** NONE (1d69c496 expired May 18 as documented; no orders placed today)
+
+**Afternoon scan trades:** none
+
+**Stop action:** N/A — no positions held
+
+**Afternoon candidates evaluated — ALL REJECTED:**
+
+| Candidate | Z (May19 basis) | AH Signal | Key Fail | Verdict |
+|-----------|-----------------|-----------|----------|---------|
+| XOM | +2.380 | −8.0% AH | Vol 1.22× < 1.5×; 200-SMA unavail.; AH collapse implies thesis break in today's session | REJECT |
+| CVX | +2.031 | −7.8% AH | Vol 1.21× < 1.5×; not above 20d high; AH collapse | REJECT |
+| XLE | +2.127 | −4.8% AH | Vol 0.86× far below 1.5×; AH decline | REJECT |
+| NVDA | +0.767 | ~flat AH | Z < +1.0 (any lane); no breakout; vol 0.90× | REJECT |
+| HD | −1.244 | −3.7% AH | Short TT: −22.8% vs −30% required below 52wk high; 200-SMA unavail.; close > 20d low on last settled bar | REJECT |
+
+**FOMC Minutes impact (today 2:00 PM ET):** Energy sector AH bids show 5–8% declines consistent with a hawkish Fed interpretation. XOM ($149.56), CVX ($181.88), XLE ($58.36) all significantly below May 19 settled closes. This matches the May 6–7 pattern; energy thesis is under renewed stress.
+
+**PDT count:** 0/3 | **Week trades:** 0/3 | **Positions:** 0/6
+
+**Circuit breakers:** ✅ All clear — Phase P&L −0.944% (lim −5%) | Drawdown −1.15% from $100,206.70 peak (lim −15%)
+
+---
+
+### May 20 — EOD Snapshot (Day 22, Wednesday)
+
+**Portfolio:** $99,056.46 | **Cash:** $99,056.46 (100%) | **Day P&L:** $0.00 (0.000%) | **Phase P&L:** −$943.54 (−0.944%) | **Deployed:** 0%
+
+| Ticker | Shares | Entry | Close | Unrealized P&L | Stop | Time |
+|--------|--------|-------|-------|----------------|------|------|
+| — | — | — | — | — | — | — |
+
+**Trades today:** none — HOLD decision at pre-market confirmed; no candidates cleared gates
+
+**Notes:** Day 22 closes flat ($0.00 day P&L vs last_equity baseline) with portfolio at 100% cash. The session's defining event was the FOMC Minutes release (2:00 PM ET), which appears to have been interpreted hawkishly — energy sector AH quotes (XOM −8%, CVX −7.8%, XLE −4.8% vs May 19 settles) signal a material sector decline during today's session. No energy positions were held, so the portfolio was unaffected. NVDA's post-earnings reaction was flat (AH mid $220.27 ≈ settle $220.61), confirming the earnings beat was fully priced in — three consecutive evaluation sessions (May 18–20) have now failed the momentum lane gates. Thursday's pre-market must confirm May 20 settled prices (bars API) before any energy assessment can be made; the AH bid-only quotes are indicative but not actionable for re-entry decisions. HD's AH bid ($291.30) approaches the $297.51 breakdown level but the Trend Template structural gate (−22.8% vs −30% required below 52wk high) remains a hard blocker on any short. All circuit breakers clear. PDT 0/3. Week trades 0/3. Full cash preserved.
+
+**Circuit breakers:** ✅ All clear — Day 0.00% (lim −2%) | Phase −0.944% (lim −5%) | Drawdown −1.15% from $100,206.70 peak (lim −15%)
+**PDT count:** 0/3 | **Week trades:** 0/3 | **Positions:** 0/6
+
