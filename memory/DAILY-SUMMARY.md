@@ -569,3 +569,30 @@ All candidates reviewed and rejected via Layer A + Layer B composite gate:
 **Notes:** Fully flat — no entries triggered; NVDA hard-blocked (earnings tonight), XOM/XLE/CVX/HD all below volume/price gates. All circuit breakers clear. NVDA post-earnings eval queued for Thu May 22.
 
 ---
+
+---
+
+## 2026-05-20 — Market-Open Execution Summary (Day 22, Wednesday)
+
+**Market-open orders placed:** None
+
+**Research Decision:** HOLD — no candidates cleared both Layer A + Layer B gates.
+
+**Candidates evaluated:** XOM (LONG, 2b), NVDA (LONG, 2b), HD (SHORT, 2b)
+All three skipped — see TRADE-LOG.md for per-ticker gate failures.
+
+**Account snapshot (16:36 ET):**
+- Equity: $99,056.46 | Cash: $99,056.46 (0% deployed)
+- Open positions: 0/6
+- Weekly trades: 0/3 used
+- Daytrade count: 0/3
+- Phase P&L: −$943.54 (−0.944%)
+- VIX: 17.83 (Normal regime)
+
+**Session flags:**
+- WTI crude −3.52% today — energy sector pullback; structural thesis intact but not entry day
+- FOMC Minutes at 2:00 PM ET — no bracket orders placed in pre-window (no orders placed at all today)
+- NVDA post-earnings +2.1% but AVGO diverging −2.19σ; semi sector not confirming
+
+**Thursday watchlist priorities:** XOM (volume + pivot hold), NVDA (breakout above $235.74 + AVGO convergence)
+

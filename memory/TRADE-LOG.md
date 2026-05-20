@@ -909,3 +909,38 @@ Every trade (entry, exit, stop-out) is logged here with full thesis, entry price
 
 **Notes:** Flat day — no positions held, no orders active. Account remains fully in cash at $99,056.46. The day's research log carried forward watchlist notes on XOM (volume confirmation gate ≥25.2M), XLE (volume gate ≥54.97M with TT caveat), NVDA (hard block today due to earnings tonight; Thu May 22 is the earliest evaluation window), CVX (needs clean spread + volume ≥1.5× + close above $196.12), and HD (post-earnings bar available; sector headwind for longs). None of the candidates triggered their entry conditions today. Phase P&L remains at −$943.54 (−0.944%), well within all circuit-breaker thresholds. Tomorrow's priority: NVDA post-earnings assessment at open (not first 15 min), re-run volume checks on XOM and XLE against updated bars.
 
+
+---
+
+### 2026-05-20 16:37 — MARKET-OPEN EXECUTION: NO ORDERS PLACED
+
+**Research Decision:** HOLD — zero candidates cleared both Layer A + Layer B gates today.
+
+**Candidates Evaluated & Gates Failed:**
+
+| Ticker | Direction | Lane | Failed Gate | Specific Reason |
+|--------|-----------|------|-------------|-----------------|
+| XOM | LONG | 2b-LONG | Layer B (vol + Trend Template) | Vol 1.23× < 1.5× required; 200-SMA unverifiable (151/200 bars); today down −2.3% with WTI −3.52%; Trend Template FAIL |
+| NVDA | LONG | 2b-LONG | Layer B (no breakout + pair divergence) | Price $225.28 < 20d high $235.74 (no breakout); AVGO pair divergence 2.19σ > 1.5σ; projected vol ~1.0× < 1.5×; Trend Template FAIL |
+| HD | SHORT | 2b-SHORT | Layer A + Layer B | Only −21.5% below 52wk high (need ≥−30%); 200-SMA unverifiable; price NOT below 20d low $297.51; today up +1.8% |
+
+**Live Quotes at Execution Check (16:36 ET):**
+- XOM: $158.80 bid / $158.93 ask — confirms pullback, below $160.49 breakout pivot
+- NVDA: $224.51 bid / $224.55 ask — below $235.74 20d high pivot, no breakout
+- HD: $298.00 bid / $311.00 ask — still above $297.51 20d low breakdown level
+
+**Account State at Execution:**
+- Equity: $99,056.46 | Cash: $99,056.46 (100% undeployed)
+- Positions: 0/6 | Daytrades used: 0/3 | Week trades: 0/3
+- VIX: 17.83 (Normal regime, 1.0× sizing multiplier)
+- Phase P&L: −$943.54 (−0.944%) — within all circuit breakers
+
+**Session Risk Note:** FOMC Minutes release at 2:00 PM ET. No bracket orders within 30-minute window before release per CONSTRAINTS (constraint auto-honored — no orders placed today).
+
+**Thursday Watchlist:**
+- XOM: Re-evaluate IF today's volume prints ≥25.2M shares AND close holds above $160.49 pivot
+- NVDA: Re-evaluate IF today closes above $235.74 on volume ≥1.5× (~234M+ shares) AND AVGO Z-divergence narrows below 1.5σ
+- HD: Not on active watchlist — does not meet Short Trend Template minimum requirements
+
+**Status:** No open positions. All capital preserved. PDT headroom fully intact.
+
