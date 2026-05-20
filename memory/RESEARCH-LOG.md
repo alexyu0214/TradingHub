@@ -3186,3 +3186,246 @@ Energy sector is closing strongly despite today's morning contra-catalyst (WTI �
 4. **NVDA** — **HARD BLOCK Wednesday** (earnings tonight). Evaluate Thursday May 22 only: if gap-up reclaims $235.74 with volume ≥1.5× → 2b-LONG candidate; if gap-down to Z ≤ −2.0 (~$189) + RSI <30 → 2a-LONG candidate.
 5. **HD** — Post-earnings bar available Wednesday. Pull bars, assess Z/RSI/TT. Sector (Cons. Disc. YTD −0.03%) is a Layer A headwind for long entries.
 6. **FOMC Minutes (Wednesday 2:00 PM ET)** — No new bracket orders placed in the 30 min before this release.
+
+---
+
+## 2026-05-20 — Pre-Market Research (Day 22, Wednesday)
+
+### Account
+- **Equity:** $99,056.46
+- **Cash:** $99,056.46 (100%)
+- **Buying Power:** $198,112.92 (2× margin)
+- **Non-Marginable BP:** $99,056.46
+- **Daytrade Count:** 0/3
+- **Open Positions:** 0/6
+- **Week Trades:** 0/3
+- **Phase P&L:** −$943.54 (−0.944%) — well within all circuit breakers
+
+---
+
+### Market Context
+- **WTI Crude Oil:** $100.48 (−3.52% today; intraday bounce to $103.69). +12.06% past month, +63.20% YoY. Major pullback today on geopolitical de-escalation sentiment.
+- **Brent Crude:** $108.33 (−2.66% today; was $110.69 earlier). +10.0% past month, +66.89% YoY.
+- **S&P 500 Futures:** +0.4% premarket (up ~7,404 area). Risk-on tone from NVDA earnings.
+- **VIX:** 17.83 (−1.27%). Trading near 18 — elevated but not panicked. Normal regime.
+- **NVDA Earnings (after close May 19):** Beat estimates — consensus $78.9B rev / $1.77 EPS. Stock trading +2.1% at $225.28 (vs May19 close $220.61) at time of scan.
+- **FOMC Minutes (2:00 PM ET today):** April 28-29 meeting. Rates held 3.50%–3.75%. Elevated inflation flagged (partly energy-driven / Middle East). Last record under previous Fed leadership before Kevin Warsh era. No new rate moves expected.
+- **Lowe's (LOW) Pre-Market:** Q1 EPS $2.90 ($3.03 adj, +3.8%), sales $23.1B, comps +0.6%. Full-year guidance reaffirmed. Mild beat.
+- **Target (TGT) Pre-Market:** Shares +2% on Q1 sales beat and raised annual revenue outlook.
+- **S&P 500 YTD:** ~+10%. Sector leaders: Energy (+26.0%), Technology (+16.7%), Materials (+12.9%), Industrials (+12.8%), Communications (+12.3%).
+- **Geopolitical:** US–Iran tensions + Strait of Hormuz tanker traffic ongoing. WTI structural bid remains despite today's pullback.
+- **FOMC Minutes 2:00 PM ET:** No new bracket orders placed in 30 minutes before this release per CONSTRAINTS.
+
+---
+
+### VIX Regime
+- **Current VIX:** 17.83
+- **Regime:** Normal (14–22)
+- **Sizing Multiplier:** 1.00×
+- **Entry policy:** All four lanes (2a-Long, 2a-Short, 2b-Long, 2b-Short) eligible. Full position sizing.
+
+---
+
+### Universe Scan
+
+#### CANDIDATES EVALUATED (from yesterday's watchlist + today's catalysts)
+
+1. **XOM** — Energy (Long continuation thesis)
+2. **NVDA** — Technology (Post-earnings momentum)
+3. **HD** — Consumer Discretionary (Post-earnings short assessment)
+4. **CVX** — Energy (XOM pair check)
+5. **XLE** — Energy ETF (sector confirmation)
+
+---
+
+### Candidate Analysis
+
+---
+
+#### XOM — LONG (2b-LONG lane evaluated)
+
+**Layer A — Catalyst + Trend:**
+- **Catalyst:** Energy sector #1 YTD (+26.0%). WTI structurally elevated (+63% YoY). XOM has been in confirmed uptrend. Geopolitical bid (Hormuz tanker risk) ongoing.
+- **Sector posture:** Energy = top sector YTD ✅
+- **RSI(14):** 64.9 — in the 50–70 range ✅
+- **Today's context:** WTI −3.52% today. XOM is trading DOWN −2.3% (partial bar $158.86 vs May19 close $162.55). This is a *pullback day*, NOT a continuation breakout day.
+
+**Layer B — Quant (2b-LONG):**
+- **Z-Score (May19 settle vs prior 20):** +2.320 ✅ (≥+1.0)
+- **Close > prior 20d high:** May19 $162.55 > prior 20d high $160.49 ✅ (breakout confirmed on May 19)
+- **RSI 50–70:** 64.9 ✅
+- **Volume May19:** 20,722,666 / 20d avg 16,797,568 = **1.234× ❌** (need ≥1.5×)
+- **50-SMA > 200-SMA:** 50-SMA = $155.39. 200-SMA = **N/A** (only 151 settled bars; need 200) — **❌ Cannot verify**
+
+**Minervini Trend Template (LONG):**
+- Price > 50-SMA ($162.55 > $155.39) ✅
+- Price > 150-SMA ($162.55 > $136.74) ✅
+- Price > 200-SMA: **CANNOT VERIFY — insufficient history (151 bars)** ❌
+- 150 > 200: **CANNOT VERIFY** ❌
+- 200-SMA trending up ≥1 month: **CANNOT VERIFY** ❌
+- 50 > 150 ($155.39 > $136.74) ✅
+- 50 > 200: **CANNOT VERIFY** ❌
+- >30% above 52wk low ($110.64): +46.9% ✅
+- Within 25% of 52wk high ($171.47): −5.2% ✅
+- **Trend Template Result: FAIL** (cannot verify 200-SMA conditions; 151/200 bars available)
+
+**Pair Check (XOM↔CVX):**
+- XOM Z = +2.320, CVX Z = +1.980
+- Divergence = |2.320 − 1.980| = **0.340σ ✅** (well within 1.5σ)
+
+**RESULT: ❌ SKIP**
+- Lane 2b-LONG fails on two independent gates: (1) volume 1.234× < 1.5× required; (2) 200-SMA unverifiable (151 bars available, need 200). Trend Template FAIL.
+- Additionally, today XOM is DOWN −2.3% with WTI falling −3.52% — this is not a breakout continuation day. Correct posture is to wait.
+- **Watchlist Thursday:** If today's XOM volume prints ≥25.2M shares AND close holds above $160.49, the thesis resets for Thursday entry. Await full day bar.
+
+---
+
+#### NVDA — LONG (2b-LONG lane evaluated, post-earnings)
+
+**Layer A — Catalyst + Trend:**
+- **Catalyst:** NVDA Q1 FY2027 earnings beat (reported after close May 19). Consensus $78.9B rev / $1.77 EPS beat. AI demand signal. Stock +2.1% premarket at $225.28.
+- **Sector posture:** Technology YTD +16.7%, #2 sector ✅
+- **RSI(14) settled:** 59.9 — in 50–70 range ✅
+- **Today context:** NVDA trading up from $220.61 → ~$225.28 (+2.1%)
+
+**Layer B — Quant (2b-LONG):**
+- **Z-Score (today partial vs 20d mean $219.55):** +1.170 ✅ (≥+1.0)
+- **Close > prior 20d high ($235.74):** $225.28 < $235.74 **❌ NO BREAKOUT**
+  - The 20-day settled high is $235.74 (May 14). NVDA is trading at $225.28 = still 4.4% BELOW that pivot. A momentum lane entry requires closing ABOVE the pivot.
+- **RSI:** 59.9 ✅
+- **Volume today (partial ~62.7M, proj ~157M vs avg 156M):** ~1.01× projected ❌ (barely at 1.0×; need ≥1.5×)
+- **50-SMA > 200-SMA:** 50-SMA = $194.72; 200-SMA = **N/A (151 bars)** ❌ Cannot verify
+
+**Minervini Trend Template (LONG):**
+- Price > 50-SMA ($220.61 > $194.72) ✅
+- Price > 150-SMA ($220.61 > $188.76) ✅
+- Price > 200-SMA: **CANNOT VERIFY** ❌
+- 150 > 200: **CANNOT VERIFY** ❌
+- 200-SMA trending up: **CANNOT VERIFY** ❌
+- 50 > 150 ($194.72 > $188.76) ✅
+- >30% above 52wk low ($165.17): +33.6% ✅
+- Within 25% of 52wk high ($235.74): −6.4% ✅
+- **Trend Template Result: FAIL** (cannot verify 200-SMA conditions)
+
+**Pair Check (NVDA↔AVGO):**
+- NVDA Z today = +1.170
+- AVGO Z = −1.017 (AVGO selling off, down ~2.3% today)
+- Divergence = |1.170 − (−1.017)| = **2.187σ ❌ EXCEEDS 1.5σ THRESHOLD**
+- AVGO and broader semis NOT confirming NVDA's post-earnings pop. Single-name earnings event, not sector rotation.
+
+**RESULT: ❌ SKIP**
+- Fails Layer B on three gates: (1) no breakout above 20d high ($235.74); (2) volume insufficient; (3) pair divergence 2.187σ > 1.5σ — AVGO not confirming.
+- Mean-Reversion lane not applicable (Z = +1.17 — not stretched to ≥+2.0, not oversold).
+- **Watchlist Thursday:** If NVDA closes today above $235.74 on volume ≥1.5× (≥234M shares), and AVGO Z-divergence narrows, re-evaluate as a 2b-LONG with a fresh breakout bar. Current posture = watch, no trade.
+
+---
+
+#### HD — SHORT (2b-SHORT lane evaluated)
+
+**Layer A — Catalyst + Trend:**
+- **Catalyst:** Post-earnings decline. HD reported Q1 May 19 — shares sold off through earnings. Comp sales soft, macro housing headwinds (high mortgage rates). HD trending from $391.90 → $302.44 = −22.8% from 52wk high.
+- **Sector posture:** Consumer Discretionary YTD = −0.03% (rolling over) ✅ for short bias
+- **RSI(14):** 33.7 — in the 30–50 range ✅ (appropriate for momentum short)
+- **Today context:** HD reversed UP +1.8% to $307.81 (partial) — NOT a continuation of breakdown
+
+**Layer B — Quant (2b-SHORT):**
+- **Z-Score (May19 settle):** −1.213 ✅ (≤−1.0)
+- **Close < prior 20d low ($297.51):** May19 $302.44 > $297.51 **❌ NO BREAKDOWN CONFIRMED**
+  - Price has NOT broken below the prior 20d low. 302.44 vs 297.51 pivot — still $4.93 above breakdown level.
+- **RSI 30–50:** 33.7 ✅
+- **Volume May19:** 8,698,300 / avg 4,598,528 = **1.89× ✅** (strong elevated volume)
+- **50-SMA < 200-SMA:** 50-SMA = $327.66; 200-SMA = **N/A (152 bars)** ❌ Cannot verify
+
+**Minervini Trend Template (SHORT):**
+- Price < 50-SMA ($302.44 < $327.66) ✅
+- Price < 150-SMA ($302.44 < $354.64) ✅
+- Price < 200-SMA: **CANNOT VERIFY** ❌
+- 150 < 200: **CANNOT VERIFY** ❌
+- 200-SMA trending down: **CANNOT VERIFY** ❌
+- >30% below 52wk high ($391.90): −21.5% **❌ FAIL** (need ≤−30%)
+- Within 25% of 52wk low ($297.51): +1.7% ✅
+- 6-month return: −18.9% — in bottom 30%? Plausible for short (cannot compute exact percentile without universe sample)
+- **Trend Template Result: FAIL** — does not meet the ">30% below 52wk high" condition AND cannot verify 200-SMA conditions
+
+**Pair/Sector Check:** XHB (homebuilders ETF) or LOW as pair — not pulled; but LOW +3.8% EPS beat this morning suggests sector is not uniformly broken. HD underperforming LOW is idiosyncratic. Actually, sector is mixed today — leans against short entry.
+
+**RESULT: ❌ SKIP**
+- Fails Layer B: no breakdown below 20d low; Trend Template fails 200-SMA conditions and >30% below 52wk high rule.
+- Today HD is UP +1.8% (reversal), making short entry today even less appropriate.
+- **Not on active watchlist** — does not meet Short Trend Template minimum requirements.
+
+---
+
+#### CVX — Context/Pair Only
+- Z = +1.980, within 1.5σ of XOM (divergence 0.34σ) ✅ — confirms energy sector thesis
+- Today partial: $193.83 (down from May19 $197.25 = −1.74%) — also pulling back with WTI
+- Same Trend Template limitation (151 bars, 200-SMA unavailable) — not evaluated as standalone entry
+
+#### XLE — Context Only
+- Z = +1.75 (estimated from last check), Vol May19 = 31,113,841 / avg 36,437,xxx = ~0.85× — still below 1.0×
+- Today pulling back with WTI. Not evaluated as standalone entry.
+
+---
+
+### Trade Ideas (Cleared Both Layers)
+
+**None.** Zero candidates cleared both Layer A + Layer B today.
+
+---
+
+### Skipped Candidates
+
+| Ticker | Direction | Failed Gate | Specific Issue |
+|--------|-----------|-------------|----------------|
+| XOM | 2b-LONG | Layer B (vol + TT) | Vol 1.23× < 1.5× required; 200-SMA unverifiable (151 bars); today DOWN −2.3% with WTI −3.52% |
+| NVDA | 2b-LONG | Layer B (no breakout + pair divergence) | Price $225.28 < 20d high $235.74; AVGO divergence 2.19σ > 1.5σ; vol barely 1.0× projected |
+| HD | 2b-SHORT | Layer A + Layer B (TT + no breakdown) | Trend Template: only −21.5% below 52wk high (need −30%+); 200-SMA N/A; price NOT below 20d low $297.51; today up +1.8% |
+| CVX | — | Pair context only | Confirms XOM thesis; same data gap; not evaluated as standalone entry |
+
+---
+
+### Risk Factors
+1. **FOMC Minutes 2:00 PM ET:** Could reprice rate expectations. Fed language on "elevated inflation from energy" could affect energy sector either way. **No new bracket orders in 30 min window before 2:00 PM ET.**
+2. **WTI −3.52% today:** Largest single-day drop in weeks. Energy sector may see continued weakness this session. XOM/CVX/XLE pullback is directly correlated. This does NOT invalidate the multi-week structural thesis but means today is not the day to enter energy longs.
+3. **NVDA post-earnings gap:** Stock up only +2.1% — a modest reaction to a major beat. AVGO selling off simultaneously (Z=−1.017) suggests the broader semi sector is NOT confirming NVDA's move. Pair divergence 2.19σ blocks entry. Earnings gap can fade quickly.
+4. **Persistent 200-SMA data gap:** Running on 151–152 bars for multiple names (XOM, NVDA, CVX, HD). Alpaca data history starts ~Oct 2025 for this account. The 200-SMA will become available in approximately 7–8 more trading weeks. This is a structural limitation — log it but cannot overcome it operationally.
+5. **PDT headroom:** 0/3 day trades used — full flexibility preserved.
+6. **No open positions entering a binary (NVDA earnings + FOMC minutes):** Correct posture as noted yesterday. Maximum optionality preserved.
+
+---
+
+### Decision
+
+**HOLD — No trades today.**
+
+All three directional candidates (XOM long, NVDA long, HD short) failed one or more required gates. The predominant blockers today are:
+- Volume confirmation threshold not met (XOM: 1.23×)
+- No price breakout/breakdown confirmation (NVDA below 20d high; HD above 20d low)
+- Pair divergence failure (NVDA/AVGO: 2.19σ)
+- Minervini Trend Template 200-SMA unverifiable (structural data limitation)
+- Market context: energy pulling back hard today with WTI −3.52%; FOMC minutes at 2 PM add uncertainty
+
+Zero trades is the correct call. Patience rule applies.
+
+---
+
+### Watchlist for Thursday Pre-Market (May 21)
+
+1. **XOM** — If today's bar closes ≥$160.49 (holds breakout level) AND today's volume ≥25.2M shares (1.5× threshold met), re-evaluate as 2b-LONG. If price closes below $160.49, thesis temporarily invalidated — wait for new base.
+2. **NVDA** — If NVDA closes today above $235.74 on volume ≥234M shares, Thursday becomes 2b-LONG candidate with pivot=$235.74. If closes below $220, watch for 2a-LONG setup (need Z ≤−2.0 + RSI <30).
+3. **CVX** — Same energy thesis as XOM; same Trend Template limitation. Watch in context of XOM.
+4. **FOMC Minutes Fallout (today 2 PM):** If minutes are hawkish (signal rate hikes), monitor rate-sensitive sectors (Financials, Utilities) for dislocations Thursday.
+5. **200-SMA Data Gap:** All names will gain 1 additional bar each day. Full 200-bar history available in ~7–8 more weeks. In the interim, trend template results flagged as "FAIL (insufficient history)" rather than directional failures.
+
+---
+
+### EOD Snapshot (to be updated post-close — pre-market stub)
+
+**Portfolio:** $99,056.46 | **Cash:** $99,056.46 (100%) | **Day P&L:** $0.00 | **Deployed:** 0%
+
+| Ticker | Shares | Entry | Close | Unrealized P&L | Stop |
+|--------|--------|-------|-------|----------------|------|
+| — | — | — | — | — | — |
+
+**Trades today:** None — HOLD decision confirmed by Layer A + Layer B failures on all candidates.
+
