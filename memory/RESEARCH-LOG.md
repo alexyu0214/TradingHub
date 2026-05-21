@@ -3965,3 +3965,81 @@ No gates were lowered. No trade was forced. Zero trades is the correct disciplin
 5. **Industrials (GE, CAT, XLI)** — Same flag, same context. YTD +12.84%.
 6. **200-SMA data gap:** ~47 trading sessions remaining until 200-SMA data becomes available for late-Oct 2025 bot inception names. Estimated availability: mid-August 2026. Log and accept.
 
+
+---
+
+## 2026-05-21 — Midday Scan Addendum (17:53 UTC / ~13:53 ET)
+
+**Scan type:** Midday workflow — position thesis check & stop evaluation
+**VIX Regime:** Normal (17.44–17.7 from morning research) — 1.00× sizing multiplier
+**Account:** Equity $99,056.46 | Cash $99,056.46 (100%) | Deployed: 0% | Positions: 0/6 | Week trades: 0/3 | PDT: 0/3 | Open orders: 0
+
+---
+
+### STEP 1 — Portfolio State (Live API)
+
+- **Positions:** `[]` — EMPTY. 100% cash confirmed.
+- **Orders:** `[]` — EMPTY. No working bracket limits. No GTC stops.
+- No morning bracket orders were placed at open (pre-market HOLD decision: all 6 candidates rejected on structural quant/TT gates — XOM Z=+0.937, XLE no breakout, NVDA Z<+1.0, NIO TT fail, INTU/WMT hard no-short rules).
+- TRADE-LOG fully current. No discrepancy.
+
+---
+
+### STEP 2 — Cut Losers / Step 3 — Tighten Stops
+
+**N/A — no open positions.** Both steps skipped.
+
+---
+
+### STEP 4 — Watchlist Thesis Check (Live Quotes at ~13:53 ET)
+
+All quotes carry **"R" condition code** (indicative/restricted NBBO). Ask price used as fair-value proxy; bid treated as unreliable stub.
+
+| Ticker | Settle (May 20) | Live Ask | Δ vs Settle | Spread | Z (settle) | Z (live ask) | Prior 20d High | Distance to Pivot | Vol (May 20) | Key Gate Status |
+|--------|----------------|----------|------------|--------|------------|--------------|----------------|-------------------|-------------|-----------------|
+| XOM | $156.28 | $153.85 | −1.6% | 4.50% ❌ | +0.834 | +0.296 | $162.55 | −5.4% below | 1.08× ❌ | Triple fail: spread, Z, price |
+| XLE | $59.80 | $58.88 | −1.5% | 0.02% ✅ | +1.004 | +0.413 | $61.29 | −3.9% below | 1.72× ✅ | Price and live Z fail; TT blocked |
+| CVX | $191.33 | $189.88 | −0.8% | 0.25% ✅ | +0.579 | +0.282 | $197.25 | −3.8% below | 1.48× ❌ | Z and price fail |
+| NVDA | $223.47 | $221.80 | −0.7% | 0.01% ✅ | +0.911 | +0.759 | $235.74 | −5.9% below | 1.16× ❌ | Z, price, vol all fail |
+
+**Pair divergence:** XOM vs CVX = 0.255σ ✅ | XOM vs XLE = 0.170σ ✅ (energy sector moving in lockstep — sector-wide drift, not single-name idiosyncrasy)
+
+---
+
+### XOM — No Action (No Position)
+- Thesis structurally intact: WTI ~$100 (+2.2% pre-market on Iran Supreme Leader uranium directive), Hormuz supply disruption ongoing. But XOM trading at ~$153.85 — down 5.4% from $162.55 prior breakout pivot and Z regressed to +0.296. Momentum lane cannot open. No position exists to protect.
+- Context: All three energy names (XOM, XLE, CVX) are pulling back intraday as WTI's morning +2.2% gain fades. This is oscillation around the Iran peace-deal uncertainty, not a structural thesis break (no US-Iran deal confirmed).
+
+### XLE — No Action (No Position)
+- The strongest candidate structurally: May 20 volume was 1.72× (✅ institutional participation confirmed). Z on settled basis = +1.004 (barely clears +1.0). However, intraday live Z = +0.413 (price at $58.88 is 3.9% below the $61.29 breakout pivot). The 2b-LONG lane requires closing ABOVE the 20d high — XLE has not cleared that level on any intraday basis today. Minervini TT remains blocked (Dec 2025 share consolidation disrupted 150/200d SMA data). No action. Key watchlist for tomorrow if WTI recovers.
+
+### CVX — No Action (No Position)
+- Z=+0.579, price 3.8% below prior pivot, volume 1.48× (just under 1.5× threshold). Pair divergence from XOM only 0.255σ — confirming both integrate oil names are moving together. No position.
+
+### NVDA — Watch-Only
+- 5th consecutive session drifting below the $235.74 momentum pivot. Z = +0.911 (settle) / +0.759 (live). Post-earnings catalyst spent. No position. Monitor for either (a) fresh catalyst + breakout above $235.74 on 1.5× vol for 2b-LONG, or (b) dip to Z ≤ −2.0 (~$191) for 2a-LONG mean-reversion.
+
+---
+
+### STEP 5 — Optional Research
+
+No unexplained intraday moves. Energy sector pullback is consistent with WTI fading from pre-market highs (Iran news sentiment oscillating). No WebSearch triggered.
+
+---
+
+### Actions Taken: NONE
+
+No positions cut, no stops tightened, no thesis exits, no new orders.
+No DAILY-SUMMARY.md entry required (no actions per workflow rules).
+
+---
+
+### Key Watchlist for Tomorrow Pre-Market (May 22, Friday)
+
+1. **XLE** — Most actionable: volume confirmed 1.72× on May 20 bar. Needs WTI stabilization and XLE to close above $61.29 on volume ≥1.5× for fresh 2b-LONG breakout qualification. Minervini TT SMA gap is the remaining structural block.
+2. **XOM** — Z=+0.296 today; needs recovery to Z≥+1.0 AND close above $162.55 on ≥1.5× volume. Structural base-building required; not near-term.
+3. **CVX** — Volume 1.48× is approaching threshold; needs Z≥+1.0 and close above $197.25.
+4. **NVDA** — Watch-only. No active setup.
+5. **Materials scan (FCX, NEM, XLB)** and **Industrials (GE, CAT, XLI)** — Flagged repeatedly; still unscanned. YTD +15.24% and +12.84% respectively. High priority for Friday pre-market given energy names' structural gates remaining blocked (200-SMA unavail., TT SMA issues).
+6. **200-SMA data gap:** ~47 trading sessions remaining (est. mid-August 2026). All Minervini TT checks noting 200-SMA "CANNOT VERIFY" will auto-resolve as the live data window grows.
+
