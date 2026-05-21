@@ -633,3 +633,19 @@ All three skipped — see TRADE-LOG.md for per-ticker gate failures.
 **Tomorrow watchlist:** XOM (close > $160 + Z ≥ 1.0 + 20d-high breakout), XLE (close > $61.29 on ≥1.5× volume), INTU (RSI recovery to 30–50 range, 3–5 sessions), FCX/NEM (Materials +15% YTD), GE/CAT (Industrials +12% YTD). Philly Fed + PMI data today may move industrials/materials.
 
 ---
+
+## 2026-05-21 — EOD
+
+**Portfolio:** $99,056.46 (0.000% day, −0.944% phase)
+**Cash:** $99,056.46 (100%)
+**Deployed:** 0%
+**Daytrade count:** 0/3
+
+**Trades today:** none
+**Open positions:** none
+**Stops tightened:** none
+**Losers cut:** none
+
+**Notes:** Day 24 closes flat — equity unchanged at $99,056.46. Full session scan across XOM, CVX, XLE, XLB, FCX, and NVDA cleared zero composite gates. XLB remains the closest mean-reversion candidate (Z = −1.810, ~0.49σ from trigger) but failed all three independent Lane A gates. Energy pullback thesis intact on below-average volume. NVDA retired from active watchlist after 7 consecutive misses. All circuit breakers clear; full PDT (0/3) and weekly (0/3) budgets preserved heading into the weekend.
+
+---
