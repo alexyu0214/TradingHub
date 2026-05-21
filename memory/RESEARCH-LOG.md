@@ -3634,3 +3634,186 @@ Today's dominant event was the **FOMC Minutes release (2:00 PM ET)**. Based on t
 4. **200-SMA DATA GAP** — All candidates blocked on TT's 200-SMA condition (152/200 bars available). Resolves in ~48 more trading sessions (~10 calendar weeks). Log and accept as operational constraint.
 5. **NEW SECTOR SCAN NEEDED** — With energy thesis under stress (AH collapse suggests second consecutive near-failure), need to identify non-energy setups for Thursday. Materials (FCX, NEM, with XLB Z context), Industrials (CAT, GE), or Consumer names should be scanned. Per sector rules: energy sector has 1 confirmed failure (XOM May 7 thesis-break). If today's session represents a second energy stress event on a new attempted entry, caution is heightened but no confirmed second failure (no new energy position was entered). The energy sector clock resets only on a *completed trade*.
 
+
+---
+
+## 2026-05-21 — Pre-Market Research (Day 24, Thursday)
+
+### Account
+- **Equity:** $99,056.46
+- **Cash:** $99,056.46 (100%)
+- **Buying Power:** $198,112.92 (2× margin)
+- **Daytrade Count:** 0/3
+- **Open Positions:** 0
+- **Open Orders:** 0
+- **Week Trades:** 0/3
+- **Phase P&L:** −$943.54 (−0.944%)
+- **Peak Drawdown:** −1.15% from $100,206.70
+
+---
+
+### Market Context
+- **WTI Crude:** ~$100.46/bbl (+$2.20, +2.2%). Briefly touched $99.11 before rebounding. Iran Supreme Leader issued directive that enriched uranium must NOT be sent abroad → US-Iran deal complications → risk premium re-entered energy market.
+- **Brent Crude:** ~$107.26/bbl (+2.13%)
+- **S&P 500 Futures:** Down ~0.26–0.3% premarket; S&P 500 closed at 7,432.97 on May 20.
+- **VIX:** Closed at 17.44 (May 20, −3.43%); hovering ~17.7 at today's open.
+- **Fed:** FOMC minutes from prior meeting indicated possible rate hike if inflation remains above 2%. Fed speakers today: Goolsbee and Barkin (scheduled). April CPI 3.8%, PPI 6%.
+- **Jobless Claims:** 209,000 (week ending May 16), below 213,000 estimate. Continuing claims 1.782M. Labor market resilient.
+- **Housing Starts (April):** 1.465M SAAR, beat 1.41M estimate; −2.8% MoM.
+- **PMI:** Preliminary US and Eurozone May PMI on calendar today.
+- **Philly Fed:** Business Outlook, CAPEX Index, Employment for May.
+- **Pre-market Earnings:**
+  - **WMT:** Fiscal Q1 beat but weak full-year outlook → −10.2% gap premarket (to ~$120.57)
+  - **INTU:** Earnings beat but announced 17% workforce cut → ~−20% gap premarket (to ~$306.68)
+  - **NIO:** Q1 revenue +112.2% YoY to RMB25.5B ($3.7B); deliveries 83,465 (+98.3%)
+  - **GTES:** +15.8% premarket on Timken belts acquisition
+  - **NVDA (post-market yesterday):** Beat earnings; strong outlook; AH reaction flat (~$220.27 vs $220.61 settle)
+- **Sector YTD Leaders:** Energy +27.87%, Tech +23.55%, Materials +15.24%, Industrials +12.84%
+- **Sector YTD Laggards:** Health Care −7.60%, Financials −6.55%, Comm Services −1.82%
+
+---
+
+### VIX Regime
+- **Current VIX:** 17.44 (close) / ~17.7 (today open)
+- **Regime:** Normal (14–22)
+- **Sizing Multiplier:** 1.00×
+- **Cold Start Default:** 10% per position (< 30 closed trades)
+
+---
+
+### Trade Ideas — Cleared Both Layers
+
+**NONE.** All candidates rejected. See full analysis below.
+
+---
+
+### Skipped Candidates
+
+#### 1. XOM — LONG (Energy / Iran rebound)
+- **Catalyst:** Iran directive blocks uranium export → WTI +2% → energy risk premium restored ✓
+- **Sector:** Energy #1 YTD +27.87% ✓
+- **Bars:** 153 total (Oct 2025–May 2026)
+- **Quant (25-bar):** Close $156.635 (May 21 partial) | Mean₂₀ $152.51 | σ $4.40 | Z = **+0.937**
+- **Layer B — Z-Score gate:**
+  - Momentum 2b-LONG: Z ≥ +1.0 → **FAIL** (0.937 < 1.0, barely)
+  - Mean-Rev 2a-LONG: Z ≤ −2.0 → **FAIL**
+  - Neither lane clears → **Layer B FAIL**
+- **Minervini Trend Template (Long):**
+  - Price $156.64 > SMA50 $155.55 ✓
+  - Price $156.64 > SMA150 $137.04 ✓
+  - 200-SMA: **NOT AVAILABLE** (152/200 bars — resolves in ~48 sessions) → **FAIL**
+  - 52w High $171.47 → −8.7% below (within 25% ✓); 52w Low $110.64 → +41.6% above (>30% ✓)
+  - 6-month return: +31.6% (strong)
+- **Pair:** CVX | CVX Z = +0.594 | Divergence 0.34σ ≤ 1.5σ ✓ (pair passes, but both Layer B and TT fail)
+- **Volume:** May 20: 18.5M vs 16.9M avg = 1.10× (inadequate for momentum lane's 1.5× threshold)
+- **REJECT — Layer B FAIL (Z sub-threshold both lanes) + Minervini 200-SMA structurally unavailable**
+
+#### 2. XLE — LONG (Energy ETF / Iran rebound)
+- **Catalyst:** Iran risk premium → WTI +2% → XLE sector ETF ✓
+- **AUM:** ~$40B+ ✓ | **Volume:** May 20: 61.8M vs 39.6M avg = **1.56×** ✓
+- **Quant (25-bar):** Close $59.785 | Mean₂₀ $58.25 | σ $1.51 | Z = **+1.020**
+- **Layer B — Momentum 2b-LONG:**
+  - Z ≥ +1.0 ✓ (barely)
+  - Close $59.785 > 20d high $61.29? → **FAIL** (price is BELOW prior 20d high = no confirmed breakout)
+  - Lane fails on breakout condition
+- **Minervini Trend Template:**
+  - 50-SMA $58.34 — price above ✓
+  - 150-SMA: **NOT AVAILABLE** (price discontinuity Dec 2025; only 114 post-adj bars) → **FAIL**
+  - 200-SMA: **NOT AVAILABLE** → **FAIL**
+  - Note: XLE underwent a share consolidation in Dec 2025 (price ~$92→$45 jump), making pre-adjustment SMAs incomparable
+- **Pair:** CVX | Z = +0.594 | Divergence 0.43σ ✓ (pair OK, but both other gates fail)
+- **REJECT — No breakout above 20d high ($61.29 required); Minervini 150/200 SMA unavailable**
+
+#### 3. NVDA — LONG (post-earnings continuation)
+- **Catalyst:** Beat Q1 earnings; strong sales outlook. But AH reaction flat ($220.27 vs $220.61 settle) → catalyst SPENT.
+- **Quant:** Close $223.47 | Mean₂₀ $213.40 | σ $10.78 | Z = **+0.934**
+- **Layer B — Momentum 2b-LONG:**
+  - Z ≥ +1.0 → **FAIL** (0.934 < 1.0)
+  - Close > 20d high $235.74 → **FAIL**
+- **Status:** 4th consecutive session (May 18–21) failing momentum lane. Earnings catalyst exhausted. Off active watchlist until new catalyst or Z requalifies.
+- **REJECT — Layer B double failure; catalyst consumed**
+
+#### 4. NIO — LONG (earnings beat, +112% revenue)
+- **Catalyst:** Q1 revenue +112.2% YoY, deliveries +98.3% ✓ (strong report)
+- **Quant (25-bar):** Close $5.59 | Mean₂₀ $6.08 | σ $0.24 | Z = **−2.022**
+- **Layer B — Mean-Rev 2a-LONG:** Z ≤ −2.0 → ✓ (barely, −2.022)
+- **BUT:**
+  - Minervini Long Template: Cannot compute 50/150/200 SMAs (only 25 bars available). 52w low analysis from 25-bar data only: current price AT the low = 0% above low → **FAIL** (needs >30% above 52w low)
+  - Bearish price action: NIO DECLINED on May 19 ($5.74) and May 20 ($5.59) DESPITE earnings beat — market is not pricing in the revenue growth
+  - Price is in confirmed downtrend within the 25-bar window (high $6.87 → low $5.59)
+- **REJECT — Minervini TT structurally fails; bearish price response to positive catalyst; 52w low test at 0% above (needs >30%)**
+
+#### 5. INTU — SHORT (workforce cut + earnings gap-down ~20%)
+- **Catalyst:** Announced 17% workforce reduction + weaker outlook → gap-down ~20% to ~$306.68 ✓
+- **Market Cap:** ~$87B (>$20B short threshold ✓)
+- **Quant (25-bar):** Close $306.68 (partial May 21) | Mean₂₀ $393.00 | σ $8.95 | Z = **−9.649**
+- **Layer B — Momentum 2b-SHORT:**
+  - Z ≤ −1.0 ✓ | Close < 20d low $371.71 ✓ | Volume 2.72× ✓
+  - RSI estimated <30 — **FAIL** (2b-SHORT needs RSI 30–50; at <30 this is a capitulation, not controlled breakdown)
+  - 200-SMA unavailable (152 bars) → 50-SMA < 200-SMA unverifiable → **FAIL**
+- **Minervini SHORT Template:**
+  - Price < SMA50 $407.48 ✓ | Price < SMA150 $523.49 ✓
+  - 200-SMA: NOT AVAILABLE → FAIL
+  - >30% below 52w high ($683.39): −55.1% ✓ | Within 25% of 52w low: ✓
+  - 150-SMA < 200-SMA: CANNOT VERIFY → FAIL
+- **HARD RULE VIOLATIONS:**
+  1. **"No shorting after >5% gap-down day"** — INTU is −20% gap → squeeze risk rule triggers → **DISQUALIFIED**
+  2. RSI <30 (outside 30–50 required for 2b-SHORT lane)
+  3. Pair divergence: INTU Z −9.649 vs ADBE/CRM ~0 = ~9.6σ >> 1.5σ → **FAIL**
+  4. Minervini 200-SMA unverifiable
+- **REJECT — Hard rule (>5% gap-down no-short) + RSI too low + pair divergence 9.6σ + 200-SMA unavailable**
+
+#### 6. WMT — SHORT (weak full-year guidance, −10.2% gap)
+- **Catalyst:** Full-year guidance miss → −10.2% premarket gap to $120.565 ✓ (company-specific)
+- **Market Cap:** ~$320B (>$20B ✓)
+- **Sector posture conflict:** Consumer Staples +7.32% YTD (positive sector — WRONG posture for short)
+- **Quant (25-bar):** Close $120.565 | Mean₂₀ $130.61 | σ $1.81 | Z = **−5.561**
+- **Layer B — Momentum 2b-SHORT:**
+  - Z ≤ −1.0 ✓ | Close < 20d low $127.59 ✓ | Volume 1.74× ✓
+  - RSI estimated <30 → **FAIL** (needs 30–50)
+  - 200-SMA unavailable → 50-SMA < 200-SMA unverifiable → **FAIL**
+- **Minervini SHORT Template:**
+  - Price $120.565 < SMA50 $127.13 ✓
+  - Price $120.565 < SMA150 $118.95 → **FAIL** (price is ABOVE 150-SMA)
+  - 200-SMA: NOT AVAILABLE → FAIL
+  - 52w High $134.20 → only −10.2% below (needs >30%) → **HARD FAIL**
+  - 6-month return: +18.9% (not a laggard, needs ≤30th pct) → FAIL
+- **HARD RULE VIOLATIONS:**
+  1. **"No shorting after >5% gap-down day"** — WMT is −10.2% gap → **DISQUALIFIED**
+  2. Minervini: only −10.2% below 52w high (requires >30%)
+  3. Price above SMA150 (structural — not a true laggard)
+  4. Consumer Staples is positive sector (wrong sector posture for short)
+  5. Pair divergence: WMT Z −5.561 vs COST/TGT ~0 = ~5.6σ >> 1.5σ → FAIL
+- **REJECT — Hard rule (>5% gap-down) + Minervini TT multiple failures + sector posture wrong**
+
+---
+
+### Risk Factors
+1. **Iran geopolitical escalation:** Supreme Leader's directive against uranium exports complicates US-Iran deal. Oil could spike further if talks fully collapse; any reversal could send oil back down sharply.
+2. **FOMC hawkish risk:** Goolsbee and Barkin speaking today. Minutes flagged possible rate hike. Market reaction to any hawkish tone could pressure energy and growth names.
+3. **Earnings volatility:** WMT and INTU both gapping hard — signals that high guidance bars are being punished. Consumer and tech sectors under scrutiny.
+4. **200-SMA data gap:** XOM, XLE, WMT, INTU, NVDA all blocked on 200-SMA Minervini condition. Resolves ~10 calendar weeks (~48 trading sessions) from now. This is the primary structural gate preventing most long and short trades.
+5. **S&P 500 futures −0.26%:** Mild headwind; not crisis territory (VIX 17.7), but negative tone limits momentum setups.
+6. **WTI at $100:** Psychologically significant level; may attract profit-taking in energy names without a breakout above $103–$105.
+
+---
+
+### Key Watchlist for Tomorrow (May 22)
+- **XOM/CVX:** Watch for May 21 settled close above $160 (old 20d high was $162.55 before pullback). If WTI holds $100+ and XOM closes above its 20d mean with Z ≥ +1.0 AND above prior 20d high, momentum lane could open.
+- **XLE:** Needs close above $61.29 (current 20d high) on ≥1.5× volume for a breakout confirmation.
+- **INTU:** Re-evaluate once RSI recovers into 30–50 range (likely 3–5 sessions post-crash). Monitor for stabilization base. 200-SMA remains unavailable.
+- **Energy sector clock:** No completed energy trade = sector failure counter has NOT incremented. Energy still viable but requires fresh quant confirmation with settled data.
+- **NEW SECTOR IDEAS:** Materials (FCX, NEM), Industrials (GE, CAT) — YTD +15% and +12% respectively — to be scanned tomorrow given energy's structural gates remain blocked.
+- **Philly Fed + PMI data today:** Could move industrials/materials names.
+
+---
+
+### 200-SMA Operational Note
+The Minervini Trend Template 200-SMA gate remains structurally unavailable for all primary candidates (XOM, XLE, CVX, WMT, INTU). Bot launched ~April 29, 2026. The API provides historical data back to ~Oct 2025 = ~152 settled bars. 200-SMA requires 200 bars. Gap: ~48 trading sessions (~10 calendar weeks). Estimated availability: mid-August 2026. This constraint is **logged, accepted, and expected** — it is not a bug. The 200-SMA gate will auto-resolve as the live data window grows. All other Minervini checks (50-SMA, 150-SMA, 52w high/low range) execute normally.
+
+---
+
+### Decision
+**HOLD — 0 trades today**
+
+Every candidate failed at least one hard gate (Layer B Z-score, Minervini TT, or a hard rule). No forced entries. Cash preserved at $99,056.46 (100%). The Iran catalyst is real but does not produce a clean quant setup in XOM or XLE today — both sit in the no-man's land between mean-reversion and momentum thresholds. The gap-down names (INTU, WMT) are explicitly blocked by the post-gap-down short prohibition. Patience rule applies.
