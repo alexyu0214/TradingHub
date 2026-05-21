@@ -1034,3 +1034,60 @@ Every trade (entry, exit, stop-out) is logged here with full thesis, entry price
 **Circuit breakers:** ✅ All clear — Day 0.00% (lim −2%) | Phase −0.944% (lim −5%) | Drawdown −1.15% from $100,206.70 peak (lim −15%)
 **PDT count:** 0/3 | **Week trades:** 0/3 | **Positions:** 0/6
 
+
+---
+
+### May 21 — Afternoon Scan (Day 24 / ~15:53 ET)
+
+**Portfolio:** $99,056.46 | **Cash:** $99,056.46 (100%) | **Deployed:** 0% | **Phase P&L:** −$943.54 (−0.944%)
+
+| Ticker | Shares | Entry | Current | Unrealized P&L | Stop | Hold |
+|--------|--------|-------|---------|----------------|------|------|
+| — | — | — | — | — | — | — (0 positions) |
+
+**Open orders at scan time:** NONE
+
+**Afternoon scan trades:** none
+
+**Stop action:** N/A — no positions held, no upgrade workflow triggered.
+
+**Afternoon candidates evaluated — ALL REJECTED:**
+
+| Candidate | Z(settle) | Z(live) | Vol ratio | Key Fail | Verdict |
+|-----------|-----------|---------|-----------|----------|---------|
+| XOM | +0.856 | +0.604 | 1.08× | Z<1.0; price 7.0% below $162.55 pivot; vol sub-1.5×; TT 200-SMA structural | REJECT |
+| CVX | +0.594 | +0.450 | 1.45× | Z<1.0; price 3.3% below $197.25 pivot; vol 1.45× (0.05× short) | REJECT |
+| XLE | +1.030 | +0.606 | 1.66× ✅ | Z(live) <1.0; no breakout; TT 150/200-SMA structural (split) | REJECT |
+| NVDA | +0.934 | +0.630 | 1.15× | Z<1.0; 6.6% below $235.74 pivot; vol <1.5×; 7th consecutive miss | REJECT |
+| XLB | **-1.810** | -1.509 | **1.90× ✅** | Z=-1.509 (need≤-2.0, 0.491σ short); RSI~32-35 (need<30); FCX pair div 1.84σ>1.5σ; TT fails | REJECT |
+| FCX | +0.026 | — | 0.75× | Z at mean, no extreme | REJECT |
+
+**XLB watchlist detail:**
+- Z=-2.0 trigger price: $49.56 (20d mean $51.28 − 2×σ $0.86)
+- Current ask $49.98 → $0.42 further decline needed (−0.8%)
+- Volume 1.90× (strongest of any candidate in scan)
+- FCX pair divergence 1.835σ — blocks entry under current rules
+- All 3 gates (Z, RSI, pair) must clear simultaneously for entry
+
+**Timing constraint:** Scan at 15:53 ET = final 7 minutes of session. No new entries per CONSTRAINTS last-15-min rule (secondary independent block).
+
+**PDT count:** 0/3 | **Week trades:** 0/3 | **Positions:** 0/6
+**Circuit breakers:** ✅ All clear — Phase P&L −0.944% (lim −5%) | Drawdown −1.15% from $100,206.70 peak (lim −15%)
+
+---
+
+### May 21 — EOD Snapshot (Day 24, Thursday)
+
+**Portfolio:** $99,056.46 | **Cash:** $99,056.46 (100%) | **Day P&L:** $0.00 (0.000%) | **Phase P&L:** −$943.54 (−0.944%) | **Deployed:** 0%
+
+| Ticker | Shares | Entry | Close | Unrealized P&L | Stop | Time |
+|--------|--------|-------|-------|----------------|------|------|
+| — | — | — | — | — | — | — |
+
+**Trades today:** none — HOLD decision at pre-market confirmed (all 6 candidates failed Layer A + Layer B at open and afternoon scan)
+
+**Notes:** Day 24 closes flat at $99,056.46. The afternoon scan evaluated 6 candidates across energy (XOM, CVX, XLE), technology (NVDA), and materials (XLB, FCX) sectors — zero cleared composite gates. The most notable development was XLB (Materials ETF) printing 1.90× above-average volume on its May 20 settle, with Z = -1.810 heading into today's final session — the closest any candidate has been to the mean-reversion long trigger in recent sessions. However, three independent gates remain uncleared: Z needs ≤-2.0 (only 0.491σ away = ~$0.42 decline), RSI needs <30 (currently ~32-35), and the FCX pair divergence needs to narrow below 1.5σ (currently 1.835σ). Energy names continue their orderly pullback from last week's breakout highs on below-average volume — thesis intact but no statistical entry signal available. NVDA removed from active watchlist after 7 consecutive gate misses post-earnings. Full PDT budget intact (0/3). Full weekly trade allowance intact (0/3). Maximum flexibility for Friday pre-market.
+
+**Circuit breakers:** ✅ All clear — Day 0.000% (lim −2%) | Phase −0.944% (lim −5%) | Drawdown −1.15% from $100,206.70 peak (lim −15%)
+**PDT count:** 0/3 | **Week trades:** 0/3 | **Positions:** 0/6
+

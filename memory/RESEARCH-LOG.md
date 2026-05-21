@@ -4043,3 +4043,129 @@ No DAILY-SUMMARY.md entry required (no actions per workflow rules).
 5. **Materials scan (FCX, NEM, XLB)** and **Industrials (GE, CAT, XLI)** — Flagged repeatedly; still unscanned. YTD +15.24% and +12.84% respectively. High priority for Friday pre-market given energy names' structural gates remaining blocked (200-SMA unavail., TT SMA issues).
 6. **200-SMA data gap:** ~47 trading sessions remaining (est. mid-August 2026). All Minervini TT checks noting 200-SMA "CANNOT VERIFY" will auto-resolve as the live data window grows.
 
+
+---
+
+## 2026-05-21 — Afternoon Scan Addendum (~15:53 ET / 19:53 UTC)
+
+**Scan time:** ~7 min before close (market closes 20:00 UTC / 4:00 PM ET)
+**VIX regime at scan:** NORMAL — VIXY proxy $25.43 (bid $25.42 / ask $25.44) → estimated VIX ~17–18 | Sizing multiplier: 1.00×
+
+---
+
+### STEP 1 — Order & Position State Reconciled vs TRADE-LOG
+
+**API results:**
+
+| Field | Value |
+|-------|-------|
+| Positions | `[]` — EMPTY (100% cash) |
+| Equity | $99,056.46 |
+| Cash | $99,056.46 |
+| Open orders | NONE (last bracket 1d69c496 expired May 18T20:02) |
+
+- **Bracket fills today: 0** — No morning bracket orders were placed (today's pre-market HOLD decision: XOM Z=+0.937, XLE no breakout, NVDA Z<+1.0, NIO/INTU/WMT hard rule failures — see pre-market research entry above)
+- **TRADE-LOG reconciliation: FULLY CURRENT** — 6 historical orders in API all match log entries
+- **Stale limits: 0** — no open orders of any kind
+
+---
+
+### STEP 2 — Trailing Stop Upgrades
+
+**N/A.** Portfolio is 100% cash. No positions exist. No stop upgrade workflow triggered.
+
+---
+
+### STEP 3 — Stale Limit Cancellations
+
+**None.** No open orders. Last bracket (XOM 1d69c496) expired naturally at May 18 session close per its TIF: day.
+
+---
+
+### STEP 4 — Afternoon Opportunity Scan
+
+**VIX regime:** NORMAL (1.00×) | **Positions:** 0/6 | **Week trades:** 0/3 | **PDT:** 0/3
+
+**⏰ Timing note:** Scan at 15:53 ET = within final **7 minutes** of session. CONSTRAINTS.md prohibits new entry orders in the last 15 minutes. All analysis below is for tomorrow's pre-market watchlist only — no bracket orders can be placed at this time.
+
+**Z-Scores and metrics (settled closes through May 20; live ask prices ~15:53 ET):**
+
+| Ticker | May20 Settle | Live Ask | Z(settle) | Z(live) | 20d High | 20d Low | Vol (May20 vs avg) | Lane tried | Key gate failure | Verdict |
+|--------|-------------|----------|-----------|---------|----------|---------|---------------------|-----------|-----------------|---------|
+| XOM | $156.28 | $155.17 | +0.856 | +0.604 | $162.55 | $144.57 | 1.08× | 2b-LONG | Z<1.0; price 7.0% below pivot; vol 1.08×; 200-SMA structural | **REJECT** |
+| CVX | $191.33 | $190.71 | +0.594 | +0.450 | $197.25 | $181.62 | 1.45× | 2b-LONG | Z<1.0; price 3.3% below pivot; vol 1.45× (0.05× short); 200-SMA structural | **REJECT** |
+| XLE | $59.80 | $59.16 | +1.030 | +0.606 | $61.29 | $55.70 | 1.66× ✅ | 2b-LONG | Z(live) 0.606 <1.0; price 3.5% below pivot; TT 150/200-SMA structural (Dec 2025 split) | **REJECT** |
+| NVDA | $223.47 | $220.19 | +0.934 | +0.630 | $235.74 | $196.50 | 1.15× | 2b-LONG | Z<1.0; price 6.6% below pivot; vol 1.15×; 200-SMA structural | **REJECT** |
+| XLB | $49.72 | $49.98 | **-1.810** | -1.509 | $52.41 | $49.04 | **1.90× ✅** | 2a-LONG | Z=-1.509 (need ≤-2.0, 0.491σ short); RSI ~32-35 (need <30); pair FCX div 1.84σ > 1.5σ | **REJECT** |
+| FCX | $60.87 | n/a | +0.026 | — | $67.16 | $55.57 | 0.75× | 2a-LONG | Z=+0.026 (at mean; no extreme) | **REJECT** |
+
+**Pair divergences:**
+- XOM (+0.856) ↔ CVX (+0.594): 0.262σ ✅ (energy sector cohesion — both names pulling back together)
+- XOM (+0.856) ↔ XLE (+1.030): 0.175σ ✅ (sector-wide drift confirmed)
+- FCX (+0.026) ↔ XLB (-1.810): **1.835σ ❌** (exceeds 1.5σ — XLB idiosyncratic weakness, not sector-wide Materials breakdown)
+
+---
+
+**Candidate Notes:**
+
+**XOM — REJECT (4 independent failures):**
+- Z=+0.604 (live) — momentum lane needs ≥+1.0. Well below threshold.
+- Price $155.17 is 7.0% below prior 20d high $162.55. No breakout. Actually pulling back.
+- Volume last bar (May 20): 1.08× — sub-1.5× for 4th consecutive session.
+- 200-SMA structurally unavailable (152/200 bars).
+- Energy thesis remains structurally intact (WTI, Hormuz, sector YTD leader), but the statistical entry signal has degraded. XOM needs to rebuild a base and re-break $162.55 on strong volume.
+
+**CVX — REJECT (4 failures):**
+- Z=+0.450 (live) | Vol 1.45× (closest energy name to threshold, only 0.05× short).
+- Price 3.3% below pivot. Pulling back alongside XOM in lockstep (pair divergence 0.262σ = expected).
+- Same structural TT limitation as XOM. Not a standalone entry.
+
+**XLE — REJECT (3 failures; vol is the one passing gate):**
+- Vol 1.66× ✅ — only passing gate. This is the strongest volume reading among energy names.
+- Z(live) = 0.606 — just misses +1.0 threshold.
+- Price $59.16 is 3.5% below $61.29 pivot — no breakout.
+- Minervini TT 150/200-SMA permanently blocked by Dec 2025 XLE share consolidation (price ~$92→$45 discontinuity in the data series). This is an irresolvable structural limitation unless split-adjusted historical data is obtained.
+- XLE has the best "momentum lane structure" of the group: vol confirmed, Z approaching, sector right. If it rallies through $61.29 on a fresh ≥1.5× day → 2b-LONG qualifies (pending TT operator fix).
+
+**NVDA — REJECT (4 failures; 7th consecutive session):**
+- Z=+0.630 | Price 6.6% below $235.74 pivot | Vol 1.15×.
+- The post-earnings catalyst (Q1 FY2027 beat reported May 19 after close) has been fully absorbed and reversed. The stock has drifted from ~$224 (post-earnings) to ~$220 today.
+- Removing from active watchlist. Restore only when: (a) fresh catalyst + close above $235.74 on ≥1.5× vol for 2b-LONG, OR (b) pullback to Z ≤ -2.0 (~$191) + RSI <30 for 2a-LONG.
+
+**XLB — REJECT but #1 WATCHLIST (closest to qualifying of all candidates):**
+- Z(settle May20) = -1.810, Z(live May21) = -1.509 — both approaching the ≤-2.0 trigger.
+- **Z-trigger price = $49.56** (20d mean $51.28 − 2.0 × σ $0.86). Only **$0.42 (0.8%) further decline needed**.
+- Volume May 20: **1.90×** — the strongest volume reading of any candidate in today's scan. Institutional participation confirmed in the selloff.
+- RSI estimated ~32-35 — approaching but not yet <30 required.
+- **Critical pair failure:** FCX Z = +0.026 vs XLB Z = -1.810 → divergence **1.835σ > 1.5σ threshold**. FCX (copper) is at its 20-day mean while XLB (materials ETF) is deeply oversold. This divergence suggests XLB's weakness is ETF-specific (weight composition, constituent-level idiosyncratic moves) rather than a broad Materials sector dislocation. Per strategy rules, pair divergence >1.5σ = skip single-name risk.
+- Minervini TT: Price $49.98 is below estimated 50-SMA (~$51.5) — TT Long requires price > 50-SMA. Structural fail. 200-SMA also unavailable.
+- **VERDICT: All 3 required gates (Z, RSI, pair) fail simultaneously.** However, this is the #1 watchlist name heading into Friday. If FCX also sells off tomorrow bringing the pair divergence below 1.5σ AND XLB reaches $49.56 with RSI <30 → genuine 2a-LONG mean-reversion candidate. Materials sector YTD +15.24% supports long bias when/if signal clears.
+
+**FCX — REJECT:**
+- Z = +0.026 — at its 20-day mean. No statistical extreme. Vol 0.75×. Not a candidate in any lane.
+- Notable context: FCX traded $66+ last week and has pulled back to $60.87 — still in the upper half of its 20d range. Not remotely oversold.
+
+**New afternoon entries: NONE** — zero bracket orders placed (additionally blocked by final 7-minute no-entry window).
+
+---
+
+### Afternoon Market Context
+
+Today's session (May 21) continued the energy sector's corrective pullback from last week's highs. XOM drifted from its May 20 settle of $156.28 down to ~$155.17 intraday (−0.7%), CVX from $191.33 to ~$190.71 (−0.3%). Both are now 7.0% and 3.3% respectively below their prior breakout pivots ($162.55 and $197.25) — the momentum thesis that was close to triggering last week has been reset by the combined pressure of the FOMC minutes (May 20 hawkish signal), WTI volatility around the US-Iran narrative, and broad market digestion. The constructive note is that energy names are pulling back on below-average volume (XOM 1.08×, CVX 1.45×), consistent with orderly mean-reversion rather than institutional distribution. XLB (Materials ETF) is the session's most statistically interesting development: with Z approaching -2.0 (-1.810 settled) and volume at a strong 1.90×, it is the closest any candidate has been to a mean-reversion long trigger in several sessions. The remaining barriers are the FCX pair divergence (1.84σ > 1.5σ threshold), the RSI not yet sub-30, and the Minervini TT structural gate. The VIX proxy (VIXY $25.43) continues to signal a Normal regime — no fear-driven selling is contributing to these moves, which is a qualitative positive for the thesis that pullbacks in energy and materials are consolidations, not breakdowns.
+
+---
+
+**Bracket fills today:** 0 (no morning limits placed — HOLD decision)
+**Stops upgraded:** 0 (no positions held; no upgrade workflow applicable)
+**Stale limits cancelled:** 0 (no open orders existed)
+**New afternoon entries:** none — all 6 candidates failed composite Layer A + Layer B gates; additionally within final 7-minute no-entry window
+**Afternoon market context:** Energy continuing orderly pullback on below-avg vol (XOM −0.7%, CVX −0.3%). XLB Materials ETF Z=-1.810 on 1.90× volume — closest candidate to a mean-reversion trigger. NVDA drift lower (−7th consecutive evaluation miss). VIX Normal (~17-18). No new orders placed.
+
+**Key watchlist for Friday pre-market (2026-05-22):**
+1. **XLB (Materials ETF) — #1 PRIORITY** — Z=-1.810 (trigger $49.56, needs −0.8% more); vol 1.90× ✅; RSI ~32-35 (approaching <30). The 3 remaining gates to clear: (a) Z ≤ -2.0, (b) RSI < 30, (c) FCX pair divergence must narrow below 1.5σ. If all three clear simultaneously → 2a-LONG bracket with entry ~$49.56, stop ~$46.09 (−7%), target ~$54.64 (2:1 R:R).
+2. **XLE (Energy ETF) — #2** — vol 1.66× ✅; Z(settle) 1.030; but live Z=0.606 and price 3.5% below $61.29 pivot. TT structural block (Dec 2025 split data gap) persists. Needs price above $61.29 on ≥1.5× vol for fresh 2b-LONG. Operator action: obtain split-adjusted XLE historical data to resolve TT.
+3. **XOM/CVX** — Both below momentum pivots with sub-1.5× vol. No near-term entry trigger. Energy thesis intact structurally (WTI, Hormuz) but needs a fresh catalyst and volume surge to re-establish breakout.
+4. **NVDA — OFF ACTIVE WATCHLIST** — 7 consecutive gate misses post-earnings. Restore only on fresh catalyst + breakout above $235.74, or pullback to Z ≤ -2.0 (~$191).
+5. **Materials sector broader scan (NEM, LIN, APD)** — Flagged FCX as XLB's pair today; it diverged 1.84σ. Check if other materials names (LIN, APD) are more correlated with XLB's weakness — if LIN Z also approaches -2.0, pair divergence concern may ease.
+6. **200-SMA data gap** — ~46 trading sessions remaining (est. mid-August 2026). All Minervini TT 200-SMA "CANNOT VERIFY" flags resolve automatically as data accumulates. No operator action needed beyond patience.
+
