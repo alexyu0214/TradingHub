@@ -3817,3 +3817,151 @@ The Minervini Trend Template 200-SMA gate remains structurally unavailable for a
 **HOLD — 0 trades today**
 
 Every candidate failed at least one hard gate (Layer B Z-score, Minervini TT, or a hard rule). No forced entries. Cash preserved at $99,056.46 (100%). The Iran catalyst is real but does not produce a clean quant setup in XOM or XLE today — both sit in the no-man's land between mean-reversion and momentum thresholds. The gap-down names (INTU, WMT) are explicitly blocked by the post-gap-down short prohibition. Patience rule applies.
+
+---
+
+## 2026-05-21 — Midday Rescan Addendum (17:11 UTC / ~13:11 ET)
+
+**VIX Regime at rescan:** Normal (~17.44–17.7 from morning research) — 1.00× sizing multiplier, all entry types eligible
+**Account at rescan:** Equity $99,056.46 | Cash $99,056.46 (100%) | Deployed: 0% | Positions: 0/6 | Week trades: 0/3 | PDT: 0/3
+**Orders at rescan:** NONE (no orders were placed at market-open per today's HOLD decision)
+
+---
+
+### Skipped at Open — Re-evaluated at Midday
+
+| Ticker | Skip Reason at Open | Spread Now | Z-Score Now | Still Skipped? | Gate(s) Failed |
+|--------|---------------------|-----------|------------|----------------|----------------|
+| **XOM** | Z=+0.937 (below +1.0); Volume 1.10×; 200-SMA unavail.; Iran +2% but no breakout | 3.75% ❌ (R-flagged) | +0.856 (settle proxy) | ❌ YES | Spread 3.75% unenterable; Z +0.856 < +1.0; Price $153 vs 20d high $162.55 (−5.84% below); Volume 1.10× < 1.5× |
+| **XLE** | Z=+1.020 barely; No breakout ($59.785 < $61.29 pivot); Minervini TT 150/200 SMA unavail. | 0.017% ✅ | +0.894 | ❌ YES | Z +0.894 < +1.0 (just misses); Price $59.60 vs 20d high $61.29 (−2.77% below; no breakout); TT structurally blocked |
+| **NVDA** | Z=+0.934 (below +1.0); Price below 20d high $235.74; earnings catalyst spent | 0.023% ✅ | +0.691 | ❌ YES | Z +0.691 (far from any threshold); Price $220.85 = −6.32% below 20d high; Vol 1.19× < 1.5× |
+| **NIO** | Z=−2.022 but Minervini TT fails (0% above 52w low; no SMA data); bearish price on beat | 0.180% ✅ | ~−2.0 | ❌ YES | Structural TT failures unchanged; price AT 52w low (need >30% above); only 25 bars history |
+| **INTU** | HARD RULE: >5% gap-down → no-short. RSI <30. Pair div 9.6σ. 200-SMA unavail. | 0.255% ✅ | −9+ | ❌ YES | HARD RULE violation (>5% gap-down = permanent no-short block); RSI <30 ❌; pair div ❌ |
+| **WMT** | HARD RULE: >5% gap-down → no-short. TT -10.2% below 52w high (need >30%). Sector wrong. | 0.025% ✅ | ~−5.5 | ❌ YES | HARD RULE violation (>5% gap-down = permanent no-short block); TT only −10.2% below 52w high ❌; Cons. Staples = positive sector ❌ |
+
+---
+
+### Detailed Re-Check
+
+#### XOM — ❌ STILL SKIPPED (spread + structural regression)
+
+**Quote:** bid $150.19 / ask $155.93 — condition code "R" (restricted/indicative NBBO)
+**Spread:** ($155.93 − $150.19) / $153.06 = **3.75% → FAILS <1% gate.** Unenterable regardless of other metrics.
+**Z-Score (best proxy — last settle $156.28):** +0.856 — meaningfully **below the +1.0 minimum for 2b-LONG**. The live mid (~$153.06) produces Z = +0.124 — essentially at the 20-day mean. Neither reading approaches any entry lane threshold.
+**Price vs 20d pivot ($162.55):** $153.06 = **−5.84% below** the breakout pivot. The 2b-LONG lane requires price to be ABOVE the 20d high. XOM is not close.
+**Volume (May 20 last bar):** 18.5M / 16.8M avg = **1.10× — below the 1.5× momentum threshold.**
+
+Context: The morning pre-market noted WTI +2.2% on Iran Supreme Leader blocking uranium exports (thesis partially restoring). But XOM's intraday price does NOT reflect this thesis restoration — the stock is trading below its last settled close ($156.28) per the live mid, and far below the prior breakout structure. No lane qualifies. The R-flagged spread alone makes entry technically impossible. This is a STRUCTURAL regression from prior watchlist status, not a timing/spread issue that the midday window resolves.
+
+**VERDICT: ❌ STILL SKIPPED** — 4 independent failures (spread, Z, no breakout, volume).
+
+---
+
+#### XLE — ❌ STILL SKIPPED (spread normalized; Z and price gates remain)
+
+**Quote:** bid $59.59 / ask $59.60 — **spread 0.017% ✅ — fully normalized, excellent liquidity.**
+**Z-Score:** +0.894 — the 2b-LONG lane requires Z ≥ +1.0. Gap is only 0.106σ, but a gate is a gate; the rule does not bend for "close."
+**Price vs 20d high ($61.29):** $59.595 = **−2.77% below pivot** — no confirmed breakout. The momentum lane requires the close/current price to be above the 20d high. XLE is below it.
+**Volume (May 20 last bar):** 61.8M / 36.4M avg = **1.70× ✅** — volume confirmation is EXCELLENT and the one fully passing gate. The May 20 bar had strong institutional participation. Unfortunately, volume alone cannot substitute for the price breakout and Z thresholds.
+**Minervini TT:** 150/200-SMA unavailable due to the Dec 2025 XLE share consolidation (~$92→$45 price discontinuity). This structural block remains.
+
+The notable development: XLE is the **most improved candidate from this morning** — spread is clean, volume was institutional on the last bar. What's missing is simply price catching up to the $61.29 pivot (needs +2.8% more) and Z breaking above +1.0. If XLE rallies from here into or beyond $61.29 on sustained volume, this setup is very close to qualifying. Monitor for Friday pre-market.
+
+**VERDICT: ❌ STILL SKIPPED** — spread normalized ✅; volume ✅; price and Z below thresholds; TT structural.
+
+---
+
+#### NVDA — ❌ STILL SKIPPED (5th consecutive session, earnings catalyst exhausted)
+
+**Quote:** bid $220.82 / ask $220.87 — **spread 0.023% ✅ — excellent.**
+**Z-Score:** +0.691 — 5th consecutive session below the +1.0 momentum threshold. Z has actually **declined** from +0.934 yesterday to +0.691 today: NVDA is drifting DOWN post-earnings (−1.26% from yesterday's $223.47 settle).
+**Price vs 20d high ($235.74):** $220.85 = **−6.32% below pivot** — the gap has widened from −4.4% at Monday's open to −6.32% today.
+**Volume last bar:** 1.19× avg — below the 1.5× threshold.
+**RSI:** 69.8 — approaching but NOT exceeding 70 required for a mean-reversion short lane. Even if RSI cleared 70, Z would need ≥+2.0 for 2a-SHORT, far from current +0.691.
+
+Assessment: The post-earnings "sell the news" drift is the dominant pattern. The earnings catalyst has been fully absorbed and the stock is reverting toward its 20-day mean. NVDA needs a fresh, new catalyst to generate a qualifying entry. A pullback to Z ≤ −2.0 (~$191, or ~−13% from here) would create a 2a-LONG mean-reversion setup — not in near-term view. Alternatively, if NVDA announces a product launch or major contract that re-breaks $235.74 on ≥1.5× volume, the 2b-LONG lane could re-open. Neither is imminent. **Removing NVDA from the active watchlist.** Restore to watch-only status.
+
+**VERDICT: ❌ STILL SKIPPED** — spread normalized ✅; Z, breakout, volume all fail; catalyst spent.
+
+---
+
+#### NIO — ❌ STILL SKIPPED (structural TT failures; bearish market response confirmed)
+
+**Quote:** bid $5.56 / ask $5.57 — spread 0.180% ✅ (normalized).
+**Z-Score from morning data:** ~−2.022 (technically meets 2a-LONG mean-reversion threshold of ≤−2.0).
+**Structural gate failures (unchanged from open):**
+1. **Minervini TT (52w low):** Price $5.56 is AT the 52-week low — 0% above it. The long TT requires price to be >30% above the 52-week low (need ≥$7.29 to qualify this gate). Not close.
+2. **SMA data unavailable:** Only 25 bars of history. Cannot compute 50/150/200-SMAs. Cannot verify uptrend alignment.
+3. **Bearish market response to positive catalyst:** NIO reported Q1 revenue +112.2% YoY and deliveries +98.3% — a strong print by any measure. Yet price declined on May 19 ($5.74) and May 20 ($5.59) on the catalyst. Today at $5.56 — a further decline. When the market explicitly rejects a positive catalyst with sustained selling, the Z-Score oversold signal is NOT a mean-reversion bounce opportunity — it's a falling knife. The strategy's Z ≤ −2.0 gate is designed for oversold names that will snap back; it is not designed for structurally broken stories.
+
+Z alone cannot override a Minervini TT hard fail. Both layers must clear.
+
+**VERDICT: ❌ STILL SKIPPED** — TT failures are structural and permanent until price recovers above $7.29 (52w low +30% threshold). Even then, SMA data gap remains.
+
+---
+
+#### INTU — ❌ STILL SKIPPED (HARD RULE: no-short after >5% gap-down — permanent)
+
+**Quote:** bid $309.21 / ask $310.00 — spread 0.255% ✅ (fully normalized from ~2% at open).
+**Hard rule violation:** INTU opened −20% gap-down today. CONSTRAINTS.md: *"No shorting after >5% gap-down day on the candidate (capitulation/squeeze risk)."* This is a permanent block for today's session regardless of spread normalization.
+**Validation of the hard rule:** INTU is trading UP from its ~$306.68 open to $309.61 (+0.96%) at rescan time — a classic dead-cat/squeeze bounce immediately off the lows. Shorting into a bounce from a capitulation gap is exactly the pattern the rule is designed to prevent. The rule is working as intended.
+**Other failures (remain):** RSI <30 (capitulation, not controlled breakdown); pair divergence 9.6σ vs ADBE/CRM; 200-SMA unavailable; RSI outside 30–50 range for 2b-SHORT.
+
+**VERDICT: ❌ STILL SKIPPED** — HARD RULE VIOLATION (no-short after >5% gap-down). Spread irrelevant.
+
+---
+
+#### WMT — ❌ STILL SKIPPED (HARD RULE: no-short after >5% gap-down — permanent)
+
+**Quote:** bid $121.51 / ask $121.54 — spread 0.025% ✅ (excellent, normalized).
+**Hard rule violation:** WMT opened −10.2% gap-down today. Same permanent no-short block as INTU.
+**Validation:** WMT trading UP from $120.57 open to $121.53 (+0.80%) — identical bounce pattern confirming squeeze risk. The hard rule prevented what would have been an immediate adverse move.
+**Other structural failures:** TT only −10.2% below 52w high (needs >30%); price above 150-SMA (not a true laggard); Consumer Staples YTD +7.32% = positive sector (wrong posture for short); RSI <30.
+
+**VERDICT: ❌ STILL SKIPPED** — HARD RULE VIOLATION. Spread normalization is irrelevant.
+
+---
+
+### Hard Rule Validation Note
+
+Both INTU and WMT bounced after their gap-down opens (+0.96% and +0.80% respectively by rescan time). The "no short after >5% gap-down" rule has now been validated empirically **within this same session** — entering short at the open on either name would have resulted in an immediate adverse move. This is the short-squeeze / capitulation-bounce dynamic the rule was written to prevent.
+
+---
+
+### Trades Fired This Rescan
+
+**None.**
+
+Zero candidates re-cleared the composite Layer A + Layer B gates upon midday re-evaluation.
+
+---
+
+### Patience Rule Applied
+
+All six skipped candidates remain below their respective entry thresholds. Gate failures are either:
+- **Structural** (200-SMA unavailable, TT 52w low, hard no-short rules): XOM, XLE (TT), NVDA, NIO, INTU, WMT — these do not resolve with time of day
+- **Quant** (Z and price level): XOM (Z +0.856, price regressing), XLE (Z +0.894 barely misses, no breakout), NVDA (Z +0.691, fading)
+- **Spread** (R-flagged): XOM only
+
+No gates were lowered. No trade was forced. Zero trades is the correct disciplined outcome.
+
+---
+
+### Market Observations at Rescan
+
+- **Energy sector:** XOM's R-flagged wide spread (3.75%) suggests thinness in the tape during early session — not unusual for a large-cap like XOM in a morning where oil is moving. The intraday implied price (~$153) is well below last settled close ($156.28), consistent with WTI at $100.46 still generating selling pressure in energy names despite the Iran uranium directive catalyst.
+- **XLE relative:** XLE is holding up better than XOM intraday — $59.60 vs yesterday's $59.80 settle (only −0.34%) while XOM is down more sharply. This is consistent with ETF product smoothing vs. single-name volatility.
+- **Gap-down bounces:** Both INTU (+0.96%) and WMT (+0.80%) are rebounding from their open gaps, validating the hard no-short rule in real time.
+- **NVDA drift:** The post-earnings drift lower continues (−1.26% today). The earnings catalyst is fully spent; the stock is settling back toward its pre-earnings base.
+
+---
+
+### Updated Watchlist for Friday Pre-Market (May 22)
+
+1. **XLE** — Most improved candidate. Volume on May 20 bar was 1.70× (strong ✅). Z at +0.894, only 0.106σ below the gate. Price at $59.60, only $1.69 (2.77%) below the $61.29 pivot. If WTI stabilizes and XLE approaches $61.29 on another strong volume day, the 2b-LONG setup is very close. Minervini TT SMA issue remains (structural).
+2. **XOM** — Needs: (a) clean NBBO quote (non-R-flagged), (b) price to recover above $162.55 on 1.5× volume for new breakout bar, (c) Z ≥ +1.0. None of these are near today. Monitor for base-building.
+3. **NVDA** — Removed from active watchlist. Watch-only: restore as 2b-LONG candidate only if a new catalyst breaks price above $235.74 with 1.5× volume. Watch for 2a-LONG setup if price declines to Z ≤ −2.0 (~$191).
+4. **Materials sector (FCX, NEM, XLB)** — Flagged for two weeks in pre-market research but never pulled bars. YTD Materials +15.24% = third-ranked sector. Need to scan Friday.
+5. **Industrials (GE, CAT, XLI)** — Same flag, same context. YTD +12.84%.
+6. **200-SMA data gap:** ~47 trading sessions remaining until 200-SMA data becomes available for late-Oct 2025 bot inception names. Estimated availability: mid-August 2026. Log and accept.
+
