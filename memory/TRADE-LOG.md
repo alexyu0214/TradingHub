@@ -1011,3 +1011,26 @@ Every trade (entry, exit, stop-out) is logged here with full thesis, entry price
 
 **Circuit breakers:** ✅ All clear — Day 0.000% (lim −2%) | Phase −0.944% (lim −5%) | Drawdown −1.15% from $100,206.70 peak (lim −15%)
 **PDT count:** 0/3 | **Week trades:** 0/3 | **Positions:** 0/6
+
+### 2026-05-21 16:27 — MARKET-OPEN EXECUTION: NO ORDERS PLACED
+
+**Research Decision:** HOLD — 0 trades (explicit in today's research log)
+**Week trades used:** 0/3 | **Daytrade count:** 0/3 | **Open positions:** 0/6
+**Cash:** $99,056.46 (100% of equity)
+
+**Candidates evaluated and rejected (all failed at research layer — no new gate checks needed):**
+
+| Ticker | Dir | Key Failure(s) |
+|--------|-----|---------------|
+| XOM | LONG | Layer B Z=0.937 < 1.0 (momentum lane); Minervini 200-SMA unavailable |
+| XLE | LONG | No breakout above 20d high ($61.29); Minervini 150/200-SMA unavailable |
+| NVDA | LONG | Layer B Z=0.934 < 1.0; no breakout above 20d high ($235.74); catalyst spent |
+| NIO | LONG | Minervini TT structurally fails (25 bars only); 0% above 52w low (needs >30%); bearish price response to catalyst |
+| INTU | SHORT | Hard rule: >5% gap-down (−20%) → short prohibited; RSI <30 (outside 30–50); pair divergence 9.6σ; 200-SMA unavailable |
+| WMT | SHORT | Hard rule: >5% gap-down (−10.2%) → short prohibited; only −10.2% below 52w high (needs >30%); price above SMA150; wrong sector posture |
+
+**No orders placed. No order IDs. Cash preserved. All circuit breakers clear.**
+
+**Circuit breakers:** ✅ All clear — Day 0.00% (lim −2%) | Phase −0.944% (lim −5%) | Drawdown −1.15% from $100,206.70 peak (lim −15%)
+**PDT count:** 0/3 | **Week trades:** 0/3 | **Positions:** 0/6
+

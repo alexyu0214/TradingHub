@@ -612,3 +612,24 @@ All three skipped — see TRADE-LOG.md for per-ticker gate failures.
 **Notes:** Flat day, no activity, all rules clear. FOMC Minutes interpreted hawkishly — energy AH quotes (XOM −8%, CVX −7.8%) confirm sector weakness but no positions held. NVDA beat fully priced in; three consecutive gate failures. Week trades 0/3 fully intact. Thursday pre-market: confirm May 20 settled bars before new entries.
 
 ---
+
+## 2026-05-21 — Market-Open Execution (Day 24, Thursday)
+
+**Market-open orders placed:** None
+
+**Reason:** Research decision was explicit HOLD — all 6 candidates (XOM, XLE, NVDA, NIO, INTU, WMT) failed hard gates at the research layer before reaching execution. Two hard-rule disqualifications (INTU −20% gap-down, WMT −10.2% gap-down) triggered the no-shorting-after->5%-gap rule. Remaining candidates blocked by Layer B Z-score sub-threshold (XOM 0.937, NVDA 0.934, XLE no 20d-high breakout) and Minervini Trend Template 200-SMA structural unavailability.
+
+**Portfolio:** $99,056.46 | **Cash:** $99,056.46 (100%) | **Deployed:** 0%
+**Week trades:** 0/3 | **Daytrade count:** 0/3 | **Open positions:** 0/6
+
+**Skipped candidates:**
+- XOM LONG: Z-score 0.937 < 1.0 (momentum lane); Minervini 200-SMA unavailable
+- XLE LONG: No breakout above 20d high ($61.29); 150/200-SMA unavailable
+- NVDA LONG: Z-score 0.934 < 1.0; no 20d-high breakout; catalyst spent
+- NIO LONG: Minervini TT structural fail (25 bars); 0% above 52w low; bearish price response
+- INTU SHORT: Hard rule — >5% gap-down (−20%) prohibits shorting; RSI <30; pair divergence 9.6σ
+- WMT SHORT: Hard rule — >5% gap-down (−10.2%) prohibits shorting; −10.2% below 52w high (needs >30%); wrong sector posture
+
+**Tomorrow watchlist:** XOM (close > $160 + Z ≥ 1.0 + 20d-high breakout), XLE (close > $61.29 on ≥1.5× volume), INTU (RSI recovery to 30–50 range, 3–5 sessions), FCX/NEM (Materials +15% YTD), GE/CAT (Industrials +12% YTD). Philly Fed + PMI data today may move industrials/materials.
+
+---
