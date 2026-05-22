@@ -4169,3 +4169,136 @@ Today's session (May 21) continued the energy sector's corrective pullback from 
 5. **Materials sector broader scan (NEM, LIN, APD)** — Flagged FCX as XLB's pair today; it diverged 1.84σ. Check if other materials names (LIN, APD) are more correlated with XLB's weakness — if LIN Z also approaches -2.0, pair divergence concern may ease.
 6. **200-SMA data gap** — ~46 trading sessions remaining (est. mid-August 2026). All Minervini TT 200-SMA "CANNOT VERIFY" flags resolve automatically as data accumulates. No operator action needed beyond patience.
 
+
+---
+
+## 2026-05-22 — Pre-Market Research (Day 25, Friday)
+
+### Account
+- **Equity:** $99,056.46
+- **Cash:** $99,056.46 (100%)
+- **Buying power:** $198,112.92 (2× margin available)
+- **Daytrade count:** 0/3
+- **Open positions:** None
+- **Open orders:** None
+- **Phase P&L:** −$943.54 (−0.944%)
+- **Max drawdown from peak ($100,206.70):** −1.15% (well within −15% circuit breaker)
+
+---
+
+### Market Context
+- **WTI Crude Oil:** ~$96–98/bbl (+2.3% today, +1.8% at $98.08 intraday, +1.75% past month, +58.5% YoY). Hormuz tensions and US-Iran peace negotiation uncertainty driving surge.
+- **Brent Crude:** ~$104–106/bbl (+2.8% today, traded $103.79–$106.36 range). +58.88% YoY.
+- **S&P 500 Futures:** Up +0.10%–+0.20% premarket. SPY +0.38% at $745.50. June futures 7,487.50 (+0.29%).
+- **VIX:** Below 17 (16.76 on Thursday, down 3.9%). VIX futures down 3.00% premarket today.
+- **Key Catalysts:**
+  - US-Iran peace talks uncertainty + Strait of Hormuz tensions → oil spike dominating energy sector
+  - Kevin Warsh sworn in as new Fed Chair today (succeeds Jerome Powell) — hawkish pivot risk
+  - Nomura: no Fed rate cuts in 2026 due to rising inflation
+  - U of Michigan Consumer Sentiment Final (consensus 48.2); 1-yr inflation expectations 4.6%; 5-yr 3.4%
+  - No CPI, PPI, FOMC, or major jobs data today
+- **Pre-Market Earnings:** BJ's Wholesale (BJ), Booz Allen Hamilton (BAH), Global Ship Lease (GSL), Richemont (CFRUY)
+- **YTD Sector Performance:**
+  - Energy +27.87% 🔝 | Info Tech +23.55% | Materials +15.24% | Industrials +12.84%
+  - Real Estate +10.46% | Consumer Staples +7.32% | Utilities +5.74%
+  - Consumer Discretionary −0.03% | Comm Services −1.82% | Financials −6.55% | Health Care −7.60% 🔻
+  - S&P 500 YTD: +8%
+
+---
+
+### VIX Regime
+- **Current VIX:** 16.76 (premarket futures pointing lower, ~16.0–16.5 implied)
+- **Regime:** Normal (14–22 band)
+- **Sizing multiplier:** 1.00× (full sizing)
+- **Strategy bias:** All entry types OK; cold-start default 10% per position applies (< 30 closed trades)
+
+---
+
+### Candidates Evaluated
+
+#### LONG CANDIDATES (3 screened)
+
+**1. XLB (Materials ETF — #1 Watchlist Carryover)**
+- Lane attempted: 2a-LONG (Mean-Reversion)
+- Catalyst: Materials YTD +15.24%; prior high-volume selloff (May 20: 1.90× vol); mean-reversion bounce thesis intact from prior sessions
+- Quant (Layer B):
+  - Mean(20): $51.19 | StdDev(20): $0.897
+  - Current (premarket): $50.015 | **Z = −1.315** ❌ (need ≤ −2.0; Z-trigger price = $49.56)
+  - Yesterday vol: 10,236,190 | AvgVol(20): 10,589,748 | **Vol ratio: 0.97×** ❌ (need ≥ 1.0×)
+  - RSI(approx): **33.8** ❌ (need < 30)
+  - Pair (FCX): Z = +0.460 | **Divergence: 1.774σ** ❌ (need ≤ 1.5σ)
+- Minervini TT Long:
+  - Price $50.02 vs 50-SMA $50.62 → **❌ FAIL** (price below 50-SMA)
+  - 150/200-SMA: CANNOT VERIFY (only 112 post-split bars; ~38 sessions until 150-SMA clears)
+  - 30% above 52w Low: $50.02 vs required $56.41 → **❌ FAIL** (52w Low $43.39 post-split, threshold too high given short history)
+  - Price within 25% of 52w High ($53.62): $50.02 ≥ $40.21 → ✅
+- **VERDICT: ❌ REJECT** — 4/4 quant gates fail, 2 TT conditions fail. Z now −1.315 vs prior session −1.309 (marginal deterioration). Thesis intact but signal not present.
+- **Z-trigger watch:** $49.56 (needs −0.9% from current $50.02). FCX must also close divergence gap.
+
+**2. XOM (Energy mega-cap)**
+- Lane attempted: 2b-LONG (fresh oil catalyst today), 2a-LONG (bounce check)
+- Catalyst: WTI +2.3% today, Hormuz tensions, Warsh hawkish posture keeps energy hedge bids firm
+- Quant (Layer B):
+  - Mean(20): $152.75 | StdDev(20): $4.418
+  - Current (premarket): $154.95 | **Z = +0.498** ❌ (2b needs ≥+1.0; 2a needs ≤−2.0)
+  - Prior breakout pivot: $162.55 (May 19) — price 4.7% below, no breakout ❌
+  - Yesterday vol: 17,070,896 | AvgVol(20): 17,399,943 | **Vol ratio: 0.98×** ❌ (need ≥1.5× for 2b)
+  - RSI(approx): 62.9 (in 50-70 zone ✅ but other 2b gates fail)
+- Minervini TT: 50-SMA $155.66 vs price $154.95 → **❌ FAIL** (price below 50-SMA); 150/200-SMA unavailable (144 bars)
+- **VERDICT: ❌ REJECT** — No quant lane clears. Oil surge is a real catalyst but price hasn't re-broken its pivot. Below 50-SMA. Orderly pullback, not statistical edge.
+
+**3. XLE (Energy ETF)**
+- Lane attempted: 2b-LONG (momentum breakout)
+- Catalyst: WTI +2.3% / Brent +2.8% — fresh oil surge; XLE was #2 watchlist heading into today
+- Quant (Layer B):
+  - Mean(20): $58.35 | StdDev(20): $1.492
+  - Premarket $59.325 | **Z = +0.652** ❌ (need ≥+1.0)
+  - Breakout pivot: $61.29 (May 19 high) — price 3.2% below ❌
+  - Yesterday vol: 45,853,720 | AvgVol(20): 37,753,513 | **Vol ratio: 1.21×** ❌ (need ≥1.5×)
+  - RSI(approx): 66.6 ✅ (within 50-70 zone)
+  - 50-SMA: $58.42; price $59.13 > 50-SMA ✅; 150/200-SMA unavailable (116 bars)
+- Minervini TT Long: 52w High $62.56, 52w Low $43.81; price 30%+ above Low ✅; within 25% of High ✅; BUT 150/200-SMA cannot verify; 50-SMA condition ✅
+- **VERDICT: ❌ REJECT at open** — Z and pivot both un-cleared. LIVE WATCHLIST: If WTI surge drives XLE through $61.29 intraday on ≥1.5× avg volume → 2b-LONG re-evaluates in real time. RSI and 50-SMA are already cooperating — only Z and price/vol breakout needed. Pivot extension check would be: limit ≤ $61.29 × 1.05 = $64.35 (ample room).
+
+#### SHORT CANDIDATES (2 flagged, not yet pulled)
+- **XLV (Health Care ETF — worst YTD sector −7.60%):** Not pulled today — 2b-SHORT setup requires bars analysis. Flagging for Monday pre-market full scan. If short trend template clears (price < all SMAs, breakdown from 20d low), this is the highest-conviction short sector in the universe.
+- **XLF (Financials ETF — YTD −6.55%):** Warsh swearing-in today introduces hawkish macro uncertainty for banks. Not pulled. Adding to Monday scan alongside XLV. Both require 210-bar pull + full TT Short check.
+
+---
+
+### Skipped Candidates — Specific Failed Checks
+
+| Ticker | Lane | Failed Gate(s) |
+|--------|------|----------------|
+| XLB | 2a-LONG | Z = −1.315 (need ≤−2.0) ❌; RSI 33.8 (need <30) ❌; Vol 0.97× (need ≥1.0×) ❌; FCX pair 1.774σ (need ≤1.5σ) ❌; Price < 50-SMA ❌; <30% above 52w Low ❌ |
+| XOM | 2b-LONG | Z = +0.498 (need ≥+1.0) ❌; close $154.95 < pivot $162.55 ❌; vol 0.98× (need ≥1.5×) ❌; price < 50-SMA ❌ |
+| CVX | 2b-LONG | Z = +0.478 (need ≥+1.0) ❌; vol 0.89× (need ≥1.5×) ❌; price below pivot $197.25 ❌ |
+| XLE | 2b-LONG | Z = +0.652 (need ≥+1.0) ❌; close $59.13 < pivot $61.29 ❌; vol 1.21× (need ≥1.5×) ❌ |
+| XLV | 2b-SHORT | Bars not pulled — deferred to Monday |
+| XLF | 2b-SHORT | Bars not pulled — deferred to Monday |
+
+---
+
+### Trade Ideas (Cleared Both Layers)
+**NONE.** Zero candidates cleared both Layer A and Layer B today.
+
+---
+
+### Risk Factors
+1. **Oil price spike risk (two-sided):** WTI at $96–98, Brent above $105. If Hormuz situation resolves (peace deal) → oil crashes, energy longs would gap down. If situation escalates → oil could spike further, creating breakout setups. Either direction can be fast-moving.
+2. **New Fed Chair (Warsh):** Hawkish posture expected. First statements/signals could impact rate-sensitive sectors. Banks, utilities, real estate all exposed.
+3. **Inflation persistence:** U of M 1-yr expectations at 4.6% consensus. If actual print is higher → risk-off, pushes VIX up, may shift regime to Elevated.
+4. **Materials ETF (XLB) structural data gap:** 30% above 52w Low threshold will remain unachievable until more post-split history accumulates (XLB traded ~$43 in Dec 2025; 30% above that is $56.41, well above current $50). This TT condition is effectively locked for the medium term for XLB. Consider whether to override this gate specifically for ETFs with documented split adjustments.
+5. **PDT budget fully intact (0/3):** Maximum flexibility preserved heading into next week.
+
+---
+
+### Decision
+**HOLD** — No trades today. Zero candidates cleared composite Layer A + Layer B gates.
+
+### Key Watchlist for Next Session (2026-05-25, Monday)
+1. **XLE — PRIORITY 1:** If today's oil surge closes XLE above $61.29 on ≥1.5× volume → **2b-LONG activates Monday pre-market.** All conditions except pivot/Z are favorable. Monitor close carefully.
+2. **XLB — PRIORITY 2:** Z-trigger at $49.56 (−0.9% from $50.02). Needs simultaneous: Z ≤ −2.0, RSI < 30, FCX divergence < 1.5σ. All three gates converge slowly. Bull thesis (Materials +15.24% YTD) structurally intact.
+3. **XLV Short — NEW:** Pull 25-bar + 210-bar on Monday. Worst YTD sector (−7.60%). Check 2b-SHORT: Z ≤ −1.0, close < 20d low, RSI 30-50, vol ≥ 1.5×, 50d < 200d. Mega-cap, meets short universe filter.
+4. **XLF Short — NEW:** Warsh hawkish risk to bank stocks. Pull Monday. Same 2b-SHORT template.
+5. **XOM/CVX:** Still in orderly pullback; restore to active scan when Z approaches +1.0 or close re-tests $162.55/$197.25 pivot on volume.
