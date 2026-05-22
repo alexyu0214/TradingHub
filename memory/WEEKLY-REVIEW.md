@@ -232,3 +232,181 @@ Every Friday, take 15 minutes to fill this out. Use it to calibrate next week.
 **Justification:** The S&P 500 gained +0.54% this week (closing at 5,127.79 vs. 5,099.96 the prior Friday). The bot returned 0.00% — underperforming by −0.54%. More critically, this is the second consecutive week of near-zero return and approximately 20% deployment against an 80% target. The discipline shown in avoiding bad trades remains commendable, but discipline without action is not a strategy — it is paralysis. The prior week was graded C/C+ with explicit deployment targets set for this week; those targets were not met. The grade drops to D this week not because of a catastrophic loss, but because the same operational failure (underdeployment, no new positions, adjustment list not implemented) recurred for a second straight week. A third consecutive week of this pattern would constitute a strategy-level failure requiring a full process audit.
 
 ---
+
+## Week ending 2026-05-22
+
+> **Note on coverage gap:** No "Week ending 2026-05-15" entry exists. The bot's pre-market and execution workflows were offline May 8–17 (Anthropic API credits exhausted + nested-backtick prompt-truncation bug). The first confirmed live run of the restarted bot was May 18 (Day 19). This review therefore covers the bot's first full active week post-restart: Mon May 18 – Fri May 22 (Days 19–25 of Phase 1), with the prior live week reference being the stale 2026-05-08 entry.
+
+---
+
+### Stats
+
+| Metric | Value |
+|--------|-------|
+| Starting portfolio | $99,056.46 |
+| Ending portfolio | $99,056.46 |
+| Week return | $0.00 (0.00%) |
+| S&P 500 week | +0.88% (+64.97 pts; closed 7,473.47) |
+| Bot vs S&P 500 | −0.88% |
+| Trades executed | 0 (1 bracket limit placed Mon, expired unfilled) |
+| Wins | 0 |
+| Losses | 0 |
+| Open positions | 0 |
+| Win rate | N/A (no closed trades) |
+| Best trade | N/A |
+| Worst trade | N/A |
+| Profit factor | N/A (no closed trades) |
+| Max intraweek drawdown | 0.00% (equity flat all week; 100% cash) |
+
+> **Phase context:** Phase P&L since launch (Apr 30) = −$943.54 (−0.944%). S&P 500 is on an 8-week winning streak (+17.34% over that window), 0.37% below its all-time record close of 7,501.24 (set May 14, 2026). YTD S&P: +9.17%. Bot is deeply underperforming the index on a phase basis — structural cash drag is the dominant cause.
+
+---
+
+### Closed Trades (This Week)
+
+| Date | Ticker | Entry | Exit | P&L | Hold (days) | Notes |
+|------|--------|-------|------|-----|-------------|-------|
+| — | — | — | — | — | — | No closed trades; 1 bracket limit (XOM $159.78) placed May 18, expired unfilled May 18 close |
+
+---
+
+### Open Positions at Week End
+
+| Ticker | Entry | Close | Unrealized | Stop |
+|--------|-------|-------|------------|------|
+| — | — | — | — | — |
+
+*Portfolio: 100% cash, 0 open positions.*
+
+---
+
+### Implementation Audit (auto-verified against codebase)
+
+| Prior Adjustment (from 2026-05-08 LEGACY review) | Built into code? | Evidence |
+|---------------------------------------------------|------------------|----------|
+| Midday re-scan | ✅ YES | `.github/workflows/midday-rescan.yml` exists; ROUTINE.md has 3 occurrences of "MIDDAY-RESCAN"; ran every session this week (May 18–22 research log confirms 5 midday-rescan entries) |
+| Pre-open live-quote check | ✅ YES | ROUTINE.md STEP 2 "Re-Validate with Live Quotes" (2 occurrences confirmed by grep) |
+| Decoupled conditional gates (cash-headroom only) | ✅ YES | CONSTRAINTS.md "Conditional Gate Independence" section explicitly forbids primary/secondary chains; "cash-headroom" referenced in the gate logic (2 hits grep) |
+| Z-Score / Trend Template / R-multiple framework | ✅ YES | CONSTRAINTS.md (6 hits), TRADING-STRATEGY.md (16 hits) — all three embedded in Layer A/B gates |
+| Bracket limit orders | ✅ YES | ROUTINE.md has 3 `order_class.*bracket` patterns; all entry orders required to be bracket by mandate; May 18 XOM order correctly placed as bracket |
+| Shorts framework (Mean-Reversion Short / Momentum Short) | ✅ YES | TRADING-STRATEGY.md has 4 short-framework references; CONSTRAINTS.md has short caps, hard borrow check, Phase 1 conservative limits |
+| Afternoon scan workflow | ✅ YES | `.github/workflows/afternoon-scan.yml` exists; ran every session May 18–22 |
+| XOM time-stop evaluation | ✅ YES (RESOLVED) | XOM was exited May 7 on thesis break at $146.09 (−$943.51); no position carried into this week. Time-stop adjustment is moot — position was already closed. |
+
+**False alarms from prior review:** The 2026-05-08 legacy review complained about "midday re-scan not implemented" and "decoupled gates not implemented" — both were already built. The real issue was: (a) the bot was DEAD May 8–17 due to API credit exhaustion + prompt truncation bug, so workflows existed but didn't run; (b) when workflows ran in prior weeks, bot behaviorally rejected all candidates on legitimate quant grounds. These were **calibration/signal issues**, not implementation gaps. The 2026-05-08 review was generated with incomplete data and its "What Didn't Work" section was partially a false alarm.
+
+**Genuine gap identified this week:** The afternoon scan on May 22 noted XLV (2a-SHORT) and XLF (2b-SHORT) as "deferred to Monday — bars not pulled" at the MORNING pre-market run. The morning workflow evaluated only long-side candidates (XLB, XOM, CVX, XLE) and deferred the two short ideas. This is a **decision/calibration issue** — the framework for shorts is implemented, but the pre-market scanning habit defaults to the energy long thesis and delays short evaluation. Not a missing feature; a workflow prioritization gap.
+
+---
+
+### What Worked (3–5 bullets)
+
+- **Quant gates correctly rejected 30+ candidate evaluations without false entries:** Across 5 sessions (Mon–Fri), every one of XOM, CVX, XLE, XLB, XLV, XLF, NVDA, NIO, INTU, WMT was evaluated multiple times. Zero false positives — no trade was forced when gates didn't clear. Discipline is holding even during a strong S&P uptrend that would tempt FOMO entries.
+- **XLB mean-reversion thesis correctly tracked near the trigger:** Z-score reached −1.810 on May 21 (closest to the ≤−2.0 trigger all week), and the FCX pair divergence narrowed from 1.835σ → 1.330σ by Friday (first time below the 1.5σ threshold). The multi-gate monitoring framework is tracking a potential imminent setup correctly — not forcing early, but not missing the developing signal either.
+- **XLV Z = +3.247 identified as the largest overbought reading in any scan this week:** The afternoon scan correctly flagged XLV (Healthcare ETF) at +3.247 standard deviations above its 20d mean — a statistically extreme overbought reading — as the #1 Monday watchlist short candidate. Early identification of emerging setups before they qualify is exactly the right behavior.
+- **Bracket limit order placed and managed correctly:** The May 18 XOM bracket (limit $159.78, stop $147.80, TP $183.74, 61 shares) was correctly constructed with all required fields, set at research price (not chasing at $161.24 live), and allowed to expire unfilled without manual intervention. TIF=day behavior worked as designed.
+- **Midday rescan ran every single session this week:** Five consecutive midday rescans confirmed spread normalization, re-evaluated Z-scores vs. open-session data, and correctly concluded "no improvement — gates still fail" on all days. The workflow is fully functional and is catching real-time signal degradation (e.g., May 22 midday confirmed XOM Z regressed from +0.498 → +0.321 intraday — worse, not better).
+
+---
+
+### What Didn't Work (3–5 bullets)
+
+- **Zero trades, zero revenue, third consecutive full-week of 0% return:** The portfolio has been essentially flat since May 7 (when XOM was exited). The S&P 500 gained +0.88% this week alone, +17.34% over 8 weeks. This is the most serious ongoing issue: the quant gates are working correctly as filters, but they are filtering out 100% of candidates 100% of the time. The result is a well-disciplined system generating exactly zero alpha.
+- **Energy sector pullback week blocked all long-side entries:** XOM peaked at $162.55 on May 19 (Z = +2.38, near the all-time high for the week), then pulled back all week to $154.90 on May 22. The 2b-LONG momentum lane requires close above 20d high ($162.55 pivot) — which the energy names never recaptured after Monday's early session. The setup that should have filled on May 19 (XOM bracket $159.78 was live but XOM never pulled back intraday) was functionally 1-2 sessions mis-timed.
+- **Short-side candidates evaluated too late in the day:** XLV and XLF were flagged as "deferred to Monday — bars not pulled" at the May 22 pre-market session, then evaluated at 15:48 ET (within the final-15-min no-entry window). Both should have had their 25-bar data pulled at pre-market. XLV's Z = +3.247 was computable from the available data; the Monday watchlist would have been stronger had the shorts been incorporated into the morning session analysis.
+- **The May 18 XOM bracket never filled — timing mismatch between research and market:** XOM broke above $161 at Monday open and never pulled back to the $159.78 limit all session. The limit was research-derived (Friday May 15 close area) but the market gapped up Monday and stayed elevated. This is correct behavior per the "no chasing" rule, but it highlights that the Friday pre-market research → Monday limit price can be stale by up to $1–2 in a strong-trending market. A methodology for adjusting limit prices on Monday given Friday's close context would reduce this gap.
+- **Universe breadth still dominated by energy sector:** 4 of the 6 primary candidates this week were XOM, CVX, XLE, and XLB — all energy or materials adjacent. The bot's scan universe is functionally concentrated in a sector that had a down week. Expanding active scanning to industrials (GE, CAT), healthcare (XLV), and financials (XLF short thesis) for both long and short setups is overdue.
+
+---
+
+### Key Lessons (2–3 bullets)
+
+- **The quant gates are the floor, not the ceiling — the scan universe needs to expand urgently:** Every gate check this week was technically correct. The problem is that the gates are being applied to the same 4-6 names every session. At current pace (30+ candidate evaluations, 0 fills in 5 days), the bot needs to cast a wider net. Monday pre-market must include at minimum 2 fresh non-energy long candidates + a full short-side pull of XLV and XLF. Widening the candidate pool is the #1 lever for generating a fill without lowering the bar.
+- **XLV short is the most actionable near-term setup: Z = +3.247, ETF in short universe, sector diverging from market:** XLV (Health Care) at +3.247σ overbought is a textbook 2a-SHORT mean-reversion candidate — the only gating items are volume (0.74× needs ≥1.0×) and the Minervini Short Trend Template price-vs-SMA check. If XLV's settled Friday close shows volume recovery and RSI > 70 when Monday bars are pulled, this could be the first trade in 15 days. Do not defer this evaluation to "mid-morning" — pull bars at pre-market open.
+- **Phase review (due 2026-05-24) is approaching — the pace of 0–1 trades/week is incompatible with Phase 1 graduation requirements:** Phase 1 requires ≥30 closed trades. Through Day 25, the bot has exactly 1 closed trade (XOM, held May 1–7). At the current rate of ~0.1 closed trades/week, Phase 1 graduation would take 290 more weeks. The Phase Audit below quantifies the full picture.
+
+---
+
+### Adjustments for Next Week
+
+- **[SCAN — URGENT] Expand candidate universe Monday pre-market to ≥8 names across ≥3 sectors:** Required sectors: Healthcare (XLV 2a-SHORT), Financials (XLF), Industrials (GE, CAT, HON), Materials (XLB, FCX), plus at least 1 tech name (AAPL, MSFT, or sector ETF XLK). Do not begin Monday with only energy candidates.
+- **[SHORT PRIORITY] XLV 2a-SHORT: Pull 25-bar + 210-bar data at pre-market open Monday, not deferred:** Z = +3.247 is the strongest setup signal from this week. Volume gate (needs ≥1.0× avg vol ~9.74M shares) and RSI (needs >70) must be computed from the settled Friday close bar. If both clear, this is a bracket short order candidate for Monday morning.
+- **[ENTRY CALIBRATION] For momentum-lane setups carrying over from Friday, compute a Monday-adjusted limit:** If a Fri close price is X and the 20d high pivot is Y, and the bot wants to place a bracket limit on Monday at X (Friday close), check whether the pre-market gap to Y has changed. If the market is gapping up and the pivot is recaptured pre-market, the limit needs to be revised upward to Y+(≤5%) — not anchored at Friday's stale close.
+- **[PROCESS] Midday re-scan: add explicit short-candidate re-evaluation to the midday workflow:** The midday rescan currently re-evaluates the morning's REJECTED long candidates only. Add a step to re-evaluate any short candidate that was borderline at pre-market (e.g., XLV: if volume picks up intraday toward 1.0× threshold, the 2a-SHORT could clear).
+- **[WATCHLIST] XLB mean-reversion long remains active — trigger $49.40:** FCX pair divergence now 1.330σ ✅. Z needs ≤−2.0 (currently −1.003; needs −$0.87 further decline). RSI needs <30. Monitor Monday — if XLB opens weak and continues the materials pullback, all three gates could clear simultaneously.
+
+---
+
+### Phase Audit (3-Week Review)
+
+> **Phase 1 launched:** 2026-04-30. Phase review due 2026-05-24 (2 days). Filing 2 days early as part of Friday weekly review per protocol (within the review window).
+
+**Phase status:** Phase 1 active since 2026-04-30. Today is Day 25.
+
+**1. Strategy efficacy — Is the quant + catalyst combo producing edge?**
+
+Through 25 trading days (Days 1–25):
+- **Closed trades:** 1 (XOM: entry May 1 @ $153.35, exit May 7 @ $146.09 on thesis break)
+- **Phase P&L:** −$943.54 (−0.944%) vs S&P 500 +9.17% YTD
+- **Win rate:** 0% (0 wins / 1 closed trade)
+- **Profit factor:** 0.00 (no winning trades to compute ratio)
+- **Max drawdown:** −1.15% from peak of $100,206.70 (from the brief moment XOM was profitable)
+- **Sharpe ratio:** Incalculable with 1 closed trade; qualitatively negative (negative return, near-zero vol)
+
+**Honest assessment:** The quant layer is functioning correctly as a FILTER. It correctly rejected gap-chases, forced entries, and weak setups. But a filter with zero throughput is not a strategy — it is avoidance. The single trade closed in 25 days was a thesis-break loss. The strategy has never produced a winning closed trade. The S&P 500 is up 17.34% over the same 8-week period. This is an early-phase calibration problem, not a structural system failure, but it requires urgent attention.
+
+**Root causes of underperformance:**
+1. Bot was dead May 8–17 (9 trading days) due to API credits + prompt bug
+2. Scan universe too narrow (energy-dominated, 4-6 names per session)
+3. No short-side executions despite short framework being fully built since May 8
+4. Strong bull market in the S&P 500 (+17.34% over 8 weeks) means the strategy's mean-reversion bias is misaligned — oversold signals are rare in a bull run; momentum setups keep gapping past limits
+
+**2. Backlog promotions — What should move to active development?**
+
+| Item | Current Status | Recommendation |
+|------|---------------|----------------|
+| VCP detection | Phase 2 backlog | Keep in Phase 2; need more closed trades first |
+| Regime-aware sell-into-strength | Phase 2 backlog | Keep; no profits to sell yet |
+| Sector breadth expansion | No formal backlog item | **PROMOTE TO ACTIVE:** Add formal requirement for ≥3 sectors scanned per morning session. Codify minimum scan breadth in ROUTINE.md |
+| Monday limit-price staleness check | Not formalized | **PROMOTE TO ACTIVE:** Add a "weekend gap adjustment" step in market-open STEP 2 for positions carried from Friday's research |
+
+**3. Stale adjustments — Items appearing 3+ times unimplemented:**
+
+| Adjustment | Appearances | Status | Action |
+|-----------|-------------|--------|--------|
+| "Expand universe beyond energy" | May 1 → May 8 → May 22 = 3× | **Persistent** | Codify minimum sector breadth rule: ≥3 sectors per pre-market scan. Add to ROUTINE.md pre-market STEP 1 |
+| "File concrete 3-position scan plan" | May 8 → May 15 (missed) → May 22 = 2× formally | **Recurring** | Promote to a concrete ROUTINE.md checklist requirement, not just a weekly-review aspiration |
+
+**4. Cost vs. alpha — API spend vs. realized P&L:**
+
+- Realized P&L over 3 weeks: −$943.54
+- Estimated API spend (Claude Sonnet, ~10 workflow runs/day × 20 days × ~$0.05/run): ~$10–15 (negligible)
+- Anthropic credits were exhausted once (May 8–17 outage) — user topped up. Cost justified for the paper trading validation purpose; live dollar cost is trivial vs. $100k paper account.
+- **Verdict:** API cost not a concern at Phase 1 paper trading scale.
+
+**5. Phase gate progress — Distance to graduation:**
+
+| Gate | Target | Current | Gap |
+|------|--------|---------|-----|
+| Closed trades | ≥ 30 | 1 | −29 trades |
+| Sharpe ratio | ≥ 1.5 | Incalculable (negative) | Far below |
+| Max drawdown | ≤ 15% | −1.15% | ✅ Within limit |
+| Trading days | ≥ 30 | 25 | −5 days (operational; bot is running) |
+| Positive expectancy | Required | 0 wins / 1 trade | Negative |
+
+**At current pace (1 closed trade in 25 days), Phase 1 graduation is effectively unreachable.** The 3-week audit recommends a specific intervention: **prioritize generating closed trades over perfect filter discipline.** The strategy currently has near-zero false-negative tolerance (great!) but also near-zero throughput (catastrophic for Phase 1 graduation). The fix is broader scanning + faster execution on confirmed setups, not lowering the quality gate.
+
+**6. Recommended next-phase focus (1–2 items):**
+
+1. **Sector breadth mandate:** The single highest-leverage change is requiring the pre-market scan to cover ≥3 distinct sectors per session. Energy has been the dominant focus since launch. The broader market has dozens of momentum setups weekly. Formalizing the scan breadth requirement will increase fill rate without lowering quality.
+2. **Short-side activation:** The short framework has been built and validated for 2+ weeks. Zero short trades have been placed. XLV at Z = +3.247 is exactly the type of setup the short framework was built for. Monday must include a full short evaluation pass — not as a watchlist item, but as an actionable morning scan with pre-computed Z-scores and TT checks.
+
+---
+
+### Overall Grade: D
+
+**Justification:** The S&P 500 gained +0.88% this week, closing at 7,473.47 on the eighth consecutive week of gains (+17.34% over the streak). The bot returned 0.00% for the fourth consecutive week (counting the May 8–17 outage period). Phase-to-date, the bot is −0.944% vs. S&P +9.17% — a cumulative gap of roughly −10% vs. the index in less than 4 weeks of Phase 1.
+
+The grade is D (not F) because: (a) the zero-return weeks are mechanically correct — the bot is not losing money on bad trades; (b) all the infrastructure is now working (5/5 workflows ran correctly all week, bracket orders placed correctly, midday rescans confirmed); (c) a genuinely strong setup (XLV short, XLB long near trigger) has been identified with rigorous analysis for Monday. The grade is not higher because zero trades in a week where the market rallied 0.88% is not alpha-generation — it is well-executed paralysis. The strategy is at an inflection point: the filter discipline is proven, now the throughput needs to match.
+
+---

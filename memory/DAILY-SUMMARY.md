@@ -701,3 +701,17 @@ All three skipped — see TRADE-LOG.md for per-ticker gate failures.
 **Notes:** Day 25 (Friday) closes flat — equity unchanged at $99,056.46, full cash, 0 positions, 0/3 week trades used. All circuit breakers clear. Week reset Monday; XLV short and XLB long remain top watchlist candidates heading into next week.
 
 ---
+
+## WEEK ENDING 2026-05-22 — WEEKLY RECAP
+
+**Portfolio:** $99,056.46 (0.00% week, −0.94% phase)
+vs S&P 500: −0.88% (S&P +0.88% on 8th consecutive up-week, closing at 7,473.47)
+
+**Trades:** 0 (W:0 / L:0 / open:0) | 1 bracket limit placed Mon (XOM $159.78), expired unfilled
+**Win rate:** N/A | **Best:** N/A | **Worst:** N/A
+
+**Key win:** All infrastructure workflows (pre-market, market-open, midday-rescan, afternoon-scan, EOD) ran without error every session; XLV Z=+3.247 correctly identified as strongest setup signal for next week.
+**Lesson learned:** Quant gates are calibrated correctly but scan universe is too narrow — mandate ≥3 sectors per pre-market session and execute first short-side trade (XLV 2a-SHORT) Monday.
+**Grade:** D
+
+---
