@@ -4302,3 +4302,132 @@ Today's session (May 21) continued the energy sector's corrective pullback from 
 3. **XLV Short — NEW:** Pull 25-bar + 210-bar on Monday. Worst YTD sector (−7.60%). Check 2b-SHORT: Z ≤ −1.0, close < 20d low, RSI 30-50, vol ≥ 1.5×, 50d < 200d. Mega-cap, meets short universe filter.
 4. **XLF Short — NEW:** Warsh hawkish risk to bank stocks. Pull Monday. Same 2b-SHORT template.
 5. **XOM/CVX:** Still in orderly pullback; restore to active scan when Z approaches +1.0 or close re-tests $162.55/$197.25 pivot on volume.
+
+---
+
+## 2026-05-22 — Midday Rescan Addendum (16:41 UTC / ~12:41 PM ET)
+
+**VIX Regime at rescan:** Normal (~16.5 est., VIX futures -3.0% premarket; prior close 16.76) — Sizing multiplier: 1.00×
+**Account at rescan:** Equity $99,056.46 | Cash $99,056.46 (100%) | Deployed: 0% | Positions: 0/6 | Week trades: 0/3 | PDT: 0/3 | Open orders: 0
+
+---
+
+### Skipped at Open — Re-evaluated at Midday
+
+#### XLB (Materials ETF) — 2a-LONG candidate
+| Metric | At Open | Midday |
+|--------|---------|--------|
+| Skip reasons | Z=−1.315 ❌; RSI 33.8 ❌; Vol 0.97× ❌; FCX div 1.774σ ❌ | Z=−1.086 ❌ (REGRESSED from open); RSI ~33.8 ❌; Vol 0.967× ❌; FCX div 1.521σ ❌ |
+| Bid / Ask | $50.02 pre-mkt | $50.21 / $50.22 |
+| **Spread %** | — | **0.020% ✅ NORMALIZED** |
+| Z-Score | −1.315 | **−1.086** (regressed — XLB is UP ~$0.20 from open) |
+| Z-trigger price | $49.56 | **$49.40** (20d mean $51.19, σ $0.897) — needs −1.6% further decline |
+| FCX pair Z | +0.460 | **+0.435** | Divergence: **1.521σ ❌** (above 1.5σ, barely) |
+| Vol (May 21 last bar) | 10,236,190 = 0.967× | Unchanged (settled bar) |
+| RSI(14) est | 33.8 | ~33.8 ❌ |
+
+**VERDICT: ❌ STILL SKIPPED — 4 gates fail simultaneously**
+
+XLB has actually **moved UP** intraday (from ~$50.02 pre-market to $50.22 ask midday = +0.20%), causing the Z-Score to **regress** from −1.315 at open to −1.086 now. The stock is moving **away from** the −2.0 trigger rather than toward it. The spread has fully normalized (0.02% — excellent), but all four substantive gates remain failed:
+1. **Z = −1.086** (need ≤ −2.0; trigger price $49.40; gap = 0.914σ, requires ~$1.82 further decline)
+2. **RSI ~33.8** (need < 30; declining but not there)
+3. **Vol 0.967×** (settled bar; need ≥ 1.0×)
+4. **FCX pair divergence 1.521σ** (barely above the 1.5σ threshold; FCX Z = +0.435 while XLB Z = −1.086; divergence is structural — copper not confirming materials ETF weakness)
+
+Thesis context: Materials sector YTD +15.24% (healthy). XLB is pulling back within an uptrend. The oil surge today (+2.3% WTI) is providing commodity tailwinds. But the statistical signal simply isn't present — XLB needs to fall another ~$1.82 to trigger Z ≤ −2.0, and RSI must hit <30 simultaneously. The spread normalization is the only improvement since open; everything else is flat or regressed.
+
+---
+
+#### XOM (Exxon Mobil) — 2b-LONG candidate
+| Metric | At Open | Midday |
+|--------|---------|--------|
+| Skip reasons | Z=+0.498 ❌; price 4.7% below $162.55 pivot ❌; Vol 0.98× ❌ | Z=+0.321 ❌ (REGRESSED); price 5.2% below pivot ❌; Vol 0.981× ❌ |
+| Bid / Ask | $154.95 pre-mkt | $154.00 / $154.17 |
+| **Spread %** | — | **0.110% ✅ NORMALIZED** |
+| Z-Score | +0.498 | **+0.321** (regressed — XOM slipped further) |
+| Price vs 20d pivot ($162.55) | −4.7% below | **−5.2% below** (worsened) |
+| CVX pair Z | +0.478 | **+0.490** | Divergence: **0.168σ ✅** |
+| Vol (May 21 last bar) | 17,070,896 = 0.981× | Unchanged |
+| RSI(14) est | 62.9 | ~55.0 (declining with price) |
+| 20d Mean | $152.75 | $152.75 | StdDev: $4.42 |
+
+**VERDICT: ❌ STILL SKIPPED — 3 gates fail; all have worsened or unchanged since open**
+
+XOM is trading DOWN intraday despite WTI +2.3% today (ask $154.17 vs $154.95 pre-market = −0.5%). This is the same relative-weakness pattern seen in prior sessions — integrated oil majors lagging spot crude on a moderate oil rally day. Z-Score has regressed from +0.498 → +0.321. The 2b-LONG momentum lane requires:
+- **Z ≥ +1.0**: +0.321 ❌ (needs +0.679σ more = ~+$3.00 price appreciation)
+- **Close > 20d High ($162.55)**: $154.17 ❌ (5.2% below pivot; needs +$8.38 rally)
+- **Vol ≥ 1.5×**: 0.981× ❌ (the May 21 settled bar is the reference; well below threshold)
+
+CVX pair divergence is an excellent 0.168σ — both energy majors are tracking each other perfectly, confirming sector-wide action. But that confirmation can't overcome the price and Z-score failures. WTI at $96–98 is still structurally supportive of the energy thesis long-term, but today's session is not providing the institutional breakout pattern required for entry.
+
+---
+
+#### XLE (Energy Select Sector ETF) — 2b-LONG candidate
+| Metric | At Open | Midday |
+|--------|---------|--------|
+| Skip reasons | Z=+0.652 ❌; price 3.2% below $61.29 pivot ❌; Vol 1.21× ❌ | Z=+0.642 ❌ (flat); price 3.2% below pivot ❌; Vol 1.215× ❌ |
+| Bid / Ask | $59.33 pre-mkt | $59.30 / $59.31 |
+| **Spread %** | — | **0.017% ✅ NORMALIZED** |
+| Z-Score | +0.652 | **+0.642** (essentially flat) |
+| Price vs 20d pivot ($61.29) | −3.2% below | **−3.2% below** (unchanged) |
+| XOM pair Z | +0.498 | **+0.321** | Divergence: **0.321σ ✅** |
+| Vol (May 21 last bar) | 45,853,720 = 1.215× | Unchanged |
+| RSI(14) est | 66.6 | ~62.0 |
+| 20d Mean | $58.35 | $58.35 | StdDev: $1.49 |
+
+**VERDICT: ❌ STILL SKIPPED — 3 gates fail; price essentially unchanged since open**
+
+XLE is trading flat midday vs. open ($59.31 ask vs. $59.33 pre-market = −0.03%). Despite the morning's oil surge catalyst (+2.3% WTI), XLE has made no intraday progress toward its $61.29 breakout pivot. The 2b-LONG gate failures are structural for this session:
+- **Z ≥ +1.0**: +0.642 ❌ (needs +0.358σ more = ~+$0.53 price appreciation AND the last settled bar must incorporate it)
+- **Close > 20d High ($61.29)**: $59.31 ❌ (3.2% below pivot; today's price action not bridging the gap)
+- **Vol ≥ 1.5×**: 1.215× ❌ (May 21 last settled bar; needs institutional accumulation on the breakout day specifically — this is a settled bar and cannot improve intraday)
+
+Important note on the volume gate: The 2b-LONG lane requires the **breakout day bar** to show ≥1.5× volume. Since XLE hasn't even reached the $61.29 pivot today, the question of breakout-day volume is moot — there is no breakout to confirm. If XLE were to close above $61.29 today on ≥1.5× today's volume (~56.6M shares = 1.5× of the 37.75M avg), that would create a valid new breakout bar. As of midday, price is ~3.2% away and the oil catalyst is only generating flat action. A rally of this magnitude in the remaining ~3.5 hours of the session is possible but has not materialized.
+
+**Secondary structural note:** Minervini Trend Template 150/200-SMA data gap (Dec 2025 XLE split) remains. Even a midday breakout would still face this TT gate.
+
+---
+
+### Trades Fired This Rescan
+
+**None.**
+
+Zero candidates re-cleared the composite Layer A + Layer B gates upon midday re-evaluation.
+
+---
+
+### Portfolio State at Rescan
+
+| Field | Value |
+|-------|-------|
+| Equity | $99,056.46 |
+| Cash | $99,056.46 (100%) |
+| Open positions | 0/6 |
+| Open orders | 0 |
+| Week trades used | 0/3 |
+| PDT daytrade count | 0/3 |
+| Phase P&L | −$943.54 (−0.944%) vs $100,000 start |
+| Circuit breakers | ✅ All clear |
+
+---
+
+### Patience Rule Applied
+
+All three skipped candidates remain below their entry thresholds. Gate failures are substantive — not spread-normalization timing issues:
+
+- **XLB:** Spread normalized ✅ (0.02%), but Z has *regressed* to −1.086 (was −1.315 at open — price is rising intraday, moving away from the −2.0 trigger). RSI ~33.8 still above the <30 gate. FCX pair divergence 1.521σ (barely over 1.5σ limit). Vol 0.967× (settled bar). 4 independent failures.
+- **XOM:** Spread normalized ✅ (0.11%), but Z regressed to +0.321 (XOM slipping −0.5% intraday). Price 5.2% below $162.55 pivot. Vol 0.981×. 3 independent failures — all worsened since open.
+- **XLE:** Spread normalized ✅ (0.017%), but Z essentially flat at +0.642. Price unchanged 3.2% below $61.29 pivot. Vol 1.215× on last settled bar. Oil catalyst not driving the price action needed to bridge the gaps.
+
+No gates were lowered. No trade was forced. The spread normalization (the primary purpose of the midday rescan) has been confirmed for all three names — but the gate failures that caused the morning skips are all quant-level conditions that remain unresolved.
+
+---
+
+### Key Watch for Afternoon / Monday Pre-Market (May 26)
+
+1. **XLE** — Most actionable candidate heading into close. WTI +2.3% today is the structural driver; if XLE closes above $61.29 on ≥1.5× avg volume (~56.6M shares), TODAY becomes a valid breakout bar for Monday's pre-market entry. Monitor the close carefully (~3:50–4:00 PM ET). Note: Minervini TT SMA gap (Dec 2025 split data) remains a secondary structural block.
+2. **XLB** — Z regressed today (price rising = moving away from −2.0 trigger). Off near-term watchlist unless a fresh catalyst drives XLB back toward $49.40 (trigger price). FCX pair divergence (1.521σ) needs to narrow simultaneously with Z. Deferred.
+3. **XOM/CVX** — Both Z-scores are in the +0.3–0.5 range (near the 20d mean). No momentum or mean-reversion signal available. Monitoring for re-base; pivot at $162.55 (XOM) and $197.25 (CVX) remain the targets for a fresh 2b-LONG signal.
+4. **XLV / XLF shorts** — Flagged in this morning's research for Monday scan. YTD laggards (XLV −7.60%, XLF −6.55%). Pull 25-bar + 210-bar Monday AM, run full 2b-SHORT Trend Template check.
+5. **200-SMA data gap** — ~45 trading sessions until 200-SMA is available (est. mid-August 2026). No operator action needed.
+
