@@ -1100,3 +1100,64 @@ Every trade (entry, exit, stop-out) is logged here with full thesis, entry price
 **PDT Budget Remaining:** 3/3 day trades intact
 **Next Action:** Monday 2026-05-25 pre-market — re-scan XLE (pivot $61.29 watch), XLB (Z-trigger $49.56), XLV 2b-SHORT full pull, XLF 2b-SHORT full pull
 
+
+---
+
+### May 22 — Afternoon Scan (Day 25 / ~15:48 ET)
+
+**Portfolio:** $99,056.46 | **Cash:** $99,056.46 (100%) | **Deployed:** 0% | **Phase P&L:** −$943.54 (−0.944%)
+
+| Ticker | Shares | Entry | Current | Unrealized P&L | Stop | Hold |
+|--------|--------|-------|---------|----------------|------|------|
+| — | — | — | — | — | — | — (0 positions) |
+
+**Open orders at scan time:** NONE (last bracket 1d69c496 expired May 18T20:02; no new orders placed today)
+
+**Afternoon scan trades:** none
+
+**Stop action:** N/A — no positions held, no upgrade workflow triggered
+
+**Afternoon candidates evaluated — ALL REJECTED:**
+
+| Candidate | Z-Score | Vol Ratio | Spread | Lane | Key Failures | Verdict |
+|-----------|---------|-----------|--------|------|--------------|---------|
+| XOM | +0.487 | 0.98× | R-flag | 2b-LONG | Z<+1.0 ❌; $7.65 below $162.55 pivot ❌; vol sub-1.5× ❌ | REJECT |
+| CVX | +0.598 | 0.85× | 0.43%† | 2b-LONG | Z<+1.0 ❌; $5.72 below $197.25 pivot ❌ | REJECT |
+| XLE | +0.766 | 1.21× | 0.02% ✅ | 2b-LONG | Z<+1.0 ❌; $1.80 below $61.29 pivot ❌; TT structural | REJECT |
+| XLB | −1.003 | 0.97× | 0.02% ✅ | 2a-LONG | Z=−1.003 (need ≤−2.0) ❌; vol 0.97× ❌ | REJECT |
+| XLV | **+3.247** | 0.74× | 0.007% ✅ | **2a-SHORT** | Vol 0.74× ❌; TT: price above 50d SMA ❌; RSI unconfirmed | REJECT |
+| XLF | +1.128 | 1.00× | 0.019% ✅ | 2b-SHORT | Z wrong direction (+1.13 not ≤−1.0) ❌; above 20d low ❌ | REJECT |
+
+†CVX bid stub $180.73 (R-flagged wide); fair value via ask $191.53
+
+**Pair divergences confirmed:**
+- XOM (+0.487) ↔ CVX (+0.598): 0.112σ ✅ (energy names in lockstep)
+- XLB (−1.003) ↔ FCX (+0.328): **1.330σ ✅** — pair divergence NARROWED from prior 1.835σ; now below 1.5σ threshold for first time this week
+
+**Notable developments:**
+- XLV Z=+3.247 is the single largest Z-score in today's scan — statistically extreme overbought reading. Becomes #1 watchlist candidate for Monday as a 2a-SHORT setup if RSI confirms >70 and volume recovers to ≥1.0×.
+- XLB FCX pair divergence now 1.330σ (passes pair gate) — removes the pair-confirmation blocker that was preventing XLB's mean-reversion long setup. Trigger price still $49.40.
+- Energy sector consolidating on below-avg volume — thesis intact, no entry signal.
+
+**Timing:** Scan at 15:48 ET = within final 12 minutes. CONSTRAINTS.md last-15-min no-entry window applies independently of quant failures.
+
+**PDT count:** 0/3 | **Week trades:** 0/3 | **Positions:** 0/6
+**Circuit breakers:** ✅ All clear — Phase P&L −0.944% (lim −5%) | Drawdown −1.15% from $100,206.70 peak (lim −15%)
+
+---
+
+### May 22 — EOD Snapshot (Day 25, Friday)
+
+**Portfolio:** $99,056.46 | **Cash:** $99,056.46 (100%) | **Day P&L:** $0.00 (0.000%) | **Phase P&L:** −$943.54 (−0.944%) | **Deployed:** 0%
+
+| Ticker | Shares | Entry | Close | Unrealized P&L | Stop | Time |
+|--------|--------|-------|-------|----------------|------|------|
+| — | — | — | — | — | — | — |
+
+**Trades today:** none — HOLD decision confirmed at pre-market; all 6 candidates (XLB, XOM, CVX, XLE, XLV, XLF) failed composite Layer A + Layer B gates
+
+**Notes:** Day 25 closes the week flat at $99,056.46 — week trades 0/3 used, PDT budget fully intact (0/3), all circuit breakers clear. The week was dominated by the energy sector's orderly pullback from the prior week's highs (XOM peaked $162.55 May 19 → $154.90 today; XLE peaked $61.29 May 19 → $59.50 today). No positions were held, no orders placed, no fills occurred. The most significant development of the afternoon scan was XLV at Z=+3.247 — the single largest overbought Z-score in any scan this week — flagging a potential 2a-SHORT mean-reversion setup for Monday if RSI confirms >70 and volume recovers to ≥1.0× avg. XLB's FCX pair divergence narrowed to 1.330σ (within the ≤1.5σ gate) for the first time, removing a key blocker on the mean-reversion long setup (trigger price $49.40). The energy thesis (WTI ~$96-98, Brent ~$104-106, Hormuz) remains structurally sound; the momentum signal simply reset during the week's consolidation. Heading into Monday with maximum deployment flexibility: 0 positions, 3/3 week trades available, 3/3 PDT budget.
+
+**Circuit breakers:** ✅ All clear — Day 0.000% (lim −2%) | Phase −0.944% (lim −5%) | Drawdown −1.15% from $100,206.70 peak (lim −15%)
+**PDT count:** 0/3 | **Week trades:** 0/3 (resets Monday) | **Positions:** 0/6
+
