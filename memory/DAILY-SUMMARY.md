@@ -685,3 +685,19 @@ All three skipped — see TRADE-LOG.md for per-ticker gate failures.
 **Phase P&L:** −$943.54 (−0.944%) | Peak drawdown: −1.15% (well within −15% circuit breaker)
 **PDT Budget:** 3/3 intact heading into next week
 
+
+## 2026-05-22 — EOD
+
+**Portfolio:** $99,056.46 (0.000% day, −0.944% phase)
+**Cash:** $99,056.46 (100%)
+**Deployed:** 0%
+**Daytrade count:** 0/3
+
+**Trades today:** none
+**Open positions:** none
+**Stops tightened:** none
+**Losers cut:** none
+
+**Notes:** Day 25 (Friday) closes flat — equity unchanged at $99,056.46, full cash, 0 positions, 0/3 week trades used. All circuit breakers clear. Week reset Monday; XLV short and XLB long remain top watchlist candidates heading into next week.
+
+---
