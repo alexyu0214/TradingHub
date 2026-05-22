@@ -649,3 +649,39 @@ All three skipped — see TRADE-LOG.md for per-ticker gate failures.
 **Notes:** Day 24 closes flat — equity unchanged at $99,056.46. Full session scan across XOM, CVX, XLE, XLB, FCX, and NVDA cleared zero composite gates. XLB remains the closest mean-reversion candidate (Z = −1.810, ~0.49σ from trigger) but failed all three independent Lane A gates. Energy pullback thesis intact on below-average volume. NVDA retired from active watchlist after 7 consecutive misses. All circuit breakers clear; full PDT (0/3) and weekly (0/3) budgets preserved heading into the weekend.
 
 ---
+
+## 2026-05-22 — Market-Open Execution Summary
+
+**Market-open orders placed:** None
+
+**Research Decision:** HOLD — No candidates cleared Layer A + Layer B composite gates today.
+
+**Candidates Screened:**
+- XLB (2a-LONG): REJECTED — Z = −1.315 (need ≤ −2.0), RSI 33.8 (need < 30), Vol 0.97× (need ≥ 1.0×), FCX pair divergence 1.774σ (need ≤ 1.5σ), price < 50-SMA
+- XOM (2b-LONG): REJECTED — Z = +0.498 (need ≥ +1.0), Vol 0.98× (need ≥ 1.5×), price < pivot $162.55, price < 50-SMA
+- CVX (2b-LONG): REJECTED — Z = +0.478 (need ≥ +1.0), Vol 0.89× (need ≥ 1.5×), price < pivot $197.25
+- XLE (2b-LONG): REJECTED — Z = +0.652 (need ≥ +1.0), Vol 1.21× (need ≥ 1.5×), price < pivot $61.29
+- XLV (2b-SHORT): DEFERRED to Monday — bars not pulled
+- XLF (2b-SHORT): DEFERRED to Monday — bars not pulled
+
+**Account Status:**
+- Equity: $99,056.46
+- Cash: $99,056.46 (100% undeployed)
+- Open Positions: 0
+- Daytrade Count: 0/3
+
+**Market Context:**
+- VIX: ~16.76 (Normal regime, 1.0× sizing multiplier)
+- WTI Crude: ~$96–98/bbl (+2.3%) — energy catalyst real but no quant confirmation
+- S&P 500 Futures: +0.10–0.20% pre-market
+- Kevin Warsh sworn in as Fed Chair today — hawkish posture watch
+
+**Key Watchlist for Monday 2026-05-25:**
+1. XLE — PRIORITY 1: Watch for close > $61.29 on ≥ 1.5× volume today; if confirmed → 2b-LONG activates Monday
+2. XLB — PRIORITY 2: Z-trigger at $49.56; needs Z ≤ −2.0 + RSI < 30 + FCX divergence < 1.5σ
+3. XLV — NEW: Full 2b-SHORT pull Monday (worst YTD sector −7.60%)
+4. XLF — NEW: Full 2b-SHORT pull Monday (Warsh hawkish risk to banks)
+
+**Phase P&L:** −$943.54 (−0.944%) | Peak drawdown: −1.15% (well within −15% circuit breaker)
+**PDT Budget:** 3/3 intact heading into next week
+
