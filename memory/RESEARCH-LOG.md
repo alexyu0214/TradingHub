@@ -4758,3 +4758,112 @@ Four candidates evaluated across Healthcare (XLV), Materials (XLB), Energy (XLE/
 4. **XLB — Mean-reversion long trigger $49.31** still active. Z ≤ −2.0 requires a further −$0.98 decline. An oil-crash-driven risk-off contagion to materials could accelerate this.
 
 *Rescan generated: 2026-05-25 12:42 ET | Market: CLOSED (Memorial Day) | 0 positions | 0 orders | Week 0/3 trades | PDT 0/3*
+
+---
+
+## 2026-05-25 — Afternoon Scan Addendum (15:27 ET / 19:27 UTC)
+
+> **⚠️ MARKET CLOSED — Memorial Day Federal Holiday.** US equity markets (NYSE/NASDAQ) are closed today. All Alpaca quotes carry "R" condition flags and reflect stale May 22 close data (last print 2026-05-22T20:00Z). No intraday price discovery available. No new bracket orders can be placed or filled today. Next session: Tuesday 2026-05-26 09:30 ET.
+
+**Scan time:** ~15:27 ET (19:27 UTC)
+**VIX regime:** NORMAL — VIXY mid $25.54 (bid $24.85 / ask $26.23, stale) → estimated VIX ~17.0–17.5 | Sizing multiplier: 1.00×
+
+---
+
+### STEP 1 — Order & Position State
+
+| Field | Value |
+|-------|-------|
+| Positions | `[]` — 100% cash ($99,056.46) ✅ |
+| Open orders | 0 |
+| Bracket fills today | 0 (no morning limits placed — HOLD at pre-market) |
+| Stale limits | 0 |
+| TRADE-LOG status | FULLY CURRENT ✅ |
+
+**All 6 API orders are historical (expired/cancelled/filled):**
+- 1d69c496: XOM bracket BUY $159.78 → EXPIRED 2026-05-18T20:02
+- 8f97ef7d: XOM market sell 130sh → FILLED $146.09, 2026-05-07 (thesis-break exit)
+- All others: children or predecessors of above, all properly closed
+
+---
+
+### STEP 2 — Trailing Stop Upgrades
+
+**N/A** — No positions held. No upgrade workflow applicable.
+
+---
+
+### STEP 3 — Stale Limit Cancellations
+
+**None** — No open orders exist.
+
+---
+
+### STEP 4 — Afternoon Opportunity Scan
+
+**Candidates evaluated (settled through May 22, 2026 — settled bar data):**
+
+| Ticker | Close | Z-Score | RSI(14) | Vol Ratio | 20d High | Lane | Key Failures | Verdict |
+|--------|-------|---------|---------|-----------|----------|------|--------------|---------|
+| XLV | $149.89 | +3.205 | 60.9 | 0.71× | $148.15 | 2a-SHORT | RSI 60.9 ❌ (need >70); Vol 0.71× ❌ (need ≥1.0×); TT: price AT 52w high (not 30% below) ❌; price above 50-SMA ❌ | **REJECT** |
+| XLB | $50.29 | −1.008 | 41.4 | 0.66× | $52.41 | 2a-LONG | Z −1.008 ❌ (need ≤−2.0); RSI 41.4 ❌ (need <30); Vol 0.66× ❌ (need ≥1.0×) | **REJECT** |
+| XLE | $59.49 | +0.763 | 61.2 | 1.12× | $61.29 | 2b-LONG | Z +0.763 ❌ (need ≥+1.0); no breakout ❌; RSI 61.2 ❌ (50–70 zone but Z gate fails first) | **REJECT** |
+| XLK | $180.39 | +1.425 | 72.8 | 0.93× | $179.50 | 2b-LONG | RSI 72.8 ❌ (need 50–70; overbought); Vol 0.93× ❌ (need ≥1.5×); TT 150/200-SMA unavail. ❌ | **REJECT** |
+| XOM | $154.92 | +0.491 | 55.6 | 0.74× | $162.55 | 2b-LONG | Z +0.491 ❌ (need ≥+1.0); price 5% below $162.55 pivot ❌; Vol 0.74× ❌ | **REJECT** |
+
+**Pair Divergences:**
+- XLB (−1.008) ↔ FCX (+0.360): **1.368σ ✅** — pair NOW WITHIN the ≤1.5σ threshold for the first time in several sessions. This removes the pair-divergence blocker on the XLB 2a-LONG setup when/if Z and RSI gates clear.
+- XOM (+0.491) ↔ XLE (+0.763): 0.272σ ✅ — energy sector cohesion intact
+
+**New afternoon entries:** NONE — all 5 candidates failed composite Layer A + Layer B gates; additionally market is physically closed (Memorial Day)
+
+---
+
+### Candidate Detail
+
+**XLV (Healthcare ETF) — 2a-SHORT — #1 WATCHLIST:**
+- Z = +3.205 — the single most statistically extreme reading in this entire week's scans. XLV is 3.2σ above its 20-day mean, a top-2% reading. **Z gate passes ✅.**
+- RSI = 60.9 (Wilder's method): **FAILS the >70 requirement** for 2a-SHORT. RSI is elevated but not yet overbought. The prior session (May 22) had RSI estimated at 69.1 — today's Wilder's calculation produces 60.9, likely because the simple 14-period average used in prior entries overstated RSI. The stock has rallied +2.86% over 5 days (145.72 → 149.89) but the RSI momentum signal is not yet confirming a reversal signal.
+- Volume = 0.71× 20d avg — **FAILS the ≥1.0× requirement** for 2a-SHORT.
+- Minervini Short TT: XLV is AT a 52-week high (149.89 = the 25-bar high from our data). The Short TT requires price to be >30% BELOW the 52-week high — the exact opposite of current positioning. **Structural TT fail.** Strategy conflict: 2a-SHORT (mean-reversion from overbought state in an uptrend) is structurally incompatible with Minervini Short TT (which requires a confirmed downtrend). Flagged for strategy review as URGENT item.
+- **Tuesday watch:** If XLV continues to rally early Tuesday and RSI clears >70 while vol recovers ≥1.0× → 2a-SHORT becomes active on the quant layer (Z+RSI+vol pass). The TT structural conflict remains and may permanently block the short per current rules.
+
+**XLK (Technology ETF) — 2b-LONG — #2 WATCHLIST (Most Actionable):**
+- Z = +1.425 ✅ (≥+1.0). Close $180.39 > 20d high $179.50 ✅ — a CONFIRMED breakout. Pivot extension = +0.50% ✅ (well within 5% cap).
+- RSI = 72.8: **FAILS 50–70 range** for 2b-LONG. Currently overbought (above 70). The 2b-LONG lane needs RSI in the 50–70 "healthy momentum" zone; being above 70 signals potential near-term exhaustion.
+- Volume = 0.93× — **FAILS ≥1.5× threshold.** Breakout must be confirmed with institutional participation.
+- TT 150/200-SMA: CANNOT VERIFY (Dec 2025 XLK split disrupted historical SMA data, only ~116 post-split bars). Structural blocker.
+- **Tuesday opportunity:** S&P 500 futures +0.91% point to a strong gap-up open. If XLK opens at ~$181–183 on gap-up, and RSI normalizes intraday into the 50–70 zone (as the initial euphoria is absorbed), combined with volume ≥1.5× avg (~13.0M shares), this becomes a live 2b-LONG mid-morning bracket candidate for Tuesday. Max entry limit ≤ $179.50 × 1.05 = $188.48 (pivot extension cap).
+- **Key note:** XLK at Z=+1.425 with a clean breakout above the 20d high is the closest thing to a qualified setup in today's scan. The TT data gap and vol/RSI gates are the remaining blockers.
+
+**XLB (Materials ETF) — 2a-LONG — #3 WATCHLIST:**
+- Z = −1.008; RSI = 41.4; Vol = 0.66× — all three quant gates fail.
+- Z-trigger price = **$49.40** (currently $50.29, needs −$0.89 = −1.8% further decline).
+- **Key development: FCX pair divergence now 1.368σ ✅** — the first time since early May that the XLB-FCX pair divergence has fallen within the ≤1.5σ threshold. This removes the pair-confirmation blocker that has been preventing XLB's setup from potentially qualifying. If XLB sells off toward $49.40 on Tuesday (possible if risk-off sentiment bleeds into materials alongside energy), all three gates may converge.
+- WTI oil crash over the weekend (−6.1% to $90.65) may pressure materials via commodity contagion Tuesday, potentially accelerating XLB's move toward the Z ≤ −2.0 trigger. Monitor carefully.
+
+**XLE (Energy ETF) & XOM — Context only:**
+- Both below momentum pivots with weak volume. Energy sector faces significant headwind from the WTI decline over the weekend (Iran deal framework reported). XLE at $59.49 is 3.0% below its $61.29 pivot and has Z=+0.763. XOM at $154.92 is 5.0% below its $162.55 pivot with Z=+0.491. Neither will re-qualify for a 2b-LONG without a major oil recovery.
+- **Energy sector reassessment needed for Tuesday:** WTI fell to ~$90.65 from ~$96–98 (−6.1%) over the weekend. This may push XLE through the $55.70 (20d low); if XLE closes below $55.70 on elevated volume, a 2b-SHORT energy setup becomes possible. However: (1) Energy is still YTD's top sector (+34.5% YTD as of May 23); (2) the Iran deal is NOT finalized (Trump: "no hurry"); (3) Short TT requires >30% below 52w high which XLE at $55.70 (only ~11% below $62.56 52w high) would not satisfy. Energy shorts blocked by TT structural constraints.
+
+---
+
+### Afternoon Market Context
+
+Memorial Day session — no trading. The weekend's dominant development was **WTI crude oil declining to ~$90.65/bbl (−4.73% to −6.1%)** on reports of a largely-negotiated US-Iran peace framework. This is the same geopolitical dynamic that triggered the XOM thesis-break exit on May 7 ($146.09). WTI has now dropped from the post-May-15 recovery high of ~$107 to ~$91 — a −15% reversal from the level that justified energy longs. Simultaneously, **S&P 500 futures surged +0.91% to above 7,534 (all-time high territory)** as lower oil = lower global inflation = higher equity multiples. The market is interpreting the Iran de-escalation as a net positive for equities (rate cut odds improve, consumer spending improves) even as it punishes energy directly. Tech (XLK) is the primary beneficiary: it closed the week at a 20-day breakout (180.39 > 179.50), is already in position for a momentum entry pending RSI normalization and volume confirmation on Tuesday. XLV (Healthcare) remains statistically extreme at Z=+3.205 — a potential 2a-SHORT if/when RSI clears 70. The portfolio enters this new macro regime in 100% cash, which is the optimal position: maximum flexibility to act on whichever setup emerges post-Iran-news-settlement.
+
+---
+
+**Bracket fills today:** 0 (market closed; no morning limits placed)
+**Stops upgraded:** 0 (no positions held)
+**Stale limits cancelled:** 0 (none existed)
+**New afternoon entries:** none — all candidates failed composite gates; market physically closed
+**Afternoon market context:** WTI -6.1% to $90.65 over weekend (Iran deal framework) — energy sector faces major headwind Tuesday. S&P futures +0.91% at all-time highs — tech/risk-on beneficiaries. XLK at 20d breakout (Z=+1.425, ext +0.50%) is #1 actionable candidate for Tuesday pending RSI normalization (72.8 → need 50–70) and volume (0.93× → need ≥1.5×).
+
+**Key watchlist for Tuesday pre-market (2026-05-26):**
+1. **XLK — #1 PRIORITY (2b-LONG):** Z=+1.425 ✅, breakout above pivot ✅, extension 0.50% ✅. Remaining gates: RSI needs to normalize from 72.8 → 50–70 (likely mid-morning Tuesday after gap euphoria fades); Volume needs ≥1.5× avg (~13.0M shares). TT 150/200-SMA structural gap (Dec 2025 split). Max entry limit ≤$188.48 (pivot $179.50 × 1.05). If RSI and vol clear intraday → POTENTIAL MID-SESSION BRACKET ORDER.
+2. **XLV — #2 (2a-SHORT):** Z=+3.205 ✅. RSI needs >70 (currently 60.9); vol needs ≥1.0× avg (~9.7M shares). TT structural conflict (2a-SHORT vs Minervini downtrend requirement) — strategy review item. Watch for continued rally Tuesday.
+3. **XLB — #3 (2a-LONG):** Z-trigger $49.40 (−1.8% away). FCX pair now confirms (1.368σ ✅). Oil crash may pressure materials Tuesday → potential convergence event.
+4. **XLE/XOM — ENERGY RE-ASSESSMENT:** WTI at $90.65 over weekend. XLE 20d low = $55.70; if Tuesday close breaks below this on elevated volume, assess 2b-SHORT. Hard blocker: TT structural (only −10.6% below 52w high; needs >30%). Energy sector: 1 consecutive failure logged (XOM May 7). No new energy long until WTI stabilizes + fresh catalyst + volume confirmation.
+5. **[STRATEGY REVIEW FLAG]:** 2a-SHORT lane vs Minervini Short TT structural incompatibility. XLV exemplifies this perfectly: the stock is overbought in an uptrend (correct for 2a-SHORT) but the Short TT requires a downtrend (incompatible with 2a). Recommend: 2a-SHORT should require only "Z ≥+2.0, RSI >70, vol ≥1.0×" WITHOUT the full Minervini Short TT. The 2b-SHORT breakdown lane should retain the full Short TT. Needs formal update to TRADING-STRATEGY.md and CONSTRAINTS.md.
+

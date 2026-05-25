@@ -1202,3 +1202,40 @@ Every trade (entry, exit, stop-out) is logged here with full thesis, entry price
 2. **XLV** — 2a-SHORT re-evaluation: RSI 69.1 needs to clear 70; volume needs ≥ 9.7M shares (≥ 1.0×); Z = +2.44 already qualifies. Structural TT conflict (2a-SHORT vs. Minervini Short TT) flagged for formal strategy review.
 3. **XLK** — 2b-LONG watch: RSI 74.9 needs to normalize to 50–70 zone; gap-up Tuesday may resolve after intraday cooling. 20d high breakout + volume ≥ 1.5× needed.
 4. **XLB** — Mean-reversion long trigger at $49.40 (Z ≤ −2.0). Oil-crash risk-off day Tuesday could push materials lower and trigger this setup.
+
+---
+
+### May 25 — Afternoon Scan (Memorial Day / ~15:27 ET)
+
+**Portfolio:** $99,056.46 | **Cash:** $99,056.46 (100%) | **Deployed:** 0% | **Phase P&L:** −$943.54 (−0.944%)
+
+| Ticker | Shares | Entry | Current | Unrealized P&L | Stop | Hold |
+|--------|--------|-------|---------|----------------|------|------|
+| — | — | — | — | — | — | — (0 positions) |
+
+**Open orders at scan time:** NONE
+
+**Market status:** ⚠️ CLOSED — Memorial Day federal holiday. No trading. All quotes stale (May 22 close data).
+
+**Afternoon scan trades:** none
+
+**Stop action:** N/A — no positions held, no upgrade workflow triggered
+
+**Afternoon candidates evaluated — ALL REJECTED:**
+
+| Candidate | Z-Score | RSI | Vol | Key Fail | Verdict |
+|-----------|---------|-----|-----|----------|---------|
+| XLV | +3.205 | 60.9 | 0.71× | RSI 60.9 ❌ (need >70); Vol 0.71× ❌ (need ≥1.0×); TT structural (at 52w high, not >30% below) ❌ | REJECT |
+| XLB | −1.008 | 41.4 | 0.66× | Z −1.008 ❌ (need ≤−2.0); RSI 41.4 ❌ (need <30); Vol 0.66× ❌ | REJECT |
+| XLE | +0.763 | 61.2 | 1.12× | Z +0.763 ❌; no breakout above $61.29 ❌; Vol 1.12× ❌ | REJECT |
+| XLK | +1.425 | 72.8 | 0.93× | RSI 72.8 ❌ (need 50–70); Vol 0.93× ❌ (need ≥1.5×); TT 150/200-SMA unavail. ❌ | REJECT |
+| XOM | +0.491 | 55.6 | 0.74× | Z +0.491 ❌; price 5% below $162.55 pivot ❌; Vol 0.74× ❌ | REJECT |
+
+**Key developments:**
+- XLB FCX pair divergence = 1.368σ ✅ — NOW within the ≤1.5σ gate for the first time; removes pair-confirmation blocker on XLB 2a-LONG setup
+- XLK: 20d breakout confirmed (180.39 > pivot 179.50, +0.50% extension ✅); awaiting RSI normalization (72.8 → 50–70) and vol ≥1.5× on Tuesday open
+- WTI crude fell to ~$90.65 over weekend (Iran deal framework) — energy sector faces gap-down risk Tuesday
+
+**PDT count:** 0/3 | **Week trades:** 0/3 | **Positions:** 0/6
+**Circuit breakers:** ✅ All clear — Phase P&L −0.944% (lim −5%) | Drawdown −1.15% from $100,206.70 peak (lim −15%)
+
