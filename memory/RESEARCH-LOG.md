@@ -4728,3 +4728,33 @@ Four candidates evaluated across Healthcare (XLV), Materials (XLB), Energy (XLE/
 
 *Research generated: 2026-05-25 (Memorial Day — pre-market workflow)*
 *Account: $99,056.46 | 0 positions | 0 orders | Week 0/3 trades | PDT 0/3*
+
+---
+
+### 2026-05-25 — Midday Rescan Addendum (12:42 ET)
+
+> **CRITICAL FINDING: Market is CLOSED — Memorial Day (2026-05-25).** Alpaca clock confirms `is_open: false`; next open is 2026-05-26T09:30:00-04:00. All live quote timestamps are 2026-05-22T20:00:00Z (Friday close). No intraday price action exists to update any gate. This rescan is structurally a no-action scan — the "midday" workflow ran at 12:42 ET on a market holiday, which cannot produce spread normalization or fresh Z-Score data.
+
+**Skipped at open (carryover from 2026-05-25 pre-market), re-evaluated:**
+
+- **XLV (2a-SHORT):** Spread 5.28% (stale close quote — wide/invalid for intraday). Z-Score = +2.500 ≥ +2.0 ✅. RSI(14) = 69.1 (need > 70) ❌. Volume = 0.737× 20d avg (need ≥ 1.0×) ❌. Minervini Short TT: FAIL (price above 50-SMA; not 30% below 52w high). **→ STILL SKIPPED** — RSI 0.9 points short, volume below threshold, TT structural conflict unresolved. No new session data to change any gate.
+
+- **XLE (2b-SHORT):** Spread 6.08% (stale close quote — wide/invalid). Z-Score = +0.684 (need ≤ −1.0) ❌ — note: as-of Friday close, XLE had not yet absorbed the WTI −6.1% oil crash catalyst (Iran deal news broke over the holiday weekend). May 22 close of $59.49 is PRE-crash. Tuesday open expected ~$55.92 (−6% est.). 20d low = $55.70; close would need to be below this. RSI 50.4 would likely drop to ~30–35 at Tuesday open — THROUGH the 30 floor, not in the 30–50 zone required for 2b-SHORT. 50-SMA/200-SMA: INSUFFICIENT DATA (Dec 2025 split). **→ STILL SKIPPED** — structural blocks unchanged; Tuesday open evaluation required.
+
+- **XLK (2b-LONG):** Spread 6.08% (stale close quote — wide/invalid). Z-Score = +1.287 ≥ +1.0 ✅. Close $180.39 = exactly AT 20d high $180.39 — no clean breakout above ❌. RSI(14) = 74.9 (need 50–70) ❌ — above upper bound. Volume = 0.980× 20d avg (need ≥ 1.5×) ❌. 50-SMA/200-SMA: INSUFFICIENT DATA (Dec 2025 split) ❌. **→ STILL SKIPPED** — 3 of 5 Layer B gates fail; structural SMA data gap persists; no new session data.
+
+- **XLB (2a-LONG):** Quote ask = $0 (one-sided/invalid — cannot compute spread). Z-Score = −0.913 (need ≤ −2.0) ❌. Z-trigger price ≈ $49.31 (current $50.29, gap = $0.98). RSI(14) = 47.8 (need < 30) ❌. Volume = 0.698× 20d avg (need ≥ 1.0×) ❌. Minervini Long TT: FAIL (insufficient 150/200-SMA data; price not >30% above 52w low). **→ STILL SKIPPED** — all three Layer B gates fail; watchlist trigger $49.31 not approached.
+
+**Trades fired this rescan:** None.
+
+**Root cause of universal skip:** US equity markets are CLOSED (Memorial Day). No intraday price discovery has occurred. Spread normalization cannot be assessed — all quotes are stale Friday close data. Z-Scores are identical to morning research. No gate has changed for any candidate. This is the correct outcome for a midday rescan on a market holiday.
+
+**Patience rule applied:** Nothing re-cleared. This is correct. Gates were NOT lowered. No forced trades.
+
+**Tuesday 2026-05-26 pre-market priority watchlist:**
+1. **XLE / XOM — 2b-SHORT re-eval at Tuesday open:** Key question is whether WTI oil crash (−6.1% to $90.65) translates into XLE closing BELOW 20d low ($55.70) on Tuesday with RSI landing in the 30–50 window (not crashing through 30). Volume expected ≥ 1.5× on a high-impact oil day. TT blocked by split data gap — this constraint is permanent for ~4 more months.
+2. **XLV — 2a-SHORT watch:** RSI at 69.1 needs one more session push to 70.0+. If healthcare names hold elevation or tick up Tuesday morning, RSI could clear. Volume needs recovery to ≥ 9.7M shares. TT structural conflict (2a-SHORT vs downtrend requirement) flagged for strategy review.
+3. **XLK — 2b-LONG conditional watch:** RSI 74.9 needs normalization to 50–70 via post-holiday profit-taking or consolidation. If market gaps up Tuesday on Iran optimism and XLK opens above $184+ with a clean break of the 20d high on volume ≥ 1.5×, re-evaluate intraday. SMA data gap remains.
+4. **XLB — Mean-reversion long trigger $49.31** still active. Z ≤ −2.0 requires a further −$0.98 decline. An oil-crash-driven risk-off contagion to materials could accelerate this.
+
+*Rescan generated: 2026-05-25 12:42 ET | Market: CLOSED (Memorial Day) | 0 positions | 0 orders | Week 0/3 trades | PDT 0/3*
