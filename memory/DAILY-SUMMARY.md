@@ -715,3 +715,30 @@ vs S&P 500: −0.88% (S&P +0.88% on 8th consecutive up-week, closing at 7,473.47
 **Grade:** D
 
 ---
+
+---
+
+## 2026-05-25 — Market-Open Execution (Memorial Day — US Markets CLOSED)
+
+**Market status:** NYSE / NASDAQ closed — Memorial Day federal holiday. No regular trading session.
+
+**Market-open orders placed:** No orders placed.
+
+**Research Decision:** HOLD — all candidates failed Layer A + Layer B composite gates (see RESEARCH-LOG.md 2026-05-25 entry for full analysis).
+
+**Account:** $99,056.46 equity | $99,056.46 cash (100%) | 0 positions | 0 open orders | 0/3 daytrades | 0/3 week trades
+
+**Candidates evaluated at execution:**
+
+| Candidate | Lane | Key Failures | Verdict |
+|-----------|------|--------------|---------|
+| XLV | 2a-SHORT | RSI 69.1 < 70 ❌; Vol 0.714× ❌; TT: above 50-SMA ❌; −6.4% below 52w high (not −30%) ❌ | SKIP |
+| XLE | 2b-SHORT | RSI overshoots <30 ❌; 20d-low unconfirmed ❌; TT split-data blocked ❌ | SKIP |
+| XLB | 2a-LONG | Z = −0.890 (need ≤ −2.0) ❌; RSI 47.8 ❌; Vol 0.658× ❌ | SKIP |
+| XLK | 2b-LONG | RSI 74.9 > 70 ❌; Vol 0.932× ❌; TT split-data blocked ❌ | SKIP |
+
+**Live quotes confirmed:** XLV, XLE, XLB, XLK all return valid stale-weekend prints — no halts or delistings detected.
+
+**Circuit breakers:** ✅ All clear — Phase P&L −$943.54 (−0.944%, lim −5%) | Drawdown −1.15% from $100,206.70 peak (lim −15%)
+
+**Next action:** Tuesday 2026-05-26 pre-market — full re-scan with focus on XLE/XOM 2b-SHORT (oil crash Iran deal), XLV 2a-SHORT (RSI recheck), XLK 2b-LONG (RSI normalization), XLB 2a-LONG (trigger $49.40).

@@ -1161,3 +1161,44 @@ Every trade (entry, exit, stop-out) is logged here with full thesis, entry price
 **Circuit breakers:** ✅ All clear — Day 0.000% (lim −2%) | Phase −0.944% (lim −5%) | Drawdown −1.15% from $100,206.70 peak (lim −15%)
 **PDT count:** 0/3 | **Week trades:** 0/3 (resets Monday) | **Positions:** 0/6
 
+
+---
+
+### 2026-05-25 16:08 — MARKET-OPEN EXECUTION: NO ORDERS PLACED
+
+**Reason:** Research DECISION = **HOLD**. US equity markets are **CLOSED** today — Memorial Day federal holiday. NYSE and NASDAQ observe the holiday; no regular session opens. No bracket orders can be placed or would be executable.
+
+**Account State at Execution Time:**
+- Equity: $99,056.46
+- Cash: $99,056.46 (100% undeployed)
+- Open positions: 0
+- Open orders: 0
+- Daytrade count: 0/3
+- Week trades used: 0/3 (new week — resets today per research log)
+
+**Live Quotes Pulled (pre-market / stale weekend prints — confirming data feeds live, no halts/delistings):**
+- XLV: bid $145.72 / ask $153.63 (stale; last print 2026-05-22T20:00Z) — data valid, no halt ✅
+- XLE: bid $57.23 / ask $60.82 (stale; last print 2026-05-22T20:00Z) — data valid, no halt ✅
+- XLB: bp $48.70 / ask $0 (weekend; bid only) — data valid, no halt ✅
+- XLK: bid $174.52 / ask $185.46 (stale; last print 2026-05-22T20:00Z) — data valid, no halt ✅
+
+**Gate Analysis — All Four Watchlist Candidates:**
+
+| Candidate | Direction | Lane | Decision | Gate(s) Failed |
+|-----------|-----------|------|----------|----------------|
+| XLV | SHORT | 2a-SHORT | SKIP | RSI 69.1 < 70 ❌; Volume 0.714× < 1.0× ❌; Minervini Short TT: price > 50-SMA ❌, only −6.4% below 52w high (need −30%) ❌ |
+| XLE | SHORT | 2b-SHORT | SKIP | RSI would crash through <30 (oversold) ❌; 20d-low not confirmed ❌; TT blocked (split data gap, <150 bars) ❌; no >30% below 52w high ❌ |
+| XLB | LONG | 2a-LONG | SKIP | Z = −0.890 (need ≤ −2.0) ❌; RSI 47.8 (need < 30) ❌; Volume 0.658× (need ≥ 1.0×) ❌; TT: price < 50-SMA ❌ |
+| XLK | LONG | 2b-LONG | SKIP | RSI 74.9 > 70 (need 50–70) ❌; Volume 0.932× (need ≥ 1.5×) ❌; no clean 20d high breakout ❌; TT 150/200-SMA blocked (split gap) ❌ |
+
+**Primary reason no orders placed:** DECISION in today's research log is explicitly **HOLD**. Zero candidates cleared both Layer A (Catalyst + Trend Template) and Layer B (Quant Lane) gates. Additionally, US markets are physically closed — any `day`-TIF order submitted today would be rejected by Alpaca's session rules.
+
+**Bracket Orders Submitted:** NONE
+**PDT Budget Remaining:** 3/3
+**Week Trades Remaining:** 3/3
+
+**Watchlist for Tuesday 2026-05-26 pre-market:**
+1. **XLE / XOM** — 2b-SHORT if Tuesday open confirms close < 20d lows ($55.70 / $144.57) on ≥ 1.5× volume; RSI must land in 30–50 zone (not crash through 30). WTI −6.1% Iran deal catalyst is the setup driver.
+2. **XLV** — 2a-SHORT re-evaluation: RSI 69.1 needs to clear 70; volume needs ≥ 9.7M shares (≥ 1.0×); Z = +2.44 already qualifies. Structural TT conflict (2a-SHORT vs. Minervini Short TT) flagged for formal strategy review.
+3. **XLK** — 2b-LONG watch: RSI 74.9 needs to normalize to 50–70 zone; gap-up Tuesday may resolve after intraday cooling. 20d high breakout + volume ≥ 1.5× needed.
+4. **XLB** — Mean-reversion long trigger at $49.40 (Z ≤ −2.0). Oil-crash risk-off day Tuesday could push materials lower and trigger this setup.
