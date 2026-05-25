@@ -4551,3 +4551,180 @@ Friday May 22 is closing out a week of energy sector pullback from the prior wee
 4. **XOM/CVX** — Both in orderly consolidation. Z-scores +0.5 to +0.6; below momentum thresholds. Not actionable Monday unless a strong pre-market catalyst lifts both back toward prior pivots.
 5. **XLF** — Removed from short watchlist. Z = +1.128 (wrong direction for short); no breakdown signal.
 
+
+---
+
+## 2026-05-25 — Pre-market Research (Memorial Day — US Markets Closed)
+
+> **URGENT: FLAG FOR WEEKLY REVIEW — Short Trend Template (TT) structural conflict with 2a-SHORT lane.** The Minervini Short TT requires a stock be in a confirmed downtrend (price < 50/150/200 SMA, >30% below 52w high), but the 2a-SHORT mean-reversion lane by definition catches names that are OVERBOUGHT in an uptrend (Z ≥ +2.0, RSI > 70). These two conditions are structurally incompatible. XLV at Z = +2.44 is the clearest example: it's statistically overbought but in a partial recovery, making it impossible to pass both gates simultaneously. Recommend distinguishing the TT check by lane: 2a-SHORT should not require the full short TT (which assumes a broken downtrending stock), only the 2b-SHORT momentum breakdown lane should require the full short TT. This issue needs formal strategy update.
+
+---
+
+### Adjustment Audit (from Week-4 / Phase Audit weekly review)
+
+- **[SCAN] Expand candidate universe Monday pre-market to ≥8 names across ≥3 sectors:** 🟡 PARTIALLY IMPLEMENTED — ROUTINE.md STEP 5 now explicitly calls for "Long candidates: trending leaders...Russell 1000 mid-caps, sector ETFs > $1B AUM, ADR mega-caps" and "Short candidates: mega-caps >$20B and sector/index ETFs." Today's scan covered XLV (Healthcare), XLB (Materials), XLE (Energy), XOM (Energy), XLK (Tech) = 5 tickers across 4 sectors ✅ vs prior week's 4-6 names all in energy/materials. Sector breadth improved. However, the ROUTINE.md does not formally codify "≥8 names" or "≥3 sectors" as a minimum — it reads as guidance, not a hard rule. Full implementation requires a formal minimum-breadth constraint in CONSTRAINTS.md or ROUTINE.md. Partially implemented, not enforced.
+
+- **[SHORT PRIORITY] XLV 2a-SHORT: Pull 25-bar + 210-bar data at pre-market open Monday:** ✅ IMPLEMENTED — XLV bars pulled simultaneously with all other candidates at the start of STEP 5. Not deferred to afternoon. This is direct improvement from prior week's failure where shorts were only evaluated at 15:48 ET (within the no-entry window).
+
+- **[ENTRY CALIBRATION] Monday-adjusted limit price for momentum carryovers:** ✅ IMPLEMENTED IN LOGIC — Today's analysis specifically evaluated XLE's expected open price ($55.92–56.50) given the oil crash catalyst, rather than anchoring to Friday's May 22 close ($59.49). The Monday gap was explicitly modeled. No formal script change was needed; this was handled in the analysis narrative.
+
+- **[PROCESS] Midday rescan: add short-candidate re-evaluation to midday workflow:** 🟡 IMPLEMENTED IN PROMPT — ROUTINE.md midday section now reads "Scan open positions mid-trading day" but does not explicitly call out short candidate re-evaluation as a named step. The spirit is in the workflow but the explicit instruction ("re-evaluate short candidates that were borderline at pre-market if volume picks up intraday") is absent from the midday ROUTINE.md text. Needs a formal line addition.
+
+- **[WATCHLIST] XLB mean-reversion long — trigger $49.40:** ❌ NOT TRIGGERED — XLB did NOT reach trigger. Closed May 22 at $50.29 (trigger was $49.40, gap = -$0.89). Z = -0.890 (needed ≤ -2.0). No action required today; carryover watchlist item remains.
+
+---
+
+### Account
+- **Equity:** $99,056.46
+- **Cash:** $99,056.46 (100.0%)
+- **Buying power:** $198,112.92 (margin)
+- **Daytrade count:** 0 / 3
+- **Open positions:** None
+- **Open orders:** None
+- **Week trades used:** 0 / 3 (resets today, first day of new week)
+
+---
+
+### Market Context
+- **US Markets:** CLOSED — Memorial Day holiday. No NYSE/NASDAQ trading today.
+- **Futures:** S&P 500 futures surged above 7,534 in pre-market — all-time high. Futures +0.91% at 5:20 AM EDT. US stock market closed; overnight reaction to geopolitical developments.
+- **WTI Crude Oil:** Sharp decline to $90.65–$92.47/bbl (−4.73% to −6.1%). TWO-WEEK LOW. Prior close ~$96.60. Triangle support broken on longer-term charts — potential sustained selloff.
+- **Brent Crude:** Fell below $100/bbl for first time in several weeks; trading $97.22–$99.39/bbl (−4.55% to ~−6%). Down from ~$103–104 prior.
+- **Primary Catalyst:** Optimism surrounding a potential US-Iran peace agreement. Framework for reopening Strait of Hormuz "largely negotiated." However, Trump stated "no hurry" to finalize, and naval blockade remains until formal agreement. Market interpreting this as bullish risk-on (lower oil = lower inflation = higher equities), but deal is NOT finalized.
+- **VIX:** 16.70 as of May 22 (last market close). Down from 16.76 prior day (−0.36%). 17.65% lower than 1 year ago.
+- **Pre-market Earnings:** LexinFintech (LX) reported Q1 before market open today. Loan volume RMB 57.9B (+15.9% seq, +12.2% YoY). Revenue RMB 3.3B. Net income RMB 201M (−5.9% seq on higher opex). After-bell expected: FINV, JOYY.
+- **Economic Calendar:** NO major releases today (Memorial Day). Key events this week: Thursday = US Core PCE (April) + Q1 GDP (first reading). No FOMC, no jobs data today.
+- **Sector YTD Momentum (as of May 23):**
+  - #1 Energy: +34.5% YTD
+  - #2 Technology: +22.3% YTD (rebounded from −6.3% in Q1)
+  - Mid-tier (9–11%): Consumer Staples, Industrials, Real Estate, Materials
+  - Underperformers: Healthcare −4.6%, Comm Services −5.5%, Consumer Disc −8.1%, Financials −9.7%
+- **Oil Impact Analysis:** WTI −6.1% is a MAJOR negative catalyst for the Energy sector (XLE, XOM, CVX). Energy YTD +34.5% is at risk if the Iran deal materializes. Oil-sensitive names expected to gap down significantly at Tuesday open. Tech and Consumer Discretionary (oil-cost-sensitive) should benefit.
+
+---
+
+### VIX Regime
+- **Current VIX:** 16.70 (May 22 close — last available)
+- **Regime:** Normal (VIX 14–22)
+- **Sizing multiplier:** 1.00×
+- **Note:** Markets closed today. VIX may drop further Tuesday if Iran optimism holds, as lower oil = reduced global inflation risk = reduced macro uncertainty.
+
+---
+
+### Candidate Universe Scanned
+Four candidates evaluated across Healthcare (XLV), Materials (XLB), Energy (XLE/XOM), and Technology (XLK). Covers 4 sectors meeting the ≥3-sector breadth mandate from the weekly review adjustment.
+
+---
+
+### Trade Ideas (Cleared Both Layers)
+
+**None. All candidates failed at least one required gate.**
+
+---
+
+### Skipped Candidates
+
+**1. XLV | SHORT | Healthcare ETF | 2a-SHORT Mean-Reversion**
+- **Catalyst:** Healthcare sector rolling over from 2025 highs; Z = +2.437 (strong overbought signal at 52-week recovery rally exhaustion). Sector YTD −4.6%.
+- **Lane attempted:** 2a-SHORT (Mean-Reversion Short)
+- **Layer B checks:**
+  - Z-score: +2.437 ≥ +2.0 ✅
+  - RSI(14): 69.1 (needs >70) ❌ — 0.9 points short of threshold
+  - Volume: 0.714× (needs ≥ 1.0×) ❌ — 6.92M vs 9.69M avg
+- **Layer B result:** FAIL (2 of 3 gates fail)
+- **Minervini Short TT:**
+  - Price $149.89 < 50-SMA $146.38? ❌ FAIL — price above 50-SMA
+  - Price < 150-SMA $151.26? ✅
+  - Price < 200-SMA $151.26? ✅
+  - 150-SMA < 200-SMA? ❌ (both equal at $151.26)
+  - 200-SMA trending down (151.26 < 152.20 one month ago)? ✅
+  - 50-SMA < 150-SMA? ✅
+  - Price > 30% below 52w high ($160.20)? −6.4% below ❌ FAIL (need ≥ 30%)
+  - Price within 25% of 52w low ($142.84)? +4.9% above ✅
+- **TT result:** FAIL — price above 50-SMA, not 30% below 52w high
+- **Key notes:** Z-scores computed from 25-bar data (May 22 close = $149.89, mean_20 = $145.52, σ = $1.79). RSI tantalizingly close at 69.1; would have been a trade if RSI cleared 70. Structural conflict between 2a-SHORT (requires overbought uptrend) and Minervini Short TT (requires confirmed downtrend) flagged for strategy review.
+- **6-month return:** −1.0% (vs +22.3% for XLK) — bottom-30th percentile ✅ (supports short thesis directionally)
+- **Pair:** XLV has no direct TRADING-STRATEGY.md canonical pair; closest is JNJ/UNH. Not pulled (no qualifying pair for ETF sector short in the canonical list).
+
+---
+
+**2. XLB | LONG | Materials ETF | 2a-LONG Mean-Reversion (carryover)**
+- **Catalyst:** Materials sector consolidating after May selloff; FCX pair divergence 1.330σ (within gate). XLB down from $53.62 high to $50.29.
+- **Lane attempted:** 2a-LONG (Mean-Reversion Long)
+- **Layer B checks:**
+  - Z-score: −0.890 (needs ≤ −2.0) ❌ — far from threshold; trigger ~$49.45
+  - RSI(14): 47.8 (needs <30) ❌
+  - Volume: 0.658× (needs ≥ 1.0×) ❌
+- **Layer B result:** FAIL (all 3 gates fail)
+- **Minervini Long TT:**
+  - Price $50.29 > 50-SMA $50.63? ❌ — slightly below
+  - 150-SMA: INSUFFICIENT DATA (113 post-split bars; split Dec 5, 2025) ❌
+  - 200-SMA: INSUFFICIENT DATA ❌
+  - Price > 30% above 52w low? +15.9% ❌ FAIL
+- **TT result:** FAIL
+- **Status:** Carryover watchlist — watching for Z ≤ −2.0 trigger near $49.40. Oil crash may NOT directly help XLB (materials ≠ energy), but a risk-off day could pressure materials alongside energy.
+
+---
+
+**3. XLE | SHORT | Energy ETF | 2b-SHORT Momentum (oil crash)**
+- **Catalyst:** WTI −6.1% to $90.65 on Iran deal optimism; Brent below $100. XLE expected to open −5 to −6% (~$55.92 from $59.49 close).
+- **Lane attempted:** 2b-SHORT (Momentum Short)
+- **Layer B checks (at estimated open $55.92):**
+  - Z ≤ −1.0? Z ≈ −1.70 ✅ (if opened at $55.92)
+  - Close < 20d low ($55.70)? $55.92 > $55.70 ❌ — barely above 20d low; need sustained close below
+  - RSI 30–50? RSI 50.4 on settled data; expected to drop to ~30–35 after −6% day ❌ — would fall INTO or THROUGH the 30 level (oversold, not in short-confirmation zone)
+  - Volume ≥ 1.5×? Likely ✅ (high-vol oil-crash day expected)
+  - 50-SMA < 200-SMA? Insufficient data (Dec 2025 split) ❌
+- **Layer B result:** FAIL — RSI would overshoot into oversold territory, no clean 20d low break at expected prices
+- **Minervini Short TT:**
+  - 150/200-SMA: INSUFFICIENT DATA (Dec 2025 split; only 116 post-split bars) ❌
+  - Price > 30% below 52w high $62.56? −10.6% below ❌ (need ≥ 30%)
+- **TT result:** FAIL (permanently blocked by split data gap for at least 4–6 more months)
+- **Pair:** XOM Z = +0.419 (May 22). At −6% open: XOM Z ≈ −1.66. XLE/XOM divergence today: 0.248σ ✅ (well within 1.5σ). Pair confirms sector selloff.
+- **Note:** The oil-crash day may actually set up a MEAN-REVERSION LONG in XLE for later this week if oil stabilizes. Iran deal is NOT finalized; Trump said "no hurry." A false-alarm reversal (WTI recovers to $94+) could produce a Z ≤ −2.0 long setup in XLE by Wednesday if price continues down to ~$54.50.
+
+---
+
+**4. XLK | LONG | Technology ETF | 2b-LONG Momentum (AI/tech rally)**
+- **Catalyst:** S&P 500 futures +0.91% all-time high; Tech sector #2 YTD +22.3%; AI remains structural long-term driver.
+- **Lane attempted:** 2b-LONG (Momentum Long)
+- **Layer B checks (as of May 22 close):**
+  - Z = +1.255 ≥ +1.0 ✅
+  - Close > 20d high ($180.39)? $180.39 = AT the 20d high ❌ — no clean breakout yet
+  - RSI(14): 74.9 (needs 50–70) ❌ — ABOVE the upper bound; overbought
+  - Volume: 0.932× (needs ≥ 1.5×) ❌
+  - 50-SMA ($153.52) > 200-SMA? Insufficient data for 200-SMA ❌
+- **Layer B result:** FAIL (3 of 5 gates fail)
+- **Minervini Long TT:**
+  - Price $180.39 > 50-SMA $153.52 ✅
+  - 150/200-SMA: INSUFFICIENT DATA (Dec 2025 split; 116 post-split bars) ❌
+  - Price > 30% above 52w low ($127.50)? +41.5% ✅
+  - Price within 25% of 52w high (at 52w high = 0.0%) ✅
+- **TT result:** PARTIALLY BLOCKED — 150/200 SMA gap persists
+- **Pair (NVDA):** Z = +0.055 (nearly flat). XLK Z = +1.255. Divergence = 1.20σ ✅ (within 1.5σ gate). Pair doesn't diverge, confirms tech sector elevation.
+- **Note:** XLK is at all-time-high territory. RSI 74.9 suggests near-term overextension. If market gaps up Tuesday and XLK opens above $184+ (clearing 20d high on volume), a same-day assessment would be needed. The 50-70 RSI gate would need to be watched post-gap-open. Likely in watchlist for Tuesday if RSI normalizes after gap.
+
+---
+
+### Risk Factors
+1. **Iran deal uncertainty:** Trump stated "no hurry" — deal could be walked back overnight, causing oil to snap back strongly. Any reversal of the peace thesis would hit futures hard (risk to shorts in energy, benefit to energy longs that may appear next session).
+2. **Holiday liquidity:** US markets closed; overnight futures moves may partially reverse at Tuesday open when full institutional participation resumes.
+3. **Permanent SMA data gap:** XLB, XLE, XLK all had splits in December 2025. The 150/200-day SMA computations will remain blocked until ~May–June 2026 for the 150-SMA and ~June–July 2026 for the 200-SMA. This is a persistent structural limitation affecting 3 of 4 primary ETF candidates.
+4. **Energy sector re-assessment:** Energy has been YTD's top sector (+34.5%). A sustained oil decline (if Iran deal holds) would reshape sector momentum dramatically. Tuesday's market-open will require a complete re-evaluation of all energy-related candidates.
+5. **XLK RSI overextension:** Tech at RSI 74.9 and at 52-week highs. AI-driven rally could still continue, but RSI being >70 on approaching the all-time high means the quant gate rejects it until a consolidation brings RSI to 50-70.
+
+---
+
+### Decision
+**HOLD** — Zero candidates cleared both Layer A + Layer B. US markets are closed today (Memorial Day). No orders placed, no orders to review.
+
+**Primary watchlist for Tuesday open (2026-05-26):**
+1. **XLE / XOM — Assess for 2b-SHORT if Tuesday close confirms breakdown below 20d lows on elevated volume.** XLE 20d low = $55.70; XOM needs new 20d low below $144.57. Watch RSI: needs to land in 30–50 range (not crash through 30). Volume should be 1.5×+ on an oil-crash day. TT blocked by split data — note as ongoing constraint.
+2. **XLV — 2a-SHORT re-evaluation.** RSI was 69.1 on May 22; if healthcare names remain elevated or push slightly higher Tuesday, RSI could clear 70. Volume needs to recover to ≥1.0× (9.7M+ shares). Z = +2.437 is strong. Structural TT conflict noted (see URGENT flag above).
+3. **XLK — 2b-LONG watch.** RSI 74.9 needs to normalize toward 60-65. Tuesday may see profit-taking after the futures-driven gap, which could bring RSI back to the 50-70 zone. Watch for consolidation + volume confirmation.
+4. **XLB — Mean-reversion long trigger at $49.40** still active. Z would need ≤ −2.0. Current $50.29 needs -$0.84 further decline. An oil-crash-driven risk-off day could pressure materials simultaneously.
+
+---
+
+*Research generated: 2026-05-25 (Memorial Day — pre-market workflow)*
+*Account: $99,056.46 | 0 positions | 0 orders | Week 0/3 trades | PDT 0/3*
