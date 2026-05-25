@@ -742,3 +742,19 @@ vs S&P 500: −0.88% (S&P +0.88% on 8th consecutive up-week, closing at 7,473.47
 **Circuit breakers:** ✅ All clear — Phase P&L −$943.54 (−0.944%, lim −5%) | Drawdown −1.15% from $100,206.70 peak (lim −15%)
 
 **Next action:** Tuesday 2026-05-26 pre-market — full re-scan with focus on XLE/XOM 2b-SHORT (oil crash Iran deal), XLV 2a-SHORT (RSI recheck), XLK 2b-LONG (RSI normalization), XLB 2a-LONG (trigger $49.40).
+
+## 2026-05-25 — EOD
+
+**Portfolio:** $99,056.46 (+0.000% day, −0.944% phase)
+**Cash:** $99,056.46 (100%)
+**Deployed:** 0%
+**Daytrade count:** 0/3
+
+**Trades today:** none
+**Open positions:** none
+**Stops tightened:** none
+**Losers cut:** none
+
+**Notes:** Memorial Day — US markets closed; portfolio flat at $99,056.46, all circuit breakers clear, week trade budget resets 0/3, Tuesday watchlist set (XLE/XOM short, XLV short, XLK long, XLB long).
+
+---

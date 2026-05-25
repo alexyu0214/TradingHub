@@ -1239,3 +1239,20 @@ Every trade (entry, exit, stop-out) is logged here with full thesis, entry price
 **PDT count:** 0/3 | **Week trades:** 0/3 | **Positions:** 0/6
 **Circuit breakers:** ✅ All clear — Phase P&L −0.944% (lim −5%) | Drawdown −1.15% from $100,206.70 peak (lim −15%)
 
+
+### May 25 — EOD Snapshot (Day 26, Monday — Memorial Day Holiday)
+
+**Portfolio:** $99,056.46 | **Cash:** $99,056.46 (100%) | **Day P&L:** $0.00 (0.000%) | **Phase P&L:** −$943.54 (−0.944%) | **Deployed:** 0%
+
+| Ticker | Shares | Entry | Close | Unrealized P&L | Stop | Time |
+|--------|--------|-------|-------|----------------|------|------|
+| — | — | — | — | — | — | — (0 positions) |
+
+**Trades today:** none — US equity markets closed (Memorial Day federal holiday); no orders submitted, no fills, no bracket orders placed
+
+**Notes:** Day 26 ends flat — Memorial Day holiday. NYSE and NASDAQ were physically closed; Alpaca confirmed zero activity (`last_equity` == `equity` == $99,056.46, `balance_asof` still showing 2026-05-22 Friday close). Portfolio remains fully in cash, 0 open positions, 0 open orders. All circuit breakers clear heading into Tuesday. Week trade budget resets fresh (0/3) and PDT budget fully intact (0/3). The pre-market research scan ran during the session window and confirmed all four watchlist candidates (XLV, XLE, XLB, XLK) still fail composite Layer A+B gates on stale May 22 close data — no phantom signals generated. Primary Tuesday focus: XLE/XOM 2b-SHORT (Iran deal WTI crude gap-down catalyst), XLV 2a-SHORT (Z=+3.205, needs RSI >70 + vol ≥1.0×), XLK 2b-LONG (RSI normalization from 72.8 → 50–70 window), XLB 2a-LONG (trigger $49.40 Z≤−2.0). Phase P&L steady at −0.944% — well within all risk limits.
+
+**Circuit breakers:** ✅ All clear — Day 0.000% (lim −2%) | Phase −0.944% (lim −5%) | Drawdown −1.15% from $100,206.70 peak (lim −15%)
+**PDT count:** 0/3 | **Week trades:** 0/3 | **Positions:** 0/6
+
+---
