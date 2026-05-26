@@ -5090,3 +5090,65 @@ Zero trades is the correct call. The strategy is functioning as designed. Thursd
 4. **Volume normalization:** Today's post-Memorial Day holiday showed improving but still suppressed volume across all names (XLK 0.62×, XLV 0.39×). Wednesday expected to see normalized ~1.0× participation, which unblocks momentum entries if other gates align.
 5. **Core PCE Thursday:** Markets may stay range-bound Wednesday afternoon ahead of the print. Risk-off ahead of PCE could paradoxically help XLV short setup (RSI rising toward 70 if healthcare stays bid) or hurt XLK momentum (RSI normalizes downward, good for entry timing).
 
+
+---
+
+## 2026-05-26 — Midday Scan Addendum (~14:20 ET / 18:20 UTC)
+
+**Scan type:** Midday workflow — position thesis check & stop evaluation
+**VIX Regime:** Normal (16.85 from morning research) — 1.00× sizing multiplier
+**Account:** $99,056.46 equity | 100% cash | 0 positions | 0 orders | PDT 0/3 | Week 0/3
+
+---
+
+### STEP 1 — Portfolio State (Live API)
+
+- **Positions:** `[]` — EMPTY. 100% cash confirmed.
+- **Orders:** `[]` — EMPTY. No working brackets. No GTC stops.
+- Pre-market HOLD decision confirmed: all 11 candidates failed volume gate (0.25–0.50× avg due to post-Memorial Day holiday participation drought). No brackets placed at open.
+- TRADE-LOG fully current. No discrepancy.
+
+---
+
+### STEP 2 / STEP 3 — Cut Losers / Tighten Stops
+
+**N/A — no open positions.**
+
+---
+
+### STEP 4 — Watchlist Re-Evaluation (Live Quotes at ~14:20 ET)
+
+**Structural market blockers today:**
+1. Post-Memorial Day volume suppression — ALL names showing 0.43×–0.67× of 20d avg. No momentum candidate can pass ≥1.5× volume gate.
+2. Tech (XLK) RSI overbought at 76.8 after NVDA-driven AI gap-up.
+3. TT data unavailability — 3 names structurally blocked by 150-bar ceiling (XLK split, AZO, XLV).
+
+| Ticker | Live Mid | Z (live) | RSI (Wilder's) | Vol Ratio | Lane | Gate Result |
+|--------|----------|----------|---------------|-----------|------|-------------|
+| XLK | $185.17 | +1.91 ✅ | 76.8 ❌ (>70) | 0.67× ❌ | 2b-LONG | **REJECT** — RSI overbought + vol low + TT unverifiable |
+| XLV | $149.08 | +2.04 ✅ | 59.7 ❌ (<70) | 0.43× ❌ | 2a-SHORT | **REJECT** — RSI far from >70 + vol far below 1.0× + Short TT structural |
+| XLB | $50.96 | −0.18 ❌ | 48.6 ❌ | 0.55× ❌ | 2a-LONG | **REJECT** — Z far from −2.0 (trigger $49.31, needs −3.2%) |
+| XOM | $150.55 | −0.58 | 47.2 | 0.37× | — | Monitor only — no lane qualifies |
+| XLE | $58.20 | −0.19 | 52.5 | 0.64× | — | Monitor only — no lane qualifies |
+
+**Key observations:**
+- **XLK** is continuing its breakout rally (now +$4.76 / +2.6% above Friday's $180.39 close). Z = +1.91, breakout confirmed (+2.65% above pivot ✅, within 5% cap). The only blockers are RSI 76.8 (overbought) and volume 0.67× (well below 1.5× threshold). As post-holiday participation normalizes over Wed/Thu, this remains the #1 setup to watch for 2b-LONG entry.
+- **XLV** Z briefly pierced +2.0 today (first time); RSI at 59.7 is still ~10 points from the >70 trigger. Volume at 0.43× is very thin. Healthcare holding near 52w highs. Short TT structural conflict unresolved (flagged Week 4 — 2a-SHORT incompatibility with Minervini downtrend requirement).
+- **XOM** sold off −2.6% intraday to $150.55 (Z = −0.58). Approaching the lower half of its 20d range. Energy pullback consistent with WTI weakness (Iran deal optimism continuing). No entry lane qualifies — not oversold enough for 2a-LONG (Z −0.58, needs ≤−2.0 at ~$144.35), not above pivot for 2b-LONG ($162.55).
+- **XLE** similarly soft (−0.9% to $58.20). Z = −0.19, near mean. Not a setup in any direction.
+
+**Gate checks run (all constraints confirmed):**
+- ✅ Positions: 0 (would be ≤ 6 — irrelevant, no orders)
+- ✅ Week trades: 0/3 (budget intact)
+- ✅ PDT: 0/3
+- ✅ Circuit breakers: Phase P&L −0.944% (lim −5%) | Drawdown −1.15% (lim −15%)
+- ✅ VIX: 16.85 (Normal regime, 14–22 band) — entries permitted in principle
+- ✅ No forbidden order types attempted
+
+**Watchlist for Wednesday 2026-05-27:**
+1. XLK 2b-LONG — RSI needs to normalize 76.8 → 50–70; vol needs ≥1.5× on full trading day; TT blocker persists
+2. XLV 2a-SHORT — Z needs +2.0 (~$149.47); RSI needs >70; vol needs ≥1.0×
+3. XLE/XOM 2b-LONG — Watch for breakout above $61.29 / $162.55 pivots if Brent stays elevated ≥$99
+4. XLB 2a-LONG — Trigger ~$49.10 (3.4% away); Brent spike working against this setup
+
+**No order IDs. No fills. No bracket children active.**
