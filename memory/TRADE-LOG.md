@@ -1256,3 +1256,54 @@ Every trade (entry, exit, stop-out) is logged here with full thesis, entry price
 **PDT count:** 0/3 | **Week trades:** 0/3 | **Positions:** 0/6
 
 ---
+
+---
+
+### 2026-05-26 16:57 — MARKET-OPEN EXECUTION: NO ORDERS PLACED
+
+**Decision:** HOLD — Zero trades today (confirmed from research log DECISION field)
+
+**Account snapshot at execution time:**
+- Equity: $99,056.46
+- Cash: $99,056.46 (100.0% undeployed)
+- Open positions: 0 / 6
+- PDT daytrade count: 0 / 3
+- Week trades used: 0 / 3
+- Trading blocked: false | Account blocked: false
+
+**Candidates evaluated (11 total, 6 sectors) — all REJECTED:**
+
+| Ticker | Lane | Primary Failure(s) |
+|--------|------|--------------------|
+| XLK | 2b-LONG | RSI 76.2 > 70 (needs 50–70); Vol 0.43× < 1.5×; TT unverifiable (Dec 2025 2:1 split corrupts 200-SMA) |
+| XLV | 2a-SHORT | Z +1.671 < +2.0; RSI 58.6 < 70; Vol 0.32× < 1.0× |
+| XLB | 2a-LONG | Z −0.296 >> −2.0 (trigger ~$49.10, price $50.80); TT 52w-low spread fails |
+| AZO | 2a-LONG | TT unverifiable (150-bar ceiling); Sector YTD −2.0% (bearish); Vol 0.90× < 1.0× |
+| XLY | — | Z +0.591 (neutral, no directional setup) |
+| NVDA | — | Z −0.109 (at mean, no setup) |
+| XOM | — | Z −0.330 (near zero, no breakout above $162.55 pivot) |
+| XLE | — | Z +0.101 (near zero, no breakout above $61.29 pivot) |
+| XLF | — | Z +0.875 < +1.0; no 20d-high breakout |
+| XLI | — | Z +0.675 < +1.0; no 20d-high breakout |
+| SPY | — | Z +1.402; Vol 0.29× (post-holiday holiday drag) |
+
+**Structural market blockers today:**
+1. Post-Memorial Day volume suppression — ALL names showing 0.25×–0.50× of 20d avg. No momentum candidate can pass ≥1.5× volume gate.
+2. Tech (XLK) RSI overbought at 76.2 after NVDA-driven AI gap-up.
+3. TT data unavailability — 3 names structurally blocked by 150-bar ceiling (XLK split, AZO, XLV).
+
+**Gate checks run (all constraints confirmed):**
+- ✅ Positions: 0 (would be ≤ 6 — irrelevant, no orders)
+- ✅ Week trades: 0/3 (budget intact)
+- ✅ PDT: 0/3
+- ✅ Circuit breakers: Phase P&L −0.944% (lim −5%) | Drawdown −1.15% (lim −15%)
+- ✅ VIX: 16.85 (Normal regime, 14–22 band) — entries permitted in principle
+- ✅ No forbidden order types attempted
+
+**Watchlist for Wednesday 2026-05-27:**
+1. XLK 2b-LONG — RSI needs to normalize 76.2 → 50–70; vol needs ≥1.5× on full trading day; TT blocker persists
+2. XLV 2a-SHORT — Z needs +2.0 (~$149.47); RSI needs >70; vol needs ≥1.0×
+3. XLE/XOM 2b-LONG — Watch for breakout above $61.29 / $162.55 pivots if Brent stays elevated ≥$99
+4. XLB 2a-LONG — Trigger ~$49.10 (3.4% away); Brent spike working against this setup
+
+**No order IDs. No fills. No bracket children active.**

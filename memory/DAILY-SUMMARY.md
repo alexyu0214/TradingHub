@@ -758,3 +758,41 @@ vs S&P 500: −0.88% (S&P +0.88% on 8th consecutive up-week, closing at 7,473.47
 **Notes:** Memorial Day — US markets closed; portfolio flat at $99,056.46, all circuit breakers clear, week trade budget resets 0/3, Tuesday watchlist set (XLE/XOM short, XLV short, XLK long, XLB long).
 
 ---
+
+---
+
+## 2026-05-26 — Market-Open Execution Summary
+
+**Market-open orders placed: NONE**
+
+No orders placed today. Research decision was HOLD.
+
+**Reason:** 11 candidates evaluated across 6 sectors; zero cleared both Layer A and Layer B gates.
+
+**Top blockers:**
+- Post-Memorial Day volume drought: all names at 0.25×–0.50× 20d avg volume (no momentum candidate can pass ≥1.5× gate)
+- XLK RSI overbought at 76.2 (requires 50–70 for 2b-LONG); TT unverifiable due to Dec 2025 2:1 split
+- AZO/XLV TT unverifiable (150-bar data ceiling)
+- XLB Z-score at −0.296 (trigger requires ≤−2.0, price $1.70 above trigger)
+
+**Account status at market open:**
+- Equity: $99,056.46 | Cash: $99,056.46 (100% undeployed)
+- Positions: 0 / 6 | Week trades: 0 / 3 | PDT count: 0 / 3
+- VIX: 16.85 (Normal regime) | Circuit breakers: ✅ All clear
+- Phase P&L: −$943.54 (−0.944%) | Drawdown from peak: −1.15%
+
+**Skipped candidates:**
+- XLK: RSI 76.2 overbought + Vol 0.43× insufficient + TT unverifiable (split data)
+- XLV: Z +1.671 < +2.0 required + RSI 58.6 < 70 + Vol 0.32× < 1.0×
+- XLB: Z −0.296 far from −2.0 trigger + TT 52w-low spread fails
+- AZO: TT unverifiable + Sector bearish (XLY YTD −2.0%) + Vol 0.90× < 1.0×
+- XLY / NVDA / XOM / XLE / XLF / XLI / SPY: Z-score neutral, no directional setup or breakout
+
+**Watchlist flagged for Wednesday 2026-05-27:**
+- XLK 2b-LONG (RSI normalization + vol confirmation needed)
+- XLV 2a-SHORT (Z +0.33σ away from trigger; RSI + vol also needed)
+- XLE/XOM 2b-LONG (breakout above pivots if Brent stays ≥ $99)
+
+**Pending strategy build items (from Adjustment Audit):**
+- ❌ ROUTINE.md sector breadth mandate (≥3 sectors, ≥8 names per scan)
+- ❌ ROUTINE.md weekend gap adjustment step for momentum setups carried from Friday
