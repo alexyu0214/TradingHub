@@ -4867,3 +4867,198 @@ Memorial Day session — no trading. The weekend's dominant development was **WT
 4. **XLE/XOM — ENERGY RE-ASSESSMENT:** WTI at $90.65 over weekend. XLE 20d low = $55.70; if Tuesday close breaks below this on elevated volume, assess 2b-SHORT. Hard blocker: TT structural (only −10.6% below 52w high; needs >30%). Energy sector: 1 consecutive failure logged (XOM May 7). No new energy long until WTI stabilizes + fresh catalyst + volume confirmation.
 5. **[STRATEGY REVIEW FLAG]:** 2a-SHORT lane vs Minervini Short TT structural incompatibility. XLV exemplifies this perfectly: the stock is overbought in an uptrend (correct for 2a-SHORT) but the Short TT requires a downtrend (incompatible with 2a). Recommend: 2a-SHORT should require only "Z ≥+2.0, RSI >70, vol ≥1.0×" WITHOUT the full Minervini Short TT. The 2b-SHORT breakdown lane should retain the full Short TT. Needs formal update to TRADING-STRATEGY.md and CONSTRAINTS.md.
 
+
+---
+
+## 2026-05-26 — Pre-Market Research
+
+> ⚠️ **URGENT: TWO ITEMS NEED BUILD — see Adjustment Audit below**
+
+### Account
+- Equity: $99,056.46
+- Cash: $99,056.46 (100.0%)
+- Buying power: $198,112.92
+- Open positions: 0
+- PDT daytrade count: 0/3
+- Week trades used: 0/3
+- Phase P&L: −$943.54 (−0.944%) | Peak: $100,206.70 | Drawdown: −1.15%
+- balance_asof: 2026-05-22 (Friday — Memorial Day weekend; today May 26 is Tuesday)
+
+### Adjustment Audit (from Week-4 Weekly Review, filed 2026-05-22)
+
+**Weekly review adjustments checked against codebase:**
+
+- **[SCAN — URGENT] Expand candidate universe to ≥8 names across ≥3 sectors:** ❌ NOT IMPLEMENTED — `grep -i "≥3 sector\|3 sector\|minimum.*sector\|breadth" .claude/commands/ROUTINE.md memory/CONSTRAINTS.md memory/TRADING-STRATEGY.md` returns no hits. The prompt still has no minimum sector breadth requirement codified. Today's scan covered 11 symbols across 6 sectors (Info Tech, Healthcare, Materials, Energy, Consumer Disc, Industrials, Financials) — the human researcher did the expansion manually, but it is NOT in the ROUTINE.md checklist. **Needs ROUTINE.md update.**
+
+- **[SHORT PRIORITY] XLV 2a-SHORT: Pull 25-bar data at pre-market open Monday (not deferred):** 🟡 IMPLEMENTED IN CODE BUT NOT TRIGGERED — The ROUTINE.md STEP 5 instructs pulling 25-bar data for all short candidates. Today this was done correctly at pre-market. However XLV fails on RSI (58.6 < 70) and vol (0.32x < 1.0×) — not a process failure, a market condition. The process worked; XLV simply hasn't triggered yet.
+
+- **[ENTRY CALIBRATION] Monday-adjusted limit price for momentum setups from Friday:** ❌ NOT IMPLEMENTED — `grep -i "monday.*limit\|limit.*stale\|gap.*adjust\|weekend.*gap" .claude/commands/ROUTINE.md` returns no hits. No formal "weekend gap adjustment" step exists in ROUTINE.md STEP 2. This week XLK gapped from $180.39 (Friday close) to $184.31 (today open), a +2.2% gap. Any Friday limit set at $180.39 would not have been chased (correct per "no chasing" rule), but the methodology for Monday re-evaluation is still informal. **Needs ROUTINE.md update.**
+
+- **[PROCESS] Midday rescan: add explicit short-candidate re-evaluation:** 🟡 IMPLEMENTED IN CODE BUT NOT TRIGGERED — Midday workflow runs daily. The instruction in ROUTINE.md includes re-evaluating "borderline" candidates. XLV would be the specific re-evaluation candidate today (RSI needs >70; watch for intraday push). Process exists; specific mention of short candidate re-eval is informal rather than explicit in the checklist.
+
+- **[WATCHLIST] XLB 2a-LONG trigger $49.40:** ❌ NOT TRIGGERED — XLB Z = −0.296 today (split-adjusted), mean=$50.66, std=$0.72. Trigger would require price of ~$49.22 for Z ≤ −2.0. XLB is at $50.80, about $1.58 away from trigger. The Iran/Brent catalyst is sending oil UP (+3%), which is a positive for materials/XLB — counterintuitively, this moves XLB AWAY from the oversold trigger. Not a process issue.
+
+**Summary: 2 items ❌ NOT IMPLEMENTED requiring build, 2 items 🟡 in code but conditions not met:**
+
+> ❌ **URGENT: Build ROUTINE.md sector breadth mandate (≥3 sectors, ≥8 names per pre-market scan)**
+> ❌ **URGENT: Build ROUTINE.md weekend gap adjustment step for momentum setups carried from Friday**
+
+---
+
+### Market Context
+
+**Macro / Geopolitical:**
+- US military strikes in southern Iran overnight → Brent crude surged +3.0–3.2% to $99.03–99.18/bbl (supply risk premium)
+- WTI crude paradoxically fell 2.3–4.2% to $92.53–94.38/bbl (mixed Iran negotiation signals; domestic vs. Brent spread widening)
+- S&P 500 at or near all-time highs; Middle East peace hopes supporting equity indices broadly
+- NVIDIA earnings beat (strong guidance) — AI/semis optimism continues; KOSPI rallied on semiconductor optimism
+- Market interpreting Iran situation as: geopolitical risk premium in Brent, but broader resolution = bullish equities
+
+**Pre-market levels:**
+- S&P 500 futures: +0.68–0.77%, at 7,542–7,549
+- SPY pre-market: +0.55% at $749.77
+- XLK (Tech ETF): opened at $184.31 today (+2.17% above Friday pivot $180.39)
+
+**VIX:** 16.85 (+1.57%), up from 16.59 on May 22. VIX futures remain below 21.
+
+**Economic calendar today:**
+- 9:00 ET: FHFA House Price Index, S&P CoreLogic Case-Shiller HPI (March)
+- 10:00 ET: Conference Board Consumer Confidence
+- 10:30 ET: Philadelphia Fed Nonmanufacturing Survey, Texas Manufacturing Outlook Survey
+- Later: EIA gasoline/diesel data; API crude inventories
+- NO CPI, PPI, FOMC, or jobs data today
+
+**Pre-market earnings:**
+- AutoZone (AZO): Q3 EPS beat / Revenue miss → −5% pre-market (~$2,858 from $3,007)
+- Freightos (CRGO): Q1 rev $7.2M, +3% YoY (inline)
+- CSW Industrials (CSW), Champion Homes (SKY), MINISO (MNSO), Semtech (SMTC), others reporting
+
+**Sector YTD momentum (as of May 1, 2026):**
+- 🥇 Info Technology: +32.9% | Communication Services: +12.6% | Financials: +11.4%
+- Industrials: +9.0% | Energy: +9.5% | Health Care: +9.5%
+- Materials: +2.1% | Utilities: +2.5% | Real Estate: +2.0%
+- ❌ Consumer Discretionary: −2.0% | Consumer Staples: −1.2%
+- S&P 500 YTD: +9.69% (as of May 22)
+
+---
+
+### VIX Regime
+- **Current VIX:** 16.85
+- **Regime: Normal** (14–22 band)
+- **Sizing multiplier: 1.00×**
+- All entry types permitted. Mean-reversion and momentum both eligible.
+
+---
+
+### Universe Scan — 11 Candidates Evaluated (6 Sectors)
+
+All bar data pulled fresh with May 26 intraday bar where available. Z-scores, RSI (Wilder's 14-period), and volume ratios computed from actual Alpaca bar data.
+
+| Ticker | Sector | Close | Z-Score | RSI(14) | Vol Ratio | Direction Evaluated | Status |
+|--------|--------|-------|---------|---------|-----------|---------------------|--------|
+| XLK | Info Tech | $184.31 | +1.604 | 76.2 | 0.43× | 2b-LONG | REJECT |
+| XLV | Healthcare | $148.84 | +1.671 | 58.6 | 0.32× | 2a-SHORT | REJECT |
+| XLB | Materials | $50.80 | −0.296 | 49.1 | 0.42× | 2a-LONG | REJECT |
+| AZO | Cons. Disc. | $3,008 | −3.168 | 24.7 | 0.90× | 2a-LONG | REJECT |
+| XLY | Cons. Disc. | $118.98 | +0.591 | 52.6 | 0.25× | 2b-SHORT | REJECT |
+| NVDA | Info Tech | $213.47 | −0.109 | N/A | 0.50× | 2b-LONG | REJECT |
+| XOM | Energy | $151.84 | −0.330 | N/A | 0.22× | N/A | REJECT |
+| XLE | Energy | $58.73 | +0.101 | N/A | 0.41× | N/A | REJECT |
+| XLF | Financials | $51.87 | +0.875 | N/A | 0.31× | 2b-LONG | REJECT |
+| XLI | Industrials | $173.92 | +0.675 | N/A | 0.36× | 2b-LONG | REJECT |
+| SPY | Broad Market | $749.44 | +1.402 | N/A | 0.29× | 2b-LONG | REJECT |
+
+---
+
+### Trade Ideas (Cleared Both Layers)
+
+**None. Zero candidates cleared both Layer A and Layer B today.**
+
+---
+
+### Skipped Candidates — Specific Failure Reasons
+
+**XLK — 2b-LONG — REJECTED**
+- **Catalyst:** Record S&P highs, NVIDIA AI optimism, tech sector leadership (XLK YTD +32.9%)
+- **Layer A:** Sector momentum ✅ | Catalyst ✅ | Pivot extension 2.17% ≤5% ✅
+- **Layer B — Lane 2b-LONG:**
+  - Z = +1.604 ✅ (≥+1.0)
+  - Close $184.31 > prior 20d high $180.39 ✅ (confirmed breakout)
+  - RSI = 76.2 ❌ — **FAILS** (need 50–70; overbought at 76.2, not healthy momentum zone)
+  - Volume = 0.43× 20d avg ❌ — **FAILS** (need ≥1.5×; today is partial-day intraday bar, post-holiday, low participation)
+  - 50-SMA = $154.47 > 200-SMA = N/A — **CANNOT VERIFY** (150 bars; Dec 2025 stock split corrupts SMA computation with unadjusted data; 52w high shows $304 pre-split vs $184 post-split = data invalid)
+- **Trend Template:** ❌ UNVERIFIABLE — XLK had a 2:1 stock split in December 2025. The Alpaca feed returns unadjusted pre-split prices (~$288) mixed with post-split prices (~$154). Computing 200-SMA across this discontinuity produces meaningless values. TT cannot be verified — HARD BLOCKER.
+- **Summary:** 2 of 4 quant gates fail (RSI, Volume) + TT structurally unverifiable. Today's partial intraday volume especially weak (4.9M vs 11.3M avg). On an ongoing basis: XLK needs RSI to normalize from 76.2 → 50–70 range AND volume to confirm ≥1.5× on a full trading day.
+
+**XLV — 2a-SHORT — REJECTED**
+- **Catalyst:** Healthcare ETF Z=+1.671 (overbought statistically vs 20d mean), potential mean-reversion from extended run
+- **Layer B — Lane 2a-SHORT:**
+  - Z = +1.671 ❌ — **FAILS** (need ≥+2.0 for 2a-SHORT; still 0.33σ below trigger)
+  - RSI = 58.6 ❌ — **FAILS** (need >70; elevated but not overbought)
+  - Volume = 0.32× ❌ — **FAILS** (need ≥1.0×; very thin participation today)
+- **Trend Template:** Unverifiable (150 bars)
+- **Note on 2a-SHORT vs Minervini TT structural conflict (flagged Week 4):** XLV is at its 52-week high, which is structurally incompatible with the Short Trend Template (requires >30% below 52w high). The strategy review item from Week 4 remains open: 2a-SHORT should potentially exempt itself from the full Minervini Short TT (since mean-reversion shorts ARE by definition at extremes in uptrends, not downtrends). This conflict has not been resolved in TRADING-STRATEGY.md.
+- **Watchlist:** XLV Z needs to reach +2.0 (price ~$149.47 from current $148.84) AND RSI >70 AND vol ≥1.0×. All three need to converge.
+
+**XLB — 2a-LONG — REJECTED**
+- **Layer B:** Z = −0.296 ❌ — Far from ≤−2.0 trigger. Materials at $50.80 vs mean $50.66. Brent +3% today is a positive catalyst for materials, pushing XLB AWAY from oversold territory. FCX pair Z = +0.889 (divergence ~1.19σ from XLB — within ≤1.5σ gate, confirmed). But the Z-score gate is the hard fail.
+- **Trigger price for 2a-LONG:** ~$49.10 (Z = −2.0 with updated mean/std). Currently $1.70 (3.4%) away.
+- **TT:** 150 bars, split-adjusted. SMA50=$50.66 > SMA150=$48.39 (positive slope). Price only 20.3% above 52w low — fails >30% requirement.
+
+**AZO — 2a-LONG — REJECTED (notable setup, hard blocked)**
+- **Catalyst:** Q3 EPS beat / Revenue miss → −5% pre-market earnings gap. Z = −3.168 (settled Friday, pre-gap-down); estimated post-gap Z ≈ −4.27. RSI = 24.7. This is statistically the most extreme oversold reading in today's scan.
+- **Layer A fail:** Consumer Discretionary YTD −2.0% — bearish sector posture. AZO has fallen −18.8% from its 25-bar high in 5 weeks (short-term downtrend, not in uptrend).
+- **Layer B — Lane 2a-LONG:**
+  - Z = −3.168 ✅ (≤−2.0; would be ~−4.27 post gap-down today)
+  - RSI = 24.7 ✅ (<30)
+  - Volume = 0.90× ❌ (FAILS ≥1.0×; partial intraday bar; on earnings day, full day expected >>1.0×, but we cannot confirm until close)
+- **Trend Template: UNVERIFIABLE** — Only 150 bars available, cannot compute 200-SMA. Additionally, AZO is already below its 25-bar SMA ($3,444 mean vs current ~$2,858 post-gap), indicating a downtrend posture that likely fails the Long TT requirement that price be above all major SMAs. Sector YTD −2.0% further undermines Layer A catalyst.
+- **Hard blocker:** TT cannot be verified = reject per strategy rules. No exceptions.
+- **Pair:** ORLY (O'Reilly) would be the natural pair. Not pulled — AZO was rejected at Layer A+TT before pair check was warranted.
+
+**AZO — STRATEGY NOTE:** This is the clearest example yet of the TT-data-availability bottleneck. AZO's Z/RSI setup is statistically compelling; the blocking issues are (1) TT unverifiable due to 150-bar ceiling, and (2) sector YTD trend against the trade. Both are legitimate filters working as designed.
+
+**XLY, NVDA, XOM, XLE, XLF, XLI, SPY — All REJECTED at early screens:**
+- XLY: Z neutral (+0.591), no directional setup
+- NVDA: Z = −0.109 (at mean), muted post-earnings reaction, no momentum breakout
+- XOM/XLE: Z near zero, energy at 1 consecutive fail; Brent spike is new catalyst but XOM/XLE haven't broken above their 20d pivots ($162.55/$61.29 respectively)
+- XLF/XLI: Z below +1.0, no 20d-high breakouts, low volume
+- SPY: Z = +1.402, vol = 0.29× (pre-holiday drag; today's post-holiday participation should recover but current bar shows thin volume)
+
+---
+
+### Notable Watchlist for Wednesday May 27
+
+1. **XLK 2b-LONG (highest priority):** Z=+1.604 ✅, breakout ✅, extension 2.17% ✅. PENDING: RSI needs to normalize from 76.2 → 50–70 (could happen on a flat/down open Wednesday if profit-taking hits tech); volume needs ≥1.5× avg (~17M shares full day). Max limit ≤ $180.39 × 1.05 = $189.41 (pivot × 1.05 cap). TT structural blocker remains (Dec 2025 split data).
+
+2. **XLV 2a-SHORT:** Z=+1.671 (needs +2.0, price ~$149.47). RSI 58.6 (needs >70). Vol 0.32× (needs ≥1.0×). All three gates need to close simultaneously. If S&P continues rallying and healthcare rallies with it, XLV could approach the Z+2.0 threshold. TT structural conflict unresolved.
+
+3. **Energy re-assessment:** Brent at $99 is a genuine catalyst for XLE/XOM. XLE needs to break above $61.29 (20d high pivot) with volume ≥1.5× avg for 2b-LONG consideration. XOM needs to clear $162.55. Brent staying elevated post-Iran strikes could materialize this setup within 2–3 sessions.
+
+4. **XLB 2a-LONG:** Still alive at Z=−0.296, trigger ~$49.10. Brent spike is COUNTERPRODUCTIVE for this setup (materials rally, pushing XLB away from oversold).
+
+---
+
+### Risk Factors
+- **Geopolitical binary:** US-Iran situation is binary — escalation → oil spike + equity sell-off; de-escalation → oil drop + equity rally. VIX at 16.85 suggests market not fully pricing escalation risk. If Brent sustains above $100, XLE/XOM re-enter long territory.
+- **Volume drought:** Today is the first trading day post-Memorial Day weekend. All volume ratios are low (0.25×–0.50×), consistent with a market shaking off the holiday. This is a structural issue for ANY momentum entry today — not a single name hit the ≥1.5× volume requirement for 2b-LONG.
+- **XLK split data gap:** The 200-SMA TT verification blocker for XLK is persistent and structural. Until Alpaca provides adjusted historical data or the account accumulates 200+ post-split trading days (~August 2026), XLK's TT will remain formally unverifiable. This is a recurring blocker on the strategy's single highest-Z momentum candidate.
+- **Core PCE Thursday:** Markets may be range-bound ahead of the Thursday Core PCE print. The Fed's rate decision hinges on this data. If PCE comes in hot, rate cut expectations reset and tech/growth sells off.
+- **Week trade budget:** 0/3 trades used. 3 full trade slots available. No urgency to fill — patience rule applies.
+
+---
+
+### Decision
+
+**HOLD — Zero trades today.**
+
+**Rationale:** 11 candidates evaluated across 6 sectors. Zero cleared both Layer A and Layer B. The dominant blocking issues today are:
+1. **Volume suppression:** Post-Memorial Day holiday causes market-wide low participation. All volume ratios are 0.25×–0.50× of 20-day average. No momentum candidate can pass the ≥1.5× volume gate in this environment — this is structural, not stock-specific.
+2. **RSI overbought in tech:** XLK RSI at 76.2 is above the 50–70 healthy momentum window required for 2b-LONG. The sector gap-up on NVDA/AI optimism pushed RSI into overbought territory. Patience until RSI normalizes.
+3. **TT data unavailability:** Three candidates (XLK, XLV, AZO) are structurally blocked by the 150-bar ceiling. This is a known ongoing limitation.
+
+Zero trades is the correct call. The strategy is functioning as designed. Thursday Core PCE + normalized post-holiday volume on Wednesday/Thursday are the next catalysts for setup evaluation.
+
+**PDT count:** 0/3 | **Week trades:** 0/3 | **Positions:** 0/6
+**Circuit breakers:** ✅ All clear — Phase P&L −0.944% (lim −5%) | Drawdown −1.15% (lim −15%)
+
