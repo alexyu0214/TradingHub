@@ -5062,3 +5062,31 @@ Zero trades is the correct call. The strategy is functioning as designed. Thursd
 **PDT count:** 0/3 | **Week trades:** 0/3 | **Positions:** 0/6
 **Circuit breakers:** ✅ All clear — Phase P&L −0.944% (lim −5%) | Drawdown −1.15% (lim −15%)
 
+
+---
+
+### 2026-05-26 — Midday Rescan Addendum (13:41 ET)
+
+**Re-scan time:** 2026-05-26 13:41 ET (~4 hrs 11 min after open)
+**Account state at rescan:** Equity $99,056.46 | Cash $99,056.46 (100%) | 0 positions | PDT 0/3 | Week trades 0/3
+**VIX regime:** Normal (16.85, 1.00× multiplier) — unchanged from morning
+
+**Skipped at open, re-evaluated:**
+
+- **XLK (2b-LONG):** Spread now 0.0108% ✅ (fully normalized). Z-Score +1.646 ✅. Breakout vs pivot confirmed ✅ (+2.39% extension ✅). **RSI: 76.46 ❌** (was 76.2 at open — has NOT normalized, actually ticked up slightly as price continued to drift higher). **Volume: 0.621× ❌** (was 0.43× at open, improving but still less than half the 1.5× threshold needed; 7.16M vs 11.5M 20d avg). **Trend Template: ❌ UNVERIFIABLE** (Dec 2025 2:1 split structural data blocker — persistent). Gate failures: 3 of 5 (TT, RSI, Volume). → **STILL SKIPPED.** Spread normalized but the two quant blockers and TT blocker remain fully intact. RSI worsened vs open. Volume improving but needs full-day recovery — ~Wednesday should show normalized participation.
+
+- **XLV (2a-SHORT):** Spread 0.0067% ✅ (normalized). **Z-Score: +1.780 ❌** (was +1.671 at open; improved +0.11σ but still 0.22σ short of +2.0 trigger; needed price ~$149.49, today's intraday high $150.30 briefly touched it but closed back to $149.09). **RSI: 59.68 ❌** (was 58.6, marginal improvement, nowhere near >70). **Volume: 0.386× ❌** (was 0.32×, slightly better, still far below 1.0× minimum). **Short Trend Template: ❌ STRUCTURALLY INCOMPATIBLE** (XLV at 0.54% below 52w high; Short TT requires >30% below 52w high — structural conflict flagged in Week-4 review, unresolved). Sector posture: Healthcare YTD +9.5% = bullish, not rolling over — Layer A directional conflict for short. → **STILL SKIPPED.** Spread normalized. All three quant gates still fail; TT fundamentally incompatible with a mean-reversion short at 52w highs.
+
+- **AZO (2a-LONG):** Spread 0.9715% ⚠️ (borderline — just under 1.0% but ~5–8× normal AZO spread; elevated due to earnings-day gap-down selling pressure). **Z-Score: −3.014 ✅** (deeply oversold). **RSI: 26.76 ✅** (oversold). **Volume: 1.255× ✅** (NOW CLEARED — was 0.90× partial bar at open; 365k shares vs 291k 20d avg; earnings-day elevated). Layer B quant fully clears for the first time today. **However Layer A remains BLOCKED:** (1) Consumer Discretionary YTD −2.0% — weakest sector, bearish posture, Layer A requires sector momentum for long entries ❌. (2) Long Trend Template unverifiable + directionally likely fails — AZO price ($3,066) is $382 below 20d mean ($3,448), almost certainly below 50-SMA; TT requires price above all major SMAs ❌. (3) Earnings context: gap-down of −10.6% driven by revenue miss ($3,406 → ~$3,066); EPS beat is offset by structural top-line miss; mixed catalyst ⚠️. AZO spread remains elevated at 0.97% (1.5→5× normal). → **STILL SKIPPED.** Volume gate now cleared (notable). But 2 hard Layer A blockers (sector + TT) prevent trade. This is the strategy working as designed: Layer B alone is not sufficient — earnings-day gap-downs into broken sectors require both layers to clear.
+
+**Trades fired this rescan:** None.
+
+**Patience rule applied:** 0/3 candidates re-cleared. This is the correct outcome. Gates were not lowered. AZO's Layer B now fully passes but Layer A's sector + TT blockers are legitimate and structural — not a miss, a correct skip.
+
+**Notable observations for Wednesday 2026-05-27:**
+1. **XLK:** RSI needs to normalize from 76.5 toward 50–70 (requires flat/down session or profit-taking in tech). Volume should recover on a normal post-holiday day. TT blocker remains until ~August 2026 (200-SMA accumulation). Watch for RSI cooling only.
+2. **XLV:** Z-Score briefly touched +2.0 intraday today (high $150.30 vs trigger $149.49) but closed back. If healthcare continues rallying Wednesday and RSI builds toward 70, all three gates could converge simultaneously. Tight window but live.
+3. **AZO:** Layer B now fully live (Z −3.0, RSI 26.8, Vol 1.25×). Layer A sector issue (Cons. Disc YTD −2.0%) is the blocker. Any ORLY comp check or same-day sector bounce might be monitored; however sector YTD trend requires sustained reversal, not a single day. Do not lower entry gate to force this trade.
+4. **Volume normalization:** Today's post-Memorial Day holiday showed improving but still suppressed volume across all names (XLK 0.62×, XLV 0.39×). Wednesday expected to see normalized ~1.0× participation, which unblocks momentum entries if other gates align.
+5. **Core PCE Thursday:** Markets may stay range-bound Wednesday afternoon ahead of the print. Risk-off ahead of PCE could paradoxically help XLV short setup (RSI rising toward 70 if healthcare stays bid) or hurt XLK momentum (RSI normalizes downward, good for entry timing).
+
