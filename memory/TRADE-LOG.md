@@ -1307,3 +1307,60 @@ Every trade (entry, exit, stop-out) is logged here with full thesis, entry price
 4. XLB 2a-LONG — Trigger ~$49.10 (3.4% away); Brent spike working against this setup
 
 **No order IDs. No fills. No bracket children active.**
+
+---
+
+### May 26 — Afternoon Scan (Day 27 / Post-Session ~20:12 UTC)
+
+**Portfolio:** $99,056.46 | **Cash:** $99,056.46 (100%) | **Deployed:** 0% | **Phase P&L:** −$943.54 (−0.944%)
+
+| Ticker | Shares | Entry | Current | Unrealized P&L | Stop | Hold |
+|--------|--------|-------|---------|----------------|------|------|
+| — | — | — | — | — | — | — (0 positions) |
+
+**Open orders at scan time:** NONE (last bracket 1d69c496 expired May 18T20:02; no orders placed today)
+
+**Afternoon scan trades:** none
+
+**Stop action:** N/A — no positions held, no upgrade workflow triggered
+
+**Afternoon candidates evaluated — ALL REJECTED (May 26 settled bar data):**
+
+| Candidate | Z-Score | RSI | Vol Ratio | Key Failures | Verdict |
+|-----------|---------|-----|-----------|--------------|---------|
+| XLK | +1.694 | 77.9 | 1.08× | RSI 77.9 > 70 ❌; Vol 1.08× < 1.5× ❌; TT 150/200-SMA unavail. ❌ | REJECT |
+| XLV | +1.524 | 62.3 | 0.68× | Z < +2.0 ❌; RSI < 70 ❌; Vol < 1.0× ❌; XLV SOLD OFF today (Z regressed from +3.205 → +1.524) | REJECT |
+| XLB | −0.094 | 52.2 | 0.76× | Z −0.094 >> −2.0 ❌; setup fully reset from oversold low | REJECT |
+| XLE | −0.482 | 43.9 | 1.01× | Z fails both lanes; not below 20d low; short TT structural; energy sector rotation headwind | REJECT |
+| XOM | −0.777 | 45.0 | 0.74× | Z < +1.0 ❌; 7.8% below $162.55 pivot ❌; Vol 0.74× ❌; TT unavail. ❌ | REJECT |
+
+**Pair Z-Scores confirmed:**
+- AVGO (+0.313) ↔ XLK (+1.694): 1.381σ ✅ | FCX (+0.993) ↔ XLB (−0.094): 1.087σ ✅ | CVX (−1.062) ↔ XOM (−0.777): 0.285σ ✅
+
+**Key development — sector rotation:**
+- XLK: +2.65% today ($180.39 → $185.18) — tech rally confirmed breakout above 20d high
+- XLE: −2.8% today ($59.49 → $57.85) — energy selloff on Iran deal optimism
+- XOM: −3.3% today ($154.92 → $149.81) — below May 1 entry price of $153.35
+- XLV: −0.9% today ($149.89 → $148.51) — Z-score dropped 1.68σ in one session (overbought thesis partially self-resolved)
+- XLB: flat (+$0.70) — Z fully reset to −0.094 from −1.810 oversold low last week
+
+**PDT count:** 0/3 | **Week trades:** 0/3 | **Positions:** 0/6
+**Circuit breakers:** ✅ All clear — Phase P&L −0.944% (lim −5%) | Drawdown −1.15% from $100,206.70 peak (lim −15%)
+
+---
+
+### May 26 — EOD Snapshot (Day 27, Tuesday)
+
+**Portfolio:** $99,056.46 | **Cash:** $99,056.46 (100%) | **Day P&L:** $0.00 (0.000%) | **Phase P&L:** −$943.54 (−0.944%) | **Deployed:** 0%
+
+| Ticker | Shares | Entry | Close | Unrealized P&L | Stop | Time |
+|--------|--------|-------|-------|----------------|------|------|
+| — | — | — | — | — | — | — |
+
+**Trades today:** none — HOLD confirmed at pre-market (post-holiday volume drought; all 11 candidates failed composite gates). Afternoon scan confirmed same verdict.
+
+**Notes:** Day 27 closes at 100% cash. No fills, no orders placed, no bracket limits active. The dominant macro theme today was continued sector rotation: XLK +2.65% (tech, NVDA/AI tailwind) vs XLE −2.8% (energy, Iran peace deal optimism draining WTI premium). XOM fell to $149.81 — $3.54 below the original May 1 entry price — validating the May 7 thesis-break exit decision. XLV's Z-score dropped sharply from +3.205 → +1.524 as healthcare gave back Friday's overbought extension; the 2a-SHORT setup has partially self-corrected without a trade. XLK remains the #1 watchlist candidate: Z=+1.694, confirmed breakout at 2.65% above pivot, AVGO pair confirms (1.381σ divergence). Two gates remain: RSI needs to normalize from 77.9 → 50–70 and volume needs to reach ≥1.5× avg (~17.3M) on a full session. All circuit breakers clear. PDT 0/3, week trades 0/3 heading into Wednesday.
+
+**Circuit breakers:** ✅ All clear — Day 0.000% (lim −2%) | Phase −0.944% (lim −5%) | Drawdown −1.15% from $100,206.70 peak (lim −15%)
+**PDT count:** 0/3 | **Week trades:** 0/3 | **Positions:** 0/6
+
