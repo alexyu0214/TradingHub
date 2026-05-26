@@ -1364,3 +1364,20 @@ Every trade (entry, exit, stop-out) is logged here with full thesis, entry price
 **Circuit breakers:** ✅ All clear — Day 0.000% (lim −2%) | Phase −0.944% (lim −5%) | Drawdown −1.15% from $100,206.70 peak (lim −15%)
 **PDT count:** 0/3 | **Week trades:** 0/3 | **Positions:** 0/6
 
+
+### May 26 — EOD Snapshot (Day 27, Tuesday — Final Close)
+
+**Portfolio:** $99,056.46 | **Cash:** $99,056.46 (100%) | **Day P&L:** $0.00 (0.000%) | **Phase P&L:** −$943.54 (−0.944%) | **Deployed:** 0%
+
+| Ticker | Shares | Entry | Close | Unrealized P&L | Stop | Time |
+|--------|--------|-------|-------|----------------|------|------|
+| — | — | — | — | — | — | — |
+
+*No open positions at close.*
+
+**Trades today:** none — end-of-day confirmation run; all candidates (XLK, XLV, XLE, XOM, XLB) failed composite Layer A + Layer B gates at both morning and afternoon scans. No orders placed, no fills, no bracket orders active.
+
+**Notes:** Day 27 closes flat at 100% cash for the second consecutive session. The Alpaca account shows $99,056.46 equity and $99,056.46 cash — no movement from yesterday's close, consistent with zero deployed capital. The dominant watchlist themes remain XLK 2b-LONG (RSI normalizing from 76.2; needs 50–70 range + volume ≥1.5× avg before entry is valid) and XLV 2a-SHORT (Z-score drifted to ~+1.5, still short of the +2.0 trigger). XLE/XOM continue consolidating near pivot levels — no breakout catalyst confirmed today. The week opens 0/3 trades with the full PDT budget intact heading into Wednesday May 27. No circuit breakers tripped. Strategy remains disciplined: wait for setups to come to us rather than chasing elevated RSI prints.
+
+**Circuit breakers:** ✅ All clear — Day 0.000% (lim −2%) | Phase −0.944% (lim −5%) | Drawdown −1.15% from $100,206.70 peak (lim −15%)
+**PDT count:** 0/3 | **Week trades:** 0/3 | **Positions:** 0/6

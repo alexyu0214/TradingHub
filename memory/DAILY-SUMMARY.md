@@ -796,3 +796,19 @@ No orders placed today. Research decision was HOLD.
 **Pending strategy build items (from Adjustment Audit):**
 - ❌ ROUTINE.md sector breadth mandate (≥3 sectors, ≥8 names per scan)
 - ❌ ROUTINE.md weekend gap adjustment step for momentum setups carried from Friday
+
+## 2026-05-26 — EOD
+
+**Portfolio:** $99,056.46 (+0.000% day, −0.944% phase)
+**Cash:** $99,056.46 (100%)
+**Deployed:** 0%
+**Daytrade count:** 0/3
+
+**Trades today:** none
+**Open positions:** none
+**Stops tightened:** none
+**Losers cut:** none
+
+**Notes:** Flat day, no activity, all rules clear. Account holds $99,056.46 at 100% cash; all candidates (XLK, XLV, XLE/XOM, XLB) failed composite Layer A + Layer B gates at both morning and afternoon scans. Week budget 0/3 trades fully preserved heading into Wednesday May 27.
+
+---
