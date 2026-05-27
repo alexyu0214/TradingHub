@@ -5425,3 +5425,123 @@ Candidates evaluated: **XLK** (Tech ETF, 2b-LONG), **MRVL** (Semis mega-cap, 2b-
 **Bracket fills today:** 0
 **Stops upgraded:** 0 (no positions)
 **PDT count:** 0/3 | **Week trades:** 0/3 | **Positions:** 0/6
+
+---
+
+## 2026-05-27 — Midday Rescan Addendum (17:40 UTC / ~1:40 PM ET)
+
+**VIX Regime at rescan:** Normal (~17.01, pre-market; prior close 16.59) — 1.00× sizing multiplier, all entry types eligible
+**Account at rescan:** Equity $99,056.46 | Cash $99,056.46 (100%) | Deployed: 0% | Positions: 0/6 | Week trades: 0/3 | PDT: 0/3 | Open orders: 0
+**Market status:** OPEN — ~2 hrs 20 min remaining in session (closes 20:00 UTC / 4:00 PM ET)
+
+---
+
+### Skipped at Open — Re-evaluated at Midday
+
+| Ticker | Spread Now | Z-Score Now | Key Gate Result | Verdict |
+|--------|-----------|-------------|-----------------|---------|
+| **XLK** | 0.011% ✅ | +1.499 ✅ | Close $183.63 < 20d high $185.14 ❌ \| RSI 72.45 ❌ \| Vol 0.62× ❌ | **❌ STILL SKIPPED** |
+| **MRVL** | 2.38% ❌ | +1.909 ✅ | Earnings HARD BLOCK (reports tonight) ❌ \| Close < 20d high ❌ \| Vol 1.07× ❌ | **❌ STILL SKIPPED** |
+| **XLE** | 0.017% ✅ | −0.836 | No lane qualifies; Z regressed toward 0 since open | **❌ STILL SKIPPED** |
+
+---
+
+### Detailed Re-Check
+
+#### XLK (Technology Sector ETF) — 2b-LONG lane — ❌ STILL SKIPPED
+
+**Live quote:** bid $183.56 / ask $183.58 — spread **0.011% ✅** (excellent, fully normalized)
+**Live mid:** $183.57 | **Today's bar close so far:** $183.63
+
+**Gate-by-gate assessment (2b-LONG):**
+
+| Gate | Required | Actual | Result |
+|------|----------|--------|--------|
+| Z ≥ +1.0 | ≥+1.0 | **+1.499** | ✅ |
+| Close > 20d high | > $185.14 | $183.63 | ❌ Still $1.51 (0.82%) below pivot |
+| RSI(14) 50–70 | 50–70 | **72.45** (Wilder's) | ❌ Overbought — above 70 |
+| Vol ≥ 1.5× avg | ≥1.5× | **0.62×** (7.21M vs 11.67M avg) | ❌ Well below threshold |
+| 200-SMA verifiable | N/A | Structural gap (Dec 2025 split, ~40 sessions) | ❌ Unverifiable |
+| AVGO pair divergence ≤ 1.5σ | ≤1.5σ | **1.295σ** | ✅ **IMPROVED** (was 1.64σ at open) |
+
+**Notable midday development — XLK/AVGO pair:** AVGO closed today at $421.06 (Z = +0.204). The XLK–AVGO divergence has **narrowed from 1.64σ at open to 1.295σ midday** — now within the ≤1.5σ pair confirmation gate for the **first time since this setup emerged**. The pair blocker has been removed. However, the three remaining substantive failures (close below pivot, RSI overbought at 72.45, volume 0.62×) are unchanged and represent genuine quant gate failures that the spread-normalization window cannot resolve.
+
+**Summary:** Spread normalized ✅; Pair gate now passing ✅; Z passing ✅. Substantive blockers: RSI 72.45 (overbought, needs to cool toward 50–70), close 0.82% below $185.14 pivot (needs to be reclaimed on a strong volume day), volume 0.62× (needs institutional confirmation ≥1.5× on the breakout day). 3 of 5 quant gates fail.
+
+**Forward:** For tomorrow's pre-market evaluation — if XLK closes today above $185.14 and volume picks up into the close, the momentum lane may re-activate. Maximum entry limit ≤ $185.14 × 1.05 = **$194.40**.
+
+---
+
+#### MRVL (Marvell Technology) — 2b-LONG lane — ❌ STILL SKIPPED (HARD BLOCK)
+
+**Live quote:** bid $199.00 / ask $203.80 — spread **2.38% ❌** (R-flagged; wide mid-session quote, thin book)
+**Live mid:** $201.40 | **Today's bar close so far:** $199.30
+
+**⚠️ EARNINGS HARD BLOCK — ACTIVE AND UNCHANGED:**
+System time 17:40 UTC = 1:40 PM ET. Market closes 20:00 UTC = 4:00 PM ET. MRVL reports Q1 FY2027 earnings AFTER market close tonight. The hard block ("no entering a position that will be held through an unresolved binary earnings event") is still fully in force and is the primary disqualifier regardless of all other metrics.
+
+**Gate-by-gate assessment (2b-LONG):**
+
+| Gate | Required | Actual | Result |
+|------|----------|--------|--------|
+| Earnings binary | Not tonight | MRVL reports after close tonight | ❌ HARD BLOCK — permanent for today |
+| Spread < 1% | < 1% | 2.38% (R-flagged) | ❌ Wide/thin book |
+| Z ≥ +1.0 | ≥+1.0 | +1.909 | ✅ |
+| Close > 20d high | > $208.26 | $199.30 | ❌ −4.3% below pivot (stock FADED from $218 open) |
+| RSI(14) 50–70 | 50–70 | 64.71 | ✅ |
+| Vol ≥ 1.5× | ≥1.5× | 1.07× (27.0M vs 25.2M avg) | ❌ Below threshold |
+| 200-SMA | N/A | Structural gap | ❌ |
+
+**Context:** MRVL surged to $217.98 pre-market today on earnings anticipation, printed a high of $218.26, then faded hard to ~$199 by midday — a classic pre-earnings "buy the rumor, potential sell the news" pattern. The stock opened above its $208.26 prior 20d high, meaning at the open there WAS a technical breakout; however, (a) the earnings hard block was active from the start, (b) the intraday fade back below $208.26 means even on pure quant terms the breakout was NOT sustained, and (c) volume is only 1.07× (the 2b-LONG lane requires the breakout DAY to show ≥1.5×).
+
+**Post-earnings watch (Thursday pre-market):** MRVL reports tonight after close. Re-evaluate tomorrow morning. If MRVL posts a beat + strong guidance and the stock opens above $208.26 on volume ≥1.5× avg, the 2b-LONG setup becomes active with conditions: Z ≥+1.0, RSI 50–70, entry limit ≤ $218.67 ($208.26 × 1.05 pivot cap), NVDA pair divergence compressed below 1.5σ. All gates must clear simultaneously — no pre-gaming the post-earnings outcome.
+
+---
+
+#### XLE (Energy Select Sector ETF) — All lanes — ❌ STILL SKIPPED
+
+**Live quote:** bid $57.36 / ask $57.37 — spread **0.017% ✅** (excellent, fully normalized)
+**Live mid:** $57.365 | **Today's bar close so far:** $57.345
+
+| Gate | 2b-SHORT required | 2a-LONG required | Actual | Result |
+|------|-------------------|-----------------|--------|--------|
+| Z-Score | ≤ −1.0 | ≤ −2.0 | **−0.836** | ❌ Both lanes fail |
+| Close vs extreme | < 20d low $55.70 | << mean | $57.345 > $55.70 | ❌ 2b-SHORT fails |
+| 2a-LONG trigger price | — | ~$55.69 | Gap: $1.68 (−2.9%) | ❌ |
+| RSI(14) | 30–50 | < 30 | 47.53 | ✅ for 2b-SHORT only; ❌ for 2a-LONG |
+| Volume | ≥ 1.5× | ≥ 1.0× | 0.87× | ❌ Both lanes fail |
+
+**Key observation:** XLE's Z-Score has **REGRESSED** from −0.892 at market open to **−0.836 midday** — meaning price has slightly recovered intraday (+$0.02 from the open-basis level), moving AWAY from the −2.0 oversold trigger rather than toward it. The WTI/Iran narrative may be stabilizing intraday. The 2a-LONG trigger at ~$55.69 requires a further −2.9% decline from current $57.365 AND RSI < 30 simultaneously. No lane qualifies today.
+
+**Energy sector context:** Energy sector has had **1 consecutive trade failure** (XOM May 7 thesis-break exit). The next energy trade would be counted as #2 — if it fails, the sector ban rule triggers. This heightened risk reinforces the discipline of waiting for ALL gates to clear before entering any new energy position.
+
+---
+
+### Trades Fired This Rescan
+
+**None.**
+
+Zero candidates re-cleared the composite Layer A + Layer B gates upon midday re-evaluation.
+
+---
+
+### Patience Rule Applied
+
+Gate failures are substantive, not timing/spread issues:
+- **XLK:** Spreads normalized ✅; AVGO pair now confirms ✅; Z ✅. Still fails 3 of 5 quant gates (RSI overbought at 72.45, no confirmed breakout above $185.14, volume 0.62×). These are structural conditions that do not resolve intraday.
+- **MRVL:** Earnings HARD BLOCK still active (reports tonight). Spread still wide (2.38%). Close still 4.3% below pivot. Volume 1.07×. Permanent skip for today.
+- **XLE:** Spread normalized ✅. Z regressed to −0.836 (wrong direction). 2a-LONG trigger $1.68 away. No lane qualifies.
+
+No gates were lowered. The AVGO pair improvement for XLK is a genuine, meaningful positive development — it removes one blocker and brings XLK one step closer to a qualifying setup tomorrow. The strategy is working correctly.
+
+---
+
+**Trades fired this rescan:** None
+**Portfolio state:** $99,056.46 cash (100%) | 0 positions | 0 orders
+
+**Key watchlist for Thursday pre-market (2026-05-28):**
+1. **MRVL (#1 PRIORITY) — post-earnings 2b-LONG:** MRVL reports tonight. If beat → re-evaluate Thursday AM. Requirements: close > $208.26 on vol ≥1.5×, Z ≥+1.0, RSI 50–70, NVDA pair div < 1.5σ, limit ≤ $218.67. No pre-gaming.
+2. **XLK (#2) — 2b-LONG:** AVGO pair now passing (1.295σ ✅). Still needs: RSI to cool 72.45 → 50–70 (requires flat/pullback in tech); vol ≥1.5× on a breakout day; reclaim of $185.14 pivot. Max limit ≤ $194.40.
+3. **XLE (#3) — 2a-LONG watch:** WTI direction tomorrow will determine whether XLE approaches the $55.69 trigger. Iran deal progress → oil lower → XLE could reach Z ≤ −2.0. Not imminent but the trigger is set.
+4. **200-SMA data gap:** ~40 sessions remaining (est. mid-August 2026). Auto-resolves as data accumulates.
+
