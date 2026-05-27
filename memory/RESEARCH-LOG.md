@@ -5545,3 +5545,89 @@ No gates were lowered. The AVGO pair improvement for XLK is a genuine, meaningfu
 3. **XLE (#3) — 2a-LONG watch:** WTI direction tomorrow will determine whether XLE approaches the $55.69 trigger. Iran deal progress → oil lower → XLE could reach Z ≤ −2.0. Not imminent but the trigger is set.
 4. **200-SMA data gap:** ~40 sessions remaining (est. mid-August 2026). Auto-resolves as data accumulates.
 
+
+---
+
+## 2026-05-27 — Midday Scan Addendum (~14:22 ET / 18:22 UTC)
+
+**Scan type:** Midday workflow — position thesis check, stop evaluation, watchlist re-evaluation
+**VIX Regime:** Normal (~17.01, from morning research) — 1.00× sizing multiplier
+**Account at scan:** Equity $99,056.46 | Cash $99,056.46 (100%) | 0 positions | 0 orders | PDT 0/3 | Week 0/3
+
+---
+
+### Portfolio State (Live API)
+- **Positions:** `[]` — EMPTY. 100% cash confirmed.
+- **Orders:** `[]` — EMPTY. No working brackets. No GTC stops.
+- TRADE-LOG fully current. No discrepancy. No fills.
+
+---
+
+### Cut Losers / Tighten Stops
+**N/A — no open positions.**
+
+---
+
+### Watchlist Re-Evaluation (Live Quotes at ~14:22 ET)
+
+#### XLK (Technology Select Sector ETF) — 2b-LONG — ❌ STILL SKIPPED
+
+| Gate | Required | Actual | Status |
+|------|----------|--------|--------|
+| Z-Score ≥ +1.0 | +1.43 | ✅ | |
+| Close > 20d high ($185.14) | > $185.14 | $184.05 (−0.59%) | ❌ FAIL |
+| RSI(14) 50–70 | 50–70 | 70.13 (borderline overbought) | ❌ FAIL |
+| Vol ≥ 1.5× | 1.5× | 0.653× (7.65M vs 11.7M avg) | ❌ FAIL |
+| AVGO pair div ≤ 1.5σ | ≤1.5σ | **1.3298σ ✅ IMPROVED** (was 1.64σ AM) | ✅ |
+| 200-SMA | N/A | Structural gap (Dec 2025 split, ~40 sessions) | ❌ |
+
+**Key development:** AVGO pair divergence narrowed from 1.64σ → 1.33σ — pair blocker REMOVED for first time since setup emerged. However, XLK opened at $186.18 (above $185.14 pivot) then faded to $184.03 — a failed intraday breakout. 3 substantive gates still fail. Thesis intact.
+**Verdict: REJECT.** Forward: if today's close ≥ $185.14 on volume recovery → fresh 2b-LONG eval Thursday. Max limit ≤ $194.40 ($185.14 × 1.05).
+
+---
+
+#### MRVL (Marvell Technology) — 2b-LONG — ❌ STILL SKIPPED (earnings now resolved)
+
+| Gate | Required | Actual | Status |
+|------|----------|--------|--------|
+| Earnings binary | Resolved | MRVL reported after close yesterday (now past) | ✅ |
+| Z ≥ +1.0 | +1.6684 | ✅ | |
+| Close > 20d high ($208.26) | > $208.26 | $198.68 (−4.60%) | ❌ FAIL |
+| RSI(14) 50–70 | 50–70 | 62.15 | ✅ |
+| Vol ≥ 1.5× | 1.5× | 1.191× (28.7M vs 24.1M avg) | ❌ FAIL |
+| NVDA pair div ≤ 1.5σ | ≤1.5σ | **1.8434σ** | ❌ FAIL |
+| 200-SMA | N/A | Structural gap (151 bars) | ❌ |
+
+**Pattern:** MRVL opened at $217.98 (above $208.26 pivot), printed high $218.26, then faded −9.3% to $198.68 — textbook earnings gap-up fade / "buy the rumor, sell the news." Failed intraday breakout. NVDA pair divergence (1.84σ > 1.5σ) confirms this is single-name, not sector-wide.
+**Verdict: REJECT (4 active failures).** Monitor for Thursday pre-market: if MRVL stabilizes above $208.26 on ≥1.5× volume, setup re-qualifies. Alternatively watch for 2a-LONG if price fades to Z ≤ −2.0 (~$149).
+
+---
+
+#### XLE (Energy ETF) — No Lane Qualifies — ❌ STILL SKIPPED
+
+- Z-Score: **−0.9306** (2b-SHORT needs ≤−1.0; 0.07σ short of trigger)
+- 20d Low: $55.70 | Price: $57.165 — above breakdown level
+- 2a-LONG trigger: ~$54.62 (−4.5% away)
+- RSI: 50.75 (neutral) | Vol: 0.961× (below average)
+- No lane qualifies. Midrange statistically.
+
+**Energy context:** XLE −6.7% in 6 sessions from May 19 peak ($61.29). WTI selloff on Iran Hormuz reopening commitment continues. Energy sector: 1 consecutive failure logged (XOM May 7). Next energy trade faces heightened scrutiny.
+
+---
+
+### Trades Fired: None
+
+All three watchlist candidates remain below their entry thresholds. Gate failures are structural and quant-level — not spread issues. No positions cut. No stops tightened. No new orders placed.
+
+**Patience rule applied.** The AVGO pair gate improvement for XLK is a genuine positive development — brings the setup one step closer. MRVL's post-earnings fade pattern matches the strategy's "sell the news" avoidance design exactly. XLE in no-man's land.
+
+---
+
+### Key Watchlist for Thursday Pre-Market (2026-05-28)
+
+1. **XLK (#1 PRIORITY):** AVGO pair now confirms (1.33σ ✅). Needs: (a) close above $185.14 today (or fresh breakout Thursday), (b) RSI to normalize from 70.1 → 50–70, (c) volume ≥ 1.5× avg on breakout day. Max limit ≤ $194.40.
+2. **MRVL (#2):** Earnings resolved. Watch Thursday: if MRVL recovers above $208.26 on ≥1.5× volume + NVDA pair compresses < 1.5σ → 2b-LONG re-activates. If continues fading → watch for 2a-LONG at Z ≤ −2.0 (~$149).
+3. **XLE (#3 watch):** 2b-SHORT trigger: close below $55.70 on ≥1.5× vol + RSI 30–50. 2a-LONG trigger: price ~$54.62 (Z ≤ −2.0) + RSI < 30. Both require further WTI deterioration.
+4. **200-SMA data gap:** ~40 sessions to resolution (est. mid-August 2026). Persistent structural constraint on Minervini TT for all post-Dec-2025 split-adjusted names.
+
+*Scan: 2026-05-27 ~14:22 ET | Account: $99,056.46 | 0 positions | 0 orders | Week 0/3 | PDT 0/3*
