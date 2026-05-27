@@ -5260,3 +5260,168 @@ Today's session delivered a decisive confirmation of the sector rotation thesis:
 4. **XLB** — Off watchlist. Z = −0.094, setup fully reset. Re-qualify only if a fresh selloff returns Z toward −2.0 (~$49.29).
 5. **200-SMA data gap** — ~42 trading sessions remaining until 200-SMA available for split-adjusted names (XLK, XLE, XLV). Estimated resolution: mid-August 2026. Persistent structural constraint on Minervini TT verification.
 
+
+---
+
+## 2026-05-27 — Pre-Market Research
+
+### Account
+- **Equity:** $99,056.46
+- **Cash:** $99,056.46 (100% deployed: 0%)
+- **Buying power:** $198,112.92 (2× margin)
+- **Daytrade count:** 0/3
+- **Open positions:** none
+- **Week trades:** 0/3
+- **Phase P&L:** −$943.54 (−0.944%) | Peak: $100,206.70 | Drawdown: −1.15%
+- **Circuit breakers:** ✅ All clear (Day 0%, Phase −0.944%, Drawdown −1.15%)
+
+---
+
+### Market Context
+- **WTI Crude Oil:** $88.17/bbl, −6.0%+ on the day. Iran commitment to restore commercial shipping through the Strait of Hormuz to pre-war levels within 30 days driving the selloff. Earlier session low near $89.64 (−4.5%). Supply-premium deflation continues from prior week.
+- **Brent Crude:** $94.77/bbl, −4.83%. Down 9.22% over the past month; +47.34% YoY. Early print was ~$95.80.
+- **S&P 500 Futures:** +0.23–0.30% pre-market as of 7:35 AM ET. S&P 500 set to open at fresh record high. Driver: AI optimism, lower oil (inflation-positive), easing bond yields.
+- **VIX:** Closed 16.59 on May 26; ticking up slightly to ~17.01 in pre-market May 27 (still trading below 17 in early AM).
+- **Top Catalysts:**
+  - U.S.-Iran peace deal negotiations — potential Hormuz reopening easing energy supply fears
+  - Falling oil prices → lower input costs → equity multiple expansion tailwind
+  - AI/semiconductor strength: Goldman Sachs raised S&P 500 year-end 2026 target to 8,000 (from 7,600)
+  - Micron and AI chip complex continue leading; MRVL Q1 earnings due after the close today
+  - Goldman target raise and tech earnings strength supporting fresh record high open
+- **Pre-market Earnings:**
+  - **ANF:** EPS $1.47 (beat $1.26 est.), Revenue $1.11B (miss −0.48%). Stock +6% premarket.
+  - **BBWI:** EPS $0.32 (beat by $0.03), Revenue $1.38B (+1.01% vs est.). Stock +13% premarket.
+  - **DY:** Q1 contract revenue beat estimates. Stock +21%.
+  - **MRVL:** Reports after close. Analysts expect EPS $0.75, Revenue $2.40B. Stock +6%+ premarket ahead of print.
+  - **PETS (LON):** H2 2026 underlying PBT £93M, down −33% YoY. UK only.
+- **Economic Calendar (today, May 27):**
+  - 8:30 AM ET: Durable Goods Orders
+  - 8:30 AM ET: GDP (2nd estimate)
+  - 8:30 AM ET: Jobless Claims
+  - 8:30 AM ET: Personal Income and Outlays
+  - *Next CPI: June 10 | Next PPI: June 11 | Next FOMC: June 17 | Jobs report: June 5*
+- **S&P 500 Sector Momentum YTD:**
+  - S&P 500 total return YTD: +10.4% (through May 26)
+  - Information Technology dominant: SOXX +71.55% YTD through May 13
+  - Semiconductors alone added ~$3.8T market cap in six weeks
+  - 5-year cumulative leaders: IT +182%, Energy +125%, Comm. Services +92%
+  - Energy rotating OUT in real-time as Iran-deal deflates WTI premium
+
+---
+
+### VIX Regime
+- **Current VIX:** 17.01 (pre-market; prior close 16.59)
+- **Regime:** Normal (14–22)
+- **Sizing multiplier:** 1.00×
+- **Strategy bias:** All entry types eligible (momentum & mean-reversion)
+
+---
+
+### Universe Scanned Today
+Candidates evaluated: **XLK** (Tech ETF, 2b-LONG), **MRVL** (Semis mega-cap, 2b-LONG), **XLE** (Energy ETF, lane assessment)
+
+---
+
+### Trade Ideas (Cleared Both Layers)
+**None.** No candidate cleared both Layer A and Layer B today. Decision: **HOLD.**
+
+---
+
+### Skipped Candidates
+
+---
+
+#### 1. XLK — Technology Sector ETF | LONG candidate | 2b-LONG lane attempted
+
+**Layer A — Catalyst + Trend Checklist:**
+- Catalyst: AI momentum continuation, Goldman S&P target raise, tech-vs-energy sector rotation ongoing. ✅
+- Sector posture: XLK is the leading sector YTD. ✅
+- RSI(14): **68.09** ✅ (within 50–70 range for 2b-LONG)
+- Volume: Today 5,361,341 vs 20d avg 11,709,010 → **0.46× avg** ❌ (need ≥1.5× for 2b-LONG)
+- Stop level: Technical at 20d low $157.85 (~13.7% below current — too wide for 7–10% stop rule) or ATR-based at ~$169–$172 (−6 to −7%)
+- Target: 2:1 R:R plausible at prior resistance ~$195–$200
+
+**Layer B — Quant Checklist (2b-LONG lane):**
+- Z-Score: **+1.4175** ✅ (≥ +1.0 required)
+- Close > prior 20d high ($185.14): Current $182.99 → **$182.99 < $185.14** ❌ FAIL — price pulled back below the prior 20d high today (opened $186.18, faded to $182.99). The breakout that held May 26 has NOT been sustained intraday.
+- RSI 50–70: **68.09** ✅
+- Volume ≥ 1.5× avg: **0.46×** ❌ FAIL (partial session, but even full-session 0.46× pace is well below the 1.5× gate)
+- 50d SMA > 200d SMA: 50-SMA = $155.37 | 200-SMA = **N/A** (structural data gap from Dec 2025 2:1 split; ~40 sessions until 200 bars of post-split data available; estimated resolution mid-August 2026) ❌ CANNOT VERIFY
+- Minervini Trend Template: 50-SMA = $155.37 ✅ (price > 50-SMA). 150-SMA = N/A ❌. 200-SMA = N/A ❌. **TT CANNOT VERIFY.**
+- Pair (AVGO): AVGO Z = −0.2271 → XLK/AVGO divergence = **|1.4175 − (−0.2271)| = 1.6446σ** ❌ FAIL (limit ≤ 1.5σ). AVGO is flat/slightly negative while XLK is elevated — pair diverging.
+- Pivot extension: $182.99 vs max $185.14 × 1.05 = $194.40 → **extension 1.5%** ✅ (within 5% of pivot — IF price reclaims $185.14)
+
+**Result: REJECT — 4 failures: (1) close < 20d high ❌, (2) volume 0.46× ❌, (3) 200-SMA N/A ❌, (4) AVGO pair divergence 1.64σ ❌**
+
+**Key delta vs yesterday:** XLK opened at $186.18 (above pivot), promptly faded to $182.99 — failed to hold the $185.14 breakout level. The prior two sessions' Z=+1.694 and confirmed breakout have now partially reverted; Z is now +1.42 and the close is BELOW the 20d high for the first time since the breakout day. This is a warning sign, not an entry signal.
+
+**Watchlist forward:** XLK remains the #1 candidate. Re-entry requires (a) close back above $185.14 on volume ≥ 1.5× avg (~17.6M full-session shares), (b) AVGO pair Z divergence compresses back below 1.5σ, and (c) RSI holding 50–70. Maximum limit entry ≤ $194.40 (pivot $185.14 × 1.05).
+
+---
+
+#### 2. MRVL — Marvell Technology | LONG candidate | 2b-LONG lane attempted
+
+**Layer A — Catalyst + Trend Checklist:**
+- Catalyst: MRVL reports Q1 earnings after the close TODAY. Analyst expectations: EPS $0.75, Revenue $2.40B. Stock pre-market +6% (printed as high as $217.98 open, faded to ~$197). The AI/data-center semiconductor thesis (MRVL custom ASICs for hyperscalers) is the fundamental driver. Goldman S&P target raise implicitly supports semi names. ✅
+- **Critical flag: MRVL earnings are TODAY after the bell.** Per CONSTRAINTS.md (and short-position rules): **"No shorting through earnings."** For longs: entering a position that will be held through an unresolved earnings event violates the swing-trade discipline (binary risk not captured by stop-loss mechanics). This is an earnings-eve trade, not a post-earnings continuation. ❌ (Layer A disqualified on catalyst timing)
+- Sector posture: Semis in dominant momentum. ✅
+- RSI(14): **61.1** ✅ (within 50–70 range)
+- Volume: 21,312,452 vs 20d avg 24,121,164 → **0.88×** ❌ (need ≥1.5× for 2b-LONG)
+- Stop level: 20d low $153.23 → ~22% below current — far too wide. Technical support ~$180 area (~8.6% below close).
+
+**Layer B — Quant Checklist (2b-LONG lane):**
+- Z-Score: **+1.7395** ✅ (≥ +1.0 required)
+- Close > prior 20d high ($208.26): Current $197.025 → **$197.025 < $208.26** ❌ FAIL — opened above ($211+ range) but faded massively, closing well below the 20d high pivot. This is a pre-earnings gap-up then fade pattern.
+- RSI 50–70: **61.1** ✅
+- Volume ≥ 1.5×: **0.88×** ❌ FAIL
+- 50d SMA > 200d SMA: 50-SMA = $142.04 | 200-SMA = **N/A** (only 151 bars available; same structural gap issue) ❌ CANNOT VERIFY
+- Minervini Trend Template: 50-SMA $142.04 ✅ (price $197 >> 50-SMA). 150-SMA $103.89 ✅ (price >> 150-SMA). 200-SMA = N/A ❌. 52w high = $218.26 (dist: −9.2%) ✅ within 25%. 52w low = $70.69 (dist: +180%) ✅ >30% above. 6m return = +156% (top percentile) ✅. **Partial TT: 5/7 conditions verified. 200-SMA unverifiable = structural gap.** Cannot confirm full TT.
+- Pair (NVDA): NVDA Z = −0.4779 → MRVL/NVDA divergence = **|1.7395 − (−0.4779)| = 2.2174σ** ❌ FAIL (limit ≤ 1.5σ). MRVL is strongly elevated (earnings-driven gap-up premium) while NVDA is slightly negative — clear single-name divergence. This is EXACTLY the pair-divergence gate working as designed: MRVL's move is idiosyncratic (earnings catalyst), not sector-wide.
+
+**Result: REJECT — 5 failures: (1) earnings binary risk tonight ❌, (2) close < 20d high ❌, (3) volume 0.88× ❌, (4) 200-SMA N/A ❌, (5) NVDA pair divergence 2.22σ ❌**
+
+**Post-earnings watch:** MRVL reports tonight after close. If earnings beat and the stock gaps up or holds elevated levels on volume, the thesis could re-qualify tomorrow morning as a 2b-LONG post-earnings continuation — provided: (a) close > 20d high on volume ≥ 1.5×, (b) Z ≥ +1.0, (c) RSI 50–70 after the move, (d) NVDA pair divergence compresses <1.5σ, (e) no gap-chase beyond $208.26 × 1.05 = $218.67 pivot extension. Watch for pre-market setup tomorrow (May 28).
+
+---
+
+#### 3. XLE — Energy Select Sector ETF | SHORT candidate attempted | No lane qualifies
+
+**Assessment:**
+- Z-Score: **−0.8924** → Between 0 and −1.0
+  - 2a-LONG requires Z ≤ −2.0: FAIL (need $52.60 or below, current $57.27)
+  - 2b-SHORT requires Z ≤ −1.0 AND close < 20d low ($55.70): FAIL (Z = −0.89, close $57.27 > low $55.70)
+  - 2b-LONG requires Z ≥ +1.0: FAIL
+- **No lane qualifies.** XLE is midway through its 20-day range with no statistical edge.
+- Additional context: XLE is below its 50-SMA ($58.42) and down sharply from the Iran-deal news. Price $57.27 vs 52w high $62.56 (−8.5%) and 52w low $43.81 (+30.7%). RSI = 51.1 (neutral zone). 150/200-SMA unavailable (structural gap).
+- CVX pair: Z = −1.48. XLE/CVX divergence = 0.58σ ✅ (pair moves together — confirms sector-wide selloff, not single-name).
+- **Result: REJECT — No lane qualifies (Z = −0.89, midrange, no statistical threshold breached).**
+
+**Energy context:** XLE has now fallen ~8.5% from its May 19 peak ($61.29) in 6 sessions. The mean-reversion long trigger is Z ≤ −2.0 ≈ price ~$55.68 (current $57.27 = $1.59 away, ~2.8% further decline). If Iran deal rhetoric accelerates and WTI continues lower toward $85, XLE could reach the 2a-LONG trigger. Not actionable today.
+
+---
+
+### Risk Factors
+1. **MRVL earnings after close today** — binary event. Any holdings going into 4 PM would face gap risk. Correct that we hold cash through this.
+2. **XLK failed to hold breakout** — opened at $186.18 (above $185.14 pivot), faded to $182.99. This intraday reversal on low volume (0.46×) is a yellow flag. Could indicate the AI/tech rally is losing near-term momentum or rotating to individual names (MRVL, NVDA) rather than the broad ETF.
+3. **Geopolitical binary** — Iran deal negotiations: if talks collapse, WTI spikes back and energy/oil reverses sharply. Would need to reassess energy sector momentum rapidly.
+4. **8:30 AM macro data** — GDP, Durable Goods, Jobless Claims all printing today. Surprise to the downside on GDP could interrupt the record-high S&P open.
+5. **200-SMA structural gap** — persists for all post-Dec 2025 split-adjusted names (~40 sessions until resolution). Prevents full Minervini TT verification for XLK, XLE, MRVL and others.
+6. **AVGO pair divergence** — AVGO Z = −0.23 while XLK Z = +1.42. AVGO is not confirming the XLK move. This is a meaningful warning: broad tech ETF outperforming its largest semi component suggests XLK's move may be driven by a small number of names (NVDA, MSFT) rather than a broad-based rally.
+
+---
+
+### Decision
+**HOLD** — 0 trades today. No candidate cleared both Layer A and Layer B gates.
+
+- **XLK:** Failed 4 gates (close < 20d high, volume 0.46×, 200-SMA N/A, AVGO pair divergence 1.64σ). Also: intraday fade from $186 → $183 is a bearish near-term signal for the breakout.
+- **MRVL:** Failed 5 gates (earnings binary tonight, close < 20d high, volume 0.88×, 200-SMA N/A, NVDA pair divergence 2.22σ). Earnings event alone is disqualifying — we do not enter before binary events.
+- **XLE:** No lane qualifies (Z = −0.89, midrange).
+
+**Priority watchlist for May 28 pre-market:**
+1. **MRVL post-earnings** (2b-LONG): If EPS/revenue beat drives sustained elevation with volume ≥1.5× avg, recheck all gates tomorrow. Thesis valid; timing (pre-earnings) was the disqualifier today.
+2. **XLK 2b-LONG**: Needs to reclaim $185.14 on ≥1.5× volume AND AVGO pair divergence to compress. Today's intraday fade is a step back — patience still warranted.
+3. **XLE 2a-LONG (conditional)**: Only if WTI accelerates lower and XLE breaks below ~$55.70 (Z → −2.0). Not imminent but setting the trigger level.
+
+**Bracket fills today:** 0
+**Stops upgraded:** 0 (no positions)
+**PDT count:** 0/3 | **Week trades:** 0/3 | **Positions:** 0/6
