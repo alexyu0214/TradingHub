@@ -1410,3 +1410,56 @@ Every trade (entry, exit, stop-out) is logged here with full thesis, entry price
 
 **PDT count:** 0 (unchanged) | **Week trades:** 0/3 (unchanged) | **Open positions:** 0/6
 
+
+---
+
+### May 27 — Afternoon Scan (Day 29 / Post-Session ~20:17 UTC)
+
+**Portfolio:** $99,056.46 | **Cash:** $99,056.46 (100%) | **Deployed:** 0% | **Phase P&L:** −$943.54 (−0.944%)
+
+| Ticker | Shares | Entry | Current | Unrealized P&L | Stop | Hold |
+|--------|--------|-------|---------|----------------|------|------|
+| — | — | — | — | — | — | — (0 positions) |
+
+**Open orders at scan time:** NONE
+
+**Afternoon scan trades:** none
+
+**Stop action:** N/A — no positions held, no upgrade workflow triggered
+
+**Afternoon candidates evaluated — ALL REJECTED (May 27 settled bar data):**
+
+| Candidate | Z-Score | RSI | Vol Ratio | Key Failures | Verdict |
+|-----------|---------|-----|-----------|--------------|---------|
+| XLK | +1.473 | 70.94 | 1.034× | Close $184.43 < $185.14 pivot ❌; RSI 70.94 overbought ❌; Vol 1.034× < 1.5× ❌; 200-SMA unavail. ❌ | REJECT |
+| XLV | +1.495 | 61.71 | 1.028× | Z < +2.0 ❌; RSI < 70 ❌; TT: above 50-SMA (short TT fails) ❌ | REJECT |
+| MRVL | +1.672 | 62.08 | 1.813× ✅ | Close $198.70 < $208.26 pivot ❌; 200-SMA unavail. ❌ | REJECT |
+| XLE | −1.039 | 49.96 | 1.291× | Close $56.99 > 20d low $55.70 (no breakdown) ❌; Vol 1.291× < 1.5× ❌; Short TT structural ❌ | REJECT |
+| XOM | −1.161 | 48.93 | 0.929× | Z mid-range, no lane qualifies; vol below avg | REJECT |
+
+**Pair divergences confirmed:** AVGO 1.276σ ✅ | CVX 0.287σ ✅
+
+**Notable development:** MRVL volume 1.813× today (strongest in scan) — post-earnings institutional activity. But the intraday gap-up fade (open $217.98 → close $198.70, −9%) means the $208.26 pivot was NOT confirmed on a closing basis. "Sell the news" pattern.
+
+**XLE 2a-LONG watch:** Z = −1.039; trigger price for Z = −2.0 is **$55.59** (only −2.5% from today's close). RSI already at 49.96 (approaching <30 territory if further decline). This is the #3 watchlist candidate heading into Thursday.
+
+**PDT count:** 0/3 | **Week trades:** 0/3 | **Positions:** 0/6
+**Circuit breakers:** ✅ All clear — Phase P&L −0.944% (lim −5%) | Drawdown −1.15% from $100,206.70 peak (lim −15%)
+
+---
+
+### May 27 — EOD Snapshot (Day 29, Wednesday)
+
+**Portfolio:** $99,056.46 | **Cash:** $99,056.46 (100%) | **Day P&L:** $0.00 (0.000%) | **Phase P&L:** −$943.54 (−0.944%) | **Deployed:** 0%
+
+| Ticker | Shares | Entry | Close | Unrealized P&L | Stop | Time |
+|--------|--------|-------|-------|----------------|------|------|
+| — | — | — | — | — | — | — |
+
+**Trades today:** none — HOLD decision at pre-market confirmed. Afternoon scan confirmed same verdict. No fills, no orders, no bracket limits active.
+
+**Notes:** Day 29 closes at 100% cash. The session's defining story was MRVL's post-earnings fade: gapped up to $217.98 on the open (above the $208.26 20d high pivot, briefly appearing to qualify as a 2b-LONG breakout), then reversed sharply to close $198.70 (−9% intraday) — a textbook "buy the rumor, sell the news" pattern that validates the strategy's earnings-binary hard block. The morning HOLD decision (which cited the MRVL earnings binary as a key disqualifier) protected capital from what would have been an immediate −9% adverse intraday move. XLK faded from its $186.18 open back to $184.43 — still below the $185.14 pivot needed for the 2b-LONG breakout, RSI remains at 70.94 (marginally above the 70 ceiling). XLE now only $1.29 above the 20d low $55.70 (Z = −1.039); a further −2.5% decline would trigger the 2a-LONG entry gate at ~$55.59. Week closes 0/3 trades. Full PDT budget intact (0/3). Maximum flexibility heading into Thursday.
+
+**Circuit breakers:** ✅ All clear — Day 0.000% (lim −2%) | Phase −0.944% (lim −5%) | Drawdown −1.15% from $100,206.70 peak (lim −15%)
+**PDT count:** 0/3 | **Week trades:** 0/3 | **Positions:** 0/6
+
