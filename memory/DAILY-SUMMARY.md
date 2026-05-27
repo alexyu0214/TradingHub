@@ -840,3 +840,19 @@ No orders placed today. Research decision was HOLD.
 2. XLK (2b-LONG): Needs reclaim of $185.14 on ≥ 17.6M volume + AVGO divergence < 1.5σ
 3. XLE (2a-LONG conditional): Trigger only at Z ≤ −2.0 (≈ price $55.68)
 
+
+## 2026-05-28 — EOD
+
+**Portfolio:** $99,056.46 (+0.000% day, −0.944% phase)
+**Cash:** $99,056.46 (100%)
+**Deployed:** 0%
+**Daytrade count:** 0/3
+
+**Trades today:** none
+**Open positions:** none
+**Stops tightened:** none
+**Losers cut:** none
+
+**Notes:** Day 30 flat — 100% cash, no qualifying setups, all circuit breakers clear. XLK/XLE/MRVL still below entry thresholds. Shortened holiday week (Mon Memorial Day); full PDT budget (0/3) preserved heading into next week's 5-session window.
+
+---

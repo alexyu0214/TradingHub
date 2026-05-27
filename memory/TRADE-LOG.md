@@ -1463,3 +1463,20 @@ Every trade (entry, exit, stop-out) is logged here with full thesis, entry price
 **Circuit breakers:** ✅ All clear — Day 0.000% (lim −2%) | Phase −0.944% (lim −5%) | Drawdown −1.15% from $100,206.70 peak (lim −15%)
 **PDT count:** 0/3 | **Week trades:** 0/3 | **Positions:** 0/6
 
+
+---
+
+### May 28 — EOD Snapshot (Day 30, Thursday)
+
+**Portfolio:** $99,056.46 | **Cash:** $99,056.46 (100%) | **Day P&L:** $0.00 (0.000%) | **Phase P&L:** −$943.54 (−0.944%) | **Deployed:** 0%
+
+| Ticker | Shares | Entry | Close | Unrealized P&L | Stop | Time |
+|--------|--------|-------|-------|----------------|------|------|
+| — | — | — | — | — | — | — |
+
+**Trades today:** none — flat session, 100% cash maintained.
+
+**Notes:** Day 30 closes at 100% cash for the third consecutive session. Equity held steady at $99,056.46 — zero movement, no fills, no orders, no brackets active. The account is confirmed live via API (equity, cash, buying_power all reconcile). This week opened shortened (May 26 Memorial Day holiday), leaving only two trading sessions (Tue 27 + Thu 28) before the long weekend. No qualifying setups emerged on either day. The prior watchlist candidates (XLK, XLE, MRVL) all remained below entry thresholds: XLK's 2b-LONG breakout pivot ($185.14) was not reclaimed on confirming volume; XLE has not yet reached its Z ≤ −2.0 trigger zone (~$55.68); MRVL's post-earnings fade left it structurally disqualified. Phase P&L remains at −0.944% — well within the −5% weekly and −15% drawdown circuit breaker thresholds. Full PDT budget intact (0/3). Maximum flexibility into next week's full 5-session trading week.
+
+**Circuit breakers:** ✅ All clear — Day 0.000% (lim −2%) | Phase −0.944% (lim −5%) | Drawdown −1.15% from $100,206.70 peak (lim −15%)
+**PDT count:** 0/3 | **Week trades:** 0/3 | **Positions:** 0/6
