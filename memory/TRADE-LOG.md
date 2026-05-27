@@ -1381,3 +1381,32 @@ Every trade (entry, exit, stop-out) is logged here with full thesis, entry price
 
 **Circuit breakers:** ✅ All clear — Day 0.000% (lim −2%) | Phase −0.944% (lim −5%) | Drawdown −1.15% from $100,206.70 peak (lim −15%)
 **PDT count:** 0/3 | **Week trades:** 0/3 | **Positions:** 0/6
+
+### 2026-05-27 16:49 — MARKET-OPEN EXECUTION: NO ORDERS PLACED
+
+**Session Result:** HOLD — 0 bracket limit orders placed.
+**Account State (live, pre-session):** Equity $99,056.46 | Cash $99,056.46 | Positions 0/6 | Daytrade count 0/3 | Week trades 0/3
+**VIX:** 17.01 (Normal regime, 1.00× sizing multiplier) — entries eligible in principle.
+
+**Candidates reviewed and gate outcomes:**
+
+**XLK (2b-LONG attempted):**
+- Live ask: $184.24 (research close $182.99 — price has recovered slightly post-close, consistent with overnight strength)
+- Gate failures (4): (1) Close < prior 20d high $185.14 ❌, (2) Volume 0.46× avg ❌, (3) 200-SMA unverifiable (structural split gap) ❌, (4) AVGO pair divergence 1.64σ > 1.5σ limit ❌
+- Decision: SKIP — 4 gate failures. No order placed.
+- Forward trigger: Needs close above $185.14 on ≥17.6M volume + AVGO divergence < 1.5σ.
+
+**MRVL (2b-LONG attempted):**
+- Live ask: $202.21 (research close $197.025 — stock bid up post-session ahead of earnings print)
+- Gate failures (5): (1) MRVL reports earnings after close TODAY — binary event, entering a long position through earnings violates swing-trade discipline ❌, (2) Close < 20d high $208.26 ❌, (3) Volume 0.88× avg ❌, (4) 200-SMA unverifiable (structural gap) ❌, (5) NVDA pair divergence 2.22σ > 1.5σ limit ❌
+- Decision: SKIP — 5 gate failures, including the disqualifying earnings-binary flag. No order placed.
+- Forward trigger: Post-earnings continuation tomorrow (May 28) IF beat drives close > $208.26 on ≥1.5× volume with pair divergence compressed.
+
+**XLE (2b-SHORT / 2a-LONG attempted):**
+- Live ask: $57.25 (research close $57.27 — essentially unchanged)
+- Gate failures: Z-Score −0.8924 clears no lane (2a-LONG needs Z ≤ −2.0; 2b-SHORT needs Z ≤ −1.0 AND close < 20d low $55.70; 2b-LONG needs Z ≥ +1.0). Midrange — no statistical edge.
+- Decision: SKIP — no lane qualifies. No order placed.
+- Forward trigger: 2a-LONG only if WTI accelerates lower and XLE reaches ~$55.68 (Z ≈ −2.0).
+
+**PDT count:** 0 (unchanged) | **Week trades:** 0/3 (unchanged) | **Open positions:** 0/6
+

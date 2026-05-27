@@ -812,3 +812,31 @@ No orders placed today. Research decision was HOLD.
 **Notes:** Flat day, no activity, all rules clear. Account holds $99,056.46 at 100% cash; all candidates (XLK, XLV, XLE/XOM, XLB) failed composite Layer A + Layer B gates at both morning and afternoon scans. Week budget 0/3 trades fully preserved heading into Wednesday May 27.
 
 ---
+
+## 2026-05-27 — Market-Open Execution Summary
+
+**Market-open orders placed:** None (HOLD day)
+
+**Candidates scanned:** XLK (2b-LONG), MRVL (2b-LONG), XLE (no lane)
+**Orders placed:** 0
+**Reason:** No candidate cleared both Layer A and Layer B gates per pre-market research decision.
+
+**Gate failures summary:**
+- XLK: 4 failures (close < 20d high, volume 0.46×, 200-SMA N/A, AVGO pair divergence 1.64σ)
+- MRVL: 5 failures (earnings tonight binary, close < 20d high, volume 0.88×, 200-SMA N/A, NVDA pair divergence 2.22σ)
+- XLE: No lane qualifies (Z = −0.89, midrange)
+
+**Live quote check (market close ~4:49 PM ET):**
+- XLK: ask $184.24 (vs research close $182.99) — ticking up post-close
+- MRVL: ask $202.21 (vs research close $197.025) — elevated pre-earnings
+- XLE: ask $57.25 (vs research close $57.27) — flat
+
+**Account state:** Equity $99,056.46 | Cash $99,056.46 (0% deployed) | Positions 0/6 | Daytrade count 0/3 | Week trades 0/3
+
+**Circuit breakers:** ✅ All clear | Phase P&L: −$943.54 (−0.944%) | Drawdown: −1.15%
+
+**Priority watchlist for 2026-05-28 pre-market:**
+1. MRVL (2b-LONG post-earnings): Watch for beat + gap-up held on volume ≥ 1.5× avg
+2. XLK (2b-LONG): Needs reclaim of $185.14 on ≥ 17.6M volume + AVGO divergence < 1.5σ
+3. XLE (2a-LONG conditional): Trigger only at Z ≤ −2.0 (≈ price $55.68)
+
