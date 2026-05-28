@@ -5758,3 +5758,215 @@ May 27 session was a mild consolidation day after the prior session's strong tec
 4. **XLV — #4 (watch only):** Z = +1.495; needs +2.0 (price ~$149.72) AND RSI > 70. Currently consolidating at $148.79 — 2a-SHORT setup weakening, not strengthening. Low priority unless healthcare makes a strong push higher Thursday.
 5. **200-SMA data gap:** ~39 trading sessions remaining (est. mid-August 2026). All Minervini TT 200-SMA "CANNOT VERIFY" flags resolve automatically.
 
+
+---
+
+## 2026-05-28 — Pre-market Research (Day 31, Thursday)
+
+### Account
+- **Equity:** $99,056.46
+- **Cash:** $99,056.46 (100.0%)
+- **Buying Power:** $198,112.92 (2× margin)
+- **Daytrade count:** 0/3
+- **Open Positions:** None
+- **Open Orders:** None
+- **Phase P&L:** −$943.54 (−0.944%) | Peak: $100,206.70 | Drawdown: −1.15%
+- **Week trades used:** 0/3
+
+---
+
+### Market Context
+- **WTI Crude:** ~$90.12–$91.71/bbl (+1.5% to +3.4%) — sharp rebound after Wednesday's −5% plunge; driven by renewed US defensive strikes on Iranian military site, reigniting Strait of Hormuz shipping disruption fears. Month: −15.8%. Year: +47.7%.
+- **Brent Crude:** ~$95.83–$97.29/bbl (+1.6% to +3.0%) — similar surge. Month: −13.2%. Year: +51.3%.
+- **S&P 500 Futures:** Down ~0.20–0.25% premarket (~7,521–7,524). Follows S&P 500 fresh record close at 7,520.36 on Wed. Softness attributed to Middle East tension and data-day uncertainty. SPY: −0.087% at $749.81.
+- **VIX:** ~15.73–16.73 (touched 15.73 intraday low, lowest since Jan 23). VIX1D: 10.07. VIX9D: 13.27 → calm open expected.
+- **Key Macro Data Today (8:30 AM):** Preliminary Q1 GDP (2nd estimate), April PCE (+0.4% MoM, +3.8% YoY headline; core +0.2% MoM, +3.3% YoY), Personal Income (flat), Durable Goods Orders. 10:00 AM: Initial Jobless Claims, New Home Sales. 11:00 AM: EIA crude inventory data.
+- **Fed:** Minneapolis Fed Kashkari + Fed Governor Cook both reiterated inflation concerns; Cook stated "prepared to raise rates." Markets price 99.1% probability of June rate hold. Next FOMC: June 17.
+- **Earnings movers:**
+  - SNOW: +33–37% post-earnings (beat on profit + revenue + expanded AWS deal) → gap-up to ~$240
+  - DLTR: +10–15% on earnings beat and raised full-year guidance
+  - KSS: +21.3% on Q1 beat
+  - HRL: +8.1% on stronger sales
+  - DELL: +4.4% on $9.7B Pentagon contract
+  - CRM: −2% despite earnings beat (AI competition concerns)
+  - BRZE: −11% on Q1 miss/outlook
+  - PLAB: −26% on EPS guidance miss
+  - SNPS: −2% on Q2 results
+  - COST reports after bell today (consensus EPS $4.98, rev ~$69.7B)
+  - RY (Royal Bank Canada): net income $5.5B (+25% YoY), diluted EPS $3.85 (+27%)
+- **Sector Momentum YTD:** Materials (XLB) +22% leader. Consumer Staples, Industrials, Energy also leading. Tech (XLK), Communications, Consumer Discretionary lagging. S&P 500 +27% YoY earnings growth in Q1; Magnificent Seven drove ~5.1% of April's 10.5% monthly gain. Goldman Sachs raised S&P 500 year-end target to 8,000 on AI earnings growth.
+
+---
+
+### VIX Regime
+- **Current VIX:** ~15.73–16.0 (touching intraday low of 15.73)
+- **Regime: Normal** (VIX 14–22)
+- **Sizing Multiplier: 1.00×**
+- All entry types permitted. No regime-based restriction on new entries.
+
+---
+
+### Universe Scan — Candidates Evaluated
+
+**Long candidates evaluated:** XLK, MRVL, SNOW, ORCL
+**Short candidates evaluated:** XLV, XLE
+
+---
+
+### Candidate Analysis
+
+#### XLK — Technology ETF | Intended: 2b-LONG
+- **Catalyst:** AI/tech sector momentum, XLK broke above $185.14 pivot May 26, continued to $187.17 today
+- **Z-Score:** +1.675 (20d mean $174.52, std $7.55)
+- **RSI(14):** 73.76 ❌ — Above 70 ceiling for 2b-LONG lane
+- **Volume:** 4.92M today vs 11.86M avg = 0.414× ❌ — Partial day; needs ≥1.5× for momentum lane
+- **Prior 20d High (pivot):** $185.14 — Close $187.17 > pivot ✅
+- **Pivot Extension:** ($187.17 / $185.14 − 1) = +1.1% ✅ (≤5%)
+- **50-SMA:** $156.35 | **150-SMA:** $177.71 | **200-SMA:** CANNOT VERIFY (152/200 bars available)
+- **50-SMA < 150-SMA** ❌ — Minervini TT condition 50-SMA > 150-SMA fails
+- **52w High (split-adj):** ~$304 pre-split (~$152 post-split) — data contaminated by Dec 2025 2-for-1 split
+- **AVGO pair Z:** +0.548 | Divergence: 1.127σ ✅ (≤1.5σ)
+- **Layer B verdict: FAIL** — RSI overbought (73.76 > 70 ❌), volume insufficient (0.414× ❌), 200-SMA unverifiable ❌
+- **Layer A (TT) verdict: FAIL** — 50-SMA ($156.35) < 150-SMA ($177.71) ❌; 200-SMA conditions unverifiable ❌
+- **REJECT**
+
+---
+
+#### MRVL — Marvell Technology | Intended: 2b-LONG
+- **Catalyst:** Q1 FY2026 earnings resolved (beat). AI chip tailwinds, semi sector momentum. Watching for reclaim of $208.26 pivot.
+- **Z-Score:** +1.595 (20d mean $178.19, std $13.78)
+- **RSI(14):** 70.23 ❌ — Marginally above 70 ceiling
+- **Volume:** 31.49M today vs 25.47M avg = 1.236× ❌ — Below 1.5× requirement
+- **Prior 20d High (pivot):** $208.26 — Close $200.16 < pivot ❌ (−$8.10 below; −3.9%)
+- **50-SMA:** $144.24 | **150-SMA:** $104.67 | **200-SMA:** CANNOT VERIFY (152/200 bars)
+- **50-SMA > 150-SMA:** $144.24 > $104.67 ✅ (structurally valid post-earnings re-rating)
+- **52w High:** $208.26 | **52w Low:** $73.73
+- **Dist from 52w low:** +171.5% ≥ 30% ✅ | **Dist from 52w high:** −3.9% within 25% ✅
+- **6-month return:** +164.4% — top quintile ✅
+- **AVGO pair Z:** +0.548 | Divergence: 1.047σ ✅
+- **Layer B verdict: FAIL** — Close below pivot ($200.16 < $208.26 ❌), RSI 70.23 > 70 ❌, Vol 1.236× < 1.5× ❌
+- **REJECT** — Three gates fail simultaneously. Pivot at $208.26 must be reclaimed on a closing basis with RSI in 50–70 and vol ≥1.5×.
+
+---
+
+#### SNOW — Snowflake | Intended: 2b-LONG
+- **Catalyst:** Q1 FY2027 earnings massive beat (EPS + revenue); expanded AWS partnership; +33–37% gap-up
+- **Z-Score:** +3.652 (20d mean $160.26, std $21.96) — Extreme stretch
+- **RSI(14):** 90.49 ❌ — Massively overbought
+- **Volume:** 25.19M vs 8.11M avg = 3.106× ✅ — Strong
+- **Prior 20d High (pivot):** $177.60 — Close $240.11 ✅ — But massively above
+- **Pivot Extension:** ($240.11 / $177.60 − 1) = +35.2% ❌ — Requires ≤5%; this is a 7× violation
+- **50-SMA:** $154.35 | **150-SMA:** $195.78 | **200-SMA:** CANNOT VERIFY
+- **50-SMA < 150-SMA** ❌ — TT condition fails
+- **6-month return:** −0.8% from 6 months ago — does NOT meet ≥70th percentile ❌
+- **Layer B verdict: FAIL** — RSI 90.49 ❌, pivot extension +35.2% ❌, TT failures ❌
+- **REJECT** — Classic gap-and-go earnings trade that the momentum lane's ≤5% pivot extension rule is specifically designed to block. Excellent fundamental story; wrong entry structure for this strategy.
+
+---
+
+#### ORCL — Oracle | Intended: 2b-LONG
+- **Catalyst:** AI infrastructure spending, cloud momentum, beneficiary of enterprise AI buildout
+- **Z-Score:** +1.588 (20d mean $188.36, std $8.97) ✅
+- **RSI(14):** 56.82 ✅ (in 50–70 range)
+- **Volume:** 13.70M today vs 19.96M avg = 0.686× ❌ — Well below 1.5× requirement
+- **Prior 20d High (pivot):** $195.95 — Close $202.60 ✅
+- **Pivot Extension:** +3.4% ✅ (≤5%)
+- **200-SMA:** Cannot verify from 25 bars (extended bars not pulled — volume failure made it moot)
+- **Earnings Binary:** Oracle Q4 FY2026 earnings expected ~June 10–12 (≈13 days) — binary risk blocks entry
+- **Layer B verdict: FAIL** — Volume 0.686× ❌ (needs ≥1.5×)
+- **REJECT** — Volume insufficient + imminent earnings binary. Good setup structure otherwise; revisit post-earnings if thesis holds.
+
+---
+
+#### XLV — Healthcare ETF | Intended: 2a-SHORT
+- **Catalyst:** XLV extended to Z=+2.163 today on healthcare sector strength; overbought mean-reversion setup
+- **Z-Score:** +2.163 (20d mean $146.41, std $1.96) ✅
+- **2a-SHORT trigger (Z=+2.0):** $150.33 — Price $150.65 is above ✅
+- **RSI(14):** 68.95 ❌ — Just below 70 threshold (needs >70 for 2a-SHORT)
+- **Volume:** 4.55M vs 9.76M avg = 0.466× ❌ — Partial day; well below 1.0× requirement
+- **Short Trend Template:** Price $150.65 > 50-SMA (~$145–146 range per prior research) — SHORT TT requires price BELOW all SMAs. Structural conflict: XLV is in an uptrend, not a downtrend. ❌
+- **Layer B verdict: FAIL** — RSI 68.95 < 70 ❌, Vol 0.466× < 1.0× ❌
+- **Layer A (Short TT) verdict: FAIL** — Price above 50-SMA is incompatible with Short Trend Template ❌
+- **REJECT** — Two gate failures + TT structural conflict. Z is building toward the trigger; watch for RSI to crack >70 on a strong healthcare rally day with confirming volume. Short TT structural issue remains chronic for sector ETFs in uptrends — flagged as open strategy item.
+
+---
+
+#### XLE — Energy ETF | Intended: 2a-LONG or 2b-SHORT
+- **Catalyst watch:** WTI +1.9–3.4% today on Iran tensions reversed the prior decline; XLE bounced from $56.99 to $57.24
+- **Z-Score:** −0.795 (20d mean $58.41, std $1.47) — Neither zone qualifies
+- **RSI(14):** 55.81 — Neutral; not oversold
+- **Volume:** 25.90M vs 38.80M avg = 0.668× — Below average
+- **2a-LONG trigger (Z=−2.0):** $55.46 — Current $57.24 is +3.1% above trigger; requires further $1.78 decline
+- **2b-SHORT:** Z=−0.795 (≤−1.0 barely fails), close $57.24 > 20d low $55.70 ❌, RSI 55.81 (outside 30–50 range) ❌
+- **CVX pair Z:** −1.102 | Divergence: 0.307σ ✅ — Energy names moving in lockstep
+- **Energy sector flag:** 1 consecutive failure (XOM May 7 thesis-break) → heightened caution on any new energy entry
+- **Layer B verdict: FAIL** — No lane qualifies; Z too shallow for either mean-reversion or breakdown
+- **REJECT** — Oil rebound today pushed XLE away from both the 2a-LONG oversold trigger and the 2b-SHORT breakdown level. Watch if WTI reverses; 2a-LONG gate reactivates at ~$55.46.
+
+---
+
+### Trade Ideas (Cleared Both Layers)
+**None.** Zero candidates cleared both Layer A and Layer B today.
+
+---
+
+### Skipped Candidates — Summary
+
+| Ticker | Lane Attempted | Specific Failed Check(s) |
+|--------|---------------|--------------------------|
+| XLK | 2b-LONG | RSI 73.76 > 70 ❌; Vol 0.414× < 1.5× ❌; 50-SMA < 150-SMA (TT) ❌; 200-SMA unverifiable ❌ |
+| MRVL | 2b-LONG | Close $200.16 < pivot $208.26 ❌; RSI 70.23 > 70 ❌; Vol 1.236× < 1.5× ❌ |
+| SNOW | 2b-LONG | RSI 90.49 > 70 ❌; Pivot extension +35.2% > 5% ❌; 50-SMA < 150-SMA ❌; 6mo return neg ❌ |
+| ORCL | 2b-LONG | Vol 0.686× < 1.5× ❌; Earnings binary ~13 days ❌ |
+| XLV | 2a-SHORT | RSI 68.95 < 70 ❌; Vol 0.466× < 1.0× ❌; Short TT structural conflict ❌ |
+| XLE | 2a-LONG / 2b-SHORT | Z=−0.795 (2a: need ≤−2.0 ❌; 2b: need ≤−1.0 ❌); RSI 55.81 (2a: need <30 ❌; 2b: need 30–50 ❌); Vol 0.668× ❌ |
+
+---
+
+### Watchlist for Friday / Next Week
+
+1. **MRVL — #1 PRIORITY (2b-LONG):** Three gates pending simultaneously: (a) reclaim $208.26 pivot on a closing basis, (b) RSI needs to cool from 70.23 → below 70 (any flat/consolidation session achieves this), (c) volume ≥1.5× (~38M shares). Entry limit ≤ $218.67 (pivot $208.26 × 1.05). 200-SMA structural gap persists (~38 sessions remaining). Pattern: stabilizing post-earnings, institutional accumulation evident (54M shares Monday, 31M today). Strong fundamental setup.
+
+2. **XLK — #2 (2b-LONG):** RSI needs to cool from 73.76 → below 70. Pivot at $185.14 already broken ($187.17 close). Consolidation above pivot with RSI normalizing = setup activates. Volume needs 1.5× on entry day. 50-SMA < 150-SMA is a TT structural issue that will self-resolve as 50-SMA rises. Max limit ≤ $194.40 (pivot × 1.05). AVGO pair divergence 1.127σ ✅.
+
+3. **XLE — #3 (2a-LONG watch):** Z=−0.795 today (WTI Iran bounce pushed XLE up). 2a-LONG trigger: $55.46 (Z=−2.0). Needs further −3.1% decline. If Iran tensions ease / WTI resumes decline, watch for XLE to revisit ~$55.50. RSI needs to simultaneously drop below 30. Energy sector 1 consecutive failure → manage size carefully.
+
+4. **XLV — #4 (2a-SHORT watch):** Z=+2.163 today ✅. RSI 68.95 — just 1.05 points below the 70 trigger. If healthcare rallies again Friday and RSI breaks 70 with confirming volume ≥1.0×, setup activates — BUT short TT structural conflict (price above 50-SMA) remains the chronic blocker.
+
+5. **ORCL — post-earnings (2b-LONG):** Good setup structure (Z=+1.588, RSI=56.82, pivot extension +3.4%). Blocked by earnings binary (~June 10). Revisit the week of June 15 if earnings beat and price holds above $195.95 pivot.
+
+6. **COST — watch post-bell earnings today:** If COST beats and rallies, evaluate for 2b-LONG continuation Friday. Consumer Staples is a YTD sector leader.
+
+---
+
+### Key Forward Catalysts
+- **PCE inflation data today (8:30 AM):** Core PCE +0.2% MoM / +3.3% YoY — if hotter than expected, could pressure equities and give Fed hawks ammunition, potentially spiking VIX. Cooling PCE = risk-on.
+- **Q1 GDP (2nd estimate, 8:30 AM):** Any downward revision raises stagflation concerns.
+- **Iran/Hormuz:** Escalation = WTI spike = energy tailwind + equity headwind. De-escalation = WTI reversal = potential XLE 2a-LONG trigger activation.
+- **COST earnings (after bell):** Bellwether for consumer health; could drive Consumer Staples sector move.
+- **Fed speakers:** NY Fed Williams 8:55 AM, Governor Cook 3:55 PM — watch for hawkish tone on inflation.
+
+---
+
+### Risk Factors
+1. **Geopolitical (Iran/Hormuz):** Binary risk — escalation or de-escalation both create volatility. Oil price surge creates cross-sector headwinds for tech/consumer.
+2. **PCE inflation hotter than expected:** Core PCE at 3.3% YoY already above 2% target; a surprise upside print could cause Fed hawkishness repricing, VIX spike → would shift to Elevated regime (0.75× sizing).
+3. **Overbought markets:** S&P 500 at fresh record high (7,520.36), VIX near multi-month low. Complacency risk. The "sell the news" pattern seen in MRVL and recent tech names is characteristic of late-stage momentum.
+4. **Energy sector flag:** 1 consecutive failure (XOM May 7). Second consecutive failure in energy would trigger sector avoidance rule.
+5. **200-SMA data gap:** Persists for all split-adjusted tickers. ~38 sessions until resolution (est. mid-August 2026). All Minervini TT "CANNOT VERIFY" flags on XLK, MRVL self-correct over time.
+
+---
+
+### Decision
+**HOLD** — Zero candidates cleared both Layer A and Layer B gates today.
+
+- The primary reason across all candidates is a combination of: (a) RSI readings at or above overbought thresholds after the strong recent rally, (b) partial-day volume being insufficient for momentum lane's 1.5× requirement, and (c) price levels either already extended past pivot (XLK, SNOW) or still below pivot (MRVL).
+- Today's session is NOT a setup day — it's a data day (PCE, GDP, Claims) with Iran volatility overlay. The market correctly needs to digest this information before clean trend entries emerge.
+- Cash preservation at 100% is the correct posture. PDT budget fully intact (0/3). Maximum flexibility heading into Friday's full session and next week.
+- The HOLD decision here is consistent with the strategy's patience rule: "A week with zero trades can be the right call. Only trade when edge is present; else hold cash."
+
+---
+
+### Adjustment Audit
+*(Today is Thursday — Monday-only section, skipped per workflow rules.)*
+
