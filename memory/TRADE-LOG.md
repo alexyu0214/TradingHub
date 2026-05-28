@@ -1515,3 +1515,38 @@ Every trade (entry, exit, stop-out) is logged here with full thesis, entry price
 3. XLE — 2a-LONG gate reactivates at ~$55.46 (Z=−2.0) if WTI resumes decline
 4. XLV — 2a-SHORT watch: RSI at 68.95, needs >70 + vol ≥1.0× + short TT structural resolution
 5. ORCL — post-earnings revisit week of June 15
+
+---
+
+### May 28 — Afternoon Scan (Day 30 / ~15:50 ET)
+
+**Portfolio:** $99,056.46 | **Cash:** $99,056.46 (100%) | **Deployed:** 0% | **Phase P&L:** −$943.54 (−0.944%)
+
+| Ticker | Shares | Entry | Current | Unrealized P&L | Stop | Hold |
+|--------|--------|-------|---------|----------------|------|------|
+| — | — | — | — | — | — | — (0 positions) |
+
+**Open orders at scan time:** NONE
+
+**Afternoon scan trades:** none
+
+**Stop action:** N/A — no positions held; no trailing stop upgrade workflow triggered
+
+**Afternoon candidates evaluated — ALL REJECTED (May 28 settled bar data):**
+
+| Candidate | Z-Score | RSI | Vol Ratio | Spread | Key Failures | Verdict |
+|-----------|---------|-----|-----------|--------|--------------|---------|
+| XLK | +1.640 | 73.53 | 0.91× | R-flag (stale close) | RSI 73.53 > 70 ❌; Vol 0.91× < 1.5× ❌; TT 200-SMA unavail. ❌ | REJECT |
+| MRVL | +1.862 | 71.56 | **1.93×** ✅ | R-flag (stale close) | Close $204.83 < pivot $208.26 ❌; RSI 71.56 > 70 ❌; TT 200-SMA unavail. ❌ | REJECT |
+| XLE | −0.973 | 54.59 | 1.15× | R-flag (stale close) | Z −0.973 fails both lanes ❌ (2a needs ≤−2.0; 2b needs ≤−1.0 + breakdown) | REJECT |
+| XLV | **+2.245** | **69.40** | 1.07× ✅ | R-flag (stale close) | RSI 69.40 < 70 ❌ (0.60 pts from trigger); Short TT structural conflict ❌ | REJECT |
+| XOM | −1.239 | 50.53 | 0.80× | R-flag (stale close) | No lane qualifies; energy 1-fail flag active; Z −1.239 mid-range | REJECT |
+
+**Pair divergences confirmed (all within ≤1.5σ gate):**
+- XLK (+1.640) ↔ AVGO (+0.759): **0.882σ ✅** (tech sector cohesion — pair confirms)
+- XOM (−1.239) ↔ CVX (−1.178): **0.061σ ✅** (energy names declining in lockstep)
+- XLE (−0.973) ↔ XOM (−1.239): **0.266σ ✅** (sector-wide)
+
+**PDT count:** 0/3 | **Week trades:** 0/3 | **Positions:** 0/6
+**Circuit breakers:** ✅ All clear — Phase P&L −0.944% (lim −5%) | Drawdown −1.15% from $100,206.70 peak (lim −15%)
+

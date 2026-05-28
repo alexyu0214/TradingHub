@@ -6063,3 +6063,126 @@ May 27 session was a mild consolidation day after the prior session's strong tec
 
 5. **XLV — 2a-SHORT watch:** Z=+2.186 ✅ but RSI pulled back to 62.28. Only activates if healthcare rips to RSI>70 on a strong up-day with volume ≥1.0×.
 
+
+---
+
+## 2026-05-28 — Afternoon Scan Addendum (~15:50 ET / 19:50 UTC)
+
+**Scan time:** ~2 hours before market close (market closes 20:00 UTC / 4:00 PM ET)
+**VIX regime at scan:** NORMAL (prior close ~17.01 from morning research; VIXY stale R-flag quote) | Sizing multiplier: 1.00×
+
+---
+
+### STEP 1 — Order & Position State Reconciled vs TRADE-LOG
+
+**Orders returned by API (6 total — all historical, all terminal):**
+
+| Order ID | Symbol | Type | Status | Detail |
+|----------|--------|------|--------|--------|
+| 1d69c496 | XOM | Bracket limit BUY 61 sh @ $159.78 | **EXPIRED** 2026-05-18T20:02 | TIF: day — never filled ✅ logged |
+| 94606e38 | XOM | Stop child $147.80 | **CANCELED** 2026-05-18T20:02 | Auto-cancelled ✅ logged |
+| 336d922a | XOM | TP child $183.74 | **CANCELED** 2026-05-18T20:02 | Auto-cancelled ✅ logged |
+| 8f97ef7d | XOM | Market Sell 130 sh | **FILLED** $146.09, 2026-05-07 | Thesis-break exit ✅ logged |
+| d92d9371 | XOM | Trailing Stop 10% GTC | **CANCELED** 2026-05-07 | Pre-exit ✅ logged |
+| c04ae321 | XOM | Market Buy 130 sh | **FILLED** $153.35, 2026-05-01 | Original entry ✅ logged |
+
+- **Positions API: `[]` — 100% cash ($99,056.46).** No filled positions.
+- **Morning bracket orders placed today (May 28): NONE** — Pre-market research issued explicit HOLD: XLK (RSI 73.76 > 70, Vol 0.41×, TT fails); MRVL (5 gate failures including earnings binary yesterday); SNOW (RSI 90, ext +35.2%, negative 6mo return); ORCL (Vol 0.69×, earnings binary ~June 10); XLV (RSI 68.95 < 70, Vol 0.47×); XLE (Z = −0.795, no lane). Nothing to reconcile for fills.
+- **Bracket fills today: 0** | **Stale limits: 0** | **TRADE-LOG reconciliation: FULLY CURRENT ✅**
+
+---
+
+### STEP 2 — Trailing Stop Upgrades on Profitable Fills
+
+**N/A.** Portfolio is 100% cash ($99,056.46). No positions exist. No trailing stop upgrade workflow applicable.
+
+---
+
+### STEP 3 — Stale Limit Cancellations
+
+**None.** No open orders of any kind exist.
+
+---
+
+### STEP 4 — Afternoon Opportunity Scan (5 Candidates, 4 Sectors)
+
+**VIX regime:** NORMAL (1.00×) | **Positions:** 0/6 | **Week trades:** 0/3 | **PDT:** 0/3
+
+**Full quant metrics — May 28, 2026 final settled bar data:**
+
+| Ticker | Close | 20d Mean | 20d Std | Z-Score | RSI(14) | Vol May28 vs Avg | 20d High | 20d Low | Verdict |
+|--------|-------|----------|---------|---------|---------|-----------------|----------|---------|---------|
+| XLK | $186.85 | $174.51 | $7.52 | **+1.640** | **73.53** | 0.91× ❌ | $186.85 | $159.50 | **REJECT** |
+| MRVL | $204.83 | $178.42 | $14.18 | **+1.862** | **71.56** | **1.93×** ✅ | $208.26 | $160.01 | **REJECT** |
+| XLE | $56.95 | $58.40 | $1.49 | −0.973 | 54.59 | 1.15× | $61.29 | $55.70 | **REJECT** |
+| XLV | $150.88 | $146.43 | $1.98 | **+2.245** | **69.40** | 1.07× ✅ | $150.88 | $143.04 | **REJECT** |
+| XOM | $146.96 | $152.61 | $4.56 | −1.239 | 50.53 | 0.80× | $162.55 | $144.57 | **REJECT** |
+
+**Pair Divergences (all ≤ 1.5σ — all confirm):**
+- XLK (+1.640) ↔ AVGO (+0.759): **0.882σ ✅** — tech pair moving together
+- XOM (−1.239) ↔ CVX (−1.178): **0.061σ ✅** — energy names in near-perfect lockstep
+- XLE (−0.973) ↔ XOM (−1.239): **0.266σ ✅** — sector-wide energy drift
+
+---
+
+**XLK — REJECT (2 active gate failures):**
+- Z = +1.640 ✅ | Breakout: $186.85 = AT new 20d high ✅ | Extension: 0.0% ✅ | AVGO pair: 0.882σ ✅
+- **RSI = 73.53 ❌** — overbought, above the 50–70 healthy momentum ceiling. Was 70.94 yesterday, 73.76 at this morning's open — has continued to drift higher, not normalizing.
+- **Volume = 0.91× ❌** — below the 1.5× breakout confirmation gate (10.97M vs. 12.03M avg). New 20d high was achieved today ($186.85, first clean new 20d high as a settled close since the May 22/$180.39 pivot was broken May 26), but institutional participation was not there.
+- **Trend Template:** 50-SMA < 150-SMA (structural issue from Dec 2025 2:1 split disrupting SMA computation). 200-SMA unverifiable (~37 sessions to resolve, est. mid-August 2026).
+- **Key positive:** XLK's new 20d high ($186.85) at the close with 0.0% pivot extension is the cleanest breakout structure of the week. If Friday's session brings RSI cooling (any flat/down open delivers this) and volume ≥1.5× → 2b-LONG activates. Max limit ≤ $186.85 × 1.05 = **$196.19**. Pair divergence (0.882σ) is the best it's been all week.
+
+**MRVL — REJECT (2 active gate failures):**
+- Z = +1.862 ✅ | **Volume = 1.93× ✅** (strongest in scan; 52.3M shares — institutional accumulation ongoing post-earnings) | Extension −1.6% ✅
+- **Close $204.83 < pivot $208.26 ❌** — $3.43 below the 20d high. MRVL's post-earnings saga: surged to $218+ (May 26 $208.26 → May 27 open $217.98), faded hard to $198.70, then recovered to $204.83 today. The breakout pivot has NOT been reclaimed on a closing basis.
+- **RSI = 71.56 ❌** — 1.56 points above the 70 ceiling for the 2b-LONG lane (need 50–70). Improving from the 70.23 at yesterday's open, but still marginally over.
+- **Trend Template:** 200-SMA unverifiable (152/200 bars). However 50-SMA ($144.24) > 150-SMA ($104.67) ✅ — structurally valid post-earnings re-rating. >30% above 52w low (+171.5%) ✅. 6-month return +164.4% = top quintile ✅. Partial TT confirms leadership.
+- **Status:** This is the #1 watchlist setup heading into the weekend/next week. Three gates are converging: (a) RSI needs 1.56 more points of cooling — any consolidation session delivers this; (b) pivot $208.26 needs $3.43 more upside from current $204.83; (c) volume already confirming strongly at 1.93×. Max entry ≤ $208.26 × 1.05 = **$218.67**.
+
+**XLE — REJECT (no lane qualifies):**
+- Z = −0.973 — midrange. 2a-LONG needs ≤ −2.0 (trigger $55.42, gap = $1.53 or −2.7%). 2b-SHORT needs ≤ −1.0 AND close < $55.70 (gap = $1.25 above breakdown level). RSI = 54.59 (neutral). Volume 1.15× (above 1.0× ✅ but 2b-SHORT needs 1.5×).
+- XOM–XLE divergence: 0.266σ ✅ — both names declining in lockstep. Sector thesis (WTI, Iran) intact structurally but supply premium continues deflating.
+- Energy sector: 1 consecutive failure (XOM May 7). Heightened caution on any new energy entry.
+
+**XLV — REJECT (1 gate failure, 0.60 RSI points away):**
+- Z = **+2.245 ✅** | Volume = **1.07× ✅** — both quant gates PASS. XLV made a new 20d high at $150.88 today.
+- **RSI = 69.40 ❌** — 0.60 points below the >70 threshold. This is the sole remaining gate for the 2a-SHORT mean-reversion short lane.
+- Healthcare sector surged today: $150.88 close vs. $148.79 yesterday (+$2.09, +1.40%). The sustained rally is building toward RSI exhaustion — if XLV opens Friday with another uptick, RSI may cross 70.
+- **Short TT structural conflict:** XLV is AT its 52-week high ($150.88 = session high). The Minervini Short TT requires price >30% below 52w high — structurally incompatible with a 2a-SHORT setup in an uptrend. Open strategy review item from Week 4 remains unresolved: 2a-SHORT should require Z/RSI/vol only, without the full downtrend Minervini Short TT. Until that strategy update is formally made, this gate conflict persists.
+- **Status:** #2 watchlist priority. If Friday opens with healthcare strength and RSI cracks >70 with volume ≥1.0× (≥9.7M shares) → 2a-SHORT activates (subject to TT conflict resolution). Max short size: 10% of equity = $9,906 (short position cap per CONSTRAINTS.md). Max entry at current-price-level short.
+
+**XOM (context):**
+- Z = −1.239; RSI = 50.53; Volume = 0.80× (below avg). Gap to 2a-LONG trigger (Z ≤ −2.0): price needs to reach ~$143.49 (−$3.47 more decline). 20d low = $144.57. Energy 1-fail flag active. No position.
+
+**New afternoon entries: ZERO** — all 5 candidates rejected. No orders placed.
+
+---
+
+### STEP 5 — Afternoon Market Context
+
+Today's session (May 28) featured two notable developments that will shape tomorrow's (Friday) pre-market evaluation:
+
+**1. XLK confirmed a new settled 20d high at $186.85.** This is the first clean new 20d high as a closing bar since May 26's $185.14 pivot was broken. The stock has now set three successive 20d highs: $180.39 (May 22) → $185.14 (May 26) → $186.85 (today). The momentum structure is clean. The two missing gates — RSI cooling to 50–70 and volume ≥1.5× on the entry day — are timing gates, not structural gates. The setup is literally one strong-volume, moderately-cooled session away from qualifying.
+
+**2. MRVL continues its post-earnings recovery.** From the May 27 "sell the news" intraday low of $196.25 to today's close of $204.83 (+$8.58, +4.4% recovery). Volume remains elevated (1.93× avg today, 2.0× yesterday). The earnings binary has been resolved. The $208.26 pivot — representing the last settled 20d high before the post-earnings dislocation — remains $3.43 away. RSI 71.56 is cooling (was 70.23 at yesterday's morning open, 64.91 at yesterday's midday rescan, 71.56 today — slight tick up but structurally cooling from the 76+ range earlier this week).
+
+**3. XLV overbought signal intensifying.** Z = +2.245 (up from +2.163 at this morning's open). Healthcare ETF made a new 20d high at $150.88 on volume 1.07×. RSI at 69.40 is now 0.60 points from the >70 overbought trigger. The 2a-SHORT setup is within reach — but the Minervini Short TT structural conflict remains the strategy-level question that needs resolution.
+
+**4. Energy (XOM, XLE, CVX) continues orderly decline.** All three names declining on below-average volume (~0.61σ pair divergence across the group). Iran Hormuz narrative continues to deflate WTI supply premium. No new entry signals in energy sector.
+
+---
+
+**Bracket fills today:** 0 (no morning limits placed — HOLD decision at pre-market; all 6 candidates failed gates)
+**Stops upgraded:** 0 (no positions held; no trailing stop upgrade workflow applicable)
+**Stale limits cancelled:** 0 (none existed)
+**New afternoon entries:** none — all 5 candidates failed composite Layer A + Layer B gates
+**Afternoon market context:** XLK new 20d high $186.85 (RSI 73.53, vol 0.91× — two gates from 2b-LONG activation). MRVL recovery to $204.83 on 1.93× volume (pivot $208.26, $3.43 away, RSI 71.56 — two gates from activation). XLV Z = +2.245, vol 1.07× — RSI 69.40 (0.60 from >70 trigger). Energy declining orderly on below-avg vol. VIX Normal.
+
+**Key watchlist for Friday pre-market (2026-05-29) and next week:**
+1. **MRVL — #1 PRIORITY (2b-LONG):** Z = +1.862 ✅, Vol = 1.93× ✅, extension −1.6% ✅. Gates remaining: (a) RSI must cool from 71.56 → below 70 (any consolidation/flat open achieves this), (b) price must reclaim $208.26 pivot on a settled close. Max entry limit ≤ **$218.67** (pivot × 1.05). 200-SMA structural gap (~37 sessions).
+2. **XLK — #2 (2b-LONG):** Z = +1.640 ✅, breakout ✅, ext 0.0% ✅, AVGO pair 0.882σ ✅. Gates remaining: (a) RSI must cool from 73.53 → 50–70 (requires flat/down open; currently drifting higher), (b) volume must reach ≥1.5× avg (≥18.1M shares full session). Max entry limit ≤ **$196.19** (pivot $186.85 × 1.05). 200-SMA structural gap.
+3. **XLV — #3 (2a-SHORT, conditional):** Z = +2.245 ✅, Vol = 1.07× ✅. Gate remaining: RSI > 70 (currently 69.40, 0.60 points away). TT structural conflict (2a-SHORT vs Minervini downtrend requirement) is the formal open item; operationally, if RSI clears and the strategy review update is implemented, this becomes a live trade. Short sizing cap: 10% of equity = $9,906.
+4. **XLE** — Z = −0.973; 2a-LONG trigger at $55.42 (−2.7% away). Monitor if WTI resumes decline.
+5. **XOM** — Z = −1.239; 2a-LONG trigger ~$143.49 (−$3.47 away). Energy 1-fail flag. No urgency.
+6. **200-SMA data gap:** ~37 trading sessions remaining (est. mid-August 2026). All Minervini TT 200-SMA "CANNOT VERIFY" flags auto-resolve as data accumulates.
+
