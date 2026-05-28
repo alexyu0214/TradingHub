@@ -856,3 +856,31 @@ No orders placed today. Research decision was HOLD.
 **Notes:** Day 30 flat — 100% cash, no qualifying setups, all circuit breakers clear. XLK/XLE/MRVL still below entry thresholds. Shortened holiday week (Mon Memorial Day); full PDT budget (0/3) preserved heading into next week's 5-session window.
 
 ---
+
+---
+
+## 2026-05-28 — Market-Open Execution Summary
+
+**Market-open orders placed:** None
+
+**Decision:** HOLD — Research log confirmed zero candidates cleared both Layer A (Trend Template + Catalyst) and Layer B (Quant Lane) gates.
+
+**Account at open:**
+- Equity: $99,056.46 | Cash: $99,056.46 (100% undeployed)
+- Open positions: 0 | Open orders: 0
+- Daytrade count: 0/3 | Week trades used: 0/3
+- Phase P&L: −$943.54 (−0.944%) from $100,000 starting equity
+
+**Skipped candidates (all rejected — gate failures):**
+- XLK: RSI overbought (73.76), vol 0.414×, TT 50-SMA < 150-SMA
+- MRVL: Close below pivot ($200.16 < $208.26), RSI 70.23, vol 1.236×
+- SNOW: RSI extreme (90.49), pivot extension +35.2%, TT failures, 6mo return negative
+- ORCL: Vol 0.686×, earnings binary ~13 days
+- XLV: RSI 68.95 (needs >70), vol 0.466×, short TT structural conflict
+- XLE: Z=−0.795 (no lane qualifies), RSI neutral 55.81, vol 0.668×
+
+**Market context:** S&P 500 fresh record 7,520.36; VIX ~15.73–16.73 (Normal regime); heavy data day (PCE, GDP, Claims); Iran/Hormuz tension overlay. Correct posture to hold cash on event-risk day with overbought conditions.
+
+**Portfolio now:** 0 positions, 0% deployed, $99,056.46 cash
+
+**Next review:** Midday scan (positions to monitor: none). Friday pre-market research to re-evaluate MRVL, XLK, XLE, XLV setups.

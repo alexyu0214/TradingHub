@@ -1480,3 +1480,38 @@ Every trade (entry, exit, stop-out) is logged here with full thesis, entry price
 
 **Circuit breakers:** ✅ All clear — Day 0.000% (lim −2%) | Phase −0.944% (lim −5%) | Drawdown −1.15% from $100,206.70 peak (lim −15%)
 **PDT count:** 0/3 | **Week trades:** 0/3 | **Positions:** 0/6
+
+---
+
+### 2026-05-28 17:08 — MARKET-OPEN EXECUTION: NO ORDERS PLACED
+
+**Decision from Research:** HOLD — Zero candidates cleared both Layer A and Layer B gates.
+
+**Account State at Execution:**
+- Equity: $99,056.46 | Cash: $99,056.46 | Positions: 0 | Daytrade count: 0/3 | Week trades: 0/3
+
+**Candidates Evaluated and Gate Failures:**
+
+| Ticker | Lane | Failed Gates |
+|--------|------|-------------|
+| XLK | 2b-LONG | RSI 73.76 > 70 ❌; Vol 0.414× < 1.5× ❌; 50-SMA < 150-SMA (TT) ❌; 200-SMA unverifiable ❌ |
+| MRVL | 2b-LONG | Close $200.16 < pivot $208.26 ❌; RSI 70.23 > 70 ❌; Vol 1.236× < 1.5× ❌ |
+| SNOW | 2b-LONG | RSI 90.49 > 70 ❌; Pivot extension +35.2% > 5% ❌; 50-SMA < 150-SMA (TT) ❌; 6mo return negative ❌ |
+| ORCL | 2b-LONG | Vol 0.686× < 1.5× ❌; Earnings binary ~13 days ❌ |
+| XLV | 2a-SHORT | RSI 68.95 < 70 ❌; Vol 0.466× < 1.0× ❌; Short TT structural conflict (price > 50-SMA) ❌ |
+| XLE | 2a-LONG / 2b-SHORT | Z=−0.795 (2a: need ≤−2.0 ❌; 2b: need ≤−1.0 ❌); RSI 55.81 neutral ❌; Vol 0.668× < 1.0× ❌ |
+
+**Primary reasons for universal rejection:**
+1. RSI readings at or above overbought thresholds after the strong recent rally (S&P 500 fresh record 7,520.36)
+2. Partial-day volume insufficient across all momentum-lane candidates (1.5× minimum not met)
+3. Prices either extended past pivot (XLK, SNOW) or still below pivot (MRVL)
+4. Macro/event risk overlay: PCE + GDP data day + Iran/Hormuz volatility — correct to stand aside
+
+**No bracket orders placed. No Alpaca API order calls made.**
+
+**Priority Watch for Friday 2026-05-29:**
+1. MRVL — reclaim $208.26 pivot + RSI cool to <70 + vol ≥1.5× (≥38M shares)
+2. XLK — RSI cool from 73.76 to <70; pivot $185.14 already broken
+3. XLE — 2a-LONG gate reactivates at ~$55.46 (Z=−2.0) if WTI resumes decline
+4. XLV — 2a-SHORT watch: RSI at 68.95, needs >70 + vol ≥1.0× + short TT structural resolution
+5. ORCL — post-earnings revisit week of June 15
