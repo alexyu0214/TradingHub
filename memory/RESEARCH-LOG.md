@@ -5970,3 +5970,96 @@ May 27 session was a mild consolidation day after the prior session's strong tec
 ### Adjustment Audit
 *(Today is Thursday — Monday-only section, skipped per workflow rules.)*
 
+
+---
+
+### 2026-05-28 — Midday Rescan Addendum (13:52 EDT)
+
+**Account at rescan:** $99,056.46 equity | $99,056.46 cash | 0 positions | 0 open orders | Week trades used: 0/3
+
+**VIX regime at rescan:** Normal (1.00× sizing multiplier) — unchanged from open
+
+**Spread gate threshold:** < 1.0% for liquid candidates
+
+---
+
+**Skipped at open, re-evaluated:**
+
+| Ticker | Morning Spread | Midday Spread | Midday Z | Midday RSI | Vol Ratio | Verdict |
+|--------|---------------|--------------|----------|------------|-----------|---------|
+| XLK    | wide/partial  | 0.011% ✅    | +1.681   | 78.86      | 0.610×    | **STILL SKIP** |
+| MRVL   | wide/partial  | 2.73% ❌     | +1.862   | 64.91      | 1.470×    | **STILL SKIP** |
+| SNOW   | wide/partial  | 0.825% ❌    | +3.689   | 86.55      | n/a       | **STILL SKIP** |
+| ORCL   | wide/partial  | 0.128% ✅    | +1.638   | 65.42      | 0.749×    | **STILL SKIP** |
+| XLV    | wide/partial  | 0.013% ✅    | +2.186   | 62.28      | 0.564×    | **STILL SKIP** |
+| XLE    | wide/partial  | 0.018% ✅    | −0.995   | 45.05      | 0.822×    | **STILL SKIP** |
+
+---
+
+**Detailed gate verdicts:**
+
+**XLK (2b-LONG) — STILL SKIP:**
+- RSI has *deteriorated*: 73.76 at open → 78.86 at rescan. Now more overbought, not less.
+- Volume 0.610× (needs ≥1.5×). Improved from 0.414× but far from threshold.
+- Minervini TT still fails: 50-SMA ($156.35) < 150-SMA ($177.71) ❌; 200-SMA unverifiable ❌.
+- XLK is running higher without us — the midday rescan's purpose (spread normalization) is moot because the core gates haven't improved.
+- Active gate failures: RSI ❌, Volume ❌, TT 50/150 SMA ❌, 200-SMA ❌
+
+**MRVL (2b-LONG) — STILL SKIP (spread-blocked):**
+- Spread 2.73% — stale/crossed bid-ask ($202.00 / $207.58). Cannot obtain clean fill.
+- Positive development: RSI cooled from 70.23 → 64.91 ✅ (now inside 50–70 range).
+- Volume improved to 1.470× — tantalizingly close to 1.5× but still short.
+- Price $204.83 close still BELOW $208.26 pivot ❌ (−1.66% gap to reclaim).
+- Z-Score: +1.862. Still below the 2b-LONG +1.0 floor but above — structure improving.
+- **Friday watch:** If spread normalizes, RSI holds 50–70, price reclaims $208.26 on volume ≥1.5×, all three gates can clear simultaneously. #1 priority setup for tomorrow.
+
+**SNOW (2b-LONG) — STILL SKIP:**
+- RSI cooling (90.49 → 86.55) but massively overbought. Needs sustained correction to sub-70.
+- Z-Score +3.689 — extreme extension unchanged.
+- Pivot extension: ($242.50 / $177.60 − 1) = +36.6% ❌ — structural disqualification.
+- Spread 0.825% is borderline acceptable but all quant gates remain hard-failed.
+- No path to qualification without weeks of consolidation and mean-reversion.
+
+**ORCL (2b-LONG) — STILL SKIP:**
+- RSI improved from 56.82 → 65.42 ✅ — now cleanly in the 50–70 range.
+- Notable: ORCL surged strongly today (+6.3% from yesterday's close, $190.96 → $203.08). Z-Score +1.638.
+- Volume 0.749× (needs ≥1.5×) ❌ — still the primary quantitative gate failure.
+- Earnings binary: Q4 FY2026 earnings ~June 10–12 (~13 days) ❌ — hard rule blocks entry through earnings.
+- Pivot extension: +3.67% ✅ (within 5%).
+- Cannot enter regardless of volume because the earnings binary is a hard Layer A block. ORCL's breakout move today may be earnings-anticipation-driven — exactly the scenario the earnings rule protects against.
+
+**XLV (2a-SHORT) — STILL SKIP:**
+- RSI *deteriorated*: 68.95 → 62.28. Moved *away* from the >70 trigger, not toward it.
+- Z-Score improved slightly: +2.163 → +2.186 ✅ — above threshold but RSI not confirming.
+- Volume 0.564× (needs ≥1.0×) ❌.
+- Short Trend Template structural conflict unchanged: price above 50-SMA, XLV in uptrend.
+- XLV is consolidating near highs, not overheating. RSI digesting is bearish for the short setup.
+
+**XLE (2a-LONG / 2b-SHORT) — STILL SKIP:**
+- Z-Score: −0.995 (barely misses −1.0 threshold for 2b-SHORT; far from −2.0 for 2a-LONG).
+- RSI 45.05 ✅ — only passing gate for 2b-SHORT lane.
+- No breakdown: price $56.91 > 20d low $55.70 ❌.
+- Volume 0.822× ❌ (partial day).
+- WTI oil flat-to-down today ($56.91 XLE vs $57.24 open = −0.46%). Neither a clear reversal nor breakdown.
+- Energy sector flag active (1 consecutive failure: XOM May 7). Heightened caution maintained.
+
+---
+
+**Trades fired this rescan:** None
+
+**Patience rule applied:** Correct outcome. No gate was lowered. Zero trades is the right call.
+
+---
+
+**Updated Forward Watchlist (Friday / Next Week):**
+
+1. **MRVL — #1 PRIORITY:** RSI cooling to 64.91 is the key positive development from today's rescan. Three gates still needed simultaneously Friday: (a) spread normalizes <1%, (b) price reclaims $208.26 pivot with close above on volume ≥1.5×, (c) RSI holds 50–70. Z-Score +1.862. All fundamentals intact.
+
+2. **XLK — #2 (2b-LONG):** RSI running hotter (now 78.86) — needs material consolidation back below 70. Pivot $185.14 already cleared. Watch for pullback day with RSI normalizing.
+
+3. **ORCL — post-earnings (2b-LONG):** Today's +6.3% surge is interesting but blocked by earnings binary. Check back week of June 15 after earnings cleared. Setup structure (RSI 65.42, Z +1.638, pivot extension +3.67%) is the cleanest of the group — just needs the earnings window to pass.
+
+4. **XLE — 2a-LONG watch:** Z=−0.995 — trigger at $55.42. Needs −$1.49 further decline plus RSI dropping below 30. If WTI resumes downtrend, monitor closely.
+
+5. **XLV — 2a-SHORT watch:** Z=+2.186 ✅ but RSI pulled back to 62.28. Only activates if healthcare rips to RSI>70 on a strong up-day with volume ≥1.0×.
+
