@@ -915,3 +915,19 @@ No orders placed today. Research decision was HOLD.
 4. XLV — REMOVED from active watchlist; revisit only if Z re-stretches > +2.0
 
 **VIX:** 15.52 — Normal regime (1.00× sizing multiplier). All entry types permitted next session.
+
+## WEEK ENDING 2026-05-29 — WEEKLY RECAP
+
+**Portfolio:** $99,056.46 (0.00% week, −0.944% phase)
+vs S&P 500: −1.60% (S&P: +1.60%, 9th consecutive weekly gain; May: +5.1%; SOXX: +23% May)
+
+**Trades:** 0 (W:0 / L:0 / open:0)
+**Win rate:** N/A | **Best:** N/A | **Worst:** N/A
+
+**Key signal:** AVGO produced Z=+2.755, breakout above $439.79 pivot, RSI 60.86, Vol 2.182× on May 29 — 7/8 Layer B gates passing (best setup since launch). Blocked solely by 200-SMA data gap on split-adjusted names.
+
+**Lesson learned:** The 200-SMA structural data gap is now the single largest trade-blocker — Alex must grant a decisions/log.md override for split-adjusted names (AVGO, XLK, MRVL) to unblock the highest-conviction setups in the strongest sector of 2026.
+
+**Grade:** D
+
+---

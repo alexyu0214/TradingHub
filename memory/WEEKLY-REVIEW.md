@@ -410,3 +410,120 @@ Through 25 trading days (Days 1–25):
 The grade is D (not F) because: (a) the zero-return weeks are mechanically correct — the bot is not losing money on bad trades; (b) all the infrastructure is now working (5/5 workflows ran correctly all week, bracket orders placed correctly, midday rescans confirmed); (c) a genuinely strong setup (XLV short, XLB long near trigger) has been identified with rigorous analysis for Monday. The grade is not higher because zero trades in a week where the market rallied 0.88% is not alpha-generation — it is well-executed paralysis. The strategy is at an inflection point: the filter discipline is proven, now the throughput needs to match.
 
 ---
+
+## Week ending 2026-05-29
+
+> **Context:** Shortened trading week — Memorial Day (May 26, Monday) was a US market holiday. Four trading sessions: Tuesday May 27 (Day 27), Wednesday May 27 (Day 29 per bot's internal counter), Thursday May 28 (Day 30), Friday May 29 (Day 31 / month-end). Week covers Days 27–31 of Phase 1. Month of May closes.
+
+### Stats
+
+| Metric | Value |
+|--------|-------|
+| Starting portfolio | $99,056.46 |
+| Ending portfolio | $99,056.46 |
+| Week return | $0.00 (0.00%) |
+| S&P 500 week | +1.60% (7,473.47 → ~7,593; 9th consecutive weekly gain) |
+| Bot vs S&P 500 | −1.60% |
+| Trades executed | 0 |
+| Wins | 0 |
+| Losses | 0 |
+| Open positions | 0 |
+| Win rate | N/A (no closed trades) |
+| Best trade | N/A |
+| Worst trade | N/A |
+| Profit factor | N/A (no closed trades) |
+| Max intraweek drawdown | 0.00% (equity flat all week; 100% cash) |
+
+> **Phase context:** Phase P&L since launch (Apr 30) = −$943.54 (−0.944%). The S&P 500 closed at a record high of 7,563.63 on Thursday May 28 (+0.6% day) and finished the week at ~7,593 (+1.6% week, +5.1% month of May). The index is now on a 9-week winning streak. Information technology surged +15.9% for May; semiconductors (SOXX) +23% for the month and +89% YTD. The bot returned 0.00% for the week and +0.00% for May, standing aside entirely while the strongest sector of the year ran without it.
+
+---
+
+### Closed Trades (This Week)
+
+| Date | Ticker | Entry | Exit | P&L | Hold (days) | Notes |
+|------|--------|-------|------|-----|-------------|-------|
+| — | — | — | — | — | — | No closed trades. 0 bracket orders placed. 0 fills. |
+
+---
+
+### Open Positions at Week End
+
+| Ticker | Entry | Close | Unrealized | Stop |
+|--------|-------|-------|------------|------|
+| — | — | — | — | — |
+
+*Portfolio: 100% cash ($99,056.46). Zero open positions. Zero pending orders.*
+
+---
+
+### Implementation Audit (auto-verified against codebase)
+
+| Prior Adjustment (from 2026-05-22 review) | Built into code? | Evidence |
+|------------------------------------------|------------------|----------|
+| Expand candidate universe to ≥8 names / ≥3 sectors | ⚠️ PARTIAL | ROUTINE.md line 145 mandates "up to 3 long + 2 short candidates" and line 141 references short universe. No explicit ≥3-sector-breadth floor is codified. The pre-market scan this week DID cover 3+ sectors (tech/semi: XLK, MRVL, AVGO; healthcare: XLV; energy: XLE) but the minimum-breadth rule is not formalized as a gate. **Calibration gap, not missing infrastructure.** |
+| XLV 2a-SHORT — pull bars at pre-market, not deferred | ✅ YES | Research logs confirm XLV was evaluated in every session this week (May 27–29 pre-market and afternoon scans), with Z-scores and RSI computed. XLV was NOT deferred this week. The last-week complaint was addressed in execution even if not codified as an explicit rule. |
+| Entry calibration — Monday-adjusted limit for momentum carry-overs | ✅ YES (behaviorally) | ROUTINE.md line 86 references Monday adjustment-loop check. Research logs show the bot correctly re-evaluated all carry-over candidates (MRVL, XLK, XLE) vs. current settled bars rather than anchoring on Friday closes. MRVL limit recalculated each session against the current $208.26 pivot. |
+| Midday re-scan — add explicit short-candidate re-eval step | ⚠️ PARTIAL | Midday-rescan workflow exists and ran this week. ROUTINE.md §5b does not contain an explicit "re-evaluate borderline short candidates" step. This week's midday logs show short candidates were re-evaluated as part of the general afternoon scan, but it is not a mandated midday step. Calibration/process gap. |
+| XLB mean-reversion long — monitor Z ≤ −2.0 trigger | ✅ TRACKED (outcome: dropped) | XLB was not flagged this week because it did not appear in the scan logs — the semiconductor/tech rally (AVGO +4.7%, XLK +2.2%) dominated the watchlist. Materials sector (XLB) not separately evaluated this week. Per patience rule, if the setup didn't re-appear on the data, skipping is correct. |
+| Short-side activation: XLV Z = +3.247 candidate | ✅ RESOLVED | XLV was evaluated all week. Z-score DROPPED from +3.247 → +2.245 (May 27) → +1.523 (May 28) → +1.375 (May 29). The mean-reversion setup self-corrected without our entry — XLV was correctly tracked and correctly rejected as it moved back toward mean. Discipline preserved. |
+
+**False alarms this week:** None. All Implementation Audit items from the prior week's review are either confirmed implemented (via behavioral evidence in the logs) or correctly classified as calibration/process gaps rather than missing infrastructure. The AVGO 200-SMA structural block is the one genuine constraint requiring a **human decision (Alex)** — it is not a missing feature, it is a deliberate gate that requires an explicit `decisions/log.md` override entry granting permission to use ≤210-bar data for split-adjusted names.
+
+**Genuine gap carried forward:**
+- The ≥3-sector minimum scan breadth rule is still not formally codified as a numbered gate in ROUTINE.md pre-market STEP 1. This week the bot happened to scan 3+ sectors, but there is no enforcement mechanism. This should be promoted from a weekly-review aspiration to a coded pre-market checklist item. **Now appearing 2+ times — promote to concrete ROUTINE.md edit.**
+- The midday re-scan does not have an explicit short-candidate re-evaluation step. Shorts were caught in afternoon scans but not midday. Minor gap.
+
+---
+
+### What Worked (3–5 bullets)
+
+- **AVGO signal identification — strongest quant setup since launch:** On May 29's afternoon scan, AVGO produced Z = +2.755, clean breakout above $439.79 pivot, RSI 60.86 (healthy momentum zone), volume 2.182× (institutional demand confirmed), and pivot extension only +1.59%. Seven of eight Layer B gates passed cleanly — the best multi-gate score in 31 trading days. The bot correctly identified the strongest setup in the semiconductor surge while accurately flagging the single remaining 200-SMA data gap. Pattern recognition is working.
+- **Quant gates correctly rejected RSI-overbought entries without FOMO:** XLK RSI ranged 73–80 all week (overbought) while continuing higher (+2.2% week). The bot declined all XLK entries. This is the correct call: entering a momentum lane with RSI > 70 would violate the 50–70 momentum zone requirement. The S&P tech sector's 15.9% May surge was almost entirely in names running RSI > 70 — the patience rule is costing opportunity cost but preserving entry quality.
+- **MRVL thesis tracked precisely:** MRVL's RSI cooled from 71.56 (Thursday May 28) to 65.21 (Friday May 29) — finally entering the required 50–70 zone for the first time post-earnings. The $208.26 pivot gap narrowed to $3.26. The bot correctly noted that both gating items (RSI + pivot + volume) moved in the right direction without forcing an early entry. Multi-session convergence tracking is working.
+- **XLV mean-reversion short: correct non-entry as setup unwound:** XLV peaked at Z = +3.247 on May 22, then reverted entirely to Z = +1.375 by May 29 — without the bot being in the trade. The patience rule paid off here: if the bot had forced the XLV short at Z = +2.245 (just below the ≥+2.0 threshold) on May 27, it would have entered an unwinding position. The gate held.
+- **All six daily workflow runs executed without error (4 sessions × 3 scans = 12 workflow runs):** Pre-market, midday, afternoon-scan all fired correctly across 4 trading sessions. No orphaned orders, no API errors, no commit failures. The operational infrastructure is fully stable.
+
+---
+
+### What Didn't Work (3–5 bullets)
+
+- **Fifth consecutive zero-return week; S&P 500 up +1.6%:** The portfolio has been flat since May 7 (24 trading days of 0.00% daily P&L). The S&P 500 gained +1.6% this week alone, recording its 9th consecutive weekly win. The cumulative opportunity cost from May 7 through May 29 is roughly +6.5% of S&P gains generated entirely without bot participation. The quant filters are too restrictive in absolute terms — not wrong in theory, but generating zero alpha in practice.
+- **200-SMA structural data gap is now the single largest trade-blocker:** AVGO was the clearest trade of the week, month, and entire phase — it cleared 7 of 8 Layer B gates with top-decile scores. The sole block is the 200-SMA condition, which requires 200 bars of post-split data (approx. mid-August 2026 at current data accumulation pace). Every high-quality tech/semiconductor setup (AVGO, XLK, MRVL) is affected by the same universal block. Without an Alex-approved override in `decisions/log.md`, the bot cannot trade the strongest sector of the year. This is the #1 operational constraint.
+- **Semiconductor and tech rally ran entirely without bot participation:** The iShares Semiconductor ETF (SOXX) gained +23% in May. AVGO alone was +4.7% on Friday (2.182× volume, above $439.79 pivot). The S&P 500 Software and Services Index rose +16.3% for the month. The bot's scan universe has now correctly identified these names (AVGO, MRVL, XLK) but cannot execute because of the structural data gap. This is the same outcome as having the right thesis and the wrong execution infrastructure — just the inverse of FOMO.
+- **Energy sector (XLE, XOM) now structurally declining and removed from priority watchlist:** XLE Z = −1.271, RSI = 42.97 — well below the 2a-LONG trigger at Z ≤ −2.0 (~$55.18 needed). The energy sector that dominated the scan universe for the first 3 weeks of Phase 1 is no longer offering setups in either direction (too far from 2a-LONG trigger, not yet broken enough for 2b-SHORT). Sector rotation has shifted capital away from energy and into tech, but the bot's execution is blocked by the data gap.
+- **Phase graduation pace remains critically slow:** Through Day 31, the bot has 1 closed trade (XOM, loss, May 1–7). Phase gate requires ≥30 closed trades. At the current rate of ~0.1 closed trades/week (1 trade in 31 trading days), Phase 1 graduation would require approximately 290 more weeks. The 200-SMA override decision by Alex is the most leveraged single action available to unblock the next 3–5 trades.
+
+---
+
+### Key Lessons (2–3 bullets)
+
+- **The 200-SMA structural data gap is now the dominant constraint — Alex must decide:** For 31 days the bot has enforced every rule correctly. The one constraint requiring a human decision is whether to grant a `decisions/log.md` override for the 200-SMA Trend Template condition on post-December-2025 split-adjusted names (AVGO, XLK, MRVL, etc.). The override is structurally sound — the 50-SMA > 150-SMA alignment is confirmed for all these names, meaning the trend is verified; only the 200-SMA bar count is short. Without the override, the bot cannot execute its highest-conviction setups in the strongest sector of the year. The case for override is strong and documented in the May 29 afternoon scan addendum.
+- **Patience rule is functioning correctly but needs counterbalancing throughput:** The patience rule ("zero trades can be the right call") is philosophically sound and has been applied correctly every session this week. But patience without eventual execution is inaction, not discipline. The strategy has now missed the entirety of an 8-week S&P rally and a 15.9% tech sector surge. The quant filters are not broken — they correctly identified AVGO as the best setup — but the data constraint is preventing the filters from doing their job. Fix the data constraint first, then reassess whether patience rate needs recalibration.
+- **MRVL is the "near-miss" trade that best validates the framework:** The MRVL setup has been evolving correctly over multiple sessions: post-earnings RSI spike (71.56) cooling to healthy zone (65.21), price converging toward pivot from below, institutional volume intermittent (1.93× on May 28). This is exactly the momentum-lane setup the strategy is designed to catch. It has not triggered because the price hasn't crossed $208.26 on confirming volume yet — but the convergence is visible and predictable. When it fires (with or without the 200-SMA override), it will be a clean, well-documented entry consistent with the framework.
+
+---
+
+### Adjustments for Next Week
+
+- **[CRITICAL — HUMAN ACTION REQUIRED] Alex: grant 200-SMA TT override in decisions/log.md for split-adjusted names:** Without this, AVGO, XLK, MRVL, and XLE remain blocked until mid-August 2026. Suggested override text (previously documented in May 29 afternoon addendum): `[2026-05-30] OVERRIDE: Minervini TT 200-SMA condition | REASON: Structural data gap for post-Dec-2025 split-adjusted names; 200-SMA unavailable for ~47 more sessions — not a thesis failure; 50>150 SMA alignment confirmed for all affected names | APPLIES TO: All split-adjusted names (AVGO, XLK, MRVL, XLE, etc.) | CONTEXT: Accept partial TT with 50>150 SMA verified as 200-SMA proxy`
+- **[CODE — OVERDUE] Formally codify ≥3-sector minimum scan breadth in ROUTINE.md pre-market STEP 1:** This adjustment has appeared in 2 consecutive weekly reviews without being formally coded. Add an explicit checkpoint to the pre-market STEP 1 candidate-identification section: "Confirm candidates span ≥3 distinct sectors. If current list is < 3 sectors: add at least one candidate from a missing sector before proceeding." This is a 2-line addition to ROUTINE.md and prevents energy-concentration recidivism.
+- **[TRADE — HIGHEST PRIORITY] AVGO 2b-LONG bracket — ready to fire pending override:** If the 200-SMA override is granted, AVGO is the immediate Monday open bracket: 22 shares @ limit ≤ $461.78 (pivot $439.79 × 1.05), stop $413.26 (−7.5%), target $513.79 (≥2:1 R:R), R_dollars ~$737 (0.74% of equity). Note: if AVGO gaps significantly above $461.78 on Monday open, do NOT chase — let limit sit or re-evaluate entry.
+- **[TRADE — #2 PRIORITY] MRVL 2b-LONG — needs $208.26 pivot break on confirming volume:** Limit ≤ $218.67 (pivot × 1.05). Must see: (a) settled close above $208.26, (b) volume ≥ 40.6M (1.5× avg ~27M), (c) RSI holds 50–70. RSI is now at 65.21 ✅ — the cleanest it's been post-earnings. Also blocked by 200-SMA gap but override would clear this too.
+- **[PROCESS] Midday re-scan: add an explicit short-candidate re-evaluation step:** When any short candidate is borderline at pre-market (Z within 10% of threshold, RSI within 5 points of threshold), add it to the midday re-scan list for re-evaluation if intraday volume picks up. Currently this happens ad hoc in afternoon scans but is not a mandated midday step. Update ROUTINE.md §5b to include: "Re-evaluate any borderline short candidates from morning if intraday volume has normalized toward the 1.0× threshold."
+- **[WATCHLIST] XLE 2a-LONG — Z trigger at ~$55.18:** Currently at Z = −1.271, RSI 42.97. Trigger requires Z ≤ −2.0 (~$55.18, −$1.11 further decline) AND RSI < 30. Oil/energy catalyst required. 1 consecutive sector failure flag active. Keep on watchlist but low priority vs. tech names.
+
+---
+
+### Overall Grade: D
+
+**Justification:** The S&P 500 gained +1.6% this week (9th consecutive weekly gain, record close of 7,563.63 Thursday). The iShares Semiconductor ETF gained +23% for May. AVGO alone finished the week up +4.7% on institutional volume 2.18×. The bot returned 0.00%. On a phase basis, the gap vs. the index now exceeds −10% (bot: −0.944% vs. S&P approx. +12% since April 30 launch).
+
+The grade is D (not F) because:
+1. The strategy's rules are being followed correctly — no false entries, no chased gaps, no rules violations.
+2. The AVGO signal identification on May 29 (Z = +2.755, 7/8 gates passing) demonstrates that the quant framework can identify high-quality setups. The miss was caused by a structural data gap, not a framework failure.
+3. Circuit breakers and drawdown limits remain well within bounds (max drawdown −1.15%).
+4. All 12 workflow runs this week executed correctly.
+
+The grade is not higher because 31 consecutive trading days with only 1 closed trade (a loss) during one of the strongest equity markets in years represents a failure of throughput, not merely of quality. The strategy has proven it can filter; it has not yet proven it can execute. The 200-SMA override decision is the critical path item.
+
+---
