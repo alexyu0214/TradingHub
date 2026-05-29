@@ -1550,3 +1550,31 @@ Every trade (entry, exit, stop-out) is logged here with full thesis, entry price
 **PDT count:** 0/3 | **Week trades:** 0/3 | **Positions:** 0/6
 **Circuit breakers:** ✅ All clear — Phase P&L −0.944% (lim −5%) | Drawdown −1.15% from $100,206.70 peak (lim −15%)
 
+
+---
+
+### 2026-05-29 16:58 — MARKET-OPEN EXECUTION: NO ORDERS PLACED
+
+**Decision from Research:** HOLD — 0 trades today
+**Account at open:** Equity $99,056.46 | Cash $99,056.46 (100%) | Positions: 0 | Daytrade count: 0/3
+**Trades placed this week:** 0 of 3 allowed
+
+**Candidates Evaluated & Rejected:**
+
+#### MRVL | LONG | 2b-LONG — SKIPPED
+- **Failure 1:** Close $203.11 < prior 20d high pivot $208.26 → breakout condition NOT met (price below pivot)
+- **Failure 2:** Volume 1.08× 20d avg < 1.5× required for momentum lane
+- **Watchlist status:** Keep as #1 priority. Needs: (a) settled close above $208.26, (b) entry-day volume ≥ 40.6M. Max entry limit ≤ $218.67.
+
+#### XLK | LONG | 2b-LONG — SKIPPED
+- **Failure 1:** RSI(14) = 79.67 > 70 threshold (overbought; momentum lane requires 50–70)
+- **Failure 2:** Volume 0.79× 20d avg < 1.5× required for momentum lane
+- **Watchlist status:** Keep as #2 priority. Needs: (a) RSI cool to ≤ 70 (est. 2–3 sessions), (b) entry-day volume ≥ 18.1M. Max entry limit ≤ $196.19.
+
+#### XLV | SHORT | 2a-SHORT — SKIPPED (setup unwound)
+- **Failure 1:** Z-Score +1.523 < +2.0 required (was +2.245 yesterday; pullback self-corrected)
+- **Failure 2:** RSI(14) = 60.79 < 70 required for mean-reversion short lane
+- **Failure 3:** Pair divergence (UNH) = 1.947σ > 1.5σ limit
+- **Watchlist status:** REMOVED from active watchlist. Setup unwound without our entry (correct per patience rule). Revisit only if Z re-stretches above +2.0 in a future session.
+
+**No bracket orders placed. No order IDs generated.**

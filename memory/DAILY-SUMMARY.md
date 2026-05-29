@@ -884,3 +884,34 @@ No orders placed today. Research decision was HOLD.
 **Portfolio now:** 0 positions, 0% deployed, $99,056.46 cash
 
 **Next review:** Midday scan (positions to monitor: none). Friday pre-market research to re-evaluate MRVL, XLK, XLE, XLV setups.
+
+---
+
+## 2026-05-29 — Market-Open Execution Summary
+
+**Market-open orders placed:** No orders placed
+
+**Research Decision:** HOLD — all three Layer B evaluations failed. No candidates cleared both layers.
+
+**Candidates Reviewed:**
+| Symbol | Direction | Lane | Key Failures |
+|--------|-----------|------|-------------|
+| MRVL | LONG | 2b-LONG | Close < 20d high pivot ❌; Vol 1.08× < 1.5× ❌ |
+| XLK | LONG | 2b-LONG | RSI 79.67 > 70 ❌; Vol 0.79× < 1.5× ❌ |
+| XLV | SHORT | 2a-SHORT | Z +1.523 < +2.0 ❌; RSI 60.79 < 70 ❌; UNH pair divergence 1.947σ ❌ |
+
+**Account Status:**
+- Equity: $99,056.46
+- Cash: $99,056.46 (100% undeployed)
+- Phase P&L: −$943.54 (−0.944% from $100,000 start)
+- Open positions: 0
+- Daytrade count: 0/3
+- Trades this week: 0/3
+
+**Watchlist heading into next week:**
+1. MRVL — needs price reclaim of $208.26 pivot + volume ≥ 40.6M on entry day (max limit $218.67)
+2. XLK — needs RSI to cool below 70 (est. 2–3 sessions) + volume ≥ 18.1M (max limit $196.19)
+3. AVGO — new addition; evaluate fresh Mon pre-market as potential 2b-LONG candidate
+4. XLV — REMOVED from active watchlist; revisit only if Z re-stretches > +2.0
+
+**VIX:** 15.52 — Normal regime (1.00× sizing multiplier). All entry types permitted next session.
