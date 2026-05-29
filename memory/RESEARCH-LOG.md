@@ -6186,3 +6186,160 @@ Today's session (May 28) featured two notable developments that will shape tomor
 5. **XOM** — Z = −1.239; 2a-LONG trigger ~$143.49 (−$3.47 away). Energy 1-fail flag. No urgency.
 6. **200-SMA data gap:** ~37 trading sessions remaining (est. mid-August 2026). All Minervini TT 200-SMA "CANNOT VERIFY" flags auto-resolve as data accumulates.
 
+
+---
+
+## 2026-05-29 — Pre-Market Research
+
+### Account
+- **Equity:** $99,056.46
+- **Cash:** $99,056.46 (100%)
+- **Buying power:** $198,112.92 (margin — but strategy uses cash only)
+- **Daytrade count:** 0/3
+- **Open positions:** NONE
+- **Open orders:** NONE
+- **Phase P&L:** −$943.54 (−0.944% from $100k start)
+
+---
+
+### Market Context
+- **WTI Crude Oil:** ~$88.77/bbl (−0.65% on day); spot Cushing $97.63 on May 26. WTI declined ~1.5% across reports. Iran Hormuz premium deflating.
+- **Brent Crude:** ~$90.86–$91.01 (−1.83% from prior close of $92.70). Brent −17.57% over past month, +44.96% YoY. Spot Europe $102.75 on May 26.
+- **S&P 500 Futures:** ESM26 +0.59% Thursday. S&P 500 index up 9.8% YTD. Markets reached 1-week highs on US-Iran peace deal hopes.
+- **VIX:** 15.52 (opened 15.81, prior close 16.29; −4.23% from prior day, −14.08% YoY). Continuing drift lower from elevated levels.
+- **Key Catalysts:**
+  - US-Iran preliminary ceasefire talks reducing energy supply risk premium → headwind for energy longs
+  - NVDA Q1 revenue $81.6B — massive AI infrastructure beat; AI spending cycle continuing
+  - Dell (DELL) beat Q1 earnings May 28, popped in extended trading
+  - AVGO (Broadcom) up ~+2.9% today ($426.58 → $439.00) — likely DELL/AI read-through catalyst
+  - IPO market reopening (SpaceX interest cited)
+- **Economic Calendar (today May 29):**
+  - 8:30 AM ET: US Advance Economic Indicators
+  - 9:45 AM ET: ISM Chicago PMI
+  - Fed speakers: Lorie Logan (4:00 AM), Lisa Cook (3:55 PM), Philip Jefferson (8:00 PM)
+  - No CPI, PPI, FOMC, or Jobs data today
+- **Yesterday (May 28):** April PCE headline +0.4% m/m / +3.8% y/y; core +0.24% m/m / +3.3% y/y. Initial claims 215,000.
+- **S&P 500 Sector YTD (as of May 12):**
+  - Energy +27.87% | IT +23.55% | Materials +15.24% | Industrials +12.84%
+  - Real Estate +10.46% | Staples +7.32% | Utilities +5.74%
+  - Cons. Disc −0.03% | Comm. Services −1.82% | Financials −6.55% | Health Care −7.60%
+  - *Note: Healthcare cited as top-performing in May specifically, contradicting YTD rankings.*
+
+---
+
+### VIX Regime
+- **Current VIX:** 15.52
+- **Regime:** Normal (14–22 range)
+- **Sizing multiplier:** 1.00×
+- **Strategy bias:** All entry types permitted; no regime restriction on today's evaluation
+
+---
+
+### Universe Scan — Candidates Evaluated
+
+#### Candidate 1: MRVL | LONG | 2b-LONG (Momentum)
+**Catalyst:** Post-earnings AI momentum; AVGO beat today is a sector read-through. MRVL recovering from May 27 "sell-the-news" dip. Semi sector AI capex cycle intact (NVDA/DELL/AVGO chain).
+
+**Layer A — Catalyst + Trend Checklist:**
+- Catalyst: ✅ AI infrastructure spending wave; AVGO confirming sector-wide
+- Sector posture: IT/Semis #2 YTD (+23.55%). Momentum sector ✅
+- RSI(14): 63.88 (using today's partial close) ✅ in 50–70 zone
+- Stop level: $183 (−9.9% from $203.11 entry) ✅
+- Target: $225 (+10.8% from entry); R:R = $21.89 risk vs $21.89 target = 1.0R — need $225+ for 2:1. Target revised to $225 for 2:1. ✅ Layer A R:R marginal
+
+**Layer B — Quant (2b-LONG):**
+- Z-Score: **+1.697** ✅ (mean20 = $178.42, std20 = $14.55, current $203.11)
+- Close > prior 20d high ($203.11 vs pivot $208.26): **❌ FAIL** — price is $5.15 BELOW pivot
+- RSI(14) 63.88: ✅ in 50–70 zone
+- Volume projected 1.08× avg (partial day, ~13.4M / 27.1M avg): **❌ FAIL** (need ≥ 1.5×)
+- 50-SMA ($146.64) > 150-SMA ($105.51): ✅ (200-SMA unverifiable — 48 bars short)
+- Trend Template (Momentum Long): Price > 50-SMA ✅, Price > 150-SMA ✅, 50 > 150 ✅; 200-SMA CANNOT VERIFY; >30% above 52w low (+175.2%) ✅; within 25% of 52w high (−2.6%) ✅; 6-month return +131.3% (top quintile) ✅. **PARTIAL TT — 3 verifiable conditions PASS, 200-SMA gap persists**
+- Pivot extension: $203.11 / $208.26 = −2.47% (below pivot) → **not applicable** (price is below pivot)
+- Pair: AVGO | Pair Z-Score: **+2.526** | Divergence: **0.468σ ✅** (tech sector cohesion strong today)
+
+**Layer B Result: ❌ FAIL — 2 gates fail: (1) close below 20d high pivot ($203.11 < $208.26), (2) volume 1.08× < 1.5× required**
+
+---
+
+#### Candidate 2: XLK | LONG | 2b-LONG (Momentum)
+**Catalyst:** Tech ETF breakout to new multi-week high; AVGO +2.9% today (AI capex chain), DELL beat, NVDA earnings flywheel. XLK is the cleanest sector expression of AI infrastructure demand.
+
+**Layer A — Catalyst + Trend Checklist:**
+- Catalyst: ✅ AI spending cycle + AVGO beat today
+- Sector posture: IT #2 YTD ✅
+- RSI(14): **79.67** ❌ (overbought — above 70; need 50-70 for 2b-LONG)
+- Stop level: $172 (−9.7% from $190.40) ✅ structure
+- Target: $209 (+9.8% from entry) — R:R = 2:1 ✅
+
+**Layer B — Quant (2b-LONG):**
+- Z-Score: **+2.058** ✅ (mean20 = $174.51, std20 = $7.72, current $190.40)
+- Close > prior 20d high ($190.40 > pivot $186.85): **✅ PASS** — clean breakout
+- RSI(14) = 79.67: **❌ FAIL** (need 50–70; currently overbought)
+- Volume projected 0.79× avg (partial day, 4.37M / 12.04M avg): **❌ FAIL** (need ≥ 1.5×)
+- 50-SMA ($157.39) > 150-SMA ($147.62): ✅; 200-SMA unverifiable
+- Trend Template: Price > 50-SMA ✅, Price > 150-SMA ✅; 200-SMA gap; >30% above 52w low (+159.7%) ✅; AT 52w high (0.0% below) ✅; 6-month return +34.2% (strong) ✅. **PARTIAL TT — verifiable conditions PASS**
+- Pivot: $186.85; limit $190.40; extension +1.90% ✅ (≤5%)
+- Pair: AVGO | Z-Score: +2.526 | Divergence: **0.468σ ✅**
+
+**Layer B Result: ❌ FAIL — 2 gates fail: (1) RSI 79.67 > 70 (overbought), (2) volume 0.79× < 1.5× required**
+
+---
+
+#### Candidate 3: XLV | SHORT | 2a-SHORT (Mean-Reversion)
+**Catalyst:** Healthcare ETF had run to multi-week high ($150.88 on May 28, Z = +2.245 yesterday). 2a-SHORT setup was on watch. Today: XLV gave back, closing at $149.53 (−$1.36, −0.90% from yesterday's high).
+
+**Layer B — Quant (2a-SHORT):**
+- Z-Score: **+1.523** ❌ FAIL (need ≥ +2.0; dropped from +2.245 yesterday as XLV pulled back)
+- RSI(14) = 60.79: **❌ FAIL** (need > 70; was 69.40 yesterday, rolling off overbought)
+- Volume projected 1.24× avg: ✅ PASS (need ≥ 1.0×)
+- Pair (UNH) Z-Score: −0.424; Divergence vs XLV: **1.947σ ❌ FAIL** (need ≤ 1.5σ; UNH declining while XLV was overbought = sector divergence)
+
+**Layer B Result: ❌ FAIL — 3 gates fail: Z dropped below +2.0, RSI < 70, pair diverges >1.5σ**
+**Critical note:** The XLV setup has UNWOUND. Yesterday's Z = +2.245, RSI = 69.40 were approaching trigger. Today's pullback ($150.88 → $149.53) means the mean-reversion SHORT signal has self-corrected. This is the correct outcome — XLV reverted partway back to mean without our entry. Setup is invalidated. Monitor only if XLV re-stretches to Z > +2.0 in future sessions.
+
+---
+
+### Trade Ideas (Cleared Both Layers)
+**None — all three candidates failed Layer B gates.**
+
+---
+
+### Skipped Candidates
+
+| Candidate | Direction | Lane | Key Failures | Status |
+|-----------|-----------|------|-------------|--------|
+| MRVL | LONG | 2b-LONG | Close $203.11 < pivot $208.26 ❌; Vol 1.08× < 1.5× ❌ | REJECT — watchlist #1 |
+| XLK | LONG | 2b-LONG | RSI 79.67 > 70 ❌; Vol 0.79× < 1.5× ❌ | REJECT — watchlist #2 |
+| XLV | SHORT | 2a-SHORT | Z +1.523 < +2.0 ❌; RSI 60.79 < 70 ❌; UNH pair divergence 1.947σ > 1.5σ ❌ | REJECT — setup unwound, remove from immediate watchlist |
+
+---
+
+### Market Structure Notes
+- **XLK breakout confirmed on settled close:** Today's $190.40 close sets a new 20d high (previous pivot $186.85). Breakout is real. But RSI 79.67 says the day's move was too strong — momentum entry requires RSI 50–70, not >70. A 2–3 day RSI cooling period is needed.
+- **AVGO +2.9% today ($439):** Strong. Its Z-score = +2.526. AVGO is outrunning XLK on a relative basis. If AVGO consolidates next week and XLK RSI cools, the sector ETF entry becomes cleaner than the single-name.
+- **MRVL:** Pulled back intraday ($208.76 high → $203.11 close). The stock attempted to reclaim the $208.26 pivot but failed to close above it. RSI cooling from 65+ to ~63 is healthy. Volume was elevated (52.6M yesterday vs 13.4M today partial — Friday typical low volume day). Next week's catalyst test: does MRVL find buyers on a volume surge?
+- **Energy (XOM/XLE/CVX):** WTI −0.65%–1.54% today. Iran deal progress continues to deflate supply premium. Energy sector 1-fail flag from May 7 XOM trade remains active. No energy candidates evaluated — sector headwinds confirmed.
+- **VIX trending lower (15.52):** A VIX that keeps declining typically accompanies a bull market grind. This environment favors momentum setups — which validates keeping XLK and MRVL on the watchlist. Low VIX also means mean-reversion trades (2a) have smaller Z-score swings, making the +2.0 trigger harder to hit.
+
+---
+
+### Risk Factors
+1. **Iran deal uncertainty:** If talks collapse, energy supply premium returns. XLE/XOM would spike, creating a potential 2a-LONG setup on oil names that we would need to evaluate fresh.
+2. **Fed speakers today (Cook at 3:55 PM, Jefferson at 8:00 PM):** Any hawkish tone could crack the tech rally and give RSI the pullback needed for MRVL/XLK entries. Actually a constructive risk for watchlist setup formation.
+3. **ISM Chicago PMI (9:45 AM):** A weak print could trigger a risk-off move; strong print could push XLK RSI even higher, extending the wait.
+4. **Month-end effects (May 31 is weekend):** May 29 is the last trading day of the month. Month-end rebalancing can create anomalous volume and price action in either direction. This adds noise to volume readings and makes today's partial volume data less reliable as a signal.
+5. **200-SMA data gap:** Still ~48 sessions short (~August 2026 resolution). All Trend Template calls are partial. This is a known ongoing limitation, not a new flag.
+
+---
+
+### Decision
+**HOLD — 0 trades today**
+
+All three Layer B evaluations fail. MRVL and XLK are strong setups structurally but need additional sessions for RSI to normalize and volume to confirm on entry day. XLV's overbought mean-reversion short has unwound — the window closed without our participation (correct per patience rule). Zero trades this week (0/3). Cash at 100% ($99,056.46). This is the right outcome.
+
+**Watchlist priority heading into next week:**
+1. **MRVL (#1):** Z = +1.697, RSI = 63.88, RSI in zone ✅. Needs: (a) price reclaim $208.26 pivot on a settled close, (b) entry day volume ≥ 40.6M shares. Max entry limit ≤ **$218.67** (pivot $208.26 × 1.05). Monitor Mon-Tue.
+2. **XLK (#2):** Z = +2.058, new 20d high ✅. Needs: (a) RSI cool from 79.67 → below 70 (2-3 flat/down days), (b) entry day volume ≥ 18.1M shares. Max entry limit ≤ **$196.19** (pivot $186.85 × 1.05). RSI is the gating factor — could take until Wednesday.
+3. **AVGO (new watch):** Z = +2.526, surging +2.9% today on AI catalyst. AVGO is in momentum lane but RSI likely also elevated. Evaluate fresh Mon pre-market as potential momentum long candidate.
+4. **XLV:** REMOVE from active watchlist. Setup unwound. Revisit only if Z re-stretches > +2.0 in a future session.
+
