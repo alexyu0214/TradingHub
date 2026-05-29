@@ -6343,3 +6343,36 @@ All three Layer B evaluations fail. MRVL and XLK are strong setups structurally 
 3. **AVGO (new watch):** Z = +2.526, surging +2.9% today on AI catalyst. AVGO is in momentum lane but RSI likely also elevated. Evaluate fresh Mon pre-market as potential momentum long candidate.
 4. **XLV:** REMOVE from active watchlist. Setup unwound. Revisit only if Z re-stretches > +2.0 in a future session.
 
+
+---
+
+### 2026-05-29 — Midday Rescan Addendum (17:52 ET)
+
+**Skipped at open, re-evaluated:**
+
+| Ticker | Lane | Morning Skip Reason | Spread Now | Z-Score | Gate Failures | Verdict |
+|--------|------|---------------------|------------|---------|---------------|---------|
+| MRVL | 2b-LONG | Price below pivot, vol 1.08× | 1.074% ❌ | +1.650 ✅ | (1) Spread 1.074% > 1.0% ❌ (2) Price $204.90 still below $208.26 pivot ❌ (3) Vol 0.633× < 1.5× ❌ | **STILL SKIPPED** |
+| XLK | 2b-LONG | RSI 79.67>70, vol 0.79× | 0.011% ✅ | +1.885 ✅ | (1) RSI 79.44 > 70 ❌ (still overbought; essentially unchanged from open) (2) Vol 0.649× < 1.5× ❌ | **STILL SKIPPED** |
+| XLV | 2a-SHORT | Z +1.523<2.0, RSI 60.79<70, pair diverge | 0.007% ✅ | +1.340 ❌ | (1) Z +1.340 < +2.0 ❌ (further unwound from +1.523 at open) (2) RSI 60.24 < 70 ❌ (3) Vol 0.786× < 1.0× ❌ | **STILL SKIPPED — setup fully dead** |
+
+**Detail notes per ticker:**
+
+- **MRVL:** Spread actually widened slightly midday vs open (bid $203.80 / ask $206.00 = 1.074%). This is unusual for a liquid large-cap semi — likely thin midday NBBO quote. Core quant failures unchanged: price at $204.90 remains $3.36 below the $208.26 pivot (needs a close above $208.26 to trigger 2b-LONG). Volume is 17.1M at midday vs 27.1M 20d avg = 0.63× pace. RSI 64.50 remains healthy (50–70) — the only passing quant metric. MRVL is the cleanest structural setup; it just needs the pivot reclaim + volume confirmation on a future session. Watchlist #1.
+
+- **XLK:** Spread fully normalized (0.011%) as expected. This was not a spread-skip — it was pure RSI overextension. Midday RSI is 79.44, essentially identical to morning's 79.67. The intraday session has done nothing to cool RSI. Volume 7.8M at midday vs 12.0M avg = 0.65× pace (Friday, month-end). Both gate failures persist unchanged. Pivot breakout is valid ($190.02 > $186.85), Z-score is +1.89, and pivot extension is clean (1.7%). The setup is structurally sound — RSI just needs 2–3 flat/down sessions to cool into the 50–70 zone. This is the correct patience behavior, not a deterioration. Watchlist #2 into next week.
+
+- **XLV:** Z-score has actually *declined* since this morning (+1.523 → +1.340) as XLV continues to pull back from yesterday's $150.88 high. RSI has cooled further to 60.24. Volume pace 0.786× also below the 1.0× minimum for 2a-SHORT. The overbought mean-reversion short window has definitively closed. XLV has mean-reverted ~$1.50 without our participation — exactly what the Z-score predicted would happen. This is the patience rule working correctly: the setup unwound, no trade was taken, no loss incurred. **Remove XLV from active watchlist entirely.** Only revisit if Z re-stretches above +2.0 in a future session.
+
+**Trades fired this rescan:** None
+
+**Patience rule applied:** Zero candidates re-cleared all gates. No entry gates were lowered. This is the correct outcome. Today is also the last trading day of May (month-end Friday), which structurally depresses volume across all names — making it even less likely volume gates would clear midday.
+
+**Month-end observation:** All three volume ratios are in the 0.63×–0.79× range, well below their respective thresholds. This is consistent with month-end rebalancing reducing directional volume. This pattern does not change the gate math — rules are rules — but it contextualizes why midday volume clearance was unlikely today.
+
+**Updated watchlist for next week (Monday June 2):**
+1. **MRVL (#1, Momentum Long):** Needs (a) close above $208.26 pivot on volume ≥ 40.6M shares, (b) RSI stays 50–70 (currently 64.50 — healthy). Max limit ≤ $218.67 (pivot × 1.05). Watch for AI sector catalyst continuation.
+2. **XLK (#2, Momentum Long):** Needs (a) RSI to cool from 79.44 → sub-70 (2–3 flat/down sessions), (b) entry-day volume ≥ 18.1M shares. Max limit ≤ $196.19 (pivot $186.85 × 1.05). Price action has held well — ETF is not reversing, just pausing.
+3. **AVGO (new watch from Monday):** Z-score was +2.526 today, closed strong. Could be a 2b-LONG or 2a-SHORT candidate depending on next week's action. Pull full quote + bars Mon pre-market.
+
+---
