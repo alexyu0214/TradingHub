@@ -1578,3 +1578,59 @@ Every trade (entry, exit, stop-out) is logged here with full thesis, entry price
 - **Watchlist status:** REMOVED from active watchlist. Setup unwound without our entry (correct per patience rule). Revisit only if Z re-stretches above +2.0 in a future session.
 
 **No bracket orders placed. No order IDs generated.**
+
+---
+
+### May 29 — Afternoon Scan (Day 31 / ~15:50 ET)
+
+**Portfolio:** $99,056.46 | **Cash:** $99,056.46 (100%) | **Deployed:** 0% | **Phase P&L:** −$943.54 (−0.944%)
+
+| Ticker | Shares | Entry | Current | Unrealized P&L | Stop | Hold |
+|--------|--------|-------|---------|----------------|------|------|
+| — | — | — | — | — | — | — (0 positions) |
+
+**Open orders at scan time:** NONE
+
+**Afternoon scan trades:** none
+
+**Stop action:** N/A — no positions held, no upgrade workflow triggered
+
+**Afternoon candidates evaluated — ALL REJECTED (May 29 settled bar data):**
+
+| Candidate | Z-Score | RSI | Vol Ratio | Spread | Key Failures | Verdict |
+|-----------|---------|-----|-----------|--------|--------------|---------|
+| AVGO | **+2.755** | **60.86** | **2.182×** ✅ | R-flag (stale AH) | 200-SMA TT structural ❌ (152/200 bars); all other 7/8 gates PASS | **REJECT** |
+| MRVL | +1.644 | 65.21 | 1.252× | R-flag | Close $205.00 < $208.26 pivot ❌; Vol 1.25× < 1.5× ❌ | **REJECT** |
+| XLK | +1.987 | 80.04 | 1.226× | R-flag | RSI 80.04 > 70 ❌; Vol 1.23× < 1.5× ❌ | **REJECT** |
+| XLV | +1.375 | 60.57 | 1.361× | R-flag | Z +1.375 < +2.0 ❌; RSI 60.57 < 70 ❌ | **REJECT** |
+| XLE | −1.271 | 42.97 | 0.822× | R-flag | Z −1.271 (need ≤ −2.0) ❌; RSI 43 ❌; Vol 0.82× ❌ | **REJECT** |
+
+**Pair divergences:** AVGO–MRVL 1.110σ ✅ | AVGO–XLK 0.767σ ✅ | XLE–XLK 3.258σ ❌ (sector rotation expected)
+
+**Key development:** AVGO produced the strongest quant signal since bot launch (Z=+2.755, Vol 2.182×, clean breakout above $439.79 pivot, RSI 60.86). BLOCKED by the universal 200-SMA structural data gap (152/200 bars available). All other 7 of 8 gates pass. Consistent with strategy rules — no trade without full gate clearance. Flagged for Alex decision: override 200-SMA structural block for all post-Dec-2025 split-adjusted names via decisions/log.md?
+
+**Week ends:** 0/3 trades used. Full PDT budget intact (0/3). 100% cash. Month of May closes with 1 total closed trade (XOM, −4.73%).
+
+**PDT count:** 0/3 | **Week trades:** 0/3 | **Positions:** 0/6
+**Circuit breakers:** ✅ All clear — Phase P&L −0.944% (lim −5%) | Drawdown −1.15% from $100,206.70 peak (lim −15%)
+
+---
+
+### May 29 — EOD Snapshot (Day 31, Friday — Month-End)
+
+**Portfolio:** $99,056.46 | **Cash:** $99,056.46 (100%) | **Day P&L:** $0.00 (0.000%) | **Phase P&L:** −$943.54 (−0.944%) | **Deployed:** 0%
+
+| Ticker | Shares | Entry | Close | Unrealized P&L | Stop | Time |
+|--------|--------|-------|-------|----------------|------|------|
+| — | — | — | — | — | — | — |
+
+**Trades today:** none — HOLD decision at pre-market confirmed; all candidates rejected at afternoon scan. Month-end close.
+
+**Notes:** Day 31 closes the month of May at 100% cash. The final session of May delivered the bot's strongest quant signal since launch — AVGO at Z=+2.755, clean breakout above $439.79 pivot, RSI 60.86 (healthy momentum zone), Vol 2.182× (40.6M vs 18.6M avg), and all 7 of 8 Layer B gates passing cleanly. The sole remaining gate is the universal 200-SMA structural data gap affecting all post-Dec-2025 split-adjusted names (AVGO, XLK, MRVL, XLE, XLV). Per CONSTRAINTS.md: "If ANY (1–13b) fail: Skip trade, log which check failed." This gate has consistently blocked entries for 31 trading days — the discipline is correct. Alex must decide whether to grant a decisions/log.md override for the structural data gap. Without override, the first fully-verified trade cannot occur until mid-August 2026 when 200 bars of post-split data accumulate. MRVL's RSI cooled to 65.21 (now in the 50–70 momentum zone for the first time since the post-earnings surge) — the MRVL 2b-LONG setup needs only a $3.26 price increase above the $208.26 pivot with ≥1.5× volume to potentially qualify. The month closes with: 1 closed trade (XOM, −4.73%), Phase P&L −0.944%, maximum flexibility for June.
+
+**AVGO key decision for Alex — Monday morning:**
+The 200-SMA override decision in decisions/log.md will determine whether the bot can trade AVGO, XLK, MRVL, and similar AI/tech names currently showing strong setups. Suggested override text documented in RESEARCH-LOG.md afternoon addendum above.
+
+**Circuit breakers:** ✅ All clear — Day 0.000% (lim −2%) | Phase −0.944% (lim −5%) | Drawdown −1.15% from $100,206.70 peak (lim −15%)
+**PDT count:** 0/3 | **Week trades:** 0/3 (resets Monday) | **Positions:** 0/6
+

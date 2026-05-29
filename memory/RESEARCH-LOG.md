@@ -6457,3 +6457,143 @@ All three Layer B evaluations fail. MRVL and XLK are strong setups structurally 
 4. **200-SMA data gap:** ~37 trading sessions remaining (est. mid-August 2026). Persistent structural constraint on full Minervini TT for split-adjusted names.
 5. **Weekly review note:** Week ending 2026-05-29 = 0/3 trades placed, 0/3 trades executed, 0 wins, 0 losses. Zero-trade weeks are valid outcomes per patience rule. 1 total closed trade (XOM, −4.73%, −$617.91 realized P&L). Phase P&L: −0.944%.
 
+
+---
+
+## 2026-05-29 — Afternoon Scan Addendum (~15:50 ET / 19:50 UTC)
+
+**Scan time:** ~10 min before close (market closes 20:00 UTC / 4:00 PM ET)
+**VIX regime at scan:** NORMAL (~16–17, prior close 16.29) | Sizing multiplier: 1.00×
+
+---
+
+### STEP 1 — Order & Position State Reconciled vs TRADE-LOG
+
+**Orders returned by API (6 total — all historical, all terminal):**
+
+| Order ID | Symbol | Type | Status | Detail |
+|----------|--------|------|--------|--------|
+| 1d69c496 | XOM | Bracket limit BUY 61 sh @ $159.78 | **EXPIRED** 2026-05-18T20:02 | TIF: day — never filled ✅ logged |
+| 94606e38 | XOM | Stop child $147.80 | **CANCELED** 2026-05-18T20:02 | Auto-cancelled ✅ logged |
+| 336d922a | XOM | TP child $183.74 | **CANCELED** 2026-05-18T20:02 | Auto-cancelled ✅ logged |
+| 8f97ef7d | XOM | Market Sell 130 sh | **FILLED** $146.09, 2026-05-07 | Thesis-break exit ✅ logged |
+| d92d9371 | XOM | Trailing Stop 10% GTC | **CANCELED** 2026-05-07 | Pre-exit ✅ logged |
+| c04ae321 | XOM | Market Buy 130 sh | **FILLED** $153.35, 2026-05-01 | Original entry ✅ logged |
+
+- **Positions API: `[]` — 100% cash ($99,056.46).** No filled positions.
+- **Morning bracket orders placed today (May 29): NONE** — Pre-market research (2026-05-29) issued explicit HOLD: MRVL (close $203.11 < pivot $208.26; vol 1.08×); XLK (RSI 79.67 > 70; vol 0.79×); XLV (setup unwound — Z +1.523 dropped from +2.245 yesterday).
+- **Bracket fills today: 0** | **Stale limits: 0** | **TRADE-LOG reconciliation: FULLY CURRENT ✅**
+
+---
+
+### STEP 2 — Trailing Stop Upgrades: N/A
+
+No positions held. Portfolio is 100% cash. No upgrade workflow triggered.
+
+---
+
+### STEP 3 — Stale Limit Cancellations: N/A
+
+No open orders exist.
+
+---
+
+### STEP 4 — Afternoon Opportunity Scan (5 Candidates, 4 Sectors)
+
+**VIX regime:** NORMAL (1.00×) | **Positions:** 0/6 | **Week trades:** 0/3 | **PDT:** 0/3
+
+**Full quant metrics computed from settled May 29 bars (via Alpaca API):**
+
+| Ticker | Close | 20d Mean | 20d Std | Z-Score | RSI(14) | Vol May29 vs Avg | 20d High (pivot) | Lane | Key Gate | Verdict |
+|--------|-------|----------|---------|---------|---------|-----------------|-----------------|------|----------|---------|
+| **AVGO** | $446.77 | $422.91 | $8.664 | **+2.755** | **60.86** | **2.182×** ✅ | $439.79 ✅ (broke) | 2b-LONG | ✅ 7/8 gates pass; ❌ 200-SMA structural | **REJECT** |
+| MRVL | $205.00 | $180.41 | $14.956 | +1.644 | 65.21 | 1.252× | $208.26 ❌ (below) | 2b-LONG | Close $3.26 below pivot ❌; Vol 1.25× ❌ | **REJECT** |
+| XLK | $191.02 | $176.08 | $7.517 | +1.987 | 80.04 | 1.226× | $191.02 (AT) ❌ | 2b-LONG | RSI 80.04 > 70 ❌; Vol 1.23× ❌ | **REJECT** |
+| XLV | $149.47 | $146.60 | $2.088 | +1.375 | 60.57 | 1.361× | $150.88 ❌ | 2a-SHORT | Z +1.375 < +2.0 ❌; RSI 60.57 < 70 ❌ | **REJECT** |
+| XLE | $56.29 | $58.23 | $1.526 | −1.271 | 42.97 | 0.822× | — | 2a-LONG | Z −1.271 (need ≤ −2.0) ❌; RSI 43 ❌; Vol 0.82× ❌ | **REJECT** |
+
+**Pair divergences (all computed from settled closes):**
+- AVGO (+2.755) ↔ MRVL (+1.644): **1.110σ ✅** (within 1.5σ — sector confirmation)
+- AVGO (+2.755) ↔ XLK (+1.987): **0.767σ ✅** (tech sector cohesion)
+- XLE (−1.271) ↔ XLK (+1.987): **3.258σ ❌** (energy vs tech diverging — expected; sector rotation)
+
+---
+
+### AVGO — KEY DEVELOPMENT (2b-LONG lane — #1 highest-conviction setup this week)
+
+**AVGO produced the strongest single-name quant signal since bot launch:**
+
+| Gate | Result | Value |
+|------|--------|-------|
+| Z ≥ +1.0 | ✅ | +2.755 (highest Z-score in any afternoon scan to date) |
+| Close > prior 20d high | ✅ | $446.77 > $439.79 (+1.59% clean breakout) |
+| RSI 50–70 | ✅ | 60.86 (healthy momentum zone — NOT overbought) |
+| Vol ≥ 1.5× avg | ✅ | 2.182× (40.6M vs 18.6M avg — strongest vol confirmation since launch) |
+| Pivot extension ≤5% | ✅ | +1.59% → Max entry limit = $461.78 |
+| MRVL pair divergence | ✅ | 1.110σ ≤ 1.5σ |
+| 50-SMA > 150-SMA | ✅ | $385.70 > $359.71 |
+| 200-SMA conditions | ❌ | **CANNOT VERIFY — 152/200 bars (structural data gap, Dec 2025 split)** |
+
+**VERDICT: REJECT — 200-SMA TT gate cannot be bypassed per CONSTRAINTS.md.**
+
+The 200-SMA structural block is UNIVERSAL — it has blocked every candidate since launch (XLK, MRVL, XLE, XLV, XOM, CVX, and now AVGO). This is a data availability constraint, not a thesis failure. The strategy rules require ALL Layer A + Layer B gates to clear. Per CONSTRAINTS.md: *"If ANY (1–13b) fail: Skip trade, log which check failed."* Consistent gate enforcement is correct.
+
+**If Alex wishes to override:** The appropriate path is logging in `decisions/log.md`:
+> `[2026-05-30] OVERRIDE: Minervini TT 200-SMA condition | REASON: Structural data gap for all post-Dec-2025 split-adjusted names — 200-SMA unavailable for ~48 more sessions; not a thesis failure | APPLIES TO: All split-adjusted names (AVGO, XLK, MRVL, XLE, etc.) | CONTEXT: Accept partial TT (50>150 SMA confirmed, 200-SMA trust proxied by verified SMA alignment)`
+
+**AVGO position sizing (for reference if override granted):**
+- 22 shares @ $446.77 limit = $9,829 (9.9% of equity)
+- Stop: $413.26 (−7.5% below entry)
+- Target: $513.79 (+15.0%, 2:1 R:R)
+- R_dollars: $737.17 (0.74% of equity ✅)
+- Max chase: limit ≤ $461.78 (pivot $439.79 × 1.05)
+
+---
+
+### MRVL — Status Update
+
+**May 29 settled close: $205.00** (vs prior Thursday close $204.83 — essentially flat)
+
+| Metric | May 28 Close | May 29 Close | Change |
+|--------|-------------|-------------|--------|
+| Close | $204.83 | $205.00 | +$0.17 |
+| Z-Score | +1.862 | +1.644 | −0.218 |
+| RSI | 71.56 | 65.21 | **RSI COOLED ✅** |
+| Vol | 1.93× | 1.252× | Below 1.5× ❌ |
+| vs Pivot $208.26 | −$3.43 | −$3.26 | Slight improvement |
+
+**RSI has cooled from 71.56 → 65.21 — now firmly in the 50–70 healthy momentum zone.** This is the one gate that was blocking MRVL this week. The $208.26 pivot is now only $3.26 away. Volume on Friday (1.252×) was a typical light-volume Friday — not a distribution signal. **MRVL remains #2 watchlist priority for Monday pre-market (June 1/2).**
+
+---
+
+### XLK — Status Update
+
+Close $191.02 — at its new 20d high (0.0% extension). RSI 80.04 (overbought, still above 70). Vol 1.226×. The tech ETF printed another new 20d high today but RSI remains elevated. XLK is running higher without us — the constraint-following behavior is correct; chasing a parabolic RSI-80 ETF is not edge. **#3 watchlist — needs RSI cooling session.**
+
+---
+
+### XLE — 2a-LONG trigger approaching slowly
+
+Z = −1.271. Trigger at Z ≤ −2.0 requires price ~$55.18 (currently $56.29 = $1.11 or −2.0% further decline). RSI 42.97 (approaching but not yet < 30). Vol 0.822× (below 1.0× threshold). Energy thesis flag (1 consecutive failure) active. Not imminent but tracking. The trigger has drifted slightly lower ($55.18 vs yesterday's ~$55.42) as the 20d window continues to roll.
+
+---
+
+### Afternoon Market Context
+
+Friday May 29 — last trading session of May. AVGO surged +4.7% today to $446.77 on continued AI/semiconductor momentum (volume 2.182× = 40.6M shares vs 18.6M avg), closing at a fresh all-time high above the prior $439.79 20-day high pivot. This is the sharpest institutional demand signal in any name the bot has scanned. MRVL's RSI cooled to 65.21 (from 71.56 Thursday) while holding near $205 — the recovery from the "sell the news" post-earnings gap is progressing cleanly. XLK closed at $191.02 (+2.2% week), continuing its tech rally. XLE continues its gradual decline (−0.66% today to $56.29) as the Iran peace deal narrative softens energy. The VIX closed the week at a multi-month low (~16.3) — Normal regime firmly intact. Month of May closes with: S&P 500 ~+4–5% on the month, tech sector dominant, energy pulling back. The portfolio enters June in 100% cash with maximum flexibility. The AVGO 200-SMA structural override decision for Alex will be the most consequential Monday morning action item.
+
+---
+
+**Bracket fills today:** 0 (no morning limits placed — HOLD at pre-market)
+**Stops upgraded:** 0 (no positions; no upgrade workflow applicable)
+**Stale limits cancelled:** 0 (none existed)
+**New afternoon entries:** none — AVGO cleared 7/8 gates (best setup since launch) but 200-SMA structural gate cannot be bypassed per CONSTRAINTS.md rules. MRVL, XLK, XLV, XLE all rejected on substantive quant failures.
+**Afternoon market context:** AVGO +4.7% on 2.182× volume — breakout above $439.79 pivot, RSI 60.86, Z=+2.755. Best momentum signal of the month. Blocked by 200-SMA structural data gap affecting all post-Dec-2025 split-adjusted names. MRVL RSI cooled to 65.21 (now in 50–70 zone). XLK RSI still elevated at 80.04. XLE approaching 2a-LONG trigger ($55.18) slowly. VIX Normal (~16.3). Month closes at 100% cash.
+
+**Key watchlist for Monday pre-market (2026-06-01/02):**
+1. **AVGO — #1 PRIORITY (2b-LONG, conditional on TT override):** Z=+2.755 ✅, breakout ✅, RSI 60.86 ✅, Vol 2.182× ✅, extension +1.59% ✅, pair confirms ✅. Single remaining block: 200-SMA structural. If Alex grants override in decisions/log.md → bracket immediately. Max entry limit ≤ $461.78 (pivot $439.79 × 1.05). Stop $413.26, Target $513.79, 22 shares.
+2. **MRVL — #2 (2b-LONG):** RSI NOW 65.21 ✅ (finally in 50–70 zone after cooling from 70+). Needs: (a) close above $208.26 pivot on volume ≥ 1.5× (~40.6M), (b) RSI to hold 50–70 at time of entry. Max limit ≤ $218.67. 200-SMA structural gap same as AVGO.
+3. **XLK — #3 (2b-LONG):** RSI 80.04 still overbought. Needs cooling (2–3 flat sessions). Max limit ≤ $200.57 (new pivot $191.02 × 1.05).
+4. **XLE — #4 (2a-LONG watch):** Trigger price $55.18 (Z ≤ −2.0). Currently −$1.11 away (−2.0%). RSI needs to hit < 30. Vol needs ≥ 1.0×. Energy 1-fail flag active.
+5. **200-SMA data gap:** ~47 trading sessions remaining (est. mid-August 2026). Override via decisions/log.md is the only near-term resolution. See suggested text above.
+
