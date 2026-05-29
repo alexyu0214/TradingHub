@@ -915,3 +915,19 @@ No orders placed today. Research decision was HOLD.
 4. XLV — REMOVED from active watchlist; revisit only if Z re-stretches > +2.0
 
 **VIX:** 15.52 — Normal regime (1.00× sizing multiplier). All entry types permitted next session.
+
+## 2026-05-29 — EOD
+
+**Portfolio:** $99,056.46 (+0.000% day, −0.944% phase)
+**Cash:** $99,056.46 (100%)
+**Deployed:** 0%
+**Daytrade count:** 0/3
+
+**Trades today:** none
+**Open positions:** none
+**Stops tightened:** none
+**Losers cut:** none
+
+**Notes:** Month-end close. Flat day, $0.00 P&L, 100% cash. AVGO 200-SMA override decision pending Alex. All circuit breakers clear. Week/PDT budgets reset Monday.
+
+---
