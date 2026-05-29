@@ -152,13 +152,10 @@ Identify up to **3 long candidates** and up to **2 short candidates** with docum
 - Volume confirm (entry day vs 20-day avg)
 - Stop level (7–10% from entry; long stop below, short stop above)
 - Target (≥ 2:1 R:R) and computed **R_dollars / R_pct / target_R** per CONSTRAINTS.md
-- **Minervini Trend Template passes** for the candidate's direction:
-  - Pull extended bars: `bash scripts/alpaca.sh bars TICKER 210` (need 200-SMA + 1-month buffer)
-  - Compute 50-day, 150-day, 200-day SMAs
-  - Verify ALL trend template conditions (long or short version per TRADING-STRATEGY.md "Minervini Trend Template")
-  - Compute distance from 52-week high and 52-week low
-  - Compute 6-month return percentile (vs ~500 universe sample)
-  - REJECT if any trend template condition fails
+- **Structure check — DEPENDS ON WHICH LANE this candidate will use** (decide the lane first based on catalyst/posture, then apply the matching check):
+  - Pull extended bars: `bash scripts/alpaca.sh bars TICKER 210` (need 200-SMA + 1-month buffer). Compute 50/150/200-day SMAs, distance from 52w high/low, 6-month return percentile.
+  - **If MOMENTUM lane (2b-LONG / 2b-SHORT):** verify ALL 9 Minervini Trend Template conditions (per TRADING-STRATEGY.md). REJECT if any fail.
+  - **If MEAN-REVERSION lane (2a-LONG / 2a-SHORT):** do NOT apply the Trend Template (it contradicts oversold dip-buying). Apply the lighter check instead: not a falling knife (Mean-Rev Long: ≥200-SMA or holding support, no fresh 52w low today, not in accelerating downtrend) / not a runaway (Mean-Rev Short: ≤200-SMA or rejecting resistance, no fresh 52w high today, not in accelerating uptrend). See CONSTRAINTS.md gate 10b.
 
 **Layer B — Quant checklist (TWO LANES — either qualifies):**
 For each candidate, run:

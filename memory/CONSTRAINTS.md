@@ -114,9 +114,17 @@ If two independently-qualified candidates would both breach cash headroom, fill 
 8. RSI(14) condition matches lane (see Layer B)
 9. Sector posture matches direction (long: in momentum; short: rolling over)
 10. Risk/reward ≥ 2:1 with stop placed (R-multiple framework — see below)
-10b. **Minervini Trend Template** passes for the candidate's intended direction:
-   - **Long:** price > 50/150/200 SMAs aligned, 50>150>200, 200-SMA up ≥1mo, > 30% above 52w low, within 25% of 52w high, 6mo return ≥ 70th percentile
-   - **Short:** inverse — price < 50/150/200 SMAs aligned, 50<150<200, 200-SMA down ≥1mo, > 30% below 52w high, within 25% of 52w low, 6mo return ≤ 30th percentile
+10b. **Structure check — DEPENDS ON THE LAYER B LANE the candidate uses** (determine the lane first, then apply the matching check):
+
+   **For MOMENTUM lanes (11c / 11d): FULL Minervini Trend Template required.**
+   - **Momentum Long (11c):** price > 50/150/200 SMAs aligned, 50>150>200, 200-SMA up ≥1mo, > 30% above 52w low, within 25% of 52w high, 6mo return ≥ 70th percentile
+   - **Momentum Short (11d):** inverse — price < 50/150/200 SMAs aligned, 50<150<200, 200-SMA down ≥1mo, > 30% below 52w high, within 25% of 52w low, 6mo return ≤ 30th percentile
+
+   **For MEAN-REVERSION lanes (11a / 11b): Trend Template does NOT apply** — it is logically contradictory to buying oversold dips / shorting overbought spikes (an oversold name is rarely near its 52w high). Instead apply the lighter "no falling knife / no runaway" structure check:
+   - **Mean-Rev Long (11a):** price ≥ 200-day SMA **OR** holding an identifiable support (prior swing low / major round number); AND NOT printing a fresh 52-week low today; AND not in an accelerating multi-week downtrend. (Buy the dip, not the collapse.)
+   - **Mean-Rev Short (11b):** price ≤ 200-day SMA **OR** rejecting an identifiable resistance; AND NOT printing a fresh 52-week high today; AND not in an accelerating multi-week uptrend. (Short the failed spike, not the leader.)
+
+   Rationale: the Trend Template is a trend-following screen and belongs only on momentum entries. Forcing it onto mean-reversion entries made lanes 11a/11b mathematically impossible to trigger (a Z≤−2.0 oversold stock is almost never within 25% of its 52w high). This is a correctness fix, not a loosening — momentum entries keep the full 9-condition template.
 
 **Layer B — Quant (4 lanes; ANY ONE qualifies):**
 11. Quant entry lane qualifies — EXACTLY ONE of:

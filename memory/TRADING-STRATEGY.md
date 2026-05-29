@@ -266,9 +266,13 @@ Reject if no lane qualifies.
 
 ---
 
-## Minervini Trend Template (Layer A Enhancement — NEW)
+## Minervini Trend Template (Momentum Lanes ONLY)
 
-In addition to the catalyst checklist, every candidate must pass the **Trend Template** for its intended direction. Filters universe to true leaders (longs) or true laggards (shorts) and rejects sideways/messy stocks.
+The **Trend Template** applies ONLY to candidates entering via a **Momentum lane (2b-LONG or 2b-SHORT)**. It is a trend-following screen — it belongs on trend-continuation entries, not on counter-trend mean-reversion entries.
+
+**Do NOT apply the Trend Template to Mean-Reversion lanes (2a-LONG / 2a-SHORT).** A deeply oversold stock (Z ≤ −2.0) is almost never within 25% of its 52-week high or above all its SMAs — so requiring the Trend Template on mean-reversion entries made those lanes impossible to trigger. Mean-reversion entries use the lighter "no falling knife / no runaway" structure check instead (see CONSTRAINTS.md gate 10b).
+
+For momentum entries, the full template filters the universe to true leaders (longs) or true laggards (shorts) and rejects sideways/messy stocks:
 
 ### Long Trend Template (every long entry)
 
