@@ -930,4 +930,18 @@ vs S&P 500: −1.60% (S&P: +1.60%, 9th consecutive weekly gain; May: +5.1%; SOXX
 
 **Grade:** D
 
+## 2026-05-29 — EOD
+
+**Portfolio:** $99,056.46 (+0.000% day, −0.944% phase)
+**Cash:** $99,056.46 (100%)
+**Deployed:** 0%
+**Daytrade count:** 0/3
+
+**Trades today:** none
+**Open positions:** none
+**Stops tightened:** none
+**Losers cut:** none
+
+**Notes:** Month-end close. Flat day, $0.00 P&L, 100% cash. AVGO 200-SMA override decision pending Alex. All circuit breakers clear. Week/PDT budgets reset Monday.
+
 ---

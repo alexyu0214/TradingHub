@@ -1634,3 +1634,20 @@ The 200-SMA override decision in decisions/log.md will determine whether the bot
 **Circuit breakers:** ✅ All clear — Day 0.000% (lim −2%) | Phase −0.944% (lim −5%) | Drawdown −1.15% from $100,206.70 peak (lim −15%)
 **PDT count:** 0/3 | **Week trades:** 0/3 (resets Monday) | **Positions:** 0/6
 
+
+---
+
+### May 29 — EOD Snapshot (Day 31, Friday — Month-End, Final EOD Run)
+
+**Portfolio:** $99,056.46 | **Cash:** $99,056.46 (100%) | **Day P&L:** $0.00 (0.000%) | **Phase P&L:** −$943.54 (−0.944%) | **Deployed:** 0%
+
+| Ticker | Shares | Entry | Close | Unrealized P&L | Stop | Time |
+|--------|--------|-------|-------|----------------|------|------|
+| — | — | — | — | — | — | — |
+
+**Trades today:** none
+
+**Notes:** Final EOD confirmation for May 29 / Month-End. Account state verified via Alpaca API: equity $99,056.46, zero open positions, zero open orders, 100% cash. Day P&L flat at $0.00 — no fills occurred. Phase P&L holds at −$943.54 (−0.944%) on the $100,000 starting equity. The AVGO 200-SMA override decision remains pending with Alex; all circuit breakers clear. Week budget resets Monday (0/3 trades, 0/3 PDT). Bot enters June fully liquid and in compliance.
+
+**Circuit breakers:** ✅ All clear — Day 0.000% (lim −2%) | Phase −0.944% (lim −5%) | Drawdown −1.148% from $100,206.70 peak (lim −15%)
+**PDT count:** 0/3 | **Week trades:** 0/3 (resets Monday) | **Positions:** 0/6
