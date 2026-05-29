@@ -6376,3 +6376,84 @@ All three Layer B evaluations fail. MRVL and XLK are strong setups structurally 
 3. **AVGO (new watch from Monday):** Z-score was +2.526 today, closed strong. Could be a 2b-LONG or 2a-SHORT candidate depending on next week's action. Pull full quote + bars Mon pre-market.
 
 ---
+
+---
+
+## 2026-05-29 — Midday Scan Addendum (18:30 UTC / ~1:30 PM ET)
+
+**Scan type:** Midday workflow — position thesis check, stop evaluation, watchlist validation
+**VIX Regime:** Normal (~15.52–16.0 from morning research) — 1.00× sizing multiplier
+**Session phase:** Late (330 min elapsed, ~90 min to close)
+**Account:** Equity $99,056.46 | Cash $99,056.46 (100%) | 0 positions | 0 orders | PDT 0/3 | Week 0/3
+
+---
+
+### Portfolio State (Live API)
+- **Positions:** `[]` — EMPTY. 100% cash confirmed.
+- **Orders:** `[]` — EMPTY. No working brackets. No GTC stops.
+- Pre-market HOLD decision confirmed: MRVL close below pivot + vol 0.688×; XLK RSI 79.67 + vol 0.79×; XLV setup unwound (Z dropped to +1.340). No brackets placed.
+- TRADE-LOG fully current. No discrepancy.
+
+---
+
+### Cut Losers / Tighten Stops
+**N/A — no open positions.**
+
+---
+
+### Watchlist Re-Evaluation (Live Quotes ~18:28 UTC)
+
+**Quant computed from settled 24-bar history + today's partial bar:**
+
+| Ticker | Close (partial) | Z-Score | RSI(14) | Vol Ratio | 20d High | Breakout | AVGO/MRVL pair div | Verdict |
+|--------|----------------|---------|---------|-----------|----------|----------|--------------------|---------|
+| MRVL | $207.135 | +2.025 ✅ | 66.04 ✅ | 0.688× ❌ | $208.26 | ❌ ($1.12 below) | 0.158σ ✅ | **STILL SKIPPED** |
+| XLK  | $190.330 | +2.103 ✅ | 79.63 ❌ | 0.695× ❌ | $186.85 | ✅ (+$3.48) | 0.080σ ✅ | **STILL SKIPPED** |
+| AVGO | $436.235 | +2.183 ✅ | 56.90 ✅ | 0.840× ❌ | $439.79 | ❌ ($3.56 below) | 0.158σ ✅ | **NEW WATCHLIST #3** |
+
+---
+
+### Detailed Assessment
+
+**MRVL (2b-LONG, #1):**
+- Today's high $208.76 touched above $208.26 pivot intraday but closed at $207.135 — $1.12 short of pivot on closing basis
+- Pattern: each session closing price is converging toward pivot: $198.70 → $204.83 → $207.135 — gap narrows by ~$3–4/day
+- RSI 66.04 ✅ (healthy momentum zone, cleanest RSI reading of the three names)
+- Volume 0.688× — Friday month-end suppression; not a distribution signal
+- AVGO pair divergence only 0.158σ — sector perfectly cohesive
+- **Verdict: STILL SKIPPED** — 2 gates fail (pivot + vol). Setup structurally intact. Monday pre-market re-evaluation priority #1.
+
+**XLK (2b-LONG, #2):**
+- New 20d high today ($190.33, up from $186.85 yesterday) — clean breakout extending for 4th consecutive session
+- RSI 79.63 — overbought since May 26, has not normalized. Momentum buying keeps running RSI higher each session.
+- Volume 0.695× — Friday/month-end suppression
+- **Verdict: STILL SKIPPED** — RSI must cool from 79.63 → sub-70 before momentum lane activates. Needs 2–3 flat/consolidation sessions. Max limit ≤ $196.19 (current pivot $186.85 × 1.05).
+
+**AVGO (2b-LONG, NEW watchlist addition):**
+- Today: +$9.66 (+2.3%) to $436.235 on AI/semiconductor momentum (DELL beat, NVDA capex cycle read-through)
+- Intraday high $448.58 — TOUCHED above $439.79 20d pivot intraday but closed below it
+- RSI 56.90 ✅ — THE CLEANEST RSI of all three watchlist names; squarely in 50–70 healthy momentum zone
+- Volume 0.840× — approaching 1.0× but Friday/month-end; needs ≥1.5× on breakout day
+- MRVL pair: 0.158σ ✅ | XLK pair: 0.080σ ✅ — all three names moving in near-perfect sector lockstep
+- **Gate failures:** (1) Close $3.56 below $439.79 pivot, (2) Vol 0.840× < 1.5×, (3) 200-SMA structural gap
+- **Adding to active watchlist as #3.** Monday: if AVGO opens strong and closes above $439.79 on ≥1.5× avg vol (~27.9M shares) with RSI holding 50–70, 2b-LONG bracket activates. Max entry limit ≤ $439.79 × 1.05 = **$461.78**.
+- **Why AVGO could be better than XLK:** RSI is at 56.90 vs XLK's 79.63. Same sector, same AI catalyst. AVGO at RSI 57 entering a breakout is a much healthier setup structure than XLK at RSI 80. XLK is the ETF expression (15+ components averaging the RSI), AVGO is the single-name with higher beta to AI infrastructure spend.
+
+---
+
+### Trades Fired: None
+
+**Patience rule applied.** All three names have the right directional structure (Z ≥+1.0, pair confirms, sector thesis intact) — blocked only by timing gates (vol 0.7–0.8×, RSI overextension in XLK, $1–4 price gap to pivots in MRVL/AVGO). Today is Friday, last trading day of May — month-end and pre-weekend volume suppression is structural.
+
+**Circuit breakers:** ✅ Day P&L $0.00 | Phase P&L −0.944% (lim −5%) | Drawdown −1.15% (lim −15%)
+
+---
+
+### Key Watchlist for Monday Pre-Market (2026-06-01)
+
+1. **AVGO — NEW #1 PRIORITY** (RSI 56.90 ✅, cleanest momentum setup structure): Needs (a) close above $439.79 on volume ≥27.9M (1.5× avg), (b) RSI stays 50–70, (c) pivot extension ≤ $461.78. If AI/semi momentum continues over weekend → AVGO may gap above $439.79 Monday. 200-SMA structural gap (~37 sessions). Pair: MRVL (0.158σ), XLK (0.080σ).
+2. **MRVL — #2** (RSI 66.04 ✅, $1.12 from pivot): Needs (a) close above $208.26 on volume ≥40.6M (1.5× avg), (b) RSI 50–70. Max limit ≤ $218.67. Institutional accumulation confirmed (52.6M / 42.6M on prior two sessions). 200-SMA structural gap.
+3. **XLK — #3** (RSI 79.63 ❌, needs cooldown): Needs RSI to normalize from 79.63 → sub-70. Requires 2–3 flat/down sessions. May be bumped by AVGO as preferred single-name expression of same AI thesis with better RSI entry dynamics. Max limit ≤ $196.19.
+4. **200-SMA data gap:** ~37 trading sessions remaining (est. mid-August 2026). Persistent structural constraint on full Minervini TT for split-adjusted names.
+5. **Weekly review note:** Week ending 2026-05-29 = 0/3 trades placed, 0/3 trades executed, 0 wins, 0 losses. Zero-trade weeks are valid outcomes per patience rule. 1 total closed trade (XOM, −4.73%, −$617.91 realized P&L). Phase P&L: −0.944%.
+
