@@ -120,6 +120,13 @@ If two independently-qualified candidates would both breach cash headroom, fill 
    - **Momentum Long (11c):** price > 50/150/200 SMAs aligned, 50>150>200, 200-SMA up ≥1mo, > 30% above 52w low, within 25% of 52w high, 6mo return ≥ 70th percentile
    - **Momentum Short (11d):** inverse — price < 50/150/200 SMAs aligned, 50<150<200, 200-SMA down ≥1mo, > 30% below 52w high, within 25% of 52w low, 6mo return ≤ 30th percentile
 
+   **200-SMA Data-Gap Proxy (per [2026-05-30] OVERRIDE in decisions/log.md, expires 2026-08-15):**
+   If `bash scripts/alpaca.sh bars TICKER 210` returns fewer than 200 valid trading bars (data infrastructure gap, typically for post-split-adjusted names), substitute the following proxy for the 200-SMA conditions:
+   - In place of "price > 200-SMA" AND "50>150>200" AND "200-SMA up ≥1mo": require **50-SMA > 150-SMA** AND **price > 50-SMA** AND **price > 150-SMA** AND **150-SMA up ≥1mo** (computed from available bars).
+   - All other Trend Template conditions (52w high/low distance, 6mo percentile) still apply unchanged.
+   - The trade-log entry MUST record `200-SMA data gap — using 50>150 proxy (bars returned: N)` so usage is auditable.
+   - This proxy applies to longs and shorts symmetrically (substitute the inverse for shorts).
+
    **For MEAN-REVERSION lanes (11a / 11b): Trend Template does NOT apply** — it is logically contradictory to buying oversold dips / shorting overbought spikes (an oversold name is rarely near its 52w high). Instead apply the lighter "no falling knife / no runaway" structure check:
    - **Mean-Rev Long (11a):** price ≥ 200-day SMA **OR** holding an identifiable support (prior swing low / major round number); AND NOT printing a fresh 52-week low today; AND not in an accelerating multi-week downtrend. (Buy the dip, not the collapse.)
    - **Mean-Rev Short (11b):** price ≤ 200-day SMA **OR** rejecting an identifiable resistance; AND NOT printing a fresh 52-week high today; AND not in an accelerating multi-week uptrend. (Short the failed spike, not the leader.)

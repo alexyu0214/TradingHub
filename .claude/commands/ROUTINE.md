@@ -142,7 +142,9 @@ Scan both sides of the market:
 
 All universe filters retained: mkt cap > $2B (longs) / $20B (shorts), ADV > 1M shares, price > $5.
 
-Identify up to **3 long candidates** and up to **2 short candidates** with documented catalysts. For EACH candidate, run BOTH layers:
+Identify up to **3 long candidates** and up to **2 short candidates** with documented catalysts. **Sector breadth mandate:** candidate list MUST span ≥ 3 distinct GICS sectors. If your current shortlist sits in < 3 sectors (e.g., 4 tech names + 1 energy), explicitly add at least one candidate from a missing sector before proceeding to Layer A/B evaluation. This prevents energy/tech-only concentration recidivism. Log the sectors covered in the research entry.
+
+For EACH candidate, run BOTH layers:
 
 **Layer A — Catalyst + Trend Template checklist:**
 - TICKER, intended direction (LONG or SHORT), sector
