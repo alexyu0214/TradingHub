@@ -6773,3 +6773,80 @@ No candidate cleared both Layer A and Layer B today. See Skipped Candidates for 
 - **Layer A sector posture** (XLK): Cannot short the #1 bull market sector without a reversal catalyst.
 
 The patience rule applies. Monday June 1 opens the new week with 100% cash and full budget (0/3 trades, 0/3 PDT). No forced entries. Tuesday re-evaluation with fresh volume data is the right next step.
+
+---
+
+### 2026-06-01 — Midday Rescan Addendum (15:33 ET)
+
+**Market time of rescan:** 15:33 ET (~5.5 hours after open; approaching session close)
+**VIX regime at rescan:** 15.99 — Normal (unchanged from morning). Sizing multiplier 1.00×.
+**Account at rescan:** $99,056.46 equity | 0 positions | 0% deployed | 0/3 trades this week.
+
+---
+
+**Skipped at open, re-evaluated:**
+
+- **AVGO (2b-LONG):** Quote condition `R` (stale/irregular); using bar close $459.77.
+  - Spread: 3.85% on live quote — WIDE ❌ (stale quote; real intraday spread normalized to normal levels per bar data)
+  - Z-Score: +4.255 (was +4.648 morning; mean rose as today's bar absorbs into window) ✅
+  - RSI: 65.97 (improved from morning 67.17; still in 50–70 band ✅)
+  - Volume: 22,062,694 / 20d avg 18,649,277 = **1.183× ❌** (need ≥1.5×; improved from morning 0.906× but still below threshold)
+  - Pair (NVDA) Z: +0.885; divergence |4.255 − 0.885| = **3.370σ ❌** (was 3.888σ morning; slightly narrowed but still >2× the 1.5σ limit)
+  - Pivot extension: $459.77 / $446.77 − 1 = 2.91% ✅ (within 5%)
+  - **→ STILL SKIPPED.** Two gate failures: volume 1.183× < 1.5× AND pair divergence 3.370σ > 1.5σ. Volume improved intraday but insufficient; NVDA (Z +0.885) continues not tracking AVGO's breakout. Single-name idiosyncratic move, not a sector-wide signal. No change in disposition.
+  - Tuesday threshold: need daily vol ≥ 27.97M (1.5× of avg) and NVDA Z ≥ ~+2.5 to bring divergence toward limit.
+
+- **MRVL (2b-LONG):** Quote condition `R` (stale/irregular); using bar close $222.565.
+  - Spread: 5.88% on live quote — WIDE ❌ (stale quote)
+  - Z-Score: +2.819 ✅
+  - RSI: 73.24 (marginal improvement from morning 73.72; still >70 ❌)
+  - Volume: 27,542,892 / 20d avg 23,507,419 = **1.172× ❌** (need ≥1.5×; need ≥35.3M to qualify)
+  - Pair (AVGO) divergence: |2.819 − 4.255| = **1.436σ ✅** (improved from morning 1.783σ; now passes the ≤1.5σ gate — one new improvement)
+  - Pivot extension: $222.565 / $208.26 − 1 = **6.87% ❌** (exceeds ≤5% limit — NEW failure vs morning)
+  - **→ STILL SKIPPED.** Three gate failures: RSI 73.24 > 70, volume 1.172× < 1.5×, AND pivot extension 6.87% > 5%. The pivot extension failure is newly decisive (was 7.7% this morning but was already failing). MRVL is now 3 sessions into the spike without the RSI cooldown or volume normalization required for a clean momentum entry. Condition is worse than morning.
+  - Tuesday/Wednesday: need MRVL to consolidate at $210–218 (bringing extension back to ≤5% of $208.26 pivot), RSI cooling to 50–70, and volume normalizing.
+
+- **XLK (2a-SHORT):** Quote clean (condition `B`); bid/ask $195.93 / $195.95.
+  - Spread: **0.01% ✅** — liquid ETF, fully normalized
+  - Z-Score: +2.641 ✅ (virtually identical to morning +2.642; XLK continued rally +2.57% on the day)
+  - RSI: 82.63 ✅ (>70 for mean-rev short)
+  - Volume: 15,984,771 / 20d avg 11,532,130 = **1.386× ✅** (≥1.0× required for mean-rev short)
+  - **Layer B: ALL THREE PASS** — this is unchanged from morning.
+  - **Layer A sector posture: ❌ UNCHANGED.** IT sector remains the #1 YTD sector (+52.7%). XLK itself rallied +2.57% today, widening its statistical overstretch while confirming ongoing momentum. S&P 500 at all-time highs. VIX 15.99 (Normal — no regime escalation). No negative catalyst for the tech sector emerged post-open (ISM Manufacturing at 10 AM did not produce a risk-off rotation into tech). Sector posture remains INCOMPATIBLE with a short entry.
+  - **→ STILL SKIPPED.** Layer A sector posture fail is unchanged. The spread normalized perfectly and Layer B is clean, but fighting the #1 bull market sector without a reversal catalyst is not a documented edge. This is a patience situation, not a missed trade.
+
+- **GS (2a-SHORT):** Quote condition `R` (stale/irregular, $981.70 / $1090.84 = 10% spread); using bar close $1,048.67.
+  - Spread: 10.01% on live quote — WIDE ❌ (stale quote)
+  - Z-Score: +2.707 ✅ (was +2.459 morning; GS ran another +2.27% on the day, deepening overstretch)
+  - RSI: 72.30 ✅ (was ~71.39 morning; marginally higher, confirming continued overbought momentum)
+  - Volume: 1,726,424 / 20d avg 1,906,963 = **0.905× ❌** (need ≥1.0× for mean-rev short; below threshold)
+  - Pair (JPM) Z: −1.392; divergence |2.707 − (−1.392)| = **4.099σ ❌** (was 3.753σ morning; WIDENED as GS ran further while JPM closed −1.07% at $296.23)
+  - Short cap: GS mkt cap ~$350B > $20B ✅
+  - **→ STILL SKIPPED.** Two gate failures: volume 0.905× (marginal miss) AND pair divergence 4.099σ (severe, worsening). JPM is now at Z = −1.392 while GS is at Z = +2.707 — they are moving in OPPOSITE statistical directions. This is definitively a single-name GS idiosyncratic move (possible catalyst: deal flow, banking fee cycle, specific institutional flow), not a sector-wide financial mean-reversion signal. Divergence worsened every hour today; do not chase. Would need JPM to rally toward Z ≥ +1.5 before GS/financials short setup can be valid.
+
+---
+
+**Candidates excluded from rescan (hard structural reasons — no re-eval required):**
+- **SAIC:** Market cap ~$6.6B < $20B short minimum. Structural hard reject, no intraday development changes this.
+- **HPE:** Earnings tonight post-market (hard "no shorting through earnings" rule). Hard reject regardless of any metric.
+- **Energy complex (XOM/CVX/COP/XLE):** Z-scores ranging −0.60 to −0.87 — all far from ±2.0 mean-rev or ±1.0 momentum thresholds. No change in disposition; not worth intraday re-quote.
+
+---
+
+**Trades fired this rescan:** None.
+
+**Patience rule applied:** No gate was lowered to force a trade. All 4 re-evaluated candidates failed on the same gates they failed at open (or acquired additional failures). Zero trades is the correct outcome.
+
+**Portfolio state post-rescan:**
+- Open positions: 0
+- Deployed: 0% ($0 / $99,056.46)
+- Trades this week: 0/3
+- Daytrade count: 0/3
+- Cash available: $99,056.46
+
+**Key observations for Tuesday (June 2):**
+1. **MRVL pivot extension (6.87%)** is the most actionable new data: unless MRVL pulls back toward $218 or below, the entry is unchallengeable on pivot extension alone even if RSI/volume cooperate. Watchlist entry price for Tuesday: ≤ $218.67 (=$208.26 × 1.05).
+2. **AVGO** remains most structurally sound (RSI in band, pivot extension fine, Layer A clear) — it needs only volume confirmation and NVDA catch-up. Volume re-check Tuesday pre-market.
+3. **GS/XLK short signals strengthened quantitatively but remain un-tradeable** due to sector posture (XLK) and pair divergence (GS). These would only become actionable with a meaningful VIX escalation (≥22) or a tech/financial sector catalyst for reversal.
+4. **HPE earnings tonight** may shift tech sentiment Tuesday morning — worth checking pre-market if HPE beats or misses materially.
+
