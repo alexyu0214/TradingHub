@@ -6597,3 +6597,179 @@ Friday May 29 — last trading session of May. AVGO surged +4.7% today to $446.7
 4. **XLE — #4 (2a-LONG watch):** Trigger price $55.18 (Z ≤ −2.0). Currently −$1.11 away (−2.0%). RSI needs to hit < 30. Vol needs ≥ 1.0×. Energy 1-fail flag active.
 5. **200-SMA data gap:** ~47 trading sessions remaining (est. mid-August 2026). Override via decisions/log.md is the only near-term resolution. See suggested text above.
 
+
+---
+
+## 2026-06-01 — Pre-market Research
+
+### Adjustment Audit (from Week-ending 2026-05-29 weekly review)
+
+- **[CRITICAL] Alex: grant 200-SMA TT override in decisions/log.md for split-adjusted names:** ✅ IMPLEMENTED — evidence: `decisions/log.md` line 25 contains `[2026-05-30] OVERRIDE: Minervini Trend Template 200-SMA condition` with full proxy rules. Also reflected in `memory/CONSTRAINTS.md` lines 123–127 (200-SMA Data-Gap Proxy section). Override expires 2026-08-15.
+- **[CODE — OVERDUE] Formally codify ≥3-sector minimum scan breadth in ROUTINE.md pre-market STEP 1:** ✅ IMPLEMENTED — evidence: `grep -n "sector.breadth" .claude/commands/ROUTINE.md` returns line 145: "Sector breadth mandate: candidate list MUST span ≥ 3 distinct GICS sectors. If your current shortlist sits in < 3 sectors... explicitly add at least one candidate from a missing sector before proceeding." Mandate is live in STEP 5 of the pre-market workflow.
+- **[TRADE] AVGO 2b-LONG bracket — ready to fire pending override:** 🟡 OVERRIDE GRANTED — but AVGO fails Layer B today on volume (0.906x < 1.5x required). Override is implemented and used in today's evaluation; setup did not qualify on its own merits. See Skipped Candidates below.
+- **[TRADE] MRVL 2b-LONG — needs $208.26 pivot break on confirming volume:** 🟡 PIVOT BROKEN — MRVL closed $224.38 today (above $208.26 pivot) but fails on RSI 73.72 (>70, need 50–70 for 2b-LONG) and volume 0.831x (<1.5x). Watchlist carry-forward to Tuesday.
+- **[PROCESS] Midday re-scan: add explicit short-candidate re-evaluation step to ROUTINE.md §5b:** ❌ NOT IMPLEMENTED — `grep "borderline.*short\|short.*re-eval\|intraday.*short" .claude/commands/ROUTINE.md` returns no results. The 5b section exists (midday-rescan.yml confirmed) but does not contain the specific language for borderline-short re-evaluation. Needs a 2-line addition to ROUTINE.md §5b.
+- **[WATCHLIST] XLE 2a-LONG trigger at ~$55.18:** 🟡 ACTIVE WATCH — XLE closed $57.29 today (vs trigger $55.10; Z-trigger now at ~$55.09). Z = −0.60 today despite WTI oil +7.36% — oil equity lag noted. Still not near trigger; low priority vs. tech names.
+
+> **URGENT: Build — add explicit short-candidate re-evaluation language to ROUTINE.md §5b midday-rescan section.** The adjustment from the Week-ending 2026-05-22 and 2026-05-29 weekly reviews specifying "re-evaluate any borderline short candidates from morning if intraday volume picks up" has not been coded into the midday-rescan workflow. Add to ROUTINE.md STEP 1 of §5b: "In addition to spread-normalization re-checks, re-evaluate any borderline short candidates from morning's Skipped list where Z was within 10% of threshold or RSI was within 5 points of trigger."
+
+---
+
+### Account
+- **Equity:** $99,056.46
+- **Cash:** $99,056.46 (100%)
+- **Buying power:** $198,112.92 (2× margin)
+- **Daytrade count:** 0/3 (resets weekly)
+- **Open positions:** 0
+- **Open orders:** 0
+- **Week trades used:** 0/3 (fresh week)
+- **Phase P&L:** −$943.54 (−0.944%) from $100,000.00 starting equity
+
+---
+
+### Market Context
+- **WTI Crude Oil:** $93.79/bbl (+7.36% on the day). WTI futures for July 2026 earlier traded near $90.10 (+3.08%). Month-over-month WTI is −11.87%, but +50.02% year-over-year.
+- **Brent Crude:** $96.91/bbl (+6.36%). Brent futures at $96.80/bbl (+6.26%).
+- **Catalyst — Oil surge:** Reports of Iran suspending message exchanges with the US following escalating Israeli military operations in Lebanon. Geopolitical risk premium driving energy complex sharply higher.
+- **S&P 500 Futures:** Up 0.26% pre-market. SPY +0.25% at $757.86. US500 index at 7,589 (+0.12% from prior session). S&P 500 at all-time highs.
+- **VIX:** $15.99 (+4.37%, +0.67 pts). Intraday high 15.99. Opened at 15.88.
+- **Macro catalysts:** AI boom continues as primary bull driver. SpaceX IPO anticipated around June 11 (~$1.75T valuation). Russell Index reconstitution June 26. FOMC policy decision June 17 (Chair Kevin Warsh). Stalling China factory activity a mild headwind.
+- **Economic calendar today:** ISM Manufacturing PMI, Employment, New Orders, Prices, Construction Spending MoM — all at 10:00 AM ET. No CPI/PPI/FOMC/Jobs today.
+- **Upcoming this week/month:** BLS Employment Report June 5, CPI June 10, PPI June 11, FOMC June 17.
+- **Pre-market earnings today:** SAIC (Science Applications International) reported pre-market — stock surged dramatically (Z=+5.75, RSI=84.76, vol 2.07×). Post-market tonight: HPE (Hewlett Packard Enterprise) and CRDO (Credo Technology).
+- **Sector momentum YTD (as of May 29):** Communication Services +63.8% | Info Tech +52.7% | Industrials +23.7% | Materials +19.0% | Health Care +17.2% | Utilities +15.2% | Real Estate +15.0% | Consumer Staples +14.8% | Energy +5.5% | Financials +5.5%. S&P 500 +27.86% YoY.
+- **Prior watchlist status:**
+  - AVGO: Closed $464.22 (+3.9% from Friday's $446.77) — new 52-week high
+  - MRVL: Closed $224.38 (+9.5% from $205.00) — surged above $208.26 pivot on earnings follow-through
+  - XLE: Closed $57.29 (+1.77% despite WTI +7.36%) — energy equity lag vs. commodity
+
+---
+
+### VIX Regime
+- **Current VIX:** 15.99
+- **Regime:** Normal (VIX 14–22)
+- **Sizing multiplier:** 1.00×
+- **All entry types OK**
+
+---
+
+### Sector Coverage (Breadth Mandate Verification)
+Candidates scanned today span **5 distinct GICS sectors** — mandate of ≥3 met:
+1. **Information Technology** — AVGO, MRVL, NVDA, XLK, HPE (semis + tech ETF)
+2. **Energy** — XLE, XOM, CVX, COP (oil & gas + ETF)
+3. **Financials** — JPM, GS, XLF
+4. **Industrials** — XLI, SAIC
+5. **Health Care** — XLV
+
+---
+
+### Trade Ideas (Cleared Both Layers)
+
+**None. HOLD decision.**
+
+No candidate cleared both Layer A and Layer B today. See Skipped Candidates for full analysis.
+
+---
+
+### Skipped Candidates
+
+**AVGO | 2b-LONG | Information Technology | Semiconductors**
+- **Catalyst:** AI infrastructure momentum continuation; AVGO closed at a new all-time high of $464.22, extending Friday's +4.7% breakout above the $446.77 pivot. Sector (IT) is the #1 YTD performer (+52.7%).
+- **Layer A:** ✅ Catalyst documented | ✅ Sector in momentum | ✅ RSI 67.17 (50–70) | ✅ 50-SMA ($388.59) > 150-SMA ($360.51) proxy (200-SMA override active) | ✅ R:R structurally present
+- **Layer B — 2b-LONG:**
+  - Z = +4.648 (≥+1.0) ✅
+  - Close $464.22 > prior 20d high $446.77 ✅
+  - RSI 67.17 (50–70) ✅
+  - Volume 17,756,957 vs 20d avg 19,603,877 = **0.906× ❌ (need ≥1.5×)**
+  - 50-SMA > 200-SMA (proxy): ✅
+- **Trend Template (2b-LONG, 200-SMA proxy per [2026-05-30] override):** Price > 50-SMA ($388.59) ✅ | Price > 150-SMA ($360.51) ✅ | 50 > 150 ✅ | 52w High: $464.61, within 25% ✅ (0% below high) | 52w Low: $293.41, >30% above ✅ (+58.3%) | 6mo return +15.3% (qualifying direction) ✅ | 200-SMA data gap → proxy applied, bars = 150
+- **Pair (NVDA):** NVDA Z = +0.760. Divergence |4.648 − 0.760| = **3.888σ ❌ (>1.5σ limit)**. Also tried AMD Z = +1.459 → divergence 3.189σ ❌.
+- **REJECT REASON:** Layer B fails on TWO gates: Volume 0.906× (need 1.5×) AND pair divergence 3.888σ. Even if volume gate waived, pair divergence alone blocks entry. AVGO is outrunning its sector peers dramatically — single-name risk too high without peer confirmation.
+- **Pivot extension (informational):** $464.22 / $446.77 − 1 = **3.9% extension** (within 5% ✅) — would have passed this gate if others cleared.
+- **Watchlist carry-forward:** Monitor for volume normalization (need daily vol ≥ 29.4M = 1.5× avg) and NVDA convergence. If NVDA rallies to catch up (Z approaching +2.0+), divergence narrows and pair gate may clear.
+
+---
+
+**MRVL | 2b-LONG | Information Technology | Semiconductors**
+- **Catalyst:** MRVL surged +9.5% today ($205 → $224.38), breaking cleanly above the $208.26 20-day high pivot. AI/custom silicon momentum (MRVL's custom ASIC business for hyperscalers). RSI cooled from 71+ last week and then re-accelerated on new volume.
+- **Layer B — 2b-LONG:**
+  - Z = +2.866 (≥+1.0) ✅
+  - Close $224.38 > pivot $208.26 ✅
+  - RSI **73.72 ❌ (need 50–70; currently >70)**
+  - Volume 23,053,717 vs 20d avg 27,758,077 = **0.831× ❌ (need ≥1.5×)**
+  - 50-SMA ($149.39) > 150-SMA ($106.47) ✅ (200-SMA proxy — 150 bars available)
+- **REJECT REASON:** Layer B fails on TWO gates: RSI 73.72 > 70 (overbought zone, outside 50–70 momentum window) AND Volume 0.831× < 1.5× required. The surge today looks like a gap/spike rather than high-volume institutional accumulation. Pair (AVGO) divergence also 1.783σ > 1.5σ limit.
+- **Pivot extension:** $224.38 / $208.26 − 1 = 7.7% above pivot — **WOULD ALSO FAIL pivot extension check** (>5% limit). Three separate failures.
+- **Watchlist:** If MRVL consolidates over 2–3 sessions near $210–215, RSI cools to 50–70, volume normalizes, and AVGO narrows divergence → revisit as a proper momentum base entry.
+
+---
+
+**XLK | 2a-SHORT | Information Technology | Tech ETF**
+- **Catalyst thesis (considered):** XLK at Z = +2.642 and RSI = 82.88 is statistically stretched. Geopolitical VIX tick (+4.37%) could trigger mean-reversion in the most extended sector.
+- **Layer B — 2a-SHORT:**
+  - Z = +2.642 (≥+2.0) ✅
+  - RSI 82.88 (>70) ✅
+  - Volume 1.109× (≥1.0×) ✅
+  - **Layer B PASSES all three mean-reversion short gates**
+- **Layer A — FAIL:**
+  - **Sector posture mismatch ❌:** Information Technology is the #1 YTD sector at +52.7%. There is no reversal catalyst today — the oil-driven geopolitical fear is adding only +4.37% to VIX (remains in Normal regime). Shorting the strongest sector in a bull market at all-time highs, with the VIX at 15.99 and S&P 500 up on the day, contradicts the Layer A requirement that sector posture matches direction (short requires rolling-over sector or negative catalyst).
+  - A mean-reversion short on XLK would require either: (a) VIX regime escalating to Elevated (≥22) suggesting risk-off rotation OUT of tech, (b) a specific negative catalyst for the tech sector (not present today), or (c) the sector breaking below key support.
+- **REJECT REASON:** Layer A fails on sector posture. Tech is a bull market leader. The statistical overstretch is real but betting against the market's strongest sector without a reversal catalyst is not a documented edge.
+
+---
+
+**SAIC | 2a-SHORT (considered) | Industrials | Defense IT**
+- **Today's move:** SAIC reported pre-market earnings, stock surged dramatically. Z = +5.747, RSI = 84.76, Vol = 2.07×. Layer B passes on all three mean-reversion short gates.
+- **REJECT REASON:** Market cap approximately $6.6B (56M shares × $118) — **below the $20B minimum for short positions** (Phase 1 conservative cap). SAIC is a mid-cap defense contractor, ineligible for shorting under current constraints. Not a mega-cap or sector/index ETF.
+
+---
+
+**HPE | 2a-SHORT (considered) | Information Technology**
+- **Today's move:** Z = +3.30, RSI = 85.27, Vol = 2.21×. Layer B passes.
+- **REJECT REASON:** HPE reports earnings **tonight post-market**. CONSTRAINTS.md: "No shorting through earnings." A short entered today would be held through HPE's earnings announcement tonight — rule violation. Hard reject regardless of quant signal.
+
+---
+
+**GS | 2a-SHORT (considered) | Financials**
+- Z = +2.459, RSI = 71.39. Layer B: Z ✓, RSI ✓, volume needed check.
+- **REJECT REASON (Layer B):** Pair check — JPM (canonical pair) Z = −1.294. Divergence |2.459 − (−1.294)| = **3.753σ >> 1.5σ limit**. GS is running dramatically hotter than JPM, indicating single-name divergence rather than sector-wide signal. Pair divergence disqualifies.
+
+---
+
+**Energy Complex (XOM, CVX, COP, XLE) | Long candidates considered due to oil +7.36%**
+- All Z-scores remain far from threshold: XOM −0.74, CVX −0.29, COP −0.87, XLE −0.60.
+- Despite WTI +7.36%, the energy equity complex did not translate the commodity surge into a statistical breakout today. This lag suggests energy equities were pricing in some geopolitical premium already. No lane qualifies for any energy name.
+- XLE 2a-LONG trigger still ~$55.09 (Z = −2.0 trigger price, currently at Z = −0.60). Would need another −3.4% decline from today's close of $57.29 to reach trigger.
+
+---
+
+### Risk Factors
+1. **Geopolitical escalation (Iran/Israel):** Oil +7.36% today on Iran-US breakdown. If this escalates further (Iranian nuclear program, Strait of Hormuz), energy could spike more while tech/growth sells off. VIX at 15.99 (+4.37%) — still Normal, but bears watching. If VIX breaches 22, regime shifts to Elevated (0.75× sizing).
+2. **Monday volume:** Several names showed below-average volume today (AVGO 0.906×, MRVL 0.831×, XOM 0.479×, JPM 0.383×). Low Monday volume = less reliable breakout confirmation. The AVGO and MRVL surges on sub-1.0× volume are technically suspect — could reverse on normalizing volume Tuesday.
+3. **ISM Manufacturing today (10 AM ET):** Any significant miss on ISM Manufacturing PMI could weigh on industrials and broad market. Previous sessions have shown sensitivity to manufacturing data.
+4. **HPE and CRDO earnings tonight:** Could shift tech sentiment Tuesday morning. HPE reporting with Z = +3.30 (extremely stretched) means an earnings miss would be punishing. A beat could further extend XLK/semis.
+5. **SpaceX IPO (June 11):** $1.75T valuation would be the largest IPO in history. Potential capital rotation risk ahead of the date — investors may trim other tech positions to fund SpaceX allocation. Particularly relevant for AVGO/MRVL/NVDA holders.
+6. **FOMC June 17 (Chair Warsh):** New Fed chair's first policy decision creates higher-than-normal uncertainty. Markets likely to tread carefully as the date approaches.
+
+---
+
+### Key Watchlist for Tuesday (June 2 / June 3)
+
+1. **AVGO — #1 Priority (2b-LONG):** Still the cleanest setup when volume confirms. Needs daily vol ≥ 29.4M (1.5× avg of 19.6M). Pair constraint loosens if NVDA catches up. Max entry limit ≤ $461.78 (pivot $439.79 × 1.05 — NOTE: pivot is still $439.79 from the original 20d window; re-compute fresh 20d high as of Tuesday for updated pivot). Today's high $464.48 may become the new pivot. If AVGO pulls back toward $446–452 on normalizing volume, could offer a better-priced entry.
+
+2. **MRVL — #2 Priority (2b-LONG):** Today's surge on 0.831× volume is a spike not a breakout. Need RSI to cool back to 50–70 range (from 73.72) over 2–3 sessions. New pivot is $208.26. Max entry limit $218.67 (×1.05). If MRVL consolidates at $210–218 with RSI cooling, this could be the highest-quality setup of the month.
+
+3. **XLE — #4 Watch (2a-LONG):** Oil +7.36% geopolitical surge may persist. XLE trigger price ~$55.09 (Z = −2.0). Watch for: sustained oil/geopolitical escalation driving XLE toward $55; RSI declining to <30 (currently 48.41). Energy 1-consecutive-failure flag is active — if XLE triggers, need oil thesis to be strong.
+
+4. **Post-HPE earnings (Tuesday morning):** If HPE beats and tech remains elevated, watch NVDA for Z-score expansion toward +1.0+ and pivot test at $235.74. Currently Z = +0.76 — would need to rally to ~$225–226 to cross +1.0 threshold. Low priority unless catalyst materializes.
+
+---
+
+### Decision
+**HOLD** — zero trades today. All candidates rejected on quantitative grounds. The most common failure modes this session:
+- **Volume gate** (AVGO, MRVL): Monday sessions often carry below-average volume, making momentum breakout confirmations unreliable.
+- **RSI gate** (MRVL): Spike-gap behavior pushed RSI above 70 — outside the healthy momentum zone.
+- **Pair divergence** (AVGO, GS): Single-name moves outrunning sector peers = higher idiosyncratic risk than a sector-wide signal.
+- **Layer A sector posture** (XLK): Cannot short the #1 bull market sector without a reversal catalyst.
+
+The patience rule applies. Monday June 1 opens the new week with 100% cash and full budget (0/3 trades, 0/3 PDT). No forced entries. Tuesday re-evaluation with fresh volume data is the right next step.
