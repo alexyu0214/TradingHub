@@ -1694,3 +1694,18 @@ The 200-SMA override decision in decisions/log.md will determine whether the bot
 **PDT count:** 0/3 | **Week trades:** 0/3 | **Positions:** 0/6
 **Circuit breakers:** ✅ All clear — Phase P&L −0.944% (lim −5%) | Drawdown −1.15% from $100,206.70 peak (lim −15%)
 
+
+### Jun 02 — EOD Snapshot (Day 33, Monday)
+
+**Portfolio:** $99,056.46 | **Cash:** $99,056.46 (100%) | **Day P&L:** $0.00 (0.000%) | **Phase P&L:** −$943.54 (−0.944%) | **Deployed:** 0%
+
+| Ticker | Shares | Entry | Close | Unrealized P&L | Stop | Time |
+|--------|--------|-------|-------|----------------|------|------|
+| — | — | — | — | — | — | — |
+
+**Trades today:** none
+
+**Notes:** Flat Monday open to a new week. Portfolio remains 100% cash at $99,056.46 — unchanged from end of last week. No positions were entered today; all five candidates screened in Sunday's afternoon scan (AVGO, MRVL, XLK, XLE, XOM) were rejected going into today on volume and RSI grounds. With the weekly trade counter reset to 0/3 and the PDT counter at 0/3, the bot has full capacity heading into Tuesday. All circuit breakers remain clear: phase P&L at −0.944% (limit −5%), drawdown −1.15% from $100,206.70 peak (limit −15%). No stop actions, no order activity, no fills. Watching for fresh setups with volume confirmation this week.
+
+**PDT count:** 0/3 | **Week trades:** 0/3 (week reset Mon Jun 02) | **Positions:** 0/6
+**Circuit breakers:** ✅ All clear — Phase P&L −0.944% (lim −5%) | Drawdown −1.15% from $100,206.70 peak (lim −15%)
