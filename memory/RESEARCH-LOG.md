@@ -6850,3 +6850,137 @@ The patience rule applies. Monday June 1 opens the new week with 100% cash and f
 3. **GS/XLK short signals strengthened quantitatively but remain un-tradeable** due to sector posture (XLK) and pair divergence (GS). These would only become actionable with a meaningful VIX escalation (≥22) or a tech/financial sector catalyst for reversal.
 4. **HPE earnings tonight** may shift tech sentiment Tuesday morning — worth checking pre-market if HPE beats or misses materially.
 
+
+
+---
+
+## 2026-06-01 — Afternoon Scan Addendum (~17:35 ET / 21:35 UTC)
+
+**Scan time:** Post-session; all June 1 bars fully settled (market closed 20:00 UTC / 4:00 PM ET)
+**VIX regime at scan:** NORMAL — prior close ~15.99–16.85 range; Normal band (14–22) confirmed | Sizing multiplier: 1.00×
+
+---
+
+### STEP 1 — Order & Position State Reconciled vs TRADE-LOG
+
+**Orders returned by API (6 total — all historical, all terminal):**
+
+| Order ID | Symbol | Type | Status | Detail |
+|----------|--------|------|--------|--------|
+| 1d69c496 | XOM | Bracket limit BUY 61 sh @ $159.78 | **EXPIRED** 2026-05-18T20:02 | TIF: day — never filled ✅ logged |
+| 94606e38 | XOM | Stop child $147.80 | **CANCELED** 2026-05-18T20:02 | Auto-cancelled ✅ logged |
+| 336d922a | XOM | TP child $183.74 | **CANCELED** 2026-05-18T20:02 | Auto-cancelled ✅ logged |
+| 8f97ef7d | XOM | Market Sell 130 sh | **FILLED** $146.09, 2026-05-07 | Thesis-break exit ✅ logged |
+| d92d9371 | XOM | Trailing Stop 10% GTC | **CANCELED** 2026-05-07 | Pre-exit cancellation ✅ logged |
+| c04ae321 | XOM | Market Buy 130 sh | **FILLED** $153.35, 2026-05-01 | Original entry ✅ logged |
+
+- **Positions API: `[]` — 100% cash ($99,056.46).** No filled positions.
+- **Morning bracket fills today: 0** — Pre-market research (2026-06-01) issued HOLD on all 11 candidates (post-holiday volume drought; RSI overbought on tech names; universal 200-SMA structural gate blocker prior to today's override). No brackets placed at open.
+- **Open stale limits: 0** — No open orders of any kind.
+- **TRADE-LOG reconciliation: FULLY CURRENT ✅**
+
+---
+
+### STEP 2 — Trailing Stop Upgrades on Profitable Fills
+
+**N/A.** Portfolio is 100% cash ($99,056.46). No positions exist. No trailing stop upgrade workflow applicable.
+
+---
+
+### STEP 3 — Stale Limit Cancellations
+
+**None.** No open orders exist. Nothing to cancel.
+
+---
+
+### STEP 4 — Afternoon Opportunity Scan (5 Candidates, 4 Sectors)
+
+**VIX regime:** NORMAL (1.00×) | **Positions:** 0/6 | **Week trades:** 0/3 | **PDT:** 0/3
+**200-SMA override:** ACTIVE (decisions/log.md [2026-05-30] — expires 2026-08-15)
+
+**Full quant metrics — June 1, 2026 settled bar data:**
+
+| Ticker | Close | 20d Mean | 20d Std | Z-Score | RSI(14) | Vol vs Avg | 20d High (pivot) | Extension | Lane | Pair | Pair Div | Verdict |
+|--------|-------|----------|---------|---------|---------|-----------|-----------------|-----------|------|------|----------|---------|
+| **AVGO** | $459.97 | $424.84 | $11.83 | **+2.970** | **63.16** | **1.479×** | $446.77 ✅ | **+2.95%** ✅ | 2b-LONG | MRVL | **0.803σ ✅** | **REJECT** |
+| MRVL | $219.43 | $183.13 | $16.75 | +2.167 | 72.56 | 1.141× | $208.26 ✅ | **+5.36% ❌** | 2b-LONG | AVGO | 0.803σ ✅ | **REJECT** |
+| XLK | $195.76 | $177.78 | $7.93 | +2.268 | 74.05 | **1.485×** | $191.02 ✅ | +2.48% ✅ | 2b-LONG | AVGO | **0.702σ ✅** | **REJECT** |
+| XLE | $57.30 | $58.15 | $1.53 | −0.556 | 50.60 | 1.399× | — | — | 2a/2b | XOM | 0.017σ ✅ | **REJECT** |
+| XOM | $149.38 | $151.99 | $4.85 | −0.539 | 49.56 | 0.947× | $162.55 | — | — | XLE | 0.017σ ✅ | **REJECT** |
+
+**NVDA cross-check (for pair divergence on tech names):**
+- NVDA Z = +0.848 | RSI = 53.90 | Vol = 1.246×
+- AVGO–NVDA divergence: 2.122σ ❌ (>1.5σ — NVDA still not tracking AVGO/MRVL rally)
+- MRVL–NVDA divergence: 1.319σ ✅ (MRVL and NVDA now within threshold)
+- XLK–NVDA: XLK is an ETF containing NVDA, so the divergence is structural ETF-level
+
+---
+
+**Detailed Candidate Analysis:**
+
+**AVGO (2b-LONG Momentum) — REJECT on ONE gate (Vol 1.479× vs 1.500× required):**
+
+| Gate | Requirement | Actual | Result |
+|------|-------------|--------|--------|
+| Z ≥ +1.0 | ≥+1.0 | +2.970 | ✅ |
+| Close > prior 20d high | > $446.77 | $459.97 | ✅ |
+| RSI 50–70 | 50–70 | 63.16 | ✅ |
+| Volume ≥ 1.5× avg | ≥1.5× | **1.479× ❌** | FAIL by 0.021× (0.86M shares) |
+| 50-SMA > 150-SMA (proxy) | Confirm | ✅ (override active) | ✅ |
+| Pivot extension ≤5% | ≤5% | +2.95% | ✅ |
+| Pair (MRVL) divergence | ≤1.5σ | 0.803σ | ✅ |
+| NVDA divergence | ≤1.5σ (optional check) | 2.122σ ❌ | NOTE |
+
+**Net result: 6/7 Layer B gates PASS.** The single failing gate is volume: 1.479× (30.4M shares) vs the 1.5× minimum (30.9M shares). The gap is **0.86M shares** — less than 3% below threshold. This is the narrowest margin-of-miss since the bot launched.
+
+AVGO has now been the #1 watchlist candidate for 3 consecutive sessions:
+- May 29: Z=+2.755, Vol=2.182× ✅ — blocked by 200-SMA gate (pre-override)
+- Jun 1 AM: Z=+4.648, Vol=0.906× — post-holiday Monday volume drought
+- Jun 1 (settled): Z=+2.970, Vol=1.479× — 0.021× below threshold
+
+Note on NVDA pair divergence: AVGO–NVDA is 2.122σ, which technically exceeds the 1.5σ pair gate. However, AVGO's primary canonical pair for this scan is MRVL (0.803σ ✅) — the two AI infrastructure semis are moving together. NVDA is in a different sub-product cycle (GPU/data center vs AVGO's custom ASIC/networking). If MRVL is treated as the primary pair (more directly comparable business), all pair gates clear. If NVDA is required as an additional secondary pair check, this constitutes a third sequential pass for AVGO. The strategy rules specify one pair check per candidate; MRVL is the appropriate canonical pair for AVGO. **Treating NVDA divergence as a yellow flag, not a hard gate.**
+
+**Practical conclusion:** AVGO is one strong Tuesday session away from a clean 2b-LONG bracket entry. The 200-SMA structural gate is resolved (override active). RSI is healthy at 63.16 (not overbought). Extension is appropriate at +2.95%. Pair confirms. The sole remaining gate — volume — will clear on any session where AVGO posts ≥30.9M shares.
+
+**MRVL (2b-LONG) — REJECT on 3 gates:**
+- RSI = 72.56 ❌ (need 50–70; overbought by 2.56 points)
+- Volume = 1.141× ❌ (need ≥1.5×)
+- **Pivot extension = 5.36% ❌** (need ≤5% — this is a NEW structural block vs Monday morning research which cited 7.7%; the correction: $208.26 is the prior 20d high that was broken on May 26; today's close $219.43 / $208.26 = +5.36% above pivot. Max chase limit was $208.26 × 1.05 = $218.67. Today's close $219.43 > $218.67 → AVGO has run past the maximum permissible entry price on the existing pivot)
+- MRVL has extended past its chase limit. Unless the pivot resets (a new 20d high becomes established above $219.43), the momentum lane cannot be re-entered at a price ≤$218.67. The setup requires either: (a) MRVL consolidates back below $218.67 with volume + RSI cooling; or (b) a new 20d high is set and a new pivot×1.05 cap is computed.
+
+**XLK (2b-LONG) — REJECT on 2 gates (both marginal):**
+- RSI = 74.05 ❌ (need 50–70; was 80.04 last session — cooling trend ✅ but still above ceiling by 4 points)
+- Volume = 1.485× ❌ (need ≥1.5×; gap = only 0.015×, or ~180,000 shares — the most marginal vol miss of any name this week)
+- XLK has extended to $195.76, +2.48% above its new pivot $191.02 (set May 29). Max chase limit $191.02 × 1.05 = **$200.57**. Price has room.
+- **XLK is the closest momentum candidate to qualifying** — both failing gates (RSI and volume) are within touching distance. A consolidation/pause day that brings RSI from 74.05 → below 70, combined with strong institutional volume ≥1.5× avg (~17.9M shares), would trigger the 2b-LONG bracket.
+- **Most likely Tuesday setup after AVGO.**
+
+**XLE (energy) — No lane qualifies:**
+- Z = −0.556; midrange. 2a-LONG trigger at Z ≤ −2.0 requires price ~$55.09 (currently $57.30 = $2.21 or −3.9% away). 2b-SHORT breakdown requires close < 20d low $55.70 (price $1.60 above it). RSI = 50.60 (neutral).
+- WTI oil +7.36% today (Iran suspension of US communications) drove XLE higher (+0.56% to $57.30). This is counter to the 2a-LONG thesis (oil surge pushes XLE away from oversold trigger).
+- Energy sector: 1 consecutive failure active (XOM May 7 thesis-break). Heightened caution.
+
+**XOM — context only:**
+- Z = −0.539; RSI = 49.56. Near-flat session (close $149.38). Energy thesis structurally complex with Iran binary risk. No position. No lane qualifies.
+
+---
+
+### STEP 5 — Afternoon Market Context
+
+June 1 delivered a broadly positive session for the AI/semiconductor complex — XLK +2.49% to $195.76, AVGO +2.95% to $459.97, MRVL +14.0% to $219.43 (surging on post-earnings momentum and continuing AI custom ASIC thesis). These three names now form a tight sector cluster with Z-scores of +2.268, +2.970, and +2.167 respectively — all statistically elevated but with only AVGO showing healthy RSI dynamics (63.16). MRVL and XLK remain overbought on RSI (72.56 and 74.05 respectively). The most significant shift from Monday morning's research is the volume picture: AVGO's 30.4M shares (1.479×) is dramatically higher than yesterday's 0.906× post-holiday trough, MRVL's 32.8M shares (1.141×) shows institutional interest, and XLK's 19.0M shares (1.485×) came within 180k shares of the 1.5× threshold. The energy complex saw XLE bounce +0.56% as WTI oil surged on Iran-US communications breakdown — this is actually counter-productive for the 2a-LONG setup, pushing XLE away from its oversold trigger level. VIX remains well below 20 in Normal regime. The week opens promising with 3 strong tech setups converging toward qualification; Tuesday's key catalyst is whether volume normalizes to institutional levels while RSI cools from current overbought readings.
+
+---
+
+**Bracket fills today:** 0 (no morning limits placed — HOLD at pre-market; all 11 candidates failed composite gates on post-holiday Monday)
+**Stops upgraded:** 0 (no positions held; no upgrade workflow applicable)
+**Stale limits cancelled:** 0 (none existed)
+**New afternoon entries:** NONE — AVGO failed by 0.021× on volume (1.479× vs 1.500× required); MRVL failed on RSI, volume, AND pivot extension (5.36% > 5% max); XLK failed on RSI (74.05 > 70) and volume (1.485× vs 1.500×)
+**Afternoon market context:** AI/tech sector rallied strongly (AVGO +2.95%, XLK +2.49%, MRVL +14.0%). AVGO volume recovered significantly from Monday's trough but fell 0.021× short of 1.5× threshold. RSI readings remain elevated/overbought on XLK (74.05) and MRVL (72.56) but AVGO RSI healthy at 63.16. NVDA momentum confirms tech sector strength (Z=+0.848, RSI=53.90). XLE bounced on WTI oil surge (Iran news). VIX Normal.
+
+**Key watchlist for Wednesday pre-market (2026-06-02):**
+1. **AVGO — #1 PRIORITY (2b-LONG):** Vol=1.479× today (missed by 0.021×). Z=+2.970 ✅, RSI=63.16 ✅, breakout ✅, extension +2.95% ✅, MRVL pair 0.803σ ✅. Single gate needed: volume ≥30.9M shares (1.5× of 20.6M avg). If Tuesday volume clears → bracket at ≤ $469.11 (new pivot $446.77 × 1.05). Note: consider updating pivot to $459.97 (today's close = new 20d high) → max limit = $459.97 × 1.05 = **$482.97**. 200-SMA proxy (50>150) confirmed ✅.
+2. **XLK — #2 (2b-LONG):** Z=+2.268 ✅, Vol=1.485× (0.015× short) ✅↗, extension +2.48% ✅, AVGO pair 0.702σ ✅. RSI needs to cool: 74.05 → sub-70. Any flat/down open achieves RSI cooling. New pivot $191.02; max limit **$200.57** (pivot × 1.05). Both failing gates (RSI + vol) are within 1 session of clearing.
+3. **MRVL — #3 (lower priority this week):** MRVL surged +14% today (198.91→219.43). Pivot extension now **5.36% above $208.26 pivot** — above the 5% max-chase rule. The existing pivot cannot be used for entry. Must wait for either (a) consolidation back below $218.67 with RSI cooling + volume confirming, or (b) new base to form above $219.43 setting a new 20d high pivot. Not actionable at current price per strategy rules.
+4. **XLE — energy 2a-LONG watch:** Trigger price ~$55.09 (Z ≤ −2.0). WTI surge today pushed XLE away from trigger. Monitor if WTI reverses. Energy 1-fail flag active.
+5. **NVDA — momentum watch:** Z=+0.848; still below the +1.0 momentum threshold and 5.1% below its $235.74 20d high pivot. If NVDA starts to catch up with AVGO/MRVL and breaks above $235.74 on strong volume, the AVGO–NVDA pair divergence would also narrow. Watch as a secondary signal.
+

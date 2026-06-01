@@ -1651,3 +1651,46 @@ The 200-SMA override decision in decisions/log.md will determine whether the bot
 
 **Circuit breakers:** ✅ All clear — Day 0.000% (lim −2%) | Phase −0.944% (lim −5%) | Drawdown −1.148% from $100,206.70 peak (lim −15%)
 **PDT count:** 0/3 | **Week trades:** 0/3 (resets Monday) | **Positions:** 0/6
+
+
+---
+
+### Jun 01 — Afternoon Scan (Day 32 / Post-Session ~21:35 UTC)
+
+**Portfolio:** $99,056.46 | **Cash:** $99,056.46 (100%) | **Deployed:** 0% | **Phase P&L:** −$943.54 (−0.944%)
+
+| Ticker | Shares | Entry | Close | Unrealized P&L | Stop | Hold |
+|--------|--------|-------|-------|----------------|------|------|
+| — | — | — | — | — | — | — (0 positions) |
+
+**Open orders at scan time:** NONE
+
+**Afternoon scan trades:** none
+
+**Stop action:** N/A — no positions held, no upgrade workflow triggered
+
+**Afternoon candidates evaluated — ALL REJECTED (June 1 settled bar data):**
+
+| Candidate | Z-Score | RSI | Vol Ratio | Extension | Key Failures | Verdict |
+|-----------|---------|-----|-----------|-----------|--------------|---------|
+| AVGO | +2.970 | 63.16 | **1.479×** | +2.95% ✅ | Vol 1.479× < 1.500× ❌ (miss by 0.021×) | REJECT |
+| MRVL | +2.167 | 72.56 | 1.141× | **+5.36% ❌** | RSI > 70 ❌; Vol < 1.5× ❌; Ext > 5% ❌ | REJECT |
+| XLK | +2.268 | 74.05 | **1.485×** | +2.48% ✅ | RSI > 70 ❌; Vol 1.485× < 1.500× ❌ | REJECT |
+| XLE | −0.556 | 50.60 | 1.399× | — | Z fails both lanes ❌; midrange | REJECT |
+| XOM | −0.539 | 49.56 | 0.947× | — | Z fails; no lane qualifies | REJECT |
+
+**Pair divergences (all computed from settled closes):**
+- AVGO (+2.970) ↔ MRVL (+2.167): **0.803σ ✅** (canonical pair — both AI infrastructure semis in sync)
+- XLK (+2.268) ↔ AVGO (+2.970): **0.702σ ✅** (tech sector coherent)
+- XLE (−0.556) ↔ XOM (−0.539): **0.017σ ✅** (energy in lockstep — sector-wide, not idiosyncratic)
+- AVGO (+2.970) ↔ NVDA (+0.848): 2.122σ ⚠️ (NVDA not tracking AVGO rally — noted as yellow flag, not hard gate per MRVL as primary pair)
+
+**Session context:**
+- AVGO: +2.95% ($446.77 → $459.97) — set new 20d high at $459.97; RSI healthy at 63.16; vol 30.4M (1.479×)
+- MRVL: +14.0% ($192.32 open → $219.43 close) — post-earnings continuation; EXCEEDED 5% pivot extension cap
+- XLK: +2.49% ($191.02 → $195.76) — tech ETF extending; RSI elevated
+- XLE: +0.56% (oil surge on Iran news)
+
+**PDT count:** 0/3 | **Week trades:** 0/3 | **Positions:** 0/6
+**Circuit breakers:** ✅ All clear — Phase P&L −0.944% (lim −5%) | Drawdown −1.15% from $100,206.70 peak (lim −15%)
+
