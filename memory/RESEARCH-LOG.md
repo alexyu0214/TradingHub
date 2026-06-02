@@ -6984,3 +6984,246 @@ June 1 delivered a broadly positive session for the AI/semiconductor complex —
 4. **XLE — energy 2a-LONG watch:** Trigger price ~$55.09 (Z ≤ −2.0). WTI surge today pushed XLE away from trigger. Monitor if WTI reverses. Energy 1-fail flag active.
 5. **NVDA — momentum watch:** Z=+0.848; still below the +1.0 momentum threshold and 5.1% below its $235.74 20d high pivot. If NVDA starts to catch up with AVGO/MRVL and breaks above $235.74 on strong volume, the AVGO–NVDA pair divergence would also narrow. Watch as a secondary signal.
 
+
+---
+
+## 2026-06-02 — Pre-Market Research
+
+### Account
+- Equity: $99,056.46
+- Cash: $99,056.46 (100% — fully uninvested)
+- Buying Power: $198,112.92 (margin 2×)
+- Daytrade count: 0/3
+- Open positions: 0
+- Open orders: 0
+- Week trades: 0/3 (week reset Mon Jun 02)
+- Phase P&L: −$943.54 (−0.944%) | Peak: $100,206.70 | Drawdown: −1.15% (limit −15%)
+
+---
+
+### Market Context
+- **WTI Crude:** ~$91.79–$92.23/bbl; July WTI (CLN26) −0.31%; prior close $92.16; range $90.17–$92.64
+- **Brent Crude:** ~$93.87–$95.77/bbl (conflicting sources); consensus ~$94.78; mixed/slightly down; prior close $94.98
+- **S&P 500 Futures:** Lower in premarket; S&P 500 futures −0.21%; Micro E-mini (MESM6) last 7,582.75, −30.50pts (−0.40%)
+- **VIX:** 16.02–16.17; opened 16.28, day low 16.10; +4.77% from prior close of 15.32 — still comfortably in Normal regime
+- **Top Catalysts:**
+  - 🔑 **Nvidia CPU announcement:** Jensen Huang announced NVDA entering CPU business → direct competitive threat to AMD and INTC; both negative in pre-market; NVDA itself positive (new revenue vector)
+  - 🔑 **US–Iran peace negotiations:** Ongoing geopolitical uncertainty; suspension of US–Iran communications affecting oil; binary event risk for energy sector
+  - 📊 **JOLTS Report today (10:00 AM ET):** April job openings expected ~6.8M; labor market stable, unemployment 4.3%
+  - 📈 **AI capex cycle:** Hyperscaler 2026 spend up 12% to >$750B; MRVL surged +28.6% today to $282 on earnings beat + custom ASIC/networking tailwind
+  - 💰 **Macro:** US 2026 GDP projected 2.4%; inflation 3.8% (energy-driven); markets pricing potential rate hike — headwind for Financials
+  - 📅 **Earnings season ~90% complete**; Broadcom (AVGO), Lululemon (LULU), Palo Alto Networks, CrowdStrike reporting later this week
+  - 📅 **Economic calendar ahead:** ADP (Jun 3) → Jobs (Jun 5) → CPI (Jun 10) → PPI (Jun 11) → FOMC Decision (Jun 17)
+- **S&P 500 YTD Sector Performance:**
+  - Technology: +33.0% (AI-driven leader)
+  - Energy: +26.0% (#2 YTD despite recent pullback from March highs)
+  - Materials: +12.8%
+  - Industrials: +11.6%
+  - S&P 500 overall: +11.2%
+  - Healthcare: −2.5%
+  - Financials: −6.0% (laggard — rate-hike fears, credit concerns)
+
+---
+
+### VIX Regime
+- **Current VIX:** 16.02–16.17
+- **Regime:** Normal (VIX 14–22)
+- **Sizing multiplier:** 1.00×
+- **Notes:** VIX up +4.77% from prior close (15.32 → 16.17) on S&P futures decline and geopolitical noise, but remains well inside Normal band. No regime constraint on entries. All entry types permitted.
+
+---
+
+### Sectors Covered in Scan (Breadth Check)
+- **Technology (Info Tech):** AVGO, XLK, NVDA, AMD, INTC, MRVL — 6 names ✅
+- **Energy:** XLE, XOM, OXY — 3 names ✅
+- **Materials/Commodities:** GLD, NEM — 2 names ✅
+- **Financials:** XLF — 1 name ✅
+- **Sectors represented: 4** — breadth mandate (≥3) satisfied ✅
+
+---
+
+### Trade Ideas (Cleared Both Layers)
+
+**NONE — Decision: HOLD**
+
+Zero candidates cleared both Layer A and Layer B today. Detailed findings below.
+
+---
+
+### Skipped Candidates
+
+#### 1. AVGO | Long | Technology | 2b-LONG attempt
+**Catalyst:** MRVL earnings surge (+28.6%) confirms AI custom ASIC/networking thesis; AVGO is the direct sector peer and YTD leader. New 52w high set today at $482.59. AVGO reported own strong earnings beat last week.
+
+**Layer A (Catalyst + Trend):**
+- Catalyst: ✅ Confirmed AI infrastructure momentum, MRVL read-through
+- Sector posture: ✅ Technology +33% YTD, clear sector leader
+- Direction: LONG ✅
+- Lane selected: **2b-LONG (Momentum)** — uptrend continuation, breakout from base
+- Entry target: ~$482.59 (current close)
+- Stop: $446.80 (7.5% below) | Target: $549.80 (14% above, ~2.3:1 R:R)
+- Minervini Trend Template (Momentum lane — required):
+  - Price $482.59 > 50-SMA $391.94 ✅
+  - Price $482.59 > 150-SMA $361.34 ✅
+  - Price $482.59 > 200-SMA $271.00 ✅
+  - 150-SMA $361.34 > 200-SMA $271.00 ✅
+  - 200-SMA trending up (1mo ago N/A — 150 bars available, proxy: 50-SMA > 150-SMA confirms uptrend direction) ✅
+  - 50-SMA $391.94 > 150-SMA $361.34 > 200-SMA $271.00 ✅
+  - Price > 30% above 52w low ($293.41): +64.5% ✅
+  - Price within 25% of 52w high ($482.59): 0.0% (AT 52w high) ✅
+  - 6mo return: +25.0% (proxy for top quintile given AVGO as sector leader) ✅
+  - **Trend Template: PASS** (all 9 conditions met)
+- Pivot extension: pivot = prior 20d high = $459.97; today's close $482.59; extension = ($482.59/$459.97 − 1) = **4.92%** ✅ (≤5% — passes by 0.08%)
+
+**Layer B (Quant):**
+- Mean_20: $424.84 | Std_20: $11.83
+- **Z-Score: +4.883** ✅ (≥+1.0)
+- Close $482.59 > prior 20d high $459.97 ✅ (clean breakout)
+- **RSI(14): 73.7** ❌ — **FAIL** (need 50–70 for Momentum Long; currently overbought by 3.7 pts)
+- **Vol: 17.73M vs 20d avg 20.54M = 0.863×** ❌ — **FAIL** (need ≥1.5×; running 0.637× below threshold — note: today's bars are partial-day pre-market, but gap is large)
+- 50-SMA $391.94 > 200-SMA $271.00 ✅ (regime confirmed)
+- Lane attempted: 2b-LONG — **FAILS on RSI and Volume (2 of 5 criteria fail)**
+
+**Pair check:** MRVL (canonical AI-infra semi pair)
+- MRVL Z: +5.923 | AVGO Z: +4.883 | Divergence: 1.040σ ✅ (≤1.5σ)
+- Pair confirms sector thesis but cannot override failed Layer B gates
+
+**VERDICT: SKIP — Layer B fails (RSI 73.7 > 70, Vol 0.863× < 1.50×)**
+**Watch:** RSI needs to cool to ≤70 on a consolidation day; Volume needs ≥30.9M on next breakout attempt. New pivot resets to $482.59; max chase limit $482.59 × 1.05 = **$506.72**.
+
+---
+
+#### 2. XLK | Long | Technology ETF | 2b-LONG attempt
+**Catalyst:** Tech ETF momentum; MRVL +28% / AVGO +4.9% today; AI capex supercycle driving institutional tech allocations; sector YTD +33%.
+
+**Layer A:**
+- Catalyst: ✅ sector-wide AI thesis
+- Sector posture: ✅ strongest YTD sector
+- Lane: 2b-LONG (Momentum)
+- Minervini Trend Template:
+  - Price $197.03 > 50-SMA $159.79 ✅, 150-SMA $175.81 ✅, 200-SMA $131.86 ✅
+  - 150-SMA > 200-SMA ✅; 50-SMA > 150-SMA ✅
+  - 52w range: hi $304.13, lo $127.50; dist from hi = −35.2% ❌ **FAIL** (need within 25% of 52w high)
+  - NOTE: XLK 52w high of $304.13 appears anomalous vs current price — possible data artifact or XLK significantly below prior peak. Either way, the −35.2% distance from 52w high **fails the Trend Template criterion requiring price within 25% of 52w high.**
+  - **Trend Template: FAIL** (52w high distance −35.2% > −25% allowed)
+
+**Layer B:**
+- Z: +2.428 ✅ | Breakout: $197.03 > $195.76 ✅ (0.6% extension) | **RSI: 80.5** ❌ | **Vol: 0.421×** ❌
+- Lane 2b-LONG: FAILS on RSI and Volume
+
+**VERDICT: SKIP — Layer A fails (Trend Template: price −35.2% from 52w high) AND Layer B fails (RSI 80.5, Vol 0.421×). Three separate disqualifying failures.**
+
+---
+
+#### 3. NVDA | Long | Technology | 2b-LONG attempt
+**Catalyst:** NVDA CPU business announcement is positive for NVDA itself (new TAM); AI data center momentum intact; Jensen Huang presentation driving institutional interest.
+
+**Layer B:**
+- Z: +0.920 ❌ (need ≥+1.0; off by 0.080)
+- Close $225.01 < prior 20d high $235.74 ❌ (no breakout; $10.73 below pivot)
+- RSI: 53.4 ✅
+- Vol: 113.3M vs avg 171.2M = 0.662× ❌
+- 50-SMA $201.31 > 200-SMA $143.18 ✅
+
+**VERDICT: SKIP — Layer B fails on 3 criteria (Z below threshold, no breakout, volume 0.662×). NVDA is lagging its peers; not ready for momentum entry.**
+
+---
+
+#### 4. AMD | Short | Technology | 2a-SHORT / 2b-SHORT attempt
+**Catalyst:** NVDA entering CPU business is a direct competitive threat to AMD's CPU revenue stream (EPYC / desktop Ryzen); Intel also cited as negative pre-market. AMD was negative in pre-market per research.
+
+**Layer B — 2a-SHORT:**
+- Z: +1.400 ❌ (need ≥+2.0 for mean-reversion short; 0.6σ below threshold)
+
+**Layer B — 2b-SHORT:**
+- Z: +1.400 ❌ (need ≤−1.0; wrong direction entirely for breakdown lane)
+- Close $513.26 vs 20d low $341.54: close NOT < 20d low ❌
+- Vol: 13.1M vs avg 39.8M = 0.329× ❌ (severely below threshold)
+- 50-SMA $340.48 < 200-SMA $195.27: actually 50>200 ❌ (uptrend structure, wrong for short)
+
+**VERDICT: SKIP — No lane qualifies. AMD is structurally in a strong uptrend (6mo return +133.6%, price 270% above 52w low). The NVDA CPU threat is a real narrative risk but has NOT yet produced a statistical breakdown. Z is positive (stock still elevated vs recent mean). Wait for structural deterioration to materialize.**
+
+---
+
+#### 5. INTC | Short | Technology | 2b-SHORT / 2a-SHORT attempt
+**Catalyst:** NVDA CPU announcement directly threatens Intel's traditional market (x86 CPU oligopoly); Intel was cited negative in pre-market.
+
+**Layer B — 2a-SHORT:**
+- Z: −1.025 ❌ (need ≥+2.0; INTC is actually BELOW its mean — wrong direction for 2a-short)
+
+**Layer B — 2b-SHORT:**
+- 50-SMA $85.00 > 200-SMA $42.43 ❌ (uptrend structure; need 50 < 200 for downtrend confirmation)
+- Close $107.88 > 20d low $95.78 ❌ (no breakdown)
+- Vol: 67.8M vs avg 140.9M = 0.481× ❌
+- RSI: 35.6 ✅ (marginally within 30–50)
+- Z: −1.025 ✅ (≤−1.0 for breakdown lane)
+
+**Structural context:** Despite NVDA CPU threat catalyst, INTC has surged +221% from its 52w low of $33.62 to $107.88. The SMA stack is fully bullish (50>150>200). INTC would need to re-break below $95.78 (20d low) on heavy volume with SMA structure deteriorating before a 2b-SHORT qualifies.
+
+**VERDICT: SKIP — 2b-SHORT fails on 3 criteria (SMA structure wrong, no breakdown, low volume). 2a-SHORT Z is negative (cannot satisfy ≥+2.0). Short thesis structurally premature.**
+
+---
+
+#### 6. MRVL | Short | Technology | 2a-SHORT attempt — EXCLUDED BY UNIVERSE RULE
+**Layer B check (academic):** Z: +5.923 ✅ | RSI ~90+ ✅ | Vol: 2.412× ✅ — technically passes all 3 criteria
+**Phase 1 Universe Rule:** Short universe = mega-caps (mkt cap >$20B) AND sector/index ETFs ONLY. **NO high-momentum names.** MRVL is: (a) at 52w high, (b) +210% 6-month return, (c) +28.6% single-day surge — definitionally a high-momentum name.
+**VERDICT: EXCLUDED — Phase 1 short universe rules prohibit shorting high-momentum names regardless of Z-score overbought signal. Squeeze risk on a momentum stock is asymmetric.**
+
+---
+
+#### 7. GLD | Long | Materials/Commodities | 2a-LONG attempt — Developing setup
+**Catalyst:** Geopolitical uncertainty (Iran-US), rate-hike fears (inflation 3.8%), S&P futures down — gold safe-haven thesis building.
+**Layer B — 2a-LONG:**
+- Z: −1.007 ❌ (need ≤−2.0; currently 0.993σ above required threshold — needs ~$8.60 more decline)
+- RSI: 30.8 ❌ (need <30; currently 0.8 points above threshold)
+- Vol: 2.51M vs avg 6.08M = 0.413× ❌ (need ≥1.0×)
+
+**Structure check (mean-reversion lighter gate):**
+- Price $412.10 > 200-SMA $316.82 ✅ (above long-term trend; not a falling knife)
+- Not at 52w low: close $412.10 vs 52w low $362.32 — 13.7% above ✅
+- Prior 20d low: $408.49 — not breaking down hard ✅
+
+**VERDICT: SKIP — All three 2a-LONG criteria fail. However, GLD is the CLOSEST candidate to qualifying. A ~2% further decline to ~$403–$405 would push Z to ≤−2.0 and RSI below 30. Watch as the primary developing setup for Jun 3–4.**
+**Pair (NEM):** Z = −0.478; NEM has not confirmed GLD's weakness yet (divergence ~0.53σ) ✅ — pair is coherent, not diverging.
+
+---
+
+#### 8. XLF / XOM / OXY / XLE / NEM — No lanes qualified
+- **XLF:** Z = −0.048 (neutral); no lane. Financials lagging YTD but not statistically extreme in either direction.
+- **XOM:** Z = −0.346 (neutral), Vol 0.203×, RSI 49.5 — no lane.
+- **OXY:** Z = +0.896 (below +1.0 threshold), Vol 0.366× — no lane.
+- **XLE:** Z = −0.096 (neutral), Vol 0.321× — no lane. Energy moving on binary Iran catalyst, not statistical setup.
+- **NEM:** Z = −0.478, Vol 0.389× — no lane.
+
+---
+
+### Risk Factors
+1. **Tech overbought condition:** AVGO Z=4.88, MRVL Z=5.92, XLK Z=2.43 — these are historically extreme readings. A mean-reversion correction in tech would be statistically normal. RSI 73–80+ across multiple names. Risk of holding any new tech long at these levels is elevated.
+2. **NVDA CPU announcement overhang:** Creates sector uncertainty for AMD/INTC. Not yet resolved in price action — could trigger further downside or mean-reversion bounce depending on market digestion.
+3. **JOLTS Report (10:00 AM ET today):** If job openings come in significantly above ~6.8M, rate-hike fears intensify → broad selloff risk. If below, provides relief.
+4. **Iran binary risk:** US–Iran peace deal uncertainty. Any escalation → WTI spike → inflation fears → rate hike repricing. Any positive news → energy selloff, tech relief.
+5. **Volume drought:** Across every name today, volume is 0.2×–0.86× of 20-day averages. This is a low-conviction session. No institutional conviction = no valid momentum entry. Consistent with S&P futures −0.40% premarket.
+6. **Rate hike pricing:** Headline inflation 3.8% with markets pricing in a rate hike at June 17 FOMC. Higher rates pressure growth stocks (tech). Additional risk to long tech thesis.
+7. **Pivot extension risk (AVGO):** AVGO is at exactly 4.92% above its prior pivot — within 0.08% of the 5% max-chase limit. If it gaps up tomorrow, the new pivot resets higher but the entry limit also moves. Any more extension without volume confirmation increases chase risk.
+
+---
+
+### Forward Watchlist (Key Setups to Monitor)
+| Ticker | Direction | Setup | Trigger Condition | Priority |
+|--------|-----------|-------|-------------------|----------|
+| AVGO | LONG 2b | Momentum continuation | RSI cools ≤70 on pullback; next volume session ≥30.9M (1.5× avg); new pivot $482.59, max limit $506.72 | 🥇 #1 |
+| GLD | LONG 2a | Mean-reversion oversold | Price declines to ~$403–$405 (Z ≤ −2.0); RSI <30; vol confirms ≥1.0× | 🥈 #2 |
+| XLK | LONG 2b | Momentum continuation | RSI must cool to ≤70; vol ≥19.2M (1.5×); consolidation day required | 🥉 #3 |
+| NVDA | LONG 2b | Breakout above pivot | Close > $235.74 (52w high); Z must reach ≥+1.0; vol ≥257M | Watch |
+| AMD | SHORT 2b | Breakdown on CPU threat | Z ≤ −1.0; close < 20d low; vol ≥1.5×; SMA structure deteriorates | Conditional |
+
+---
+
+### Decision
+**HOLD — 0 trades placed today**
+
+**Rationale:** Every candidate that advanced far enough in the funnel failed on Layer B quant criteria. The primary failure mode is twofold: (1) RSI readings are significantly overbought (73–80+) across all technology names after MRVL's +28.6% and AVGO's +4.9% session on June 2 — the momentum lane's RSI 50–70 window is designed specifically to avoid entering these stretched readings; and (2) volume across all names is running 0.2×–0.86× of 20-day averages, indicating a low-conviction session with no institutional sponsorship. Entering momentum breakouts on low volume with overbought RSI is precisely the "chasing extended breakouts" behavior the quant layer was built to prevent.
+
+The patience rule applies: a correct HOLD preserves capital for the setup that actually clears all gates. AVGO and GLD are the two closest candidates. AVGO needs RSI cooling + volume confirmation; GLD needs ~2% more decline to hit Z ≤ −2.0. Neither is there today.
+
+The pre-market bar data represents a partial session (bars through mid-morning likely), which further supports not forcing an entry on incomplete volume signals.
