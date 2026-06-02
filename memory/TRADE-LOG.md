@@ -1731,3 +1731,52 @@ The 200-SMA override decision in decisions/log.md will determine whether the bot
 
 **No orders placed. Portfolio: 0 positions, 0% deployed. All orders expire N/A (nothing submitted).**
 
+
+---
+
+### Jun 02 — Afternoon Scan (Day 33 / Post-Session ~20:52 UTC)
+
+**Portfolio:** $99,056.46 | **Cash:** $99,056.46 (100%) | **Deployed:** 0% | **Phase P&L:** −$943.54 (−0.944%)
+
+| Ticker | Shares | Entry | Close | Unrealized P&L | Stop | Hold |
+|--------|--------|-------|-------|----------------|------|------|
+| — | — | — | — | — | — | — (0 positions) |
+
+**Open orders at scan time:** NONE
+
+**Afternoon scan trades:** none
+
+**Stop action:** N/A — no positions held, no upgrade workflow triggered
+
+**Afternoon candidates evaluated (post-close, settled June 2 bars):**
+
+| Candidate | Z-Score | RSI(14) | Vol Ratio | Extension | Key Failures | Verdict |
+|-----------|---------|---------|-----------|-----------|--------------|---------|
+| AVGO | +3.158 | 75.57 | **1.746×** ✅ | +4.70% ✅ | RSI 75.57 > 70 ❌ (single remaining gate) | **REJECT** |
+| MRVL | +3.580 | 85.56 | 3.112× ✅ | **+32.52% ❌** | Extension +32.52% >> 5% HARD BLOCK ❌; RSI 85.56 ❌ | **REJECT** |
+| XLK | +2.256 | 86.36 | 0.795× ❌ | +1.25% ✅ | RSI 86.36 > 70 ❌; Vol 0.795× < 1.5× ❌ | **REJECT** |
+| GLD | −0.995 | 44.68 | 0.651× ❌ | — | Z −0.995 (need ≤−2.0) ❌; RSI 44.68 (need <30) ❌; Vol ❌ | **REJECT** |
+| XOM | −0.458 | 47.5 | 0.597× ❌ | — | Z near zero, no lane qualifies | **REJECT** |
+
+**Key development:** MRVL surged +32.5% today ($219.43→$290.79) on 3.112× volume — largest single-name move since bot launch. Pivot extension +32.52% = unchallengeable per ≤5% extension rule. AVGO +4.7% to $481.57 on 1.746× vol with Z=+3.158 — closest to qualifying of any candidate ever; single gate (RSI 75.57→need ≤70) blocks entry. MRVL off active watchlist until new base forms (~3–6 weeks).
+
+**PDT count:** 0/3 | **Week trades:** 0/3 | **Positions:** 0/6
+**Circuit breakers:** ✅ All clear — Phase P&L −0.944% (lim −5%) | Drawdown −1.15% from $100,206.70 peak (lim −15%)
+
+---
+
+### Jun 02 — EOD Snapshot (Day 33, Tuesday)
+
+**Portfolio:** $99,056.46 | **Cash:** $99,056.46 (100%) | **Day P&L:** $0.00 (0.000%) | **Phase P&L:** −$943.54 (−0.944%) | **Deployed:** 0%
+
+| Ticker | Shares | Entry | Close | Unrealized P&L | Stop | Time |
+|--------|--------|-------|-------|----------------|------|------|
+| — | — | — | — | — | — | — |
+
+**Trades today:** none — HOLD decision at pre-market confirmed; all candidates rejected at afternoon scan. No fills, no orders, no bracket limits active.
+
+**Notes:** Day 33 closes at 100% cash. The session's dominant story was MRVL's +32.5% gap (+3.11× vol) and AVGO's +4.7% continuation (+1.75× vol). AVGO now passes 7/8 Layer B gates for the 2b-LONG momentum lane — only RSI (75.57, needs ≤70) stands between the bot and its first AI/tech trade. MRVL's +32.5% surge on 3.11× volume is extraordinary institutional activity but the +32.52% pivot extension makes it untradeable under current rules (max chase: 5%). Week ends 0/3 trades, full PDT budget (0/3), 100% cash. AVGO RSI normalization is the single event that unlocks the next trade.
+
+**Circuit breakers:** ✅ All clear — Day 0.000% (lim −2%) | Phase −0.944% (lim −5%) | Drawdown −1.15% from $100,206.70 peak (lim −15%)
+**PDT count:** 0/3 | **Week trades:** 0/3 | **Positions:** 0/6
+

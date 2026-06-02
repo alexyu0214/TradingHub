@@ -7395,3 +7395,144 @@ No gates were lowered. Zero trades is the correct outcome.
 6. **New sector scan warranted:** All current watchlist names are in Information Technology. Per breadth mandate (≥3 sectors), Thursday pre-market should scan: Energy (XLE — Iran binary risk ongoing; Z ≈ −0.5), Materials (XLB — Z context), Healthcare (XLV — Z context post-overbought unwind), and any fresh catalysts in Industrials or Financials.
 
 **Decision: HOLD — Research log updated (no actions taken — no TRADE-LOG or DAILY-SUMMARY entries required).**
+
+---
+
+## 2026-06-02 — Afternoon Scan Addendum (20:52 UTC / ~4:52 PM ET post-session)
+
+**Scan time:** Post-session (market closed 20:00 UTC / 4:00 PM ET); all June 2 bars settled.
+**VIX regime at scan:** NORMAL (estimated ~16.0–16.5, from morning research 16.02–16.17) | Sizing multiplier: 1.00×
+
+---
+
+### STEP 1 — Order & Position State Reconciled vs TRADE-LOG
+
+**Orders returned by API (6 total — all historical, all terminal):**
+
+| Order ID | Symbol | Type | Status | Detail |
+|----------|--------|------|--------|--------|
+| 1d69c496 | XOM | Bracket limit BUY 61 sh @ $159.78 | **EXPIRED** 2026-05-18T20:02 | TIF: day — never filled ✅ logged |
+| 94606e38 | XOM | Stop child $147.80 | **CANCELED** 2026-05-18T20:02 | Auto-cancelled ✅ logged |
+| 336d922a | XOM | TP child $183.74 | **CANCELED** 2026-05-18T20:02 | Auto-cancelled ✅ logged |
+| 8f97ef7d | XOM | Market Sell 130 sh | **FILLED** $146.09, 2026-05-07 | Thesis-break exit ✅ logged |
+| d92d9371 | XOM | Trailing Stop 10% GTC | **CANCELED** 2026-05-07 | Pre-exit ✅ logged |
+| c04ae321 | XOM | Market Buy 130 sh | **FILLED** $153.35, 2026-05-01 | Original entry ✅ logged |
+
+- **Positions API: `[]` — 100% cash ($99,056.46).** No filled positions.
+- **Morning bracket limits today (Jun 2): NONE** — Pre-market research (2026-06-02) issued HOLD: AVGO (RSI 73.7 > 70, vol 0.863×); XLK (RSI 80.5, TT 52w-high fail, vol 0.421×); NVDA (Z +0.920, below +1.0); AMD/INTC (no short lane); GLD (Z −1.007, vol 0.582×). No orders placed at open.
+- **Bracket fills today: 0**
+- **Open stale limits: 0** — no open orders of any kind.
+- **TRADE-LOG reconciliation: FULLY CURRENT ✅** — All 6 API orders match log entries exactly.
+
+---
+
+### STEP 2 — Trailing Stop Upgrades on Profitable Fills
+
+**N/A.** Portfolio is 100% cash. No positions held. No trailing stop upgrade workflow applicable.
+
+---
+
+### STEP 3 — Stale Limit Cancellations
+
+**None.** No open orders of any kind. Nothing to cancel.
+
+---
+
+### STEP 4 — Afternoon Opportunity Scan (5 Candidates, 4 Sectors)
+
+**VIX regime:** NORMAL (1.00×) | **Positions:** 0/6 | **Week trades:** 0/3 | **PDT:** 0/3  
+**200-SMA override:** ACTIVE (decisions/log.md [2026-05-30] — expires 2026-08-15)  
+**Market status:** CLOSED — all June 2 bars settled; post-close scan.
+
+**Full quant metrics — June 2, 2026 fully settled bar data:**
+
+| Ticker | Close | 20d Mean | 20d Std | Z-Score | RSI(14) | Vol vs Avg | Pivot (20d High) | Extension | Lane | Pair | Pair Div | Verdict |
+|--------|-------|----------|---------|---------|---------|-----------|-----------------|-----------|------|------|----------|---------|
+| **AVGO** | $481.57 | $428.09 | $16.93 | **+3.158** | **75.57** | **1.746×** ✅ | $459.97 ✅ | **+4.70%** ✅ | 2b-LONG | MRVL | **0.422σ ✅** | **REJECT** |
+| MRVL | $290.79 | $189.49 | $28.29 | **+3.580** | **85.56** | **3.112×** ✅ | $219.43 ✅ | **+32.52% ❌** | 2b-LONG | AVGO | 0.422σ ✅ | **REJECT** |
+| XLK | $198.21 | $179.58 | $8.25 | **+2.256** | **86.36** | 0.795× ❌ | $195.76 ✅ | +1.25% ✅ | 2b-LONG | AVGO | **0.902σ ✅** | **REJECT** |
+| GLD | $411.95 | $420.55 | $8.64 | **−0.995** | 44.68 | 0.651× ❌ | — | — | 2a-LONG | NEM | ~0.4σ ✅ | **REJECT** |
+| XOM | $149.56 | $155.72 | $4.82 | −0.458 | 47.5 | 0.597× ❌ | $162.55 | — | — | — | — | **REJECT** |
+
+**Pair divergences (all computed from settled bar Z-scores):**
+- AVGO (+3.158) ↔ MRVL (+3.580): **0.422σ ✅** — AI semis in near-perfect sector alignment
+- XLK (+2.256) ↔ AVGO (+3.158): **0.902σ ✅** — tech ETF tracking single-name leaders
+- AVGO (+3.158) ↔ NVDA (+0.605): **2.553σ ❌** — NVDA continuing to dramatically lag AI peers (noted, not a hard block since MRVL is AVGO's canonical pair per strategy)
+
+---
+
+**Candidate Detail Notes:**
+
+**AVGO — REJECT (1 active gate failure: RSI 75.57 > 70):**
+
+| Gate | Required | Actual | Result |
+|------|----------|--------|--------|
+| Z ≥ +1.0 | ≥+1.0 | +3.158 | ✅ |
+| Close > prior 20d high | > $459.97 | $481.57 | ✅ (+4.70% above pivot) |
+| RSI 50–70 | 50–70 | **75.57** | ❌ Overbought |
+| Vol ≥ 1.5× avg | ≥1.5× | **1.746×** (37.8M vs 21.7M avg) | ✅ |
+| Pivot extension ≤5% | ≤5% | 4.70% | ✅ |
+| MRVL pair divergence | ≤1.5σ | 0.422σ | ✅ |
+| TT (50>150 proxy, override) | 50>150 SMA | $391.92 > $361.33 ✅ | ✅ |
+| TT (price > SMAs) | > both | $481.57 > $391.92 and > $361.33 | ✅ |
+
+**Net: 7/8 gates pass. Single failing gate: RSI 75.57 (needs ≤70).**
+
+AVGO has now been the top watchlist candidate across multiple sessions. Today's settled bar data shows the **strongest combined quant reading of the entire account's history**: Z = +3.158, volume 1.746× (a clear institutional accumulation signal), clean breakout at 4.70% above pivot (within the 5% cap), and MRVL pair confirming at 0.422σ. The TT 200-SMA proxy (override active) passes cleanly on 150 available bars. The sole disqualifier is RSI at 75.57 — 5.57 points above the 70 ceiling for the 2b-LONG momentum lane.
+
+RSI has been elevated for multiple sessions (73.7 → 73.5 → 74.9 → 75.57), drifting persistently higher rather than cooling. This suggests **continuous institutional accumulation** is keeping RSI elevated — not a sharp spike that will quickly revert. A 1–2 session consolidation or flat open would bring RSI back below 70.
+
+**Max entry limit for next qualifying session: $459.97 × 1.05 = $482.97** (note: pivot was $459.97 per the prior 20d high before today's new high was set; today's close $481.57 may become the new 20d pivot as it enters the rolling window — re-compute at Thursday pre-market).
+
+**MRVL — REJECT (pivot extension +32.52% — structural hard block):**
+- MRVL surged +32.5% today ($219.43 → $290.79) on 3.112× volume — an extraordinary single-session move driven by an AI/custom ASIC catalyst. While 5 of 7 gates pass (Z=+3.58, vol=3.11×, breakout ✅, pair ✅), the pivot extension of **+32.52% far exceeds the ≤5% maximum chase rule**. This is the exact scenario the extension rule was designed to block: MRVL is now $71.36 above the allowable entry zone (pivot $219.43 × 1.05 = $230.40). Entering here has no systematic edge — it is pure momentum-chasing after a 32% gap.
+- RSI = 85.56 also fails independently (need 50–70).
+- MRVL needs **3–6 weeks of consolidation** to establish a new base. Once a new 20d-high pivot forms above $290, the setup can be re-evaluated. **Off active watchlist until new base forms.**
+
+**XLK — REJECT (2 active gate failures: RSI 86.36, Vol 0.795×):**
+- Z = +2.256 ✅ | Breakout above $195.76 ✅ | Extension +1.25% ✅ | AVGO pair 0.902σ ✅
+- RSI = **86.36** — the highest RSI reading on any candidate in 33 trading sessions. XLK has rallied from $180.39 (May 22) to $198.21 today — a +9.9% surge in 9 sessions. RSI 86 is deep overbought territory (top 2% historically). A meaningful consolidation is required before the RSI cools into the 50–70 healthy momentum window.
+- Volume = 0.795× — below the 1.5× threshold for a momentum breakout; no institutional confirmation.
+- XLK new 20d high at $198.21; max entry limit ≤ **$208.12** ($198.21 × 1.05) for when RSI eventually normalizes.
+- Assessment: XLK may correct to consolidate the AI/tech rally before resuming. Patience required.
+
+**GLD — REJECT (all 3 mean-reversion gates fail):**
+- Z = −0.995 (needs ≤ −2.0); trigger price ~$403.27. Currently $8.68 or −2.1% above trigger.
+- RSI = 44.68 (needs < 30; moving away from trigger — GLD consolidated upward slightly today +$0.69).
+- Volume = 0.651× (needs ≥ 1.0×).
+- GLD RSI has been drifting from 30.8 (prior sessions) upward to 44.68 now — the mean-reversion long window is **closing**, not opening. If RSI continues recovering without the price declining, the 2a-LONG gate will no longer be reachable simultaneously with the Z ≤ −2.0 trigger. **Reducing GLD to low-priority watchlist.**
+
+**XOM — Context only (no lane qualifies):**
+- Z = −0.458; RSI = 47.5; vol = 0.597×. Price $149.56 is 7.8% below its $162.55 20d pivot.
+- Orderly drift continues. CVX/XLE pair divergence confirmed at < 0.5σ — sector-wide, not idiosyncratic.
+- Energy sector: 1 consecutive failure (XOM May 7 thesis-break). No new energy entries without fresh catalyst + statistical extreme simultaneously.
+
+**New afternoon entries: NONE** — all candidates failed composite Layer A + Layer B gates. Market is closed; no orders possible regardless.
+
+---
+
+### Afternoon Market Context
+
+June 2 was the single most statistically active session in the account's 33-day history from a quant perspective. MRVL surged +32.5% on 3.112× volume — the largest single-name move observed since the bot launched. AVGO extended another +4.7% to $481.57 (+1.746× vol), XLK pushed to $198.21 (+1.3% day). The AI/custom silicon thesis is being validated in real-time by the market: MRVL's AI ASIC/custom networking business is now receiving institutional re-rating (likely driven by MRVL's own earnings catalyst and/or hyperscaler allocation announcements). The AI capex supercycle narrative (NVDA → AVGO → MRVL → XLK as the sector expression) is playing out exactly as the research identified. 
+
+The key frustration is that **AVGO remains 1 gate away from entry for the 3rd consecutive session**: May 29 was blocked by 200-SMA gate (pre-override); Jun 1 morning was blocked by vol 0.906×; Jun 1 settled was blocked by vol 1.479×; Jun 2 settled is blocked by RSI 75.57. Volume is now confirmed at 1.746× — that gate is passed. The RSI overbought signal is real and the strategy is correct to enforce it: buying RSI 75+ momentum entries historically has significantly worse outcomes than RSI 50-70 entries. The discipline is costing short-term gains (AVGO up ~8% from first-qualifying session) but protecting against the elevated risk of entering a parabolic move.
+
+NVDA continues to be the notable laggard in the AI complex (Z = +0.605, RSI ~54) while AVGO (Z = +3.158) and MRVL (Z = +3.580) are at historic statistical extremes. NVDA remains 5%+ below its $235.74 pivot with no breakout signal.
+
+---
+
+**Bracket fills today:** 0 (no morning limits placed — HOLD at pre-market; all candidates failed gates)
+**Stops upgraded:** 0 (no positions held; no upgrade workflow applicable)
+**Stale limits cancelled:** 0 (no open orders existed)
+**New afternoon entries:** none — all candidates failed composite Layer A + Layer B gates; market is closed post-session
+**Afternoon market context:** AI/semi complex roared: MRVL +32.5% on 3.11× vol (pivot extension +32.52% = unchallengeable); AVGO +4.7% on 1.75× vol (RSI 75.57, 1 gate from qualifying); XLK +1.3% RSI 86.36 (2 gates from qualifying). NVDA lagging at Z+0.605. Energy/XOM soft (Z≈−0.46). GLD drifting (RSI 44.68, moving away from 2a-LONG trigger). VIX Normal.
+
+**Key watchlist for Thursday pre-market (2026-06-03):**
+1. **AVGO — #1 PRIORITY (2b-LONG):** Z=+3.158 ✅, vol=1.746× ✅, ext=4.70% ✅, MRVL pair 0.422σ ✅, TT proxy ✅. **Single gate remaining: RSI must cool from 75.57 → ≤70**. Any consolidation/flat open achieves this. New pivot = $481.57 (today's close = new 20d high); max entry limit = **$505.65** ($481.57 × 1.05). If RSI clears Thursday → bracket at limit ≤ $505.65 with stop ~−7.5% and 2:1 target.
+2. **MRVL — OFF ACTIVE WATCHLIST:** Pivot extension +32.52% — unchallengeable per rules. Needs 3–6 weeks to build new base above $290. Monitor passively; restore only when new 20d high forms and extension gate becomes feasible.
+3. **XLK — #2 (RSI must cool from 86.36 → ≤70):** Requires meaningful pullback (3–5 sessions minimum). New pivot = $198.21; max entry limit = **$208.12** ($198.21 × 1.05). Low near-term probability without a market correction.
+4. **GLD — low priority (#3):** RSI 44.68 drifting away from <30 trigger. Z = −0.995, trigger at $403.27 (−$8.68 away). Setup closing rather than opening. Monitor weekly.
+5. **NVDA — watch only:** Z+0.605, RSI ~54, 5.6% below $235.74 pivot. Lagging AI peers. No lane qualifies.
+6. **New sector scan needed Thursday:** All active watchlist names are in Information Technology. Per breadth mandate (≥3 sectors), Thursday pre-market should scan: Materials (XLB — Z context), Healthcare (XLV — Z context), Energy (XLE — 2a-LONG watch at $55.68), and potentially Industrials names. ADP Employment report Thursday 8:15 AM ET — potential market-moving macro data.
+7. **200-SMA data gap:** ~37 trading sessions remaining (est. mid-August 2026). AVGO TT proxy (50>150) confirmed ✅ and functioning.
+
