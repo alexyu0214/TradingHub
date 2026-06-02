@@ -984,3 +984,19 @@ vs S&P 500: −1.60% (S&P: +1.60%, 9th consecutive weekly gain; May: +5.1%; SOXX
 
 **Primary watch for next scan:** GLD — needs ~2% decline to $403–$405 to trigger 2a-LONG (Z ≤−2.0, RSI <30). Secondary: AVGO on RSI reset + volume confirmation.
 
+
+## 2026-06-02 — EOD (FINAL)
+
+**Portfolio:** $99,056.46 (+0.000% day, −0.944% phase)
+**Cash:** $99,056.46 (100%)
+**Deployed:** 0%
+**Daytrade count:** 0/3
+
+**Trades today:** none
+**Open positions:** none
+**Stops tightened:** none
+**Losers cut:** none
+
+**Notes:** Day 33 (Tuesday) ends flat — full cash, all circuit breakers clear. MRVL +32.5% gap on 3.11× vol is untradeable (pivot extension rule). AVGO at 7/8 momentum-long gates; RSI 75.57 is the single remaining blocker. Week: 0/3 trades, 0/3 PDT. Watching for AVGO RSI reset ≤70 as the primary unlock for the phase's first AI/tech entry.
+
+---

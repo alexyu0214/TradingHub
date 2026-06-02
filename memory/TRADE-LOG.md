@@ -1780,3 +1780,20 @@ The 200-SMA override decision in decisions/log.md will determine whether the bot
 **Circuit breakers:** ✅ All clear — Day 0.000% (lim −2%) | Phase −0.944% (lim −5%) | Drawdown −1.15% from $100,206.70 peak (lim −15%)
 **PDT count:** 0/3 | **Week trades:** 0/3 | **Positions:** 0/6
 
+
+---
+
+### Jun 02 — EOD Snapshot (Day 33, Tuesday) [FINAL]
+
+**Portfolio:** $99,056.46 | **Cash:** $99,056.46 (100%) | **Day P&L:** $0.00 (0.000%) | **Phase P&L:** −$943.54 (−0.944%) | **Deployed:** 0%
+
+| Ticker | Shares | Entry | Close | Unrealized P&L | Stop | Time |
+|--------|--------|-------|-------|----------------|------|------|
+| — | — | — | — | — | — | — |
+
+**Trades today:** none
+
+**Notes:** Day 33 (Tuesday) closes at 100% cash — second consecutive flat session. The day's defining event was MRVL's extraordinary +32.5% gap on 3.11× volume, making it structurally untradeable (pivot extension +32.52%, hard limit ≤5%). AVGO continued its AI/semiconductor momentum (+4.7%, 1.746× vol, Z=+3.158) and now passes 7/8 momentum-long gates — RSI 75.57 is the sole blocker (needs ≤70). The path to the bot's first AI/tech trade is a single RSI normalization event away. Week stands at 0/3 trades; full PDT budget intact. No positions, no stops, no bracket orders active. All risk parameters healthy.
+
+**Circuit breakers:** ✅ All clear — Day 0.000% (lim −2%) | Phase −0.944% (lim −5%) | Drawdown −1.15% from $100,206.70 peak (lim −15%)
+**PDT count:** 0/3 | **Week trades:** 0/3 | **Positions:** 0/6
