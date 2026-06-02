@@ -7286,3 +7286,112 @@ Note: Spreads were NOT the morning skip reason — all candidates were skipped o
 ---
 
 **Rescan decision: HOLD — 0 trades. Correct application of patience rule.**
+
+---
+
+## 2026-06-02 — Midday Scan Addendum (~14:40 ET / 19:40 UTC)
+
+**Scan type:** Midday workflow — position thesis check & stop evaluation
+**VIX regime:** Normal (16.02–16.17 from morning research) — 1.00× sizing multiplier
+**Account:** Equity $99,056.46 | Cash $99,056.46 (100%) | 0 positions | 0 orders | PDT 0/3 | Week 0/3
+
+---
+
+### STEP 1 — Portfolio State (Live API)
+- **Positions:** `[]` — EMPTY. 100% cash confirmed.
+- **Orders:** `[]` — EMPTY. No working brackets. No GTC stops.
+- Pre-market HOLD decision confirmed: AVGO (RSI 73.7, vol 0.863×); XLK (RSI 80.5, TT 52w-high fail, vol 0.421×); NVDA (Z +0.920, below +1.0); AMD/INTC (no short lane); GLD (Z −1.037, vol 0.582×). No brackets placed.
+- TRADE-LOG fully current. No discrepancy.
+
+---
+
+### STEP 2 / STEP 3 — Cut Losers / Tighten Stops: N/A (no positions)
+
+---
+
+### STEP 4 — Full Watchlist Re-Evaluation (Settled Bar Data — June 2, 2026)
+
+**Quant results — all June 2 bars fully settled:**
+
+| Ticker | Close | Z-Score | RSI(14) | Vol Ratio | 20d High | Extension | Pair | Pair Div | Lane | Key Failures | Verdict |
+|--------|-------|---------|---------|-----------|----------|-----------|------|----------|------|--------------|---------|
+| AVGO | $478.07 | +3.060 | 74.90 | 1.337× | $459.97 ✅ | +3.94% ✅ | MRVL | 0.469σ ✅ | 2b-LONG | RSI 74.90>70 ❌; Vol 1.337×<1.5× ❌ | **REJECT** |
+| MRVL | $286.27 | +3.529 | 85.14 | 2.998× | $219.43 ✅ | **+30.46% ❌** | AVGO | 0.469σ ✅ | 2b-LONG | Ext +30.5%>>5% ❌; RSI 85.14>>70 ❌ | **REJECT** |
+| XLK | $197.81 | +2.222 | 86.21 | 0.636× | $195.76 ✅ | +1.05% ✅ | AVGO | 0.838σ ✅ | 2b-LONG | RSI 86.21>70 ❌; Vol 0.636×<1.5× ❌ | **REJECT** |
+| NVDA | $222.52 | +0.570 | 55.85 | 0.902× | $235.74 ❌ | −5.6% | MRVL | 2.958σ ❌ | No lane | Z<+1.0 ❌; Below pivot ❌; MRVL pair div ❌ | **REJECT** |
+| GLD | $411.55 | −1.037 | 44.27 | 0.582× | — | — | NEM | ~0.4σ ✅ | 2a-LONG | Z −1.037 (need ≤−2.0) ❌; RSI 44.27 (need <30) ❌; Vol 0.582× ❌ | **REJECT** |
+
+**Pair divergences (from settled bar Z-scores):**
+- AVGO (+3.060) ↔ MRVL (+3.529): 0.469σ ✅ — AI semis perfectly confirming each other
+- XLK (+2.222) ↔ AVGO (+3.060): 0.838σ ✅ — tech ETF tracking single-name leaders
+- AVGO (+3.060) ↔ NVDA (+0.570): 2.490σ ❌ — NVDA dramatically lagging AI peers (yellow flag)
+- NVDA (+0.570) ↔ MRVL (+3.529): 2.958σ ❌ — NVDA is the "odd one out" in the AI complex
+
+---
+
+### Candidate Notes
+
+**AVGO ($478.07, +3.94% today) — 2b-LONG — Closest to qualifying:**
+- Z = +3.060 ✅ | Breakout above $459.97 pivot ✅ | Extension +3.94% ✅ | MRVL pair confirms ✅
+- RSI = 74.90 ❌ — overbought; has been above 70 for 3 consecutive sessions (73.7 → 73.5 → 74.9 — drifting higher, not cooling). Needs a flat/down session to bring RSI back into the 50–70 healthy momentum window.
+- Vol = 1.337× ❌ — improved from Monday's 0.906× post-holiday trough to 1.337× today; positive trend but still 0.163× below the 1.5× gate. If tomorrow's session is a strong-volume day, this gate could clear.
+- AVGO closed at its 52-week high ($478.07 = new all-time high); pivot for next entry session resets to $478.07. Max entry limit: $478.07 × 1.05 = **$501.97**.
+- **AVGO remains #1 watchlist priority.** Both failing gates are "time and momentum" gates that resolve with one normalizing session.
+
+**MRVL ($286.27, +30.5% today) — 2b-LONG — NOT TRADEABLE:**
+- MRVL surged from $219.43 (Monday close) to $286.27 today — a +30.4% single-session move on 2.998× volume.
+- Pivot extension = +30.46% above the $219.43 prior 20d high — **6× the 5% maximum chase limit.** This is one of the most extreme intraday gap-and-run situations the strategy explicitly blocks.
+- RSI = 85.14 — severely overbought, in the top 1% of historical readings.
+- The ≤5% pivot extension rule is doing its job: preventing the bot from chasing an earnings-gap stock that has already moved 30% above its base. Entering here has nothing to do with systematic edge.
+- **MRVL is off the active watchlist until a new base forms.** Estimated time to next valid pivot: 3–6 weeks of consolidation. At that point, a fresh 2b-LONG setup can be evaluated with the new 20d high as pivot.
+
+**XLK ($197.81, +1.05% today) — 2b-LONG — RSI severely extended:**
+- Z = +2.222 ✅ | Breakout above $195.76 pivot ✅ | Extension +1.05% ✅ | AVGO pair confirms ✅
+- RSI = 86.21 ❌ — this is the highest RSI reading on any name in any scan since the bot launched. XLK has rallied 14.1% in 10 sessions (May 22 $180.39 → June 2 $197.81). At RSI 86, the ETF is in historically overbought territory — every point above 80 increases the likelihood of mean-reversion rather than continuation.
+- Vol = 0.636× ❌ — well below 1.5× threshold; no institutional volume confirmation of the breakout.
+- XLK Trend Template note: 52w high test (from 25 bars) shows $197.81 = current high (within 25% ✅). TT may partially clear with data accumulation.
+- **RSI must cool to ≤70 before XLK 2b-LONG can activate.** At the current pace, this requires a meaningful pullback in the AI/tech complex — could be 3–5 sessions minimum.
+
+**GLD ($411.55, −0.12% today) — 2a-LONG developing:**
+- Z = −1.037 (trigger = −2.0 at price $403.21; gap = $8.34 or −2.0% further decline)
+- RSI = 44.27 — neutral and actually recovering from the ~30 level seen earlier; this moves RSI AWAY from the <30 trigger required for 2a-LONG
+- Vol = 0.582× — consistently below 1.0× threshold; gold appears to be in very low-participation consolidation mode
+- NEM (gold miner pair) Z-score estimated ~flat to slightly negative — pair coherent ✅
+- GLD's setup has been the "always developing, never arriving" candidate for 2 weeks. The RSI recovery (from ~30 range to now 44) actually WEAKENS the mean-reversion thesis — a genuine oversold long entry needs RSI <30 at the moment of the Z trigger. If RSI continues recovering toward 50+, the 2a-LONG window may close entirely.
+- **Reducing GLD priority from #2 to #3** given RSI moving away from trigger. Monitor but not urgent.
+
+**NVDA ($222.52) — Watch-only:**
+- Z = +0.570; 5.6% below $235.74 pivot; RSI 55.85 (neutral); vol 0.902×.
+- NVDA continues to dramatically lag its AI peers (AVGO up +20% from NVDA's level on Z-score basis). This divergence (AVGO-NVDA = 2.490σ) reflects the market's current preference for custom ASIC/networking silicon (AVGO, MRVL) over GPU-centric AI compute (NVDA) in the near term.
+- No lane qualifies. Watch for either: (a) NVDA catching up and breaking above $235.74 on ≥1.5× volume, or (b) a pullback to Z ≤ −2.0 (~$202) + RSI <30 for a 2a-LONG.
+
+---
+
+### Trades Fired This Rescan: None
+
+**Patience rule applied.** The strategy is working as designed:
+- AVGO: 2 timing gates (RSI + vol) — actively improving, nearly there
+- MRVL: +30.5% pivot extension — correctly blocked (would be the worst kind of momentum chase)
+- XLK: RSI 86 — correctly blocked (parabolic overbought ETF without volume confirmation)
+- GLD: Z −1.037 — correctly blocked (not at statistical extreme)
+- NVDA: Z +0.570 — correctly blocked (insufficient momentum signal)
+
+No gates were lowered. Zero trades is the correct outcome.
+
+---
+
+### Key Watchlist for Thursday Pre-Market (2026-06-03)
+
+1. **AVGO — #1 PRIORITY (2b-LONG):** Z=+3.060 ✅, ext +3.94% ✅, MRVL pair 0.469σ ✅, AVGO at 52w high. Needs: (a) RSI to cool from 74.90 → ≤70 (requires flat/down open or profit-taking); (b) volume ≥ 30.9M shares (1.5× of 20.5M avg). New pivot = $478.07; max entry limit = **$501.97** ($478.07 × 1.05). ADP employment report Thursday (8:15 AM ET) — potential macro catalyst that could move growth stocks.
+
+2. **XLK — #2 (2b-LONG, lower priority until RSI cools):** RSI 86.21 is too extended for near-term entry. Needs meaningful pullback to bring RSI into 50–70. Tech ETF at 52w highs; may consolidate for 1–2 weeks before next clean entry. Max entry limit: $197.81 × 1.05 = **$207.70** (new pivot).
+
+3. **GLD — #3 (watch, reducing priority):** RSI rising away from <30 trigger (now 44.27). Z = −1.037, needs −2.0% more decline AND RSI reversal to <30 simultaneously. Increasingly unlikely to trigger without a fresh negative catalyst for gold. Monitor weekly.
+
+4. **MRVL — OFF active watchlist:** Needs 3–6 weeks to establish new base above current levels. Pivot extension +30.46% = unchallengeable per rules. Restore to watchlist only when new 20d high base is established.
+
+5. **NVDA — watch-only:** Z +0.570, 5.6% below pivot. No near-term lane. Watching for either breakout above $235.74 or oversold dip to Z ≤ −2.0.
+
+6. **New sector scan warranted:** All current watchlist names are in Information Technology. Per breadth mandate (≥3 sectors), Thursday pre-market should scan: Energy (XLE — Iran binary risk ongoing; Z ≈ −0.5), Materials (XLB — Z context), Healthcare (XLV — Z context post-overbought unwind), and any fresh catalysts in Industrials or Financials.
+
+**Decision: HOLD — Research log updated (no actions taken — no TRADE-LOG or DAILY-SUMMARY entries required).**
