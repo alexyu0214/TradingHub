@@ -7227,3 +7227,62 @@ Zero candidates cleared both Layer A and Layer B today. Detailed findings below.
 The patience rule applies: a correct HOLD preserves capital for the setup that actually clears all gates. AVGO and GLD are the two closest candidates. AVGO needs RSI cooling + volume confirmation; GLD needs ~2% more decline to hit Z ≤ −2.0. Neither is there today.
 
 The pre-market bar data represents a partial session (bars through mid-morning likely), which further supports not forcing an entry on incomplete volume signals.
+
+---
+
+### 2026-06-02 — Midday Rescan Addendum (14:15 ET)
+
+**Account at rescan:** Equity $99,056.46 | Cash $99,056.46 | 0 positions | 0 daytrades | 0/3 weekly trades used
+**VIX regime at rescan:** Normal (16.02–16.17 range this morning; no intraday regime change noted)
+**Market at rescan:** S&P futures off lows; session ~3.5 hrs in. AVGO pulling back from morning highs. Volume broadly light.
+
+---
+
+**Spread check — all candidates now within 1% threshold:**
+- AVGO: bid $471.00 / ask $472.54 → **0.33%** ✅
+- XLK: bid $197.16 / ask $197.18 → **0.01%** ✅
+- NVDA: bid $223.13 / ask $223.16 → **0.01%** ✅
+- AMD: bid $514.28 / ask $516.50 → **0.43%** ✅
+- INTC: bid $107.15 / ask $107.18 → **0.03%** ✅
+- GLD: bid $411.55 / ask $411.74 → **0.05%** ✅
+
+Note: Spreads were NOT the morning skip reason — all candidates were skipped on Layer B quant failures. Rescan re-evaluated whether those quant conditions improved with ~3.5 hours of session price action.
+
+---
+
+**Skipped at open, re-evaluated:**
+
+- **AVGO** ($471.77 at rescan, down −2.2% from $482.59 morning close): Z=+3.968 ✅, Breakout ✅ (+2.57% above pivot $459.97), **RSI 71.4 ❌** (needs ≤70; was 73.7 this morning — progress: −2.3 pts), **Vol 1.104× ❌** (needs ≥1.5×; was 0.863× — progress: +0.24×, but 22.68M vs 30.9M required). AVGO pulled back from $488 session high, which is exactly the RSI-cooling behavior we noted to watch for. Two gates still fail. Improving setup; not yet there. → **STILL SKIPPED — 2 criteria fail (RSI 71.4 > 70, Vol 1.104× < 1.5×)**
+
+- **XLK** ($197.17 at rescan, essentially flat +0.07%): Z=+2.445 ✅, Breakout ✅, **Layer A Trend Template ❌** (52w high distance −35.2% > −25% allowed; structural, does not change intraday), **RSI 80.6 ❌** (worsened from 80.5), **Vol 0.535× ❌** (worsened from 0.421×). Three separate disqualifying failures persist; no improvement. → **STILL SKIPPED — 3 criteria fail (Trend Template, RSI 80.6, Vol 0.535×)**
+
+- **NVDA** ($223.14, down −$1.87 / −0.83% from morning): Z=+0.712 ❌ (deteriorated from 0.920; moving further from +1.0 threshold as price slips), Breakout ❌ (still $12.60 below pivot $235.74), RSI 51.9 ✅ (stays in 50–70 window), Vol 0.795× ❌. Price is drifting AWAY from the breakout pivot. Setup is actually slightly weaker than morning. → **STILL SKIPPED — 3 criteria fail (Z 0.712, no breakout, Vol 0.795×)**
+
+- **AMD** ($515.39, essentially flat +$2.13): No short lane qualifies. 2b-SHORT: Z=+1.445 (positive — wrong sign entirely), 20d low $341.54 is $173 below current price, RSI 69.0, Vol 0.379×. 2a-SHORT: Z=+1.445 (needs ≥+2.0), RSI 69.0 (needs >70), Vol 0.379×. NVDA CPU threat has not produced any statistical breakdown in AMD. → **STILL SKIPPED — all short lanes fail; Z positive (stock above 20d mean)**
+
+- **INTC** ($107.17, down −$0.71 / −0.66%): 2b-SHORT: Z=−1.119 ✅, RSI 35.1 ✅, but Breakdown ❌ (needs close < $95.78; price is $11.39 above), Vol 0.549× ❌, SMA structure ❌ (50>200 — uptrend, wrong for short). Two of five pass, three fail. Bearish drift confirmed but structural trigger far away. → **STILL SKIPPED — 3 criteria fail (no breakdown, Vol 0.549×, SMA structure bullish)**
+
+- **GLD** ($411.65, down −$0.45 / −0.11%): 2a-LONG: Z=−1.060 ❌ (needs ≤−2.0; still $8.00 above Z=−2.0 trigger price of ~$403.65), RSI 30.2 ❌ (needs <30; tantalizingly close, improved from 30.8), Vol 0.479× ❌ (needs ≥1.0×). RSI progress noted (30.8 → 30.2). GLD remains the primary developing setup — needs ~2% more price decline with volume confirmation over the next 1–3 sessions to trigger. → **STILL SKIPPED — all three 2a-LONG criteria fail; multi-day setup, not same-day**
+
+- **MRVL** — Not re-evaluated. Phase 1 universe rule exclusion (high-momentum name prohibited from short universe). Exclusion is structural and does not change intraday.
+
+---
+
+**Trades fired this rescan:** None.
+
+**Patience rule applied:** Zero candidates re-cleared all gates. This is correct. All six skipped names have at least 2–3 Layer B criteria failing simultaneously. The most advanced developing setup (GLD) still needs ~$8 more price decline over multiple sessions. AVGO showed the most intraday improvement (RSI −2.3 pts, Vol +0.24×) and is worth watching for a tomorrow re-evaluation if the pullback continues.
+
+---
+
+**Updated Forward Watchlist:**
+| Ticker | Direction | Setup | Trigger Condition | Priority | Change vs AM |
+|--------|-----------|-------|-------------------|----------|--------------|
+| AVGO | LONG 2b | Momentum continuation | RSI cools ≤70 (was 71.4 at rescan, progress noted); Vol ≥30.9M on session (1.5× avg); pivot $459.97, max limit $506.72 | 🥇 #1 | ↗ Improving — RSI down −2.3 pts, Vol up +0.24× |
+| GLD | LONG 2a | Mean-reversion oversold | Price declines to ~$403–$405 (Z ≤−2.0); RSI <30 (was 30.2 — very close); Vol ≥1.0× (6.08M); multi-day watch | 🥈 #2 | ↗ Slow progress — RSI 30.8→30.2 |
+| XLK | LONG 2b | Momentum continuation | RSI must cool dramatically to ≤70 (was 80.6 — no improvement); Vol ≥19.2M; Trend Template 52w-high issue needs resolution | 🥉 #3 | → No change, deteriorated slightly |
+| NVDA | LONG 2b | Breakout above pivot | Close > $235.74; Z ≥+1.0; Vol ≥257M (1.5× avg 171M) | Watch | ↘ Slightly weaker |
+| AMD | SHORT 2b | NVDA CPU threat breakdown | Z ≤−1.0; close < 20d low; Vol ≥1.5×; SMA structure must deteriorate | Conditional | → No change |
+
+---
+
+**Rescan decision: HOLD — 0 trades. Correct application of patience rule.**
