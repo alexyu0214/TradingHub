@@ -961,3 +961,26 @@ vs S&P 500: −1.60% (S&P: +1.60%, 9th consecutive weekly gain; May: +5.1%; SOXX
 **Notes:** Flat Monday; all weekly and PDT counters reset to zero. Full cash, all circuit breakers clear. No qualifying setups — prior scan candidates (AVGO, MRVL, XLK, XLE, XOM) all rejected on vol/RSI; watching for fresh entries mid-week with confirmation.
 
 ---
+
+## 2026-06-02 — Market Open
+
+**Market-open orders placed:** None
+
+**Research decision:** HOLD — 0 of 7 candidates cleared both Layer A and Layer B
+
+**Skipped candidates:**
+- AVGO (Long 2b): RSI 73.7 > 70; Vol 0.863× < 1.50×
+- XLK (Long 2b): Trend Template fail (−35.2% from 52w high); RSI 80.5; Vol 0.421×
+- NVDA (Long 2b): Z +0.920 < 1.0; no breakout; Vol 0.662×
+- AMD (Short 2a/2b): Z +1.40 fails both short lanes; Vol 0.329×
+- INTC (Short 2b): SMA structure bullish; no breakdown; Vol 0.481×
+- MRVL (Short 2a): Phase 1 universe rule — high-momentum name prohibited
+- GLD (Long 2a): Z −1.007 (need ≤−2.0); RSI 30.8 (need <30); Vol 0.413×
+
+**Portfolio:** $99,056.46 | Cash: $99,056.46 (100%) | Deployed: 0% | Positions: 0/6
+**PDT count:** 0/3 | **Week trades:** 0/3
+**Circuit breakers:** All clear — Phase P&L −0.944% (lim −5%) | Drawdown −1.15% from $100,206.70 peak (lim −15%)
+**VIX:** 16.17 (Normal regime)
+
+**Primary watch for next scan:** GLD — needs ~2% decline to $403–$405 to trigger 2a-LONG (Z ≤−2.0, RSI <30). Secondary: AVGO on RSI reset + volume confirmation.
+

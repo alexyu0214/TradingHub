@@ -1709,3 +1709,25 @@ The 200-SMA override decision in decisions/log.md will determine whether the bot
 
 **PDT count:** 0/3 | **Week trades:** 0/3 (week reset Mon Jun 02) | **Positions:** 0/6
 **Circuit breakers:** ✅ All clear — Phase P&L −0.944% (lim −5%) | Drawdown −1.15% from $100,206.70 peak (lim −15%)
+
+### 2026-06-02 09:31 — MARKET-OPEN EXECUTION: NO ORDERS PLACED
+**Decision:** HOLD — Research log DECISION was HOLD; zero candidates cleared both Layer A + Layer B
+**Account at open:** $99,056.46 equity | $99,056.46 cash (100%) | 0 positions | 0 daytrades | 0/3 week trades
+**Circuit breakers:** All clear — Phase P&L −0.944% (lim −5%) | Drawdown −1.15% from $100,206.70 peak (lim −15%)
+**VIX:** 16.02–16.17 (Normal regime, 1.00× sizing multiplier — moot, no trades)
+
+**Candidates screened and rejected (all failed independently):**
+- **AVGO** Long 2b-LONG → Layer B FAIL: RSI 73.7 > 70 ❌; Volume 0.863× < 1.50× ❌
+- **XLK** Long 2b-LONG → Layer A FAIL: Trend Template (price −35.2% from 52w high ❌) + Layer B FAIL: RSI 80.5 ❌; Vol 0.421× ❌
+- **NVDA** Long 2b-LONG → Layer B FAIL: Z +0.920 < 1.0 ❌; No breakout ❌; Vol 0.662× ❌
+- **AMD** Short 2a/2b → Layer B FAIL: Z +1.40 (need ≥+2.0 for 2a) ❌; wrong direction for 2b ❌; Vol 0.329× ❌
+- **INTC** Short 2b-SHORT → Layer B FAIL: SMA structure bullish (50>200) ❌; no breakdown ❌; Vol 0.481× ❌
+- **MRVL** Short 2a-SHORT → Phase 1 Universe Rule FAIL: high-momentum name prohibited ❌
+- **GLD** Long 2a-LONG → Layer B FAIL: Z −1.007 (need ≤−2.0) ❌; RSI 30.8 (need <30) ❌; Vol 0.413× ❌
+
+**Watch list (closest to qualifying — ranked):**
+1. GLD: needs ~2% further decline to ~$403–$405 (Z ≤−2.0, RSI <30) → primary developing setup for Jun 3–4
+2. AVGO: needs RSI ≤70 on consolidation + ≥30.9M vol on next breakout attempt → pivot resets to $482.59; max chase $506.72
+
+**No orders placed. Portfolio: 0 positions, 0% deployed. All orders expire N/A (nothing submitted).**
+
